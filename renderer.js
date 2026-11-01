@@ -396,6 +396,10 @@ function mapChar(ch, normalUpper, normalLower, normalNums, upperArr, lowerArr, n
 
    // renderMap logic
 
+// A grapheme cluster that starts with a letter (or mark) of a script other than
+// Latin, or with a joiner. Used by the spaced path below to keep such runs whole.
+const NATIVE_RUN_RE = /^(?:(?![\p{Script=Latin}\p{Script=Common}])[\p{L}\p{M}]|[‌‍])/u;
+
 function renderMap(text, style) {
   if (!text) return '';
 
@@ -441,8 +445,20 @@ function renderMap(text, style) {
   // emoji sequence is ONE glyph, and a space wedged inside it detaches the mark
   // or breaks the sequence apart. Each cluster is mapped code point by code
   // point exactly as the unspaced path does, then followed by one space.
+  //
+  // The style maps Latin letters and digits only. A run of letters in any other
+  // script (Arabic, Devanagari, Han, Thai, Hebrew...) passes through unmapped,
+  // and spacing it apart is not a style: it breaks the run. Arabic loses its
+  // joining (عيد مبارك -> ع ي د  م ب ا ر ك) and Devanagari conjuncts fall apart.
+  // So no space goes between two consecutive clusters of a non-Latin script;
+  // the run stays exactly as typed. Text with no such letters is untouched,
+  // byte for byte.
   const out = [];
+  let prevNative = false;
   for (const cluster of splitGraphemes(text)) {
+    const native = NATIVE_RUN_RE.test(cluster);
+    if (native && prevNative && out[out.length - 1] === ' ') out.pop();
+    prevNative = native;
     if (cluster === '\n' || cluster === '\r\n') {
       if (out[out.length - 1] === ' ') out.pop();
       out.push(cluster);

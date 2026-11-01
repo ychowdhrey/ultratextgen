@@ -33,6 +33,7 @@ The script refuses to overwrite an existing page unless --force is given.
 import argparse
 import html
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -47,6 +48,23 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
 EVENTS_DIR = REPO / "events"
 SPECS_DIR = REPO / "data" / "event_page_specs"
+CAPABILITIES_PATH = REPO / "data" / "event_capabilities.json"
+
+
+def load_spec_by_stem(stem):
+    """Another event spec, by file stem, or None."""
+    path = SPECS_DIR / f"{stem}.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def page_path(spec):
+    """Root-relative URL of the page a spec generates."""
+    language = spec.get("language", DEFAULT_LANGUAGE)
+    if language == DEFAULT_LANGUAGE:
+        return f"/events/{spec['slug']}/"
+    return f"/{language}/events/{spec['slug']}/"
 
 SITE = "https://ultratextgen.com"
 
@@ -119,11 +137,6 @@ STRINGS = {
         "calendar_lunar_generic": "a lunar calendar",
         "date_join": ", then ",
         "faq_how_q": "How do I use the {event_name} generator?",
-        "faq_how_a": "Type a name, wish, or greeting into the box at the top. Every "
-                     "{event_name} font style updates live underneath it — tap Copy on any "
-                     "card. Below that, tap any emoji, symbol, kaomoji, or ASCII art piece to "
-                     "copy it on its own, or tap a phrase-bank card to drop a ready-made "
-                     "greeting into the box and see it restyled instantly.",
         "faq_more_q": "Where can I find more {event_name} phrases and what to write?",
         "faq_more_a": 'See <a href="{href}">our full answer</a> for more greetings, '
                       "translations, and message ideas.",
@@ -138,15 +151,10 @@ STRINGS = {
         "feature_phrase": "Click-to-style {event_name} phrase bank (native script, "
                           "romanization, translation)",
         "aka_label": "Also known as: ",
-        "textarea_placeholder": "Type a name, wish, or greeting...",
         "section_fonts_label": "Fonts",
         "section_fonts_heading": "{event_name} Fonts",
-        "section_fonts_intro": "Type your text above and every style below updates live. "
-                               "Tap Copy on the one you like.",
         "section_emoji_label": "Emoji &amp; Symbols",
         "section_emoji_heading": "{event_name} Emoji &amp; Symbols",
-        "section_emoji_intro": "Tap any character to copy it, or copy a whole set at once "
-                               "in your preferred format.",
         "section_kaomoji_label": "Kaomoji",
         "section_kaomoji_heading": "{event_name} Kaomoji",
         "section_kaomoji_intro": "Each tile is a whole kaomoji: tap to copy the full "
@@ -163,15 +171,6 @@ STRINGS = {
         "section_native_intro": "Tap any line to copy it in {script_language}. These are the "
                                 "native-script forms of the greetings above: paste them "
                                 "straight into a message, card, or bio.",
-        "section_phrase_label": "Wishes &amp; Messages",
-        "section_phrase_heading": "{event_name} Wishes &amp; Messages",
-        "section_phrase_intro": "Tap any wish to drop it into the box above. Every font "
-                                "below then restyles it instantly, so you can copy it "
-                                "decorated in one step.",
-        "cta_heading": "Transform text with Unicode fonts",
-        "cta_body": "Use UltraTextGen to convert plain text into bold, italic, cursive, and "
-                    "100+ other Unicode font styles. Free and instant.",
-        "cta_button": "Open UltraTextGen →",
         "related_heading": "Related Resources",
         "related_more_title": "More {event_name} phrases &amp; wording",
         "related_more_desc": "Greetings, translations, and message ideas beyond the phrase "
@@ -179,6 +178,34 @@ STRINGS = {
         "related_more_fallback_name": "this event",
         "footer_heading": "{event_name} questions",
         "copy_toast": "Copied!",
+        "input_label": "Your name or message",
+        "textarea_placeholder": "Type a name or a short message...",
+        "partner_summary": "+ Add a second name",
+        "partner_label": "Second name (a partner, a friend)",
+        "partner_placeholder": "Their name",
+        "section_comp_label": "Designs",
+        "section_comp_heading": "{event_name} text designs",
+        "comp_hint": "Showing “{sample}”. Type in the box above and every design updates.",
+        "comp_intensity_legend": "Decoration",
+        "comp_shuffle": "Another one",
+        "comp_script_note": "Arabic letters keep their own shapes: the styles change Latin letters only, so an Arabic greeting is copied exactly as written, inside the frame.",
+        "fonts_hint": "Showing “{sample}”. Type your own text above to restyle every card.",
+        "section_fonts_intro": "Every style below shows your text. Tap Copy on the one you like.",
+        "section_phrase_label": "Start from a line",
+        "section_phrase_heading": "Start from a {event_name} line",
+        "section_phrase_intro": "Tap a line to put it in the box above. The designs and fonts restyle it straight away.",
+        "section_handoff_label": "Make it something",
+        "section_handoff_heading": "Take it further",
+        "section_handoff_heading_print": "Print it or take it further",
+        "section_handoff_intro": "Each card opens the tool that makes the next thing, with your text already filled in.",
+        "section_emoji_intro": "Tap a symbol to copy it on its own, or copy a whole set in the format you want.",
+        "section_about_label": "About",
+        "nav_heading": "More occasions",
+        "nav_all": "All occasions",
+        "faq_how_a": "Type a name or a short line into the box at the top. The {event_name} designs and font styles below update as you type: tap Copy on any card, or share it as a link or an image. Tap a symbol, kaomoji or ASCII art piece to copy it on its own, or tap a ready-made line to put it in the box.",
+        "faq_how_a_handoffs": " The cards under {handoff_heading} open the matching maker or tool with your text already filled in.",
+        "feature_comp": "{event_name} text designs: frames, charm stacks, banners and sprinkled captions around your own text",
+        "feature_handoffs": "One-tap hand-offs to printable makers and text tools, prefilled with your text",
     },
     # Recovered from claude/cny-page-brainstorm-3toe0h, whose Indonesian pages were
     # pushed after its PRs had already merged and so never reached main. The 45
@@ -193,7 +220,6 @@ STRINGS = {
         "faq_when_q": "Kapan {event_name} dirayakan?",
         "faq_when_a": "{event_name} jatuh {date_window}. Cek kalender terbaru untuk tanggal pastinya, lalu kembali ke sini untuk mempercantik ucapanmu.",
         "faq_how_q": "Bagaimana cara pakai generator {event_name} ini?",
-        "faq_how_a": "Ketik nama, ucapan, atau salam di kotak paling atas. Setiap gaya font {event_name} langsung berubah di bawahnya — tinggal tap Salin di kartu mana pun. Di bawahnya lagi, tap emoji, simbol, kaomoji, atau ASCII art mana pun untuk menyalinnya sendiri, atau tap kartu bank frasa untuk memasukkan ucapan siap pakai ke kotak dan lihat gayanya langsung berubah.",
         "faq_more_q": "Di mana saya bisa menemukan lebih banyak ucapan {event_name} dan contoh kata-katanya?",
         "faq_more_a": 'Lihat <a href="{href}">jawaban lengkap kami</a> untuk lebih banyak '
                       "ucapan, terjemahan, dan ide pesan.",
@@ -207,13 +233,10 @@ STRINGS = {
         "feature_ascii": "ASCII art {event_name} pilihan",
         "feature_phrase": "Bank frasa {event_name} yang tinggal diklik untuk bergaya (tulisan asli, romanisasi, terjemahan)",
         "aka_label": "Juga dikenal sebagai:",
-        "textarea_placeholder": "Ketik nama, ucapan, atau salam...",
         "section_fonts_label": "Font",
         "section_fonts_heading": "Font {event_name}",
-        "section_fonts_intro": "Ketik teksmu di atas dan setiap gaya di bawah langsung berubah. Tap Salin pada yang kamu suka.",
         "section_emoji_label": "Emoji &amp; Simbol",
         "section_emoji_heading": "Emoji &amp; Simbol {event_name}",
-        "section_emoji_intro": "Tap karakter mana pun untuk menyalinnya, atau salin satu set penuh sekaligus dalam format favoritmu.",
         "section_kaomoji_label": "Kaomoji",
         "section_kaomoji_heading": "Kaomoji {event_name}",
         "section_kaomoji_intro": "Setiap kotak adalah satu kaomoji utuh — tap untuk menyalin seluruh rangkaiannya dalam satu klik.",
@@ -223,12 +246,6 @@ STRINGS = {
         "section_ascii_cta": 'Mau mengetik nama atau pesanmu sendiri jadi banner huruf '
                              'balok yang langsung berubah? Coba <a href="{href}">Generator '
                              'ASCII Art</a>.',
-        "section_phrase_label": "Bank Frasa",
-        "section_phrase_heading": "Bank Frasa {event_name}",
-        "section_phrase_intro": "Tap sebuah frasa untuk memasukkannya ke kotak di atas dan lihat setiap gaya font di atas langsung menyesuaikan.",
-        "cta_heading": "Ubah teks dengan font Unicode",
-        "cta_body": "Gunakan UltraTextGen untuk mengubah teks biasa jadi tebal, miring, kursif, dan 100+ gaya font Unicode lainnya — gratis dan instan.",
-        "cta_button": "Buka UltraTextGen →",
         "related_heading": "Sumber Terkait",
         "related_more_title": "Lebih banyak ucapan &amp; kata-kata {event_name}",
         "related_more_desc": "Ucapan, terjemahan, dan ide pesan selain yang ada di bank frasa di atas.",
@@ -244,6 +261,33 @@ STRINGS = {
         "section_native_label": "Dalam {script_language}",
         "section_native_heading": "{event_name} dalam {script_language}",
         "section_native_intro": "Tap baris mana pun untuk menyalinnya dalam {script_language}. Ini bentuk aksara asli dari ucapan di atas; tempel langsung ke pesan, kartu, atau bio.",
+        "input_label": "Nama atau pesanmu",
+        "textarea_placeholder": "Ketik nama atau pesan singkat...",
+        "partner_summary": "+ Tambah nama kedua",
+        "partner_label": "Nama kedua",
+        "partner_placeholder": "Namanya",
+        "section_comp_label": "Desain",
+        "section_comp_heading": "Desain teks {event_name}",
+        "comp_hint": "Menampilkan “{sample}”. Ketik di kotak atas dan setiap desain langsung berubah.",
+        "comp_intensity_legend": "Hiasan",
+        "comp_shuffle": "Desain lain",
+        "fonts_hint": "Menampilkan “{sample}”. Ketik teksmu sendiri di atas untuk mengubah setiap kartu.",
+        "section_fonts_intro": "Setiap gaya di bawah menampilkan teksmu. Tap Salin pada yang kamu suka.",
+        "section_phrase_label": "Mulai dari ucapan",
+        "section_phrase_heading": "Mulai dari ucapan {event_name}",
+        "section_phrase_intro": "Tap sebuah ucapan untuk memasukkannya ke kotak di atas. Desain dan font langsung menyesuaikan.",
+        "section_handoff_label": "Jadikan sesuatu",
+        "section_handoff_heading": "Lanjutkan ke alat lain",
+        "section_handoff_heading_print": "Cetak atau lanjutkan",
+        "section_handoff_intro": "Setiap kartu membuka alat berikutnya, dengan teksmu sudah terisi.",
+        "section_emoji_intro": "Tap simbol untuk menyalinnya sendiri, atau salin satu set penuh dalam format yang kamu mau.",
+        "section_about_label": "Tentang",
+        "nav_heading": "Acara lainnya",
+        "nav_all": "Semua acara",
+        "faq_how_a": "Ketik nama atau ucapan singkat di kotak paling atas. Desain dan gaya font {event_name} di bawahnya berubah saat kamu mengetik: tap Salin di kartu mana pun, atau bagikan sebagai tautan atau gambar. Tap simbol, kaomoji, atau ASCII art untuk menyalinnya sendiri, atau tap ucapan siap pakai untuk memasukkannya ke kotak.",
+        "faq_how_a_handoffs": " Kartu di bagian {handoff_heading} membuka alat yang sesuai dengan teksmu sudah terisi.",
+        "feature_comp": "Desain teks {event_name}: bingkai, tumpukan hiasan, banner, dan caption bertabur simbol di sekitar teksmu",
+        "feature_handoffs": "Akses satu tap ke alat cetak dan alat teks, dengan teksmu sudah terisi",
     },
     "es": {
         "breadcrumb_aria": "Ruta de navegación",
@@ -267,11 +311,6 @@ STRINGS = {
         "calendar_lunar_generic": "un calendario lunar",
         "date_join": ", y luego el ",
         "faq_how_q": "¿Cómo uso el generador de {event_name}?",
-        "faq_how_a": "Escribe un nombre, deseo o saludo en el cuadro de arriba. Cada estilo "
-                     "de fuente de {event_name} se actualiza en vivo debajo — toca Copiar en "
-                     "cualquier tarjeta. Más abajo, toca cualquier emoji, símbolo, kaomoji o "
-                     "arte ASCII para copiarlo por separado, o toca una tarjeta del banco de "
-                     "frases para colocarla en el cuadro y verla transformada al instante.",
         "faq_more_q": "¿Dónde encuentro más frases de {event_name} y qué escribir?",
         "faq_more_a": 'Consulta <a href="{href}">nuestra respuesta completa</a> para más '
                       "saludos, traducciones e ideas de mensajes.",
@@ -287,15 +326,10 @@ STRINGS = {
         "feature_phrase": "Banco de frases de {event_name} con estilo al toque (escritura "
                           "nativa, romanización, traducción)",
         "aka_label": "También conocido como: ",
-        "textarea_placeholder": "Escribe un nombre, deseo o saludo...",
         "section_fonts_label": "Fuentes",
         "section_fonts_heading": "Fuentes de {event_name}",
-        "section_fonts_intro": "Escribe tu texto arriba y cada estilo de abajo se actualiza "
-                               "en vivo. Toca Copiar en el que más te guste.",
         "section_emoji_label": "Emojis y Símbolos",
         "section_emoji_heading": "Emojis y Símbolos de {event_name}",
-        "section_emoji_intro": "Toca cualquier carácter para copiarlo, o copia todo un "
-                               "conjunto en el formato que prefieras.",
         "section_kaomoji_label": "Kaomoji",
         "section_kaomoji_heading": "Kaomoji de {event_name}",
         "section_kaomoji_intro": "Cada ficha es un kaomoji completo — toca para copiar la "
@@ -312,15 +346,6 @@ STRINGS = {
         "section_native_intro": "Toca cualquier línea para copiarla en {script_language}. "
                                 "Son las formas en escritura original de los saludos de "
                                 "arriba — pégalas en un mensaje, tarjeta o biografía.",
-        "section_phrase_label": "Mensajes y Felicitaciones",
-        "section_phrase_heading": "Mensajes y Felicitaciones de {event_name}",
-        "section_phrase_intro": "Toca cualquier mensaje para colocarlo en el cuadro de "
-                                "arriba — cada fuente de abajo lo transforma al instante, "
-                                "listo para copiar.",
-        "cta_heading": "Transforma texto con fuentes Unicode",
-        "cta_body": "Usa UltraTextGen para convertir texto plano en negrita, cursiva y más "
-                    "de 100 estilos de fuente Unicode — gratis e instantáneo.",
-        "cta_button": "Abrir UltraTextGen →",
         "related_heading": "Recursos Relacionados",
         "related_more_title": "Más frases y mensajes de {event_name}",
         "related_more_desc": "Saludos, traducciones e ideas de mensajes más allá del banco "
@@ -328,6 +353,33 @@ STRINGS = {
         "related_more_fallback_name": "este evento",
         "footer_heading": "Preguntas sobre {event_name}",
         "copy_toast": "¡Copiado!",
+        "input_label": "Tu nombre o mensaje",
+        "textarea_placeholder": "Escribe un nombre o un mensaje corto...",
+        "partner_summary": "+ Añadir un segundo nombre",
+        "partner_label": "Segundo nombre (tu pareja, un amigo)",
+        "partner_placeholder": "Su nombre",
+        "section_comp_label": "Diseños",
+        "section_comp_heading": "Diseños de texto de {event_name}",
+        "comp_hint": "Mostrando “{sample}”. Escribe en el cuadro de arriba y cada diseño se actualiza.",
+        "comp_intensity_legend": "Decoración",
+        "comp_shuffle": "Otro diseño",
+        "fonts_hint": "Mostrando “{sample}”. Escribe tu propio texto arriba para cambiar cada tarjeta.",
+        "section_fonts_intro": "Cada estilo de abajo muestra tu texto. Toca Copiar en el que más te guste.",
+        "section_phrase_label": "Empieza con una frase",
+        "section_phrase_heading": "Empieza con una frase de {event_name}",
+        "section_phrase_intro": "Toca una frase para ponerla en el cuadro de arriba. Los diseños y las fuentes la transforman al instante.",
+        "section_handoff_label": "Conviértelo en algo",
+        "section_handoff_heading": "Llévalo más lejos",
+        "section_handoff_heading_print": "Imprímelo o llévalo más lejos",
+        "section_handoff_intro": "Cada tarjeta abre la herramienta que hace lo siguiente, con tu texto ya escrito.",
+        "section_emoji_intro": "Toca un símbolo para copiarlo solo, o copia un conjunto entero en el formato que quieras.",
+        "section_about_label": "Sobre esta fecha",
+        "nav_heading": "Más ocasiones",
+        "nav_all": "Todas las ocasiones",
+        "faq_how_a": "Escribe un nombre o una frase corta en el cuadro de arriba. Los diseños y estilos de fuente de {event_name} se actualizan mientras escribes: toca Copiar en cualquier tarjeta, o compártela como enlace o imagen. Toca un símbolo, kaomoji o arte ASCII para copiarlo solo, o toca una frase lista para ponerla en el cuadro.",
+        "faq_how_a_handoffs": " Las tarjetas de {handoff_heading} abren la herramienta correspondiente con tu texto ya escrito.",
+        "feature_comp": "Diseños de texto de {event_name}: marcos, pilas de adornos, banners y frases salpicadas alrededor de tu texto",
+        "feature_handoffs": "Accesos a herramientas para imprimir y de texto, con tu texto ya escrito",
     },
 }
 
@@ -339,15 +391,47 @@ STRINGS = {
 # any language with a table here; a spec's own "ui" field (if authored)
 # always takes precedence -- see render_event_data().
 JS_UI_STRINGS = {
+    "en": {
+        "copyButton": "Copy",
+        "copyAriaPrefix": "Copy ",
+        "asciiArtDefaultLabel": "ASCII art",
+        "phraseGroupOther": "More",
+        "shareLabel": "Share",
+        "linkCopied": "Link copied",
+        "copiedToast": "Copied",
+        "multiLineNote": "Copied. Some apps join the lines of a banner when it goes in a bio.",
+    },
     "es": {
-        "showingSample": "Mostrando “{sample}” — escribe tu propio nombre, deseo o "
-                          "saludo arriba.",
         "copyButton": "Copiar",
         "copyAriaPrefix": "Copiar ",
         "asciiArtDefaultLabel": "Arte ASCII",
         # Heading for phrases whose spec entry carries no `group`, used only
         # when at least one other phrase in the bank does.
         "phraseGroupOther": "Más",
+        "shareLabel": "Compartir",
+        "linkCopied": "Enlace copiado",
+        "copiedToast": "Copiado",
+        "multiLineNote": "Copiado. Algunas apps juntan las líneas de un banner cuando va en una biografía.",
+        # Style names shown on the font cards. The registry key stays the
+        # analytics value; only the visible label is translated.
+        "styleWords": {"Bold": "Negrita", "Serif": "Serif", "Italic": "Cursiva", "Script": "Caligráfica",
+                       "Elegant": "Elegante", "Sparkle": "Brillante", "Cute": "Linda", "Bubble": "Burbuja",
+                       "Filled": "Rellena", "Small": "Versalitas", "Caps": "", "Double-Struck": "Doble trazo",
+                       "Gothic": "Gótica", "Occult": "Oculta", "Cross": "Cruz", "Strikethrough": "Tachada",
+                       "Typewriter": "Máquina de escribir", "Document": ""},
+    },
+    "id": {
+        "copyButton": "Salin",
+        "copyAriaPrefix": "Salin ",
+        "asciiArtDefaultLabel": "ASCII art",
+        "phraseGroupOther": "Lainnya",
+        "shareLabel": "Bagikan",
+        "linkCopied": "Tautan disalin",
+        "copiedToast": "Disalin",
+        "multiLineNote": "Disalin. Beberapa aplikasi menggabungkan baris banner saat dipakai di bio.",
+        "styleWords": {"Bold": "Tebal", "Serif": "Serif", "Script": "Sambung", "Elegant": "Elegan",
+                       "Gothic": "Gotik", "Bubble": "Gelembung", "Filled": "Penuh", "Small": "Kapital",
+                       "Caps": "Kecil", "Fullwidth": "Lebar"},
     },
 }
 
@@ -601,9 +685,51 @@ def validate_spec(spec):
 # --------------------------------------------------------------------------
 # Rendering helpers
 # --------------------------------------------------------------------------
-def render_event_data(spec):
-    """Build the inline window.UTG_EVENT_DATA object the controller reads."""
+_CAPS = None
+
+
+def load_capabilities():
+    global _CAPS
+    if _CAPS is None:
+        _CAPS = json.loads(CAPABILITIES_PATH.read_text(encoding="utf-8"))
+    return _CAPS
+
+
+def capability_on(spec, cid):
+    """True when the spec's experience enables capability `cid`. A spec with no
+    experience block (a legacy or new draft) enables only what it has data for,
+    which is what the generator rendered before the capability system."""
+    exp = spec.get("experience")
+    if not exp:
+        return True
+    value = exp.get("capabilities", {}).get(cid)
+    return value is True or (isinstance(value, dict) and value.get("enabled") is True)
+
+
+def resolved_handoffs(spec, caps):
+    """The spec's hand-offs with each target's definition attached, minus any
+    whose kind is switched off. The definition travels with the page so the
+    browser builds the URL from the same parameter names the build did."""
+    exp = spec.get("experience") or {}
+    targets = caps["handoff_targets"]
+    out = []
+    for h in exp.get("handoffs", []):
+        target = targets[h["target"]]
+        cid = caps["handoff_kinds"][target["kind"]]
+        if not capability_on(spec, cid):
+            continue
+        if target["kind"] in caps["printable_kinds"] and not capability_on(spec, "printable_handoffs"):
+            continue
+        item = dict(h)
+        item["targetDef"] = {k: target[k] for k in ("path", "text_param", "max_len", "kind") if k in target}
+        out.append(item)
+    return out
+
+
+def build_event_data(spec, caps):
+    """The inline window.UTG_EVENT_DATA object the controller reads."""
     language = spec.get("language", DEFAULT_LANGUAGE)
+    exp = spec.get("experience") or {}
     collections = [
         {
             "name": c["name"],
@@ -614,9 +740,11 @@ def render_event_data(spec):
     ]
     event_data = {
         "slug": spec["slug"],
+        "language": language,
         "eventName": spec["event_name"],
         "aliases": spec.get("aliases", []),
-        "samplePhrase": spec.get("sample_phrase", spec["event_name"]),
+        "samplePhrase": exp.get("sample_text") or spec.get("sample_phrase", spec["event_name"]),
+        "analyticsLabel": exp.get("analytics_label") or spec["slug"],
         "fonts": {"curatedKeys": spec["fonts"]["curated_keys"]},
         "emojiCollections": {
             "containerId": "eventEmojiGrids",
@@ -646,20 +774,222 @@ def render_event_data(spec):
             }
             for p in spec["phrase_bank"]
         ],
+        "phraseDisplay": exp.get("phrase_display", "cards"),
+        "inputs": exp.get("inputs", ["text"]),
     }
+    if exp.get("compositions") and capability_on(spec, "compositions"):
+        comp = json.loads(json.dumps(exp["compositions"]))
+        if not capability_on(spec, "intensity"):
+            comp["intensity"]["control"] = False
+        if not capability_on(spec, "multi_input"):
+            comp.pop("couple", None)
+        event_data["compositions"] = comp
+    handoffs = resolved_handoffs(spec, caps)
+    if handoffs:
+        event_data["handoffs"] = handoffs
 
-    # An explicit spec["ui"] always wins; otherwise auto-apply this
-    # language's JS_UI_STRINGS table if one exists. Nothing is emitted for
-    # "en" (or any language without a table and no explicit override), so
-    # the 9 already-shipped English pages get no "ui" key at all -- exactly
-    # matching their pre-existing output.
-    ui = spec.get("ui")
-    if ui is None:
-        ui = JS_UI_STRINGS.get(language)
-    if ui:
-        event_data["ui"] = ui
+    ui = dict(JS_UI_STRINGS.get(DEFAULT_LANGUAGE, {}))
+    ui.update(JS_UI_STRINGS.get(language, {}))
+    if spec.get("ui"):
+        ui.update(spec["ui"])
+    event_data["ui"] = ui
+    return event_data
 
-    return json.dumps(event_data, indent=2, ensure_ascii=False)
+
+def prerender_payload(event_data):
+    """Static HTML for every section, from the shipped browser modules run in
+    Node (scripts/lib/event-prerender.js). Raises if Node fails: a page whose
+    payload silently came out empty is the defect this step exists to fix."""
+    result = subprocess.run(
+        ["node", str(SCRIPT_DIR / "lib" / "event-prerender.js")],
+        input=json.dumps(event_data, ensure_ascii=False),
+        capture_output=True, text=True, cwd=REPO,
+    )
+    if result.returncode != 0:
+        raise SpecError(f"event pre-render failed: {result.stderr.strip()[:400]}")
+    return json.loads(result.stdout)
+
+
+PRE_BEGIN = "<!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit -->"
+PRE_END = "<!-- END prerendered event payload -->"
+
+
+def pre(html_fragment):
+    """Wrap a pre-rendered fragment in the markers the payload gate looks for."""
+    return f"{PRE_BEGIN}{html_fragment}{PRE_END}"
+
+
+def section_block(sid, label, heading, intro, body, extra_class="", heading_id=None):
+    hid = f' id="{heading_id}"' if heading_id else ""
+    intro_html = f'\n    <p class="editorial-intro">{intro}</p>' if intro else ""
+    return f"""
+  <section class="editorial-section{extra_class}" id="{sid}"{f' aria-labelledby="{heading_id}"' if heading_id else ''}>
+    <span class="article-section-label">{label}</span>
+    <h2{hid}>{heading}</h2>{intro_html}
+{body}
+  </section>
+
+  <div class="section-divider"></div>
+"""
+
+
+def render_sections(spec, caps, payload, event_data, faq_html):
+    """Every main-column section, in the order the spec's experience names,
+    each gated on its capability. A spec without an experience block keeps the
+    order the generator always used."""
+    language = spec.get("language", DEFAULT_LANGUAGE)
+    exp = spec.get("experience") or {}
+    event_name = spec["event_name"]
+    en = esc(event_name)
+    companion = spec.get("companion_answer_slug")
+    sample = event_data["samplePhrase"]
+    order = exp.get("sections") or ["intro", "phrases", "native", "fonts", "symbols", "kaomoji", "ascii", "related", "faq"]
+    blocks = {}
+
+    if "compositions" in event_data:
+        comp = event_data["compositions"]
+        controls = ""
+        if comp["intensity"].get("control"):
+            labels = comp["intensity"].get("labels") or ["1", "2", "3"]
+            radios = "".join(
+                f'<label class="event-intensity-option"><input type="radio" name="eventIntensity" value="{i + 1}"'
+                f'{" checked" if i + 1 == comp["intensity"]["default"] else ""}><span>{esc(lab)}</span></label>'
+                for i, lab in enumerate(labels)
+            )
+            controls = (
+                '\n    <div class="event-comp-controls">'
+                f'<fieldset class="event-intensity"><legend class="event-intensity-legend">{tr(language, "comp_intensity_legend")}</legend>{radios}</fieldset>'
+                f'<button type="button" class="event-shuffle" id="eventShuffle">{tr(language, "comp_shuffle")}</button>'
+                "</div>"
+            )
+        note = ""
+        if exp.get("script_note"):
+            note = f'\n    <p class="u-secondary-tight u-mt-15">{tr(language, "comp_script_note")}</p>'
+        hint = tr(language, "comp_hint", sample=esc(sample))
+        body = (
+            f"{controls}\n"
+            f'    <p class="event-hint" id="eventCompHint" data-sample-template="{esc_attr(tr(language, "comp_hint", sample="{sample}"))}">{hint}</p>\n'
+            f'    <div class="event-comp-grid" id="eventCompGrid" aria-live="polite">{pre(payload.get("compositions", ""))}</div>{note}'
+        )
+        blocks["compositions"] = section_block(
+            "eventCompSection", tr(language, "section_comp_label"),
+            tr(language, "section_comp_heading", event_name=en), None, body,
+            " event-comp-section", "eventCompHeading")
+
+    if capability_on(spec, "native_greetings") and payload.get("native") and spec.get("native_script_language"):
+        script_language = spec["native_script_language"]
+        heading = spec.get("native_section_heading") or tr(
+            language, "section_native_heading", event_name=en, script_language=esc(script_language))
+        blocks["native"] = section_block(
+            "eventNativeSection", tr(language, "section_native_label", script_language=esc(script_language)),
+            heading, tr(language, "section_native_intro", script_language=esc(script_language)),
+            f'    <div class="glyph-grid" id="eventNativeGrid">{pre(payload["native"])}</div>')
+
+    if capability_on(spec, "styled_fonts"):
+        hint = tr(language, "fonts_hint", sample=esc(sample))
+        blocks["fonts"] = section_block(
+            "eventFontsSection", tr(language, "section_fonts_label"),
+            tr(language, "section_fonts_heading", event_name=en), tr(language, "section_fonts_intro"),
+            f'    <p class="event-hint" id="eventFontsHint" data-sample-template="{esc_attr(tr(language, "fonts_hint", sample="{sample}"))}">{hint}</p>\n'
+            f'    <div class="results-grid" id="eventFontsGrid">{pre(payload.get("fonts", ""))}</div>')
+
+    if capability_on(spec, "seed_phrases") and payload.get("phrases"):
+        cta = ""
+        if companion and capability_on(spec, "related_answers") and spec.get("phrase_cta"):
+            href = f"{answers_prefix(language)}{esc_attr(companion)}/"
+            cta = '\n    <p class="u-secondary-tight u-mt-15">' + spec["phrase_cta"].replace("{href}", href) + "</p>"
+        blocks["phrases"] = section_block(
+            "eventPhraseSection", tr(language, "section_phrase_label"),
+            tr(language, "section_phrase_heading", event_name=en), tr(language, "section_phrase_intro"),
+            f'    <div id="eventPhraseGrid">{pre(payload["phrases"])}</div>{cta}')
+
+    if event_data.get("handoffs"):
+        printable = any(h["targetDef"]["kind"] in caps["printable_kinds"] for h in event_data["handoffs"])
+        heading = exp.get("handoff_heading") or tr(language, "section_handoff_heading_print" if printable else "section_handoff_heading")
+        blocks["handoffs"] = section_block(
+            "eventHandoffSection", tr(language, "section_handoff_label"), heading,
+            tr(language, "section_handoff_intro"),
+            f'    <div class="event-handoff-grid" id="eventHandoffGrid">{pre(payload["handoffs"])}</div>')
+
+    if capability_on(spec, "occasion_symbols") and payload.get("symbols"):
+        emoji_heading = spec.get("emoji_section_heading") or tr(language, "section_emoji_heading", event_name=en)
+        cta = ('\n    <p class="u-secondary-tight u-mt-15">' + spec["emoji_section_cta"] + "</p>") if spec.get("emoji_section_cta") else ""
+        blocks["symbols"] = section_block(
+            "eventEmojiSection", tr(language, "section_emoji_label"), emoji_heading,
+            tr(language, "section_emoji_intro"),
+            f'    <div class="glyph-grid event-symbol-tiles" id="eventSymbolTiles">{pre(payload.get("symbolTiles", ""))}</div>\n'
+            f'    <div id="eventEmojiGrids">{pre(payload["symbols"])}</div>{cta}')
+
+    if capability_on(spec, "emoji_kaomoji") and payload.get("kaomoji"):
+        blocks["kaomoji"] = section_block(
+            "eventKaomojiSection", tr(language, "section_kaomoji_label"),
+            tr(language, "section_kaomoji_heading", event_name=en), tr(language, "section_kaomoji_intro"),
+            f'    <div class="glyph-grid" id="eventKaomojiGrid">{pre(payload["kaomoji"])}</div>')
+
+    if capability_on(spec, "ascii_art") and payload.get("ascii"):
+        blocks["ascii"] = section_block(
+            "eventAsciiSection", tr(language, "section_ascii_label"),
+            tr(language, "section_ascii_heading", event_name=en), tr(language, "section_ascii_intro"),
+            f'    <div class="art-piece-grid" id="eventAsciiGrid">{pre(payload["ascii"])}</div>\n'
+            f'    <p class="u-secondary-tight u-mt-15">{tr(language, "section_ascii_cta", href="/ascii-art-generator/")}</p>')
+
+    blocks["intro"] = f"""
+  <section class="editorial-section" id="eventAboutSection">
+    <span class="article-section-label">{tr(language, "section_about_label")}</span>
+    <div class="editorial-block">
+      <p>{esc(spec["intro"])}</p>
+    </div>
+    <div class="block-example">
+      <strong>{en}:</strong> {esc(spec["date_window"])}
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+"""
+
+    related_html = render_related(
+        spec["related"], companion if capability_on(spec, "related_answers") else None, event_name, language,
+        spec.get("companion_answer_title"), spec.get("companion_answer_desc"),
+    )
+    blocks["related"] = f"""
+  <section class="editorial-section">
+    <span class="article-section-label">{tr(language, "related_heading")}</span>
+    <div class="compare-grid">
+{related_html}
+    </div>
+  </section>
+"""
+
+    if capability_on(spec, "occasion_navigation") and exp.get("related_occasions"):
+        links = []
+        for slug in exp["related_occasions"]:
+            other = load_spec_by_stem(slug)
+            if not other:
+                continue
+            emoji = ((other.get("experience") or {}).get("compositions") or {}).get("theme", {}).get("icon", "")
+            links.append(
+                f'      <a class="event-nav-link" href="{esc_attr(page_path(other))}">'
+                f'<span aria-hidden="true">{esc(emoji)}</span> {esc((other.get("experience") or {}).get("nav_label") or other["event_name"])}</a>'
+            )
+        hub = events_hub_href(language)
+        if hub:
+            links.append(f'      <a class="event-nav-link event-nav-hub" href="{hub}">{tr(language, "nav_all")}</a>')
+        blocks["nav"] = f"""
+  <nav class="editorial-section event-nav" aria-label="{esc_attr(tr(language, "nav_heading"))}">
+    <span class="article-section-label">{tr(language, "nav_heading")}</span>
+    <div class="event-nav-row">
+{chr(10).join(links)}
+    </div>
+  </nav>
+"""
+
+    blocks["faq"] = f"""
+  <section class="editorial-section event-faq" id="eventFaqSection">
+    <h2 class="faq-category">{tr(language, "footer_heading", event_name=en)}</h2>
+{faq_html}
+  </section>
+"""
+    return "".join(blocks.get(name, "") for name in order)
 
 
 def gendered(spec, key):
@@ -751,6 +1081,20 @@ def when_answer(spec, language, event_name):
     return tr(language, "faq_when_a", event_name=event_name, date_window=spec["date_window"])
 
 
+def how_answer(spec, language, event_name):
+    """The "How do I use it?" answer, describing what this page actually has."""
+    answer = tr(language, "faq_how_a", event_name=event_name)
+    exp = spec.get("experience") or {}
+    if exp.get("handoffs") and resolved_handoffs(spec, load_capabilities()):
+        printable = any(
+            load_capabilities()["handoff_targets"][h["target"]]["kind"] in load_capabilities()["printable_kinds"]
+            for h in exp["handoffs"])
+        heading = exp.get("handoff_heading") or tr(
+            language, "section_handoff_heading_print" if printable else "section_handoff_heading")
+        answer += tr(language, "faq_how_a_handoffs", handoff_heading=f"“{heading}”")
+    return answer
+
+
 def synthesize_faq(spec):
     """Build FAQ Q&A from the spec's own fields — no separate 'faq' field
     needs to be authored; every event page gets a valid, accurate FAQPage."""
@@ -767,7 +1111,7 @@ def synthesize_faq(spec):
         },
         {
             "q": tr(language, "faq_how_q", event_name=event_name),
-            "a": tr(language, "faq_how_a", event_name=event_name),
+            "a": how_answer(spec, language, event_name),
         },
     ]
     if spec.get("companion_answer_slug"):
@@ -815,11 +1159,13 @@ def render_ld_json(spec, faqs):
         "operatingSystem": "Any",
         "description": html.unescape(spec["hero_tagline"]),
         "featureList": [
+            *([tr(language, "feature_comp", event_name=event_name)] if capability_on(spec, "compositions") and (spec.get("experience") or {}).get("compositions") else []),
             tr(language, "feature_fonts", event_name=event_name),
             tr(language, "feature_emoji", event_name=event_name),
             tr(language, "feature_kaomoji", event_name=event_name),
             tr(language, "feature_ascii", event_name=event_name),
             tr(language, "feature_phrase", event_name=event_name),
+            *([tr(language, "feature_handoffs")] if resolved_handoffs(spec, load_capabilities()) else []),
         ],
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
         "image": page_art(language, slug)[0],
@@ -916,48 +1262,28 @@ def render_page(spec):
     aliases = spec.get("aliases") or []
     companion_answer_slug = spec.get("companion_answer_slug")
 
+    caps = load_capabilities()
     faqs = synthesize_faq(spec)
     ld_webapp, ld_faq, ld_breadcrumb = render_ld_json(spec, faqs)
-    event_data_json = render_event_data(spec)
+    event_data = build_event_data(spec, caps)
+    payload = prerender_payload(event_data)
+    event_data_json = json.dumps(event_data, indent=2, ensure_ascii=False).replace("</", "<\\/")
     faq_html = render_faq_html(faqs)
-    related_html = render_related(
-        spec["related"], companion_answer_slug, event_name, language,
-        spec.get("companion_answer_title"), spec.get("companion_answer_desc"),
-    )
+    sections_html = render_sections(spec, caps, payload, event_data, faq_html)
+    exp = spec.get("experience") or {}
+    analytics_label = esc_attr(event_data["analyticsLabel"])
 
-    # Optional per-event pointer at the companion answer, rendered under the
-    # wishes section. Stored in the spec (with a {href} placeholder) rather
-    # than composed here, because the useful version of this sentence is
-    # event-specific — "what to say for Diwali", "what Eid Mubarak means and
-    # how to reply".
-    phrase_cta_html = ""
-    if spec.get("phrase_cta") and companion_answer_slug:
-        href = f"{answers_prefix(language)}{esc_attr(companion_answer_slug)}/"
-        phrase_cta_html = (
-            '\n    <p class="u-secondary-tight u-mt-15">'
-            + spec["phrase_cta"].replace("{href}", href)
-            + "</p>"
-        )
-    # Emoji/symbol section overrides. Both exist for Hub-vs-Spoke Rule 3
-    # de-confliction (CLAUDE.md): when a /library/ collection page owns the
-    # "<event> symbols" query, this section must stop contesting it — its H2
-    # gets re-scoped to the generator job, and it points at the collection
-    # instead. The default heading stays "{event_name} Emoji & Symbols" for
-    # every event whose symbols query no /library/ page owns.
-    emoji_heading = spec.get("emoji_section_heading") or tr(
-        language, "section_emoji_heading", event_name=esc(event_name),
-    )
-    # Carries its own anchor rather than a {href} placeholder (unlike
-    # phrase_cta, whose target is derived from companion_answer_slug): the
-    # target is a hand-picked page and must be the LOCALE-NATIVE one per
-    # CLAUDE.md's locale-native internal linking rule, so the choice belongs
-    # in each language's spec, visible to review.
-    emoji_cta_html = ""
-    if spec.get("emoji_section_cta"):
-        emoji_cta_html = (
-            '\n    <p class="u-secondary-tight u-mt-15">'
-            + spec["emoji_section_cta"]
-            + "</p>"
+    # Optional second input (the couple line). Collapsed behind a disclosure
+    # so the page leads with one box; never written to the URL or analytics.
+    partner_html = ""
+    if "partner" in event_data.get("inputs", []) and "couple" in event_data.get("compositions", {}):
+        partner_html = (
+            '\n        <details class="event-partner" id="eventPartnerWrap">'
+            f'<summary>{tr(language, "partner_summary")}</summary>'
+            f'<label class="event-partner-label" for="eventPartnerInput">{tr(language, "partner_label")}</label>'
+            f'<input type="text" class="event-partner-input" id="eventPartnerInput" maxlength="60" autocomplete="off" '
+            f'placeholder="{esc_attr(tr(language, "partner_placeholder"))}">'
+            "</details>"
         )
 
     hreflang_html = render_hreflang(spec.get("hreflang"))
@@ -1025,29 +1351,9 @@ def render_page(spec):
             f' data-template="{esc_attr(prefix_text)}{{date}}"{hidden}>{body}</p>'
         )
 
-    # "<Event> in <script>" — its own section, because "eid mubarak in arabic"
-    # (and its Hindi/Chinese equivalents) is a distinct copy-the-script job,
-    # not the style-my-text job the rest of the page serves. Built from the
-    # phrase bank's own native_script entries, so it needs no extra spec data
-    # beyond naming the script.
-    native_section_html = ""
-    script_language = spec.get("native_script_language")
-    # "Chinese New Year in Chinese" reads badly; a spec can supply its own H2.
-    native_heading = spec.get("native_section_heading") or tr(
-        language, "section_native_heading",
-        event_name=esc(event_name), script_language=esc(script_language or ""),
-    )
-    if script_language and any(ph.get("native_script") for ph in spec["phrase_bank"]):
-        native_section_html = f"""
-  <section class="editorial-section" id="eventNativeSection">
-    <span class="article-section-label">{tr(language, "section_native_label", script_language=esc(script_language))}</span>
-    <h2>{native_heading}</h2>
-    <p class="editorial-intro">{tr(language, "section_native_intro", script_language=esc(script_language))}</p>
-    <div class="glyph-grid" id="eventNativeGrid"></div>
-  </section>
-
-  <div class="section-divider"></div>
-"""
+    # Locale pages read their generator UI strings from i18n.js (added to the
+    # live pages by 2808ea813, which regeneration used to strip).
+    i18n_tag = "" if language == DEFAULT_LANGUAGE else '\n<script src="/i18n.js" defer></script>'
 
     hero_figure = ""
     if hero_svg:
@@ -1127,89 +1433,20 @@ def render_page(spec):
       <h1 class="hero-headline">{esc(spec["hero_h1"])}</h1>
       <p class="hero-tagline">{esc(spec["hero_tagline"])}</p>{next_date_html}
       {aka_html}<div class="input-wrapper" id="eventTextWrap">
+        <label class="sr-only" for="mainInput">{esc(tr(language, "input_label"))}</label>
         <textarea class="main-input" id="mainInput" placeholder="{esc_attr(tr(language, 'textarea_placeholder'))}" maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
-      </div>
+      </div>{partner_html}
     </div>
   </div>
 </section>
 {hero_figure}
-<main class="container">
-  <section class="editorial-section">
-    <div class="editorial-block">
-      <p>{esc(spec["intro"])}</p>
-    </div>
-    <div class="block-example">
-      <strong>{esc(event_name)}:</strong> {esc(spec["date_window"])}
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">{tr(language, "section_phrase_label")}</span>
-    <h2>{tr(language, "section_phrase_heading", event_name=esc(event_name))}</h2>
-    <p class="editorial-intro">{tr(language, "section_phrase_intro")}</p>
-    <div class="compare-grid" id="eventPhraseGrid"></div>{phrase_cta_html}
-  </section>
-
-  <div class="section-divider"></div>
-{native_section_html}
-  <section class="editorial-section" id="eventFontsSection">
-    <span class="article-section-label">{tr(language, "section_fonts_label")}</span>
-    <h2>{tr(language, "section_fonts_heading", event_name=esc(event_name))}</h2>
-    <p class="editorial-intro">{tr(language, "section_fonts_intro")}</p>
-    <div class="results-grid" id="eventFontsGrid"></div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventEmojiSection">
-    <span class="article-section-label">{tr(language, "section_emoji_label")}</span>
-    <h2>{emoji_heading}</h2>
-    <p class="editorial-intro">{tr(language, "section_emoji_intro")}</p>
-    <div id="eventEmojiGrids"></div>{emoji_cta_html}
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventKaomojiSection">
-    <span class="article-section-label">{tr(language, "section_kaomoji_label")}</span>
-    <h2>{tr(language, "section_kaomoji_heading", event_name=esc(event_name))}</h2>
-    <p class="editorial-intro">{tr(language, "section_kaomoji_intro")}</p>
-    <div class="glyph-grid" id="eventKaomojiGrid"></div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventAsciiSection">
-    <span class="article-section-label">{tr(language, "section_ascii_label")}</span>
-    <h2>{tr(language, "section_ascii_heading", event_name=esc(event_name))}</h2>
-    <p class="editorial-intro">{tr(language, "section_ascii_intro")}</p>
-    <div class="art-piece-grid" id="eventAsciiGrid"></div>
-    <p class="u-secondary-tight u-mt-15">{tr(language, "section_ascii_cta", href=ascii_generator_href)}</p>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <div class="cta-card">
-    <h3>{tr(language, "cta_heading")}</h3>
-    <p>{tr(language, "cta_body")}</p>
-    <a href="{cta_href}" class="cta-btn">{tr(language, "cta_button")}</a>
-  </div>
-
-  <section class="editorial-section">
-    <span class="article-section-label">{tr(language, "related_heading")}</span>
-    <div class="compare-grid">
-{related_html}
-    </div>
-  </section>
+<main class="container event-page" data-occasion="{analytics_label}" data-event-theme="{esc_attr(exp.get('theme_tone', ''))}">
+{sections_html}
 </main>
 
 <footer class="footer">
   <div class="footer-inner">
-    <h2 class="faq-category">{tr(language, "footer_heading", event_name=esc(event_name))}</h2>
-{faq_html}
   </div>
 </footer>
 
@@ -1218,10 +1455,13 @@ def render_page(spec):
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script>window.UTG_EVENT_MODE = true;</script>
-<script>window.UTG_EVENT_DATA = {event_data_json};</script>
+<script>window.UTG_EVENT_DATA = {event_data_json};
+window.UTG_DECORATOR_THEMES = window.UTG_EVENT_DATA.compositions ? [window.UTG_EVENT_DATA.compositions.theme] : [];</script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
-<script src="/script.js" defer></script>
+<script src="/script.js" defer></script>{i18n_tag}
+<script src="/js/decorator/decoratorEngine.js" defer></script>
+<script src="/js/events/eventCompose.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
 <script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>

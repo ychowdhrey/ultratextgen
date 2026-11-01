@@ -58,6 +58,11 @@ GENERATOR = SCRIPT_DIR / "generate_event_page_from_spec.py"
 # Add a pass here the moment one is added to the site, or the next refresh
 # strips it. See this module's docstring for the 2026-09-01 incident.
 POST_PASSES = [
+    # The generator emits script.js but not the share/save module tags that
+    # must precede it; regeneration stripped them from all 20 pages until
+    # 2026-10-31. The injector positions them, and its check gates the order.
+    ("share/save tags", ["node", "scripts/inject-share-save-tags.js"],
+     ["node", "scripts/check-share-save-tags.js"]),
     ("static footer", ["node", "scripts/build-static-footer.js", "--write"],
      ["node", "scripts/build-static-footer.js"]),
     ("accent notice", ["node", "scripts/build-accent-notice.js", "--write"],

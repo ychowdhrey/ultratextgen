@@ -4693,6 +4693,12 @@
         "added": "2026-08-30"
       },
       {
+        "string": "Bu Bu Gao Sheng",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
+      },
+      {
         "string": "Bullet",
         "reason": "character name that coincides with the English form in this language. Evidence from id/library/simbol-geometri/ itself: the tiles around it are translated (Small Right-Pointing Outline → Panah Kecil Kanan Garis; White Bullet → Bullet Putih; Small Right-Pointing Filled → Panah Kecil Kanan Isi), so this one is kept because it genuinely matches.",
         "found_on": "id/library/simbol-geometri/",
@@ -4865,6 +4871,18 @@
         "reason": "zodiac sign name that coincides with the English form in this language. Evidence from id/library/simbol-zodiak/ itself: the tiles around it are translated (Aries (Mar 21 – Apr 19) → Aries (21 Mar – 19 Apr); Taurus (Apr 20 – May 20) → Taurus (20 Apr – 20 Mei); Gemini (May 21 – Jun 20) → Gemini (21 Mei – 20 Jun)), so this one is kept because it genuinely matches.",
         "found_on": "id/library/simbol-zodiak/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Gong Hey Fat Choy",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
+      },
+      {
+        "string": "Gong Xi Fa Cai",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
       },
       {
         "string": "Good Vibes Only",
@@ -5125,6 +5143,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Nian Nian You Yu",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
+      },
+      {
         "string": "Omega",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from id/symbol/simbol-omega/ itself: the tiles around it are translated (Greek Capital Letter Omega → Huruf Kapital Yunani Omega; Greek Small Letter Omega → Huruf Kecil Yunani Omega; Mho Sign (Electrical Conductance) — ‘Ohm’ Spelled Backwards, Flipped Upside Down → Simbol Mho (Konduktansi Listrik) — 'Ohm' Dieja Terbalik, Dibalik Atas-Bawah), so this one is kept because it genuinely matches.",
         "found_on": "id/symbol/simbol-omega/",
@@ -5317,6 +5341,18 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Shen Ti Jian Kang",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
+      },
+      {
+        "string": "Sheng Yi Xing Long",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
+      },
+      {
         "string": "Sleepcore",
         "reason": "the name of an internet aesthetic; every locale on this site cites it unchanged",
         "found_on": "id/library/simbol-dreamcore-weirdcore/",
@@ -5375,6 +5411,12 @@
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "id/library/simbol-therian/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Tong Xi Tong Xi",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
       },
       {
         "string": "Tornado",
@@ -5455,6 +5497,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Wan Shi Ru Yi",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
+      },
+      {
         "string": "WhatsApp (Android)",
         "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
         "found_on": "id/updates/unicode-18-emoji-baru-voting/",
@@ -5471,6 +5519,18 @@
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "id/penghitung-kata-dan-karakter/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Xin Nian Kuai Le",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
+      },
+      {
+        "string": "Xue Ye Jin Bu",
+        "reason": "pinyin (Gong Hey Fat Choy: Cantonese) romanisation of a Chinese New Year greeting, not English; it is written the same way on the English and Indonesian pages, and Indonesians say and search it in this form (Gong Xi Fa Cai is the usual Imlek greeting in Indonesia)",
+        "found_on": "id/events/imlek/",
+        "added": "2026-10-31"
       },
       {
         "string": "Yen / Yuan",

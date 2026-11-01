@@ -9,7 +9,7 @@
   "title": "4th of July Fonts, Emoji & Caption Generator | UltraTextGen",
   "meta_description": "Style a 4th of July caption live, copy firework, flag and star emoji, patriotic symbols and ASCII art, and ready-made Independence Day captions.",
   "hero_h1": "4th of July Text & Symbol Generator",
-  "hero_tagline": "Type a name or caption and style it in bold, stencil, and script fonts, then copy firework, flag, and star emoji, kaomoji, and ASCII art — or tap a ready-made Independence Day line to style it instantly.",
+  "hero_tagline": "Type a name or caption and style it in bold, stencil, and script fonts, then copy firework, flag, and star emoji, kaomoji, and ASCII art, or tap a ready-made Independence Day line to style it instantly.",
   "intro": "The 4th of July is a caption holiday: fireworks photos, cookout photos, lake photos, and a red-white-and-blue outfit that needs a line under it. This page gathers everything for writing and styling that line: curated bold and stencil fonts you can preview on your own text, the firework, flag, and star emoji people actually paste, star and sparkle symbols, kaomoji, a few original ASCII art pieces, and a bank of Independence Day greetings, cookout invitations, and short captions.",
   "date_window": "July 4 every year",
   "hub_card_desc": "Style a 4th of July caption live, then copy matching fonts, emoji, kaomoji, and ready-made messages.",
@@ -158,7 +158,7 @@
       "translation": "Plain reply."
     },
     {
-      "text": "Thanks — enjoy the fireworks",
+      "text": "Thanks, enjoy the fireworks",
       "group": "Replies",
       "translation": "Casual reply."
     },
@@ -168,7 +168,7 @@
       "translation": "Family card wording."
     },
     {
-      "text": "Cookout at ours — bring an appetite",
+      "text": "Cookout at ours, bring an appetite",
       "group": "For family",
       "translation": "Invitation wording."
     },
@@ -183,7 +183,7 @@
       "translation": "For family you're apart from."
     },
     {
-      "text": "Fireworks, food, friends — in that order",
+      "text": "Fireworks, food, friends (in that order)",
       "group": "For friends",
       "translation": "Playful group-chat line."
     },
@@ -279,5 +279,164 @@
       "title": "Bold Fonts",
       "desc": "Heavy Unicode styles that hold up in a caption."
     }
-  ]
+  ],
+  "experience": {
+    "model": "curated",
+    "category": "celebrations",
+    "primary_job": "Grab a patriotic styled caption and 4th of July emoji.",
+    "secondary_jobs": [],
+    "hero": "compositions",
+    "sample_text": "Happy 4th of July",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "date_scope": "US",
+    "sections": [
+      "compositions",
+      "fonts",
+      "symbols",
+      "kaomoji",
+      "phrases",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "july-4th",
+        "label": "4th of July",
+        "icon": "🎇",
+        "pairs": [
+          [
+            "🇺🇸",
+            "🇺🇸"
+          ],
+          [
+            "🎆",
+            "🎆"
+          ],
+          [
+            "★",
+            "★"
+          ],
+          [
+            "🎇",
+            "🎇"
+          ]
+        ],
+        "charms": [
+          "🇺🇸",
+          "🎆",
+          "🎇",
+          "⭐",
+          "🗽"
+        ],
+        "sprinkles": [
+          "★",
+          "🎆"
+        ],
+        "lines": [
+          "★ ⋆ 🇺🇸 ⋆ ★ ⋆ 🇺🇸 ⋆ ★",
+          "🎆 ─── 🗽 ─── 🎆"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Bold",
+          "label": "Stars frame"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Fireworks caption"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": false,
+        "labels": [
+          "Simple",
+          "Festive",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [],
+    "related_occasions": [
+      "fathers-day",
+      "new-year",
+      "graduation"
+    ],
+    "analytics_label": "july-4th",
+    "seo": {
+      "owns": [
+        "4th of july font"
+      ],
+      "never_targets": [
+        {
+          "query": "4th of july emoji",
+          "owner": "/library/fourth-of-july-symbols/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": {
+        "enabled": false,
+        "reason": "No native-script greeting for this occasion: the page's language is the occasion's language."
+      },
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": {
+        "enabled": false,
+        "reason": "Curated page: two fixed compositions, no controls (blueprint model C)."
+      },
+      "generator_handoffs": {
+        "enabled": false,
+        "reason": "No generator owns a next step for this page's job."
+      },
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": {
+        "enabled": false,
+        "reason": "No printable maker serves this occasion's job yet."
+      },
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": {
+        "enabled": false,
+        "reason": "No coloring page or banner fits this occasion's job."
+      },
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": {
+        "enabled": false,
+        "reason": "No answers/ companion exists for this occasion."
+      },
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "sky"
+  }
 }

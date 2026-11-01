@@ -2,7 +2,6 @@
   "slug": "halloween",
   "event_name": "Halloween",
   "aliases": [],
-
   "hreflang": {
     "en": "https://ultratextgen.com/events/halloween/",
     "es": "https://ultratextgen.com/es/events/halloween/",
@@ -10,52 +9,76 @@
   },
   "title": "Halloween Fonts, Emoji & Symbol Generator | UltraTextGen",
   "meta_description": "Style a Halloween greeting live, copy pumpkin, ghost, and bat emoji, spooky kaomoji, curated ASCII art, and ready-made trick-or-treat phrases and captions.",
-
   "hero_h1": "Halloween Text & Symbol Generator",
-  "hero_tagline": "Type a name or spooky wish and style it in gothic, script, and playful fonts, then copy pumpkin, ghost, and bat emoji, kaomoji, and ASCII art — or tap a ready-made Halloween phrase to style it instantly.",
-
-  "intro": "Halloween is the biggest costume-and-caption occasion of the fall calendar — pumpkins, costumes, and captions built to feel spooky, playful, or both at once. This page gathers everything for styling that post or card: curated gothic and playful fonts you can preview on your own text, the pumpkin, ghost, and bat emoji people actually paste, kaomoji for a spooky chat message, a few original ASCII art pieces, and a phrase bank of Halloween lines — from a classic \"Happy Halloween\" to \"Trick or Treat\" — that style instantly when you tap them.",
-
+  "hero_tagline": "Type a name or spooky wish and style it in gothic, script, and playful fonts, then copy pumpkin, ghost, and bat emoji, kaomoji, and ASCII art, or tap a ready-made Halloween phrase to style it instantly.",
+  "intro": "Halloween is the biggest costume-and-caption occasion of the fall calendar: pumpkins, costumes, and captions built to feel spooky, playful, or both at once. This page gathers everything for styling that post or card: curated gothic and playful fonts you can preview on your own text, the pumpkin, ghost, and bat emoji people actually paste, kaomoji for a spooky chat message, a few original ASCII art pieces, and a phrase bank of Halloween lines, from a classic \"Happy Halloween\" to \"Trick or Treat\", that style instantly when you tap them.",
   "date_window": "October 31 every year",
-
   "sample_phrase": "Happy Halloween",
-
   "canonical": "https://ultratextgen.com/events/halloween/",
-
-  "occurrence": {"type": "fixed", "month": 10, "day": 31},
+  "occurrence": {
+    "type": "fixed",
+    "month": 10,
+    "day": 31
+  },
   "fonts": {
     "curated_keys": [
       "Ultra Gothic",
       "Ultra Gothic Bold",
       "Ultra Gothic Occult",
       "Ultra Gothic Cross",
-      "Ultra Gothic Script",
-      "Ultra Aesthetic Gothic",
+      "Ultra Gothic Strikethrough",
+      "Ultra Typewriter Document",
       "Ultra Script Bold",
       "Ultra Bold",
       "Ultra Bubble",
       "Ultra Small Caps"
     ]
   },
-
   "emoji_symbol_collections": [
     {
       "name": "Halloween Emoji",
       "presentation_class": "emoji",
       "copy_pattern": "collection",
-      "flags": ["🎃", "👻", "🦇", "🕷️", "🕸️", "💀", "☠️", "🧙‍♀️", "🧛", "🐈‍⬛", "🍬", "🌙", "⚰️"],
+      "flags": [
+        "🎃",
+        "👻",
+        "🦇",
+        "🕷️",
+        "🕸️",
+        "💀",
+        "☠️",
+        "🧙‍♀️",
+        "🧛",
+        "🐈‍⬛",
+        "🍬",
+        "🌙",
+        "⚰️"
+      ],
       "defaultFormat": "inline"
     }
   ],
-
   "kaomoji": [
-    { "text": "(((( ;°Д°))))", "label": "Shivering in Fright" },
-    { "text": "Σ(ﾟдﾟ;)", "label": "Startled Scream" },
-    { "text": "ヽ(゜Q。)ノ", "label": "Wandering Ghost" },
-    { "text": "눈_눈", "label": "Creepy Stare" },
-    { "text": "(¬‿¬)", "label": "Mischievous Grin" }
+    {
+      "text": "(((( ;°Д°))))",
+      "label": "Shivering in Fright"
+    },
+    {
+      "text": "Σ(ﾟдﾟ;)",
+      "label": "Startled Scream"
+    },
+    {
+      "text": "ヽ(゜Q。)ノ",
+      "label": "Wandering Ghost"
+    },
+    {
+      "text": "눈_눈",
+      "label": "Creepy Stare"
+    },
+    {
+      "text": "(¬‿¬)",
+      "label": "Mischievous Grin"
+    }
   ],
-
   "ascii_art": {
     "items": [
       {
@@ -88,7 +111,6 @@
       }
     ]
   },
-
   "phrase_bank": [
     {
       "text": "Happy Halloween",
@@ -121,7 +143,7 @@
       "translation": "Plain reply when someone greets you first."
     },
     {
-      "text": "Same to you — stay spooky",
+      "text": "Same to you, stay spooky",
       "group": "Replies",
       "translation": "Casual, playful reply."
     },
@@ -221,9 +243,7 @@
       "translation": "Drink-in-hand party caption."
     }
   ],
-
   "companion_answer_slug": "halloween-messages-what-to-write",
-
   "related": [
     {
       "href": "/library/halloween-symbols/",
@@ -250,5 +270,230 @@
       "title": "ASCII Art Generator",
       "desc": "Type any word or name and turn it into big block-letter ASCII art live."
     }
-  ]
+  ],
+  "experience": {
+    "model": "hybrid",
+    "category": "festive",
+    "primary_job": "Make a name or caption look spooky.",
+    "secondary_jobs": [
+      "Make it creepy with zalgo text",
+      "Print a Halloween word search or coloring page",
+      "Copy Halloween symbols and kaomoji"
+    ],
+    "hero": "compositions",
+    "sample_text": "Happy Halloween",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "compositions",
+      "fonts",
+      "handoffs",
+      "symbols",
+      "kaomoji",
+      "phrases",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "halloween",
+        "label": "Halloween",
+        "icon": "🎃",
+        "pairs": [
+          [
+            "🎃",
+            "🎃"
+          ],
+          [
+            "🦇",
+            "🦇"
+          ],
+          [
+            "🕸",
+            "🕸"
+          ],
+          [
+            "👻",
+            "👻"
+          ],
+          [
+            "†",
+            "†"
+          ]
+        ],
+        "charms": [
+          "🎃",
+          "🦇",
+          "🕸",
+          "👻",
+          "💀",
+          "🕯"
+        ],
+        "sprinkles": [
+          "🦇",
+          "🕸",
+          "🎃"
+        ],
+        "lines": [
+          "🦇 ⋆ 🎃 ⋆ 🦇 ⋆ 🎃 ⋆ 🦇",
+          "🕸 ─── 💀 ─── 🕸"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Gothic",
+          "label": "Pumpkin frame"
+        },
+        {
+          "id": "stack",
+          "recipe": "stacked",
+          "style": null,
+          "label": "Spooky stack"
+        },
+        {
+          "id": "banner",
+          "recipe": "banner",
+          "style": "Ultra Gothic Bold",
+          "label": "Banner"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Bat swarm"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": true,
+        "labels": [
+          "Simple",
+          "Spooky",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "creepy",
+        "target": "zalgo",
+        "icon": "👁",
+        "title": "Make it creepy",
+        "desc": "Your text as glitchy zalgo text, with cascade and extreme modes.",
+        "text": "input",
+        "fallback_text": "Happy Halloween"
+      },
+      {
+        "id": "word_search",
+        "target": "word_search",
+        "icon": "🔎",
+        "title": "Halloween word search",
+        "desc": "A printable word search with 12 Halloween words.",
+        "text": "fixed",
+        "params": {
+          "words": [
+            "Pumpkin",
+            "Ghost",
+            "Witch",
+            "Bat",
+            "Spider",
+            "Candy",
+            "Costume",
+            "Skeleton",
+            "Zombie",
+            "Broom",
+            "Moon",
+            "Cauldron"
+          ],
+          "heading": "Halloween Word Search",
+          "wslevel": "easy"
+        }
+      },
+      {
+        "id": "coloring",
+        "target": "coloring_page",
+        "icon": "🖍",
+        "title": "Happy Halloween coloring page",
+        "desc": "A printable coloring page with your text.",
+        "text": "input",
+        "fallback_text": "Happy Halloween",
+        "params": {
+          "heading": "Happy Halloween"
+        }
+      },
+      {
+        "id": "more_designs",
+        "target": "text_decorator",
+        "icon": "✦",
+        "title": "More gothic designs",
+        "desc": "Gothic frames for the same text in the text decorator.",
+        "text": "input",
+        "params": {
+          "vibe": "gothic"
+        }
+      }
+    ],
+    "related_occasions": [
+      "thanksgiving",
+      "christmas",
+      "diwali"
+    ],
+    "analytics_label": "halloween",
+    "seo": {
+      "owns": [
+        "halloween font generator",
+        "halloween text",
+        "halloween fonts"
+      ],
+      "never_targets": [
+        {
+          "query": "halloween symbols",
+          "owner": "/library/halloween-symbols/"
+        },
+        {
+          "query": "creepy text",
+          "owner": "/usecase/zalgo-text/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": {
+        "enabled": false,
+        "reason": "No native-script greeting for this occasion: the page's language is the occasion's language."
+      },
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": true,
+      "generator_handoffs": true,
+      "text_effects": true,
+      "printable_handoffs": true,
+      "classroom_activities": true,
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": true,
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": true,
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "ember"
+  }
 }
