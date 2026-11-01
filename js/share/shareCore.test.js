@@ -147,7 +147,7 @@ function load(opts) {
   async function dispatchClick(target) {
     const originalClosest = target.closest;
     target.closest = (selector) => selector === '.share-result-btn' &&
-      target.className.split(/\\s+/).includes('share-result-btn') ? target : null;
+      String(target.className).split(' ').includes('share-result-btn') ? target : null;
     try {
       await Promise.all((documentListeners.click || []).map((fn) => fn({ target })));
     } finally {
@@ -711,6 +711,23 @@ function rowButtons(UTG, opts) {
   await dispatchClick(normal);
   eq(dataLayer.length, 1, 'ordinary generator share still uses delegated handler');
   eq(dataLayer[0].share_method, 'link_copy', 'ordinary generator share keeps method');
+}
+
+{
+  let nativeCalls = 0;
+  const { UTG, dataLayer, dispatchClick } = load({
+    share: async () => { nativeCalls++; }
+  });
+  const pin = rowButtons(UTG, {
+    buttonClass: 'share-result-btn',
+    pinMedia: () => 'https://example.test/example.png'
+  }).find((button) => button._label() === 'Save to Pinterest');
+  ok(pin, 'Pinterest link is present in a custom share class');
+  await pin.click();
+  await dispatchClick(pin);
+  eq(dataLayer.length, 1, 'Pinterest click + bubble records only one intent');
+  eq(dataLayer[0].share_method, 'pinterest', 'Pinterest intent method stays explicit');
+  eq(nativeCalls, 0, 'Pinterest click does not open a native share sheet');
 }
 
 /* ---- the single-writer invariant --------------------------------------- */
