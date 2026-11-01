@@ -681,6 +681,15 @@ jobs:
         continue-on-error: true
         run: npm run test:spelling | tee spelling-tests.log
 
+      # Default paper from the visitor's preferred languages. A browser that
+      # lists a bare A4 language first ("de", then "en-US") was handed US
+      # Letter, because the first region subtag in the list belonged to the
+      # fallback. Pure logic in a vm, no browser, nothing standing red.
+      - name: Run print paper default tests
+        id: print_paper_tests
+        continue-on-error: true
+        run: npm run test:print-paper | tee print-paper-tests.log
+
       # The geometry a printed sheet must satisfy — no two page regions sharing
       # space, no child escaping a box that does not clip it, nothing past the
       # paper's width — asserted against MEASURED recordings of the word-search
@@ -1417,6 +1426,7 @@ jobs:
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
             echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
             echo "### Spelling word-list tests — \`${{ steps.spelling_tests.outcome }}\`"
+            echo "### Print paper default tests — \`${{ steps.print_paper_tests.outcome }}\`"
             echo "### Printable render invariant tests — \`${{ steps.render_invariants_tests.outcome }}\`"
             echo "### Practice-style row composer tests — \`${{ steps.practice_row_tests.outcome }}\`"
             echo "### Fitted page fit — \`${{ steps.fitted_page_fit.outcome }}\`"
@@ -1717,6 +1727,7 @@ jobs:
           steps.word_search_tests.outcome == 'failure' ||
           steps.word_puzzles_tests.outcome == 'failure' ||
           steps.spelling_tests.outcome == 'failure' ||
+          steps.print_paper_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||
           steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
