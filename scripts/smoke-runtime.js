@@ -1578,6 +1578,174 @@ async function main() {
     await ctx.close();
   }
 
+  // 28. Ready word lists on the four word tools. A chip replaces the box and
+  // the tool updates as if the words were typed; typing turns the chip off.
+  for (const [url, box, chip, read] of [
+    ['/printables/word-search-maker/', '#pt-search-input', 'dolch-primer-1', () => [...document.querySelectorAll('#pt-search-preview .pt-search-words li')].length],
+    ['/printables/word-scramble-maker/', '#pt-sc-input', 'family-at', () => [...document.querySelectorAll('#pt-sc-preview .pt-sc-list li')].length],
+    ['/printables/spelling-worksheet-generator/', '#pt-sp-input', 'fry-100-2', () => parseInt(document.getElementById('pt-sp-meta').textContent, 10)],
+    ['/printables/crossword-maker/', '#pt-cw-input', 'days', () => [...document.querySelectorAll('#pt-cw-preview .pt-cw-bank li')].length]
+  ]) {
+    console.log(`\n${url} (a ready word list fills the box and the sheet)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.click('.pt-wordlist-presets > summary');
+      const sel = `.pt-wordlist-presets .pt-gen-wordset[data-set="${chip}"]`;
+      const want = (await page.getAttribute(sel, 'data-words')).split('|');
+      await page.click(sel);
+      await page.waitForTimeout(500);
+      check(`the ${chip} chip replaces the box with its ${want.length} words`, (await page.inputValue(box)) === want.join('\n'));
+      const n = await page.evaluate(read);
+      check(`the sheet shows the ${want.length} words`, n === want.length, `${n}`);
+      check('the chip is lit', (await page.getAttribute(sel, 'aria-pressed')) === 'true');
+      await page.type(box, 'x');
+      check('typing in the box turns the chip off', (await page.getAttribute(sel, 'aria-pressed')) === 'false');
+    } catch (e) {
+      check('ready word lists: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const fr = await open('/fr/imprimables/mots-meles/', 'desktop');
+    check('the French word search carries no English ready lists', (await fr.page.locator('.pt-wordlist-presets').count()) === 0);
+    await fr.ctx.close();
+  }
+
+  // 29. Spelling class set: "Noah 3" prints Noah's Trace, write, remember page
+  // on the copy rung while the class keeps the picker's dotted rung.
+  console.log('\n/printables/spelling-worksheet-generator/ (a per-child rung in the class list)');
+  {
+    const notes = `(function () {
+      const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+      let real;
+      Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
+        real = v && Object.assign({}, v, { renderPages: async function (root, o) {
+          window.__ptNotes = Array.from(root.querySelectorAll('.pt-sp-trace')).map((sh) => [(sh.querySelector('.pt-search-heading-text') || {}).textContent || '', (sh.querySelector('.pt-search-note') || {}).textContent || '']);
+          return v.renderPages(root, o);
+        } });
+      } });
+    })();`;
+    const { ctx, page, errors } = await open('/printables/spelling-worksheet-generator/', 'desktop', notes);
+    page.setDefaultTimeout(5000);
+    try {
+      check('the class list placeholder shows the level syntax', /Noah 2/.test(await page.getAttribute('#pt-sp-roster', 'placeholder')));
+      await page.evaluate(() => { const d = document.querySelector('#pt-sp-roster').closest('details'); if (d) d.open = true; });
+      const sw = page.locator('.pt-audience-field .pt-choice[data-value="class"]');
+      if (await sw.count()) await sw.first().click();
+      await page.fill('#pt-sp-roster', 'Emma\nNoah 3');
+      await page.waitForTimeout(500);
+      await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-sp-print')]);
+      const got = await page.evaluate(() => window.__ptNotes || []);
+      const emma = got.find((x) => /Emma/.test(x[0]));
+      const noah = got.find((x) => /Noah/.test(x[0]));
+      check('Emma traces (dotted); Noah, at level 3, copies', !!emma && !!noah && /^Trace each word/.test(emma[1]) && /^Read each word/.test(noah[1]) && !/Noah 3/.test(noah[0]), JSON.stringify(got));
+    } catch (e) {
+      check('spelling per-child rung: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 30. The N-per-sheet control is on the page before a list is typed: shown,
+  // switched off with a one-line hint, and on at two names. block-letters is
+  // frozen and keeps it hidden.
+  console.log('\n/printables/name-tracing/ (Sheets per page is visible before two names)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const state = () => page.evaluate(() => {
+        const f = document.querySelector('.pt-nup-field');
+        const h = f && f.querySelector('.pt-nup-hint');
+        return f && { shown: !f.hidden && f.offsetParent !== null, off: [...f.querySelectorAll('.pt-choice')].every((b) => b.disabled), hint: !!h && !h.hidden };
+      });
+      const before = await state();
+      check('before a list: shown, switched off, with its hint', before && before.shown && before.off && before.hint, JSON.stringify(before));
+      await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+      await page.fill('#pt-name-roster', 'Mia\nLeo');
+      await page.waitForTimeout(400);
+      const after = await state();
+      check('at two names: switched on, hint gone', after && after.shown && !after.off && !after.hint, JSON.stringify(after));
+    } catch (e) {
+      check('N-up before a list: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const bl = await open('/printables/block-letters/', 'desktop');
+    check('block-letters keeps Sheets per page hidden until two names', await bl.page.evaluate(() => { const f = document.querySelector('.pt-nup-field'); return !f || f.hidden; }));
+    await bl.ctx.close();
+  }
+
+  // 31. Your recent sheets: one chip per sheet, separate, named by what the
+  // sheet holds. Entries ran together as one string ("Zoë JoséZoë José") and
+  // the word tools were all labelled with their page title.
+  console.log('\n/printables/word-search-maker/ (recent sheets: separate, de-duplicated, labelled by content)');
+  {
+    const { ctx, page, errors } = await open('/printables/word-search-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.evaluate(() => localStorage.setItem('utg_printables_recent', JSON.stringify([
+        { href: location.origin + '/printables/name-tracing/?name=Zo%C3%AB', label: 'Zoë', page: 'Name Tracing Worksheets', sheet: 'name', t: 3 },
+        { href: '/printables/name-tracing/?name=Zo%C3%AB', label: 'Zoë', page: 'Name Tracing Worksheets', sheet: 'name', t: 2 },
+        { href: '/printables/name-tracing/?name=Jos%C3%A9', label: 'José', page: 'Name Tracing Worksheets', sheet: 'name', t: 1 }
+      ])));
+      await page.reload({ waitUntil: 'load' });
+      await page.waitForTimeout(700);
+      const chips = () => page.evaluate(() => [...document.querySelectorAll('.pt-recent:not(.pt-saved-strip) .pt-recent-list > li > a.pt-recent-link')].map((a) => [a.querySelector('.pt-recent-label').textContent, (a.querySelector('.pt-recent-page') || {}).textContent || '']));
+      const c1 = await chips();
+      check('one chip per sheet, each in its own list item', c1.length === 2 && c1[0][0] === 'Zoë' && c1[1][0] === 'José', JSON.stringify(c1));
+      check('the page is the chip\'s second line', c1.length && c1[0][1] === 'Name Tracing Worksheets', JSON.stringify(c1));
+      const gap = await page.evaluate(() => { const a = [...document.querySelectorAll('.pt-recent:not(.pt-saved-strip) .pt-recent-link')]; return a.length > 1 ? Math.round(a[1].getBoundingClientRect().left - a[0].getBoundingClientRect().right) : -1; });
+      check('chips are visibly apart', gap > 0, `${gap}px`);
+      await page.fill('#pt-search-input', 'because\nfriend\npeople\nschool');
+      await page.waitForTimeout(400);
+      await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-search-print')]);
+      await page.waitForTimeout(400);
+      const c2 = await chips();
+      check('a word search is remembered by its words, not the page title', c2.length && c2[0][0] === 'because, friend, people, …', JSON.stringify(c2[0]));
+    } catch (e) {
+      check('recent strip: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 32. Name labels, Classroom: the English chip opens the class list on
+  // 2.625 x 1in labels; a locale label page carries no such chip.
+  console.log('\n/printables/name-labels/ (the Classroom preset)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-labels/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.click('#lb-what [data-value="classroom"]');
+      await page.waitForTimeout(300);
+      const st = await page.evaluate(() => ({ on: document.querySelector('#lb-what [data-value="classroom"]').getAttribute('aria-checked'), list: !document.getElementById('lb-list-box').hidden, size: window.UltraTextGen.labels.state.size, hint: document.getElementById('lb-what-hint').textContent, ph: document.getElementById('lb-line2').placeholder }));
+      check('Classroom is chosen, opens the list, picks 2.625 x 1in labels', st.on === 'true' && st.list && st.size === 's', JSON.stringify(st));
+      check('its hint and second line speak about the class and the room', /class list/.test(st.hint) && /room/i.test(st.ph), JSON.stringify(st));
+    } catch (e) {
+      check('classroom preset: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    for (const u of ['/pt/imprimiveis/etiquetas-escolares/', '/id/printables/label-nama/']) {
+      const o = await open(u, 'desktop');
+      check(`${u} carries no Classroom chip`, (await o.page.locator('#lb-what [data-value="classroom"]').count()) === 0);
+      await o.ctx.close();
+    }
+  }
+
+  // 33. Graffiti name: the sheet has three hollow trace rows, so the
+  // left-handed option is offered there.
+  console.log('\n/printables/graffiti-name/ (left-handed model)');
+  {
+    const { ctx, page, errors } = await open('/printables/graffiti-name/', 'desktop');
+    check('the left-handed option is on the page', await page.isVisible('#pt-lefty'));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

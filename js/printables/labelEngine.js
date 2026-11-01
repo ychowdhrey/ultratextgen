@@ -236,6 +236,11 @@
     lunch:    { size: "s",  list: "name" },
     bins:     { size: "l",  list: "name" },
     camp:     { size: "s",  list: "name" },
+    /* Desks, cubbies and mailboxes for a whole class: the class list fills
+       name on 2.625 x 1in labels (Avery 5160, 30 a sheet).
+       `chip`: offered only where the page carries the chip, because its
+       words exist only in the languages that author it. */
+    classroom: { size: "s", list: "name", mode: "list", chip: true },
     // Not a label size: a fold template on the page's paper (plateGeometry).
     plate:    { list: "name", layout: "fold" }
   }, CFG.presets || {});
@@ -245,7 +250,7 @@
   function presetOffered(key) {
     const p = PRESETS[key];
     if (!p) return false;
-    if (p.layout !== "fold") return true;
+    if (p.layout !== "fold" && !p.chip) return true;
     return !!document.querySelector("#lb-what [data-value='" + key + "']");
   }
 
@@ -1359,7 +1364,8 @@
         listEl.value = lines.list || "";
         listEl.dataset.auto = lines.list ? "1" : "";
       }
-      if (lines.list) state.mode = "list";
+      // A preset that is about a list (classroom) opens the list when chosen.
+      if (lines.list || (fromUser && p.mode === "list")) state.mode = "list";
       else if (fromUser && state.mode === "list" && !listEl.value) state.mode = "one";
     }
     const listLab = document.querySelector("label[for='lb-list']");

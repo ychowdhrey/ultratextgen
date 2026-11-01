@@ -196,7 +196,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <span class="pt-stroke-toggle-hint">Adds a numbered start dot and arrows to every traced number, so a child can see where the pencil starts and which way each stroke travels. Off by default.</span>
     </div>
 
-    <!-- Single number (primary) -->
+    <!-- Ready-made sheets (first card) -->
+    <section class="bubble-alphabet" aria-labelledby="ptPicksHeading">
+      <h2 id="ptPicksHeading">Ready-made number sheets</h2>
+      <p class="bubble-az-intro">Each one is a single page of ten numbers, one per ruled row, at the help level set in the sheet builder below (bold dotted until you change it).</p>
+      <div class="pt-picks" id="pt-gen-picks">
+        <div class="pt-pick">
+          <span class="pt-pick-name">0 to 9</span>
+          <span class="pt-pick-hint">Every digit once, zero first</span>
+          <button type="button" class="bubble-btn bubble-btn-primary pt-gen-pick" data-set="0-9" data-pt-pdf="1">Download 0 to 9</button>
+        </div>
+        <div class="pt-pick">
+          <span class="pt-pick-name">1 to 10</span>
+          <span class="pt-pick-hint">Counting order, ending on 10</span>
+          <button type="button" class="bubble-btn bubble-btn-primary pt-gen-pick" data-set="1-10" data-pt-pdf="1">Download 1 to 10</button>
+        </div>
+        <div class="pt-pick">
+          <span class="pt-pick-name">11 to 20</span>
+          <span class="pt-pick-hint">The teens and 20, written whole</span>
+          <button type="button" class="bubble-btn bubble-btn-primary pt-gen-pick" data-set="11-20" data-pt-pdf="1">Download 11 to 20</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Single number -->
     <section class="bubble-az" aria-labelledby="ptPickHeading">
       <h2 class="bubble-az-heading" id="ptPickHeading">Pick a number to trace</h2>
       <p class="bubble-az-intro">Tap a number to open it. You get a full page of that one number to trace, a large outline to print on its own, and a PNG you can download.</p>
@@ -227,9 +250,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <div class="pt-field">
             <span class="pt-field-label">Ready number sets <span class="pt-field-opt">one number per row</span></span>
             <div class="pt-segment" id="pt-gen-wordsets" role="group" aria-label="Ready number sets">
-              <button type="button" class="pt-gen-preset pt-gen-wordset" data-set="0-9" data-title="Numbers 0 to 9" data-words="0|1|2|3|4|5|6|7|8|9" aria-pressed="false">0 to 9 <small>10 numbers</small></button>
-              <button type="button" class="pt-gen-preset pt-gen-wordset" data-set="1-10" data-title="Numbers 1 to 10" data-words="1|2|3|4|5|6|7|8|9|10" aria-pressed="false">1 to 10 <small>10 numbers</small></button>
-              <button type="button" class="pt-gen-preset pt-gen-wordset" data-set="11-20" data-title="Numbers 11 to 20" data-words="11|12|13|14|15|16|17|18|19|20" aria-pressed="false">11 to 20 <small>10 numbers</small></button>
+              <button type="button" class="pt-gen-preset pt-gen-wordset" data-set="0-9" data-file="0-to-9" data-title="Numbers 0 to 9" data-words="0|1|2|3|4|5|6|7|8|9" aria-pressed="false">0 to 9 <small>10 numbers</small></button>
+              <button type="button" class="pt-gen-preset pt-gen-wordset" data-set="1-10" data-file="1-to-10" data-title="Numbers 1 to 10" data-words="1|2|3|4|5|6|7|8|9|10" aria-pressed="false">1 to 10 <small>10 numbers</small></button>
+              <button type="button" class="pt-gen-preset pt-gen-wordset" data-set="11-20" data-file="11-to-20" data-title="Numbers 11 to 20" data-words="11|12|13|14|15|16|17|18|19|20" aria-pressed="false">11 to 20 <small>10 numbers</small></button>
             </div>
           </div>
 
@@ -424,6 +447,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       chars: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
       text: {
         alphabetWord: "numbers",
+        charPdf: "Download outline {ch}",
         set: { which: "Which numbers?", all: "All {n}", letters: "Numbers", pick: "Pick numbers", pickLabel: "Type the numbers you want", pickHint: "For example 1-5, or 6 9.", order: "Prints in order:", notHere: "Not on this page:", empty: "Type at least one number from 0 to 9.", perPage: "{n} per page", tall: "about {h} tall" }
       },
       genDemo: "1 2 3",
