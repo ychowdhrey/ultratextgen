@@ -253,5 +253,20 @@ check("plate: the preset is offered only where the page carries its chip", () =>
   } finally { document.querySelector = qs; }
 });
 
+check("classroom: a list preset on Avery 5160-size labels, offered only where the page carries its chip", () => {
+  const p = L.PRESETS.classroom;
+  assert.ok(p, "the classroom preset exists");
+  assert.strictEqual(p.size, "s", "2.625 x 1in, 30 to a Letter sheet");
+  assert.strictEqual(p.list, "name", "the class list fills the name");
+  assert.strictEqual(p.mode, "list", "choosing it opens the list");
+  const qs = document.querySelector;
+  try {
+    document.querySelector = () => null;              // a locale page: no chip
+    assert.strictEqual(L.presetOffered("classroom"), false, "no chip, no classroom preset");
+    document.querySelector = (sel) => (sel === "#lb-what [data-value='classroom']" ? {} : null);
+    assert.strictEqual(L.presetOffered("classroom"), true, "chip on the page");
+  } finally { document.querySelector = qs; }
+});
+
 if (failed) { console.log("\n" + failed + " failed"); process.exit(1); }
 console.log("\nall label geometry checks pass");

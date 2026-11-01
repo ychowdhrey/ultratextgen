@@ -388,10 +388,21 @@
       return Array.isArray(v) ? v : [];
     } catch (err) { return []; }
   }
+  /* One link, one row. A link is compared resolved and without its hash, so
+     "/printables/x/?a=1" and "https://site/printables/x/?a=1" are one sheet
+     (the engines write both forms, and scrubRecent writes paths). */
+  function recentKey(href) {
+    try {
+      const u = new URL(String(href), window.location.href);
+      u.hash = "";
+      return u.href;
+    } catch (err) { return String(href || ""); }
+  }
   // entry = { href, label, page, sheet }. The newest first, one row per link.
   function rememberRecent(entry) {
     if (!entry || !entry.href) return;
-    const list = readRecent().filter(function (r) { return r && r.href !== entry.href; });
+    const key = recentKey(entry.href);
+    const list = readRecent().filter(function (r) { return r && r.href && recentKey(r.href) !== key; });
     list.unshift({
       href: entry.href,
       label: String(entry.label || "").slice(0, 40),
@@ -425,6 +436,16 @@
       else localStorage.removeItem(RECENT_KEY);
     } catch (err) { /* optional */ }
   }
+  /* Each entry is its own chip in a list, so two names never run together
+     ("Zoë JoséZoë José"): the label is what the sheet holds, and the page it
+     came from is the smaller second line when it says something the label
+     does not. A page given as a path (two engines pass location.pathname)
+     is not a name and is left off. */
+  function pageNote(page, label) {
+    const p = String(page || "").split(/\s[|:\u00b7]\s|:\s/)[0].trim();
+    if (!p || p.charAt(0) === "/" || p === String(label || "").trim()) return "";
+    return p;
+  }
   function stripInto(mount, title, rows, clearText, onClear) {
     mount.innerHTML = "";
     if (!rows.length) { mount.hidden = true; return; }
@@ -433,14 +454,29 @@
     t.className = "pt-recent-title";
     t.textContent = title;
     mount.appendChild(t);
+    const list = document.createElement("ul");
+    list.className = "pt-recent-list";
     rows.forEach(function (r) {
+      const li = document.createElement("li");
       const a = document.createElement("a");
       a.className = "pt-recent-link";
       a.href = r.href;
-      a.textContent = r.label;
+      const lab = document.createElement("span");
+      lab.className = "pt-recent-label";
+      lab.textContent = r.label;
+      a.appendChild(lab);
+      const note = pageNote(r.title, r.label);
+      if (note) {
+        const small = document.createElement("small");
+        small.className = "pt-recent-page";
+        small.textContent = note;
+        a.appendChild(small);
+      }
       if (r.title) a.title = r.title;
-      mount.appendChild(a);
+      li.appendChild(a);
+      list.appendChild(li);
     });
+    mount.appendChild(list);
     const clear = document.createElement("button");
     clear.type = "button";
     clear.className = "pt-recent-clear";
@@ -452,7 +488,16 @@
   function renderRecentInto(mount, L) {
     if (!mount) return;
     const labels = Object.assign(stripLabels(), L || {});
-    const rows = readRecent().map(function (r) { return { href: r.href, label: r.label, title: r.page || "" }; });
+    // Lists written before rememberRecent compared resolved links can hold
+    // one sheet twice; the newest copy is the one shown.
+    const seen = {};
+    const rows = readRecent().filter(function (r) {
+      if (!r || !r.href) return false;
+      const k = recentKey(r.href);
+      if (seen[k]) return false;
+      seen[k] = true;
+      return true;
+    }).map(function (r) { return { href: r.href, label: r.label || r.page || "", title: r.page || "" }; });
     stripInto(mount, labels.recent, rows, labels.clear, function () {
       try { localStorage.removeItem(RECENT_KEY); } catch (err) { /* optional */ }
       renderRecentInto(mount, L);

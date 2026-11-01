@@ -106,5 +106,65 @@ eq(WL.fromParam(WL.toCarry("fr[ie]nd\nbec[au]se", false).join("|")), "fr[ie]nd\n
   eq(WL.carryFor("", "words").length, 0, "an empty box carries nothing");
 }
 
+/* Ready word lists on the four word tools. Each chip is a slice of a list
+   the site already publishes (the sight-word page's Dolch and Fry lists, the
+   handwriting generator's days and months), so the chips are read back out
+   of the four pages and checked against those sources: every list complete,
+   in order, nothing invented, and no chip longer than its tool reads. The
+   crossword offers only lists whose words all go into its grid. */
+{
+  const ROOT = path.join(__dirname, "..", "..");
+  const page = (rel) => fs.readFileSync(path.join(ROOT, rel, "index.html"), "utf8");
+  const unq = (s) => s.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+  const sight = {};
+  for (const m of page("printables/sight-word-tracing").matchAll(/class="pt-roster-preset" data-words="([^"]+)">([^<]+)</g)) sight[m[2].trim()] = unq(m[1]).split("|");
+  const hw = page("printables/handwriting-worksheet-generator");
+  const hwSet = (k) => unq(hw.match(new RegExp('data-set="' + k + '"[^>]*data-words="([^"]+)"'))[1]).split("|");
+  const SOURCES = {
+    "dolch-preprimer": sight["Dolch pre-primer · 40 words"],
+    "dolch-primer": sight["Dolch primer · 52 words"],
+    "dolch-first": sight["Dolch first grade · 41 words"],
+    "dolch-second": sight["Dolch second grade · 46 words"],
+    "fry-100": (sight["Fry first 50"] || []).concat(sight["Fry second 50"] || []),
+    days: hwSet("days"),
+    months: hwSet("months"),
+    numbers: "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split(" ")
+  };
+  eq(SOURCES["fry-100"].length, 100, "the sight-word page carries Fry's first 100");
+  const TOOLS = [
+    ["printables/word-search-maker", "pt-search-input", WS.MAX_WORDS, (t) => WS.normalizeWords(t, Infinity).length],
+    ["printables/word-scramble-maker", "pt-sc-input", SC.MAX_WORDS, (t) => SC.normalizeWords(t).length],
+    ["printables/spelling-worksheet-generator", "pt-sp-input", CAP, (t) => sp(t).words.length + sp(t).over.length],
+    ["printables/crossword-maker", "pt-cw-input", CW.MAX_WORDS, (t) => CW.normalizeWords(t).length]
+  ];
+  TOOLS.forEach(([rel, box, cap, read]) => {
+    const html = page(rel);
+    const wrap = html.match(new RegExp('<details class="pt-field pt-wordlist-presets" data-list-for="' + box + '">([\\s\\S]*?)</details>'));
+    ok(!!wrap, rel + " carries its ready lists, bound to #" + box);
+    if (!wrap) return;
+    const chips = [...wrap[1].matchAll(/data-set="([^"]+)" data-words="([^"]+)"[^>]*>[^<]*<small>(\d+) words<\/small>/g)]
+      .map((m) => ({ key: m[1], words: unq(m[2]).split("|"), n: +m[3] }));
+    ok(chips.length >= 2, rel + " has chips");
+    const joined = {};
+    chips.forEach((c) => {
+      const base = c.key.replace(/-\d+$/, "");
+      ok(!!SOURCES[base] || /^family-(at|an|it|op|ug)$/.test(c.key), rel + ": " + c.key + " is a known list");
+      ok(c.words.length <= cap, rel + ": " + c.key + " fits the tool's cap of " + cap + " (" + c.words.length + ")");
+      eq(c.n, c.words.length, rel + ": " + c.key + " states its own count");
+      eq(read(c.words.join("\n")), c.words.length, rel + ": the tool reads every word of " + c.key);
+      if (/^family-/.test(c.key)) {
+        const tail = c.key.slice(7);
+        ok(c.words.every((w) => w.endsWith(tail)), rel + ": every " + c.key + " word ends in -" + tail);
+      }
+      if (SOURCES[base]) joined[base] = (joined[base] || []).concat(c.words);
+      if (box === "pt-cw-input") {
+        const built = CW.build({ input: c.words.join("\n"), seed: c.words.join("\n") });
+        eq(built.unplaced.length, 0, rel + ": every word of " + c.key + " goes into the grid");
+      }
+    });
+    Object.keys(joined).forEach((k) => eq(joined[k].join(" "), SOURCES[k].join(" "), rel + ": the " + k + " chips are the whole list, in order"));
+  });
+}
+
 console.log("\nspelling.test.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);
