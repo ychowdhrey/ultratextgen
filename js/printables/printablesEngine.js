@@ -1470,6 +1470,8 @@
     genScript: $("#pt-gen-script"),
     genRoster: $("#pt-gen-roster"),
     genWordSets: $("#pt-gen-wordsets"),
+    // Ready-made picks: one Download per word set, above the generator.
+    genPicks: $("#pt-gen-picks"),
     genLadder: $("#pt-gen-ladder"),
     // Coloring-sheet designer (optional; gated on its own mounts)
     designInput: $("#pt-design-input"),
@@ -4060,7 +4062,7 @@
   function firstActionSurface() {
     const rows = [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint,
       el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint,
-      el.scPrint, el.spPrint, el.bookPrint]
+      el.scPrint, el.spPrint, el.bookPrint, el.genPicks]
       .filter(Boolean)
       .map((b) => b.closest(".bubble-actions, .pt-actions, .pt-preview-actions") || b);
     /* The character surface's own action row is built by selectChar(), which
@@ -4826,7 +4828,7 @@
         links: links,
         bookmarks: marks
       });
-      P.download(blob, pdfFilename(sheet));
+      P.download(blob, sheetPdfName(sheet));
     } catch (err) {
       return false;
     }
@@ -5093,7 +5095,8 @@
     const printBtn = document.createElement("button");
     printBtn.type = "button";
     printBtn.className = "bubble-btn bubble-btn-primary pt-pdf-btn";
-    printBtn.textContent = PO.savePdf;
+    // A page can name the object the button saves ("Download outline 7").
+    printBtn.textContent = T.charPdf ? T.charPdf.replace("{ch}", ch) : PO.savePdf;
     printBtn.addEventListener("click", () => {
       pdfMode = true;
       const holder = document.createElement("div");
@@ -9020,9 +9023,17 @@
   let genWordSet = null;
   function setGenWordSet(btn) {
     const words = btn ? String(btn.dataset.words || "").split("|").map((w) => w.trim()).filter(Boolean) : [];
-    genWordSet = words.length ? { key: btn.dataset.set || "", title: btn.dataset.title || words.join(" "), words: words } : null;
+    genWordSet = words.length ? { key: btn.dataset.set || "", title: btn.dataset.title || words.join(" "), words: words, file: btn.dataset.file || "" } : null;
     [el.genRows, el.genModel].forEach((c) => { if (c) c.disabled = !!genWordSet; });
     renderGenPreview();
+  }
+  /* A word set that names its own file (data-file on its button) saves under
+     that name, so the three ready number sets download as three different
+     files instead of one name the browser numbers (1), (2). Every other sheet
+     keeps pdfFilename(). */
+  function sheetPdfName(sheet) {
+    if (sheet === "generator_sheet" && genWordSet && genWordSet.file) return PNG_PREFIX + "-" + genWordSet.file + ".pdf";
+    return pdfFilename(sheet);
   }
   function genSetSheetNode(level) {
     const sheet = document.createElement("div");
@@ -10124,6 +10135,18 @@
     if (el.genWordSets) {
       $$(".pt-gen-wordset", el.genWordSets).forEach((b) => {
         b.addEventListener("click", () => setGenWordSet(genWordSet && genWordSet.key === b.dataset.set ? null : b));
+      });
+    }
+    /* A ready pick selects its word set (so the builder below shows what was
+       saved) and writes that sheet in one click. */
+    if (el.genPicks && el.genWordSets) {
+      $$(".pt-gen-pick", el.genPicks).forEach((b) => {
+        b.addEventListener("click", () => {
+          const set = $$(".pt-gen-wordset", el.genWordSets).find((w) => w.dataset.set === b.dataset.set);
+          if (!set) return;
+          if (!genWordSet || genWordSet.key !== set.dataset.set) setGenWordSet(set);
+          buildGeneratorSheet();
+        });
       });
     }
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));

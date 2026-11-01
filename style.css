@@ -15325,3 +15325,31 @@ body.dark-mode .lb-tool .bubble-btn-primary { color: var(--lb-paper-ink); }
   .wf-table th,
   .wf-table td { display: block; border: 0; padding: 2px 12px; }
 }
+
+/* Ready-made picks: a row of one-click sheets above a page's generator
+   (number tracing). Three tiles on a wide screen, stacked on a phone. */
+.pt-picks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+.pt-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+}
+.pt-pick-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.pt-pick-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.pt-pick .bubble-btn { margin-top: 0.4rem; align-self: flex-start; }
