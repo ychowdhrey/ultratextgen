@@ -25,11 +25,16 @@
 
 const fs = require("fs");
 const path = require("path");
-const { parseRedirects, MAX_STATIC_REDIRECT_RULES, MAX_DYNAMIC_REDIRECT_RULES } = require("./lib/redirects-parse.js");
+const { parseRedirects, missingSlashTwins, MAX_STATIC_REDIRECT_RULES, MAX_DYNAMIC_REDIRECT_RULES } = require("./lib/redirects-parse.js");
 
 const argv = process.argv.slice(2);
 const fileArg = argv.indexOf("--file");
 const file = fileArg !== -1 ? argv[fileArg + 1] : path.join(__dirname, "..", "_redirects");
+// The tree the rules are served from. Defaults to the file's own directory, so
+// `--file` on a probe copy still resolves pages against the checkout it sits in
+// unless --root says otherwise.
+const rootArg = argv.indexOf("--root");
+const root = rootArg !== -1 ? argv[rootArg + 1] : path.dirname(path.resolve(file));
 
 const text = fs.readFileSync(file, "utf8");
 const r = parseRedirects(text);
@@ -64,6 +69,31 @@ if (r.demoted.length) {
     `      ${firstSplat ? `${firstSplat.from} -> ${firstSplat.to}` : ""}\n` +
     `      Fix: move every splat/placeholder rule to the BOTTOM of the file. Ordering costs ` +
     `nothing — Cloudflare matches static rules first wherever they sit.`
+  );
+}
+
+// A retirement written for one trailing-slash spelling 404s on the other
+// (added 2026-11-01; see missingSlashTwins). An unreadable tree is UNKNOWN,
+// not clean: without it every twin would read as unserved and fail, or, worse,
+// a wrong root would read every twin as served and pass.
+if (!fs.existsSync(path.join(root, "index.html"))) {
+  console.error(`UNKNOWN: --root ${root} has no index.html, so the twin check cannot tell which paths serve a page`);
+  process.exit(2);
+}
+const servesPage = (p) => {
+  const rel = p.replace(/^\//, "");
+  return p.endsWith("/")
+    ? fs.existsSync(path.join(root, rel, "index.html"))
+    : fs.existsSync(path.join(root, `${rel}.html`));
+};
+const twins = missingSlashTwins(r.rules, servesPage);
+if (twins.length) {
+  const sample = twins.slice(0, 12).map((t) => `        line ${t.lineNo}: add  ${t.twin}  ${t.to}  301   (twin of ${t.from})`).join("\n");
+  errors.push(
+    `${twins.length} retirement rule(s) cover one trailing-slash spelling only. Pages matches a source ` +
+    `exactly and adds its own slash 308 only while the directory exists, so the other spelling of a ` +
+    `retired URL serves 404:\n${sample}` + (twins.length > 12 ? `\n        ... and ${twins.length - 12} more` : "") +
+    `\n      Fix: add the twin line beside its original, same target and status.`
   );
 }
 
