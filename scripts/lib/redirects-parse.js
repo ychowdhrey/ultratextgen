@@ -125,4 +125,44 @@ function parseRedirects(text) {
   };
 }
 
-module.exports = { parseRedirects, PERMITTED_STATUS_CODES, MAX_STATIC_REDIRECT_RULES, MAX_DYNAMIC_REDIRECT_RULES };
+/**
+ * The other trailing-slash spelling of a retirement rule, when nothing serves it.
+ *
+ * Cloudflare Pages matches a static `_redirects` source EXACTLY, slash
+ * included, and its own `/x` -> `/x/` 308 only exists while `x/index.html`
+ * does. So once a directory is retired, a rule written for one spelling leaves
+ * the other spelling serving 404. Measured live on 2026-11-01:
+ * `/library/heart-emoji/` 301s to `/library/heart-symbols/`, and
+ * `/library/heart-emoji` returns 404 - for 70 retired URLs at once, because
+ * the rules were written for whichever spelling the author had in hand.
+ *
+ * A twin counts as served when it is itself a static source, when a splat or
+ * placeholder rule matches it, or when the tree has a page for it (a live
+ * directory makes Pages issue its own slash 308). Only redirect statuses are
+ * considered: a 200 rewrite is not a retirement. A source whose last segment
+ * names a file (`/og.png`, `/x.html`) has no slash spelling to miss.
+ *
+ * @param {Array} rules - parseRedirects(text).rules
+ * @param {(p: string) => boolean} servesPage - true when the tree serves path p
+ * @returns {Array<{lineNo, from, to, twin}>}
+ */
+function missingSlashTwins(rules, servesPage) {
+  const statics = new Set(rules.filter((r) => !r.ownDynamic).map((r) => r.from));
+  const patterns = rules.filter((r) => r.ownDynamic && isDynamicPath(r.from)).map((r) =>
+    new RegExp("^" + r.from.split(/(\*|:[A-Za-z]\w*)/).map((part) =>
+      part === "*" ? ".*" : /^:[A-Za-z]/.test(part) ? "[^/]+" : part.replace(/[.+?^${}()|[\]\\]/g, "\\$&")
+    ).join("") + "$"));
+  const out = [];
+  for (const r of rules) {
+    if (r.ownDynamic || r.from === "/" || r.status === 200 || r.status < 300) continue;
+    const last = r.from.replace(/\/$/, "").split("/").pop();
+    if (last.includes(".")) continue;
+    const twin = r.from.endsWith("/") ? r.from.slice(0, -1) : `${r.from}/`;
+    if (statics.has(twin) || patterns.some((re) => re.test(twin))) continue;
+    if (servesPage(twin) || servesPage(twin.endsWith("/") ? twin : `${twin}/`)) continue;
+    out.push({ lineNo: r.lineNo, from: r.from, to: r.to, twin });
+  }
+  return out;
+}
+
+module.exports = { parseRedirects, missingSlashTwins, PERMITTED_STATUS_CODES, MAX_STATIC_REDIRECT_RULES, MAX_DYNAMIC_REDIRECT_RULES };

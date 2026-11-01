@@ -43,6 +43,15 @@
 # real fallback against Accept-Language negotiation, it needs a live mechanism,
 # not a rule the parser drops.
 
+# EVERY RETIREMENT NEEDS BOTH SPELLINGS (learned 2026-11-01)
+#
+# A source matches EXACTLY, trailing slash included, and Pages' own /x -> /x/
+# 308 exists only while x/index.html does. So once a directory is retired, a
+# rule written for /x/ leaves /x serving 404 (and the reverse). Measured live
+# on 2026-11-01: 70 retired URLs 301'd on one spelling and 404'd on the other,
+# /library/heart-emoji among them. Write the pair, same target and status,
+# side by side. `npm run check:redirects` fails on a missing twin.
+
 # Canonical path: enforce trailing slash on platform root pages
 /discord    /discord/    301
 /facebook   /facebook/   301
@@ -87,22 +96,31 @@
 /fr/generateur-de-texte     /fr/                   301
 
 /category/special-fonts/                    /category/strikethrough-text/ 301
+/category/special-fonts                     /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
 /category/special-fonts/lines/              /category/strikethrough-text/ 301
+/category/special-fonts/lines               /category/strikethrough-text/ 301
 /category/special-fonts/lines/index.html    /category/strikethrough-text/ 301
 /category/special-fonts/effects/            /category/strikethrough-text/ 301
+/category/special-fonts/effects             /category/strikethrough-text/ 301
 /category/special-fonts/effects/index.html  /category/strikethrough-text/ 301
 /usecase/comment-fonts/                     /usecase/comment-font/   301
+/usecase/comment-fonts                      /usecase/comment-font/   301
 /usecase/comment-fonts/index.html           /usecase/comment-font/   301
 /guide/vertical-text/                       /guide/vertical-text-guide/ 301
+/guide/vertical-text                        /guide/vertical-text-guide/ 301
 /guide/vertical-text/index.html             /guide/vertical-text-guide/ 301
 /guide/what-font-does-linkedin-use/         /answers/what-font-does-linkedin-use/ 301
+/guide/what-font-does-linkedin-use          /answers/what-font-does-linkedin-use/ 301
 /guide/what-font-does-linkedin-use/index.html /answers/what-font-does-linkedin-use/ 301
 /guide/is-linkedin-bold-text-safe/            /answers/is-linkedin-bold-text-safe/ 301
+/guide/is-linkedin-bold-text-safe             /answers/is-linkedin-bold-text-safe/ 301
 /guide/is-linkedin-bold-text-safe/index.html  /answers/is-linkedin-bold-text-safe/ 301
 /usecase/linkedin-bold/                       /linkedin/ 301
+/usecase/linkedin-bold                        /linkedin/ 301
 /usecase/linkedin-bold/index.html             /linkedin/ 301
 /usecase/glitch-text/                         /usecase/zalgo-text/ 301
+/usecase/glitch-text                          /usecase/zalgo-text/ 301
 
 # ko nickname-generator moved under usecase/ (2026-09-27) — every other
 # usecase/* locale sibling in this repo uses the <locale>/usecase/<slug>/
@@ -112,6 +130,7 @@
 /ko/ireum-kkumigi            /ko/usecase/ireum-kkumigi/ 301
 /usecase/glitch-text/index.html               /usecase/zalgo-text/ 301
 /usecase/glitch-text-generator/               /usecase/zalgo-text/ 301
+/usecase/glitch-text-generator                /usecase/zalgo-text/ 301
 
 # Language query-param → path-based (301 permanent)
 #
@@ -130,14 +149,18 @@
 
 # Bold: thin/duplicate group pages folded into the parent family page (301)
 /category/bold-fonts/bold/                     /category/bold-fonts/ 301
+/category/bold-fonts/bold                      /category/bold-fonts/ 301
 /category/bold-fonts/bold/index.html           /category/bold-fonts/ 301
 /category/bold-fonts/alternating/             /category/bold-fonts/ 301
+/category/bold-fonts/alternating              /category/bold-fonts/ 301
 /category/bold-fonts/alternating/index.html   /category/bold-fonts/ 301
 
 # Cursive/Gothic: thin/duplicate group pages folded into the parent (301)
 /category/cursive-fonts/script/               /category/cursive-fonts/ 301
+/category/cursive-fonts/script                /category/cursive-fonts/ 301
 /category/cursive-fonts/script/index.html     /category/cursive-fonts/ 301
 /category/gothic-fonts/fraktur/               /category/gothic-fonts/ 301
+/category/gothic-fonts/fraktur                /category/gothic-fonts/ 301
 /category/gothic-fonts/fraktur/index.html     /category/gothic-fonts/ 301
 
 # Category: word-wrappers repositioned as text-decorator (301)
@@ -147,22 +170,29 @@
 
 # Library: renamed/removed slug → live equivalent
 /library/linkedin-post-formatting-symbols/            /library/linkedin-symbol-library/ 301
+/library/linkedin-post-formatting-symbols             /library/linkedin-symbol-library/ 301
 /library/linkedin-post-formatting-symbols/index.html  /library/linkedin-symbol-library/ 301
 /library/whisper-subliminal-symbols/                  /library/aesthetic-symbols/ 301
+/library/whisper-subliminal-symbols                   /library/aesthetic-symbols/ 301
 /library/whisper-subliminal-symbols/index.html        /library/aesthetic-symbols/ 301
 /library/youtube-symbols/                             /library/nickname-symbols/ 301
+/library/youtube-symbols                              /library/nickname-symbols/ 301
 /library/youtube-symbols/index.html                   /library/nickname-symbols/ 301
 
 # Usecase: dead/renamed slug → live equivalent (GSC 404 cleanup)
 /usecase/bio-text/                    /usecase/bio-font/     301
+/usecase/bio-text                     /usecase/bio-font/     301
 /usecase/bio-text/index.html          /usecase/bio-font/     301
 /usecase/social-post-text/            /usecase/comment-font/ 301
+/usecase/social-post-text             /usecase/comment-font/ 301
 /usecase/social-post-text/index.html  /usecase/comment-font/ 301
 /usecase/comment-text/                /usecase/comment-font/ 301
+/usecase/comment-text                 /usecase/comment-font/ 301
 /usecase/comment-text/index.html      /usecase/comment-font/ 301
 
 # Category: dead slug → hub (GSC 404 cleanup, no single-category equivalent)
 /category/popular/            /category/ 301
+/category/popular             /category/ 301
 /category/popular/index.html  /category/ 301
 
 # Locale casing: the zh-tw directory is lowercase (matches the actual repo
@@ -174,7 +204,9 @@
 # hreflang casing). Redirect rather than leave a real page 404ing on a casing
 # mismatch (GSC 404 cleanup).
 /zh-TW/            /zh-tw/          301
+/zh-TW             /zh-tw/          301
 /zh-TW/library/    /zh-tw/library/  301
+/zh-TW/library     /zh-tw/library/  301
 
 # Root asset: /og.png was renamed to a descriptive, convention-aligned asset
 # (see docs/image-seo-fixes.md). Redirect stale crawled/cached references
@@ -198,15 +230,19 @@
 /library/degree-symbol/            /symbol/degree-symbol/    301
 /library/degree-symbol/index.html  /symbol/degree-symbol/    301
 /library/peace-symbol/             /symbol/peace-sign/       301
+/library/peace-symbol              /symbol/peace-sign/       301
 /library/peace-symbol/index.html   /symbol/peace-sign/       301
 /library/yin-yang-symbol/            /symbol/yin-yang/       301
+/library/yin-yang-symbol             /symbol/yin-yang/       301
 /library/yin-yang-symbol/index.html  /symbol/yin-yang/       301
 
 # Symbol pillar: slug consolidation (two independent sessions both split this
 # pillar out of library/; peace-sign/yin-yang were the names that stuck)
 /symbol/peace-symbol/             /symbol/peace-sign/  301
+/symbol/peace-symbol              /symbol/peace-sign/  301
 /symbol/peace-symbol/index.html   /symbol/peace-sign/  301
 /symbol/yin-yang-symbol/            /symbol/yin-yang/  301
+/symbol/yin-yang-symbol             /symbol/yin-yang/  301
 /symbol/yin-yang-symbol/index.html  /symbol/yin-yang/  301
 
 # es/symbol/ degree-symbol duplicate: two ES pages both claimed hreflang="es"
@@ -231,91 +267,126 @@
 # genuinely broader collection (19 symbols across degree/angle/geometry), kept in
 # place; only its own inaccurate hreflang="en" claim was wrong, now removed.
 /da/library/gradtegn/                       /da/symbol/gradtegn/                       301
+/da/library/gradtegn                        /da/symbol/gradtegn/                       301
 /da/library/gradtegn/index.html             /da/symbol/gradtegn/                       301
 /da/library/kvadratrodstegn/                /da/symbol/kvadratrodstegn/                301
+/da/library/kvadratrodstegn                 /da/symbol/kvadratrodstegn/                301
 /da/library/kvadratrodstegn/index.html      /da/symbol/kvadratrodstegn/                301
 /de/library/euro-zeichen/                   /de/symbol/euro-zeichen/                   301
+/de/library/euro-zeichen                    /de/symbol/euro-zeichen/                   301
 /de/library/euro-zeichen/index.html         /de/symbol/euro-zeichen/                   301
 /de/library/grad-zeichen/                   /de/symbol/grad-zeichen/                   301
+/de/library/grad-zeichen                    /de/symbol/grad-zeichen/                   301
 /de/library/grad-zeichen/index.html         /de/symbol/grad-zeichen/                   301
 /es/library/comillas/                       /es/symbol/comillas/                       301
+/es/library/comillas                        /es/symbol/comillas/                       301
 /es/library/comillas/index.html             /es/symbol/comillas/                       301
 /es/library/signo-de-euro/                  /es/symbol/signo-de-euro/                  301
+/es/library/signo-de-euro                   /es/symbol/signo-de-euro/                  301
 /es/library/signo-de-euro/index.html        /es/symbol/signo-de-euro/                  301
 /es/library/signo-de-libra/                 /es/symbol/signo-de-libra/                 301
+/es/library/signo-de-libra                  /es/symbol/signo-de-libra/                 301
 /es/library/signo-de-libra/index.html       /es/symbol/signo-de-libra/                 301
 /es/library/simbolo-de-grado/               /es/symbol/simbolo-de-grado/               301
+/es/library/simbolo-de-grado                /es/symbol/simbolo-de-grado/               301
 /es/library/simbolo-de-grado/index.html     /es/symbol/simbolo-de-grado/               301
 /es/library/simbolo-de-infinito/            /es/symbol/simbolo-de-infinito/            301
+/es/library/simbolo-de-infinito             /es/symbol/simbolo-de-infinito/            301
 /es/library/simbolo-de-infinito/index.html  /es/symbol/simbolo-de-infinito/            301
 /id/library/simbol-derajat/                 /id/symbol/simbol-derajat/                 301
+/id/library/simbol-derajat                  /id/symbol/simbol-derajat/                 301
 /id/library/simbol-derajat/index.html       /id/symbol/simbol-derajat/                 301
 /id/library/simbol-kutip/                   /id/symbol/simbol-kutip/                   301
+/id/library/simbol-kutip                    /id/symbol/simbol-kutip/                   301
 /id/library/simbol-kutip/index.html         /id/symbol/simbol-kutip/                   301
 /no/library/eurotegn/                       /no/symbol/eurotegn/                       301
+/no/library/eurotegn                        /no/symbol/eurotegn/                       301
 /no/library/eurotegn/index.html             /no/symbol/eurotegn/                       301
 /no/library/pundtegn/                       /no/symbol/pundtegn/                       301
+/no/library/pundtegn                        /no/symbol/pundtegn/                       301
 /no/library/pundtegn/index.html             /no/symbol/pundtegn/                       301
 /pl/library/cudzyslow-polski/               /pl/symbol/cudzyslow-polski/               301
+/pl/library/cudzyslow-polski                /pl/symbol/cudzyslow-polski/               301
 /pl/library/cudzyslow-polski/index.html     /pl/symbol/cudzyslow-polski/               301
 /pl/library/nieskonczonosc/                 /pl/symbol/nieskonczonosc/                 301
+/pl/library/nieskonczonosc                  /pl/symbol/nieskonczonosc/                 301
 /pl/library/nieskonczonosc/index.html       /pl/symbol/nieskonczonosc/                 301
 /pl/library/stopnie-i-temperatura/          /pl/symbol/stopnie-i-temperatura/          301
+/pl/library/stopnie-i-temperatura           /pl/symbol/stopnie-i-temperatura/          301
 /pl/library/stopnie-i-temperatura/index.html /pl/symbol/stopnie-i-temperatura/         301
 /pl/library/znak-euro/                      /pl/symbol/znak-euro/                      301
+/pl/library/znak-euro                       /pl/symbol/znak-euro/                      301
 /pl/library/znak-euro/index.html            /pl/symbol/znak-euro/                      301
 /pl/library/znaki-tm-i-copyright/           /pl/symbol/znaki-tm-i-copyright/           301
+/pl/library/znaki-tm-i-copyright            /pl/symbol/znaki-tm-i-copyright/           301
 /pl/library/znaki-tm-i-copyright/index.html /pl/symbol/znaki-tm-i-copyright/          301
 /tr/library/tirnak-isareti/                 /tr/symbol/tirnak-isareti/                 301
+/tr/library/tirnak-isareti                  /tr/symbol/tirnak-isareti/                 301
 /tr/library/tirnak-isareti/index.html       /tr/symbol/tirnak-isareti/                 301
 
 # Library → Guide pillar: editorial how-to (no copy tiles, Article schema) misfiled under library/
 /library/linkedin-comment-styling/            /guide/linkedin-comment-styling/  301
+/library/linkedin-comment-styling             /guide/linkedin-comment-styling/  301
 /library/linkedin-comment-styling/index.html  /guide/linkedin-comment-styling/  301
 
 # Consolidated localized pages → canonical equivalents (avoid keyword cannibalization)
 /vi/chu-kieu/            /vi/                          301
+/vi/chu-kieu             /vi/                          301
 /vi/chu-kieu/index.html  /vi/                          301
 /pt/gerador-de-fontes/            /pt/                          301
+/pt/gerador-de-fontes             /pt/                          301
 /pt/gerador-de-fontes/index.html  /pt/                          301
 /pt/texto-empilhado/              /pt/usecase/vertical-text/    301
+/pt/texto-empilhado               /pt/usecase/vertical-text/    301
 /pt/texto-empilhado/index.html    /pt/usecase/vertical-text/    301
 /fr/texte-empile/                 /fr/usecase/vertical-text/    301
+/fr/texte-empile                  /fr/usecase/vertical-text/    301
 /fr/texte-empile/index.html       /fr/usecase/vertical-text/    301
 /de/gestapelter-text/             /de/usecase/vertical-text/    301
+/de/gestapelter-text              /de/usecase/vertical-text/    301
 /de/gestapelter-text/index.html   /de/usecase/vertical-text/    301
 
 # Retired FR Discord guide → its proper EN-parented translation (discord-where-fonts-work)
 /fr/guide/styliser-pseudo-serveur-discord/            /fr/guide/ou-fonctionnent-les-polices-discord/  301
+/fr/guide/styliser-pseudo-serveur-discord             /fr/guide/ou-fonctionnent-les-polices-discord/  301
 /fr/guide/styliser-pseudo-serveur-discord/index.html  /fr/guide/ou-fonctionnent-les-polices-discord/  301
 
 # PT Free Fire symbol spoke: renamed off a slug that collided with the
 # generic /pt/simbolos-para-nick/ hub one level up, to its own dedicated
 # Free Fire slug (mirrors es/simbolos-para-free-fire)
 /pt/library/simbolos-para-nick/            /pt/library/simbolos-para-free-fire/  301
+/pt/library/simbolos-para-nick             /pt/library/simbolos-para-free-fire/  301
 /pt/library/simbolos-para-nick/index.html  /pt/library/simbolos-para-free-fire/  301
 
 # id/es/pt emoji-combos: moved from orphaned top-level slugs into the
 # /library/ pillar (correct Core Parent Set lane), expanded toward EN's
 # 25-mood-section parity in the same change.
 /id/kombinasi-emoji/                     /id/library/emoji-combos/  301
+/id/kombinasi-emoji                      /id/library/emoji-combos/  301
 /id/kombinasi-emoji/index.html           /id/library/emoji-combos/  301
 /es/combinaciones-de-emojis/             /es/library/emoji-combos/  301
+/es/combinaciones-de-emojis              /es/library/emoji-combos/  301
 /es/combinaciones-de-emojis/index.html   /es/library/emoji-combos/  301
 /pt/combos-de-emoji/                     /pt/library/emoji-combos/  301
+/pt/combos-de-emoji                      /pt/library/emoji-combos/  301
 /pt/combos-de-emoji/index.html           /pt/library/emoji-combos/  301
 
 # fr/de/pl/tr/nl emoji-combos: same orphaned-slug-to-/library/-pillar move,
 # completing the batch above (id/es/pt were done first).
 /fr/combos-emoji/                        /fr/library/emoji-combos/  301
+/fr/combos-emoji                         /fr/library/emoji-combos/  301
 /fr/combos-emoji/index.html              /fr/library/emoji-combos/  301
 /de/emoji-kombinationen/                 /de/library/emoji-combos/  301
+/de/emoji-kombinationen                  /de/library/emoji-combos/  301
 /de/emoji-kombinationen/index.html       /de/library/emoji-combos/  301
 /pl/kombinacje-emoji/                    /pl/library/emoji-combos/  301
+/pl/kombinacje-emoji                     /pl/library/emoji-combos/  301
 /pl/kombinacje-emoji/index.html          /pl/library/emoji-combos/  301
 /tr/emoji-kombinasyonlari/               /tr/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari                /tr/library/emoji-combos/  301
 /tr/emoji-kombinasyonlari/index.html     /tr/library/emoji-combos/  301
 /nl/emoji-combinaties/                   /nl/library/emoji-combos/  301
+/nl/emoji-combinaties                    /nl/library/emoji-combos/  301
 /nl/emoji-combinaties/index.html         /nl/library/emoji-combos/  301
 
 # pt/usecase/nick-free-fire retired: near-duplicate of pt/usecase/nick-ff
@@ -334,6 +405,7 @@
 # English "gothic font". See local-language phrase DE-008 in
 # data/local-language/de.json.
 /de/gotische-schrift/            /de/altdeutsche-schrift/  301
+/de/gotische-schrift             /de/altdeutsche-schrift/  301
 /de/gotische-schrift/index.html  /de/altdeutsche-schrift/  301
 
 # tr/yazi-stilleri retired -> /tr/ (2026-08-01). Query-level GSC showed the
@@ -371,6 +443,7 @@
 # (The es/symbol/signo-de-grado pair that stood here duplicated the 2026-08-03
 # block below, same destination; removed 2026-09-14 for the reason above.)
 /ja/library/text-faces-kaomoji/            /ja/library/kaomoji/  301
+/ja/library/text-faces-kaomoji             /ja/library/kaomoji/  301
 /ja/library/text-faces-kaomoji/index.html  /ja/library/kaomoji/  301
 
 # Duplicate-claimant merge (2026-08-03). es/symbol/signo-de-grado/ and
@@ -381,6 +454,7 @@
 # variations vs 54. The survivor's unique content (degree-sign history, the
 # ° vs º vs ∘ vs ˚ lookalike set, and the ° vs º FAQ) was ported before retiring.
 /es/symbol/signo-de-grado/            /es/symbol/simbolo-de-grado/  301
+/es/symbol/signo-de-grado             /es/symbol/simbolo-de-grado/  301
 /es/symbol/signo-de-grado/index.html  /es/symbol/simbolo-de-grado/  301
 
 # Self-cannibalization merge (2026-08-06). pt/espaco-invisivel/ and
@@ -396,6 +470,7 @@
 # a nick, distinct from a fully blank name — was ported into texto-invisivel's
 # Free Fire FAQ before retiring.
 /pt/espaco-invisivel/            /pt/texto-invisivel/  301
+/pt/espaco-invisivel             /pt/texto-invisivel/  301
 /pt/espaco-invisivel/index.html  /pt/texto-invisivel/  301
 
 # es/conversor-de-letras retired 2026-08-11 -> /es/ (the ES homepage).
@@ -415,6 +490,7 @@
 # cluster survives as it/convertitore-di-caratteri + pt/conversor-de-letras,
 # both of which are indexed and ranking.
 /es/conversor-de-letras/            /es/  301
+/es/conversor-de-letras             /es/  301
 /es/conversor-de-letras/index.html  /es/  301
 
 # pt/letras-para-copiar retired 2026-08-11 -> /pt/letras-diferentes/.
@@ -431,14 +507,17 @@
 # copiar" / "gerador de fonte", which now feeds letras-diferentes -- the page
 # already ranking pos 6.8 for that exact term.
 /pt/letras-para-copiar/            /pt/letras-diferentes/  301
+/pt/letras-para-copiar             /pt/letras-diferentes/  301
 /pt/letras-para-copiar/index.html  /pt/letras-diferentes/  301
 
 # heart-emoji folded into heart-symbols 2026-08-13: orphan EN page (0 locale
 # siblings, 2 impressions/34d) merged into the 20-locale cluster parent.
 /library/heart-emoji/            /library/heart-symbols/  301
+/library/heart-emoji             /library/heart-symbols/  301
 /library/heart-emoji/index.html  /library/heart-symbols/  301
 
 /es/library/emoji-corazon/            /es/simbolos-de-corazon/  301
+/es/library/emoji-corazon             /es/simbolos-de-corazon/  301
 /es/library/emoji-corazon/index.html  /es/simbolos-de-corazon/  301
 
 # llms.txt: the English index is /llms.txt, because English pages are served
