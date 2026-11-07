@@ -1079,6 +1079,16 @@ jobs:
         continue-on-error: true
         run: npm run test:header-analytics | tee header-analytics-tests.log
 
+      # Gating, zero backlog: the underline / strikethrough format marks
+      # (script.js applyFormatMarks, sliced between its @format-marks markers).
+      # Marks off must leave every style's output byte-identical, and marks on
+      # must add one mark per grapheme cluster, never inside an emoji or between
+      # a letter and its accent, and never a second time.
+      - name: Run format marks tests
+        id: format_marks_tests
+        continue-on-error: true
+        run: npm run test:format-marks | tee format-marks-tests.log
+
       # Gating, zero backlog: the case converter's Capitalized, Title and
       # Sentence modes. The page promises to fix Caps-Lock text, and the
       # acronym guard (NASA, FBI) once made all three return it unchanged.
@@ -1572,6 +1582,11 @@ jobs:
             cat header-analytics-tests.log
             echo '```'
             echo ""
+            echo "### Format marks tests: \`${{ steps.format_marks_tests.outcome }}\`"
+            echo '```'
+            cat format-marks-tests.log
+            echo '```'
+            echo ""
             echo "### Case converter tests — \`${{ steps.case_converter_tests.outcome }}\`"
             echo '```'
             cat case-converter-tests.log
@@ -1741,6 +1756,7 @@ jobs:
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||
+          steps.format_marks_tests.outcome == 'failure' ||
           steps.case_converter_tests.outcome == 'failure' ||
           steps.counter_tests.outcome == 'failure' ||
           steps.letters_to_numbers_tests.outcome == 'failure' ||

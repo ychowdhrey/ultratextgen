@@ -208,6 +208,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:cta-routing`
 - `test:editorial-footprint`
 - `test:efr`
+- `test:format-marks`
 - `test:game-rules`
 - `test:generator-parity`
 - `test:header-analytics`

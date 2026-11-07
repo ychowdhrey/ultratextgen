@@ -657,17 +657,49 @@ const decorations = window.UTG_DECORATIONS
   // script.js must also load share-core.js; scripts/check-share-save-tags.js
   // gates that.
 
-  // Layer combining underline (U+0332) and/or strikethrough (U+0336) onto every
-  // rendered glyph. Combining marks attach to the preceding base character, so
-  // we iterate by code point — the spread operator keeps astral chars (e.g. the
-  // bold-italic 𝘼) intact. Newlines are skipped; spaces are kept so the line
-  // runs continuously, matching what people expect from a real underline.
-  // No toggles active → returns the text untouched, so other pages are unaffected.
+  // Layer combining strikethrough (U+0336) and/or underline (U+0332) onto every
+  // rendered glyph. One mark per user-perceived character (grapheme cluster):
+  // a mark added per code point landed inside emoji (between a base and its
+  // ZWJ, VS16 or keycap) and between a letter and its own accent. A cluster
+  // that already carries a mark does not get it again, so pasted or re-marked
+  // text is not doubled. Newlines, tabs and invisible format characters get no
+  // mark: there is nothing for it to sit on. Spaces are marked so the line runs
+  // continuously, matching what people expect from a real underline.
+  // No toggles active -> returns the text untouched, so other pages are unaffected.
+  // The block between the markers is evaluated by script.format-marks.test.js.
+  /* @format-marks:begin */
+  const FORMAT_MARK_SEG =
+    typeof Intl !== "undefined" && Intl.Segmenter
+      ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+      : null;
+  // Without Intl.Segmenter: code points, with combining marks, joiners and
+  // variation selectors kept on the character before them.
+  function formatMarkClusters(text) {
+    if (FORMAT_MARK_SEG) return Array.from(FORMAT_MARK_SEG.segment(text), (s) => s.segment);
+    const out = [];
+    for (const cp of text) {
+      const last = out.length ? out[out.length - 1] : "";
+      if (last && (/^[\p{M}\u200D\uFE0E\uFE0F]$/u.test(cp) || last.endsWith("\u200D"))) {
+        out[out.length - 1] = last + cp;
+      } else {
+        out.push(cp);
+      }
+    }
+    return out;
+  }
   function applyFormatMarks(text) {
     if (!text || (!formatMarks.underline && !formatMarks.strike)) return text;
     const marks = (formatMarks.strike ? "\u0336" : "") + (formatMarks.underline ? "\u0332" : "");
-    return [...text].map((ch) => (ch === "\n" ? ch : ch + marks)).join("");
+    return formatMarkClusters(text)
+      .map((c) => {
+        if (/^[\p{Cc}\p{Cf}]+$/u.test(c)) return c;
+        let add = "";
+        for (const m of marks) if (!c.includes(m)) add += m;
+        return c + add;
+      })
+      .join("");
   }
+  /* @format-marks:end */
 
   // Render input through a style, honoring the current emphasis scope.
   // 'first-line' styles only the first line and leaves the remaining lines as
