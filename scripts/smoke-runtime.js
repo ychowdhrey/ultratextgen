@@ -142,6 +142,39 @@ async function main() {
     await ctx.close();
   }
 
+  // 1b. Typed text stays on the device. The FAQ on / (and 19 other English
+  // generators, plus the locale homes) says nothing you type is sent to a
+  // server; until 2026-11-07 script.js wrote the input into ?q= on every
+  // pause, so the text sat in every later event's page_location and in the
+  // request line of every reload. The draft now
+  // lives in sessionStorage; only an explicit share puts text in a URL.
+  console.log('\n/ (typed text never enters the URL)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'Jane Private');
+    await page.waitForTimeout(700);
+    check('typing leaves the address bar without ?q=', (await page.evaluate(() => location.search)) === '', await page.evaluate(() => location.href));
+    check('typed text reaches no data layer row', !JSON.stringify(await dl(page)).includes('Private'));
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(500);
+    check('a reload in the same tab restores the draft', (await page.inputValue('#mainInput')) === 'Jane Private', await page.inputValue('#mainInput'));
+    const shareUrl = await page.evaluate(() => window.UltraTextGen.buildShareUrl({ input: 'Jane Private', styleId: 'bold' }));
+    check('the Share link still carries the text on purpose', /[?&]q=Jane\+Private(&|$)/.test(shareUrl), shareUrl);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    const s = await open('/?q=' + encodeURIComponent('Shared Hello') + '&style=bold', 'desktop');
+    check('an inbound ?q= link opens filled', (await s.page.inputValue('#mainInput')) === 'Shared Hello', await s.page.inputValue('#mainInput'));
+    await s.page.waitForTimeout(500);
+    check('and keeps its ?q= while the box still shows it', /[?&]q=/.test(await s.page.evaluate(() => location.search)), await s.page.evaluate(() => location.search));
+    await s.page.fill('#mainInput', 'Shared Hello again');
+    await s.page.waitForTimeout(700);
+    const qs = await s.page.evaluate(() => location.search);
+    check('the first edit drops the stale ?q= and keeps ?style=', !/[?&]q=/.test(qs) && /[?&]style=bold/.test(qs), qs);
+    check('no page errors', !s.errors.length, s.errors.join(' | '));
+    await s.ctx.close();
+  }
+
   // 2. Family page: no tab empties the results; the active tab clears.
   console.log('\n/id/tulisan-kecil/ (family-scoped generator)');
   {

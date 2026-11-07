@@ -378,6 +378,30 @@ const decorations = window.UTG_DECORATIONS
   //                  This is the accessibility-friendly pattern for social
   //                  posts: the hook stands out while the body stays plain
   //                  (readable by search and screen readers).
+  // The visitor's text between reloads: this tab only, this page only.
+  // Never the URL (see persistDraft in bindEvents).
+  const DRAFT_KEY = "utg_draft:" + window.location.pathname;
+
+  // A ?q= the page arrived with (a shared link) is read once at init. As soon
+  // as the box no longer shows that text, the ?q= describes nothing the
+  // visitor sees, so it leaves the address bar; ?style= and every other param
+  // stay. A synthetic "input" that only re-renders (mood tabs) changes no text
+  // and keeps it.
+  function dropInboundQuery(current) {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const inbound = params.get("q");
+      if (inbound === null) return;
+      // Init trims a long ?q= to the box's maxlength, so "unchanged" means
+      // the box holds exactly that trimmed prefix.
+      const max = el.mainInput && el.mainInput.maxLength > 0 ? el.mainInput.maxLength : 500;
+      if (current && current === inbound.slice(0, max)) return;
+      params.delete("q");
+      const qs = params.toString();
+      history.replaceState(history.state, "", window.location.pathname + (qs ? "?" + qs : "") + window.location.hash);
+    } catch (err) { /* no history API: nothing to tidy */ }
+  }
+
   const SCOPE_KEY = "utg_scope_pref";
   const SCOPE_VALUES = ["whole", "first-line"];
   let currentScope = loadScopePref();
@@ -2229,16 +2253,22 @@ const decorations = window.UTG_DECORATIONS
       if (el.inputClearBtn) el.inputClearBtn.hidden = len === 0;
       applyTextStats(val);
     }
-    function pushUrlState() {
-      const params = new URLSearchParams(window.location.search);
+    // Typed text stays on the device (2026-11-07). This used to write the
+    // input into ?q= on every pause, so a typed name sat in the address bar,
+    // in the page_location of every analytics event that followed, and in
+    // the request line of every reload, while the FAQ on / and 16 locale
+    // homes says nothing you type is sent to a server. Now a draft lives in
+    // this tab's sessionStorage (it survives reload and Back, and dies with
+    // the tab, as the URL copy did), and the URL carries text only when the
+    // visitor shares on purpose (UTG.buildShareUrl). An inbound ?q= link
+    // still opens filled; the first edit drops the stale ?q= from the bar.
+    function persistDraft() {
       const val = el.mainInput.value;
-      if (val) {
-        params.set("q", val);
-      } else {
-        params.delete("q");
-      }
-      const newSearch = params.toString() ? "?" + params.toString() : window.location.pathname;
-      history.replaceState(null, "", newSearch);
+      try {
+        if (val) sessionStorage.setItem(DRAFT_KEY, val);
+        else sessionStorage.removeItem(DRAFT_KEY);
+      } catch (err) { /* storage blocked: the draft simply does not survive a reload */ }
+      dropInboundQuery(val);
     }
 
     if (el.mainInput) {
@@ -2246,7 +2276,7 @@ const decorations = window.UTG_DECORATIONS
         syncInputUI();
         trackGenerateUse();
         clearTimeout(urlSyncTimer);
-        urlSyncTimer = setTimeout(pushUrlState, 400);
+        urlSyncTimer = setTimeout(persistDraft, 400);
         renderSavedStyles();
         renderResults();
       });
@@ -2272,7 +2302,7 @@ const decorations = window.UTG_DECORATIONS
         // on screen above an empty box.
         el.mainInput.dispatchEvent(new Event("input", { bubbles: true }));
         clearTimeout(urlSyncTimer);
-        pushUrlState();
+        persistDraft();
         el.mainInput.focus();
       });
     }
@@ -2579,13 +2609,19 @@ document.addEventListener("copy", () => {
 
     labelMainInput();
 
-    // Restore input text from URL ?q= param (shareable links)
+    // Restore input text: a shared ?q= link wins, then this tab's draft from
+    // before a reload or Back (persistDraft; the URL no longer carries it).
     if (el.mainInput) {
       const urlQ = new URLSearchParams(window.location.search).get("q");
-      if (urlQ) {
+      let draft = null;
+      if (!urlQ) {
+        try { draft = sessionStorage.getItem(DRAFT_KEY); } catch (err) { draft = null; }
+      }
+      const restore = urlQ || draft;
+      if (restore) {
         // A programmatic assignment bypasses the textarea's maxlength, so a
         // long ?q= used to open a page tens of thousands of pixels tall.
-        el.mainInput.value = urlQ.slice(0, el.mainInput.maxLength > 0 ? el.mainInput.maxLength : 500);
+        el.mainInput.value = restore.slice(0, el.mainInput.maxLength > 0 ? el.mainInput.maxLength : 500);
       }
     }
 
