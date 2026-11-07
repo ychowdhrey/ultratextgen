@@ -64,6 +64,8 @@
     "check:symbol-collection-link": "python3 scripts/sync_symbol_collection_link.py",
     "audit:faq-schema": "node scripts/audit-faq-schema.js",
     "check:faq-schema": "node scripts/check-faq-schema.js",
+    "audit:jsonld-parse": "node scripts/audit-jsonld-parse.js",
+    "check:jsonld-parse": "node scripts/check-jsonld-parse.js",
     "check:symbol-pages": "python3 scripts/check-symbol-pages.py",
     "audit:symbol-pages": "python3 scripts/audit-symbol-pages.py",
     "test:symbol-pages": "python3 scripts/test-symbol-pages.py",

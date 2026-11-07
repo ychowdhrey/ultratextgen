@@ -161,6 +161,7 @@ Required, blocking checks:
 - `check:hreflang`
 - `check:hreflang-completeness`
 - `check:ja-printables`
+- `check:jsonld-parse`
 - `check:kaomoji-generator-static`
 - `check:library-directory`
 - `check:library-hub`
@@ -231,6 +232,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:romanize`
 - `test:saved-items`
 - `test:share-core`
+- `test:sitemap-images`
 - `test:skin-tone`
 - `test:spaced-native-runs`
 - `test:spec-sentence-reuse`

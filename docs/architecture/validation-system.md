@@ -196,6 +196,27 @@ broken inputs each returned 1 through `run-ci-gates.py --only symbol_pages`, a c
 first FAQ check keyed on `id="faq"` and undercounted 263 pages as 79; a blind read of 38 pages found it.
 
 
+## JSON-LD parse check (`check:jsonld-parse`)
+
+Added 2026-11-07. Every script that reads JSON-LD here (`faq-schema-audit.js`, `llms-index.js`, the generators) wraps
+`JSON.parse` in a try/catch and skips the block on failure, so a block that does not parse passed every structured-data
+gate: none of them could see it. That is how `library/steam-symbols` shipped a FAQPage block with an unescaped `"math"`
+inside a string, unreadable by any consumer, until a site-wide crawl found it (fixed in `da0a3f5ca5`).
+`scripts/lib/jsonld-parse.js` is the one definition: a `<script type="application/ld+json">` whose text is empty, fails
+`JSON.parse`, or parses to a bare value. The text is taken as an HTML parser hands it over (content up to the first
+`</script`, no entity decoding, nothing inside an HTML comment). Backlog when it landed: 0 of 12,719 blocks on 4,894
+tracked pages (test pages and `scripts/` excluded). It is still a delta gate, as specified: a changed page fails only on
+an unreadable block whose text was not already unreadable on that page at the merge base (renames compared against the
+old path); pre-existing failures, on changed pages and site-wide, are printed every run and never fail.
+
+Proof it gates (`run-ci-gates.py --only jsonld_parse`): the real regression replayed (the pre-fix steam-symbols page
+restored onto the fixed base) returned 1; a new `de/` page with a trailing comma, an empty block on a symbol page and a
+bare-string block on a guide returned 1 with all three named; a negative control (an edited but valid block, a broken
+block inside an HTML comment, a `data-type` attribute, a `text/plain` script) returned 0. Against a base that already
+carries the broken page, touching it, renaming it, and touching another page each returned 0 with the failure reported.
+An unresolvable base returns 2. The same pass wired `test:sitemap-images` (23 assertions, previously run by no
+workflow) into the gate set: disabling its decorative-figure rule returned 1.
+
 ## Printables translation key parity (`check:printables-i18n-parity`)
 
 The printables modules carry their own per-language UI tables (the engine's

@@ -234,6 +234,25 @@ jobs:
         continue-on-error: true
         run: npm run check:faq-schema -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee faq-schema.log
 
+      # Delta, gating: a branch must not add a JSON-LD block that fails
+      # JSON.parse (or is empty, or parses to a bare value). Every other
+      # structured-data reader here skips such a block, so it used to pass all
+      # of them; the site stood at zero when this was added. Pre-existing
+      # failures are printed every run and never fail the job. Definition:
+      # scripts/lib/jsonld-parse.js; whole site: `npm run audit:jsonld-parse`.
+      - name: Run JSON-LD parse check
+        id: jsonld_parse
+        continue-on-error: true
+        run: npm run check:jsonld-parse -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee jsonld-parse.log
+
+      # Gating, zero backlog: which on-page images the sitemap declares
+      # (content images in, decorative heroes out). Breaking that rule is
+      # silent in either direction, so its unit tests run here.
+      - name: Run sitemap image tests
+        id: sitemap_images_tests
+        continue-on-error: true
+        run: npm run test:sitemap-images | tee sitemap-images-tests.log
+
       # State check on changed symbol pages (FAQ above the footer, no copy of an unassigned code point without a
       # disclosed data-provisional, no double-escaped entity). The lane stands at zero, so nothing is red by default.
       - name: Run symbol page state check
@@ -1386,6 +1405,16 @@ jobs:
             cat faq-schema.log
             echo '```'
             echo ""
+            echo "### JSON-LD parse check — \`${{ steps.jsonld_parse.outcome }}\`"
+            echo '```'
+            cat jsonld-parse.log
+            echo '```'
+            echo ""
+            echo "### Sitemap image tests — \`${{ steps.sitemap_images_tests.outcome }}\`"
+            echo '```'
+            cat sitemap-images-tests.log
+            echo '```'
+            echo ""
             echo "### Symbol page state check — \`${{ steps.symbol_pages.outcome }}\`"
             echo '```'
             cat symbol-pages.log
@@ -1725,6 +1754,8 @@ jobs:
           steps.locale_spec.outcome == 'failure' ||
           steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
+          steps.jsonld_parse.outcome == 'failure' ||
+          steps.sitemap_images_tests.outcome == 'failure' ||
           steps.symbol_pages.outcome == 'failure' ||
           steps.symbol_pages_tests.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
