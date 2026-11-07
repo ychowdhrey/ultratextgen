@@ -487,6 +487,13 @@
   color: var(--accent-purple, #8b5cf6);
 }
 
+/* Shown only when the browser refused to store the set (symbol-explorer.js). */
+.symbol-saved-note {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted, #6b7280);
+}
+
 .symbol-saved-actions {
   display: flex;
   align-items: center;

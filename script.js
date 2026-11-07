@@ -1691,6 +1691,16 @@ const decorations = window.UTG_DECORATIONS
   /* ===================
      RENDER: Saved styles
      =================== */
+  // The hint promises the list outlives the visit. When the browser refused
+  // the write (blocked site data, private mode, a full quota) the store keeps
+  // it for this page only, so an English page says that instead. No locale
+  // ships this sentence, so a translated page keeps its hint as it was.
+  const UNSAVED_HINT_EN = "This browser blocked storage, so these are kept only until you leave this page.";
+  function savedHintText() {
+    if (PAGE_LANG === "en" && UTG.saved && UTG.saved.unsaved && UTG.saved.unsaved()) return UNSAVED_HINT_EN;
+    return uiText("savedStyles.hint", "Saved on this device — they'll be waiting here when you come back.");
+  }
+
   // Lazily build the "Your saved styles" section above the results grid.
   function ensureSavedSection() {
     if (!el.resultsGrid) return null;
@@ -1707,7 +1717,7 @@ const decorations = window.UTG_DECORATIONS
     section.hidden = true;
     const savedHeading = uiText("savedStyles.heading", "Your saved styles");
     const savedClearAll = uiText("savedStyles.clearAll", "Clear all");
-    const savedHint = uiText("savedStyles.hint", "Saved on this device — they'll be waiting here when you come back.");
+    const savedHint = savedHintText();
     section.innerHTML = `
       <div class="saved-header">
         <h2 class="saved-title">★ ${escapeHtml(savedHeading)}</h2>
@@ -1763,6 +1773,8 @@ const decorations = window.UTG_DECORATIONS
     }
 
     section.hidden = false;
+    const hint = $(".saved-hint", section);
+    if (hint) hint.textContent = savedHintText();
     const keptAds = clearGridKeepingAds(grid);
 
     const inputText = el.mainInput ? el.mainInput.value : "";
@@ -2512,7 +2524,7 @@ document.addEventListener("copy", () => {
       const clearBtn = $("#savedClearBtn", savedSection);
       if (clearBtn) clearBtn.textContent = uiText("savedStyles.clearAll", "Clear all");
       const hint = $(".saved-hint", savedSection);
-      if (hint) hint.textContent = uiText("savedStyles.hint", "Saved on this device — they'll be waiting here when you come back.");
+      if (hint) hint.textContent = savedHintText();
     }
 
     if (el.textStatsBar) {

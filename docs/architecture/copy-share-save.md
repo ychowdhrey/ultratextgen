@@ -236,6 +236,22 @@ reported, never silent: `utg:savedchange` carries `detail.evicted` (a list of
 returns the same, so a host can tell the visitor. No host shows it yet; that needs
 a localized string. `test:saved-items` asserts it.
 
+## A refused write says so (2026-11-07)
+
+When the browser blocks site data, is in a private mode that refuses writes, or
+is over quota, `setItem` throws and the store keeps the record in memory for this
+page only. The star still lit and the generator's saved section still promised
+(`savedStyles.hint`) that the list would be waiting on this device, which the
+next reload broke. `UTG.saved.unsaved()` now reports it: true while the last write
+was refused, false before any write and once a write lands. On English pages the
+library saved strip adds one line under its heading (`.symbol-saved-note`), and
+the generator's hint is replaced by the same sentence: "This browser blocked
+storage, so these are kept only until you leave this page." No locale file ships
+that sentence, so locale pages keep what they showed before rather than an English
+line under translated prose. With storage working, nothing rendered changes.
+`test:saved-items` asserts the accessor and `check:runtime-smoke` (case 25b) the
+strip and the hint with storage blocked and allowed, plus the Indonesian page.
+
 ## Migration off `utg_saved_styles`
 
 The old flat array is read and folded in as `type: "style"` records, **and kept in
