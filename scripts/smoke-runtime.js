@@ -175,6 +175,44 @@ async function main() {
     await s.ctx.close();
   }
 
+  // 1c. Script-aware order. The map fonts only have Latin glyphs, so on the
+  // ru/ar/ja/hi/ko/th homes 9 of the 11 Popular cards copied Cyrillic, Arabic,
+  // Japanese… text back unchanged. Text with no Latin letter now gets the styles
+  // that change it, ranked frames > case > marks, at the same card count.
+  console.log('\n/ru/ and /ar/ (script-aware order for non-Latin text)');
+  {
+    const cardTexts = (page) => page.evaluate(() => [...document.querySelectorAll('#resultsGrid .style-card .copy-btn')].map((b) => ({ s: b.dataset.style, t: b.getAttribute('data-text') })));
+    const { ctx, page, errors } = await open('/ru/', 'mobile');
+    await page.fill('#mainInput', 'Hello world');
+    await page.waitForTimeout(300);
+    const latin = await cardTexts(page);
+    for (const [label, text] of [['Russian', 'Привет мир'], ['Arabic', 'مرحبا بالعالم']]) {
+      await page.fill('#mainInput', text);
+      await page.waitForTimeout(300);
+      const got = await cardTexts(page);
+      check(`${label}: no Popular card copies the text back unchanged`, got.length > 0 && got.every((c) => c.t !== text), JSON.stringify(got.filter((c) => c.t === text).map((c) => c.s)));
+      check(`${label}: the Popular tab keeps its card count`, got.length === latin.length, `${got.length} vs ${latin.length}`);
+      check(`${label}: every card still holds the typed letters`, got.every((c) => [...text.replace(/\s/g, '')].every((ch) => c.t.normalize('NFD').includes(ch))), JSON.stringify(got.slice(0, 3)));
+    }
+    await sentinel(page);
+    const first = page.locator('#resultsGrid .copy-btn:not([disabled])').first();
+    const want = await first.getAttribute('data-text');
+    await first.click();
+    await page.waitForTimeout(300);
+    check('the first reordered card copies its exact text', (await clip(page)) === want, want);
+    await page.fill('#mainInput', 'Jane Привет');
+    await page.waitForTimeout(300);
+    const mixed = await cardTexts(page);
+    check('mixed Latin + Cyrillic keeps the usual order', mixed.map((c) => c.s).join('|') === latin.map((c) => c.s).join('|'), mixed.slice(0, 3).map((c) => c.s).join(', '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const en = await open('/', 'desktop');
+    await en.page.fill('#mainInput', 'Hello world');
+    await en.page.waitForTimeout(300);
+    check('English input keeps the registry order', ((await cardTexts(en.page))[0] || {}).s === 'Ultra Bold', ((await cardTexts(en.page))[0] || {}).s);
+    await en.ctx.close();
+  }
+
   // 2. Family page: no tab empties the results; the active tab clears.
   console.log('\n/id/tulisan-kecil/ (family-scoped generator)');
   {

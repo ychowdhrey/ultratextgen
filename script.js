@@ -1868,6 +1868,36 @@ const decorations = window.UTG_DECORATIONS
     });
   }
 
+  // Script-aware order (2026-11-07). The registry's map fonts (bold, script,
+  // bubble and the rest: 50 of 114 styles) have glyphs for Latin letters only,
+  // so text typed with no Latin letter at all comes back from them unchanged.
+  // On the Popular tab that was 9 of 11 cards on the ru, ar, ja, hi, ko and th
+  // homes, each a Copy button that copies the visitor's own text back. For that
+  // input the cards are ranked by what the style actually did to it, measured
+  // on the output, so no style list has to be kept in step with the registry:
+  //   0 frame or wrap: every letter kept, in order (꧁༺ … ༻꧂, ❨word❩)
+  //   1 case change: same letters, other case (Cyrillic, Greek, Armenian)
+  //   2 mark overlay: combining strike/underline marks (rendering varies by
+  //     script, so after the frames)
+  //   3 everything else that changed it: reversed, redacted, partly flipped
+  //   4 unchanged
+  // Mixed input ("Jane Привет") is left in the usual order: the fonts still
+  // style its Latin part.
+  const NON_LATIN_TIER_UNCHANGED = 4;
+  function isNonLatinLetterInput(text) {
+    return /\p{L}/u.test(text) && !/\p{Script=Latin}/u.test(text);
+  }
+  function nonLatinTier(input, output) {
+    if (!output || output === input) return NON_LATIN_TIER_UNCHANGED;
+    const noMarks = (s) => s.normalize("NFD").replace(/\p{M}/gu, "");
+    if (noMarks(output) === noMarks(input)) return 2;
+    const letters = (s) => (s.match(/[\p{L}\p{M}\p{N}]/gu) || []).join("");
+    const inLetters = letters(input);
+    if (letters(output) === inLetters) return 0;
+    if (letters(output).toLocaleLowerCase() === inLetters.toLocaleLowerCase()) return 1;
+    return 3;
+  }
+
   function renderResults() {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
@@ -1926,12 +1956,41 @@ const decorations = window.UTG_DECORATIONS
       usageCount(b[0]) - usageCount(a[0]) || usageLast(b[0]) - usageLast(a[0])
     );
 
+    // Text with no Latin letter: rank by what each style did to it (see
+    // nonLatinTier). The sort is stable, so the usage order above survives
+    // inside each tier. On the untouched default Popular tab, a card that would
+    // copy the text back unchanged gives its place to a registry style that
+    // frames, re-cases or marks it. The number of cards stays the same; each
+    // card now carries the safety pill that only unchanged cards omit, which
+    // is the grid a Latin-input visitor already gets.
+    let ordered = filtered;
+    if (inputText && isNonLatinLetterInput(inputText)) {
+      const tierOf = new Map();
+      const tier = (entry) => {
+        if (!tierOf.has(entry[0])) tierOf.set(entry[0], nonLatinTier(inputText, applyScope(inputText, entry[1])));
+        return tierOf.get(entry[0]);
+      };
+      ordered = filtered.slice().sort((a, b) => tier(a) - tier(b));
+      const defaultPopular = currentCategory === "popular" && !searchQuery && !allowedSlugs &&
+        currentGroup === "all" && currentFamily === "all";
+      if (defaultPopular) {
+        const keep = ordered.filter((entry) => tier(entry) < NON_LATIN_TIER_UNCHANGED);
+        const shown = new Set(keep.map((entry) => entry[0]));
+        // The tab's own working cards stay; only the freed places are filled.
+        const extra = entries
+          .filter(([name, style]) => style && !shown.has(name) && tier([name, style]) <= 2)
+          .sort((a, b) => tier(a) - tier(b))
+          .slice(0, Math.max(0, filtered.length - keep.length));
+        ordered = keep.concat(extra).sort((a, b) => tier(a) - tier(b));
+      }
+    }
+
     const isDemo = !inputText;
     const asTyped = applyFormatMarks(inputText || DEMO_TEXT);
     let count = 0;
 
     const cards = [];
-    filtered.forEach(([name, style]) => {
+    ordered.forEach(([name, style]) => {
       const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
       cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo, converted === asTyped));
