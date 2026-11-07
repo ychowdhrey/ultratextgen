@@ -261,7 +261,11 @@
     { id: "reddit-title", platform: "reddit", field: "Post title", label: "Reddit post title", limit: 300, group: "posts" },
     { id: "reddit-comment", platform: "reddit", field: "Comment", label: "Reddit comment", limit: 10000, group: "posts" },
 
-    { id: "pinterest-description", platform: "pinterest", field: "Pin description", label: "Pinterest pin description", limit: 500, group: "posts" },
+    /* Description 800, title 100: help.pinterest.com/en/article/review-pin-specs
+       ("Enter up to 800 characters.") and the v5 API schema (description
+       maxLength 800), verified 2026-11-07. 500 is the profile bio and pin
+       alt text limit, which this row carried until then. */
+    { id: "pinterest-description", platform: "pinterest", field: "Pin description", label: "Pinterest pin description", limit: 800, group: "posts" },
     { id: "pinterest-title", platform: "pinterest", field: "Pin title", label: "Pinterest pin title", limit: 100, group: "titles" },
 
     { id: "whatsapp-about", platform: "whatsapp", field: "About", label: "WhatsApp About", limit: 139, group: "bios" },

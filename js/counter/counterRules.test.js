@@ -144,6 +144,13 @@ t("telegram free message stays 4096", tgFree.limit, 4096);
 t("telegram premium message is 32768", tgPrem.limit, 32768);
 t("telegram premium is exactly 8x free", tgPrem.limit / tgFree.limit, 8);
 
+// --- Pinterest pin description: 800 in Pinterest's help and in its API ---
+// (500 is the profile bio and alt text limit, and the counter had carried it.)
+t("pinterest pin description is 800", R.LIMITS.find(r => r.id === "pinterest-description").limit, 800);
+t("pinterest pin title stays 100", R.LIMITS.find(r => r.id === "pinterest-title").limit, 100);
+t("801 characters do not fit a pin description", R.analyze("a".repeat(801), "pinterest-description").fits, false);
+t("800 characters fit a pin description", R.analyze("a".repeat(800), "pinterest-description").fits, true);
+
 /* Hidden-character list: which invisible character, and where. The cases are
    the ones people search for: a narrow no-break space a chat model wrote for
    a space, a CHAR(160) in a spreadsheet cell, a zero-width space in code. */
