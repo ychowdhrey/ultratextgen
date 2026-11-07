@@ -252,6 +252,35 @@ line under translated prose. With storage working, nothing rendered changes.
 `test:saved-items` asserts the accessor and `check:runtime-smoke` (case 25b) the
 strip and the hint with storage blocked and allowed, plus the Indonesian page.
 
+## Typed text stays out of the URL (2026-11-07)
+
+Until 2026-11-07 `pushUrlState()` in `script.js` wrote the generator input into
+`?q=` 400 ms after every pause, on every page that loads `script.js` (555
+generator pages). Measured in Chromium on `/` and `/ru/`: typing "Jane Private"
+left `?q=Jane+Private` in the address bar. From that moment every analytics event
+read it through `page_location`, and a reload sent it to the server in the request
+line. Meanwhile the FAQ promises "nothing you type is sent to a server" on 20
+English pages (`/` and 19 name and case generators), and the locale homes say it in
+their own languages.
+
+Now the draft lives in this tab's `sessionStorage` under
+`utg_draft:<pathname>`. That keeps what the URL copy gave a visitor: the text
+survives reload and Back in the same tab and dies with the tab. Text enters a URL
+only when the visitor shares on purpose (`UTG.buildShareUrl`, unchanged), and the
+result-preview Function still reads that `?q=&style=`. An inbound `?q=` link still
+opens filled. The address bar keeps it while the box shows that text, so a
+synthetic re-render `input` event changes nothing, and drops it at the first real
+edit, leaving `?style=` and every other parameter.
+
+**Analytics definition change, 2026-11-07:** after this date `page_location` on
+generator pages no longer carries typed text, so page paths with `?q=` come only
+from inbound shared links. Read any per-URL series that grouped on the query
+string as a definition change across that date, not a traffic change.
+`check:runtime-smoke` ("typed text never enters the URL") asserts the empty query
+after typing, the same-tab restore, the share link and the inbound-link behaviour.
+Other controllers that write their own state into the URL (`kaomojiPageController`
+writes the composed face, `tattooPageController` only the mode) are untouched.
+
 ## Migration off `utg_saved_styles`
 
 The old flat array is read and folded in as `type: "style"` records, **and kept in
