@@ -388,9 +388,9 @@
       const limitId = activeLimitId();
       if (!limitId) return;
       const report = rules.analyze(input.value, limitId);
-      liveCount.textContent = report.glyphs.toLocaleString() + " / " + report.limit.toLocaleString();
+      liveCount.textContent = rules.countLabel(report);
       liveCount.classList.toggle("is-over", !report.fits);
-      liveCount.classList.toggle("is-close", report.fits && report.limit && (report.glyphs / report.limit) >= 0.9);
+      liveCount.classList.toggle("is-close", report.fits && report.limit && rules.fillRatio(report) >= 0.9);
       input.classList.toggle("is-over-limit", !report.fits && report.glyphs > 0);
     }
 

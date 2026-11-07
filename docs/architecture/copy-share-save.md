@@ -236,6 +236,22 @@ reported, never silent: `utg:savedchange` carries `detail.evicted` (a list of
 returns the same, so a host can tell the visitor. No host shows it yet; that needs
 a localized string. `test:saved-items` asserts it.
 
+## A refused write says so (2026-11-07)
+
+When the browser blocks site data, is in a private mode that refuses writes, or
+is over quota, `setItem` throws and the store keeps the record in memory for this
+page only. The star still lit and the generator's saved section still promised
+(`savedStyles.hint`) that the list would be waiting on this device, which the
+next reload broke. `UTG.saved.unsaved()` now reports it: true while the last write
+was refused, false before any write and once a write lands. On English pages the
+library saved strip adds one line under its heading (`.symbol-saved-note`), and
+the generator's hint is replaced by the same sentence: "This browser blocked
+storage, so these are kept only until you leave this page." No locale file ships
+that sentence, so locale pages keep what they showed before rather than an English
+line under translated prose. With storage working, nothing rendered changes.
+`test:saved-items` asserts the accessor and `check:runtime-smoke` (case 25b) the
+strip and the hint with storage blocked and allowed, plus the Indonesian page.
+
 ## Migration off `utg_saved_styles`
 
 The old flat array is read and folded in as `type: "style"` records, **and kept in
@@ -401,6 +417,20 @@ part of this repository, so until a tag and trigger exist for each name they are
 visible in the dataLayer only. The tests are `header.test.js` (payload shape, privacy
 and debounce, by slicing the shipped code), `npm run test:site-search` (the no-result
 reporter), and `check:runtime-smoke` (the wiring in a real browser).
+
+**Library contextual links (added 2026-11-07).** `printable_nav` recorded which
+related card a reader followed only on printables paths; a library page's Related
+cards and section pointers recorded nothing.
+
+| event | writer | parameters |
+|---|---|---|
+| `library_nav` | `header.js` (`initializeLibraryNavTracking`, one delegated listener, library paths in every locale only) | `library_nav_kind`: `related_card` (an `a.compare-card`) or `section_pointer` (the arrow link that is the last paragraph of a section, `<p class="u-secondary-tight"><a>… →</a></p>`; the intro paragraph shares that class, so its prose links never count). `library_nav_href`: the destination's pathname, at most 200 characters. Never the link text, a query string or a fragment; in-page and off-site links send nothing. |
+
+`printable_nav` is unchanged and still fires only on printables paths; a
+compare card on a printables page sends neither event. Like the four above,
+`library_nav` reaches GA4 only once GTM has a tag for it. `header.test.js` runs the
+shipped listeners against stub clicks and asserts both rows byte for byte, keys
+included.
 
 ## Verification
 

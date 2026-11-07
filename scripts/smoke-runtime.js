@@ -1194,6 +1194,44 @@ async function main() {
     await ctx.close();
   }
 
+  // 25b. A save the browser refused says so. With site data blocked the store
+  // keeps the item for this page only, and the generator's saved section still
+  // promised "Saved on this device". English pages show one line instead;
+  // a locale page has no translation for it and stays as it was.
+  console.log('\nsaved strip with storage blocked (one line, English only)');
+  {
+    const blockStorage = () => {
+      Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('blocked', 'SecurityError'); } });
+    };
+    const saveFirstSymbol = (page) => page.locator('.flag-row .symbol-save-btn').first().click({ force: true });
+    for (const [url, blocked, wantNote] of [
+      ['/library/heart-symbols/', true, true],
+      ['/library/heart-symbols/', false, false],
+      ['/id/library/simbol-love/', true, false]
+    ]) {
+      const label = `${url} storage ${blocked ? 'blocked' : 'allowed'}`;
+      const { ctx, page, errors } = await open(url, 'desktop', blocked ? blockStorage : undefined);
+      await saveFirstSymbol(page);
+      await page.waitForTimeout(200);
+      const notes = await page.locator('#symbolSavedStrip .symbol-saved-note').count();
+      check(`${label}: the strip ${wantNote ? 'says the save was not kept' : 'adds no line'}`, notes === (wantNote ? 1 : 0), String(notes));
+      check(`${label}: no page errors`, !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+    for (const [blocked, wantHint] of [[true, false], [false, true]]) {
+      const { ctx, page, errors } = await open('/', 'desktop', blocked ? blockStorage : undefined);
+      await page.fill('#mainInput', 'Luna');
+      await page.waitForTimeout(300);
+      await page.locator('#resultsGrid .save-btn').first().click();
+      await page.waitForTimeout(300);
+      const hint = await page.evaluate(() => { const h = document.querySelector('#savedSection .saved-hint'); return h ? h.textContent : null; });
+      const claims = /Saved on this device/.test(hint || '');
+      check(`/ storage ${blocked ? 'blocked' : 'allowed'}: the saved section ${wantHint ? 'keeps its hint' : 'makes no "Saved on this device" claim'}`, claims === wantHint, hint);
+      check(`/ storage ${blocked ? 'blocked' : 'allowed'}: no page errors`, !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+  }
+
   // 26. Decoration chips are buttons. They were spans with a click handler,
   // so Tab never reached them, Enter and Space did nothing, and a screen
   // reader did not announce them as controls: without a mouse, nobody could

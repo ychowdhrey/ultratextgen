@@ -79,7 +79,11 @@ on:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    # Pinned, not ubuntu-latest: on 2026-11-07 ubuntu-latest became ubuntu-26.04, where the
+    # pinned Playwright (package.json) refuses to install Chromium ("does not support chromium
+    # on ubuntu26.04-x64"), so every browser gate reported UNKNOWN and failed every PR. Move
+    # this to 26.04 in the same change that upgrades Playwright to a version that supports it.
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
 
@@ -233,6 +237,25 @@ jobs:
         id: faq_schema
         continue-on-error: true
         run: npm run check:faq-schema -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee faq-schema.log
+
+      # Delta, gating: a branch must not add a JSON-LD block that fails
+      # JSON.parse (or is empty, or parses to a bare value). Every other
+      # structured-data reader here skips such a block, so it used to pass all
+      # of them; the site stood at zero when this was added. Pre-existing
+      # failures are printed every run and never fail the job. Definition:
+      # scripts/lib/jsonld-parse.js; whole site: `npm run audit:jsonld-parse`.
+      - name: Run JSON-LD parse check
+        id: jsonld_parse
+        continue-on-error: true
+        run: npm run check:jsonld-parse -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee jsonld-parse.log
+
+      # Gating, zero backlog: which on-page images the sitemap declares
+      # (content images in, decorative heroes out). Breaking that rule is
+      # silent in either direction, so its unit tests run here.
+      - name: Run sitemap image tests
+        id: sitemap_images_tests
+        continue-on-error: true
+        run: npm run test:sitemap-images | tee sitemap-images-tests.log
 
       # State check on changed symbol pages (FAQ above the footer, no copy of an unassigned code point without a
       # disclosed data-provisional, no double-escaped entity). The lane stands at zero, so nothing is red by default.
@@ -1079,6 +1102,16 @@ jobs:
         continue-on-error: true
         run: npm run test:header-analytics | tee header-analytics-tests.log
 
+      # Gating, zero backlog: the underline / strikethrough format marks
+      # (script.js applyFormatMarks, sliced between its @format-marks markers).
+      # Marks off must leave every style's output byte-identical, and marks on
+      # must add one mark per grapheme cluster, never inside an emoji or between
+      # a letter and its accent, and never a second time.
+      - name: Run format marks tests
+        id: format_marks_tests
+        continue-on-error: true
+        run: npm run test:format-marks | tee format-marks-tests.log
+
       # Gating, zero backlog: the case converter's Capitalized, Title and
       # Sentence modes. The page promises to fix Caps-Lock text, and the
       # acronym guard (NASA, FBI) once made all three return it unchanged.
@@ -1100,6 +1133,15 @@ jobs:
         id: counter_tests
         continue-on-error: true
         run: npm run test:counter | tee counter-tests.log
+
+      # Gating, zero backlog: renderer input handling across every registry
+      # style. A keycap (1️⃣) and the emoji circled M (Ⓜ️) come out intact, a
+      # decomposed accent styles exactly like the composed one, and Upside Down
+      # Micro Text keeps line breaks. Drives the real renderer.js through renderAny.
+      - name: Run renderer Unicode tests
+        id: renderer_unicode_tests
+        continue-on-error: true
+        run: npm run test:renderer-unicode | tee renderer-unicode-tests.log
 
       # Gating, zero backlog: the A1Z26 letter-position engine behind
       # /letters-to-numbers/. The page's value is a claim that can be wrong
@@ -1367,6 +1409,16 @@ jobs:
             cat faq-schema.log
             echo '```'
             echo ""
+            echo "### JSON-LD parse check — \`${{ steps.jsonld_parse.outcome }}\`"
+            echo '```'
+            cat jsonld-parse.log
+            echo '```'
+            echo ""
+            echo "### Sitemap image tests — \`${{ steps.sitemap_images_tests.outcome }}\`"
+            echo '```'
+            cat sitemap-images-tests.log
+            echo '```'
+            echo ""
             echo "### Symbol page state check — \`${{ steps.symbol_pages.outcome }}\`"
             echo '```'
             cat symbol-pages.log
@@ -1572,6 +1624,11 @@ jobs:
             cat header-analytics-tests.log
             echo '```'
             echo ""
+            echo "### Format marks tests: \`${{ steps.format_marks_tests.outcome }}\`"
+            echo '```'
+            cat format-marks-tests.log
+            echo '```'
+            echo ""
             echo "### Case converter tests — \`${{ steps.case_converter_tests.outcome }}\`"
             echo '```'
             cat case-converter-tests.log
@@ -1580,6 +1637,11 @@ jobs:
             echo "### Character counter tests: \`${{ steps.counter_tests.outcome }}\`"
             echo '```'
             cat counter-tests.log
+            echo '```'
+            echo ""
+            echo "### Renderer Unicode tests: \`${{ steps.renderer_unicode_tests.outcome }}\`"
+            echo '```'
+            cat renderer-unicode-tests.log
             echo '```'
             echo ""
             echo "### Letters-to-numbers tests: \`${{ steps.letters_to_numbers_tests.outcome }}\`"
@@ -1696,6 +1758,8 @@ jobs:
           steps.locale_spec.outcome == 'failure' ||
           steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
+          steps.jsonld_parse.outcome == 'failure' ||
+          steps.sitemap_images_tests.outcome == 'failure' ||
           steps.symbol_pages.outcome == 'failure' ||
           steps.symbol_pages_tests.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
@@ -1741,8 +1805,10 @@ jobs:
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||
+          steps.format_marks_tests.outcome == 'failure' ||
           steps.case_converter_tests.outcome == 'failure' ||
           steps.counter_tests.outcome == 'failure' ||
+          steps.renderer_unicode_tests.outcome == 'failure' ||
           steps.letters_to_numbers_tests.outcome == 'failure' ||
           steps.writing_footprint_tests.outcome == 'failure' ||
           steps.i18n_faq_schema_tests.outcome == 'failure' ||

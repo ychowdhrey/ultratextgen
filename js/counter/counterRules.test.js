@@ -144,6 +144,60 @@ t("telegram free message stays 4096", tgFree.limit, 4096);
 t("telegram premium message is 32768", tgPrem.limit, 32768);
 t("telegram premium is exactly 8x free", tgPrem.limit / tgFree.limit, 8);
 
+// --- Pinterest pin description: 800 in Pinterest's help and in its API ---
+// (500 is the profile bio and alt text limit, and the counter had carried it.)
+t("pinterest pin description is 800", R.LIMITS.find(r => r.id === "pinterest-description").limit, 800);
+t("pinterest pin title stays 100", R.LIMITS.find(r => r.id === "pinterest-title").limit, 100);
+t("801 characters do not fit a pin description", R.analyze("a".repeat(801), "pinterest-description").fits, false);
+t("800 characters fit a pin description", R.analyze("a".repeat(800), "pinterest-description").fits, true);
+
+/* ---------- The verdict counts in the destination's own unit ----------
+   measure() honoured a rule's countMode while analyze() and fitsAll(), which
+   drive the badge, the live count and the "where else does it fit" grid,
+   counted code points for every rule. So a Bluesky post was judged in code
+   points under a table that says graphemes, and a TikTok caption in code
+   points under a limit TikTok states in UTF-16 units. */
+const famBsky = "\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}"; // 7 code points, 25 UTF-8 bytes
+t("bluesky analyze: 100 family emoji are 100 graphemes", R.analyze(famBsky.repeat(100), "bluesky-post").glyphs, 100);
+t("bluesky analyze: 100 family emoji fit a post", R.analyze(famBsky.repeat(100), "bluesky-post").fits, true);
+t("bluesky fitsAll: the grid counts graphemes too",
+  R.fitsAll(famBsky.repeat(100)).find(r => r.rule.id === "bluesky-post").used, 100);
+t("bluesky bio: 40 family emoji are 40 of 256", R.analyze(famBsky.repeat(40), "bluesky-bio").glyphs, 40);
+t("analyze agrees with measure on every rule but SMS",
+  R.LIMITS.filter(r => r.countMode !== "gsm").filter(r => R.analyze(famBsky + "\u{1D5D4}", r.id).glyphs !== R.measure(famBsky + "\u{1D5D4}", r.id)).map(r => r.id), []);
+
+/* Bluesky's second axis. The lexicon gives every text field two caps, and
+   both bind: app.bsky.feed.post text is maxGraphemes 300 AND maxLength 3000
+   (UTF-8 bytes); app.bsky.actor.profile description is 256 AND 2560. A zalgo
+   letter is one grapheme carrying dozens of bytes, so 300 of them pass the
+   grapheme count and are refused on bytes. */
+const zalgoGlyph = "a" + Array.from({ length: 26 }, (_, i) => String.fromCodePoint(0x300 + i)).join(""); // 1 grapheme, 53 bytes
+const zalgo300 = zalgoGlyph.repeat(300);
+t("bluesky post carries a 3000-byte cap", R.ruleById("bluesky-post").maxBytes, 3000);
+t("bluesky bio carries a 2560-byte cap", R.ruleById("bluesky-bio").maxBytes, 2560);
+t("zalgo: 300 graphemes", R.analyze(zalgo300, "bluesky-post").glyphs, 300);
+t("zalgo: 15,900 UTF-8 bytes", R.analyze(zalgo300, "bluesky-post").bytes, 15900);
+t("zalgo: 300 graphemes over the byte cap do not fit", R.analyze(zalgo300, "bluesky-post").fits, false);
+t("zalgo: the byte cap is reported as the binding one", R.analyze(zalgo300, "bluesky-post").binding, "bytes");
+t("zalgo: remaining is counted in bytes when bytes bind", R.analyze(zalgo300, "bluesky-post").remaining, 3000 - 15900);
+t("zalgo: the fit grid says over too", R.fitsAll(zalgo300).find(r => r.rule.id === "bluesky-post").fits, false);
+t("zalgo: 256 graphemes over the bio's 2560 bytes do not fit", R.analyze(zalgoGlyph.repeat(256), "bluesky-bio").fits, false);
+t("plain: 300 letters fit a post, bytes reported", [R.analyze("a".repeat(300), "bluesky-post").fits, R.analyze("a".repeat(300), "bluesky-post").bytes], [true, 300]);
+t("plain: 301 letters bind on graphemes", [R.analyze("a".repeat(301), "bluesky-post").fits, R.analyze("a".repeat(301), "bluesky-post").binding], [false, "limit"]);
+t("no byte cap on a rule that has none", R.analyze("hi", "x-bio").bytes, undefined);
+const zTrim = D.trimToFit(zalgoGlyph.repeat(301), "bluesky-post", {}); // one 301-grapheme word: cut inside it
+t("trim: a zalgo post is cut under the byte cap", [C.utf8Bytes(zTrim) <= 3000, C.utf8Bytes(zTrim) > 3000 - 53], [true, true]);
+t("trim: and the trimmed post fits", R.analyze(zTrim, "bluesky-post").fits, true);
+
+/* TikTok caption: "The maximum length is 2200 in UTF-16 runes" (Content
+   Posting API). A mathematical bold letter is one code point and two UTF-16
+   units, so a bold caption was being counted at half its size. */
+t("tiktok caption: a surrogate pair counts 2", R.analyze("\u{1D5D4}", "tiktok-caption").glyphs, 2);
+t("tiktok caption: measure agrees", R.measure("\u{1D5D4}", "tiktok-caption"), 2);
+t("tiktok caption: 1,100 bold letters fit (2,200 units)", R.analyze("\u{1D5D4}".repeat(1100), "tiktok-caption").fits, true);
+t("tiktok caption: 1,101 bold letters do not", R.analyze("\u{1D5D4}".repeat(1101), "tiktok-caption").fits, false);
+t("tiktok caption: plain letters unchanged", R.analyze("abc", "tiktok-caption").glyphs, 3);
+
 /* Hidden-character list: which invisible character, and where. The cases are
    the ones people search for: a narrow no-break space a chat model wrote for
    a space, a CHAR(160) in a spreadsheet cell, a zero-width space in code. */

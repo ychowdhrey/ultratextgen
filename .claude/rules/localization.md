@@ -1,6 +1,6 @@
 ---
 paths:
-  - "{ar,bs,cs,da,de,es,fi,fr,hi,hr,hu,id,it,ja,ko,ms,nl,no,pl,pt,ro,ru,sk,sr,sv,th,tl,tr,vi,zh-tw}/**"
+  - "{ar,bs,cs,da,de,es,fi,fr,hi,hr,hu,id,it,ja,ko,ms,nl,no,pl,pt,ro,ru,sk,sr,sv,th,tl,tr,uk,vi,zh-tw}/**"
   - "locales/**"
   - "i18n.js"
   - "data/{core_parent_set,locale_qualification_tiers,locale_parent_gap_audit,english_parent_exceptions,parity_catalogue_pages,translation_parity_exceptions,translation_identical_strings,numeric_parity_exceptions,locale_glossary,library_hub_i18n,em_dash_locale_policy}.json"

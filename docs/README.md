@@ -71,7 +71,7 @@ These run across page types rather than producing a type.
 | Collection-copy audit | `the internal opportunity-audit tool` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | i18n / localization | `prerender-i18n.js` (+ 30 live locale directories, `locales/`, `README.*.md`) — the classifier that tracks these (`scripts/weekly_pr_digest.py`) matched them one-by-one until 2026-08-01; see Known gaps #4 | ❌ none | as needed |
 | Ads / monetization (Google AdSense) | `scripts/check-ads.js` (CI: `ads-check.yml`, enforces the AdSense loader site-wide + guards `ads.txt` against leftover Journey manager/seller lines), AdSense loader injected site-wide via `header.js` | ❌ none | as needed |
-| ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | the internal opportunity backlog `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
+| ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | scoping note: German, Spanish and French native-query volume for alphabet printables outweighs the English long tail | needs scoping pass |
 | Consent management (Google Funding Choices) | `check-funding-choices.js`, `inject-funding-choices-tag.js` — tag deployed to every HTML page (PR #660, 2026-07-25) | ❌ none | CI (`validate.yml`, gating — wired 2026-08-06). Unlike the other whole-site checks it has no backlog to be permanently red against (the tag either is or isn't in a page's `<head>`), so it gates rather than informs. Was unwired for over a week first, which is how 37 pages across three unrelated PRs shipped without it before anyone noticed — see Known gaps #9 and #16 |
 | Search-engine webmaster verification (site-ownership files/tags, sitemap submission tracking per engine) | none — root-level verification stub per engine (e.g. `naverfc08aab480545cfd1d61489b3536a5e6.html`, PR #793); `check-ads.js`/`check-funding-choices.js` both skip these by content signature (`VERIFICATION_STUB_RE`) so page-infra tags can never be injected into them | [`webmaster-tools-registrations-2026-08-20.md`](./webmaster-tools-registrations-2026-08-20.md) | ad hoc, per engine — new this week (Naver Search Advisor registered + verified; Google Search Console and Bing Webmaster Tools confirmed live retroactively; Yahoo Japan/Thailand skipped, Seznam/Cốc Cốc considered and deferred — all recorded in the doc) |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`); its `reports/` artifact output is also sometimes committed directly by PRs — `LANE_RULES` learned this path 2026-08-08 (see Known gaps #16) |
@@ -161,6 +161,7 @@ Required, blocking checks:
 - `check:hreflang`
 - `check:hreflang-completeness`
 - `check:ja-printables`
+- `check:jsonld-parse`
 - `check:kaomoji-generator-static`
 - `check:library-directory`
 - `check:library-hub`
@@ -208,6 +209,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:cta-routing`
 - `test:editorial-footprint`
 - `test:efr`
+- `test:format-marks`
 - `test:game-rules`
 - `test:generator-parity`
 - `test:header-analytics`
@@ -226,9 +228,11 @@ Gating unit-test steps (no backlog to be red against):
 - `test:printables-i18n-parity`
 - `test:qr`
 - `test:render-invariants`
+- `test:renderer-unicode`
 - `test:romanize`
 - `test:saved-items`
 - `test:share-core`
+- `test:sitemap-images`
 - `test:skin-tone`
 - `test:spaced-native-runs`
 - `test:spec-sentence-reuse`
