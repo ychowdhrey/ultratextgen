@@ -1094,6 +1094,9 @@ const decorations = window.UTG_DECORATIONS
         aria: uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", name)
       };
     const shareId = (style && style.slug) || "";
+    // Preview's visible label is hidden below 640px, which left the 👁 as the
+    // button's whole accessible name; the same label names it at every width.
+    const previewLabel = uiText("stylePreview.title", "Preview");
 
     // A style's note is its English one unless the locale file carries
     // ui.styleNotes.<slug>: on /de/gross-und-kleinschreibung/ every card
@@ -1114,7 +1117,7 @@ const decorations = window.UTG_DECORATIONS
       <div class="style-actions-stack">
         <div class="style-actions">
           <button class="copy-btn" data-text="${safeText}" data-style="${safeName}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${ICONS.copy}<span class="copy-label">${STR.copy}</span> <kbd class="copy-kbd">↵</kbd></button>
-          <button class="preview-btn" data-style="${safeName}" type="button" title="${safeAttr(uiText("stylePreview.dialogAriaLabel", "Platform preview"))}">👁 <span class="preview-label">${escapeHtml(uiText("stylePreview.title", "Preview"))}</span></button>
+          <button class="preview-btn" data-style="${safeName}" type="button" title="${safeAttr(uiText("stylePreview.dialogAriaLabel", "Platform preview"))}" aria-label="${safeAttr(previewLabel)}">👁 <span class="preview-label">${escapeHtml(previewLabel)}</span></button>
           <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
         </div>
         <div class="result-share-row">
@@ -2753,13 +2756,38 @@ document.addEventListener("copy", () => {
      belong here, outside any init path.
      ═══════════════════════════════════════════════════════════════ */
 
+  /* The copy toast is also how a screen reader hears that Copy worked. It is
+     static markup carrying the page's own localized message, so it is made a
+     polite live region here rather than in each HTML file. A live region
+     announces a change to its text, not an element fading into view, so the
+     message is in it only while it is shown: taken out now (the toast is
+     transparent until the first copy, so nothing on screen changes), written
+     back on each copy, and taken out again once the fade-out is over. */
+  const COPY_TOAST_CLEAR_MS = 400; // longer than .copy-toast's 0.2s opacity fade
+  const copyToastText = prepareCopyToast(el.copyToast);
+  function prepareCopyToast(toast) {
+    if (!toast) return "";
+    const text = toast.textContent;
+    toast.textContent = "";
+    if (!toast.hasAttribute("role")) toast.setAttribute("role", "status");
+    if (!toast.hasAttribute("aria-live")) toast.setAttribute("aria-live", "polite");
+    if (!toast.hasAttribute("aria-atomic")) toast.setAttribute("aria-atomic", "true");
+    return text;
+  }
+
   let toastTimer = null;
+  let toastClearTimer = null;
   function showCopyToast() {
     const toast = el.copyToast;
     if (!toast) return;
+    clearTimeout(toastClearTimer);
+    toast.textContent = copyToastText;
     toast.classList.add("is-visible");
     if (toastTimer) clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1800);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove("is-visible");
+      toastClearTimer = setTimeout(() => { toast.textContent = ""; }, COPY_TOAST_CLEAR_MS);
+    }, 1800);
   }
 
 // Update a copy button's visible label. Decorated buttons keep their icon and

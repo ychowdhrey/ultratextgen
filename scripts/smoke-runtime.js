@@ -270,6 +270,12 @@ async function main() {
   console.log('\n/id/ (locale homepage)');
   {
     const { ctx, page } = await open('/id/', 'mobile');
+    // The toast is the copy's live region and holds its text only while it is
+    // shown (case 22), so it is read after a copy.
+    await page.fill('#mainInput', 'Luna');
+    await page.waitForTimeout(300);
+    await page.locator('#resultsGrid .copy-btn:not([disabled])').first().click();
+    await page.waitForTimeout(100);
     const toast = await page.evaluate(() => { const t = document.getElementById('copyToast'); return t ? t.textContent : ''; });
     check('copy toast is localized', toast && toast !== 'Copied!', toast);
     await ctx.close();
@@ -1968,6 +1974,51 @@ async function main() {
       if (s.active !== active || !shows[want](s)) bad.push(`${label}: ${JSON.stringify(s)}`);
     }
     check('every destination tab answers within 2s with its own results', !bad.length, bad.join('; '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 22. Copy is announced, not only shown. The generator's toast was visual
+  // only, so a screen reader heard nothing when Copy worked; and below 640px
+  // the result card's Preview button hides its label, which left the emoji as
+  // its whole accessible name. The toast is a polite live region whose text
+  // arrives with each copy (a change is what a live region announces) and
+  // leaves once it has faded, so the next copy is a change again.
+  console.log('\n/ (copy announced to assistive tech; Preview named at 375px)');
+  {
+    const { ctx, page, errors } = await open('/', 'narrow');
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.waitForTimeout(200);
+    const toastState = () => page.evaluate(() => {
+      const t = document.getElementById('copyToast');
+      return t && { role: t.getAttribute('role'), live: t.getAttribute('aria-live'), text: t.textContent, shown: t.classList.contains('is-visible') };
+    });
+    const pageToast = await page.evaluate(async () => {
+      const m = (await (await fetch(location.pathname)).text()).match(/id="copyToast"[^>]*>([^<]*)</);
+      return m ? m[1] : null;
+    });
+    const t0 = await toastState();
+    check('the copy toast is a polite live region after load', !!t0 && t0.role === 'status' && t0.live === 'polite', JSON.stringify(t0));
+    check('it holds no text until a copy, so the copy is a change', !!t0 && t0.text === '', JSON.stringify(t0));
+    await page.fill('#mainInput', 'Luna');
+    await page.waitForTimeout(300);
+    const copy = page.locator('#resultsGrid .copy-btn:not([disabled])').first();
+    await copy.click();
+    await page.waitForTimeout(100);
+    const t1 = await toastState();
+    check("after Copy it carries the page's own toast text", !!t1 && t1.shown && !!pageToast && t1.text === pageToast, `${JSON.stringify(t1)} vs markup ${JSON.stringify(pageToast)}`);
+    await page.waitForTimeout(2500);
+    const t2 = await toastState();
+    check('once faded it is empty again, so the next copy is a change too', !!t2 && !t2.shown && t2.text === '', JSON.stringify(t2));
+    await copy.click();
+    await page.waitForTimeout(100);
+    const t3 = await toastState();
+    check('a second Copy fills it again', !!t3 && t3.shown && t3.text === pageToast, JSON.stringify(t3));
+    const preview = page.locator('#resultsGrid .preview-btn').first();
+    const label = ((await preview.locator('.preview-label').textContent()) || '').trim();
+    check('at 375px the Preview label is hidden (the case under test)', !!label && !(await preview.locator('.preview-label').isVisible()), label);
+    const name = ((await preview.ariaSnapshot()).match(/^- button "(.*)"/) || [])[1] || '';
+    check('the Preview button is named by its own label, not only its emoji', !!name && name.includes(label), `name ${JSON.stringify(name)}, label ${JSON.stringify(label)}`);
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
