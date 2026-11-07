@@ -227,6 +227,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:printables-i18n-parity`
 - `test:qr`
 - `test:render-invariants`
+- `test:renderer-unicode`
 - `test:romanize`
 - `test:saved-items`
 - `test:share-core`

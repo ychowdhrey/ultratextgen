@@ -1111,6 +1111,15 @@ jobs:
         continue-on-error: true
         run: npm run test:counter | tee counter-tests.log
 
+      # Gating, zero backlog: renderer input handling across every registry
+      # style. A keycap (1️⃣) and the emoji circled M (Ⓜ️) come out intact, a
+      # decomposed accent styles exactly like the composed one, and Upside Down
+      # Micro Text keeps line breaks. Drives the real renderer.js through renderAny.
+      - name: Run renderer Unicode tests
+        id: renderer_unicode_tests
+        continue-on-error: true
+        run: npm run test:renderer-unicode | tee renderer-unicode-tests.log
+
       # Gating, zero backlog: the A1Z26 letter-position engine behind
       # /letters-to-numbers/. The page's value is a claim that can be wrong
       # (H is 8, Z is 26, a digit typed beside a letter stays readable), so the
@@ -1597,6 +1606,11 @@ jobs:
             cat counter-tests.log
             echo '```'
             echo ""
+            echo "### Renderer Unicode tests: \`${{ steps.renderer_unicode_tests.outcome }}\`"
+            echo '```'
+            cat renderer-unicode-tests.log
+            echo '```'
+            echo ""
             echo "### Letters-to-numbers tests: \`${{ steps.letters_to_numbers_tests.outcome }}\`"
             echo '```'
             cat letters-to-numbers-tests.log
@@ -1759,6 +1773,7 @@ jobs:
           steps.format_marks_tests.outcome == 'failure' ||
           steps.case_converter_tests.outcome == 'failure' ||
           steps.counter_tests.outcome == 'failure' ||
+          steps.renderer_unicode_tests.outcome == 'failure' ||
           steps.letters_to_numbers_tests.outcome == 'failure' ||
           steps.writing_footprint_tests.outcome == 'failure' ||
           steps.i18n_faq_schema_tests.outcome == 'failure' ||

@@ -92,6 +92,7 @@
     "build:event-capability-matrix": "node scripts/check-event-capabilities.js --write",
     "verify:event-pages": "node scripts/verify-event-pages.js",
     "test:spaced-native-runs": "node scripts/lib/spaced-native-runs.test.js",
+    "test:renderer-unicode": "node renderer.unicode.test.js",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "test:romanize": "node js/romanize/korean-romanize.test.js",
     "test:qr": "node js/printables/qr.test.js",
