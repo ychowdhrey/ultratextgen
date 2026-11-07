@@ -1908,6 +1908,70 @@ async function main() {
     await r.ctx.close();
   }
 
+  // 36. The YouTube hub's destination tabs. The results grid's MutationObserver
+  // re-ran on its own writes, so after typing, Video title and @Handle froze the
+  // tab in a microtask loop: no long task, no error, the page just stops
+  // answering. Each press is raced against a deadline, so a frozen page fails
+  // this case instead of hanging the run, and each tab's grid must show its own
+  // state: one search warning per card on Video title, the handle notice on
+  // @Handle, styled results everywhere else. A category tab re-renders the grid
+  // through script.js alone, so only the observer can put Video title's warnings
+  // back: a fix that switches the observer off fails that step.
+  console.log('\n/youtube/ (destination tabs stay responsive)');
+  {
+    const { ctx, page, errors } = await open('/youtube/', 'desktop');
+    const category = page.locator('#categoryTabs .category-tab:visible').nth(1);
+    check('a category tab is there to re-render the grid', (await category.count()) === 1);
+    await page.fill('#mainInput', 'Luna');
+    await page.waitForTimeout(300);
+    const read = () => page.evaluate(() => {
+      const g = document.getElementById('resultsGrid');
+      const active = document.querySelector('#youtubeContextTabs [aria-selected="true"]');
+      return {
+        active: active ? active.dataset.context : null,
+        copies: g.querySelectorAll('.copy-btn').length,
+        names: g.querySelectorAll('.style-card .style-name').length,
+        warnings: g.querySelectorAll('.style-name > .youtube-result-warning').length,
+        handleNotice: /handles only accept/.test(g.textContent)
+      };
+    });
+    const press = async (control) => {
+      let state = null;
+      const work = control.click({ timeout: 2000 })
+        .then(() => new Promise((r) => setTimeout(r, 100)))
+        .then(read)
+        .then((s) => { state = s; }, () => {});
+      await Promise.race([work, new Promise((r) => setTimeout(r, 2000))]);
+      return state;
+    };
+    const shows = {
+      styled: (s) => s.copies > 0 && s.warnings === 0 && !s.handleNotice,
+      warned: (s) => s.copies > 0 && s.names > 0 && s.warnings === s.names,
+      handle: (s) => s.handleNotice && s.copies === 0
+    };
+    const dest = (d) => page.locator(`#youtubeContextTabs [data-context="${d}"]`);
+    // [what is pressed, the destination selected after it, what the grid shows]
+    const steps = [
+      ['channel-name', dest('channel-name'), 'channel-name', 'styled'],
+      ['description', dest('description'), 'description', 'styled'],
+      ['video-title', dest('video-title'), 'video-title', 'warned'],
+      ['a category tab on video-title', category, 'video-title', 'warned'],
+      ['comment', dest('comment'), 'comment', 'styled'],
+      ['bio', dest('bio'), 'bio', 'styled'],
+      ['handle', dest('handle'), 'handle', 'handle'],
+      ['channel-name', dest('channel-name'), 'channel-name', 'styled']
+    ];
+    const bad = [];
+    for (const [label, control, active, want] of steps) {
+      const s = await press(control);
+      if (!s) { bad.push(`${label}: page did not answer within 2s`); break; }
+      if (s.active !== active || !shows[want](s)) bad.push(`${label}: ${JSON.stringify(s)}`);
+    }
+    check('every destination tab answers within 2s with its own results', !bad.length, bad.join('; '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
