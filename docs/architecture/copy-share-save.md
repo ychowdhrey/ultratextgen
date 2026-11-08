@@ -461,6 +461,19 @@ compare card on a printables page sends neither event. Like the four above,
 shipped listeners against stub clicks and asserts both rows byte for byte, keys
 included.
 
+### Every optional `copy_text` key is pushed on every row (2026-11-08)
+
+`copyPayload()` always pushed `copy_item`, `copy_item_group` and `copy_look`, but
+`style_name`, `label`, `copy_collection`, `copy_item_count` and `copy_has_pair`
+only when a caller passed them. GTM's data layer keeps a key's last value, so on a
+generator page a symbol-tile copy or a Ctrl+C after a card copy read the card's
+`style_name` ("Ultra Bold"), and an event page's `copy_has_pair` stuck to every
+later copy. They are now keys on every row, `undefined` unless passed.
+**Definition change on the merge date:** `style_name` on `copy_text` rows that are
+not style-card copies reads empty from then on instead of the last card's style;
+per-style copy counts before that date include those carried-over rows.
+`header.test.js` asserts the keys.
+
 ## Verification
 
 Verified against seven differently-shaped broken inputs — the push moved back before

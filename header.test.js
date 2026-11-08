@@ -321,6 +321,19 @@ t('copy_look is always a key, cleared unless the caller sets it', () => {
   eq('copy_look' in p, true, 'key present so GTM clears the last look');
   eq(p.copy_look, undefined, 'cleared by default');
 });
+// The optional keys other surfaces pass. A symbol-tile or Ctrl+C copy on a
+// generator page used to leave style_name out, so GTM re-sent the previous
+// card's style with it (2026-11-08 audit).
+t('the optional copy_text keys are always keys, cleared unless the caller sets them', () => {
+  const p = CI.copyPayload('symbol_tile', '★');
+  for (const k of ['style_name', 'label', 'copy_collection', 'copy_item_count', 'copy_has_pair']) {
+    eq(k in p, true, k + ' key present so GTM clears the last value');
+    eq(p[k], undefined, k + ' cleared by default');
+  }
+  const q = CI.copyPayload('button', 'Luna', { style_name: 'Ultra Bold' });
+  eq(q.style_name, 'Ultra Bold', 'a passed style_name still arrives');
+  eq(q.copy_has_pair, undefined, 'and the keys it did not pass are cleared');
+});
 t('copy_look carries the look and the item stays the bare character', () => {
   const p = CI.copyPayload('symbol_look_switch', '\u2764', { copy_look: 'plain' });
   eq(p.copy_look, 'plain', 'look');

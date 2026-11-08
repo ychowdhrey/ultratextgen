@@ -1097,7 +1097,17 @@
       // "emoji" | "plain" on a symbol that has both looks, otherwise cleared.
       // Always present as a key for the same reason as copy_item: GTM would
       // otherwise re-send the previous copy's look on the next copy.
-      copy_look: undefined
+      copy_look: undefined,
+      // The optional keys some surfaces pass, cleared on every other row for
+      // the same reason. Without these a symbol-tile or Ctrl+C copy on a
+      // generator page carried the previous card's style_name into GA4, and an
+      // event copy's copy_has_pair stuck to every later copy (2026-11-08
+      // audit, read through GTM's data model).
+      style_name: undefined,
+      label: undefined,
+      copy_collection: undefined,
+      copy_item_count: undefined,
+      copy_has_pair: undefined
     };
     if (extra) {
       for (var k in extra) {
