@@ -571,6 +571,45 @@ async function main() {
     await ctx.close();
   }
 
+  // 11a. A controller's own .copy-btn is not script.js's. The before/after
+  // emoji library cards keep their text in data-copy-text; script.js's
+  // page-wide .copy-btn handler read data-text and wrote "" after the card's
+  // own write, so the button said "Copied ✓" and the clipboard was empty
+  // (2026-11-08 audit).
+  console.log('\n/usecase/before-after-emoji/ (library card copies its own text)');
+  {
+    const { ctx, page, errors } = await open('/usecase/before-after-emoji/', 'desktop');
+    const card = page.locator('#etgLibraryGrid .etg-copy-btn').first();
+    const want = decodeURIComponent((await card.getAttribute('data-copy-text')) || '');
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await card.click();
+    await page.waitForTimeout(400);
+    check('the library card puts its own text on the clipboard', !!want && (await clip(page)) === want, `${JSON.stringify(await clip(page))} vs ${JSON.stringify(want)}`);
+    const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check('and records one copy_text', ev.length === 1, JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11b0. The zalgo sliders are named. Both range inputs had no label of any
+  // kind on all 13 pages that load zalgo-text.js (2026-11-08 audit).
+  console.log('\n/usecase/zalgo-text/ and /ko/usecase/geullichi-tekseuteu/ (slider names)');
+  for (const url of ['/usecase/zalgo-text/', '/ko/usecase/geullichi-tekseuteu/']) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    for (const id of ['frequencySlider', 'amplitudeSlider']) {
+      const name = await page.evaluate((sid) => {
+        const s = document.getElementById(sid);
+        const ref = s && s.getAttribute('aria-labelledby');
+        const lab = ref && document.getElementById(ref);
+        return (s && s.getAttribute('aria-label')) || (lab ? lab.textContent.trim() : '');
+      }, id);
+      check(`${url} #${id} has an accessible name`, !!name, JSON.stringify(name));
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 11b. The Share button's confirmation is in the page language. Without a
   // native share sheet it copies the link and says so; that label used to be the
   // English fallback under Korean prose because library pages carry no i18n.js.
@@ -650,7 +689,9 @@ async function main() {
 
   // 12. Nothing pushes a 390px page sideways.
   console.log('\n390px layouts (overflow)');
-  for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', '']]) {
+  // /ja/purinto/onamae-seal/: two three-column tables (30rem floor) sat outside
+  // .data-table-wrap and panned the page 130px sideways (2026-11-08 audit).
+  for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', ''], ['/ja/purinto/onamae-seal/', '']]) {
     const { ctx, page } = await open(url, 'narrow');
     if (typed) { await page.locator('#mainInput, input[type=text]:visible').first().fill(typed); await page.waitForTimeout(500); }
     const w = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
