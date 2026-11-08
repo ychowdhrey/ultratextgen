@@ -67,7 +67,8 @@ payload is always catalogue content. `header.test.js` asserts both halves.
 The same holds for the address bar: **never write typed text into the URL** to
 keep state. Every later event reads it as `page_location`. The generator keeps its
 draft in `sessionStorage` and puts text in a URL only on an explicit share
-(`UTG.buildShareUrl`). `check:runtime-smoke` asserts it. Why:
+(`UTG.buildShareUrl`); the upside-down, zalgo and emoji tools do the same with
+their own share-only link builders (2026-11-08). `check:runtime-smoke` asserts it. Why:
 `docs/architecture/copy-share-save.md` ("Typed text stays out of the URL").
 
 ## A library image holds only what the visitor chose

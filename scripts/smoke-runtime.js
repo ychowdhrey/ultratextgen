@@ -175,6 +175,47 @@ async function main() {
     await s.ctx.close();
   }
 
+  // 1b2. The same rule on the three tools that kept their own URL sync
+  // (2026-11-08): upside-down (?q=), zalgo (?text=) and the emoji tools (?q=)
+  // wrote typed text into the address bar on every pause. The settings stay in
+  // the bar, the draft survives a reload in the tab, an explicit Share link
+  // still carries the text, and an inbound link still opens filled.
+  console.log('\nupside-down, zalgo and emoji tools (typed text never enters the URL)');
+  for (const [url, param, shareSel, setting] of [
+    ['/category/upside-down-text/', 'q', '#udShareRow .share-result-btn', null],
+    ['/usecase/zalgo-text/', 'text', '#zalgoShareRow .share-result-btn', 'seed'],
+    ['/usecase/text-to-emoji/', 'q', null, null],
+    ['/usecase/emoji-letters/', 'q', null, null]
+  ]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    await page.fill('#mainInput', 'Jane Private');
+    await page.waitForTimeout(800);
+    const search = await page.evaluate(() => location.search);
+    check(`${url} typing leaves the address bar without the text`, !/Jane|Private/.test(decodeURIComponent(search)), search);
+    if (setting) check(`${url} the settings stay in the address bar`, new RegExp('[?&]' + setting + '=').test(search), search);
+    if (shareSel) {
+      await page.waitForSelector(shareSel, { state: 'attached', timeout: 5000 }).catch(() => {});
+      const link = await page.evaluate((sel) => { const b = document.querySelector(sel); return b ? b.dataset.shareUrl || '' : ''; }, shareSel);
+      check(`${url} the Share link still carries the text on purpose`, new RegExp('[?&]' + param + '=Jane(\\+|%20)Private(&|$)').test(link), link);
+    }
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(600);
+    check(`${url} a reload in the same tab restores the draft`, (await page.inputValue('#mainInput')) === 'Jane Private', await page.inputValue('#mainInput'));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    const s = await open(url + '?' + param + '=' + encodeURIComponent('Shared Hello'), 'desktop');
+    await s.page.waitForTimeout(600);
+    check(`${url} an inbound link opens filled`, (await s.page.inputValue('#mainInput')) === 'Shared Hello', await s.page.inputValue('#mainInput'));
+    check(`${url} and keeps its text param while the box still shows it`, new RegExp('[?&]' + param + '=').test(await s.page.evaluate(() => location.search)), await s.page.evaluate(() => location.search));
+    await s.page.fill('#mainInput', 'Shared Hello again');
+    await s.page.waitForTimeout(800);
+    const after = await s.page.evaluate(() => location.search);
+    check(`${url} the first edit drops the stale text param`, !new RegExp('[?&]' + param + '=').test(after), after);
+    check('no page errors', !s.errors.length, s.errors.join(' | '));
+    await s.ctx.close();
+  }
+
   // 1c. Script-aware order. The map fonts only have Latin glyphs, so on the
   // ru/ar/ja/hi/ko/th homes 9 of the 11 Popular cards copied Cyrillic, Arabic,
   // Japanese… text back unchanged. Text with no Latin letter now gets the styles
