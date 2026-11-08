@@ -1780,7 +1780,7 @@
       return UTG.shareImageBlob(blob, {
         filename: 'zalgo-text.gif',
         title: document.title,
-        text: window.location.href,
+        text: shareLink(),
         surface: 'zalgo',
         itemType: 'gif',
         format: 'gif'
@@ -1874,15 +1874,29 @@
   }
 
   // ── URL State Sync ──────────────────────────────────────────────
+  // Typed text stays on the device (2026-11-08, the rule script.js adopted on
+  // 2026-11-07). The address bar keeps the settings and the seed; the text
+  // enters a URL only in a link the visitor shares (shareLink). A draft
+  // survives reload and Back in this tab through sessionStorage and dies with
+  // the tab, as the URL copy did. An inbound ?text= link still opens filled,
+  // and its ?text= stays in the bar only while the box still shows that text.
+  const DRAFT_KEY = 'utg_draft:' + window.location.pathname;
+  let inboundText = null;
+
   function loadFromURL() {
     const params = new URLSearchParams(window.location.search);
+    const input = $('#mainInput');
+    let text = null;
     if (params.has('text')) {
-      const input = $('#mainInput');
-      if (input) {
-        input.value = params.get('text').slice(0, 500);
-        const charCount = $('#charCount');
-        if (charCount) charCount.textContent = input.value.length;
-      }
+      text = params.get('text').slice(0, 500);
+      inboundText = text;
+    } else {
+      try { text = sessionStorage.getItem(DRAFT_KEY); } catch (err) { text = null; }
+    }
+    if (text !== null && input) {
+      input.value = text.slice(0, 500);
+      const charCount = $('#charCount');
+      if (charCount) charCount.textContent = input.value.length;
     }
     if (params.has('chars'))     state.charType  = params.get('chars');
     if (params.has('pos'))       state.position  = params.get('pos');
@@ -1926,11 +1940,13 @@
     }
   }
 
-  function syncToURL() {
+  // The page's state as query params, one definition for the address bar
+  // and for share links. withText is true only for a share link.
+  function stateParams(withText) {
     const input = $('#mainInput');
-    if (!input) return;
+    const value = input ? input.value : '';
     const params = new URLSearchParams();
-    if (input.value)                       params.set('text',  input.value);
+    if (value && (withText || value === inboundText)) params.set('text', value);
     if (state.charType  !== 'all')         params.set('chars', state.charType);
     if (state.position  !== 'all')         params.set('pos',   state.position);
     if (state.shape     !== 'uniform')     params.set('shape', state.shape);
@@ -1952,8 +1968,30 @@
       if (state.cascade.anchor !== 'thai')                params.set('anchor', state.cascade.anchor);
     }
 
-    const qs = params.toString();
-    const url = window.location.pathname + (qs ? '?' + qs : '');
+    return params;
+  }
+
+  // The exact-state link a share carries: text, settings and seed.
+  function shareLink() {
+    const qs = stateParams(true).toString();
+    return window.location.origin + window.location.pathname + (qs ? '?' + qs : '');
+  }
+
+  function persistDraft() {
+    const input = $('#mainInput');
+    if (!input) return;
+    try {
+      if (input.value) sessionStorage.setItem(DRAFT_KEY, input.value);
+      else sessionStorage.removeItem(DRAFT_KEY);
+    } catch (err) { /* storage blocked: the draft does not survive a reload */ }
+    if (input.value !== inboundText) inboundText = null;
+  }
+
+  function syncToURL() {
+    if (!$('#mainInput')) return;
+    persistDraft();
+    const qs = stateParams(false).toString();
+    const url = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
     window.history.replaceState(null, '', url);
   }
 
@@ -1971,10 +2009,10 @@
   // ── Result sharing ──────────────────────────────────────────────
   // The shared UltraTextGen core (script.js, loaded headless on this page)
   // owns the act of sharing; this block only builds the buttons and keeps
-  // their creation-state datasets current. This page already live-syncs its
-  // settings into the address bar (syncToURL above), so the exact current
-  // URL is the share link — stamped via data-share-url, which the delegated
-  // handlers prefer over composing ?q=&style=.
+  // their creation-state datasets current. The share link is the page's exact
+  // state (shareLink above: text, settings, seed), stamped via
+  // data-share-url, which the delegated handlers prefer over composing
+  // ?q=&style=. The address bar no longer carries the text (2026-11-08).
   let sharedVariant = null;
 
   function syncShareState() {
@@ -1993,14 +2031,9 @@
       });
     };
 
-    // The live URL minus any incoming variant marker — otherwise a recipient
-    // re-sharing a variant would stack variant params.
-    let base = window.location.href;
-    try {
-      const u = new URL(base);
-      u.searchParams.delete('variant');
-      base = u.toString();
-    } catch (e) { /* keep href as-is */ }
+    // The exact-state link. stateParams never carries an incoming variant
+    // marker, so a recipient re-sharing a variant does not stack params.
+    const base = shareLink();
     stamp($('#zalgoShareRow'), state.output, base);
     VARIANTS.forEach(v => {
       const row = document.querySelector('[data-variant-share="' + v.id + '"]');

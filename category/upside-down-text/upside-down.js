@@ -404,11 +404,26 @@
   }
 
   // ── URL state sync ──────────────────────────────────────────────
+  // Typed text stays on the device (2026-11-08, the rule script.js adopted on
+  // 2026-11-07). The address bar keeps the mode and wrap only; the text enters
+  // a URL when the visitor presses Share (shareUrl). A draft survives reload
+  // and Back in this tab through sessionStorage and dies with the tab, as the
+  // URL copy did. An inbound ?q= link still opens filled, and its ?q= stays in
+  // the bar only while the box still shows that text.
+  const DRAFT_KEY = 'utg_draft:' + window.location.pathname;
+  let inboundText = null;
+
   function loadFromURL() {
     const params = new URLSearchParams(window.location.search);
     const input = $('#mainInput');
     // ?q= is the site-wide shareable-text param; ?text= kept for parity.
-    const text = params.get('q') || params.get('text');
+    const linked = params.get('q') || params.get('text');
+    let text = linked;
+    if (linked) {
+      inboundText = linked.slice(0, 500);
+    } else {
+      try { text = sessionStorage.getItem(DRAFT_KEY); } catch (err) { text = null; }
+    }
     if (text && input) {
       input.value = text.slice(0, 500);
       const cc = $('#charCount');
@@ -418,12 +433,15 @@
     if (params.has('wrap') && WRAPS[params.get('wrap')]) state.wrap = params.get('wrap');
   }
 
-  // The page's state as a query string: what the address bar shows and what
-  // a share link carries, from one definition so they can never disagree.
-  function stateQuery() {
+  // The page's state as a query string, from one definition so the address
+  // bar and a share link can never disagree on the settings. withText is true
+  // only for a share link; the address bar carries text only while it still
+  // shows an inbound link's own, unedited text.
+  function stateQuery(withText) {
     const input = $('#mainInput');
+    const value = input ? input.value : '';
     const params = new URLSearchParams();
-    if (input && input.value)    params.set('q', input.value);
+    if (value && (withText || value === inboundText)) params.set('q', value);
     if (state.mode !== 'flip')   params.set('mode', state.mode);
     if (state.wrap !== 'none')   params.set('wrap', state.wrap);
     const qs = params.toString();
@@ -431,12 +449,23 @@
   }
 
   function shareUrl() {
-    return window.location.origin + window.location.pathname + stateQuery();
+    return window.location.origin + window.location.pathname + stateQuery(true);
+  }
+
+  function persistDraft() {
+    const input = $('#mainInput');
+    if (!input) return;
+    try {
+      if (input.value) sessionStorage.setItem(DRAFT_KEY, input.value);
+      else sessionStorage.removeItem(DRAFT_KEY);
+    } catch (err) { /* storage blocked: the draft does not survive a reload */ }
+    if (input.value !== inboundText) inboundText = null;
   }
 
   function syncToURL() {
     if (!$('#mainInput')) return;
-    window.history.replaceState(null, '', window.location.pathname + stateQuery());
+    persistDraft();
+    window.history.replaceState(null, '', window.location.pathname + stateQuery(false) + window.location.hash);
   }
 
   let syncTimer = null;
