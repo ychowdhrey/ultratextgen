@@ -123,6 +123,7 @@
   // never a crash.
   const ICONS = {
     get share() { return (UTG.icons && UTG.icons.share) || ""; },
+    get link()  { return (UTG.icons && UTG.icons.link)  || ""; },
     get copy()  { return (UTG.icons && UTG.icons.copy)  || ""; },
     get image() { return (UTG.icons && UTG.icons.image) || ""; }
   };
@@ -377,6 +378,30 @@ const decorations = window.UTG_DECORATIONS
   //                  This is the accessibility-friendly pattern for social
   //                  posts: the hook stands out while the body stays plain
   //                  (readable by search and screen readers).
+  // The visitor's text between reloads: this tab only, this page only.
+  // Never the URL (see persistDraft in bindEvents).
+  const DRAFT_KEY = "utg_draft:" + window.location.pathname;
+
+  // A ?q= the page arrived with (a shared link) is read once at init. As soon
+  // as the box no longer shows that text, the ?q= describes nothing the
+  // visitor sees, so it leaves the address bar; ?style= and every other param
+  // stay. A synthetic "input" that only re-renders (mood tabs) changes no text
+  // and keeps it.
+  function dropInboundQuery(current) {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const inbound = params.get("q");
+      if (inbound === null) return;
+      // Init trims a long ?q= to the box's maxlength, so "unchanged" means
+      // the box holds exactly that trimmed prefix.
+      const max = el.mainInput && el.mainInput.maxLength > 0 ? el.mainInput.maxLength : 500;
+      if (current && current === inbound.slice(0, max)) return;
+      params.delete("q");
+      const qs = params.toString();
+      history.replaceState(history.state, "", window.location.pathname + (qs ? "?" + qs : "") + window.location.hash);
+    } catch (err) { /* no history API: nothing to tidy */ }
+  }
+
   const SCOPE_KEY = "utg_scope_pref";
   const SCOPE_VALUES = ["whole", "first-line"];
   let currentScope = loadScopePref();
@@ -656,17 +681,49 @@ const decorations = window.UTG_DECORATIONS
   // script.js must also load share-core.js; scripts/check-share-save-tags.js
   // gates that.
 
-  // Layer combining underline (U+0332) and/or strikethrough (U+0336) onto every
-  // rendered glyph. Combining marks attach to the preceding base character, so
-  // we iterate by code point — the spread operator keeps astral chars (e.g. the
-  // bold-italic 𝘼) intact. Newlines are skipped; spaces are kept so the line
-  // runs continuously, matching what people expect from a real underline.
-  // No toggles active → returns the text untouched, so other pages are unaffected.
+  // Layer combining strikethrough (U+0336) and/or underline (U+0332) onto every
+  // rendered glyph. One mark per user-perceived character (grapheme cluster):
+  // a mark added per code point landed inside emoji (between a base and its
+  // ZWJ, VS16 or keycap) and between a letter and its own accent. A cluster
+  // that already carries a mark does not get it again, so pasted or re-marked
+  // text is not doubled. Newlines, tabs and invisible format characters get no
+  // mark: there is nothing for it to sit on. Spaces are marked so the line runs
+  // continuously, matching what people expect from a real underline.
+  // No toggles active -> returns the text untouched, so other pages are unaffected.
+  // The block between the markers is evaluated by script.format-marks.test.js.
+  /* @format-marks:begin */
+  const FORMAT_MARK_SEG =
+    typeof Intl !== "undefined" && Intl.Segmenter
+      ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+      : null;
+  // Without Intl.Segmenter: code points, with combining marks, joiners and
+  // variation selectors kept on the character before them.
+  function formatMarkClusters(text) {
+    if (FORMAT_MARK_SEG) return Array.from(FORMAT_MARK_SEG.segment(text), (s) => s.segment);
+    const out = [];
+    for (const cp of text) {
+      const last = out.length ? out[out.length - 1] : "";
+      if (last && (/^[\p{M}\u200D\uFE0E\uFE0F]$/u.test(cp) || last.endsWith("\u200D"))) {
+        out[out.length - 1] = last + cp;
+      } else {
+        out.push(cp);
+      }
+    }
+    return out;
+  }
   function applyFormatMarks(text) {
     if (!text || (!formatMarks.underline && !formatMarks.strike)) return text;
     const marks = (formatMarks.strike ? "\u0336" : "") + (formatMarks.underline ? "\u0332" : "");
-    return [...text].map((ch) => (ch === "\n" ? ch : ch + marks)).join("");
+    return formatMarkClusters(text)
+      .map((c) => {
+        if (/^[\p{Cc}\p{Cf}]+$/u.test(c)) return c;
+        let add = "";
+        for (const m of marks) if (!c.includes(m)) add += m;
+        return c + add;
+      })
+      .join("");
   }
+  /* @format-marks:end */
 
   // Render input through a style, honoring the current emphasis scope.
   // 'first-line' styles only the first line and leaves the remaining lines as
@@ -1015,10 +1072,31 @@ const decorations = window.UTG_DECORATIONS
     // Result-level sharing: every card carries its own Share, bound to this
     // exact creation (input + this style) via the style's stable registry
     // slug — never a generic page link. Disabled alongside Copy on demo cards.
-    const shareLabel = uiText("shareResult.label", "Share");
-    const shareTitle = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
-    const shareAria = uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", name);
+    // What each button does on this browser, in the page language: Share
+    // through the OS sheet, or Copy link / Download image where there is no
+    // sheet or no file sharing. share-core.js owns the rule (2026-11-01).
+    const shareText = UTG.shareButtonText
+      ? UTG.shareButtonText({ name })
+      : {
+        action: "share",
+        label: uiText("shareResult.label", "Share"),
+        title: uiText("shareResult.title", "Share this result — the link opens with your text in this style"),
+        aria: uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", name)
+      };
+    const shareLabel = shareText.label;
+    const shareTitle = shareText.title;
+    const shareAria = shareText.aria;
+    const imageText = UTG.shareImageButtonText
+      ? UTG.shareImageButtonText({ name })
+      : {
+        action: "image",
+        title: uiText("shareResult.imageTitle", "Share as an image"),
+        aria: uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", name)
+      };
     const shareId = (style && style.slug) || "";
+    // Preview's visible label is hidden below 640px, which left the 👁 as the
+    // button's whole accessible name; the same label names it at every width.
+    const previewLabel = uiText("stylePreview.title", "Preview");
 
     // A style's note is its English one unless the locale file carries
     // ui.styleNotes.<slug>: on /de/gross-und-kleinschreibung/ every card
@@ -1039,14 +1117,14 @@ const decorations = window.UTG_DECORATIONS
       <div class="style-actions-stack">
         <div class="style-actions">
           <button class="copy-btn" data-text="${safeText}" data-style="${safeName}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${ICONS.copy}<span class="copy-label">${STR.copy}</span> <kbd class="copy-kbd">↵</kbd></button>
-          <button class="preview-btn" data-style="${safeName}" type="button" title="${safeAttr(uiText("stylePreview.dialogAriaLabel", "Platform preview"))}">👁 <span class="preview-label">${escapeHtml(uiText("stylePreview.title", "Preview"))}</span></button>
+          <button class="preview-btn" data-style="${safeName}" type="button" title="${safeAttr(uiText("stylePreview.dialogAriaLabel", "Platform preview"))}" aria-label="${safeAttr(previewLabel)}">👁 <span class="preview-label">${escapeHtml(previewLabel)}</span></button>
           <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
         </div>
         <div class="result-share-row">
-          <button class="share-result-btn" data-style="${safeName}" data-share-id="${safeAttr(shareId)}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
-            ${ICONS.share}<span class="share-result-label">${escapeHtml(shareLabel)}</span>
+          <button class="share-result-btn" data-style="${safeName}" data-share-id="${safeAttr(shareId)}" data-share-name="${safeName}" data-share-surface="generator" data-share-action="${shareText.action}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
+            ${shareText.action === "copy_link" ? ICONS.link : ICONS.share}<span class="share-result-label">${escapeHtml(shareLabel)}</span>
           </button>
-          <button class="share-image-btn" data-share-id="${safeAttr(shareId)}" data-share-name="${safeName}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(uiText("shareResult.imageTitle", "Share as an image"))}" aria-label="${safeAttr(uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", name))}">${ICONS.image}</button>
+          <button class="share-image-btn" data-share-id="${safeAttr(shareId)}" data-share-name="${safeName}" data-share-surface="generator" data-share-action="${imageText.action}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(imageText.title)}" aria-label="${safeAttr(imageText.aria)}">${ICONS.image}</button>
         </div>
       </div>
     `;
@@ -1640,6 +1718,16 @@ const decorations = window.UTG_DECORATIONS
   /* ===================
      RENDER: Saved styles
      =================== */
+  // The hint promises the list outlives the visit. When the browser refused
+  // the write (blocked site data, private mode, a full quota) the store keeps
+  // it for this page only, so an English page says that instead. No locale
+  // ships this sentence, so a translated page keeps its hint as it was.
+  const UNSAVED_HINT_EN = "This browser blocked storage, so these are kept only until you leave this page.";
+  function savedHintText() {
+    if (PAGE_LANG === "en" && UTG.saved && UTG.saved.unsaved && UTG.saved.unsaved()) return UNSAVED_HINT_EN;
+    return uiText("savedStyles.hint", "Saved on this device — they'll be waiting here when you come back.");
+  }
+
   // Lazily build the "Your saved styles" section above the results grid.
   function ensureSavedSection() {
     if (!el.resultsGrid) return null;
@@ -1656,7 +1744,7 @@ const decorations = window.UTG_DECORATIONS
     section.hidden = true;
     const savedHeading = uiText("savedStyles.heading", "Your saved styles");
     const savedClearAll = uiText("savedStyles.clearAll", "Clear all");
-    const savedHint = uiText("savedStyles.hint", "Saved on this device — they'll be waiting here when you come back.");
+    const savedHint = savedHintText();
     section.innerHTML = `
       <div class="saved-header">
         <h2 class="saved-title">★ ${escapeHtml(savedHeading)}</h2>
@@ -1712,6 +1800,8 @@ const decorations = window.UTG_DECORATIONS
     }
 
     section.hidden = false;
+    const hint = $(".saved-hint", section);
+    if (hint) hint.textContent = savedHintText();
     const keptAds = clearGridKeepingAds(grid);
 
     const inputText = el.mainInput ? el.mainInput.value : "";
@@ -1781,6 +1871,36 @@ const decorations = window.UTG_DECORATIONS
     });
   }
 
+  // Script-aware order (2026-11-07). The registry's map fonts (bold, script,
+  // bubble and the rest: 50 of 114 styles) have glyphs for Latin letters only,
+  // so text typed with no Latin letter at all comes back from them unchanged.
+  // On the Popular tab that was 9 of 11 cards on the ru, ar, ja, hi, ko and th
+  // homes, each a Copy button that copies the visitor's own text back. For that
+  // input the cards are ranked by what the style actually did to it, measured
+  // on the output, so no style list has to be kept in step with the registry:
+  //   0 frame or wrap: every letter kept, in order (꧁༺ … ༻꧂, ❨word❩)
+  //   1 case change: same letters, other case (Cyrillic, Greek, Armenian)
+  //   2 mark overlay: combining strike/underline marks (rendering varies by
+  //     script, so after the frames)
+  //   3 everything else that changed it: reversed, redacted, partly flipped
+  //   4 unchanged
+  // Mixed input ("Jane Привет") is left in the usual order: the fonts still
+  // style its Latin part.
+  const NON_LATIN_TIER_UNCHANGED = 4;
+  function isNonLatinLetterInput(text) {
+    return /\p{L}/u.test(text) && !/\p{Script=Latin}/u.test(text);
+  }
+  function nonLatinTier(input, output) {
+    if (!output || output === input) return NON_LATIN_TIER_UNCHANGED;
+    const noMarks = (s) => s.normalize("NFD").replace(/\p{M}/gu, "");
+    if (noMarks(output) === noMarks(input)) return 2;
+    const letters = (s) => (s.match(/[\p{L}\p{M}\p{N}]/gu) || []).join("");
+    const inLetters = letters(input);
+    if (letters(output) === inLetters) return 0;
+    if (letters(output).toLocaleLowerCase() === inLetters.toLocaleLowerCase()) return 1;
+    return 3;
+  }
+
   function renderResults() {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
@@ -1839,12 +1959,41 @@ const decorations = window.UTG_DECORATIONS
       usageCount(b[0]) - usageCount(a[0]) || usageLast(b[0]) - usageLast(a[0])
     );
 
+    // Text with no Latin letter: rank by what each style did to it (see
+    // nonLatinTier). The sort is stable, so the usage order above survives
+    // inside each tier. On the untouched default Popular tab, a card that would
+    // copy the text back unchanged gives its place to a registry style that
+    // frames, re-cases or marks it. The number of cards stays the same; each
+    // card now carries the safety pill that only unchanged cards omit, which
+    // is the grid a Latin-input visitor already gets.
+    let ordered = filtered;
+    if (inputText && isNonLatinLetterInput(inputText)) {
+      const tierOf = new Map();
+      const tier = (entry) => {
+        if (!tierOf.has(entry[0])) tierOf.set(entry[0], nonLatinTier(inputText, applyScope(inputText, entry[1])));
+        return tierOf.get(entry[0]);
+      };
+      ordered = filtered.slice().sort((a, b) => tier(a) - tier(b));
+      const defaultPopular = currentCategory === "popular" && !searchQuery && !allowedSlugs &&
+        currentGroup === "all" && currentFamily === "all";
+      if (defaultPopular) {
+        const keep = ordered.filter((entry) => tier(entry) < NON_LATIN_TIER_UNCHANGED);
+        const shown = new Set(keep.map((entry) => entry[0]));
+        // The tab's own working cards stay; only the freed places are filled.
+        const extra = entries
+          .filter(([name, style]) => style && !shown.has(name) && tier([name, style]) <= 2)
+          .sort((a, b) => tier(a) - tier(b))
+          .slice(0, Math.max(0, filtered.length - keep.length));
+        ordered = keep.concat(extra).sort((a, b) => tier(a) - tier(b));
+      }
+    }
+
     const isDemo = !inputText;
     const asTyped = applyFormatMarks(inputText || DEMO_TEXT);
     let count = 0;
 
     const cards = [];
-    filtered.forEach(([name, style]) => {
+    ordered.forEach(([name, style]) => {
       const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
       cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo, converted === asTyped));
@@ -2166,16 +2315,22 @@ const decorations = window.UTG_DECORATIONS
       if (el.inputClearBtn) el.inputClearBtn.hidden = len === 0;
       applyTextStats(val);
     }
-    function pushUrlState() {
-      const params = new URLSearchParams(window.location.search);
+    // Typed text stays on the device (2026-11-07). This used to write the
+    // input into ?q= on every pause, so a typed name sat in the address bar,
+    // in the page_location of every analytics event that followed, and in
+    // the request line of every reload, while the FAQ on / and 16 locale
+    // homes says nothing you type is sent to a server. Now a draft lives in
+    // this tab's sessionStorage (it survives reload and Back, and dies with
+    // the tab, as the URL copy did), and the URL carries text only when the
+    // visitor shares on purpose (UTG.buildShareUrl). An inbound ?q= link
+    // still opens filled; the first edit drops the stale ?q= from the bar.
+    function persistDraft() {
       const val = el.mainInput.value;
-      if (val) {
-        params.set("q", val);
-      } else {
-        params.delete("q");
-      }
-      const newSearch = params.toString() ? "?" + params.toString() : window.location.pathname;
-      history.replaceState(null, "", newSearch);
+      try {
+        if (val) sessionStorage.setItem(DRAFT_KEY, val);
+        else sessionStorage.removeItem(DRAFT_KEY);
+      } catch (err) { /* storage blocked: the draft simply does not survive a reload */ }
+      dropInboundQuery(val);
     }
 
     if (el.mainInput) {
@@ -2183,7 +2338,7 @@ const decorations = window.UTG_DECORATIONS
         syncInputUI();
         trackGenerateUse();
         clearTimeout(urlSyncTimer);
-        urlSyncTimer = setTimeout(pushUrlState, 400);
+        urlSyncTimer = setTimeout(persistDraft, 400);
         renderSavedStyles();
         renderResults();
       });
@@ -2209,7 +2364,7 @@ const decorations = window.UTG_DECORATIONS
         // on screen above an empty box.
         el.mainInput.dispatchEvent(new Event("input", { bubbles: true }));
         clearTimeout(urlSyncTimer);
-        pushUrlState();
+        persistDraft();
         el.mainInput.focus();
       });
     }
@@ -2367,16 +2522,23 @@ document.addEventListener("copy", () => {
 
     // Share buttons built before the locale JSON arrived (static surfaces —
     // the zalgo page — never rebuild their cards, so relabel them in place).
-    $$(".share-result-btn").forEach((btn) => {
-      const label = $(".share-result-label", btn);
-      if (label && !btn.classList.contains("copied")) {
-        label.textContent = uiText("shareResult.label", "Share");
-      }
-      btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
-    });
-    $$(".share-image-btn").forEach((btn) => {
-      btn.title = uiText("shareResult.imageTitle", "Share as an image");
-    });
+    // share-core.js owns the words (Share, or Copy link where there is no
+    // share sheet); the loops below are the pre-2026-11-01 fallback for a
+    // page still serving an older cached share-core.js.
+    if (UTG.relabelShareButtons) {
+      UTG.relabelShareButtons();
+    } else {
+      $$(".share-result-btn").forEach((btn) => {
+        const label = $(".share-result-label", btn);
+        if (label && !btn.classList.contains("copied")) {
+          label.textContent = uiText("shareResult.label", "Share");
+        }
+        btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
+      });
+      $$(".share-image-btn").forEach((btn) => {
+        btn.title = uiText("shareResult.imageTitle", "Share as an image");
+      });
+    }
 
     const scopeControl = $("#scopeControl");
     if (scopeControl) {
@@ -2454,7 +2616,7 @@ document.addEventListener("copy", () => {
       const clearBtn = $("#savedClearBtn", savedSection);
       if (clearBtn) clearBtn.textContent = uiText("savedStyles.clearAll", "Clear all");
       const hint = $(".saved-hint", savedSection);
-      if (hint) hint.textContent = uiText("savedStyles.hint", "Saved on this device — they'll be waiting here when you come back.");
+      if (hint) hint.textContent = savedHintText();
     }
 
     if (el.textStatsBar) {
@@ -2509,13 +2671,19 @@ document.addEventListener("copy", () => {
 
     labelMainInput();
 
-    // Restore input text from URL ?q= param (shareable links)
+    // Restore input text: a shared ?q= link wins, then this tab's draft from
+    // before a reload or Back (persistDraft; the URL no longer carries it).
     if (el.mainInput) {
       const urlQ = new URLSearchParams(window.location.search).get("q");
-      if (urlQ) {
+      let draft = null;
+      if (!urlQ) {
+        try { draft = sessionStorage.getItem(DRAFT_KEY); } catch (err) { draft = null; }
+      }
+      const restore = urlQ || draft;
+      if (restore) {
         // A programmatic assignment bypasses the textarea's maxlength, so a
         // long ?q= used to open a page tens of thousands of pixels tall.
-        el.mainInput.value = urlQ.slice(0, el.mainInput.maxLength > 0 ? el.mainInput.maxLength : 500);
+        el.mainInput.value = restore.slice(0, el.mainInput.maxLength > 0 ? el.mainInput.maxLength : 500);
       }
     }
 
@@ -2588,13 +2756,38 @@ document.addEventListener("copy", () => {
      belong here, outside any init path.
      ═══════════════════════════════════════════════════════════════ */
 
+  /* The copy toast is also how a screen reader hears that Copy worked. It is
+     static markup carrying the page's own localized message, so it is made a
+     polite live region here rather than in each HTML file. A live region
+     announces a change to its text, not an element fading into view, so the
+     message is in it only while it is shown: taken out now (the toast is
+     transparent until the first copy, so nothing on screen changes), written
+     back on each copy, and taken out again once the fade-out is over. */
+  const COPY_TOAST_CLEAR_MS = 400; // longer than .copy-toast's 0.2s opacity fade
+  const copyToastText = prepareCopyToast(el.copyToast);
+  function prepareCopyToast(toast) {
+    if (!toast) return "";
+    const text = toast.textContent;
+    toast.textContent = "";
+    if (!toast.hasAttribute("role")) toast.setAttribute("role", "status");
+    if (!toast.hasAttribute("aria-live")) toast.setAttribute("aria-live", "polite");
+    if (!toast.hasAttribute("aria-atomic")) toast.setAttribute("aria-atomic", "true");
+    return text;
+  }
+
   let toastTimer = null;
+  let toastClearTimer = null;
   function showCopyToast() {
     const toast = el.copyToast;
     if (!toast) return;
+    clearTimeout(toastClearTimer);
+    toast.textContent = copyToastText;
     toast.classList.add("is-visible");
     if (toastTimer) clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1800);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove("is-visible");
+      toastClearTimer = setTimeout(() => { toast.textContent = ""; }, COPY_TOAST_CLEAR_MS);
+    }, 1800);
   }
 
 // Update a copy button's visible label. Decorated buttons keep their icon and
@@ -2661,7 +2854,8 @@ function nudgeShareAfterCopy(card) {
   label.textContent = uiText("shareResult.afterCopy", "Share this style");
   setTimeout(() => {
     if (!label.isConnected || shareBtn.classList.contains("copied")) return;
-    label.textContent = uiText("shareResult.label", "Share");
+    // Back to what the button does here (Share, or Copy link), not to "Share".
+    label.textContent = UTG.idleShareLabel ? UTG.idleShareLabel(shareBtn) : uiText("shareResult.label", "Share");
   }, 2500);
 }
 

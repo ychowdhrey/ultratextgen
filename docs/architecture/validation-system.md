@@ -129,6 +129,14 @@ the ninth its own text said the next recurrence should be a generator rather tha
 another hand-edit. It reuses `run-ci-gates.py`'s own `load_gates()`, so the inventory,
 the local runner and CI can never disagree about what gates.
 
+*(2026-11-01)* The inventory used to be one sentence inside a table cell with a
+total ("blocking gates (95)"). Every PR that added a gate rewrote that same line,
+so each merge left every other open gate-adding PR conflicted on `docs/README.md`
+or red on this check, and fixing one re-broke the next (five open PRs at once).
+It is now its own `### Gate inventory` section, one gate per line, with no total:
+PRs adding different gates edit different lines and git merges them unaided
+(checked with two throwaway branches). The check is still blocking.
+
 ## If a defect keeps recurring despite a green gate
 
 Check whether the job is a **required status check** in branch protection for the
@@ -187,6 +195,27 @@ pages, every one a legitimate mention of another character or a paired tile such
 broken inputs each returned 1 through `run-ci-gates.py --only symbol_pages`, a clean tree returned 0. Detector lesson: the
 first FAQ check keyed on `id="faq"` and undercounted 263 pages as 79; a blind read of 38 pages found it.
 
+
+## JSON-LD parse check (`check:jsonld-parse`)
+
+Added 2026-11-07. Every script that reads JSON-LD here (`faq-schema-audit.js`, `llms-index.js`, the generators) wraps
+`JSON.parse` in a try/catch and skips the block on failure, so a block that does not parse passed every structured-data
+gate: none of them could see it. That is how `library/steam-symbols` shipped a FAQPage block with an unescaped `"math"`
+inside a string, unreadable by any consumer, until a site-wide crawl found it (fixed in `da0a3f5ca5`).
+`scripts/lib/jsonld-parse.js` is the one definition: a `<script type="application/ld+json">` whose text is empty, fails
+`JSON.parse`, or parses to a bare value. The text is taken as an HTML parser hands it over (content up to the first
+`</script`, no entity decoding, nothing inside an HTML comment). Backlog when it landed: 0 of 12,719 blocks on 4,894
+tracked pages (test pages and `scripts/` excluded). It is still a delta gate, as specified: a changed page fails only on
+an unreadable block whose text was not already unreadable on that page at the merge base (renames compared against the
+old path); pre-existing failures, on changed pages and site-wide, are printed every run and never fail.
+
+Proof it gates (`run-ci-gates.py --only jsonld_parse`): the real regression replayed (the pre-fix steam-symbols page
+restored onto the fixed base) returned 1; a new `de/` page with a trailing comma, an empty block on a symbol page and a
+bare-string block on a guide returned 1 with all three named; a negative control (an edited but valid block, a broken
+block inside an HTML comment, a `data-type` attribute, a `text/plain` script) returned 0. Against a base that already
+carries the broken page, touching it, renaming it, and touching another page each returned 0 with the failure reported.
+An unresolvable base returns 2. The same pass wired `test:sitemap-images` (23 assertions, previously run by no
+workflow) into the gate set: disabling its decorative-figure rule returned 1.
 
 ## Printables translation key parity (`check:printables-i18n-parity`)
 

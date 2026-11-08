@@ -265,6 +265,14 @@
       return lastEvicted.slice();
     },
 
+    /** True while the last write was refused (blocked site data, private
+        mode, a full quota): the records then live in memory for this page
+        only, and a host must not tell the visitor they are kept on the
+        device. False before any write and once a write lands. */
+    unsaved() {
+      return unsaved;
+    },
+
     clear(type) {
       refresh();
       items = type ? items.filter((r) => r.type !== type) : [];

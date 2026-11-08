@@ -40,3 +40,8 @@ procedure and the verification command.
   *field*, not a type.
 - `renderer.js` has a `case 'pattern'` that **no style currently uses** — supported,
   unused. Do not assume it is dead without checking; do not assume it is reachable.
+- `renderAny` normalises its input before any style runs: each grapheme cluster
+  is composed to NFC (a decomposed accent styles like the composed one), and a
+  keycap (`1️⃣`, `#️⃣`, `*️⃣`) or emoji circled letter (`Ⓜ️`) is held out of
+  the style as one placeholder and put back. Already-NFC text with neither takes
+  the unchanged path. `npm run test:renderer-unicode` pins it for every style.

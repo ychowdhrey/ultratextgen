@@ -1,7 +1,12 @@
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
-Disallow: /js/vertical/verticalLayouts.test.html
+# No Disallow for the JS test fixtures (corrected 2026-11-01). This line used to
+# read "Disallow: /js/vertical/verticalLayouts.test.html", but Pages serves that
+# file at /js/vertical/verticalLayouts.test (the .html spelling 308s there), so
+# the rule matched nothing. Correcting the spelling would be worse, not better:
+# every fixture carries <meta name="robots" content="noindex, nofollow">, and a
+# crawler can only read noindex on a page it is allowed to fetch.
 
 User-agent: GPTBot
 Allow: /

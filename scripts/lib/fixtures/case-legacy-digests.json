@@ -1,6 +1,6 @@
 {
  "note": "Legacy (no data-case-policy) case outputs. See scripts/build-case-legacy-snapshot.js.",
- "source_ref": "a13cde24e903ad59ba55d7cd2435b733ca8b4f89",
+ "source_ref": "28259ffe8cf81e4ee7b85bbadf60916616709fea",
  "corpus_sha256": "9eb6565080ec5a90364ba930e187b669e47e0814e5eb645893c51f33bcff0ac6",
  "by_lang_style": {
   "(none)|UPPERCASE": "86d84da54522fc5a60c7506728bff7bf29e4d0df353f209ffb0e9af07e52f101",
@@ -353,7 +353,7 @@
   "Ultra Word Double Wrap": "2da0befae8d0f569f49763c971e30363317ac13b112f6ba6ba8c7af5740d079b",
   "Ultra Word Forward Arrow Wrap": "d5cc52d88f502808f7dfbdeb16e59edf543d6d474d330ac7183117139210ab23",
   "Ultra Yi": "2a8237e9cf818917b6ca9dba6b24999656dd4bf85e552dfce0866d1f5d59482e",
-  "Upside Down Micro Text": "91a496a09dbb0bbb484d981f9e0b576d818560035f416b1380274bd5d65a061f",
+  "Upside Down Micro Text": "2384622631df9c9353e0e1503e28a36f0e5a61af9067a80c1e6218c4f78de95c",
   "aLtErNaTiNg CaSe": "159d1d08136c1617c85fbfa23cc13e1441e4d567959afe23573d82747e877dfe",
   "lowercase": "e0ce36356e2b7baee8de1eb70c394507c8d9069563f44514fe437aef51e802f2",
   "tOGGLE cASE": "5c8682ed7bf633c5af3a7301428527ac5879f3df436899b1b435c3cfc62d5fa4"

@@ -86,7 +86,7 @@ has not seen, and on a locale with no `ui.skinTone` strings.
 Several build-time and test tools **slice a block out of the shipped widget and
 evaluate it** rather than reimplementing it (`scripts/lib/zalgo-engine.js`,
 `scripts/lib/collection-grid-engine.js`, `scripts/lib/inline-script-capture.js`,
-`i18n.test.js`, `header.test.js`). The loader **throws** when a marker is missing
+`i18n.test.js`, `header.test.js`, `script.format-marks.test.js`). The loader **throws** when a marker is missing
 rather than falling back to a local copy. If you move such code, move its markers;
 never duplicate the logic.
 

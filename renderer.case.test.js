@@ -161,7 +161,11 @@ REVERSE.forEach(name => {
 });
 expectStyle('Reverse Order Only', 'hello', 'olleh');
 expectStyle('Reverse + Flip Combo', 'hello', 'o\u05DF\u05DF\u01DD\u0265');
-expectStyle('Reverse Order Only', 'e\u0301a', 'ae\u0301');
+// A combining mark stays on its letter when reversed. q + dot above has no
+// precomposed form; a decomposed é is composed first (renderAny composes each
+// cluster to NFC), so it comes back as the single code point.
+expectStyle('Reverse Order Only', 'q\u0307a', 'aq\u0307');
+expectStyle('Reverse Order Only', 'e\u0301a', 'a\u00e9');
 
 // --- Turkish dotless i passes through as typed (a dotted i is another letter) -------
 ['Ultra Bold', 'Ultra Script'].forEach(name => {

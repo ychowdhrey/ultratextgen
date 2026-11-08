@@ -116,6 +116,7 @@ is never called and which exits 0 in silence.
 - Add the rule it enforces to the right `.claude/rules/` file as a current-truth
   statement, and the evidence to `docs/architecture/validation-system.md` or the
   subsystem's own doc.
-- `npm run check:gate-inventory` — the `docs/README.md` sentence is **generated**;
-  regenerate it rather than editing it.
+- `npm run build:gate-inventory` — the `docs/README.md` list is **generated**, one
+  gate per line; regenerate it rather than editing it. If merging `main` conflicts
+  there, take either side and re-run the build.
 - `npm run check:ci-gates` before opening the PR.

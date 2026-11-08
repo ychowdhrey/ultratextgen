@@ -37,12 +37,6 @@ README = REPO / 'docs' / 'README.md'
 BEGIN = '<!-- gate-inventory:begin -->'
 END = '<!-- gate-inventory:end -->'
 
-WORDS = {
-    13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen',
-    17: 'seventeen', 18: 'eighteen', 19: 'nineteen', 20: 'twenty',
-}
-
-
 def load_gates():
     """Reuse run-ci-gates.py's own parser. One owner for 'what gates'."""
     path = REPO / 'scripts' / 'run-ci-gates.py'
@@ -73,6 +67,16 @@ def display_name(cmd):
 
 
 def render():
+    """One gate per line, and no total.
+
+    Until 2026-11-01 this was one long sentence inside a table cell with a
+    count ("blocking gates (95)"). Every PR that added a gate rewrote that same
+    line, so each merge left every other open gate-adding PR conflicted on
+    docs/README.md or red here, and resolving one re-broke the next. One gate
+    per line means two PRs adding different gates touch different lines and
+    git merges them on its own; dropping the count removes the one line every
+    such PR would otherwise still share. The check stays blocking.
+    """
     gates = load_gates()
     tests, checks = [], []
     for _sid, cmd in gates:
@@ -82,19 +86,24 @@ def render():
     # Stable, readable order; dedupe defensively (two ids could share a command).
     checks = sorted(dict.fromkeys(checks))
     tests = sorted(dict.fromkeys(tests))
-    n_tests = WORDS.get(len(tests), str(len(tests)))
 
-    return (
-        f'{BEGIN} **Required, blocking gates ({len(gates)}):** '
-        + ', '.join(f'`{c}`' for c in checks)
-        + f', plus {n_tests} gating **unit-test** steps with no backlog to be '
-          'red against: '
-        + ', '.join(f'`{t}`' for t in tests)
-        + '. *(This sentence is generated from `.github/workflows/validate.yml` '
-          'by `scripts/build-gate-inventory.py`; it is not maintained by hand '
-          'and a gate added to the workflow appears here for free.)* '
-        + END
-    )
+    lines = [
+        BEGIN,
+        '',
+        '*Generated from `.github/workflows/validate.yml` by '
+        '`scripts/build-gate-inventory.py`; not maintained by hand. A gate added '
+        'to the workflow appears here when you run `npm run build:gate-inventory`. '
+        'One gate per line and no total, so PRs adding different gates merge '
+        'without conflicting.*',
+        '',
+        'Required, blocking checks:',
+        '',
+    ]
+    lines += [f'- `{c}`' for c in checks]
+    lines += ['', 'Gating unit-test steps (no backlog to be red against):', '']
+    lines += [f'- `{t}`' for t in tests]
+    lines += ['', END]
+    return '\n'.join(lines)
 
 
 def main():
@@ -120,10 +129,12 @@ def main():
         return 0
 
     print('  status:  STALE')
-    old_n = re.search(r'blocking gates \((\d+)\)', current)
-    new_n = re.search(r'blocking gates \((\d+)\)', fresh)
-    if old_n and new_n and old_n.group(1) != new_n.group(1):
-        print(f'  count:   says {old_n.group(1)}, workflow gates on {new_n.group(1)}')
+    listed = set(re.findall(r'`([\w:./-]+)`', current))
+    wanted = set(re.findall(r'^- `([\w:./-]+)`$', fresh, re.M))
+    for name in sorted(wanted - listed):
+        print(f'  missing: {name}')
+    for name in sorted(listed - wanted - {'.github/workflows/validate.yml', 'scripts/build-gate-inventory.py', 'npm run build:gate-inventory'}):
+        print(f'  extra:   {name}')
 
     if not write:
         print('')
