@@ -281,6 +281,32 @@ after typing, the same-tab restore, the share link and the inbound-link behaviou
 Other controllers that write their own state into the URL (`kaomojiPageController`
 writes the composed face, `tattooPageController` only the mode) are untouched.
 
+**Extended 2026-11-08 to the three tools that kept their own URL sync.**
+`category/upside-down-text/upside-down.js` (`?q=`, 1 page),
+`usecase/zalgo-text/zalgo-text.js` (`?text=`, 14 pages; `script.js` runs headless
+there and does not own the input) and `js/emoji/emoji-tool.js` (`?q=`, 16 pages)
+wrote the typed text into the address bar on every pause; the emoji tool also
+pushed history entries carrying it. Each now follows the rule above: the address
+bar keeps only the settings (mode, wrap; zalgo's settings and seed), the draft
+lives in `sessionStorage` under `utg_draft:<pathname>`, and an inbound
+`?q=`/`?text=` link opens filled and keeps its parameter until the first edit.
+Explicit sharing is unchanged: upside-down's Share pair and zalgo's Share pairs
+and GIF share build their link from a share-only builder (`shareUrl()` /
+`shareLink()`) that includes the text and settings, so a shared link still
+restores the exact output. The emoji tool keeps each history entry's text in
+`history.state`, so Back still restores it without the URL. Measured on main
+before the change: typing "Jane Private" left `?q=Jane+Private` (upside-down,
+text-to-emoji, emoji-letters) and `?text=Jane+Private&seed=…` (zalgo).
+`check:runtime-smoke` ("upside-down, zalgo and emoji tools") asserts the empty
+text parameter after typing, the settings kept, the share link, the same-tab
+restore and the inbound-link behaviour; it fails 8 checks on the pre-change tree.
+**Analytics definition change, 2026-11-08 (merge date):** `page_location` on
+these 31 pages no longer carries typed text; a `?q=`/`?text=` landing there comes
+from a shared link or an old bookmark/history entry. Still open, same class:
+`kaomojiPageController` writes the current face to `?q=` on Copy, Copy link,
+part pick and a recent-face tap, and that face can be text the visitor typed into
+the face field; Copy link is an explicit share, the other three are not.
+
 ## Migration off `utg_saved_styles`
 
 The old flat array is read and folded in as `type: "style"` records, **and kept in
