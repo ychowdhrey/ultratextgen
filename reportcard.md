@@ -10,6 +10,36 @@ Newest entries come first. Numbers are only given where we could count them.
 
 ## November 2026
 
+### 7 November 2026
+
+Styled text from the UltraTextGen generators now keeps accents, keycap numbers and underline or strikethrough marks intact in every one of the 114 text styles.
+
+Before, the same word could style differently depending on how a keyboard typed it. "Café" typed with a separate accent mark came out differently in 67 of the 114 styles than the same word typed with a single accented letter. Keycap emoji such as 1️⃣ broke in 46 styles, and the circled M emoji Ⓜ️ was lowered to a plain letter in 6. The underline and strikethrough options put marks in the middle of emoji and accented letters in 107 styles, and added a second mark to text that already had one. Now accents give the same result however they were typed, keycap and circled M emoji pass through whole, and each character gets exactly one underline or strike mark. Ordinary text was compared before and after across 3,029 test inputs in all 114 styles, and only the line breaks in Upside Down Micro Text, which are now kept, changed. Anyone writing a bio, a username or a caption with emoji, accents or numbers gets text that looks the way it was typed.
+
+### 7 November 2026
+
+The character counter now judges a Bluesky post, a TikTok caption and a Pinterest pin description by the limit each one really uses.
+
+Before, the counter measured most platforms in one way, so a family emoji cost 7 of a Bluesky post's 300 characters and a bold TikTok caption was counted at half its true size. A Pinterest pin description was checked against 500 characters when Pinterest allows 800. The counter now counts each platform the way that platform does, shows Bluesky's second limit in bytes beside the character count, and warns when 300 stacked Zalgo letters would be refused. Creators and social media users who write long, styled or emoji heavy text get a warning only when the platform would actually reject it.
+
+### 7 November 2026
+
+The small caps, subscript and superscript pages no longer start with sample text in the box, and the classified text page keeps its results and questions in the right place.
+
+Before, the three pages loaded a demo word such as "H2O" in the input, so a visitor's first keystrokes were added to text they had to delete first. The boxes now start empty and show the sample in the result cards until you type. On the classified text page, a layout fault made the results and the questions below them sit inside a block about 4,300 pixels tall on a phone, and that is fixed. The overview table on the style generators page now links each of its 17 rows straight to that generator, which used to sit about three screens further down.
+
+### 1 November 2026
+
+The word search, word scramble, spelling and crossword makers now offer ready made word lists, and the spelling worksheet can set a different practice level for each child.
+
+Teachers and parents can open "Start from a ready word list" and choose a set with one tap instead of typing it: the Dolch sight words from pre-primer to second grade, the first 100 Fry words, days of the week, months of the year, number words from one to twenty, and word families such as the -at and -op words. Long lists are split into parts that fit each maker. The crossword offers only the lists whose every word fits its grid. On the spelling worksheet, writing a level after a child's name, such as "Noah 3", prints that child's Trace, write, remember page at that level in a class set. The name labels page also has a Classroom size of 2.625 by 1 inch that opens the class list, and the sheets per page choice now shows before a list is typed.
+
+### 1 November 2026
+
+Share buttons now say what they do, and the upside down text generator can finally be shared.
+
+Before, in browsers that cannot open a share menu, the Share button copied the link but only said "Share" afterwards, and the image button saved a picture while its label promised a share. The buttons now read "Copy link" or a download label from the start, in the page's own language where the page has a translation. The upside down text page used to have only a Copy button. It now has Share and Share as image beside it, and the shared link opens the same result for the person who receives it. A click on the Telegram or VK share links on the Russian pages no longer starts a second share at the same time.
+
 ### 1 November 2026
 
 The word search maker places more of a teacher's words, stops repeating them by accident, and prints in large type on request.
