@@ -2159,6 +2159,22 @@ async function main() {
     await ctx.close();
   }
 
+  // (e) The zalgo box opens with a sample. Its first edit cleared the box
+  // inside beforeinput and let the browser insert the keystroke, which the
+  // browser had already planned against the old text: "zalgo" arrived as
+  // "algo" (always in WebKit; in Chromium once the sample was selected).
+  console.log('\n/usecase/zalgo-text/ (the first keystroke survives the sample)');
+  for (const [how, prep] of [['caret at the end', async (p) => { await p.keyboard.press('End'); }], ['sample selected', async (p) => { await p.keyboard.press('ControlOrMeta+a'); }]]) {
+    const { ctx, page, errors } = await open('/usecase/zalgo-text/', 'desktop');
+    await page.click('#mainInput');
+    await prep(page);
+    await page.keyboard.type('zalgo', { delay: 25 });
+    await page.waitForTimeout(400);
+    check(`zalgo: typing with the ${how} keeps every letter`, (await page.inputValue('#mainInput')) === 'zalgo', JSON.stringify(await page.inputValue('#mainInput')));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
