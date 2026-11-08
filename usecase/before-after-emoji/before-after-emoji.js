@@ -328,6 +328,11 @@
   function copyText(text, btn) {
     if (!text) return;
     navigator.clipboard.writeText(text).then(() => {
+      // Record the copy through the site's one copy writer (header.js), the
+      // way script.js does for its own cards.
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+        window.UltraTextGen.trackCopy("button", text, { style_name: "" });
+      }
       const original = btn.textContent;
       btn.textContent = "Copied ✓";
       btn.classList.add("etg-copied");
@@ -390,7 +395,12 @@
 
     // Bind copy buttons
     $$(".etg-copy-btn", grid).forEach(btn => {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", (e) => {
+        // These cards are .copy-btn for their look, but their text lives in
+        // data-copy-text. script.js's page-wide .copy-btn handler reads
+        // data-text, so without this it wrote "" to the clipboard after the
+        // copy below and the visitor pasted nothing.
+        e.stopPropagation();
         const text = decodeURIComponent(btn.dataset.copyText || "");
         copyText(text, btn);
       });
