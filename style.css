@@ -9330,7 +9330,8 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   font-size: 0.75rem;
   color: var(--text-muted);
 }
-.deco-chip.copied {
+.deco-chip.copied,
+.deco-chip.is-copied {
   border-color: var(--ts-safe);
 }
 .deco-chip.copied .deco-chip-label {

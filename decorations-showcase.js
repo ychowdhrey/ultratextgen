@@ -30,6 +30,18 @@
       chip.setAttribute("tabindex", "0");
       function fire() {
         var text = chip.getAttribute("data-copy");
+        // Where symbol-explorer.js is on the page, use its copy path: it
+        // falls back to execCommand, says "failed" when neither path worked,
+        // shows its localized toast and records one copy_text. This module's
+        // own path below shows an English " · Copied!" whether or not the
+        // copy happened, so it stays only for pages without the explorer and
+        // its toast (where it is still the only confirmation the chip gives).
+        const ns = window.UltraTextGen;
+        if (ns && typeof ns.copyText === "function" && document.getElementById("symbolToast")) {
+          const name = chip.querySelector(".deco-chip-label");
+          ns.copyText(text, chip, name ? name.textContent.trim() : text, "button");
+          return;
+        }
         Promise.resolve(copyText(text)).then(function () {
           if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
             window.UltraTextGen.trackCopy("button", text);
