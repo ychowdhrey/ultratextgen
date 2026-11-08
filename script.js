@@ -465,8 +465,16 @@ const decorations = window.UTG_DECORATIONS
   /* ===================
      HELPERS
      =================== */
+  // Every caller writes the result inside a double-quoted attribute, and the
+  // parser decodes entities there. Escaping only " let typed "&lt;3 &amp;"
+  // reach the clipboard as "<3 &" (2026-11-08 audit): the card showed one
+  // text and Copy delivered another. & goes first so nothing is escaped twice.
   function safeAttr(str) {
-    return String(str || "").replace(/"/g, "&quot;");
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
   }
 
   // Escape converted text before it lands in innerHTML. Styles that don't

@@ -612,6 +612,28 @@ async function main() {
     await ctx.close();
   }
 
+  // 11a3. A card copies the text it shows. safeAttr escaped only ", so the
+  // attribute parser decoded typed "&lt;3 &amp;" and Copy delivered "<3 &"
+  // under a card that showed "&lt;3 &amp;" (2026-11-08 audit).
+  console.log('\n/ (copied text equals the card text when it looks like an entity)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'I &lt;3 you &amp; Tom &copy; 2026');
+    await page.waitForTimeout(400);
+    await page.evaluate(() => document.querySelector('#categoryTabs .category-tab[data-category="text-decorator"]').click());
+    await page.waitForTimeout(400);
+    const cards = await page.evaluate(() => [...document.querySelectorAll('#resultsGrid .style-card')].map((c) => {
+      const b = c.querySelector('.copy-btn');
+      const shown = [...c.querySelectorAll('*')].map((e) => (e.childElementCount === 0 ? e.textContent : '')).find((t) => t && t.includes('Tom'));
+      return { s: b && b.dataset.style, data: b && b.dataset.text, shown };
+    }).filter((x) => x.data && x.shown));
+    check('decorator cards exist to compare', cards.length > 0, String(cards.length));
+    const off = cards.filter((x) => x.data !== x.shown);
+    check('every card\'s copy text equals the text it shows', !off.length, JSON.stringify(off.slice(0, 2)));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 11b0. The zalgo sliders are named. Both range inputs had no label of any
   // kind on all 13 pages that load zalgo-text.js (2026-11-08 audit).
   console.log('\n/usecase/zalgo-text/ and /ko/usecase/geullichi-tekseuteu/ (slider names)');
