@@ -277,6 +277,7 @@
     if (refs.preview) refs.preview.textContent = face || " ";
     if (refs.faceInput && document.activeElement !== refs.faceInput) refs.faceInput.value = face;
     updateHint(face);
+    syncUrl(face);
     // reflect selection + mood filtering on the option tiles
     var opts = refs.parts.querySelectorAll(".kao-part-opt");
     for (var i = 0; i < opts.length; i++) {
@@ -290,15 +291,32 @@
     }
   }
 
-  /* Push the current face to the URL so it can be shared / linked ("edit in
-     generator" deep links land here). */
+  /* The address bar never carries the face (2026-11-08). The face can be
+     text the visitor typed into the face field, and every later analytics
+     event and every ad request reads the page URL. A face arriving by ?q=
+     ("edit in generator", a shared link) stays in the bar while it is still
+     the face shown and leaves once the face changes; ?mood= and every other
+     param stay. A link with the face is built only when the visitor asks for
+     one (shareLink, Copy link). */
+  var inboundFace = null;
   function syncUrl(face) {
     if (!window.history || !window.history.replaceState) return;
     try {
       var u = new URL(window.location.href);
-      if (face) u.searchParams.set("q", face); else u.searchParams.delete("q");
+      if (!u.searchParams.has("q")) return;
+      if (face && face === inboundFace) return;
+      inboundFace = null;
+      u.searchParams.delete("q");
       window.history.replaceState(null, "", u);
     } catch (e) { /* no-op */ }
+  }
+
+  function shareLink(face) {
+    try {
+      var u = new URL(window.location.href);
+      if (face) u.searchParams.set("q", face); else u.searchParams.delete("q");
+      return u.toString();
+    } catch (e) { return window.location.href; }
   }
 
   /* ---- selection actions ------------------------------------------------- */
@@ -387,8 +405,9 @@
     if (!face) return;
     syncUrl(face);
     if (window.UltraTextGen && window.UltraTextGen.copyText) {
-      // The payload is the page URL, never catalogue content.
-      window.UltraTextGen.copyText(window.location.href, btn, t("linkCopied", "link"), "kaomoji_link");
+      // The payload is a link to this face, never catalogue content. It is
+      // built here, on the visitor's request; the address bar keeps no face.
+      window.UltraTextGen.copyText(shareLink(face), btn, t("linkCopied", "link"), "kaomoji_link");
     }
     pushRecent(face);
   }
@@ -462,7 +481,7 @@
     try {
       var params = new URL(window.location.href).searchParams;
       var q = params.get("q");
-      if (q) freeform = q;
+      if (q) { freeform = q; inboundFace = q; }
       var m = params.get("mood");
       if (m && m !== "all" && isMood(m)) linkedMood = m;
     } catch (e) { /* no-op */ }
@@ -500,6 +519,7 @@
         freeform = refs.faceInput.value;
         if (refs.preview) refs.preview.textContent = freeform || " ";
         updateHint(freeform);
+        syncUrl(freeform);
         // typed text detaches from the part tiles
         var opts = refs.parts.querySelectorAll(".kao-part-opt.is-selected");
         for (var i = 0; i < opts.length; i++) opts[i].classList.remove("is-selected");
