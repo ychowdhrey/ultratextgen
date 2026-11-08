@@ -140,7 +140,13 @@
   function copyKana(kana, romaji) {
     const done = () => showToast(fill(romaji ? TEXT.copiedWithReading : TEXT.copied, kana, romaji));
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(kana).then(done).catch(done);
+      navigator.clipboard.writeText(kana).then(() => {
+        // One copy_text row on success through header.js trackCopy. A chart cell
+        // is the site's own character, so it uses the catalogue method "glyph"
+        // and the row names the kana (2026-11-08 audit).
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("glyph", kana);
+        done();
+      }).catch(done);
     } else {
       const ta = document.createElement("textarea");
       ta.value = kana;

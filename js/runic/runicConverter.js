@@ -117,6 +117,9 @@
     const text = el.copy && el.copy.dataset.text;
     if (!text || !navigator.clipboard) return;
     navigator.clipboard.writeText(text).then(() => {
+      // One copy_text row through header.js trackCopy ("runic_converter" is not
+      // a catalogue method: the runes spell what the visitor typed). 2026-11-08.
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("runic_converter", text);
       // Only the first click of a burst reads the label.
       if (el.copy._copyTimer) clearTimeout(el.copy._copyTimer); else el.copy._copyPrev = el.copy.textContent;
       el.copy.textContent = t("copied", "Copied");

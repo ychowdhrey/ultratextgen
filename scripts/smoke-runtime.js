@@ -634,6 +634,36 @@ async function main() {
     await ctx.close();
   }
 
+  // 11a4. Copies that used to record nothing (2026-11-08 audit; capability
+  // "every clipboard write reaches trackCopy"). Each records one copy_text
+  // under its own method, and none carries the typed text.
+  console.log('\nten tool copies (one copy_text each, no typed text)');
+  for (const [url, inp, txt, sel, method] of [
+    ['/usecase/text-to-emoji/', '#mainInput', 'Qxtestname love pizza', '#copyOutputBtn', 'emoji_tool'],
+    ['/character-counter/', '#counterInput', 'Qxtestname hello', '#counterCopyBtn', 'counter'],
+    ['/library/norse-viking-runes/', '#runicInput', 'Qxtestname', '#runicCopy', 'runic_converter'],
+    ['/usecase/old-english-translator/', '#persona-input', 'Qxtestname you are my friend', '#persona-copy', 'persona_translator'],
+    ['/ko/yeongmun-ireum-byeonhwan/', '#romanizeInput', '홍길동', '.copy-btn', 'korean_romanize'],
+    ['/usecase/linkedin-headline/', '#mainInput', 'Qxtestname Engineer', '.copy-btn', 'linkedin_headline'],
+    ['/category/gothic-fonts/', null, null, '.gsym-tile', 'gothic_tool'],
+    ['/id/huruf-keren-a-sampai-z/', null, null, '.bubble-variant-copy', 'huruf_variant'],
+    ['/hiragana-chart/', null, null, '.kana-cell:not(.kana-cell-empty)', 'glyph'],
+    ['/usecase/before-after-emoji/', null, null, '.etg-caption-copy', 'button']
+  ]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    if (inp) { await page.fill(inp, txt); await page.waitForTimeout(500); }
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await page.locator(sel).filter({ visible: true }).first().click();
+    await page.waitForTimeout(400);
+    const rows = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check(`${url} copies something`, (await clip(page)) !== '__SMOKE__');
+    check(`${url} records one copy_text as ${method}`, rows.length === 1 && rows[0].copy_method === method, JSON.stringify(rows));
+    check(`${url} sends no typed text`, !/Qxtestname/i.test(JSON.stringify(rows).normalize('NFKC')), JSON.stringify(rows));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 11b0. The zalgo sliders are named. Both range inputs had no label of any
   // kind on all 13 pages that load zalgo-text.js (2026-11-08 audit).
   console.log('\n/usecase/zalgo-text/ and /ko/usecase/geullichi-tekseuteu/ (slider names)');

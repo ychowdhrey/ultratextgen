@@ -125,6 +125,14 @@
     hiddenCopyClean: "Copy cleaned text"
   }, window.UTG_COUNTER_I18N || {});
 
+  // One copy_text row per successful copy, through the site's one writer
+  // (header.js trackCopy). "counter" is not a catalogue method, so the row
+  // never carries the visitor's text (2026-11-08 audit).
+  function trackCopied(text) {
+    const U = window.UltraTextGen;
+    if (U && U.trackCopy) U.trackCopy("counter", text);
+  }
+
   function fmt(t, vars) {
     return String(t).replace(/\{(\w+)\}/g, (m, k) => (vars[k] != null ? vars[k] : m));
   }
@@ -370,7 +378,9 @@
       copyClean.type = "button";
       copyClean.addEventListener("click", async () => {
         try {
-          await navigator.clipboard.writeText(reduce.cleanHidden(input.value));
+          const cleaned = reduce.cleanHidden(input.value);
+          await navigator.clipboard.writeText(cleaned);
+          trackCopied(cleaned);
           copyClean.textContent = I18N.copied;
           setTimeout(() => { copyClean.textContent = I18N.hiddenCopyClean; }, 1500);
         } catch (err) {
@@ -520,6 +530,7 @@
         if (!input.value) return;
         try {
           await navigator.clipboard.writeText(input.value);
+          trackCopied(input.value);
           // Only the first click of a burst reads the label.
           if (copyBtn._copyTimer) clearTimeout(copyBtn._copyTimer); else copyBtn._copyPrev = copyBtn.textContent;
           copyBtn.textContent = I18N.copied;

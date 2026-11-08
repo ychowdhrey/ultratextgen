@@ -1065,6 +1065,9 @@
       const text = emojiOutput.textContent;
       if (!text || text === PLACEHOLDER) return;
       navigator.clipboard.writeText(text).then(() => {
+        // One copy_text row through header.js trackCopy; "emoji_tool" is not
+        // a catalogue method, so the typed text never rides along (2026-11-08).
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy('emoji_tool', text);
         copyOutputBtn.textContent = STRINGS.copied || 'Copied!';
         copyOutputBtn.classList.add('copied');
         setTimeout(() => {
