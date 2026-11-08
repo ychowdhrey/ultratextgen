@@ -444,8 +444,13 @@ async function main() {
     await page.waitForTimeout(1100);
     await page.locator('#kaomojiCopyBtn').click();
     await page.waitForTimeout(200);
+    // The face can be typed text, so it stays out of the address bar
+    // (2026-11-08): every later event and every ad request reads the URL.
+    check('a copied typed face stays out of the address bar', !/private/.test(decodeURIComponent(await page.evaluate(() => location.search))), await page.evaluate(() => location.search));
     await page.locator('#kaomojiCopyLinkBtn').click();
     await page.waitForTimeout(200);
+    check('Copy link still copies a link carrying the face, on request', /[?&]q=my(\+|%20)private(\+|%20)text(\+|%20)123/.test(await clip(page)), await clip(page));
+    check('and the address bar still has no face after it', !/[?&]q=/.test(await page.evaluate(() => location.search)), await page.evaluate(() => location.search));
     await page.locator('#kaomojiClearBtn').click();
     await page.waitForTimeout(200);
     const rows = (await dl(page)).slice(n0);
@@ -464,6 +469,10 @@ async function main() {
     const l = await open('/kaomoji-generator/?q=' + encodeURIComponent('(^_^) my private text'), 'desktop');
     const loaded = (await dl(l.page)).filter((e) => e.event === 'kaomoji_generator_step');
     check('a ?q= load sends one url_load step and not the face', loaded.length === 1 && loaded[0].kaomoji_step === 'url_load' && loaded[0].kaomoji_value === undefined && !JSON.stringify(loaded).includes('private'), JSON.stringify(loaded));
+    check('a ?q= link opens with its face and keeps ?q= while it is shown', /[?&]q=/.test(await l.page.evaluate(() => location.search)), await l.page.evaluate(() => location.search));
+    await l.page.locator('#kaomojiFaceInput').fill('(^_^) edited');
+    await l.page.waitForTimeout(300);
+    check('editing the face drops the stale ?q=', !/[?&]q=/.test(await l.page.evaluate(() => location.search)), await l.page.evaluate(() => location.search));
     await l.ctx.close();
 
     // The line under the preview names what a face carries (FAQ promise).

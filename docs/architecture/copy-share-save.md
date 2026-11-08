@@ -302,10 +302,18 @@ text parameter after typing, the settings kept, the share link, the same-tab
 restore and the inbound-link behaviour; it fails 8 checks on the pre-change tree.
 **Analytics definition change, 2026-11-08 (merge date):** `page_location` on
 these 31 pages no longer carries typed text; a `?q=`/`?text=` landing there comes
-from a shared link or an old bookmark/history entry. Still open, same class:
-`kaomojiPageController` writes the current face to `?q=` on Copy, Copy link,
-part pick and a recent-face tap, and that face can be text the visitor typed into
-the face field; Copy link is an explicit share, the other three are not.
+from a shared link or an old bookmark/history entry.
+
+**Kaomoji generator, same change (2026-11-08).** `kaomojiPageController` wrote
+the current face to `?q=` on Copy, Copy link, a recent-face tap and Clear, and the
+face can be text the visitor typed into the face field. The address bar now never
+gains a face: an inbound `?q=` ("edit in generator", a shared link) stays while it
+is still the face shown and leaves once the face changes (`?mood=` stays). Copy
+link builds the link with the face on request (`shareLink()`), so the copied link
+is unchanged. **Owner decision, 2026-11-08:** typed text is kept out of URLs
+site-wide because the page URL travels with every ad request and analytics hit,
+and Google's AdSense and Analytics policies forbid passing personally identifying
+information such as names; the text in the URL was not being used for analysis.
 
 ## Migration off `utg_saved_styles`
 
