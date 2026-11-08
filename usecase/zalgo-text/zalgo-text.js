@@ -1506,21 +1506,53 @@
       let sampleUntouched = !!sample && mainInput.value === sample;
       mainInput.addEventListener('focus', () => {
         if (sampleUntouched && mainInput.value === sample) {
-          setTimeout(() => { try { mainInput.select(); } catch (e) { /* ignore */ } }, 0);
+          // Re-checked when the timer fires: a keystroke that lands first
+          // (a slow phone, a fast typist) must not be selected and then
+          // overwritten by the next one.
+          setTimeout(() => {
+            if (!sampleUntouched || mainInput.value !== sample) return;
+            try { mainInput.select(); } catch (e) { /* ignore */ }
+          }, 0);
         }
       }, { once: true });
-      mainInput.addEventListener('beforeinput', (e) => {
+      // The first edit replaces the untouched sample. It used to clear the
+      // box inside beforeinput and let the browser insert the keystroke, which
+      // lost that keystroke in WebKit (always) and in Chromium (after the
+      // focus handler selected the sample): both had planned the insertion
+      // against the old text, so "zalgo" arrived as "algo" (2026-11-08 audit).
+      // Now the browser inserts as it normally would, and the sample is taken
+      // out of the result afterwards: if the edit was a pure insertion into
+      // the untouched sample (typing, paste, drop, an IME commit), only the
+      // inserted text stays. Any other first edit (deleting a letter of the
+      // sample, replacing a selection) is left exactly as the browser made it.
+      function takeOverSample() {
         if (!sampleUntouched) return;
+        const v = mainInput.value;
+        if (v === sample) return;
         sampleUntouched = false;
-        const inserting = /^insert/.test(e.inputType || '');
-        if (inserting && mainInput.value === sample) mainInput.value = '';
-      });
-      mainInput.addEventListener('input', () => {
+        let head = 0;
+        while (head < sample.length && head < v.length && v[head] === sample[head]) head++;
+        let tail = 0;
+        while (tail < sample.length - head && tail < v.length - head &&
+               v[v.length - 1 - tail] === sample[sample.length - 1 - tail]) tail++;
+        if (head + tail === sample.length) mainInput.value = v.slice(head, v.length - tail);
+      }
+      function onEdit() {
         if (mainInput.value.length > 500) {
           mainInput.value = mainInput.value.slice(0, 500);
         }
         if (charCount) charCount.textContent = mainInput.value.length;
         runGenerate();
+      }
+      mainInput.addEventListener('input', (e) => {
+        // Never rewrite the box mid-composition: the IME owns it until it commits.
+        if (!e.isComposing) takeOverSample();
+        onEdit();
+      });
+      mainInput.addEventListener('compositionend', () => {
+        if (!sampleUntouched) return;
+        takeOverSample();
+        onEdit();
       });
     }
 
