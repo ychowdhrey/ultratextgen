@@ -88,6 +88,18 @@ check(R.renderAny('ab\ncd', micro) === 'pɔ\nqɐ', `micro: "ab\\ncd" -> ${JSON.s
 check(R.renderAny('ab   cd', micro) === 'pɔ qɐ', `micro: "ab   cd" -> ${JSON.stringify(R.renderAny('ab   cd', micro))}`);
 check(R.renderAny(' ab \n cd ', micro) === 'pɔ\nqɐ', `micro: " ab \\n cd " -> ${JSON.stringify(R.renderAny(' ab \n cd ', micro))}`);
 
+// A decorator leaves line breaks and tabs unmarked (2026-11-08 audit): marking
+// "\n" made line 2 of a multi-line text start with an orphan combining mark.
+for (const [name, style] of Object.entries(S)) {
+  if (style.type !== 'decorator') continue;
+  for (const input of ['ab\ncd', 'ab\r\ncd', 'a\tb']) {
+    const out = R.renderAny(input, style);
+    const orphan = clusters(out).find((c) => /^\p{M}/u.test(c));
+    check(!orphan, `${name}: ${JSON.stringify(input)} -> ${JSON.stringify(out)} starts a cluster with a mark`);
+    check(out.split(/\r?\n/).length === input.split(/\r?\n/).length, `${name}: ${JSON.stringify(input)} keeps its lines`);
+  }
+}
+
 // A plain digit, letter or circled letter without VS16 is still styled as before.
 check(R.renderAny('1', S['Ultra Bold']) === '\u{1D7ED}', 'Ultra Bold still styles a bare digit');
 check(R.renderAny('Ⓜ', S['lowercase']) === 'ⓜ', 'lowercase still lowers a text-style circled M');
