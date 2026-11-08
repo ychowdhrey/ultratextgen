@@ -592,6 +592,26 @@ async function main() {
     await ctx.close();
   }
 
+  // 11a2. The couple generator copies typed names. Its chips and "copy both"
+  // used symbol-explorer's catalogue default (symbol_tile), so copy_item sent
+  // both names to the data layer (2026-11-08 audit).
+  console.log('\n/id/usecase/nama-couple-ff-aesthetic/ (typed names stay out of copy_text)');
+  {
+    const { ctx, page, errors } = await open('/id/usecase/nama-couple-ff-aesthetic/', 'mobile');
+    await page.fill('#coupleA', 'Qxtestname');
+    await page.fill('#coupleB', 'Zoeqxlover');
+    await page.waitForTimeout(400);
+    await sentinel(page);
+    await page.locator('.uname-chip').first().click();
+    await page.waitForTimeout(300);
+    check('the name chip still copies the styled name', /𝓠𝔁𝓽𝓮𝓼𝓽𝓷𝓪𝓶𝓮/.test(await clip(page)), await clip(page));
+    const rows = (await dl(page)).filter((e) => e.event === 'copy_text');
+    check('a couple copy is recorded under its own method', rows.length === 1 && rows[0].copy_method === 'couple_generator', JSON.stringify(rows));
+    check('no copy_text row carries the typed names', !/Qxtestname|Zoeqxlover/i.test(JSON.stringify(rows).normalize('NFKC')), JSON.stringify(rows));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 11b0. The zalgo sliders are named. Both range inputs had no label of any
   // kind on all 13 pages that load zalgo-text.js (2026-11-08 audit).
   console.log('\n/usecase/zalgo-text/ and /ko/usecase/geullichi-tekseuteu/ (slider names)');

@@ -36,6 +36,9 @@
   "use strict";
 
   const ns = (window.UltraTextGen = window.UltraTextGen || {});
+  // Not a catalogue method (header.js CATALOGUE_COPY_METHODS): the payload is
+  // typed names, so copy_text carries copy_item_group and never copy_item.
+  const COPY_METHOD = "couple_generator";
 
   function el(tag, className, text) {
     const node = document.createElement(tag);
@@ -110,6 +113,10 @@
       const chip = el("button", "uname-chip symbol-tile");
       chip.type = "button";
       chip.setAttribute("data-symbol", composed);
+      // The chip holds the names the visitor typed, so it names its own copy
+      // method: without one, symbol-explorer records it as a catalogue tile
+      // and copy_item carried both typed names to the data layer.
+      chip.setAttribute("data-copy-method", COPY_METHOD);
       chip.setAttribute("aria-label", text.copyLabel || "Copy name");
       chip.textContent = composed;
       card.appendChild(chip);
@@ -173,7 +180,7 @@
           const pair = currentPair();
           const combined = pair.a + "\n" + pair.b;
           if (ns.copyText) {
-            ns.copyText(combined, copyBoth, pair.a + " · " + pair.b);
+            ns.copyText(combined, copyBoth, pair.a + " · " + pair.b, COPY_METHOD);
           } else if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(combined);
           }

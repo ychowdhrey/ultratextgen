@@ -251,9 +251,11 @@ t('a catalogue copy still sends the exact item', () => {
 // and the link copy sends the page URL. None of those is catalogue content, so
 // each method sends the group and clears copy_item (and the text never appears
 // anywhere in the payload).
-t('the kaomoji generator, link and decoder and the tag studio copies keep typed text out of the payload', () => {
+// The couple name generator copies the two names the visitor typed (2026-11-08:
+// it used the catalogue default and sent both names as copy_item).
+t('the kaomoji generator, link and decoder, the tag studio and the couple generator copies keep typed text out of the payload', () => {
   const typed = 'my private text 123';
-  for (const m of ['kaomoji_generator', 'kaomoji_link', 'kaomoji_decoder', 'tag_studio']) {
+  for (const m of ['kaomoji_generator', 'kaomoji_link', 'kaomoji_decoder', 'tag_studio', 'couple_generator']) {
     const p = CI.copyPayload(m, typed);
     eq(p.copy_method, m, m + ' method is reported as itself, not symbol_tile');
     eq('copy_item' in p, true, m + ' keeps the key so GTM clears the last value');
