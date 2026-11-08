@@ -2379,6 +2379,10 @@
   cursor: pointer;
   transition: all 0.2s;
 }
+.glance-card:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
 .glance-card:hover {
   background: rgba(255,255,255,0.05);
   border-color: rgba(255,255,255,0.12);
