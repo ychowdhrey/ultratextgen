@@ -11,18 +11,27 @@
    where the reader stops seeing it (`visibleAt`).
 
    Counting modes:
-     "codepoint"  (default) Unicode code points — what most platforms use
+     "codepoint"  (default) Unicode code points
+     "graphemes"  user-perceived characters (Intl.Segmenter): a family emoji
+                  or a letter with any number of combining marks is 1
+     "utf16"      UTF-16 code units: a character outside the Basic
+                  Multilingual Plane (emoji, mathematical bold letters) is 2
      "x-weighted" X/Twitter's published algorithm (twitter-text v3):
                   every URL = 23, weight-1 ranges below, everything else 2
      "gsm"        SMS segments — GSM-7 (160/153) until one character
                   outside the alphabet flips the whole message to UCS-2
                   (70/67), which is why one emoji can double an SMS bill
 
+   `maxBytes` is a second cap some destinations apply on top of the first,
+   in UTF-8 bytes. Both bind: the text fits only when it is inside each.
+
    Rule IDs are STABLE — locale pages map translated strings onto them
    via initChecker's `labels` config, so an id must never be renamed.
 
    Data:  UltraTextGen.counterRules.LIMITS / .PLATFORMS
    Logic: .analyze(str, limitId) · .measure(str, limitId) · .fitsAll(str)
+          analyze() and fitsAll() count in the rule's countMode, exactly as
+          measure() does, and also apply its maxBytes cap when it has one.
    UI:    .initChecker(config)
    Counts: UltraTextGen.counterCounts (shared with the page controller)
    ========================================================== */
@@ -204,7 +213,7 @@
        verified 2026-09-25). Creators have reported 4,000 in the app since
        August 2023, but TikTok's help centre states neither, so the lower,
        API-safe number stays until an in-app test settles it. */
-    { id: "tiktok-caption", platform: "tiktok", field: "Caption", label: "TikTok caption", limit: 2200, group: "posts" },
+    { id: "tiktok-caption", platform: "tiktok", field: "Caption", label: "TikTok caption", limit: 2200, group: "posts", countMode: "utf16" },
     /* TikTok bio: 80 is the long-standing figure. Creators reported a
        160-character bio field in Sept/Oct 2025 and TikTok publishes no
        limit, so 80 stays as the figure every account accepts. */
@@ -246,6 +255,10 @@
     { id: "telegram-caption", platform: "telegram", field: "Photo/video caption", label: "Telegram photo/video caption", limit: 1024, group: "posts" },
     { id: "telegram-bio", platform: "telegram", field: "Bio", label: "Telegram bio", limit: 70, group: "bios" },
 
+    /* 500: developers.facebook.com/docs/threads/posts, which adds "emojis are
+       counted as the number of UTF-8 bytes" (so one emoji costs 4 or more).
+       Not modelled yet: this rule counts an emoji as 1 code point, so an
+       emoji-heavy post can read as fitting when Threads would refuse it. */
     { id: "threads-post", platform: "threads", field: "Post", label: "Threads post", limit: 500, group: "posts" },
     { id: "threads-bio", platform: "threads", field: "Bio", label: "Threads bio", limit: 150, group: "bios" },
 
@@ -254,14 +267,23 @@
        description at 256), so a family emoji built from a 7-code-point ZWJ
        sequence costs 1, not 7. */
     /* Both confirmed in the lexicons (app.bsky.feed.post, app.bsky.actor.profile)
-       in github.com/bluesky-social/atproto, verified 2026-09-25. */
-    { id: "bluesky-post", platform: "bluesky", field: "Post", label: "Bluesky post", limit: 300, group: "posts", countMode: "graphemes" },
-    { id: "bluesky-bio", platform: "bluesky", field: "Bio", label: "Bluesky bio", limit: 256, group: "bios", countMode: "graphemes" },
+       in github.com/bluesky-social/atproto, verified 2026-09-25. The same
+       lexicons give each field a second cap in UTF-8 bytes (post text
+       maxLength 3000, profile description maxLength 2560), read in the
+       published @atproto/api 0.30.0 lexicons on 2026-11-07. Both caps bind:
+       a letter carrying a stack of combining marks is 1 grapheme and dozens
+       of bytes, so zalgo text hits the byte cap long before 300. */
+    { id: "bluesky-post", platform: "bluesky", field: "Post", label: "Bluesky post", limit: 300, maxBytes: 3000, group: "posts", countMode: "graphemes" },
+    { id: "bluesky-bio", platform: "bluesky", field: "Bio", label: "Bluesky bio", limit: 256, maxBytes: 2560, group: "bios", countMode: "graphemes" },
 
     { id: "reddit-title", platform: "reddit", field: "Post title", label: "Reddit post title", limit: 300, group: "posts" },
     { id: "reddit-comment", platform: "reddit", field: "Comment", label: "Reddit comment", limit: 10000, group: "posts" },
 
-    { id: "pinterest-description", platform: "pinterest", field: "Pin description", label: "Pinterest pin description", limit: 500, group: "posts" },
+    /* Description 800, title 100: help.pinterest.com/en/article/review-pin-specs
+       ("Enter up to 800 characters.") and the v5 API schema (description
+       maxLength 800), verified 2026-11-07. 500 is the profile bio and pin
+       alt text limit, which this row carried until then. */
+    { id: "pinterest-description", platform: "pinterest", field: "Pin description", label: "Pinterest pin description", limit: 800, group: "posts" },
     { id: "pinterest-title", platform: "pinterest", field: "Pin title", label: "Pinterest pin title", limit: 100, group: "titles" },
 
     { id: "whatsapp-about", platform: "whatsapp", field: "About", label: "WhatsApp About", limit: 139, group: "bios" },
@@ -297,6 +319,7 @@
     if (mode === "gsm") return gsmInfo(str || "").length;
     if (mode === "x-weighted") return xWeightedLength(str || "");
     if (mode === "graphemes") return graphemes(str || "");
+    if (mode === "utf16") return utf16Units(str || "");
     return codePoints(str || "");
   }
 
@@ -315,9 +338,22 @@
       return report;
     }
 
-    report.glyphs = mode === "x-weighted" ? xWeightedLength(str || "") : codePoints(str || "");
+    report.glyphs = measure(str, rule.id);
     report.fits = report.glyphs <= rule.limit;
     report.remaining = rule.limit - report.glyphs;
+
+    if (rule.maxBytes) {
+      report.bytes = utf8Bytes(str || "");
+      report.maxBytes = rule.maxBytes;
+      const bytesOver = report.bytes > rule.maxBytes;
+      /* `remaining` follows the cap that actually refuses the text, so the
+         "over by" figure is never 0 on a post that will not send. */
+      report.binding = bytesOver && report.fits ? "bytes" : "limit";
+      if (bytesOver) {
+        report.fits = false;
+        if (report.binding === "bytes") report.remaining = rule.maxBytes - report.bytes;
+      }
+    }
     return report;
   }
 
@@ -388,6 +424,20 @@
 
   function fmt(template, vars) {
     return String(template).replace(/\{(\w+)\}/g, (m, k) => (vars[k] != null ? vars[k] : m));
+  }
+
+  /** "120 / 300", plus "· 2,840 / 3,000 UTF-8" on a rule with a byte cap.
+      Digits and the encoding name only: locale pages show it as it is. */
+  function countLabel(report) {
+    let s = report.glyphs.toLocaleString() + " / " + report.limit.toLocaleString();
+    if (report.maxBytes) s += " · " + report.bytes.toLocaleString() + " / " + report.maxBytes.toLocaleString() + " UTF-8";
+    return s;
+  }
+
+  /** How full the field is, on whichever cap is closer. */
+  function fillRatio(report) {
+    const r = report.limit ? report.glyphs / report.limit : 0;
+    return report.maxBytes ? Math.max(r, report.bytes / report.maxBytes) : r;
   }
 
   function initChecker(config) {
@@ -499,10 +549,10 @@
         : status === "warn" ? fmt(text.pastFold || "Fits — cut at {n} ⚠", { n: fold.at })
         : (text.ok || "Fits ✓");
 
-      count.textContent = report.glyphs.toLocaleString() + " / " + report.limit.toLocaleString();
+      count.textContent = countLabel(report);
       count.classList.toggle("is-over", !report.fits);
 
-      const pct = Math.min(100, (report.glyphs / report.limit) * 100);
+      const pct = Math.min(100, fillRatio(report) * 100);
       fill.style.width = pct + "%";
       fill.classList.toggle("is-over", !report.fits);
       fill.classList.toggle("is-past-fold", pastFold);
@@ -579,6 +629,6 @@
   };
   ns.counterRules = {
     LIMITS, PLATFORMS, DEFAULT_GROUPS,
-    analyze, measure, fitsAll, foldInfo, foldsAll, ruleById, initChecker
+    analyze, measure, fitsAll, foldInfo, foldsAll, ruleById, initChecker, countLabel, fillRatio
   };
 })();

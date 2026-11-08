@@ -21,7 +21,9 @@ pre-rendering), `docs/architecture/page-art.md` (the art pipeline),
 3. **OpenGraph + Twitter Card** meta.
 4. **JSON-LD structured data** — `WebApplication`/`WebSite`, `Organization`,
    `BreadcrumbList`, and `FAQPage` where applicable. Never skip it, and keep it
-   updated to match the content when you edit the page.
+   updated to match the content when you edit the page. Every block must parse
+   as JSON whose top level is an object or array: the other schema readers skip a
+   block that does not, so `npm run check:jsonld-parse` gates any such block a PR adds.
 5. **Script load order**, and it is load-bearing.** The contract is not a fixed
    list**: every share/save module tag must precede the **first host script** —
    `script.js`, `symbol-explorer.js`, `printablesEngine.js` and the other entries in
