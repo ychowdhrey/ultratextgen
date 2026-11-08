@@ -2379,6 +2379,10 @@
   cursor: pointer;
   transition: all 0.2s;
 }
+.glance-card:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
 .glance-card:hover {
   background: rgba(255,255,255,0.05);
   border-color: rgba(255,255,255,0.12);
@@ -6590,6 +6594,14 @@ body.theme-gothic .category-section { position: static; background: transparent;
 /* Multi-line input (and the two-line demo text) keeps its line breaks */
 .style-preview { white-space: pre-wrap; }
 
+/* Typed text takes its direction from its first strong character on every
+   page, not only under dir="rtl": the apps it is pasted into lay it out that
+   way. On an LTR page an Arabic-first name ("مرحبا Luna") previewed with its
+   words in the opposite order to the bio it was pasted into (2026-11-08
+   audit). Latin-first text renders exactly as before. */
+.style-preview,
+#mainInput { unicode-bidi: plaintext; }
+
 /* Ghost sample rendered while the input is empty */
 .style-preview.is-demo {
   opacity: 0.62;
@@ -9330,7 +9342,8 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   font-size: 0.75rem;
   color: var(--text-muted);
 }
-.deco-chip.copied {
+.deco-chip.copied,
+.deco-chip.is-copied {
   border-color: var(--ts-safe);
 }
 .deco-chip.copied .deco-chip-label {

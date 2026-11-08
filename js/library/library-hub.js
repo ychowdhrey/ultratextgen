@@ -272,6 +272,44 @@
     const items = cfg.items;
     const state = { type: null, subject: null, useCases: null, platforms: null, q: '' };
 
+    // The search and filters survive Back and reload in this tab. The box is
+    // autocomplete="off" and the pills are not form fields, so the browser
+    // restored neither: a visitor who searched "heart", opened a page and came
+    // back found an empty box over all 375 entries (2026-11-08 audit). Kept per
+    // hub path in sessionStorage, the way the generator keeps its draft; it
+    // ends with the tab and never leaves the device.
+    const STATE_KEY = 'utg_library_hub:' + ((typeof location !== 'undefined' && location.pathname) || '');
+    const FILTER_KEYS = ['type', 'subject', 'useCases', 'platforms'];
+    function saveState() {
+      const box = $('libSearch');
+      const keep = { raw: box ? box.value : '' };
+      FILTER_KEYS.forEach(function (k) { keep[k] = state[k]; });
+      try {
+        if (keep.raw || FILTER_KEYS.some(function (k) { return keep[k]; })) {
+          sessionStorage.setItem(STATE_KEY, JSON.stringify(keep));
+        } else {
+          sessionStorage.removeItem(STATE_KEY);
+        }
+      } catch (err) { /* storage blocked: the hub simply opens unfiltered */ }
+    }
+    function restoreState() {
+      let kept = null;
+      try { kept = JSON.parse(sessionStorage.getItem(STATE_KEY) || 'null'); } catch (err) { kept = null; }
+      if (!kept || typeof kept !== 'object') return;
+      FILTER_KEYS.forEach(function (k) { if (typeof kept[k] === 'string') state[k] = kept[k]; });
+      const box = $('libSearch');
+      if (box && typeof kept.raw === 'string') {
+        box.value = kept.raw;
+        state.q = kept.raw.trim().toLocaleLowerCase(cfg.locale);
+      }
+      // A filter the inventory no longer has would open on an empty page.
+      if (!items.some(matches)) {
+        FILTER_KEYS.forEach(function (k) { state[k] = null; });
+        state.q = '';
+        if (box) box.value = '';
+      }
+    }
+
     const FACETS = [
       { key: 'type',      container: 'libTypeFilters' },
       { key: 'subject',   container: 'libSubjectFilters' },
@@ -355,6 +393,7 @@
       if (empty) empty.hidden = list.length !== 0;
 
       dir.innerHTML = renderDirectory(cfg, list);
+      saveState();
     }
 
     function clearAll() {
@@ -401,6 +440,7 @@
       });
     }
 
+    restoreState();
     buildPills();
     render();
     injectItemListJsonLd(cfg);
