@@ -488,22 +488,30 @@ function renderMap(text, style) {
   // e.g. Vietnamese/Mac clipboard text pasted as base + separate combining
   // marks \u2014 is treated as one cluster and gets exactly one decorator mark,
   // not one wedged between the base letter and its own accent.
+  // A line break, tab or other control/format cluster gets no mark: marked, it
+  // left the next line starting with an orphan combining mark (2026-11-08
+  // audit; \n is its own grapheme cluster). Same rule as script.js's format
+  // marks. Text with no control or format character is unchanged byte for
+  // byte; a tab, ZWSP, soft hyphen or BOM now stays unmarked too.
+  const UNMARKED_CLUSTER = /^[\p{Cc}\p{Cf}]+$/u;
+  const markEach = (t, m, keep) => splitGraphemes(t)
+    .map((c, i) => (UNMARKED_CLUSTER.test(c) || (keep && keep(c, i))) ? c : c + m).join('');
   const decorators = {
-    strike:   t => splitGraphemes(t).map(c => c + '\u0336').join(''),
-    shortStrike: t => splitGraphemes(t).map(c => c + '\u0335').join(''),
-    doubleStrike: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0335').join(''),
-    heavyStrike: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0336').join(''),
-    wavyStrike: t => splitGraphemes(t).map(c => c + '\u0334').join(''),
-    crossedOut: t => splitGraphemes(t).map(c => c === ' ' ? c : c + '\u0336' + '\u0338').join(''),
-    underline:t => splitGraphemes(t).map(c => c + '\u0332').join(''),
-    doubleUnderline: t => splitGraphemes(t).map(c => c + '\u0333').join(''),
-    wavyUnderline: t => splitGraphemes(t).map(c => c + '\u0330').join(''),
-    overline: t => splitGraphemes(t).map(c => c + '\u0305').join(''),
-    doubleOverline: t => splitGraphemes(t).map(c => c + '\u033f').join(''),
-    wavy:    t => splitGraphemes(t).map((c,i)=> c + (i%2===0 ? '\u0303':'' )).join(''),
-    slash:   t => splitGraphemes(t).map(c => c + '\u0338').join(''),
-    shortSlash: t => splitGraphemes(t).map(c => c + '\u0337').join(''),
-    strikeUnderline: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0332').join('')
+    strike:   t => markEach(t, '\u0336'),
+    shortStrike: t => markEach(t, '\u0335'),
+    doubleStrike: t => markEach(t, '\u0336' + '\u0335'),
+    heavyStrike: t => markEach(t, '\u0336' + '\u0336'),
+    wavyStrike: t => markEach(t, '\u0334'),
+    crossedOut: t => markEach(t, '\u0336' + '\u0338', c => c === ' '),
+    underline:t => markEach(t, '\u0332'),
+    doubleUnderline: t => markEach(t, '\u0333'),
+    wavyUnderline: t => markEach(t, '\u0330'),
+    overline: t => markEach(t, '\u0305'),
+    doubleOverline: t => markEach(t, '\u033f'),
+    wavy:    t => markEach(t, '\u0303', (c, i) => i % 2 !== 0),
+    slash:   t => markEach(t, '\u0338'),
+    shortSlash: t => markEach(t, '\u0337'),
+    strikeUnderline: t => markEach(t, '\u0336' + '\u0332')
   };
 
   function renderDecorator(text, style) {

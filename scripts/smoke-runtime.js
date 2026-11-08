@@ -621,6 +621,117 @@ async function main() {
     await ctx.close();
   }
 
+  // 11a. A controller's own .copy-btn is not script.js's. The before/after
+  // emoji library cards keep their text in data-copy-text; script.js's
+  // page-wide .copy-btn handler read data-text and wrote "" after the card's
+  // own write, so the button said "Copied ✓" and the clipboard was empty
+  // (2026-11-08 audit).
+  console.log('\n/usecase/before-after-emoji/ (library card copies its own text)');
+  {
+    const { ctx, page, errors } = await open('/usecase/before-after-emoji/', 'desktop');
+    const card = page.locator('#etgLibraryGrid .etg-copy-btn').first();
+    const want = decodeURIComponent((await card.getAttribute('data-copy-text')) || '');
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await card.click();
+    await page.waitForTimeout(400);
+    check('the library card puts its own text on the clipboard', !!want && (await clip(page)) === want, `${JSON.stringify(await clip(page))} vs ${JSON.stringify(want)}`);
+    const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check('and records one copy_text', ev.length === 1, JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11a2. The couple generator copies typed names. Its chips and "copy both"
+  // used symbol-explorer's catalogue default (symbol_tile), so copy_item sent
+  // both names to the data layer (2026-11-08 audit).
+  console.log('\n/id/usecase/nama-couple-ff-aesthetic/ (typed names stay out of copy_text)');
+  {
+    const { ctx, page, errors } = await open('/id/usecase/nama-couple-ff-aesthetic/', 'mobile');
+    await page.fill('#coupleA', 'Qxtestname');
+    await page.fill('#coupleB', 'Zoeqxlover');
+    await page.waitForTimeout(400);
+    await sentinel(page);
+    await page.locator('.uname-chip').first().click();
+    await page.waitForTimeout(300);
+    check('the name chip still copies the styled name', /𝓠𝔁𝓽𝓮𝓼𝓽𝓷𝓪𝓶𝓮/.test(await clip(page)), await clip(page));
+    const rows = (await dl(page)).filter((e) => e.event === 'copy_text');
+    check('a couple copy is recorded under its own method', rows.length === 1 && rows[0].copy_method === 'couple_generator', JSON.stringify(rows));
+    check('no copy_text row carries the typed names', !/Qxtestname|Zoeqxlover/i.test(JSON.stringify(rows).normalize('NFKC')), JSON.stringify(rows));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11a3. A card copies the text it shows. safeAttr escaped only ", so the
+  // attribute parser decoded typed "&lt;3 &amp;" and Copy delivered "<3 &"
+  // under a card that showed "&lt;3 &amp;" (2026-11-08 audit).
+  console.log('\n/ (copied text equals the card text when it looks like an entity)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'I &lt;3 you &amp; Tom &copy; 2026');
+    await page.waitForTimeout(400);
+    await page.evaluate(() => document.querySelector('#categoryTabs .category-tab[data-category="text-decorator"]').click());
+    await page.waitForTimeout(400);
+    const cards = await page.evaluate(() => [...document.querySelectorAll('#resultsGrid .style-card')].map((c) => {
+      const b = c.querySelector('.copy-btn');
+      const shown = [...c.querySelectorAll('*')].map((e) => (e.childElementCount === 0 ? e.textContent : '')).find((t) => t && t.includes('Tom'));
+      return { s: b && b.dataset.style, data: b && b.dataset.text, shown };
+    }).filter((x) => x.data && x.shown));
+    check('decorator cards exist to compare', cards.length > 0, String(cards.length));
+    const off = cards.filter((x) => x.data !== x.shown);
+    check('every card\'s copy text equals the text it shows', !off.length, JSON.stringify(off.slice(0, 2)));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11a4. Copies that used to record nothing (2026-11-08 audit; capability
+  // "every clipboard write reaches trackCopy"). Each records one copy_text
+  // under its own method, and none carries the typed text.
+  console.log('\nten tool copies (one copy_text each, no typed text)');
+  for (const [url, inp, txt, sel, method] of [
+    ['/usecase/text-to-emoji/', '#mainInput', 'Qxtestname love pizza', '#copyOutputBtn', 'emoji_tool'],
+    ['/character-counter/', '#counterInput', 'Qxtestname hello', '#counterCopyBtn', 'counter'],
+    ['/library/norse-viking-runes/', '#runicInput', 'Qxtestname', '#runicCopy', 'runic_converter'],
+    ['/usecase/old-english-translator/', '#persona-input', 'Qxtestname you are my friend', '#persona-copy', 'persona_translator'],
+    ['/ko/yeongmun-ireum-byeonhwan/', '#romanizeInput', '홍길동', '.copy-btn', 'korean_romanize'],
+    ['/usecase/linkedin-headline/', '#mainInput', 'Qxtestname Engineer', '.copy-btn', 'linkedin_headline'],
+    ['/category/gothic-fonts/', null, null, '.gsym-tile', 'gothic_tool'],
+    ['/id/huruf-keren-a-sampai-z/', null, null, '.bubble-variant-copy', 'huruf_variant'],
+    ['/hiragana-chart/', null, null, '.kana-cell:not(.kana-cell-empty)', 'glyph'],
+    ['/usecase/before-after-emoji/', null, null, '.etg-caption-copy', 'button']
+  ]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    if (inp) { await page.fill(inp, txt); await page.waitForTimeout(500); }
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await page.locator(sel).filter({ visible: true }).first().click();
+    await page.waitForTimeout(400);
+    const rows = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check(`${url} copies something`, (await clip(page)) !== '__SMOKE__');
+    check(`${url} records one copy_text as ${method}`, rows.length === 1 && rows[0].copy_method === method, JSON.stringify(rows));
+    check(`${url} sends no typed text`, !/Qxtestname/i.test(JSON.stringify(rows).normalize('NFKC')), JSON.stringify(rows));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11b0. The zalgo sliders are named. Both range inputs had no label of any
+  // kind on all 13 pages that load zalgo-text.js (2026-11-08 audit).
+  console.log('\n/usecase/zalgo-text/ and /ko/usecase/geullichi-tekseuteu/ (slider names)');
+  for (const url of ['/usecase/zalgo-text/', '/ko/usecase/geullichi-tekseuteu/']) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    for (const id of ['frequencySlider', 'amplitudeSlider']) {
+      const name = await page.evaluate((sid) => {
+        const s = document.getElementById(sid);
+        const ref = s && s.getAttribute('aria-labelledby');
+        const lab = ref && document.getElementById(ref);
+        return (s && s.getAttribute('aria-label')) || (lab ? lab.textContent.trim() : '');
+      }, id);
+      check(`${url} #${id} has an accessible name`, !!name, JSON.stringify(name));
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 11b. The Share button's confirmation is in the page language. Without a
   // native share sheet it copies the link and says so; that label used to be the
   // English fallback under Korean prose because library pages carry no i18n.js.
@@ -700,7 +811,9 @@ async function main() {
 
   // 12. Nothing pushes a 390px page sideways.
   console.log('\n390px layouts (overflow)');
-  for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', '']]) {
+  // /ja/purinto/onamae-seal/: two three-column tables (30rem floor) sat outside
+  // .data-table-wrap and panned the page 130px sideways (2026-11-08 audit).
+  for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', ''], ['/ja/purinto/onamae-seal/', '']]) {
     const { ctx, page } = await open(url, 'narrow');
     if (typed) { await page.locator('#mainInput, input[type=text]:visible').first().fill(typed); await page.waitForTimeout(500); }
     const w = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);

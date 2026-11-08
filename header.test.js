@@ -251,9 +251,11 @@ t('a catalogue copy still sends the exact item', () => {
 // and the link copy sends the page URL. None of those is catalogue content, so
 // each method sends the group and clears copy_item (and the text never appears
 // anywhere in the payload).
-t('the kaomoji generator, link and decoder and the tag studio copies keep typed text out of the payload', () => {
+// The couple name generator copies the two names the visitor typed (2026-11-08:
+// it used the catalogue default and sent both names as copy_item).
+t('the kaomoji generator, link and decoder, the tag studio and the couple generator copies keep typed text out of the payload', () => {
   const typed = 'my private text 123';
-  for (const m of ['kaomoji_generator', 'kaomoji_link', 'kaomoji_decoder', 'tag_studio']) {
+  for (const m of ['kaomoji_generator', 'kaomoji_link', 'kaomoji_decoder', 'tag_studio', 'couple_generator']) {
     const p = CI.copyPayload(m, typed);
     eq(p.copy_method, m, m + ' method is reported as itself, not symbol_tile');
     eq('copy_item' in p, true, m + ' keeps the key so GTM clears the last value');
@@ -318,6 +320,19 @@ t('copy_look is always a key, cleared unless the caller sets it', () => {
   const p = CI.copyPayload('symbol_tile', '★');
   eq('copy_look' in p, true, 'key present so GTM clears the last look');
   eq(p.copy_look, undefined, 'cleared by default');
+});
+// The optional keys other surfaces pass. A symbol-tile or Ctrl+C copy on a
+// generator page used to leave style_name out, so GTM re-sent the previous
+// card's style with it (2026-11-08 audit).
+t('the optional copy_text keys are always keys, cleared unless the caller sets them', () => {
+  const p = CI.copyPayload('symbol_tile', '★');
+  for (const k of ['style_name', 'label', 'copy_collection', 'copy_item_count', 'copy_has_pair', 'template_id']) {
+    eq(k in p, true, k + ' key present so GTM clears the last value');
+    eq(p[k], undefined, k + ' cleared by default');
+  }
+  const q = CI.copyPayload('button', 'Luna', { style_name: 'Ultra Bold' });
+  eq(q.style_name, 'Ultra Bold', 'a passed style_name still arrives');
+  eq(q.copy_has_pair, undefined, 'and the keys it did not pass are cleared');
 });
 t('copy_look carries the look and the item stays the bare character', () => {
   const p = CI.copyPayload('symbol_look_switch', '\u2764', { copy_look: 'plain' });

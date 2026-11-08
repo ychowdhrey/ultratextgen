@@ -884,11 +884,11 @@
         <!-- Frequency -->
         <div class="control-group">
           <div class="control-label">
-            <span class="icon">⚡</span> ${i18n.controlFrequency}
+            <span class="icon" aria-hidden="true">⚡</span> <span id="frequencyLabel">${i18n.controlFrequency}</span>
             ${tooltip(i18n.tooltipFrequency)}
           </div>
           <div class="slider-row">
-            <input type="range" class="slider-track" id="frequencySlider"
+            <input type="range" class="slider-track" id="frequencySlider" aria-labelledby="frequencyLabel"
               min="0" max="1" step="0.05" value="${state.frequency}">
             <span class="slider-value" id="frequencyValue">${Math.round(state.frequency * 100)}%</span>
           </div>
@@ -897,11 +897,11 @@
         <!-- Amplitude -->
         <div class="control-group">
           <div class="control-label">
-            <span class="icon">◉</span> ${i18n.controlAmplitude}
+            <span class="icon" aria-hidden="true">◉</span> <span id="amplitudeLabel">${i18n.controlAmplitude}</span>
             ${tooltip(extremeAvailable ? i18n.tooltipAmplitude + ' ' + i18n.tooltipAmplitudeExtreme : i18n.tooltipAmplitude)}
           </div>
           <div class="slider-row">
-            <input type="range" class="slider-track" id="amplitudeSlider"
+            <input type="range" class="slider-track" id="amplitudeSlider" aria-labelledby="amplitudeLabel"
               min="${AMPLITUDE_CLASSIC.min}" max="${state.extreme ? AMPLITUDE_EXTREME.max : AMPLITUDE_CLASSIC.max}" step="1" value="${state.amplitude}">
             <span class="slider-value" id="amplitudeValue">${state.amplitude}</span>
           </div>
