@@ -491,7 +491,8 @@ function renderMap(text, style) {
   // A line break, tab or other control/format cluster gets no mark: marked, it
   // left the next line starting with an orphan combining mark (2026-11-08
   // audit; \n is its own grapheme cluster). Same rule as script.js's format
-  // marks. Single-line text is unchanged byte for byte.
+  // marks. Text with no control or format character is unchanged byte for
+  // byte; a tab, ZWSP, soft hyphen or BOM now stays unmarked too.
   const UNMARKED_CLUSTER = /^[\p{Cc}\p{Cf}]+$/u;
   const markEach = (t, m, keep) => splitGraphemes(t)
     .map((c, i) => (UNMARKED_CLUSTER.test(c) || (keep && keep(c, i))) ? c : c + m).join('');

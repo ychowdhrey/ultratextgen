@@ -327,31 +327,40 @@
   // =========================================================================
   function copyText(text, btn) {
     if (!text) return;
-    navigator.clipboard.writeText(text).then(() => {
-      // Record the copy through the site's one copy writer (header.js), the
-      // way script.js does for its own cards.
-      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
-        window.UltraTextGen.trackCopy("button", text, { style_name: "" });
-      }
-      const original = btn.textContent;
-      btn.textContent = "Copied ✓";
-      btn.classList.add("etg-copied");
-      const liveRegion = $("#etgCopyAnnounce");
-      if (liveRegion) liveRegion.textContent = "Copied";
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove("etg-copied");
-        if (liveRegion) liveRegion.textContent = "";
-      }, 1500);
-    }).catch(() => {
+    navigator.clipboard.writeText(text).then(() => confirmCopied(text, btn)).catch(() => {
+      // The older copy path still works where the Clipboard API is refused
+      // (some in-app browsers). Its copy event is stopped at the textarea so
+      // script.js does not also record it as a manual copy, and the
+      // confirmation shows only when the browser says the copy happened.
       const ta = document.createElement("textarea");
       ta.value = text;
       ta.style.cssText = "position:fixed;opacity:0";
+      ta.addEventListener("copy", (e) => e.stopPropagation());
       document.body.appendChild(ta);
       ta.select();
-      document.execCommand("copy");
+      let ok = false;
+      try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
       document.body.removeChild(ta);
+      if (ok) confirmCopied(text, btn);
     });
+  }
+
+  function confirmCopied(text, btn) {
+    // Record the copy through the site's one copy writer (header.js), the
+    // way script.js does for its own cards.
+    if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+      window.UltraTextGen.trackCopy("button", text, { style_name: "" });
+    }
+    const original = btn.textContent;
+    btn.textContent = "Copied ✓";
+    btn.classList.add("etg-copied");
+    const liveRegion = $("#etgCopyAnnounce");
+    if (liveRegion) liveRegion.textContent = "Copied";
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.classList.remove("etg-copied");
+      if (liveRegion) liveRegion.textContent = "";
+    }, 1500);
   }
 
   // =========================================================================

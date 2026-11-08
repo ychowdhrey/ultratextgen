@@ -1107,7 +1107,8 @@
       label: undefined,
       copy_collection: undefined,
       copy_item_count: undefined,
-      copy_has_pair: undefined
+      copy_has_pair: undefined,
+      template_id: undefined
     };
     if (extra) {
       for (var k in extra) {

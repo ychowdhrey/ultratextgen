@@ -326,7 +326,7 @@ t('copy_look is always a key, cleared unless the caller sets it', () => {
 // card's style with it (2026-11-08 audit).
 t('the optional copy_text keys are always keys, cleared unless the caller sets them', () => {
   const p = CI.copyPayload('symbol_tile', '★');
-  for (const k of ['style_name', 'label', 'copy_collection', 'copy_item_count', 'copy_has_pair']) {
+  for (const k of ['style_name', 'label', 'copy_collection', 'copy_item_count', 'copy_has_pair', 'template_id']) {
     eq(k in p, true, k + ' key present so GTM clears the last value');
     eq(p[k], undefined, k + ' cleared by default');
   }
