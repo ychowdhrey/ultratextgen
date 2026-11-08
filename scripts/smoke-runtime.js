@@ -2023,6 +2023,101 @@ async function main() {
     await ctx.close();
   }
 
+  // 2026-11-08 quality lab, four journeys a real browser found broken.
+  //
+  // (a) The blank-name chips (U+3164, U+2800) on four library pages looked
+  // clickable and did nothing: decorations-showcase.js was not on the page.
+  // An invisible character cannot be selected by hand, so the chip is the
+  // only way to get one.
+  console.log('\nblank-name chips copy (library nickname pages)');
+  for (const url of ['/library/nickname-symbols/', '/es/simbolos-para-nombres/', '/id/library/simbol-nickname/', '/tr/library/semboller/']) {
+    const { ctx, page, errors } = await open(url, 'mobile');
+    const chip = page.locator('.deco-chip[data-copy]').first();
+    const want = await chip.getAttribute('data-copy');
+    await chip.scrollIntoViewIfNeeded();
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await chip.click();
+    await page.waitForTimeout(400);
+    check(`${url} chip puts its character on the clipboard`, (await clip(page)) === want, JSON.stringify(await clip(page)));
+    const rows = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check(`${url} records one copy_text`, rows.length === 1, JSON.stringify(rows));
+    const toast = await page.evaluate(() => (document.getElementById('symbolToast') || {}).textContent || '');
+    check(`${url} confirms in the page language, not " · Copied!"`, url === '/library/nickname-symbols/' || !/Copied/.test(toast + (await chip.textContent())), toast);
+    const kb = await chip.evaluate((e) => ({ tab: e.tabIndex, role: e.getAttribute('role') }));
+    check(`${url} chip is a keyboard button`, kb.tab === 0 && kb.role === 'button', JSON.stringify(kb));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // (b) "Categories at a glance" cards on the 18 bio-font pages were divs
+  // with a click handler: Tab never reached them and Enter did nothing.
+  console.log('\n/usecase/bio-font/ (glance cards work from the keyboard)');
+  for (const url of ['/usecase/bio-font/', '/ar/usecase/khat-bio/']) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    const card = page.locator('.glance-card').nth(1);
+    const cat = await card.getAttribute('data-glance-cat');
+    await page.locator('.glance-card').first().focus();
+    await page.keyboard.press('Tab');
+    const reached = await page.evaluate(() => document.activeElement && document.activeElement.dataset.glanceCat);
+    check(`${url} Tab reaches the next card`, reached === cat, String(reached));
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(600);
+    const st = await page.evaluate((c) => {
+      const t = document.querySelector(`.decoration-tab[data-deco-tab="${c}"]`);
+      return { active: !!t && (t.classList.contains('active') || t.getAttribute('aria-selected') === 'true'), focused: document.activeElement === t };
+    }, cat);
+    check(`${url} Enter opens that category and focus follows it`, st.active && st.focused, JSON.stringify(st));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // (c) The library hubs dropped the search and the filter on Back: the box
+  // is autocomplete="off" and the pills are not form fields.
+  console.log('\nlibrary hubs keep the search and filter across Back and reload');
+  for (const [url, term] of [['/library/', 'heart'], ['/ko/library/', '하트']]) {
+    const { ctx, page, errors } = await open(url, 'mobile');
+    const visible = () => page.evaluate(() => [...document.querySelectorAll('.lib-entry')].filter((e) => e.offsetParent).length);
+    const all = await visible();
+    await page.fill('#libSearch', term);
+    await page.locator('.lib-pill').first().click();
+    await page.waitForTimeout(1500);
+    const n1 = await visible();
+    const pressed = () => page.evaluate(() => [...document.querySelectorAll('.lib-pill[aria-pressed="true"]')].map((b) => b.dataset.value).join());
+    const p1 = await pressed();
+    const e0 = (await dl(page)).filter((e) => /^library_/.test(e.event)).length;
+    await page.goto(new URL('/about/', page.url()).href);
+    await page.goBack();
+    await page.waitForTimeout(1200);
+    check(`${url} Back keeps the search, the filter and the results`,
+      (await page.inputValue('#libSearch')) === term && (await pressed()) === p1 && !!p1 && (await visible()) === n1 && n1 < all,
+      `${await page.inputValue('#libSearch')} / ${await pressed()} / ${await visible()} (was ${n1} of ${all})`);
+    await page.reload();
+    await page.waitForTimeout(1200);
+    check(`${url} reload keeps them too`, (await page.inputValue('#libSearch')) === term && (await visible()) === n1);
+    check(`${url} restoring sends no library_* row`, (await dl(page)).filter((e) => /^library_/.test(e.event)).length === 0, String(e0));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // (d) On an LTR page an Arabic-first name previewed with its words in the
+  // opposite order to the app it was pasted into (they take direction from
+  // the first strong character, as the RTL pages here already did).
+  console.log('\n/ (an Arabic-first name previews right-to-left)');
+  {
+    const { ctx, page, errors } = await open('/', 'narrow');
+    await page.fill('#mainInput', 'مرحبا Luna');
+    await page.waitForTimeout(500);
+    const bidi = await page.evaluate(() => {
+      const p = document.querySelector('#resultsGrid .style-preview');
+      const i = document.getElementById('mainInput');
+      return [getComputedStyle(p).unicodeBidi, getComputedStyle(i).unicodeBidi];
+    });
+    check('the preview and the input take their direction from the text', bidi[0] === 'plaintext' && bidi[1] === 'plaintext', JSON.stringify(bidi));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
