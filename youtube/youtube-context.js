@@ -64,6 +64,8 @@
 
   let currentContext = "channel-name";
   let thresholdAnnounced = false;
+  let resultsObserver = null;
+  const RESULTS_OBSERVE = { childList: true, subtree: true };
 
   const el = {
     input: document.getElementById("mainInput"),
@@ -194,8 +196,21 @@
     }
   }
 
+  // The observer watches the subtree this writes into. Observing its own writes
+  // re-ran it forever (a microtask loop that froze the tab on Video title and
+  // @Handle), so it stops observing while it writes. Its state is read from the
+  // grid, not from mutation records, so the records it drops lose nothing.
   function applyResultState() {
     if (!el.results) return;
+    if (resultsObserver) resultsObserver.disconnect();
+    try {
+      writeResultState();
+    } finally {
+      if (resultsObserver) resultsObserver.observe(el.results, RESULTS_OBSERVE);
+    }
+  }
+
+  function writeResultState() {
     const ctx = CONTEXTS[currentContext];
 
     if (ctx.mode === "handle") {
@@ -285,12 +300,9 @@
       }, 120);
     }, true);
 
-    const observer = new MutationObserver(function () {
-      applyResultState();
-    });
-
     if (el.results) {
-      observer.observe(el.results, { childList: true, subtree: true });
+      resultsObserver = new MutationObserver(applyResultState);
+      resultsObserver.observe(el.results, RESULTS_OBSERVE);
     }
   }
 
