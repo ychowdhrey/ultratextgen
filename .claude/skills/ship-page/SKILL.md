@@ -103,7 +103,9 @@ a 404 on that first fetch is recorded before any backfill.
 - **Inbound links**: a page nothing links to is reachable only from the
   sitemap. Add the contextual hub→spoke link (Rule 4). But respect the
   deliberate non-links: `answers/` stays unlinked from homepages, `symbol/`
-  stays out of the nav — don't "fix" those.
+  stays out of the nav — don't "fix" those. A link from another new page is not
+  enough: the page must be reachable from `/` (Rule 5), which
+  `npm run check:link-reachability` gates.
 - **Art**: use the `page-art` skill. It must ship in the same commit —
   `npm run check:new-page-images`.
 - `sitemap.xml` is auto-generated — never touch it. `_redirects` matches paths only

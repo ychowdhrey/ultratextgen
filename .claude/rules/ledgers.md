@@ -38,6 +38,7 @@ grandfathered.
 | `locale_parent_gap_audit.json` | a cleared (or user-authorized) pre-build demand check | `check-locale-parent-gap.js` |
 | `parity_catalogue_pages.json` | page *types* whose link list is an inventory, not editorial | `content-fingerprint.js` |
 | `library_hub_exclusions.json` | a page that deliberately does not belong in its hub | `check-library-hub-coverage.js` |
+| `link_reachability_exceptions.json` | a page agreed to stay unreachable from `/` while a PR edits it | `check-link-reachability.js` |
 | `printable_tool_duplication_exclusions.json` | one discussed same-tool pair | `check-printable-tool-duplication.js` |
 | `efr_exceptions.json` | one page agreed at a named EFR, with owner and date | `check-efr.js` |
 | `em_dash_locale_policy.json` | each locale's em-dash policy of record | `check-editorial-footprint.js` |

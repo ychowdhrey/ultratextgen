@@ -168,6 +168,7 @@ Required, blocking checks:
 - `check:library-hub-coverage`
 - `check:library-hub-parity`
 - `check:library-link-mirror`
+- `check:link-reachability`
 - `check:llms`
 - `check:locale-collection-parity`
 - `check:locale-mesh`
@@ -221,6 +222,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:kana-readings`
 - `test:label-geometry`
 - `test:letters-to-numbers`
+- `test:link-graph`
 - `test:link-health`
 - `test:llms`
 - `test:moon-phase`
