@@ -225,6 +225,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:moon-phase`
 - `test:name-reports`
 - `test:practice-row`
+- `test:print-paper`
 - `test:printables-i18n-parity`
 - `test:qr`
 - `test:render-invariants`
