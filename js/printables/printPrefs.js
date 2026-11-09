@@ -25,6 +25,7 @@
  *                   the recent and saved strips under the share row
  *   moreSection(scope, o) / nameDateRow() / frameCanvas(art, o)
  *                   the sheet's title + name-and-date line, for all three engines
+ *   calibrationBar(unit) the actual-size check bar's geometry, for every engine
  *   mountNameCarry(o) / nameKitLinks(lang, path) / carriedName()
  *                   the "same word, another sheet" row and its per-locale list
  *
@@ -77,8 +78,14 @@
      language: es covers both Spain (A4) and Mexico (Carta), and a Mexican
      parent on /es/imprimibles/ wants Letter. navigator.languages is ordered
      by the visitor's own preference, so the first entry carrying a region
-     subtag wins. A language with no region tells us nothing about paper and
-     is skipped rather than guessed at. */
+     subtag wins. A language with no region is skipped rather than guessed
+     at, with one exception: a bare A4 language in FIRST place (see
+     A4_FIRST_LANGS below), where the region the loop would find belongs to
+     a fallback language the visitor ranked lower. */
+  /* Bare language tags whose readers print on A4 in every market this site
+     serves in that language. English is absent on purpose (US Letter is the
+     larger English printing audience), and so is any tag with a region. */
+  const A4_FIRST_LANGS = new Set(["de", "pl", "tr", "fr", "es", "it", "nl", "id", "pt", "ja"]);
   function defaultPaper() {
     let tags = [];
     try {
@@ -86,6 +93,15 @@
         ? navigator.languages.slice()
         : (navigator.language ? [navigator.language] : []);
     } catch (err) { tags = []; }
+    /* The FIRST preferred language decides when it is a bare A4 language.
+       A German reader whose browser lists ["de", "en-US", "en"] (the usual
+       shape when English was added as a fallback) was handed US Letter,
+       because the loop below takes the first region subtag it finds and the
+       only one in that list is the fallback's "US". The reader asked for
+       German first; German paper is A4. A first tag that carries its own
+       region ("es-MX", "en-US") still goes to the region rule. */
+    const first = String(tags[0] || "").toLowerCase();
+    if (A4_FIRST_LANGS.has(first)) return "a4";
     for (const tag of tags) {
       const parts = String(tag || "").split("-");
       for (let i = 1; i < parts.length; i++) {
@@ -140,6 +156,42 @@
     nl:  "Hoog contrast (om te kopiëren)",
     tr:  "Yüksek kontrast (fotokopi için)"
   };
+  /* The actual-size check bar: one owner for every engine that prints one.
+
+     A printer's "fit to page" shrinks a sheet without saying so, and on a
+     sheet whose size IS the content (a tiled wall letter, an 8 mm exercise-book
+     ruling) that is the one change the reader cannot see. So the sheet carries
+     a bar of stated length: if it measures short, the page was scaled.
+
+     Geometry only, in INCHES, so a canvas drawn in inches (posterTiles.js) and
+     an SVG sized in CSS inches (printablesEngine.js) draw the same bar from the
+     same numbers: the stroke, then an end tick at each end, the ticks INSIDE
+     the stated length so the outer ink edges are exactly `lengthIn` apart.
+     `rects(x, baseY)` returns [x, y, w, h] with baseY the bar's bottom edge.
+     `unit` is "cm" (a 2 cm bar) or anything else (a 1 inch bar). `label` is a
+     numeral and an international unit, the same in every language the sheets
+     ship in, for the reason the "300 DPI" control gives below. */
+  const CAL_STROKE_IN = 0.05;
+  const CAL_TICK_IN = 0.1;
+  const CAL_TICK_W_IN = 0.012;
+  function calibrationBar(unit) {
+    const metric = unit === "cm";
+    const lengthIn = metric ? 2 / 2.54 : 1;
+    return {
+      metric: metric,
+      lengthIn: lengthIn,
+      lengthMm: metric ? 20 : 25.4,
+      heightIn: CAL_TICK_IN,
+      label: metric ? "2 cm" : "1 in",
+      rects: function (x, baseY) {
+        return [
+          [x, baseY - CAL_STROKE_IN, lengthIn, CAL_STROKE_IN],
+          [x, baseY - CAL_TICK_IN, CAL_TICK_W_IN, CAL_TICK_IN],
+          [x + lengthIn - CAL_TICK_W_IN, baseY - CAL_TICK_IN, CAL_TICK_W_IN, CAL_TICK_IN]
+        ];
+      }
+    };
+  }
   function contrastLabel() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
     return CONTRAST_I18N[lang] || null;
@@ -1035,6 +1087,7 @@
   }
 
   UTG.printPrefs = {
+    calibrationBar: calibrationBar,
     mountPrintNote: mountPrintNote,
     mountNameCarry: mountNameCarry,
     nameKitLinks: nameKitLinks,

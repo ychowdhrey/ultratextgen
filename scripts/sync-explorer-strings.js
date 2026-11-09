@@ -47,6 +47,12 @@ const KEYS = {
   // What the Share button says after it copies the link (browsers with no
   // native share sheet) or fails to (2026-10-08).
   linkCopied: 'shareResult.linkCopied',
+  // What the Share button says INSTEAD of Share where the browser has no
+  // share sheet, and what the image button says where it cannot share a file
+  // (2026-11-01). copyLink exists in the locales that already carried it on
+  // their printables rows; the others keep their Share label by design.
+  copyLink: 'shareResult.copyLink',
+  downloadImage: 'imageSelection.downloadImage',
   failed: 'copyButtons.failed',
   clearAll: 'savedStyles.clearAll',
   copyLabel: 'copyButtons.copy',

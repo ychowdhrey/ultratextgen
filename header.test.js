@@ -22,7 +22,8 @@
  * behind the `cta_click` event, and the copy-identity engine behind
  * `copy_text` (see its own section below), plus the browse events (kaomoji
  * hub mood links, /library/ filter and search) and the kaomoji generator's
- * step payload, each sliced out of its shipped file the same way.
+ * step payload, each sliced out of its shipped file the same way. The nav
+ * listeners (printable_nav, library_nav) are run against stub clicks.
  *
  * The `cta_click` half covers the two classifiers. They decide what
  * every future CTA number means, and both have a real trap in them:
@@ -250,9 +251,11 @@ t('a catalogue copy still sends the exact item', () => {
 // and the link copy sends the page URL. None of those is catalogue content, so
 // each method sends the group and clears copy_item (and the text never appears
 // anywhere in the payload).
-t('the kaomoji generator, link and decoder and the tag studio copies keep typed text out of the payload', () => {
+// The couple name generator copies the two names the visitor typed (2026-11-08:
+// it used the catalogue default and sent both names as copy_item).
+t('the kaomoji generator, link and decoder, the tag studio and the couple generator copies keep typed text out of the payload', () => {
   const typed = 'my private text 123';
-  for (const m of ['kaomoji_generator', 'kaomoji_link', 'kaomoji_decoder', 'tag_studio']) {
+  for (const m of ['kaomoji_generator', 'kaomoji_link', 'kaomoji_decoder', 'tag_studio', 'couple_generator']) {
     const p = CI.copyPayload(m, typed);
     eq(p.copy_method, m, m + ' method is reported as itself, not symbol_tile');
     eq('copy_item' in p, true, m + ' keeps the key so GTM clears the last value');
@@ -317,6 +320,19 @@ t('copy_look is always a key, cleared unless the caller sets it', () => {
   const p = CI.copyPayload('symbol_tile', '★');
   eq('copy_look' in p, true, 'key present so GTM clears the last look');
   eq(p.copy_look, undefined, 'cleared by default');
+});
+// The optional keys other surfaces pass. A symbol-tile or Ctrl+C copy on a
+// generator page used to leave style_name out, so GTM re-sent the previous
+// card's style with it (2026-11-08 audit).
+t('the optional copy_text keys are always keys, cleared unless the caller sets them', () => {
+  const p = CI.copyPayload('symbol_tile', '★');
+  for (const k of ['style_name', 'label', 'copy_collection', 'copy_item_count', 'copy_has_pair', 'template_id']) {
+    eq(k in p, true, k + ' key present so GTM clears the last value');
+    eq(p[k], undefined, k + ' cleared by default');
+  }
+  const q = CI.copyPayload('button', 'Luna', { style_name: 'Ultra Bold' });
+  eq(q.style_name, 'Ultra Bold', 'a passed style_name still arrives');
+  eq(q.copy_has_pair, undefined, 'and the keys it did not pass are cleared');
 });
 t('copy_look carries the look and the item stays the bare character', () => {
   const p = CI.copyPayload('symbol_look_switch', '\u2764', { copy_look: 'plain' });
@@ -543,7 +559,93 @@ t('kaomoji_generator_step: a preset id is its label as an id, or its index', () 
   eq(KAO.presetId({ label: '笑顔' }, 7), 'preset_7', 'a non-Latin label falls back to the index');
 });
 
-console.log('header.js — CTA click tracking + copy_text item identity + browse events + kaomoji steps\n');
+// ── library_nav: Related cards and section pointers on library pages ─────
+//
+// The listener is DOM-bound, so the clicks below run the shipped initializers
+// against a stub document: a link is a stub that answers matches()/closest()
+// for the exact selectors it is given, with its path parsed by URL so a query
+// or fragment in the href is really there to leak.
+
+const ORIGIN = 'https://ultratextgen.com';
+function stubLink(href, selectors, parent, text) {
+  const u = new URL(href, ORIGIN);
+  const hit = (sel) => sel.split(',').some((s) => selectors.includes(s.trim()));
+  return {
+    origin: u.origin, pathname: u.pathname, textContent: text || '',
+    parentElement: parent || { matches: () => false },
+    getAttribute: (k) => (k === 'href' ? href : null),
+    matches: hit,
+    closest: (sel) => (hit(sel) ? 'self' : null),
+  };
+}
+// Run every nav initializer header.js has on `pathname`, click `link`, and
+// return the dataLayer rows. A missing initializer is skipped, so the same
+// harness reads the code before and after a listener is added.
+function navClick(pathname, link) {
+  const win = { location: { pathname, origin: ORIGIN }, dataLayer: [] };
+  const handlers = [];
+  const doc = { addEventListener: (type, fn) => { if (type === 'click') handlers.push(fn); } };
+  const src = slice('  function trackPrintableEvent(name, params) {', '  /* "ultratextgen.com/printables/name-tracing"')
+    + slice('  var PRINTABLE_NAV_SELECTOR', '  function initializeKaomojiMoodIndexTracking()');
+  new Function('window', 'document', `${src}
+    initializePrintableNavTracking();
+    if (typeof initializeLibraryNavTracking === 'function') initializeLibraryNavTracking();`)(win, doc);
+  const target = { closest: (sel) => (link.closest(sel) ? link : null) };
+  handlers.forEach((h) => h({ target }));
+  // An undefined value is still a key GTM sees, so it is serialised, not dropped.
+  return win.dataLayer.map((r) => JSON.stringify(r, (k, v) => (v === undefined ? '<undefined>' : v)));
+}
+const libNav = () => new Function(
+  `${slice('  /* @library-nav:begin */', '  /* @library-nav:end */')}\nreturn { LIBRARY_PATH_RE, libraryNavKind, libraryNavPayload };`
+)();
+const RELATED_PRINTABLE = ['.related-page-card a[href]', '.related-page-card a', 'a[href]'];
+const COMPARE_CARD = ['a.compare-card', 'a[href]'];
+const lastPara = { matches: (sel) => sel === 'section > p.u-secondary-tight:last-child' };
+
+t('printable_nav: a related card on a printables page pushes exactly the same row as before', () => {
+  eq(JSON.stringify(navClick('/printables/name-tracing/', stubLink('/printables/monogram-maker/', RELATED_PRINTABLE))),
+    JSON.stringify(['{"event":"printable_nav","printable_page":"name-tracing","printable_nav_kind":"related_card","printable_nav_href":"/printables/monogram-maker/"}']));
+});
+t('printable_nav: a carry link still drops the typed name, and nothing else is pushed', () => {
+  eq(JSON.stringify(navClick('/printables/name-tracing/', stubLink('/printables/bubble-letters/?name=Ava', ['a.pt-carry-link[href]', '.pt-carry-link', 'a[href]']))),
+    JSON.stringify(['{"event":"printable_nav","printable_page":"name-tracing","printable_nav_kind":"name_carry","printable_nav_href":"/printables/bubble-letters/"}']));
+});
+t('a compare card on a printables page pushes nothing, as before', () => {
+  eq(navClick('/id/printables/kristik-huruf/', stubLink('/id/printables/', COMPARE_CARD)).length, 0);
+});
+t('library_nav: a Related card on a library page pushes one row with the path only', () => {
+  eq(JSON.stringify(navClick('/library/angry-emoji/', stubLink('/library/annoyed-emoji/?q=typed#top', COMPARE_CARD))),
+    JSON.stringify(['{"event":"library_nav","library_nav_kind":"related_card","library_nav_href":"/library/annoyed-emoji/"}']));
+});
+t('library_nav: a section pointer is the arrow link in a section\'s last paragraph', () => {
+  eq(JSON.stringify(navClick('/zh-tw/library/kaomoji/', stubLink('/zh-tw/library/sad-kaomoji/', ['a[href]'], lastPara, '查看全部傷心顏文字 →'))),
+    JSON.stringify(['{"event":"library_nav","library_nav_kind":"section_pointer","library_nav_href":"/zh-tw/library/sad-kaomoji/"}']));
+});
+t('library_nav: an intro prose link, or a last-paragraph link with no arrow, is not a pointer', () => {
+  const N = libNav();
+  eq(N.libraryNavKind(stubLink('/library/x/', ['a[href]'], { matches: () => false }, 'See every x →')), null, 'intro paragraph');
+  eq(N.libraryNavKind(stubLink('/library/x/', ['a[href]'], lastPara, 'Dirham-Zeichen')), null, 'prose link in the last paragraph');
+  eq(navClick('/library/angry-emoji/', stubLink('/library/x/', ['a[href]'], lastPara, 'Dirham-Zeichen')).length, 0, 'no row');
+});
+t('library_nav: an off-site or same-page link records nothing', () => {
+  eq(navClick('/library/angry-emoji/', stubLink('https://example.com/library/x/', COMPARE_CARD)).length, 0, 'off-site');
+  eq(navClick('/library/angry-emoji/', stubLink('#related', COMPARE_CARD)).length, 0, 'fragment');
+});
+t('library_nav listens on library pages in every locale and nowhere else', () => {
+  const { LIBRARY_PATH_RE } = libNav();
+  ['/library/', '/library/angry-emoji/', '/de/library/herz-symbole/', '/zh-tw/library/kaomoji/']
+    .forEach((p) => eq(LIBRARY_PATH_RE.test(p), true, p));
+  ['/printables/name-tracing/', '/symbol/heart-symbol/', '/id/printables/kristik-huruf/', '/', '/usecase/library-x/']
+    .forEach((p) => eq(LIBRARY_PATH_RE.test(p), false, p));
+});
+t('library_nav: the payload carries every key, and a path is capped', () => {
+  const { libraryNavPayload } = libNav();
+  const p = libraryNavPayload('related_card', '/library/' + 'x'.repeat(300));
+  eq(Object.keys(p).join(','), 'event,library_nav_kind,library_nav_href', 'keys');
+  eq(p.library_nav_href.length, 200, 'capped');
+});
+
+console.log('header.js — CTA click tracking + copy_text item identity + browse events + kaomoji steps + library nav\n');
 LINES.forEach((l) => console.log(l));
 console.log(`\n${PASS} passed, ${FAIL} failed`);
 

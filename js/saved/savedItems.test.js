@@ -427,6 +427,57 @@ function fullStore(symbols, withStyle) {
   eq(b.api.has('style', 'Ultra Bold'), true, 'and the stale tab now knows it is saved');
 }
 
+/* ---- the store says when a write was refused --------------------------- */
+
+{
+  // A refused write leaves the record in memory only, so a star reading
+  // "Saved" would be a promise the next page load breaks. unsaved() is how a
+  // host finds out: true while the last write was refused, false once one
+  // lands, and never true merely because storage was never written.
+  const fs = require('fs');
+  const path = require('path');
+  const vm = require('vm');
+  const src = fs.readFileSync(path.join(__dirname, 'saved-items.js'), 'utf8');
+  function withStorage(storage) {
+    const win = { localStorage: storage, dataLayer: [], addEventListener() {} };
+    const sandbox = {
+      window: win, localStorage: storage,
+      document: { addEventListener() {}, dispatchEvent() {} },
+      CustomEvent: function () {}, Date
+    };
+    sandbox.globalThis = sandbox;
+    vm.createContext(sandbox);
+    vm.runInContext(src, sandbox);
+    return win.UltraTextGen.saved;
+  }
+  const unsaved = (api) => typeof api.unsaved === 'function' ? api.unsaved() : 'no accessor';
+
+  const allowed = load().api;
+  eq(unsaved(allowed), false, 'unsaved() is false before any write');
+  allowed.set({ type: 'symbol', value: '★', label: 'Star' }, true);
+  eq(unsaved(allowed), false, 'unsaved() stays false when the write lands');
+
+  const blocked = withStorage({
+    getItem() { throw new Error('SecurityError'); },
+    setItem() { throw new Error('SecurityError'); }
+  });
+  eq(unsaved(blocked), false, 'blocked storage alone is not a refused write');
+  blocked.set({ type: 'symbol', value: '★', label: 'Star' }, true);
+  eq(unsaved(blocked), true, 'a save with storage blocked reports unsaved');
+
+  const map = {};
+  let refuse = true;
+  const quota = withStorage({
+    getItem: (k) => (k in map ? map[k] : null),
+    setItem: (k, v) => { if (refuse) throw new Error('QuotaExceededError'); map[k] = String(v); }
+  });
+  quota.set({ type: 'style', value: 'Ultra Bold', label: 'Ultra Bold' }, true);
+  eq(unsaved(quota), true, 'a save refused by quota reports unsaved');
+  refuse = false;
+  quota.set({ type: 'symbol', value: '♥', label: 'Heart' }, true);
+  eq(unsaved(quota), false, 'the next write that lands clears it');
+}
+
 /* ---- report ------------------------------------------------------------ */
 
 console.log(`saved-items: ${pass} passed, ${failures.length} failed`);

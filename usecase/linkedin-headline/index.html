@@ -717,6 +717,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         copyBtn.type = 'button';
         copyBtn.addEventListener('click', () => {
           navigator.clipboard.writeText(result).then(() => {
+            // One copy_text row through header.js trackCopy (not a catalogue method).
+            if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy('linkedin_headline', result);
             copyBtn.textContent = 'Copied!';
             copyBtn.classList.add('copied');
             setTimeout(() => {

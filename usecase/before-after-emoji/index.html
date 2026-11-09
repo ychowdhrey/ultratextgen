@@ -780,6 +780,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         var text = btn.dataset.text || "";
         if (!text) return;
         navigator.clipboard.writeText(text).then(function () {
+          // One copy_text row through header.js trackCopy, as the library cards do.
+          if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("button", text, { style_name: "" });
           var orig = btn.textContent;
           btn.textContent = "Copied ✓";
           btn.classList.add("etg-copied");

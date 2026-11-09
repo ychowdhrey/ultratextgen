@@ -79,7 +79,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to get a fancy font in your Instagram bio",
-  "description": "Instagram has no built-in font picker, so use a bio font generator to turn plain text into copy-paste Unicode fonts, then paste the result into your Instagram bio.",
+  "description": "Instagram has no built-in bio font picker outside its paid Instagram Plus subscription, so use a bio font generator to turn plain text into copy-paste Unicode fonts, then paste the result into your Instagram bio.",
   "totalTime": "PT1M",
   "step": [
     {
@@ -115,7 +115,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Does Instagram let you change your bio font?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not natively: Instagram's bio field has no font picker. Every \"fancy Instagram font\" you see is actually Unicode: special characters that already look styled (bold, cursive, gothic, bubble) before you ever paste them. Type your text above, pick a style, copy it, and paste it into Edit Profile → Bio. It works because you're pasting different characters, not applying formatting."
+        "text": "Not on a free account: the bio field has no font picker there, and the Custom Bio Font setting comes only with Instagram Plus, Instagram's paid subscription. Every \"fancy Instagram font\" you see is actually Unicode: special characters that already look styled (bold, cursive, gothic, bubble) before you ever paste them. Type your text above, pick a style, copy it, and paste it into Edit Profile → Bio. It works because you're pasting different characters, not applying formatting."
       }
     },
     {
@@ -471,7 +471,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           const name = (mainInput && mainInput.value.trim()) || "Shadow";
 
           const glanceHtml = GLANCE_CATEGORIES.map(cat => `
-            <div class="glance-card" data-glance-cat="${cat.id}">
+            <div class="glance-card" data-glance-cat="${cat.id}" role="button" tabindex="0">
               <div class="glance-card-header">
                 <span>${cat.emoji}</span>
                 <span>${cat.label}</span>
@@ -491,11 +491,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
           // Click handler: scroll to top and switch decorator tab
           grid.querySelectorAll(".glance-card").forEach(card => {
+            // A div card is a button for the keyboard too (2026-11-08 audit:
+            // Tab never reached these cards and Enter did nothing).
+            card.addEventListener("keydown", e => {
+              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); card.click(); }
+            });
             card.addEventListener("click", () => {
               const catId = card.dataset.glanceCat;
               const decoTab = document.querySelector(`.decoration-tab[data-deco-tab="${catId}"]`);
               if (decoTab) {
                 decoTab.click();
+                // Keyboard users land on the tab they chose, at the top.
+                decoTab.focus({ preventScroll: true });
               }
               window.scrollTo({ top: 0, behavior: "smooth" });
             });
@@ -540,7 +547,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Not natively: Instagram's bio field has no font picker. Every "fancy Instagram font" you see is actually Unicode: special characters that already look styled (bold, cursive, gothic, bubble) before you ever paste them. Type your text above, pick a style, copy it, and paste it into <strong>Edit Profile → Bio</strong>. It works because you're pasting different characters, not applying formatting.
+    Not on a free account: the bio field has no font picker there, and the Custom Bio Font setting comes only with Instagram Plus, Instagram's paid subscription. Every "fancy Instagram font" you see is actually Unicode: special characters that already look styled (bold, cursive, gothic, bubble) before you ever paste them. Type your text above, pick a style, copy it, and paste it into <strong>Edit Profile → Bio</strong>. It works because you're pasting different characters, not applying formatting.
   </div>
 </div>
 

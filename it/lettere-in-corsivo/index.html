@@ -147,7 +147,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Le lettere accentate (à, è, é, ì, ò, ù) diventano corsive?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. I caratteri script di Unicode esistono solo per le lettere A–Z senza accento, quindi le vocali accentate restano invariate. Per una parola o un nome completamente in corsivo, scrivili senza accento: ad esempio <strong>papa</strong> al posto di <em>papà</em> o <strong>perche</strong> al posto di <em>perché</em>."
+        "text": "Sì. Il generatore mantiene gli accenti: trasforma la lettera base in corsivo e rimette l'accento sopra, quindi <strong>papà</strong> diventa 𝓅𝒶𝓅𝒶̀ e <strong>perché</strong> diventa 𝓅ℯ𝓇𝒸𝒽ℯ́. Non serve togliere l'accento. Solo il testo capovolto torna alle lettere normali."
       }
     },
     {
@@ -464,9 +464,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="copy-btn" data-text="𝓂𝒶𝓂𝓂𝒶" data-style="Ultra Script">Copia</button>
       </div>
       <div class="cursive-word-card">
-        <span class="cursive-word-render">𝓅𝒶𝓅𝒶</span>
+        <span class="cursive-word-render">𝓅𝒶𝓅𝒶̀</span>
         <span class="cursive-word-label">papà in corsivo</span>
-        <button type="button" class="copy-btn" data-text="𝓅𝒶𝓅𝒶" data-style="Ultra Script">Copia</button>
+        <button type="button" class="copy-btn" data-text="𝓅𝒶𝓅𝒶̀" data-style="Ultra Script">Copia</button>
       </div>
       <div class="cursive-word-card">
         <span class="cursive-word-render">𝒻𝒶𝓂𝒾ℊ𝓁𝒾𝒶</span>
@@ -494,9 +494,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="copy-btn" data-text="𝓋𝒾𝓉𝒶" data-style="Ultra Script">Copia</button>
       </div>
       <div class="cursive-word-card">
-        <span class="cursive-word-render">𝒻ℯ𝓁𝒾𝒸𝒾𝓉𝒶</span>
+        <span class="cursive-word-render">𝒻ℯ𝓁𝒾𝒸𝒾𝓉𝒶̀</span>
         <span class="cursive-word-label">felicità in corsivo</span>
-        <button type="button" class="copy-btn" data-text="𝒻ℯ𝓁𝒾𝒸𝒾𝓉𝒶" data-style="Ultra Script">Copia</button>
+        <button type="button" class="copy-btn" data-text="𝒻ℯ𝓁𝒾𝒸𝒾𝓉𝒶̀" data-style="Ultra Script">Copia</button>
       </div>
       <div class="cursive-word-card">
         <span class="cursive-word-render">𝒾𝓃𝓈𝒾ℯ𝓂ℯ</span>
@@ -707,7 +707,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>Usa il corsivo Unicode quando ti serve il corsivo <em>dentro i campi di testo</em>: profili social, chat, titoli dei video. Usa invece un vero carattere corsivo (in Word, Canva o nel tuo programma di grafica) quando controlli il documento e ti serve una crenatura di qualità da stampa. E ricorda: in italiano "corsivo" indica anche l'<em>italico</em>, ma questo strumento crea il corsivo calligrafico, quello tipo scrittura a mano. Entrambi hanno il loro posto; qui ci occupiamo del primo.</p>
 
       <h3>Accenti, lettere accentate e altri alfabeti</h3>
-      <p>I caratteri script di Unicode esistono solo per l'alfabeto latino A–Z, quindi le lettere accentate italiane (à, è, é, ì, ò, ù) non vengono trasformate e restano invariate, così come il cirillico, il greco e l'arabo. Per ottenere una parola o un nome interamente in corsivo, scrivili senza accento: per esempio <strong>papa</strong> invece di <em>papà</em> o <strong>felicita</strong> invece di <em>felicità</em>. Per esercitarti con la scrittura a mano, il nostro <a href="#cursive-alphabet">foglio di pratica da stampare</a> copre l'alfabeto latino dalla A alla Z.</p>
+      <p>I caratteri script di Unicode esistono solo per l'alfabeto latino A–Z, ma il generatore mantiene le lettere accentate italiane (à, è, é, ì, ò, ù): trasforma la lettera base in corsivo e rimette l'accento sopra, così <strong>papà</strong> resta papà e <strong>felicità</strong> resta felicità. Il cirillico, il greco e l'arabo invece restano invariati. Per esercitarti con la scrittura a mano, il nostro <a href="#cursive-alphabet">foglio di pratica da stampare</a> copre l'alfabeto latino dalla A alla Z.</p>
 
       <h3>Imparare la scrittura corsiva</h3>
       <p>I generatori servono per il testo digitale, ma funzionano anche come tabelle di riferimento. Stampa il <a href="#cursive-alphabet">foglio di pratica</a> per ricalcare le lettere, studia come ogni maiuscola si collega nell'<a href="#cursive-letters">esploratore delle lettere</a> e tieni presente qualche buona abitudine di accessibilità: linee decorative brevi e testo semplice per il resto (<a href="/guide/fancy-fonts-accessibility-guide/">guida all'accessibilità</a>).</p>
@@ -791,7 +791,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
   <div class="faq-answer">
-    No. I caratteri script di Unicode esistono solo per le lettere A–Z senza accento, quindi le vocali accentate restano invariate. Per una parola o un nome completamente in corsivo, scrivili senza accento: ad esempio <strong>papa</strong> al posto di <em>papà</em> o <strong>perche</strong> al posto di <em>perché</em>.
+    Sì. Il generatore mantiene gli accenti: trasforma la lettera base in corsivo e rimette l'accento sopra, quindi <strong>papà</strong> diventa 𝓅𝒶𝓅𝒶̀ e <strong>perché</strong> diventa 𝓅ℯ𝓇𝒸𝒽ℯ́. Non serve togliere l'accento. Solo il testo capovolto torna alle lettere normali.
   </div>
 </div>
 
@@ -870,6 +870,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "practiceTitle": "Foglio di pratica per l'alfabeto corsivo — ultratextgen.com",
   "flourishLabel": "Svolazzo",
   "monogramLabel": "Unione monogramma",
+  "backgroundLabel": "Sfondo dell'immagine",
+  "bgTransparent": "Trasparente",
+  "bgWhite": "Bianco",
   "copiedToast": "Copiato!",
   "quickWords": [
     "amore",

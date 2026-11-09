@@ -93,10 +93,12 @@ function makeEl(tag) {
  *   opts.canShare   — a navigator.canShare stub, or null
  *   opts.writeText  — a navigator.clipboard.writeText stub
  *   opts.lang       — the <html lang> the page carries
+ *   opts.i18n       — a window.UTG_I18N table (a page that loaded i18n.js)
  */
 function load(opts) {
   const o = opts || {};
   const dataLayer = [];
+  const documentListeners = {};
   const navigator = {
     clipboard: { writeText: o.writeText || (async () => {}) }
   };
@@ -111,7 +113,9 @@ function load(opts) {
     getElementById: () => null,
     querySelector: () => null,
     querySelectorAll: () => [],
-    addEventListener() {},
+    addEventListener(type, fn) {
+      (documentListeners[type] = documentListeners[type] || []).push(fn);
+    },
     dispatchEvent() { return true; }
   };
 
@@ -121,6 +125,7 @@ function load(opts) {
     navigator,
     location: { origin: 'https://ultratextgen.com', pathname: '/', search: '' }
   };
+  if (o.i18n) win.UTG_I18N = o.i18n;
 
   const sandbox = {
     window: win,
@@ -137,7 +142,21 @@ function load(opts) {
   sandbox.globalThis = sandbox;
   vm.createContext(sandbox);
   vm.runInContext(SRC, sandbox);
-  return { UTG: win.UltraTextGen, dataLayer, document };
+  // The older button tests call element.click(), which executes only its own
+  // handlers. Real clicks also bubble to document. Exercise that second path
+  // so a self-handled platform link cannot accidentally trigger a generator
+  // share and inflate analytics.
+  async function dispatchClick(target) {
+    const originalClosest = target.closest;
+    target.closest = (selector) => selector === '.share-result-btn' &&
+      String(target.className).split(' ').includes('share-result-btn') ? target : null;
+    try {
+      await Promise.all((documentListeners.click || []).map((fn) => fn({ target })));
+    } finally {
+      target.closest = originalClosest;
+    }
+  }
+  return { UTG: win.UltraTextGen, dataLayer, document, dispatchClick };
 }
 
 /** An AbortError of the shape a browser throws when the sheet is dismissed. */
@@ -443,19 +462,23 @@ function stubCanvas(UTG) {
 }
 
 {
-  const { UTG } = load({});
+  // With a share sheet the picture is the caller's choice; without one the
+  // link icon is forced, because a link is what the press copies (2026-11-01).
+  const { UTG } = load({ share: async () => {} });
   const b = UTG.buildShareButton({ label: 'Share', icon: 'link' });
   ok(/M13\.828 10\.172/.test(b.innerHTML), 'icon "link" draws the link icon');
   eq(b.className, 'share-result-btn', 'and keeps the Share class, so the same delegated share runs');
   const plain = UTG.buildShareButton({ label: 'Share' });
   ok(!/M13\.828 10\.172/.test(plain.innerHTML), 'the default icon is unchanged');
+  const noSheet = load({}).UTG.buildShareButton({ label: 'Share' });
+  ok(/M13\.828 10\.172/.test(noSheet.innerHTML), 'without a share sheet the default icon is the link');
 }
 
 {
   // A page that translates its own buttons (library/symbol pages, no i18n.js):
   // the accessible name and tooltip come from the visible label, never the
   // English fallback sentence (WCAG 2.5.3, label in name).
-  const { UTG } = load({});
+  const { UTG } = load({ share: async () => {} });
   const b = UTG.buildShareButton({ label: '공유', name: '이모티콘' });
   eq(b.getAttribute('aria-label'), '공유: 이모티콘', 'caller label + name is the accessible name');
   eq(b.title, '공유', 'and the tooltip is the visible label');
@@ -533,6 +556,112 @@ function stubCanvas(UTG) {
   eq(dataLayer[1].share_format, 'link', 'a link share is "link"');
   ok(Object.prototype.hasOwnProperty.call(dataLayer[2], 'share_format') && dataLayer[2].share_format === null,
     'a pin carries the key as an honest null, never omitted');
+}
+
+/* ---- an unstamped surface is named, never counted as the generator ------ */
+/* Until 2026-11-01 a caller that passed no surface was recorded as
+   "generator", which made 47.7% of attributable rows unreadable (2026-10-09,
+   F3). The default now says what it is. */
+
+{
+  const { UTG, dataLayer } = load({});
+  UTG.pushShare('link_copy', {});
+  UTG.pushShare('native', { surface: 'generator' });
+  eq(dataLayer[0].share_surface, 'unstamped', 'a row with no stated surface reads "unstamped"');
+  eq(dataLayer[1].share_surface, 'generator', 'and "generator" is only ever a stated value');
+  const row = UTG.buildShareRow({ url: 'https://ultratextgen.com/x/', labels: { share: 'Share', copyLink: 'Copy link' } });
+  ok(row, 'a share row with no surface still builds');
+}
+
+/* ---- the label says what the press does (2026-11-01) ------------------- */
+/* With navigator.share the primary button opens the OS sheet and says Share.
+   Without it the press copies the link, and the button says so up front in
+   the page language, or keeps its translated Share label when the page has no
+   "Copy link" in that language. The icon says link either way. */
+
+{
+  const { UTG } = load({ share: async () => {} });
+  const b = UTG.buildShareButton({ name: 'Ultra Bold' });
+  eq(b.dataset.shareAction, 'share', 'with a share sheet the button is a share');
+  eq(b.querySelector('.share-result-label').textContent, 'Share', 'and says Share');
+  eq(b.getAttribute('aria-label'), 'Share Ultra Bold result', 'with the share accessible name');
+  ok(!/M13\.828 10\.172/.test(b.innerHTML), 'and the share icon');
+}
+
+{
+  const { UTG } = load({});
+  const b = UTG.buildShareButton({ name: 'Ultra Bold' });
+  eq(b.dataset.shareAction, 'copy_link', 'without a share sheet the button is a copy of the link');
+  eq(b.querySelector('.share-result-label').textContent, 'Copy link', 'and says so on an English page');
+  eq(b.getAttribute('aria-label'), 'Copy link: Ultra Bold', 'with a matching accessible name');
+  eq(b.title, 'Copy a link to this result. It opens with your text in this style.', 'and a tooltip that describes the copy');
+  ok(/M13\.828 10\.172/.test(b.innerHTML), 'and the link icon');
+  eq(UTG.idleShareLabel(b), 'Copy link', 'the resting label it returns to after a press is the same');
+}
+
+{
+  // A host that owns its strings (library and symbol pages, no i18n.js).
+  const { UTG } = load({});
+  const withCopy = UTG.buildShareButton({ label: '공유', copyLink: '링크 복사', name: '이모티콘' });
+  eq(withCopy.querySelector('.share-result-label').textContent, '링크 복사', 'a host copyLink is the label where there is no share sheet');
+  eq(withCopy.getAttribute('aria-label'), '링크 복사: 이모티콘', 'and the accessible name is built from it');
+  eq(withCopy.title, '링크 복사', 'as is the tooltip');
+  eq(withCopy.dataset.shareCopyLink, '링크 복사', 'and it travels on the button for the relabel');
+  const without = UTG.buildShareButton({ label: '공유', name: '이모티콘' });
+  eq(without.querySelector('.share-result-label').textContent, '공유', 'a host with no copyLink keeps its own Share label: never the English word');
+  eq(without.dataset.shareAction, 'copy_link', 'while the action is still recorded as a copy');
+  ok(/M13\.828 10\.172/.test(without.innerHTML), 'and the icon says link');
+  eq(without.getAttribute('aria-label'), '공유: 이모티콘', 'with the accessible name built from the visible label');
+}
+
+{
+  // A page with i18n.js: the locale table decides, and English is never the fallback.
+  const de = { ui: { shareResult: { label: 'Teilen', copyLink: 'Link kopieren', title: 'T', ariaLabel: '{style}-Ergebnis teilen' } } };
+  const { UTG } = load({ lang: 'de', i18n: de });
+  const b = UTG.buildShareButton({ name: 'Fett' });
+  eq(b.querySelector('.share-result-label').textContent, 'Link kopieren', 'a locale with shareResult.copyLink shows it');
+  eq(b.getAttribute('aria-label'), 'Link kopieren: Fett', 'with its accessible name');
+  const ko = { ui: { shareResult: { label: '공유', title: 'T', ariaLabel: '{style} 결과 공유' } } };
+  const k = load({ lang: 'ko', i18n: ko }).UTG.buildShareButton({ name: '굵게' });
+  eq(k.querySelector('.share-result-label').textContent, '공유', 'a locale without it keeps its translated Share label');
+  eq(k.getAttribute('aria-label'), '굵게 결과 공유', 'and its translated accessible name');
+  eq(k.dataset.shareAction, 'copy_link', 'while recording that the press copies');
+}
+
+{
+  // The pure helper script.js's card template uses, same answers.
+  const { UTG } = load({});
+  const t = UTG.shareButtonText({ name: 'Bold' });
+  eq([t.action, t.label, t.aria], ['copy_link', 'Copy link', 'Copy link: Bold'], 'shareButtonText answers for the card template');
+  const s = load({ share: async () => {} }).UTG.shareButtonText({ name: 'Bold' });
+  eq([s.action, s.label], ['share', 'Share'], 'and says Share where a sheet exists');
+}
+
+/* ---- the image button says Share or Download by what it can do --------- */
+
+{
+  const { UTG } = load({ share: async () => {}, canShare: () => true });
+  const b = UTG.buildShareImageButton({ name: 'Ultra Bold' });
+  eq(b.dataset.shareAction, 'image', 'where files can be shared the image button is a share');
+  eq(b.title, 'Share as an image', 'and says so');
+  eq(b.getAttribute('aria-label'), 'Share Ultra Bold result as an image', 'with the share accessible name');
+}
+
+{
+  const { UTG } = load({});
+  const b = UTG.buildShareImageButton({ name: 'Ultra Bold' });
+  eq(b.dataset.shareAction, 'image_download', 'where they cannot, it is a download');
+  eq(b.title, 'Download image', 'and says Download on an English page');
+  eq(b.getAttribute('aria-label'), 'Download image: Ultra Bold', 'with a matching accessible name');
+  const hosted = UTG.buildShareImageButton({ name: '이모티콘', imageTitle: '이미지로 공유', downloadTitle: '이미지 다운로드' });
+  eq(hosted.title, '이미지 다운로드', 'a host downloadTitle is used where there is no file sharing');
+  eq(hosted.getAttribute('aria-label'), '이미지 다운로드: 이모티콘', 'with its accessible name');
+  const hostedNoDl = UTG.buildShareImageButton({ name: '이모티콘', imageTitle: '이미지로 공유' });
+  eq(hostedNoDl.title, '이미지로 공유', 'a host with no downloadTitle keeps its own title: never the English word');
+  const de = load({ lang: 'de', i18n: { ui: { imageSelection: { downloadImage: 'Bild herunterladen' }, shareResult: { imageTitle: 'Als Bild teilen' } } } });
+  eq(de.UTG.buildShareImageButton({ name: 'Fett' }).title, 'Bild herunterladen', 'an i18n page reads imageSelection.downloadImage');
+  const t = UTG.shareImageButtonText({ name: 'Bold' });
+  eq([t.action, t.title], ['image_download', 'Download image'], 'shareImageButtonText answers for the card template');
 }
 
 /* ---- buildShareRow ----------------------------------------------------- */
@@ -642,6 +771,75 @@ function rowButtons(UTG, opts) {
   eq(UTG.buildPlatformShareRow({ platforms: ['telegram', 'nonsense'] }).children.length, 1,
     'an unknown platform is ignored, never rendered');
   eq(UTG.buildPlatformShareRow({}).children.length, 0, 'no platforms, no links');
+}
+
+/* ---- real click bubbling: one handler owns each share ------------------ */
+/* Dedicated platform links and share rows can carry the generator's CSS
+   class. Clicking them must not ALSO run the document-level generator handler.
+   This test runs both the element listener and the delegated document path;
+   prior tests only ran the element listener and missed the duplicate. */
+
+{
+  let nativeCalls = 0;
+  const { UTG, dataLayer, document, dispatchClick } = load({
+    share: async () => { nativeCalls++; }
+  });
+  const row = UTG.buildPlatformShareRow({ platforms: ['telegram', 'vk'] });
+  const [telegram, vk] = row.children;
+  await telegram.click();
+  await dispatchClick(telegram);
+  eq(dataLayer.length, 1, 'Telegram click + bubble produces only one event');
+  eq(dataLayer[0].share_method, 'telegram', 'Telegram method stays explicit');
+  eq(nativeCalls, 0, 'Telegram click does not open a second native share sheet');
+  await vk.click();
+  await dispatchClick(vk);
+  eq(dataLayer.length, 2, 'VK click + bubble adds only its own event');
+  eq(dataLayer[1].share_method, 'vk', 'VK method stays explicit');
+  eq(nativeCalls, 0, 'VK click does not open a second native share sheet');
+  telegram.title = 'Telegram share target';
+  document.querySelectorAll = (selector) => selector === '.share-result-btn' ? [telegram] : [];
+  UTG.relabelShareButtons();
+  eq(telegram.title, 'Telegram share target', 'locale relabel skips owned platform links');
+}
+
+{
+  let clipboardWrites = 0;
+  const { UTG, dataLayer, dispatchClick } = load({
+    writeText: async () => { clipboardWrites++; }
+  });
+  // The standard share row uses bubble-btn, but hosts can supply the same
+  // class as generator buttons. It still needs exactly one action.
+  const custom = rowButtons(UTG, { buttonClass: 'share-result-btn' })[0];
+  await custom.click();
+  await dispatchClick(custom);
+  eq(clipboardWrites, 1, 'custom-class share row writes to clipboard once');
+  eq(dataLayer.length, 1, 'custom-class share row records one success');
+  eq(dataLayer[0].share_surface, 'printables', 'share-row event keeps its surface');
+}
+
+{
+  const { UTG, dataLayer, dispatchClick } = load({});
+  const normal = UTG.buildShareButton({ styleId: 'bold', text: '𝗵𝗶' });
+  await dispatchClick(normal);
+  eq(dataLayer.length, 1, 'ordinary generator share still uses delegated handler');
+  eq(dataLayer[0].share_method, 'link_copy', 'ordinary generator share keeps method');
+}
+
+{
+  let nativeCalls = 0;
+  const { UTG, dataLayer, dispatchClick } = load({
+    share: async () => { nativeCalls++; }
+  });
+  const pin = rowButtons(UTG, {
+    buttonClass: 'share-result-btn',
+    pinMedia: () => 'https://example.test/example.png'
+  }).find((button) => button._label() === 'Save to Pinterest');
+  ok(pin, 'Pinterest link is present in a custom share class');
+  await pin.click();
+  await dispatchClick(pin);
+  eq(dataLayer.length, 1, 'Pinterest click + bubble records only one intent');
+  eq(dataLayer[0].share_method, 'pinterest', 'Pinterest intent method stays explicit');
+  eq(nativeCalls, 0, 'Pinterest click does not open a native share sheet');
 }
 
 /* ---- the single-writer invariant --------------------------------------- */

@@ -1,99 +1,96 @@
-# Updates opportunity scan — 2026-10-26
+# Updates opportunity scan — 2026-11-02
 
-**Result: nothing new and actionable in any of the three lanes.** This is the
-sixth consecutive run with nothing new; the one live watch item from last week
-(UTC #189's candidate emoji) has moved forward but still hasn't been decided.
+**Result: one genuine, verified, actionable finding.** UTC #189 (Nancy, France,
+Oct 26–28) approved five new Unicode 19.0 characters/sequences, resolving last
+week's watch item. Lanes (b) and (c) found nothing new.
 
-## Baseline update from outside this routine
+## Lane (a) — new Unicode Consortium versions/emoji — FINDING
 
-Before dispatching research agents, this run found that another session
-independently corrected several of this site's own figures this week (commit
-`f03e36b7e`, already merged, not a finding of this scan):
+**UTC #189 approved all five candidate emoji flagged as pending last week, and
+also opened a related rename question on an existing emoji.** Independently
+verified by fetching `unicode.org/L2/L2026/26232.htm` directly (curl + tag
+strip, never summarized) rather than trusting the research agent's quote
+alone — confirmed byte-for-byte:
 
-- Telegram's bio ("About") limit is 70 characters (140 with Premium), not the
-  previous "around 200" — sourced from Telegram's own API config. An unsourced
-  255-character display-name figure was also removed.
-- Pinterest pin descriptions allow 800 characters, not 500 (the site's own
-  500-char input box is a separate, intentional UI choice, not a bug).
-- A guide page's stale claim that WhatsApp has no usernames was corrected to
-  match the already-published `updates/whatsapp-usernames-rollout`.
-- `updates/unicode-18-beta-review-opens` corrected "about 90%" to "about 97%"
-  for the share of Unicode 18.0's new characters from historical scripts.
+- Document is genuinely "Draft Minutes of UTC Meeting 189," Nancy, France,
+  October 26–28, 2026, revision date 2026-10-30 — not the draft/pre-meeting
+  "[185-C]"-tagged text flagged as unconfirmed last week. Consensus tags run
+  sequentially `[189-C1]` through `[189-C55]+`, the documented signature of
+  real recorded minutes rather than carried-over template text.
+- **[189-C33]**: Accept 4 new emoji characters for Unicode 19.0 — U+1FA7F
+  ORNATE BOTTLE, U+1FACB ORCHID, U+1FACA VULTURE, U+1F6DA INUKSHUK.
+- **[189-C34]**: Accept 1 new RGI directional ZWJ sequence for Unicode 19.0 —
+  `1F440 200D 27A1 FE0F`, "eyes looking right" (a directional variant built on
+  the existing 👀 emoji).
+- **[189-A95]** (a related action item, not a repertoire addition): request a
+  CLDR short-name change for the *existing, already-shipped* 👀 emoji
+  (U+1F440) from "EYES" to "EYES LOOKING LEFT" — the counterpart name once the
+  new directional sequence exists. This touches a platform-facing name on a
+  character the site may already reference, so it's flagged as its own
+  decision point, not folded into the "new characters" finding.
 
-All three research agents were briefed with these corrected baselines so they
-wouldn't re-flag already-fixed figures.
+Checked site-wide for prior coverage (grep across `.html`/`.js`/`.json`,
+excluding one confirmed false-positive hash-string match in a case-folding
+fixture) — none of these five characters/sequences or the rename item appear
+anywhere on the site yet. This is genuinely new.
 
-## Lane (a) — new Unicode Consortium versions/emoji
+**Not yet decided: what, if anything, to build.** Per the routine's standing
+instruction, no page or `updates/` entry is created from this scan — asking
+the user which of these (if any) to act on:
+- A dated `updates/` entry for the UTC #189 approval, mirroring the precedent
+  set for U+20C5 Belarusian Ruble Sign's provisional-assignment entry.
+- Individual `symbol/` pages for the four new characters once real glyphs/
+  codepoints are stable (none are emoji-rendering yet — these are Unicode
+  19.0-track, not live in any font), again mirroring the Belarusian Ruble Sign
+  precedent for a provisionally-assigned character.
+- Whether/how to note the pending 👀 rename action item, which is a
+  CLDR-name question on a character already in wide use, not a new addition.
 
-**Nothing decided yet, but real movement on last week's watch item.** UTC #189
-(Oct 26–28, Nancy) is meeting this week as scheduled; as of this check (the
-meeting's first morning) its emoji agenda item is scheduled for Wednesday
-afternoon — the meeting's last day — so no vote has happened yet.
-
-What did move since 2026-10-19: the five candidate-emoji proposal documents
-flagged last week as unposted placeholders are now posted (uploaded 2026-10-23
-per the L2/L2026 directory: L2/26-269 Eyes Looking Right, 26-270 Ornate Bottle,
-26-271 Orchid, 26-272 Vulture, 26-273 Inukshuk). The ESR Working Group report
-for UTC #189 (L2/26-237, revised again the morning of this check) recommends
-the same five for Unicode 19.0, but its consensus block is tagged "[185-C]" —
-a prior meeting's numbering, the documented signature of pre-meeting
-proposed/draft text, not a recorded decision — and the document itself has an
-internal inconsistency ("five (4)" characters listed by name as only four) and
-an apparent copy-paste error (Inukshuk's citation duplicates Vulture's
-document number instead of citing 26-273). Treated as proposed, not decided.
-Still nothing to build. blog.unicode.org and the errata page are both
-unchanged from baseline; no device/app confirmed shipping actual Emoji 18.0
-glyphs by default (only unsourced secondary speculation about a spring 2027
-Apple rollout, not reported as a finding).
-
-**Next week's scan should check this first**: UTC #189 concludes Oct 28, two
-days before next Monday's run, so real "[189-C]" minutes confirming or
-rejecting these five emoji should exist by then.
+Other lane (a) findings, nothing actionable: blog.unicode.org's only
+in-window post is "ICU 79 Released" (Oct 27) — an implementation release for
+already-known Unicode 18.0 + CLDR 49, not a new standard decision. The errata
+page is unchanged. No device/app confirmed rendering Emoji 18.0 by default via
+a primary source (only the same unsourced "Spring 2027" Apple speculation
+already known). Emojipedia's own Unicode 19.0 coverage was noted as still
+showing a stale "4 proposed" count via search snippets — a known aggregator-
+staleness trap, now superseded by the real minutes (5 items, all approved) —
+not treated as a finding.
 
 ## Lane (b) — platform formatting/character-support rule changes
 
-**Nothing new.** Checked Instagram, LinkedIn, TikTok, WhatsApp, Snapchat,
-Telegram, X/Twitter, YouTube, Meta/Facebook, Threads, Pinterest and Discord's
-non-bio changelog/blog against official sources; every surface came back
-clean for the window. Discord's October 22 blog update (folder move, Markdown
-file preview, Nitro upload size, a new media engine) touches no character
-limits or formatting syntax.
+**Nothing new.** Checked all 12 tracked platforms against official sources;
+every surface came back clean for the window. Two items checked and correctly
+set aside as out of scope: an unverified Telegram bug-tracker report of an
+Oct 30 @mention-click bug (a user report, not an official change), and a
+Pinterest Nov 12 ToS/policy update (legal policy, not a character-limit
+change).
 
 ## Lane (c) — per-game nickname rule changes
 
-**Nothing new.** Every tracked game/field matched baseline, along with Xbox
-Insider, PSN, Nintendo Switch 2 and Roblox DevForum staff posts. VRChat has no
-build newer than 2026.3.3p2 (Oct 9); its developer-update blog has nothing
-posted in October at all.
+**Nothing new** on any tracked rule. One item worth recording for baseline,
+not a rule change: VRChat shipped build **2026.4.1** (Oct 28) — face tracking
+out of beta, phone-to-PC QR login, a new account Safety Center, improved
+login flow. None of it touches display-name charset, length, or the
+cooldown. Recording the build number so a future scan doesn't re-discover it.
 
-New false-lead sighting: the known templated "how to change your name"
-content-farm network reappeared under more new domain instances this week
-(dealeralchemist.com, pinktankevents.com.au, cfi.co.in, successcolaire.ca,
-hamiltonbroadway.com for Fortnite queries; the previously seen `lewisboropd.gov`
-and `acsrgmcnlr.edu.in` subdomains recurred again for Minecraft queries) — same
-template, no new rule content.
+## Cadence and process items — still carried forward, still undecided
 
-## Cadence and process items — carried forward, still undecided
+Both items from the last two weeks' records remain open:
 
-Both items flagged in last week's record (2026-10-19) remain open and are
-reiterated here rather than re-litigated or acted on unilaterally:
-
-1. **Cadence.** This is the sixth consecutive null run (09-14, 09-21, 10-05,
-   10-12, 10-19, and now 10-26) — one past the routine's own 2026-08-24
-   threshold for raising a move to fortnightly cadence. Still the user's call,
-   not this routine's to decide.
-2. **Stale trigger prompt.** The scheduled trigger's own stored prompt still
-   points at the external workspace this folder's README explains the
-   replacement for, and still carries research notes frozen at 2026-08-24.
-   This session again found no `update_trigger`/`list_triggers`-equivalent
-   tool available to fix it directly.
+1. **Cadence.** This is the seventh consecutive weekly firing; six of seven
+   produced nothing new, and this week's one finding came from a scheduled
+   Consortium meeting landing inside the normal weekly window rather than
+   from the weekly cadence catching something a lighter cadence would have
+   missed. Still the user's call per the routine's own 2026-08-24 note.
+2. **Stale trigger prompt.** Still points at the superseded external
+   workspace and carries research notes frozen at 2026-08-24. This session
+   again found no trigger-editing tool available.
 
 ## Ranked opportunities
 
-1. Nothing new and actionable this week.
-2. (Watch item, not a build candidate) UTC #189's emoji vote is scheduled for
-   Wednesday afternoon (Oct 28) — check its outcome first thing in next week's
-   scan rather than waiting for the normal weekly window to open fresh.
-3. (Process item, carried forward) Cadence decision — sixth consecutive null.
-4. (Process item, carried forward) Trigger prompt still stale; still no
-   access from this session to fix it directly.
+1. **UTC #189's five new Unicode 19.0 characters/sequences** — verified,
+   dated, sourced. Awaiting a decision on whether to build an `updates/`
+   entry, `symbol/` pages, or nothing yet (these are not live in any font).
+2. (Related, not a new addition) The CLDR rename action item for the existing
+   👀 emoji — flagged for awareness alongside #1, same decision point.
+3. Nothing else new this week.

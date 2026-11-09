@@ -236,6 +236,85 @@ reported, never silent: `utg:savedchange` carries `detail.evicted` (a list of
 returns the same, so a host can tell the visitor. No host shows it yet; that needs
 a localized string. `test:saved-items` asserts it.
 
+## A refused write says so (2026-11-07)
+
+When the browser blocks site data, is in a private mode that refuses writes, or
+is over quota, `setItem` throws and the store keeps the record in memory for this
+page only. The star still lit and the generator's saved section still promised
+(`savedStyles.hint`) that the list would be waiting on this device, which the
+next reload broke. `UTG.saved.unsaved()` now reports it: true while the last write
+was refused, false before any write and once a write lands. On English pages the
+library saved strip adds one line under its heading (`.symbol-saved-note`), and
+the generator's hint is replaced by the same sentence: "This browser blocked
+storage, so these are kept only until you leave this page." No locale file ships
+that sentence, so locale pages keep what they showed before rather than an English
+line under translated prose. With storage working, nothing rendered changes.
+`test:saved-items` asserts the accessor and `check:runtime-smoke` (case 25b) the
+strip and the hint with storage blocked and allowed, plus the Indonesian page.
+
+## Typed text stays out of the URL (2026-11-07)
+
+Until 2026-11-07 `pushUrlState()` in `script.js` wrote the generator input into
+`?q=` 400 ms after every pause, on every page that loads `script.js` (555
+generator pages). Measured in Chromium on `/` and `/ru/`: typing "Jane Private"
+left `?q=Jane+Private` in the address bar. From that moment every analytics event
+read it through `page_location`, and a reload sent it to the server in the request
+line. Meanwhile the FAQ promises "nothing you type is sent to a server" on 20
+English pages (`/` and 19 name and case generators), and the locale homes say it in
+their own languages.
+
+Now the draft lives in this tab's `sessionStorage` under
+`utg_draft:<pathname>`. That keeps what the URL copy gave a visitor: the text
+survives reload and Back in the same tab and dies with the tab. Text enters a URL
+only when the visitor shares on purpose (`UTG.buildShareUrl`, unchanged), and the
+result-preview Function still reads that `?q=&style=`. An inbound `?q=` link still
+opens filled. The address bar keeps it while the box shows that text, so a
+synthetic re-render `input` event changes nothing, and drops it at the first real
+edit, leaving `?style=` and every other parameter.
+
+**Analytics definition change, 2026-11-07:** after this date `page_location` on
+generator pages no longer carries typed text, so page paths with `?q=` come only
+from inbound shared links. Read any per-URL series that grouped on the query
+string as a definition change across that date, not a traffic change.
+`check:runtime-smoke` ("typed text never enters the URL") asserts the empty query
+after typing, the same-tab restore, the share link and the inbound-link behaviour.
+Other controllers that write their own state into the URL (`kaomojiPageController`
+writes the composed face, `tattooPageController` only the mode) are untouched.
+
+**Extended 2026-11-08 to the three tools that kept their own URL sync.**
+`category/upside-down-text/upside-down.js` (`?q=`, 1 page),
+`usecase/zalgo-text/zalgo-text.js` (`?text=`, 14 pages; `script.js` runs headless
+there and does not own the input) and `js/emoji/emoji-tool.js` (`?q=`, 16 pages)
+wrote the typed text into the address bar on every pause; the emoji tool also
+pushed history entries carrying it. Each now follows the rule above: the address
+bar keeps only the settings (mode, wrap; zalgo's settings and seed), the draft
+lives in `sessionStorage` under `utg_draft:<pathname>`, and an inbound
+`?q=`/`?text=` link opens filled and keeps its parameter until the first edit.
+Explicit sharing is unchanged: upside-down's Share pair and zalgo's Share pairs
+and GIF share build their link from a share-only builder (`shareUrl()` /
+`shareLink()`) that includes the text and settings, so a shared link still
+restores the exact output. The emoji tool keeps each history entry's text in
+`history.state`, so Back still restores it without the URL. Measured on main
+before the change: typing "Jane Private" left `?q=Jane+Private` (upside-down,
+text-to-emoji, emoji-letters) and `?text=Jane+Private&seed=…` (zalgo).
+`check:runtime-smoke` ("upside-down, zalgo and emoji tools") asserts the empty
+text parameter after typing, the settings kept, the share link, the same-tab
+restore and the inbound-link behaviour; it fails 8 checks on the pre-change tree.
+**Analytics definition change, 2026-11-08 (merge date):** `page_location` on
+these 31 pages no longer carries typed text; a `?q=`/`?text=` landing there comes
+from a shared link or an old bookmark/history entry.
+
+**Kaomoji generator, same change (2026-11-08).** `kaomojiPageController` wrote
+the current face to `?q=` on Copy, Copy link, a recent-face tap and Clear, and the
+face can be text the visitor typed into the face field. The address bar now never
+gains a face: an inbound `?q=` ("edit in generator", a shared link) stays while it
+is still the face shown and leaves once the face changes (`?mood=` stays). Copy
+link builds the link with the face on request (`shareLink()`), so the copied link
+is unchanged. **Owner decision, 2026-11-08:** typed text is kept out of URLs
+site-wide because the page URL travels with every ad request and analytics hit,
+and Google's AdSense and Analytics policies forbid passing personally identifying
+information such as names; the text in the URL was not being used for analysis.
+
 ## Migration off `utg_saved_styles`
 
 The old flat array is read and folded in as `type: "style"` records, **and kept in
@@ -401,6 +480,35 @@ part of this repository, so until a tag and trigger exist for each name they are
 visible in the dataLayer only. The tests are `header.test.js` (payload shape, privacy
 and debounce, by slicing the shipped code), `npm run test:site-search` (the no-result
 reporter), and `check:runtime-smoke` (the wiring in a real browser).
+
+**Library contextual links (added 2026-11-07).** `printable_nav` recorded which
+related card a reader followed only on printables paths; a library page's Related
+cards and section pointers recorded nothing.
+
+| event | writer | parameters |
+|---|---|---|
+| `library_nav` | `header.js` (`initializeLibraryNavTracking`, one delegated listener, library paths in every locale only) | `library_nav_kind`: `related_card` (an `a.compare-card`) or `section_pointer` (the arrow link that is the last paragraph of a section, `<p class="u-secondary-tight"><a>… →</a></p>`; the intro paragraph shares that class, so its prose links never count). `library_nav_href`: the destination's pathname, at most 200 characters. Never the link text, a query string or a fragment; in-page and off-site links send nothing. |
+
+`printable_nav` is unchanged and still fires only on printables paths; a
+compare card on a printables page sends neither event. Like the four above,
+`library_nav` reaches GA4 only once GTM has a tag for it. `header.test.js` runs the
+shipped listeners against stub clicks and asserts both rows byte for byte, keys
+included.
+
+### Every optional `copy_text` key is pushed on every row (2026-11-08)
+
+`copyPayload()` always pushed `copy_item`, `copy_item_group` and `copy_look`, but
+`style_name`, `label`, `copy_collection`, `copy_item_count`, `copy_has_pair` and
+`template_id` only when a caller passed them. GTM's data layer keeps a key's last value, so on a
+generator page a symbol-tile copy or a Ctrl+C after a card copy read the card's
+`style_name` ("Ultra Bold"), and an event page's `copy_has_pair` stuck to every
+later copy. They are now keys on every row, `undefined` unless passed, and the
+`/category/classified/` censor bar, which pushed its own literal row, now goes
+through `trackCopy` too.
+**Definition change on the merge date:** `style_name` on `copy_text` rows that are
+not style-card copies reads empty from then on instead of the last card's style;
+per-style copy counts before that date include those carried-over rows.
+`header.test.js` asserts the keys.
 
 ## Verification
 

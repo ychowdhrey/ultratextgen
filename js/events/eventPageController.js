@@ -186,7 +186,12 @@
             styleId: shareId,
             name: label,
             text: out,
-            disabled: !raw
+            disabled: !raw,
+            // The compositions above say "event_composition"; the font cards
+            // name their own surface too, so neither reads as the generator
+            // (an unstamped button reads "unstamped" since 2026-11-01). A new
+            // value, not a count change, for register #217's reads.
+            surface: "event_font"
           }));
         }
         if (card && U.markSharedCard) U.markSharedCard(card, shareId);

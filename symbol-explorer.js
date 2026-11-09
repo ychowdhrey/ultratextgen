@@ -50,6 +50,8 @@
       share: "Share",
       shareImage: "Share as an image",
       linkCopied: "Link copied",
+      copyLink: "Copy link",
+      downloadImage: "Download image",
       failed: "✗ Failed",
       clearAll: "Clear all",
       copyLabel: "Copy",
@@ -85,6 +87,7 @@
       lookNote: "Một số ứng dụng vẫn hiển thị có màu.",
       linkCopied: "Đã sao chép liên kết",
       failed: "✗ Thất bại",
+      downloadImage: "Tải ảnh xuống",
       formats: { inline: "Một hàng", vertical: "Dọc", comma: "Dấu phẩy", space: "Cách", bullet: "Gạch đầu dòng" }
     },
     pt: {
@@ -105,6 +108,8 @@
       lookNote: "Alguns apps mostram em cores mesmo assim.",
       linkCopied: "Link copiado",
       failed: "✗ Falhou",
+      copyLink: "Copiar link",
+      downloadImage: "Baixar imagem",
       formats: { inline: "Em linha", vertical: "Na vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
     },
     es: {
@@ -132,6 +137,8 @@
       toneMedium: "Medio",
       toneMediumDark: "Oscuro medio",
       toneDark: "Oscuro",
+      copyLink: "Copiar enlace",
+      downloadImage: "Descargar imagen",
       formats: { inline: "En línea", vertical: "En vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
     },
     de: {
@@ -159,6 +166,8 @@
       toneMedium: "Mittel",
       toneMediumDark: "Mitteldunkel",
       toneDark: "Dunkel",
+      copyLink: "Link kopieren",
+      downloadImage: "Bild herunterladen",
       formats: { inline: "Nebeneinander", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
     },
     id: {
@@ -179,6 +188,8 @@
       lookNote: "Beberapa aplikasi tetap menampilkannya berwarna.",
       linkCopied: "Tautan disalin",
       failed: "✗ Gagal",
+      copyLink: "Salin tautan",
+      downloadImage: "Unduh gambar",
       formats: { inline: "Sebaris", vertical: "Vertikal", comma: "Koma", space: "Spasi", bullet: "Butir" }
     },
     tr: {
@@ -199,6 +210,8 @@
       lookNote: "Bazı uygulamalar yine de renkli gösterir.",
       linkCopied: "Bağlantı kopyalandı",
       failed: "✗ Başarısız",
+      copyLink: "Bağlantıyı kopyala",
+      downloadImage: "Görseli indir",
       formats: { inline: "Yan yana", vertical: "Alt alta", comma: "Virgüllü", space: "Boşluklu", bullet: "Maddeli" }
     },
     fr: {
@@ -226,6 +239,8 @@
       toneMedium: "Intermédiaire",
       toneMediumDark: "Moyennement foncée",
       toneDark: "Foncée",
+      copyLink: "Copier le lien",
+      downloadImage: "Télécharger l’image",
       formats: { inline: "En ligne", vertical: "Verticale", comma: "Virgules", space: "Espaces", bullet: "Liste" }
     },
     nl: {
@@ -253,6 +268,8 @@
       toneMedium: "Middel",
       toneMediumDark: "Middeldonker",
       toneDark: "Donker",
+      copyLink: "Link kopiëren",
+      downloadImage: "Afbeelding downloaden",
       formats: { inline: "Op één regel", vertical: "Verticaal", comma: "Komma's", space: "Spaties", bullet: "Lijst" }
     },
     it: {
@@ -273,6 +290,8 @@
       lookNote: "Alcune app lo mostrano comunque a colori.",
       linkCopied: "Link copiato",
       failed: "✗ Errore",
+      copyLink: "Copia link",
+      downloadImage: "Scarica immagine",
       formats: { inline: "In linea", vertical: "Verticale", comma: "Virgola", space: "Spazio", bullet: "Elenco puntato" }
     },
     pl: {
@@ -293,6 +312,8 @@
       lookNote: "Niektóre aplikacje i tak pokazują symbol w kolorze.",
       linkCopied: "Link skopiowany",
       failed: "✗ Błąd",
+      copyLink: "Kopiuj link",
+      downloadImage: "Pobierz obraz",
       formats: { inline: "W linii", vertical: "Pionowo", comma: "Przecinki", space: "Spacje", bullet: "Punktory" }
     },
     th: {
@@ -313,6 +334,7 @@
       lookNote: "บางแอปยังคงแสดงเป็นสีอยู่ดี",
       linkCopied: "คัดลอกลิงก์แล้ว",
       failed: "✗ ล้มเหลว",
+      downloadImage: "ดาวน์โหลดรูปภาพ",
       formats: { inline: "เรียงบรรทัดเดียว", vertical: "แนวตั้ง", comma: "จุลภาค", space: "เว้นวรรค", bullet: "บุลเล็ต" }
     },
     zh: {
@@ -333,6 +355,7 @@
       lookNote: "部分 App 仍會以彩色顯示。",
       linkCopied: "已複製連結",
       failed: "✗ 失敗",
+      downloadImage: "下載圖片",
       formats: { inline: "單行", vertical: "直式", comma: "逗號", space: "空格", bullet: "項目符號" }
     },
     ko: {
@@ -360,6 +383,7 @@
       toneMedium: "중간 피부",
       toneMediumDark: "약간 어두운 피부",
       toneDark: "어두운 피부",
+      downloadImage: "이미지 다운로드",
       formats: { inline: "한 줄로", vertical: "세로로", comma: "쉼표로", space: "공백으로", bullet: "불릿으로" }
     },
     ar: {
@@ -380,6 +404,7 @@
       lookNote: "بعض التطبيقات تعرض الرمز بالألوان رغم ذلك.",
       linkCopied: "تم نسخ الرابط",
       failed: "✗ فشل",
+      downloadImage: "تنزيل الصورة",
       formats: { inline: "متتالٍ", vertical: "عمودي", comma: "بفواصل", space: "بمسافات", bullet: "نقطي" }
     },
     no: {
@@ -407,6 +432,7 @@
       toneMedium: "Middels",
       toneMediumDark: "Middels mørk",
       toneDark: "Mørk",
+      downloadImage: "Last ned bilde",
       formats: { inline: "På linje", vertical: "Vertikalt", comma: "Komma", space: "Mellomrom", bullet: "Punktliste" }
     },
     ja: {
@@ -434,6 +460,7 @@
       toneMedium: "中間",
       toneMediumDark: "やや濃い",
       toneDark: "濃い",
+      downloadImage: "画像をダウンロード",
       formats: { inline: "1行", vertical: "縦並び", comma: "カンマ区切り", space: "スペース区切り", bullet: "箇条書き" }
     },
     ru: {
@@ -461,6 +488,7 @@
       toneMedium: "Средний",
       toneMediumDark: "Средне-тёмный",
       toneDark: "Тёмный",
+      downloadImage: "Скачать картинку",
       formats: { inline: "В строку", vertical: "Столбиком", comma: "Через запятую", space: "Через пробел", bullet: "Список" }
     },
     da: {
@@ -481,6 +509,7 @@
       lookNote: "Nogle apps viser alligevel symbolet i farver.",
       linkCopied: "Link kopieret",
       failed: "✗ Mislykkedes",
+      downloadImage: "Download billede",
       formats: { inline: "På linje", vertical: "Lodret", comma: "Komma", space: "Mellemrum", bullet: "Punktopstilling" }
     },
     sv: {
@@ -501,6 +530,7 @@
       lookNote: "Vissa appar visar ändå symbolen i färg.",
       linkCopied: "Länk kopierad",
       failed: "✗ Misslyckades",
+      downloadImage: "Ladda ner bild",
       formats: { inline: "På rad", vertical: "Vertikalt", comma: "Kommatecken", space: "Mellanslag", bullet: "Punktlista" }
     },
     cs: {
@@ -521,6 +551,7 @@
       lookNote: "Některé aplikace symbol přesto zobrazí barevně.",
       linkCopied: "Odkaz zkopírován",
       failed: "✗ Selhalo",
+      downloadImage: "Stáhnout obrázek",
       formats: { inline: "Na řádek", vertical: "Svisle", comma: "Čárky", space: "Mezery", bullet: "Odrážky" }
     },
     sk: {
@@ -541,6 +572,7 @@
       lookNote: "Niektoré aplikácie symbol aj tak zobrazia farebne.",
       linkCopied: "Odkaz skopírovaný",
       failed: "✗ Zlyhalo",
+      downloadImage: "Stiahnuť obrázok",
       formats: { inline: "Na riadok", vertical: "Zvisle", comma: "Čiarky", space: "Medzery", bullet: "Odrážky" }
     },
     hr: {
@@ -561,6 +593,7 @@
       lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
       linkCopied: "Poveznica kopirana",
       failed: "✗ Neuspjelo",
+      downloadImage: "Preuzmi sliku",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Popis" }
     },
     bs: {
@@ -581,6 +614,7 @@
       lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
       linkCopied: "Link kopiran",
       failed: "✗ Neuspjelo",
+      downloadImage: "Preuzmi sliku",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Spisak" }
     },
     sr: {
@@ -601,6 +635,7 @@
       lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
       linkCopied: "Link kopiran",
       failed: "✗ Neuspelo",
+      downloadImage: "Preuzmi sliku",
       formats: { inline: "У низу", vertical: "Усправно", comma: "Зарези", space: "Размаци", bullet: "Списак" }
     },
     ro: {
@@ -621,6 +656,7 @@
       lookNote: "Unele aplicații îl afișează oricum color.",
       linkCopied: "Link copiat",
       failed: "✗ Eșuat",
+      downloadImage: "Descarcă imaginea",
       formats: { inline: "Pe un rând", vertical: "Pe verticală", comma: "Cu virgulă", space: "Cu spațiu", bullet: "Listă" }
     },
     hu: {
@@ -641,6 +677,7 @@
       lookNote: "Egyes alkalmazások így is színesen jelenítik meg.",
       linkCopied: "Link másolva",
       failed: "✗ Sikertelen",
+      downloadImage: "Kép letöltése",
       formats: { inline: "Egy sorban", vertical: "Függőlegesen", comma: "Vesszővel", space: "Szóközzel", bullet: "Felsorolás" }
     },
     hi: {
@@ -661,6 +698,7 @@
       lookNote: "कुछ ऐप फिर भी इसे रंगीन दिखाते हैं।",
       linkCopied: "लिंक कॉपी हो गया",
       failed: "✗ विफल",
+      downloadImage: "इमेज डाउनलोड करें",
       formats: { inline: "एक लाइन में", vertical: "ऊपर-नीचे", comma: "कॉमा से", space: "स्पेस से", bullet: "बुलेट में" }
     },
     tl: {
@@ -681,6 +719,7 @@
       lookNote: "May mga app na nagpapakita pa rin nito nang may kulay.",
       linkCopied: "Nakopya ang link",
       failed: "✗ Nabigo",
+      downloadImage: "I-download ang larawan",
       formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Listahan" }
     },
     /* fi and ms were missing until 2026-09-10, so their 5 collection pages
@@ -708,6 +747,7 @@
       lookNote: "Jotkin sovellukset näyttävät symbolin silti värillisenä.",
       linkCopied: "Linkki kopioitu",
       failed: "✗ Epäonnistui",
+      downloadImage: "Lataa kuva",
       formats: { inline: "Rivi", vertical: "Pysty", comma: "Pilkku", space: "V\u00e4lily\u00f6nti", bullet: "Luettelo" }
     },
     ms: {
@@ -728,6 +768,7 @@
       lookNote: "Sesetengah aplikasi tetap memaparkannya berwarna.",
       linkCopied: "Pautan disalin",
       failed: "✗ Gagal",
+      downloadImage: "Muat turun imej",
       formats: { inline: "Satu baris", vertical: "Menegak", comma: "Koma", space: "Ruang", bullet: "Senarai" }
     },
     uk: {
@@ -748,6 +789,7 @@
       lookNote: "Деякі застосунки все одно показують його кольоровим.",
       linkCopied: "Посилання скопійовано",
       failed: "✗ Помилка",
+      downloadImage: "Завантажити зображення",
       formats: { inline: "В один рядок", vertical: "Стовпчиком", comma: "Через кому", space: "Через пробіл", bullet: "Списком" }
     }
   };
@@ -1407,6 +1449,8 @@
     share: "shareResult.label",
     shareImage: "shareResult.imageTitle",
     linkCopied: "shareResult.linkCopied",
+    copyLink: "shareResult.copyLink",
+    downloadImage: "imageSelection.downloadImage",
     failed: "copyButtons.failed",
     clearAll: "savedStyles.clearAll",
     copyLabel: "copyButtons.copy",
@@ -1423,6 +1467,7 @@
 
   const STAR_OUTLINE = "☆";
   const STAR_FILLED = "★";
+  const UNSAVED_NOTE_EN = "This browser blocked storage, so these are kept only until you leave this page.";
 
   /* The name a page gives a tile's ROW, for Save and its saved-strip caption.
      The visible .flag-label is authoritative (it is what the reader sees and
@@ -1450,6 +1495,13 @@
     const url = window.location.origin + window.location.pathname;
     return params ? url + "?" + params : url;
   }
+
+  /* The lane a share row names. "library_section" used to cover library
+     AND symbol pages, so whether symbol pages share at all could only be read
+     by page path (2026-10-09, F3). The lane is read from the URL, which is how
+     the two lanes are told apart everywhere else on this site. Definition
+     change for register #112 on 2026-11-01. */
+  const SHARE_LANE = /\/symbol\//.test(window.location.pathname) ? "symbol" : "library";
 
   /* A shared symbol link opens the page with that tile marked. Mirrors the
      generator's ?style= deep link, which share-core.js already owns. */
@@ -1564,6 +1616,18 @@
     head.appendChild(clear);
     strip.appendChild(head);
 
+    /* The browser refused the write (blocked site data, private mode, a full
+       quota): the set lives for this page only, so say so once. English
+       pages only. No locale ships this sentence, and an English line under
+       translated prose is what this file's string table exists to prevent,
+       so a locale page stays as it was. */
+    if (PAGE_LANG === "en" && UTGX.saved.unsaved && UTGX.saved.unsaved()) {
+      const note = document.createElement("p");
+      note.className = "symbol-saved-note";
+      note.textContent = UNSAVED_NOTE_EN;
+      strip.appendChild(note);
+    }
+
     const grid = document.createElement("div");
     grid.className = "symbol-saved-grid flag-rows";
     if (items.some(function (r) { return isTextObject(r.value); })) {
@@ -1617,12 +1681,16 @@
         // page URL handed the recipient a page, not the shortlist. So a set
         // copies its items, and says "Copied!" rather than "Link copied".
         fallback: items.length > 1 ? "text" : undefined,
-        surface: "library_saved",
+        surface: SHARE_LANE + "_saved",
         itemType: "collection",
         // These pages carry no window.UTG_I18N, so the share core's own
         // lookup would fall back to English under localized prose. Hand it
-        // this file's table instead.
+        // this file's table instead. copyLink and downloadImage are what the
+        // buttons say where this browser has no share sheet; a locale whose
+        // table lacks them keeps its Share label (share-core decides).
         label: t("share", "Share"),
+        copyLink: t("copyLink", undefined),
+        downloadTitle: t("downloadImage", undefined),
         linkCopied: items.length > 1
           ? (STR.copiedBtn || " Copied!").trim()
           : t("linkCopied", "Link copied"),
@@ -1744,9 +1812,10 @@
         input: symbols,
         name: name,
         url: section && section.id ? pageUrl() + "#" + section.id : pageUrl(),
-        surface: "library_section",
+        surface: SHARE_LANE + "_section",
         itemType: "collection",
         label: t("share", "Share"),
+        copyLink: t("copyLink", undefined),
         linkCopied: t("linkCopied", "Link copied"),
         failedLabel: t("failed", "✗ Failed"),
         icon: "link"

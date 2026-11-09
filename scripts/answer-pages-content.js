@@ -12,8 +12,8 @@ module.exports = [
   pageTitle: 'Do Fancy Fonts Work on iPhone?',
   metaDesc: "Yes, iPhones render bold, italic, script and small caps fine. iOS shows the more decorative styles as empty boxes, though. Here's what's safe.",
   h1: 'Do Fancy Fonts Work on iPhone?',
-  tagline: 'Mostly yes — but iOS is picky in one specific way that turns the fancier styles into empty boxes. Here’s what renders and what to avoid.',
-  shortAnswer: 'Yes, for the common styles. iPhones ship fonts that cover <strong>bold, italic, sans, small caps and monospace</strong>, so those copy-and-paste fine into names, bios and Messages. The catch is that iOS is <strong>strict about fallback</strong>: if a style uses characters the system font doesn’t have, iOS often draws an empty box (□) instead of borrowing a glyph from another font. So the most decorative styles — fraktur, double-struck and obscure symbols — are the ones that break on iPhone.',
+  tagline: 'Mostly yes, though the fancier styles can show as empty boxes when the reader’s phone has no font for a character. Here’s what renders and what to check.',
+  shortAnswer: 'Yes, for the common styles. iPhones ship fonts that cover <strong>bold, italic, sans, small caps and monospace</strong>, so those copy-and-paste fine into names, bios and Messages. The catch: when no font on the reader’s phone has a character, the phone draws an empty box (□) in its place. The most decorative styles (fraktur, double-struck and obscure symbols) are the ones to check first, because we have not tested which of them box out on which iPhone.',
   oneLiner: '<strong>Safe on iOS:</strong> bold · italic · small caps · monospace · script. <strong>Risky:</strong> fraktur · double-struck · heavy decoratives.',
   sections: [
     {
@@ -33,13 +33,13 @@ module.exports = [
       label: 'What breaks',
       h2: 'Why some fancy fonts show as boxes on iPhone',
       bodyHtml: `<div class="editorial-block">
-    <p>When a character isn’t in iOS’s font, the iPhone frequently <em>doesn’t</em> substitute another font — it just draws the <strong>.notdef box</strong> (□). Android leans on its Noto fonts to avoid this; iOS is less forgiving. So the styles most likely to box out on iPhone are:</p>
+    <p>When no font on an iPhone has a character, it draws the <strong>.notdef box</strong> (□) in its place. We have not tested which characters that happens to on which iPhone or iOS version, so read this list as the styles to check first, not as measured failures:</p>
     <ul>
       <li><strong>Fraktur / blackletter</strong> and <strong>double-struck</strong></li>
       <li>Obscure symbol runs and rare decorative blocks</li>
       <li>Anything viewed on an <strong>older iOS version</strong>, which covers fewer characters</li>
     </ul>
-    <p>Remember the box is drawn by the <em>viewer’s</em> iPhone, not yours — so your text can look perfect to you and broken to a friend. See <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>.</p>
+    <p>Remember the box is drawn by the <em>viewer’s</em> iPhone, not yours, so your text can look perfect to you and broken to a friend. See <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>. The <a href="/research/unicode-rendering-support-study/#device-test">device test in our rendering study</a> checks 23 characters on the phone you are holding and builds a report you can send us, which is how an iPhone becomes data instead of a guess.</p>
   </div>`
     },
     {
@@ -58,8 +58,8 @@ module.exports = [
   },
   related: 'Related: <a href="/answers/why-fancy-text-looks-different-on-iphone-vs-android/">why fancy text looks different on iPhone vs Android</a>, <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>, and the <a href="/guide/fancy-fonts-and-accents/">fancy fonts &amp; accents</a> guide.',
   faq: [
-    { q: 'Do fancy fonts work on iPhone?', a: 'Yes for the common styles. iPhones render bold, italic, sans, small caps, monospace and usually script, because iOS ships fonts covering those characters. The more decorative styles (fraktur, double-struck, obscure symbols) can show as empty boxes because iOS rarely falls back to another font for a missing glyph.' },
-    { q: 'Why do some fancy fonts show as boxes on iPhone?', a: 'Because iOS does not substitute another font when the system font lacks a character — it draws the .notdef box instead. Styles built from rare Unicode blocks therefore box out on iPhone, especially on older iOS versions. The box is drawn by the viewer’s device, so the same text can look fine to you and broken to them.' },
+    { q: 'Do fancy fonts work on iPhone?', a: 'Yes for the common styles. iPhones render bold, italic, sans, small caps, monospace and usually script, because iOS ships fonts covering those characters. The more decorative styles (fraktur, double-struck, obscure symbols) can show as empty boxes when no font on the reader’s phone has the character. We have not tested which of them do that on which iPhone, so check those before you rely on them.' },
+    { q: 'Why do some fancy fonts show as boxes on iPhone?', a: 'Because no font on that iPhone has the character, so it draws the .notdef box in its place. Styles built from rare Unicode blocks are the likeliest to do this, especially on older iOS versions. The box is drawn by the viewer’s device, so the same text can look fine to you and broken to them.' },
     { q: 'Which fancy fonts are safe on iOS?', a: 'Bold, italic, bold-italic, small caps and monospace are the safest, with script usually reliable too. Avoid fraktur, double-struck and heavily decorative styles if you need it to render on every iPhone.' },
     { q: 'Do fancy fonts work in iPhone Messages and Notes?', a: 'Yes — Messages, Notes, Mail and most apps display styled Unicode fine, since it is ordinary text. Just avoid the rarest styles for recipients on old devices, and remember @handles stay plain.' },
     { q: 'Can I use fancy fonts in my iPhone contact or Apple ID name?', a: 'Display-style name fields accept styled Unicode, but system identifiers (Apple ID email, phone) do not. As a rule, styled text works anywhere it is shown as a label, not where it is used as an address or handle.' }

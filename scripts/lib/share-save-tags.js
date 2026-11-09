@@ -44,7 +44,11 @@ const HOST_SCRIPTS = {
    *  Copy-link beside Print, through the same share-core. */
   printables: '/js/printables/printablesEngine.js',
   monogram: '/js/printables/monogramEngine.js',
-  crossStitch: '/js/printables/crossStitchEngine.js'
+  crossStitch: '/js/printables/crossStitchEngine.js',
+  /** The upside-down generator (2026-11-01): its own controller, not
+   *  script.js, so for two months it was the one Unicode generator with Copy
+   *  and no Share. It now builds the share pair through share-core. */
+  upsideDown: '/category/upside-down-text/upside-down.js'
 };
 
 /**

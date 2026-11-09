@@ -10,6 +10,7 @@
   --ud-border-active: #6d4fc7;
   --ud-surface2: rgba(0, 0, 0, 0.06);
   --ud-green: #4ade80;
+  --ud-red: #ef4444;
 }
 
 /* ── Layout ─────────────────────────────────────────── */
@@ -159,14 +160,23 @@
 
 .output-header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   padding: 14px 18px;
   border-bottom: 1px solid var(--border-light);
   background: var(--bg-white);
 }
 
 .output-header-left { display: flex; align-items: center; gap: 10px; }
+
+/* Copy, then the site's Share / Share-as-image pair (share-core.js builds
+   them; style.css styles them). One row that wraps on a narrow header. */
+.output-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.output-actions .result-share-row { margin-top: 0; }
+
+.btn-copy.copy-error { background: var(--ud-red); }
 
 .output-badge {
   font-size: 11px;

@@ -981,11 +981,32 @@
       return PATH + (qs ? '?' + qs : '');
     }
 
-    function syncUrl(push) {
-      const url = buildUrl(currentMode, mainInput.value);
+    // Typed text stays on the device (2026-11-08, the rule script.js adopted
+    // on 2026-11-07). The address bar carries the mode only; the text rides in
+    // history.state (so Back still restores it) and in a per-tab
+    // sessionStorage draft (so a reload does), both of which die with the tab
+    // as the URL copy did. An inbound ?q= link still opens filled, and its ?q=
+    // stays in the bar only while the box still shows that text.
+    const DRAFT_KEY = 'utg_draft:' + PATH;
+    let inboundQ = null;
+
+    function persistDraft() {
+      const val = mainInput.value;
       try {
-        if (push) history.pushState({ mode: currentMode }, '', url);
-        else history.replaceState({ mode: currentMode }, '', url);
+        if (val) sessionStorage.setItem(DRAFT_KEY, val);
+        else sessionStorage.removeItem(DRAFT_KEY);
+      } catch (e) { /* storage blocked: the draft does not survive a reload */ }
+      if (val !== inboundQ) inboundQ = null;
+    }
+
+    function syncUrl(push) {
+      persistDraft();
+      const val = mainInput.value;
+      const url = buildUrl(currentMode, val === inboundQ ? val : '');
+      const st = { mode: currentMode, q: val };
+      try {
+        if (push) history.pushState(st, '', url);
+        else history.replaceState(st, '', url);
       } catch (e) { /* history unavailable — ignore */ }
     }
 
@@ -1041,11 +1062,14 @@
       if (LOCAL.has(tab.dataset.mode)) { e.preventDefault(); switchMode(tab.dataset.mode); }
     });
 
-    window.addEventListener('popstate', () => {
+    window.addEventListener('popstate', (e) => {
       if (SINGLE) return;
       const { mode, q } = parseUrl();
-      mainInput.value = q;
+      // The text of that entry lives in its state object, not its URL.
+      const st = e.state;
+      mainInput.value = st && typeof st.q === 'string' ? st.q : q;
       applyMode(mode);
+      persistDraft();
     });
 
     if (clearBtn) clearBtn.addEventListener('click', () => {
@@ -1065,6 +1089,9 @@
       const text = emojiOutput.textContent;
       if (!text || text === PLACEHOLDER) return;
       navigator.clipboard.writeText(text).then(() => {
+        // One copy_text row through header.js trackCopy; "emoji_tool" is not
+        // a catalogue method, so the typed text never rides along (2026-11-08).
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy('emoji_tool', text);
         copyOutputBtn.textContent = STRINGS.copied || 'Copied!';
         copyOutputBtn.classList.add('copied');
         setTimeout(() => {
@@ -1161,7 +1188,14 @@
         location.replace(dest);
         return;
       }
-      if (q) mainInput.value = q;
+      if (q) {
+        mainInput.value = q;
+        inboundQ = mainInput.value;
+      } else {
+        let draft = null;
+        try { draft = sessionStorage.getItem(DRAFT_KEY); } catch (e) { draft = null; }
+        if (draft) mainInput.value = draft;
+      }
       applyMode(mode);
       syncUrl(false);
     })();

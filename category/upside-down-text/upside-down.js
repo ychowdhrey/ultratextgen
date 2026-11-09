@@ -2,6 +2,13 @@
    Upside Down Text Generator — upside-down.js
    Self-contained. No dependencies, no shared homepage machinery.
    (Mirrors the zalgo-text.js controller pattern.)
+
+   Share (2026-11-01): the one thing this page borrows is the site's share
+   core (/js/share/share-core.js, tagged before this file), which builds the
+   Share / Share-as-image pair under the output and owns the act of sharing.
+   The link it shares is this page's own live URL (q, mode, wrap), so the
+   recipient opens the exact same result and can change it. Until then this
+   was the only Unicode generator on the site with Copy and no Share.
    ══════════════════════════════════════════════════════════════════ */
 
 (function () {
@@ -19,6 +26,7 @@
     outputChars:        'chars',
     btnCopy:            'Copy',
     btnCopied:          '✓ Copied',
+    btnCopyFailed:      'Copy failed',
     outputPlaceholder:  'Start typing to flip your text…',
     coveragePrefix:     'No upside-down twin for:',
     modeFlipDesc:       'Flipped and reversed — reads right-side up when the phone is rotated 180° (the classic "flip your phone" trick).',
@@ -126,6 +134,13 @@
     stars:    (t) => '✦ ' + t + ' ✦'
   };
 
+  // Visible names of the five modes: the pills, and the name the share
+  // button reads out ("Share: Mirror").
+  const MODE_LABELS = {
+    flip: 'Upside Down', backwards: 'Backwards', mirror: 'Mirror',
+    perline: 'Flip Each Line', emphasis: 'Last Word'
+  };
+
   // ── State ───────────────────────────────────────────────────────
   const state = { mode: 'flip', wrap: 'none', output: '' };
 
@@ -147,13 +162,7 @@
     const panel = $('#udControlPanel');
     if (!panel) return;
 
-    const modes = [
-      { id: 'flip',      label: 'Upside Down' },
-      { id: 'backwards', label: 'Backwards' },
-      { id: 'mirror',    label: 'Mirror' },
-      { id: 'perline',   label: 'Flip Each Line' },
-      { id: 'emphasis',  label: 'Last Word' }
-    ];
+    const modes = Object.keys(MODES).map(id => ({ id, label: MODE_LABELS[id] }));
     const wraps = [
       { id: 'none',     label: 'None' },
       { id: 'face',     label: '🙃 Face' },
@@ -220,6 +229,48 @@
         <div class="coverage-note" id="udCoverage" hidden></div>
       </div>
     `;
+    buildShare(container);
+  }
+
+  // ── Share ───────────────────────────────────────────────────────
+  // The Share / Share-as-image pair from the site's share core, beside Copy.
+  // The core's delegated handlers read the creation from data-share-* on the
+  // buttons; syncShareState() keeps those current. Nothing is wired here.
+  function buildShare(container) {
+    const UTG = window.UltraTextGen;
+    const actions = container.querySelector('.output-actions');
+    if (!actions || !UTG || !UTG.buildShareActions || $('#udShareRow')) return;
+    const row = UTG.buildShareActions({
+      styleId: 'upside-down',
+      name: MODE_LABELS[state.mode],
+      text: state.output,
+      url: shareUrl(),
+      surface: 'upside_down',
+      itemType: 'style',
+      disabled: !state.output
+    });
+    row.id = 'udShareRow';
+    actions.appendChild(row);
+    syncShareState();
+  }
+
+  function syncShareState() {
+    const row = $('#udShareRow');
+    if (!row) return;
+    const input = $('#mainInput');
+    const url = shareUrl();
+    row.querySelectorAll('.share-result-btn, .share-image-btn').forEach(btn => {
+      btn.dataset.shareText = state.output;
+      btn.dataset.shareQ = input ? input.value : '';
+      btn.dataset.shareUrl = url;
+      btn.dataset.shareId = 'upside-down-' + state.mode;
+      btn.dataset.shareName = MODE_LABELS[state.mode];
+      btn.disabled = !state.output;
+    });
+    // The mode is part of each button's accessible name ("Copy link: Mirror"),
+    // so a mode change repaints the labels from the datasets just stamped.
+    const UTG = window.UltraTextGen;
+    if (UTG && UTG.relabelShareButtons) UTG.relabelShareButtons();
   }
 
   // ── Generate / update ───────────────────────────────────────────
@@ -246,6 +297,7 @@
     }
     if (chars) chars.textContent = state.output.length + ' ' + i18n.outputChars;
     if (btn)   btn.disabled = !state.output;
+    syncShareState();
 
     // Honesty / coverage note: which alphanumerics had no upside-down twin.
     if (cov) {
@@ -316,21 +368,31 @@
     if (copyBtn) {
       copyBtn.addEventListener('click', async () => {
         if (!state.output) return;
+        // A copy row fires on success, as everywhere else on the site; the
+        // execCommand fallback reports whether it worked, and a refused copy
+        // says so instead of "Copied". The row names its own method, which
+        // is not catalogue content, so the typed text never reaches the
+        // dataLayer (header.js trackCopy sends copy_item_group only).
+        let copied = false;
         try {
           await navigator.clipboard.writeText(state.output);
+          copied = true;
         } catch (err) {
           const ta = document.createElement('textarea');
           ta.value = state.output;
           document.body.appendChild(ta);
           ta.select();
-          document.execCommand('copy');
+          try { copied = document.execCommand('copy') === true; } catch (e2) { copied = false; }
           document.body.removeChild(ta);
         }
-        copyBtn.textContent = i18n.btnCopied;
-        copyBtn.classList.add('copied');
+        if (copied && window.UltraTextGen && window.UltraTextGen.trackCopy) {
+          window.UltraTextGen.trackCopy('upside_down', state.output);
+        }
+        copyBtn.textContent = copied ? i18n.btnCopied : i18n.btnCopyFailed;
+        copyBtn.classList.add(copied ? 'copied' : 'copy-error');
         setTimeout(() => {
           copyBtn.textContent = i18n.btnCopy;
-          copyBtn.classList.remove('copied');
+          copyBtn.classList.remove('copied', 'copy-error');
         }, 1500);
       });
     }
@@ -342,11 +404,26 @@
   }
 
   // ── URL state sync ──────────────────────────────────────────────
+  // Typed text stays on the device (2026-11-08, the rule script.js adopted on
+  // 2026-11-07). The address bar keeps the mode and wrap only; the text enters
+  // a URL when the visitor presses Share (shareUrl). A draft survives reload
+  // and Back in this tab through sessionStorage and dies with the tab, as the
+  // URL copy did. An inbound ?q= link still opens filled, and its ?q= stays in
+  // the bar only while the box still shows that text.
+  const DRAFT_KEY = 'utg_draft:' + window.location.pathname;
+  let inboundText = null;
+
   function loadFromURL() {
     const params = new URLSearchParams(window.location.search);
     const input = $('#mainInput');
     // ?q= is the site-wide shareable-text param; ?text= kept for parity.
-    const text = params.get('q') || params.get('text');
+    const linked = params.get('q') || params.get('text');
+    let text = linked;
+    if (linked) {
+      inboundText = linked.slice(0, 500);
+    } else {
+      try { text = sessionStorage.getItem(DRAFT_KEY); } catch (err) { text = null; }
+    }
     if (text && input) {
       input.value = text.slice(0, 500);
       const cc = $('#charCount');
@@ -356,15 +433,39 @@
     if (params.has('wrap') && WRAPS[params.get('wrap')]) state.wrap = params.get('wrap');
   }
 
-  function syncToURL() {
+  // The page's state as a query string, from one definition so the address
+  // bar and a share link can never disagree on the settings. withText is true
+  // only for a share link; the address bar carries text only while it still
+  // shows an inbound link's own, unedited text.
+  function stateQuery(withText) {
     const input = $('#mainInput');
-    if (!input) return;
+    const value = input ? input.value : '';
     const params = new URLSearchParams();
-    if (input.value)             params.set('q', input.value);
+    if (value && (withText || value === inboundText)) params.set('q', value);
     if (state.mode !== 'flip')   params.set('mode', state.mode);
     if (state.wrap !== 'none')   params.set('wrap', state.wrap);
     const qs = params.toString();
-    window.history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : ''));
+    return qs ? '?' + qs : '';
+  }
+
+  function shareUrl() {
+    return window.location.origin + window.location.pathname + stateQuery(true);
+  }
+
+  function persistDraft() {
+    const input = $('#mainInput');
+    if (!input) return;
+    try {
+      if (input.value) sessionStorage.setItem(DRAFT_KEY, input.value);
+      else sessionStorage.removeItem(DRAFT_KEY);
+    } catch (err) { /* storage blocked: the draft does not survive a reload */ }
+    if (input.value !== inboundText) inboundText = null;
+  }
+
+  function syncToURL() {
+    if (!$('#mainInput')) return;
+    persistDraft();
+    window.history.replaceState(null, '', window.location.pathname + stateQuery(false) + window.location.hash);
   }
 
   let syncTimer = null;

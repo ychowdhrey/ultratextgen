@@ -186,7 +186,10 @@
         styleId: shareId,
         name: opts.label,
         params: shareParams(),
-        disabled: !opts.text || !!opts.sample
+        disabled: !opts.text || !!opts.sample,
+        // Named so the share event can tell this lane from the main generator; an
+        // unstamped button reads "unstamped" since 2026-11-01.
+        surface: "tattoo"
       }));
     }
 

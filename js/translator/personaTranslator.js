@@ -302,7 +302,12 @@
       }, 1400);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(value).then(done).catch(done);
+      navigator.clipboard.writeText(value).then(function () {
+        // One copy_text row on success, through header.js trackCopy; the
+        // method is not a catalogue one, so the typed text stays out (2026-11-08).
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("persona_translator", value);
+        done();
+      }).catch(done);
     } else {
       const ta = document.createElement("textarea");
       ta.value = value;

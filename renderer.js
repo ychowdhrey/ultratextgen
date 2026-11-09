@@ -170,9 +170,11 @@
       return '⟲ ' + reverseString(text) + ' ⟲';
     },
 
+    // Collapses runs of spaces and tabs to one space, but keeps line breaks:
+    // collapsing every \s turned "ab\ncd" into one line.
     microText: (text) => {
       const flipped = applyFlipAndReverse(text, 'fallback');
-      return flipped.replace(/\s+/g, ' ').trim();
+      return flipped.replace(/[^\S\r\n]+/g, ' ').replace(/ *(\r?\n) */g, '$1').trim();
     }
   };
 
@@ -486,22 +488,30 @@ function renderMap(text, style) {
   // e.g. Vietnamese/Mac clipboard text pasted as base + separate combining
   // marks \u2014 is treated as one cluster and gets exactly one decorator mark,
   // not one wedged between the base letter and its own accent.
+  // A line break, tab or other control/format cluster gets no mark: marked, it
+  // left the next line starting with an orphan combining mark (2026-11-08
+  // audit; \n is its own grapheme cluster). Same rule as script.js's format
+  // marks. Text with no control or format character is unchanged byte for
+  // byte; a tab, ZWSP, soft hyphen or BOM now stays unmarked too.
+  const UNMARKED_CLUSTER = /^[\p{Cc}\p{Cf}]+$/u;
+  const markEach = (t, m, keep) => splitGraphemes(t)
+    .map((c, i) => (UNMARKED_CLUSTER.test(c) || (keep && keep(c, i))) ? c : c + m).join('');
   const decorators = {
-    strike:   t => splitGraphemes(t).map(c => c + '\u0336').join(''),
-    shortStrike: t => splitGraphemes(t).map(c => c + '\u0335').join(''),
-    doubleStrike: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0335').join(''),
-    heavyStrike: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0336').join(''),
-    wavyStrike: t => splitGraphemes(t).map(c => c + '\u0334').join(''),
-    crossedOut: t => splitGraphemes(t).map(c => c === ' ' ? c : c + '\u0336' + '\u0338').join(''),
-    underline:t => splitGraphemes(t).map(c => c + '\u0332').join(''),
-    doubleUnderline: t => splitGraphemes(t).map(c => c + '\u0333').join(''),
-    wavyUnderline: t => splitGraphemes(t).map(c => c + '\u0330').join(''),
-    overline: t => splitGraphemes(t).map(c => c + '\u0305').join(''),
-    doubleOverline: t => splitGraphemes(t).map(c => c + '\u033f').join(''),
-    wavy:    t => splitGraphemes(t).map((c,i)=> c + (i%2===0 ? '\u0303':'' )).join(''),
-    slash:   t => splitGraphemes(t).map(c => c + '\u0338').join(''),
-    shortSlash: t => splitGraphemes(t).map(c => c + '\u0337').join(''),
-    strikeUnderline: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0332').join('')
+    strike:   t => markEach(t, '\u0336'),
+    shortStrike: t => markEach(t, '\u0335'),
+    doubleStrike: t => markEach(t, '\u0336' + '\u0335'),
+    heavyStrike: t => markEach(t, '\u0336' + '\u0336'),
+    wavyStrike: t => markEach(t, '\u0334'),
+    crossedOut: t => markEach(t, '\u0336' + '\u0338', c => c === ' '),
+    underline:t => markEach(t, '\u0332'),
+    doubleUnderline: t => markEach(t, '\u0333'),
+    wavyUnderline: t => markEach(t, '\u0330'),
+    overline: t => markEach(t, '\u0305'),
+    doubleOverline: t => markEach(t, '\u033f'),
+    wavy:    t => markEach(t, '\u0303', (c, i) => i % 2 !== 0),
+    slash:   t => markEach(t, '\u0338'),
+    shortSlash: t => markEach(t, '\u0337'),
+    strikeUnderline: t => markEach(t, '\u0336' + '\u0332')
   };
 
   function renderDecorator(text, style) {
@@ -1097,7 +1107,58 @@ function renderRedact(text, style) {
   }).join('');
 }
 
+  /* -----------------------------
+     INPUT NORMALISATION AND PROTECTED EMOJI
+     Runs once in renderAny, before any style sees the text.
+
+     1. Each grapheme cluster is composed to NFC. An accent can arrive as one
+        code point (é) or as a letter plus a combining mark (e + U+0301): macOS
+        and some keyboards send the second. The maps look letters up by code
+        point, so the two spellings of the same word styled differently.
+        Composing per cluster never merges two clusters, and text that is
+        already NFC is passed through as the same string.
+
+     2. A keycap (1️⃣ #️⃣ *️⃣, with or without VS16) and a circled letter drawn
+        as an emoji (Ⓜ️) are emoji, not a digit or a letter. Most styles used
+        to reach inside them: a map styled the digit under the keycap, the
+        upside-down styles flipped it, the case styles lowered Ⓜ️ to ⓜ️.
+        Each one is held out as a single private-use placeholder while the
+        style runs and put back afterwards, so it stays one character to every
+        style (a decorator still marks it, a wrapper still wraps it, a redact
+        style still blacks it out). Text with none of them takes the old path
+        unchanged; text that already contains a placeholder code point is left
+        unprotected rather than risk swapping the user's character.
+     ----------------------------- */
+  const PROTECTED_EMOJI_RE = /[0-9#*]\uFE0F?\u20E3|[\u24B6-\u24E9]\uFE0F/;
+  const PROTECTED_EMOJI_ALL = new RegExp(PROTECTED_EMOJI_RE.source, 'g');
+  const HOLD_BASE = 0xF0000; // Supplementary Private Use Area-A
+  const HOLD_RE = /[\u{F0000}-\u{FFFFD}]/u;
+  const HOLD_ALL = /[\u{F0000}-\u{FFFFD}]/gu;
+
+  function composeClusters(text) {
+    if (text === text.normalize('NFC')) return text;
+    return splitGraphemes(text).map(g => g.normalize('NFC')).join('');
+  }
+
   function renderAny(text, style) {
+    if (typeof text !== 'string' || !text) return renderStyle(text, style);
+    const source = composeClusters(text);
+    if (!PROTECTED_EMOJI_RE.test(source) || HOLD_RE.test(source)) return renderStyle(source, style);
+    const held = [];
+    const masked = source.replace(PROTECTED_EMOJI_ALL, m => {
+      if (held.length >= 0xFFFE) return m;
+      held.push(m);
+      return String.fromCodePoint(HOLD_BASE + held.length - 1);
+    });
+    const out = renderStyle(masked, style);
+    if (typeof out !== 'string') return out;
+    return out.replace(HOLD_ALL, ch => {
+      const i = ch.codePointAt(0) - HOLD_BASE;
+      return i < held.length ? held[i] : ch;
+    });
+  }
+
+  function renderStyle(text, style) {
     // Handle function-based transforms (upside down)
     if (style.type === 'function' && style.transform) {
       return applyUpsideDownTransform(text, style.transform);
