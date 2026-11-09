@@ -200,6 +200,7 @@ Required, blocking checks:
 
 Gating unit-test steps (no backlog to be red against):
 
+- `test:calibration-bar`
 - `test:case-converter`
 - `test:case-policy`
 - `test:case-policy-browser`

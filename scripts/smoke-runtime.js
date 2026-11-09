@@ -916,7 +916,21 @@ async function main() {
         let real;
         Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
           real = v && Object.assign({}, v, { renderPages: async function (root, o) {
-            const c = await v.renderPages(root, o); window.__ptSheet = { canvases: c, opts: o }; return c; } });
+            const c = await v.renderPages(root, o);
+            /* Still inside the rendering state here, so the boxes are real. They
+               only LOCATE the calibration bar; its length is read from pixels. */
+            const box = (cv, n) => (n && v.rectOnCanvas ? v.rectOnCanvas(cv, n) : null);
+            const cal = (c || []).map((cv) => {
+              const unit = cv.ptPlacement && cv.ptPlacement.el;
+              if (!unit) return null;
+              return {
+                bar: box(cv, unit.querySelector('.pt-credit-cal-bar')),
+                qr: box(cv, unit.querySelector('.pt-credit-qr')),
+                text: box(cv, unit.querySelector('.pt-credit-text')),
+                footer: box(cv, unit.querySelector('.pt-sheet-footer'))
+              };
+            });
+            window.__ptSheet = { canvases: c, opts: o, cal: cal }; return c; } });
         } });
       })();`;
     const { ctx, page, errors } = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop', init);
@@ -948,7 +962,29 @@ async function main() {
         const five = stacks.filter((s) => s.length === 5);
         const inter = [].concat(...five.map((s) => s.slice(1).map((c, i) => c - s[i])));
         const span = five.map((s) => s[4] - s[0]);
-        return { stacks: five.length, pxPerMm, inter, span };
+        /* The calibration bar, measured in the bitmap: the longest unbroken dark
+           run on any pixel row the bar's box covers, walked across the WHOLE
+           row so a bar longer than its box is measured in full, not clipped. */
+        // rectOnCanvas answers in fractions of the canvas; turn them into pixels.
+        const px = (r) => (r ? { x: r.x * W, y: r.y * H, w: r.w * W, h: r.h * H } : null);
+        const c0 = s.cal && s.cal[0];
+        const cal = c0 ? { bar: px(c0.bar), qr: px(c0.qr), text: px(c0.text), footer: px(c0.footer) } : null;
+        let barMm = null;
+        if (cal && cal.bar) {
+          let best = 0;
+          const y0 = Math.max(0, Math.floor(cal.bar.y)), y1 = Math.min(H - 1, Math.ceil(cal.bar.y + cal.bar.h));
+          const xs = Math.max(0, Math.floor(cal.bar.x + cal.bar.w / 2));
+          for (let y = y0; y <= y1; y++) {
+            const dark = (x) => { const i = (y * W + x) * 4; return Math.min(data[i], data[i + 1], data[i + 2]) < 200; };
+            if (!dark(xs)) continue;
+            let a = xs, b = xs;
+            while (a > 0 && dark(a - 1)) a--;
+            while (b < W - 1 && dark(b + 1)) b++;
+            best = Math.max(best, b - a + 1);
+          }
+          barMm = best / pxPerMm;
+        }
+        return { stacks: five.length, pxPerMm, inter, span, cal, barMm, H };
       });
       const tag = `${paper} ${orient} "${name}"`;
       if (!m) { check(`${tag}: the PDF's page bitmap was captured`, false, 'no canvas from renderPages'); continue; }
@@ -958,6 +994,17 @@ async function main() {
       const iMin = Math.min(...m.inter), iMax = Math.max(...m.inter), sMin = Math.min(...m.span), sMax = Math.max(...m.span);
       check(`${tag}: interline is 2.0 mm +/- 0.15`, m.inter.length && iMin >= 1.85 && iMax <= 2.15, `${iMin.toFixed(2)}..${iMax.toFixed(2)} mm (mean ${m.inter.length ? avg(m.inter).toFixed(2) : 'n/a'})`);
       check(`${tag}: heavy lines are 8.0 mm +/- 0.3 apart`, m.span.length && sMin >= 7.7 && sMax <= 8.3, `${sMin.toFixed(2)}..${sMax.toFixed(2)} mm`);
+      // A teacher cannot see whether "fit to page" shrank the sheet, so a sheet
+      // ruled in millimetres carries a bar of stated length inside its page unit.
+      check(`${tag}: page 1 carries the actual-size calibration bar`, !!(m.cal && m.cal.bar), m.cal ? 'no .pt-credit-cal-bar in the page unit' : 'no page placement');
+      if (m.cal && m.cal.bar) {
+        check(`${tag}: calibration bar is 20 mm +/- 0.3 in the bitmap`, m.barMm >= 19.7 && m.barMm <= 20.3, `${m.barMm == null ? 'n/a' : m.barMm.toFixed(2)} mm`);
+        const hit = (a, b) => !!(a && b) && a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
+        const b = m.cal.bar;
+        check(`${tag}: calibration bar overlaps neither the credit QR, the credit text nor the Name/Date row`,
+          !hit(b, m.cal.qr) && !hit(b, m.cal.text) && !hit(b, m.cal.footer), JSON.stringify(m.cal));
+        check(`${tag}: calibration bar is on the paper, not cut off the page`, b.y >= 0 && b.y + b.h <= m.H, `${b.y.toFixed(1)}..${(b.y + b.h).toFixed(1)} of ${m.H}`);
+      }
     }
     check(`${paper} ${orient}: no page errors`, !errors.length, errors.join(' | '));
     await ctx.close();

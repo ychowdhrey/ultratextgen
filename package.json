@@ -103,6 +103,7 @@
     "test:label-geometry": "node js/printables/labelEngine.test.js",
     "test:kana-readings": "node js/kana/kanaReadingsKo.test.js",
     "test:stencil": "node js/printables/stencil.test.js",
+    "test:calibration-bar": "node js/printables/calibrationBar.test.js",
     "test:centreline": "node js/printables/centreline.test.js",
     "test:word-search": "node js/printables/wordSearch.test.js",
     "test:word-puzzles": "node js/printables/wordPuzzles.test.js",
