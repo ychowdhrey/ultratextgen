@@ -1,5 +1,7 @@
 # Editorial footprint — upstream sources (2026-08-26)
 
+> **Historical policy supersession (2026-11-09):** The publishing freeze referenced in this dated research was lifted site-wide by owner decision on 2026-08-29. These passages impose no current publishing or top-250 traffic freeze. Named owner holds, experiments and ordinary SEO safeguards remain independent.
+
 Where this site's repeated editorial language actually comes from, and the
 cheapest correct place to fix each cluster.
 
