@@ -1097,7 +1097,18 @@
       // "emoji" | "plain" on a symbol that has both looks, otherwise cleared.
       // Always present as a key for the same reason as copy_item: GTM would
       // otherwise re-send the previous copy's look on the next copy.
-      copy_look: undefined
+      copy_look: undefined,
+      // The optional keys some surfaces pass, cleared on every other row for
+      // the same reason. Without these a symbol-tile or Ctrl+C copy on a
+      // generator page carried the previous card's style_name into GA4, and an
+      // event copy's copy_has_pair stuck to every later copy (2026-11-08
+      // audit, read through GTM's data model).
+      style_name: undefined,
+      label: undefined,
+      copy_collection: undefined,
+      copy_item_count: undefined,
+      copy_has_pair: undefined,
+      template_id: undefined
     };
     if (extra) {
       for (var k in extra) {
@@ -1523,6 +1534,51 @@
     }, false);
   }
 
+  /* @library-nav:begin */
+  /* Library contextual links: which Related card or section pointer a reader
+     on a library page followed, and to where. printable_nav already answers
+     this for printables; library pages recorded nothing. One row per click,
+     carrying the kind and the destination path only: never the link text,
+     never a query string or fragment.
+
+     A Related card is an a.compare-card. A section pointer ("See every angry
+     kaomoji →") has no class of its own: the spec generator renders it as the
+     last paragraph of its section, <p class="u-secondary-tight"><a>… →</a></p>,
+     the same paragraph class as the section intro, whose prose links must not
+     count. So a pointer is a link directly in a section's last paragraph whose
+     text ends in the arrow. That reads the markup already on every page, so
+     no page is regenerated for it. */
+  const LIBRARY_PATH_RE = /^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?library\//;
+  function libraryNavKind(link) {
+    if (link.matches("a.compare-card")) return "related_card";
+    var p = link.parentElement;
+    if (!p || !p.matches("section > p.u-secondary-tight:last-child")) return null;
+    return /[←→]\s*$/.test(link.textContent || "") ? "section_pointer" : null;
+  }
+  function libraryNavPayload(kind, destinationPath) {
+    return {
+      event: "library_nav",
+      library_nav_kind: kind,
+      library_nav_href: String(destinationPath || "").slice(0, 200)
+    };
+  }
+  /* @library-nav:end */
+  function initializeLibraryNavTracking() {
+    if (!LIBRARY_PATH_RE.test(window.location.pathname || "")) return;
+    document.addEventListener("click", function (evt) {
+      var link = evt.target && evt.target.closest && evt.target.closest("a[href]");
+      if (!link) return;
+      var kind = libraryNavKind(link);
+      if (!kind) return;
+      var href = link.getAttribute("href") || "";
+      // Same-site navigation only: an in-page anchor or another site is not a
+      // library link, and link.pathname drops the query and fragment.
+      if (href.charAt(0) === "#" || link.origin !== window.location.origin) return;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(libraryNavPayload(kind, link.pathname));
+    }, false);
+  }
+
   function initializeKaomojiMoodIndexTracking() {
     document.addEventListener("click", function (evt) {
       const link = evt.target && evt.target.closest && evt.target.closest(".kao-mood-links a[href]");
@@ -1538,6 +1594,7 @@
     initializeSharedHeader();
     initializeCtaTracking();
     initializePrintableNavTracking();
+    initializeLibraryNavTracking();
     initializeKaomojiMoodIndexTracking();
     initializeActiveStateSync();
   } else {
@@ -1545,6 +1602,7 @@
       initializeSharedHeader();
       initializeCtaTracking();
       initializePrintableNavTracking();
+      initializeLibraryNavTracking();
       initializeKaomojiMoodIndexTracking();
       initializeActiveStateSync();
     });

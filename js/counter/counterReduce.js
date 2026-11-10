@@ -332,13 +332,17 @@
       if (rule.countMode === "gsm" && rules) limit = rules.analyze(text, limitId).limit;
     }
     if (!limit) return text;
-    if (measureFor(text, limitId) <= limit) return text;
+    /* A rule with a second cap in UTF-8 bytes (Bluesky) fits only inside both. */
+    const maxBytes = !options.limit && rule && rule.maxBytes;
+    const over = (s) => measureFor(s, limitId) > limit ||
+      (maxBytes ? ns.counterCounts.utf8Bytes(s) > maxBytes : false);
+    if (!over(text)) return text;
 
     const words = text.split(/(\s+)/);
     let acc = "";
     for (let i = 0; i < words.length; i++) {
       const next = acc + words[i];
-      if (measureFor(next + suffix, limitId) > limit) break;
+      if (over(next + suffix)) break;
       acc = next;
     }
     acc = acc.replace(/\s+$/, "");
@@ -347,7 +351,7 @@
       const chars = clusters(text);
       let built = "";
       for (let i = 0; i < chars.length; i++) {
-        if (measureFor(built + chars[i] + suffix, limitId) > limit) break;
+        if (over(built + chars[i] + suffix)) break;
         built += chars[i];
       }
       acc = built;

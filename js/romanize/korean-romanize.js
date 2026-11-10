@@ -243,7 +243,10 @@
         btn.textContent = t('copied', 'Copied');
         btn._copyTimer = setTimeout(() => { btn.textContent = btn._copyPrev; btn._copyTimer = 0; }, 1200);
       };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, done);
+      // One copy_text row on success through header.js trackCopy; the names are
+      // typed, so the method is not a catalogue one (2026-11-08 audit).
+      const tracked = () => { if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy('korean_romanize', text); done(); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(tracked, done);
       else { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (err) { /* ignore */ } ta.remove(); done(); }
     });
     modeBtns.forEach(b => b.addEventListener('click', function () {

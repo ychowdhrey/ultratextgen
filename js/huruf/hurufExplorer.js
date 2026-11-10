@@ -101,7 +101,11 @@
       btn._copyTimer = setTimeout(() => { btn.textContent = btn._copyPrev; btn.classList.remove("is-copied"); btn._copyTimer = 0; }, 1400);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(value).then(done).catch(done);
+      navigator.clipboard.writeText(value).then(() => {
+        // One copy_text row on success through header.js trackCopy (2026-11-08).
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("huruf_variant", value);
+        done();
+      }).catch(done);
     } else {
       const ta = document.createElement("textarea");
       ta.value = value; document.body.appendChild(ta); ta.select();

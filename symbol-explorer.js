@@ -1467,6 +1467,7 @@
 
   const STAR_OUTLINE = "☆";
   const STAR_FILLED = "★";
+  const UNSAVED_NOTE_EN = "This browser blocked storage, so these are kept only until you leave this page.";
 
   /* The name a page gives a tile's ROW, for Save and its saved-strip caption.
      The visible .flag-label is authoritative (it is what the reader sees and
@@ -1614,6 +1615,18 @@
     });
     head.appendChild(clear);
     strip.appendChild(head);
+
+    /* The browser refused the write (blocked site data, private mode, a full
+       quota): the set lives for this page only, so say so once. English
+       pages only. No locale ships this sentence, and an English line under
+       translated prose is what this file's string table exists to prevent,
+       so a locale page stays as it was. */
+    if (PAGE_LANG === "en" && UTGX.saved.unsaved && UTGX.saved.unsaved()) {
+      const note = document.createElement("p");
+      note.className = "symbol-saved-note";
+      note.textContent = UNSAVED_NOTE_EN;
+      strip.appendChild(note);
+    }
 
     const grid = document.createElement("div");
     grid.className = "symbol-saved-grid flag-rows";

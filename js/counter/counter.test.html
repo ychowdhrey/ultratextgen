@@ -352,6 +352,31 @@ window.addEventListener("load", function () {
   t("non-folding field hides the tick", foldTick().hidden, true);
   t("non-folding field never goes amber", badge().className.indexOf("cc-badge-warn") > -1, false);
 
+  /* ---------- 12b. the count is in the destination's own unit ---------- */
+  platformSel.value = "bluesky";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  fieldSel.value = "bluesky-post"; fieldSel.dispatchEvent(new Event("change", { bubbles: true }));
+  const fam = "\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}";
+  type(fam.repeat(10));
+  t("bluesky: family emoji counted as graphemes, bytes beside them",
+    $("#counterLiveCount").textContent, "10 / 300 \u00b7 250 / 3,000 UTF-8");
+  t("bluesky: emoji post fits", badge().className.indexOf("cc-badge-ok") > -1, true);
+  const zg = "a" + Array.from({ length: 26 }, (_, i) => String.fromCodePoint(0x300 + i)).join("");
+  type(zg.repeat(300));
+  t("bluesky: 300 zalgo letters read as over the byte cap",
+    $("#counterLiveCount").textContent, "300 / 300 \u00b7 15,900 / 3,000 UTF-8");
+  t("bluesky: byte cap turns the badge red", badge().className.indexOf("cc-badge-fail") > -1, true);
+  t("bluesky: fix bar counts the overflow in bytes, never 0",
+    $("#counterFixBar .cc-fix-lead").textContent.indexOf("12,900") === 0, true);
+  btnByLabel("Passend k\u00fcrzen").click();
+  t("bluesky: trim leaves a post inside both caps",
+    window.UltraTextGen.counterRules.analyze(input.value, "bluesky-post").fits, true);
+  platformSel.value = "tiktok";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  fieldSel.value = "tiktok-caption"; fieldSel.dispatchEvent(new Event("change", { bubbles: true }));
+  type("\u{1D5D4}\u{1D5D5}\u{1D5D6}");
+  t("tiktok caption: three bold letters are 6 UTF-16 units", $("#counterLiveCount").textContent, "6 / 2,200");
+
   /* ---------- 13. the fit grid no longer dumps 38 chips ---------- */
   type("z".repeat(150));
   const chipsNow = () => $$("#counterFitGrid .cc-fit-chip");

@@ -2379,6 +2379,10 @@
   cursor: pointer;
   transition: all 0.2s;
 }
+.glance-card:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
 .glance-card:hover {
   background: rgba(255,255,255,0.05);
   border-color: rgba(255,255,255,0.12);
@@ -6590,6 +6594,14 @@ body.theme-gothic .category-section { position: static; background: transparent;
 /* Multi-line input (and the two-line demo text) keeps its line breaks */
 .style-preview { white-space: pre-wrap; }
 
+/* Typed text takes its direction from its first strong character on every
+   page, not only under dir="rtl": the apps it is pasted into lay it out that
+   way. On an LTR page an Arabic-first name ("مرحبا Luna") previewed with its
+   words in the opposite order to the bio it was pasted into (2026-11-08
+   audit). Latin-first text renders exactly as before. */
+.style-preview,
+#mainInput { unicode-bidi: plaintext; }
+
 /* Ghost sample rendered while the input is empty */
 .style-preview.is-demo {
   opacity: 0.62;
@@ -8063,6 +8075,21 @@ body.is-printing.ja-printing { margin: 0 !important; padding: 0 !important; }
   text-decoration: none;
   word-break: break-all;
 }
+/* The actual-size check bar on a millimetre-ruled sheet (calibrationNode in
+   printablesEngine.js). Its length is the SVG's own width attribute, 2 cm;
+   nothing here may stretch or shrink it, hence flex: none. It is shorter than
+   the QR beside it, so the credit band keeps its height. */
+.pt-credit-cal {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.08in;
+  flex: 0 0 auto;
+  margin-right: 0.15in;
+}
+.pt-credit-cal-bar {
+  display: block;
+  flex: 0 0 auto;
+}
 
 /* Alphabet "book" print — one character per printed sheet, in order
    (printAlphabetBook in printablesEngine.js). */
@@ -9330,7 +9357,8 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   font-size: 0.75rem;
   color: var(--text-muted);
 }
-.deco-chip.copied {
+.deco-chip.copied,
+.deco-chip.is-copied {
   border-color: var(--ts-safe);
 }
 .deco-chip.copied .deco-chip-label {
@@ -13041,6 +13069,18 @@ img.pt-sheet-preview {
    should not out-weigh "Print this letter". Before 2026-09-13 this was four
    full-width equal-weight buttons ABOVE the sheet, which inverted that. */
 .pt-share-tools { margin: 0.9rem 0 0; }
+.pt-share-roster {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  margin-top: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.pt-share-roster input { width: 1.25rem; height: 1.25rem; flex: 0 0 auto; margin: 0; }
+.pt-share-roster[hidden] { display: none; }
 .pt-share-row {
   display: flex;
   flex-wrap: wrap;

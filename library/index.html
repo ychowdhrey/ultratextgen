@@ -5108,6 +5108,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var activeType = null;
   var searchQuery = "";
 
+  /* The search and filters survive Back and reload in this tab. The box is
+     autocomplete="off" and the pills are not form fields, so the browser
+     restored neither: a visitor who searched "heart", opened a page and came
+     back found an empty box over all 375 entries (2026-11-08 audit). Kept in
+     sessionStorage, the way the generator keeps its draft; it ends with the
+     tab and never leaves the device. */
+  const HUB_STATE_KEY = "utg_library_hub:" + location.pathname;
+  function saveHubState() {
+    const keep = { raw: document.getElementById("libSearch").value, subject: activeSubject,
+      useCases: activeUseCase, platforms: activePlatform, type: activeType };
+    try {
+      if (keep.raw || keep.subject || keep.useCases || keep.platforms || keep.type) {
+        sessionStorage.setItem(HUB_STATE_KEY, JSON.stringify(keep));
+      } else {
+        sessionStorage.removeItem(HUB_STATE_KEY);
+      }
+    } catch (err) { /* storage blocked: the hub simply opens unfiltered */ }
+  }
+  function restoreHubState() {
+    let kept = null;
+    try { kept = JSON.parse(sessionStorage.getItem(HUB_STATE_KEY) || "null"); } catch (err) { kept = null; }
+    if (!kept || typeof kept !== "object") return false;
+    const pick = function (v, vocab) { return typeof v === "string" && vocab.indexOf(v) !== -1 ? v : null; };
+    activeSubject = pick(kept.subject, SUBJECTS);
+    activeUseCase = pick(kept.useCases, USE_CASES);
+    activePlatform = pick(kept.platforms, PLATFORMS);
+    activeType = pick(kept.type, TYPES);
+    const raw = typeof kept.raw === "string" ? kept.raw : "";
+    document.getElementById("libSearch").value = raw;
+    searchQuery = raw.trim();
+    return !!(searchQuery || activeSubject || activeUseCase || activePlatform || activeType);
+  }
+
   /* ── Browse telemetry ──
      header.js owns library_filter and library_search (one writer, debounced
      to the settled state). This page only reports what changed: a chip label
@@ -5313,6 +5346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     updatePillStates();
     buildAlphaBar(filtered);
+    saveHubState();
 
     // Update result count line
     var anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
@@ -5437,6 +5471,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   document.getElementById("clearFilters").addEventListener("click", clearAll);
   document.getElementById("emptyResetBtn").addEventListener("click", clearAll);
+
+  // Restoring renders without a library_search or library_filter row: those
+  // record what the visitor did, and coming back is not a new search.
+  if (restoreHubState()) render();
 
   /* ── Tag-button → filter (event delegation) ── */
   document.getElementById("libDirectory").addEventListener("click", function (e) {

@@ -19,6 +19,13 @@
   const hasRender = Render && typeof Render.renderAny === "function";
 
   /* ---- shared copy helper ---------------------------------------------- */
+  // One copy_text row per successful copy, through the site's one writer
+  // (header.js trackCopy). "gothic_tool" is not a catalogue method, so the row
+  // carries copy_item_group and never the copied text (2026-11-08 audit).
+  function trackCopied(text) {
+    const U = window.UltraTextGen;
+    if (U && U.trackCopy) U.trackCopy("gothic_tool", text);
+  }
   function flashCopy(text, el) {
     if (!text) return;
     const done = () => {
@@ -26,7 +33,7 @@
       setTimeout(() => el.classList.remove("is-copied"), 1000);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done).catch(() => {});
+      navigator.clipboard.writeText(text).then(() => { trackCopied(text); done(); }).catch(() => {});
     } else {
       done();
     }

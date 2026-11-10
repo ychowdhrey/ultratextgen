@@ -39,6 +39,14 @@ narrower query with a *different* SERP intent.
 4. **Link direction.** Hub → spoke (contextual link in the relevant hub section)
    and spoke → hub (breadcrumb + one back-link). No orphan spokes, no un-pointed
    hub sections.
+5. **Reachable from `/`.** Every indexable page is reachable from the homepage
+   through static `<a href>` links (header, footer, breadcrumbs and language
+   switchers count; hreflang, the sitemap and `llms.txt` do not). A cluster that
+   only links itself is an **island**, unreachable however many inbound links each
+   member has. `npm run check:link-reachability` fails a page a branch adds,
+   visibly changes or strands while `/` cannot reach it; the standing backlog is
+   `npm run audit:link-reachability`. One link from a reachable page fixes a whole
+   island; neither deliberate non-link below is ever the required fix.
 
 These apply **within each locale independently**. When a collision surfaces on
 pages too new to have GSC signal, resolve structurally by mirroring what the live

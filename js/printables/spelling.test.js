@@ -57,6 +57,19 @@ Object.keys(PASTES).forEach((k) => {
   eq(sp(t).skipped.length, 0, "spelling skips nothing in the " + k + " paste");
 });
 
+// One row of words separated by tabs (a spreadsheet row copied sideways) is a
+// list. Read as a word/definition table it kept "Apple" and dropped the rest.
+{
+  const row = "Apple\tBanana\tOrange\tMango\tGrape";
+  eq(spWords(row), FIVE, "spelling reads a single tab-separated row as the five words");
+  eq(lower(WS.normalizeWords(row)), FIVE, "word search reads the same tab row as the five words");
+  eq(lower(SC.normalizeWords(row)), FIVE, "scramble reads the same tab row as the five words");
+  eq(spWords("1\tApple\tBanana\tOrange"), "apple banana orange", "a leading row number is still dropped");
+  eq(spWords("Apple\ta red fruit"), "apple", "a two-cell row is still a word and its definition");
+  eq(spWords("Apple\tBanana\tlong yellow fruit"), "apple", "a row with a phrase cell is still a table row");
+  eq(spWords("Apple\tBanana\nOrange\tMango"), "apple orange", "a multi-row paste is still a table");
+}
+
 // Spelling's own two rules on top of the shared reading.
 const br = sp("fr[ie]nd\nbec[au]se");
 eq(br.words.map((w) => w.word).join(" "), "friend because", "brackets mark the tricky part and are not letters");

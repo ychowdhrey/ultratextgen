@@ -532,7 +532,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           const name = (mainInput && mainInput.value.trim()) || "Sombra";
 
           const glanceHtml = GLANCE_CATEGORIES.map(cat => `
-            <div class="glance-card" data-glance-cat="${cat.id}">
+            <div class="glance-card" data-glance-cat="${cat.id}" role="button" tabindex="0">
               <div class="glance-card-header">
                 <span>${cat.emoji}</span>
                 <span>${cat.label}</span>
@@ -552,11 +552,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
           // Click: sube al inicio y cambia la pestaña de decoración
           grid.querySelectorAll(".glance-card").forEach(card => {
+            // A div card is a button for the keyboard too (2026-11-08 audit:
+            // Tab never reached these cards and Enter did nothing).
+            card.addEventListener("keydown", e => {
+              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); card.click(); }
+            });
             card.addEventListener("click", () => {
               const catId = card.dataset.glanceCat;
               const decoTab = document.querySelector(`.decoration-tab[data-deco-tab="${catId}"]`);
               if (decoTab) {
                 decoTab.click();
+                // Keyboard users land on the tab they chose, at the top.
+                decoTab.focus({ preventScroll: true });
               }
               window.scrollTo({ top: 0, behavior: "smooth" });
             });

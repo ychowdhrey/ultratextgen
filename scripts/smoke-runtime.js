@@ -142,6 +142,118 @@ async function main() {
     await ctx.close();
   }
 
+  // 1b. Typed text stays on the device. The FAQ on / (and 19 other English
+  // generators, plus the locale homes) says nothing you type is sent to a
+  // server; until 2026-11-07 script.js wrote the input into ?q= on every
+  // pause, so the text sat in every later event's page_location and in the
+  // request line of every reload. The draft now
+  // lives in sessionStorage; only an explicit share puts text in a URL.
+  console.log('\n/ (typed text never enters the URL)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'Jane Private');
+    await page.waitForTimeout(700);
+    check('typing leaves the address bar without ?q=', (await page.evaluate(() => location.search)) === '', await page.evaluate(() => location.href));
+    check('typed text reaches no data layer row', !JSON.stringify(await dl(page)).includes('Private'));
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(500);
+    check('a reload in the same tab restores the draft', (await page.inputValue('#mainInput')) === 'Jane Private', await page.inputValue('#mainInput'));
+    const shareUrl = await page.evaluate(() => window.UltraTextGen.buildShareUrl({ input: 'Jane Private', styleId: 'bold' }));
+    check('the Share link still carries the text on purpose', /[?&]q=Jane\+Private(&|$)/.test(shareUrl), shareUrl);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    const s = await open('/?q=' + encodeURIComponent('Shared Hello') + '&style=bold', 'desktop');
+    check('an inbound ?q= link opens filled', (await s.page.inputValue('#mainInput')) === 'Shared Hello', await s.page.inputValue('#mainInput'));
+    await s.page.waitForTimeout(500);
+    check('and keeps its ?q= while the box still shows it', /[?&]q=/.test(await s.page.evaluate(() => location.search)), await s.page.evaluate(() => location.search));
+    await s.page.fill('#mainInput', 'Shared Hello again');
+    await s.page.waitForTimeout(700);
+    const qs = await s.page.evaluate(() => location.search);
+    check('the first edit drops the stale ?q= and keeps ?style=', !/[?&]q=/.test(qs) && /[?&]style=bold/.test(qs), qs);
+    check('no page errors', !s.errors.length, s.errors.join(' | '));
+    await s.ctx.close();
+  }
+
+  // 1b2. The same rule on the three tools that kept their own URL sync
+  // (2026-11-08): upside-down (?q=), zalgo (?text=) and the emoji tools (?q=)
+  // wrote typed text into the address bar on every pause. The settings stay in
+  // the bar, the draft survives a reload in the tab, an explicit Share link
+  // still carries the text, and an inbound link still opens filled.
+  console.log('\nupside-down, zalgo and emoji tools (typed text never enters the URL)');
+  for (const [url, param, shareSel, setting] of [
+    ['/category/upside-down-text/', 'q', '#udShareRow .share-result-btn', null],
+    ['/usecase/zalgo-text/', 'text', '#zalgoShareRow .share-result-btn', 'seed'],
+    ['/usecase/text-to-emoji/', 'q', null, null],
+    ['/usecase/emoji-letters/', 'q', null, null]
+  ]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    await page.fill('#mainInput', 'Jane Private');
+    await page.waitForTimeout(800);
+    const search = await page.evaluate(() => location.search);
+    check(`${url} typing leaves the address bar without the text`, !/Jane|Private/.test(decodeURIComponent(search)), search);
+    if (setting) check(`${url} the settings stay in the address bar`, new RegExp('[?&]' + setting + '=').test(search), search);
+    if (shareSel) {
+      await page.waitForSelector(shareSel, { state: 'attached', timeout: 5000 }).catch(() => {});
+      const link = await page.evaluate((sel) => { const b = document.querySelector(sel); return b ? b.dataset.shareUrl || '' : ''; }, shareSel);
+      check(`${url} the Share link still carries the text on purpose`, new RegExp('[?&]' + param + '=Jane(\\+|%20)Private(&|$)').test(link), link);
+    }
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(600);
+    check(`${url} a reload in the same tab restores the draft`, (await page.inputValue('#mainInput')) === 'Jane Private', await page.inputValue('#mainInput'));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    const s = await open(url + '?' + param + '=' + encodeURIComponent('Shared Hello'), 'desktop');
+    await s.page.waitForTimeout(600);
+    check(`${url} an inbound link opens filled`, (await s.page.inputValue('#mainInput')) === 'Shared Hello', await s.page.inputValue('#mainInput'));
+    check(`${url} and keeps its text param while the box still shows it`, new RegExp('[?&]' + param + '=').test(await s.page.evaluate(() => location.search)), await s.page.evaluate(() => location.search));
+    await s.page.fill('#mainInput', 'Shared Hello again');
+    await s.page.waitForTimeout(800);
+    const after = await s.page.evaluate(() => location.search);
+    check(`${url} the first edit drops the stale text param`, !new RegExp('[?&]' + param + '=').test(after), after);
+    check('no page errors', !s.errors.length, s.errors.join(' | '));
+    await s.ctx.close();
+  }
+
+  // 1c. Script-aware order. The map fonts only have Latin glyphs, so on the
+  // ru/ar/ja/hi/ko/th homes 9 of the 11 Popular cards copied Cyrillic, Arabic,
+  // Japanese… text back unchanged. Text with no Latin letter now gets the styles
+  // that change it, ranked frames > case > marks, at the same card count.
+  console.log('\n/ru/ and /ar/ (script-aware order for non-Latin text)');
+  {
+    const cardTexts = (page) => page.evaluate(() => [...document.querySelectorAll('#resultsGrid .style-card .copy-btn')].map((b) => ({ s: b.dataset.style, t: b.getAttribute('data-text') })));
+    const { ctx, page, errors } = await open('/ru/', 'mobile');
+    await page.fill('#mainInput', 'Hello world');
+    await page.waitForTimeout(300);
+    const latin = await cardTexts(page);
+    for (const [label, text] of [['Russian', 'Привет мир'], ['Arabic', 'مرحبا بالعالم']]) {
+      await page.fill('#mainInput', text);
+      await page.waitForTimeout(300);
+      const got = await cardTexts(page);
+      check(`${label}: no Popular card copies the text back unchanged`, got.length > 0 && got.every((c) => c.t !== text), JSON.stringify(got.filter((c) => c.t === text).map((c) => c.s)));
+      check(`${label}: the Popular tab keeps its card count`, got.length === latin.length, `${got.length} vs ${latin.length}`);
+      check(`${label}: every card still holds the typed letters`, got.every((c) => [...text.replace(/\s/g, '')].every((ch) => c.t.normalize('NFD').includes(ch))), JSON.stringify(got.slice(0, 3)));
+    }
+    await sentinel(page);
+    const first = page.locator('#resultsGrid .copy-btn:not([disabled])').first();
+    const want = await first.getAttribute('data-text');
+    await first.click();
+    await page.waitForTimeout(300);
+    check('the first reordered card copies its exact text', (await clip(page)) === want, want);
+    await page.fill('#mainInput', 'Jane Привет');
+    await page.waitForTimeout(300);
+    const mixed = await cardTexts(page);
+    check('mixed Latin + Cyrillic keeps the usual order', mixed.map((c) => c.s).join('|') === latin.map((c) => c.s).join('|'), mixed.slice(0, 3).map((c) => c.s).join(', '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const en = await open('/', 'desktop');
+    await en.page.fill('#mainInput', 'Hello world');
+    await en.page.waitForTimeout(300);
+    check('English input keeps the registry order', ((await cardTexts(en.page))[0] || {}).s === 'Ultra Bold', ((await cardTexts(en.page))[0] || {}).s);
+    await en.ctx.close();
+  }
+
   // 2. Family page: no tab empties the results; the active tab clears.
   console.log('\n/id/tulisan-kecil/ (family-scoped generator)');
   {
@@ -199,6 +311,12 @@ async function main() {
   console.log('\n/id/ (locale homepage)');
   {
     const { ctx, page } = await open('/id/', 'mobile');
+    // The toast is the copy's live region and holds its text only while it is
+    // shown (case 22), so it is read after a copy.
+    await page.fill('#mainInput', 'Luna');
+    await page.waitForTimeout(300);
+    await page.locator('#resultsGrid .copy-btn:not([disabled])').first().click();
+    await page.waitForTimeout(100);
     const toast = await page.evaluate(() => { const t = document.getElementById('copyToast'); return t ? t.textContent : ''; });
     check('copy toast is localized', toast && toast !== 'Copied!', toast);
     await ctx.close();
@@ -326,8 +444,13 @@ async function main() {
     await page.waitForTimeout(1100);
     await page.locator('#kaomojiCopyBtn').click();
     await page.waitForTimeout(200);
+    // The face can be typed text, so it stays out of the address bar
+    // (2026-11-08): every later event and every ad request reads the URL.
+    check('a copied typed face stays out of the address bar', !/private/.test(decodeURIComponent(await page.evaluate(() => location.search))), await page.evaluate(() => location.search));
     await page.locator('#kaomojiCopyLinkBtn').click();
     await page.waitForTimeout(200);
+    check('Copy link still copies a link carrying the face, on request', /[?&]q=my(\+|%20)private(\+|%20)text(\+|%20)123/.test(await clip(page)), await clip(page));
+    check('and the address bar still has no face after it', !/[?&]q=/.test(await page.evaluate(() => location.search)), await page.evaluate(() => location.search));
     await page.locator('#kaomojiClearBtn').click();
     await page.waitForTimeout(200);
     const rows = (await dl(page)).slice(n0);
@@ -346,6 +469,10 @@ async function main() {
     const l = await open('/kaomoji-generator/?q=' + encodeURIComponent('(^_^) my private text'), 'desktop');
     const loaded = (await dl(l.page)).filter((e) => e.event === 'kaomoji_generator_step');
     check('a ?q= load sends one url_load step and not the face', loaded.length === 1 && loaded[0].kaomoji_step === 'url_load' && loaded[0].kaomoji_value === undefined && !JSON.stringify(loaded).includes('private'), JSON.stringify(loaded));
+    check('a ?q= link opens with its face and keeps ?q= while it is shown', /[?&]q=/.test(await l.page.evaluate(() => location.search)), await l.page.evaluate(() => location.search));
+    await l.page.locator('#kaomojiFaceInput').fill('(^_^) edited');
+    await l.page.waitForTimeout(300);
+    check('editing the face drops the stale ?q=', !/[?&]q=/.test(await l.page.evaluate(() => location.search)), await l.page.evaluate(() => location.search));
     await l.ctx.close();
 
     // The line under the preview names what a face carries (FAQ promise).
@@ -494,6 +621,117 @@ async function main() {
     await ctx.close();
   }
 
+  // 11a. A controller's own .copy-btn is not script.js's. The before/after
+  // emoji library cards keep their text in data-copy-text; script.js's
+  // page-wide .copy-btn handler read data-text and wrote "" after the card's
+  // own write, so the button said "Copied ✓" and the clipboard was empty
+  // (2026-11-08 audit).
+  console.log('\n/usecase/before-after-emoji/ (library card copies its own text)');
+  {
+    const { ctx, page, errors } = await open('/usecase/before-after-emoji/', 'desktop');
+    const card = page.locator('#etgLibraryGrid .etg-copy-btn').first();
+    const want = decodeURIComponent((await card.getAttribute('data-copy-text')) || '');
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await card.click();
+    await page.waitForTimeout(400);
+    check('the library card puts its own text on the clipboard', !!want && (await clip(page)) === want, `${JSON.stringify(await clip(page))} vs ${JSON.stringify(want)}`);
+    const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check('and records one copy_text', ev.length === 1, JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11a2. The couple generator copies typed names. Its chips and "copy both"
+  // used symbol-explorer's catalogue default (symbol_tile), so copy_item sent
+  // both names to the data layer (2026-11-08 audit).
+  console.log('\n/id/usecase/nama-couple-ff-aesthetic/ (typed names stay out of copy_text)');
+  {
+    const { ctx, page, errors } = await open('/id/usecase/nama-couple-ff-aesthetic/', 'mobile');
+    await page.fill('#coupleA', 'Qxtestname');
+    await page.fill('#coupleB', 'Zoeqxlover');
+    await page.waitForTimeout(400);
+    await sentinel(page);
+    await page.locator('.uname-chip').first().click();
+    await page.waitForTimeout(300);
+    check('the name chip still copies the styled name', /𝓠𝔁𝓽𝓮𝓼𝓽𝓷𝓪𝓶𝓮/.test(await clip(page)), await clip(page));
+    const rows = (await dl(page)).filter((e) => e.event === 'copy_text');
+    check('a couple copy is recorded under its own method', rows.length === 1 && rows[0].copy_method === 'couple_generator', JSON.stringify(rows));
+    check('no copy_text row carries the typed names', !/Qxtestname|Zoeqxlover/i.test(JSON.stringify(rows).normalize('NFKC')), JSON.stringify(rows));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11a3. A card copies the text it shows. safeAttr escaped only ", so the
+  // attribute parser decoded typed "&lt;3 &amp;" and Copy delivered "<3 &"
+  // under a card that showed "&lt;3 &amp;" (2026-11-08 audit).
+  console.log('\n/ (copied text equals the card text when it looks like an entity)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'I &lt;3 you &amp; Tom &copy; 2026');
+    await page.waitForTimeout(400);
+    await page.evaluate(() => document.querySelector('#categoryTabs .category-tab[data-category="text-decorator"]').click());
+    await page.waitForTimeout(400);
+    const cards = await page.evaluate(() => [...document.querySelectorAll('#resultsGrid .style-card')].map((c) => {
+      const b = c.querySelector('.copy-btn');
+      const shown = [...c.querySelectorAll('*')].map((e) => (e.childElementCount === 0 ? e.textContent : '')).find((t) => t && t.includes('Tom'));
+      return { s: b && b.dataset.style, data: b && b.dataset.text, shown };
+    }).filter((x) => x.data && x.shown));
+    check('decorator cards exist to compare', cards.length > 0, String(cards.length));
+    const off = cards.filter((x) => x.data !== x.shown);
+    check('every card\'s copy text equals the text it shows', !off.length, JSON.stringify(off.slice(0, 2)));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11a4. Copies that used to record nothing (2026-11-08 audit; capability
+  // "every clipboard write reaches trackCopy"). Each records one copy_text
+  // under its own method, and none carries the typed text.
+  console.log('\nten tool copies (one copy_text each, no typed text)');
+  for (const [url, inp, txt, sel, method] of [
+    ['/usecase/text-to-emoji/', '#mainInput', 'Qxtestname love pizza', '#copyOutputBtn', 'emoji_tool'],
+    ['/character-counter/', '#counterInput', 'Qxtestname hello', '#counterCopyBtn', 'counter'],
+    ['/library/norse-viking-runes/', '#runicInput', 'Qxtestname', '#runicCopy', 'runic_converter'],
+    ['/usecase/old-english-translator/', '#persona-input', 'Qxtestname you are my friend', '#persona-copy', 'persona_translator'],
+    ['/ko/yeongmun-ireum-byeonhwan/', '#romanizeInput', '홍길동', '.copy-btn', 'korean_romanize'],
+    ['/usecase/linkedin-headline/', '#mainInput', 'Qxtestname Engineer', '.copy-btn', 'linkedin_headline'],
+    ['/category/gothic-fonts/', null, null, '.gsym-tile', 'gothic_tool'],
+    ['/id/huruf-keren-a-sampai-z/', null, null, '.bubble-variant-copy', 'huruf_variant'],
+    ['/hiragana-chart/', null, null, '.kana-cell:not(.kana-cell-empty)', 'glyph'],
+    ['/usecase/before-after-emoji/', null, null, '.etg-caption-copy', 'button']
+  ]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    if (inp) { await page.fill(inp, txt); await page.waitForTimeout(500); }
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await page.locator(sel).filter({ visible: true }).first().click();
+    await page.waitForTimeout(400);
+    const rows = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check(`${url} copies something`, (await clip(page)) !== '__SMOKE__');
+    check(`${url} records one copy_text as ${method}`, rows.length === 1 && rows[0].copy_method === method, JSON.stringify(rows));
+    check(`${url} sends no typed text`, !/Qxtestname/i.test(JSON.stringify(rows).normalize('NFKC')), JSON.stringify(rows));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11b0. The zalgo sliders are named. Both range inputs had no label of any
+  // kind on all 13 pages that load zalgo-text.js (2026-11-08 audit).
+  console.log('\n/usecase/zalgo-text/ and /ko/usecase/geullichi-tekseuteu/ (slider names)');
+  for (const url of ['/usecase/zalgo-text/', '/ko/usecase/geullichi-tekseuteu/']) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    for (const id of ['frequencySlider', 'amplitudeSlider']) {
+      const name = await page.evaluate((sid) => {
+        const s = document.getElementById(sid);
+        const ref = s && s.getAttribute('aria-labelledby');
+        const lab = ref && document.getElementById(ref);
+        return (s && s.getAttribute('aria-label')) || (lab ? lab.textContent.trim() : '');
+      }, id);
+      check(`${url} #${id} has an accessible name`, !!name, JSON.stringify(name));
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 11b. The Share button's confirmation is in the page language. Without a
   // native share sheet it copies the link and says so; that label used to be the
   // English fallback under Korean prose because library pages carry no i18n.js.
@@ -573,7 +811,9 @@ async function main() {
 
   // 12. Nothing pushes a 390px page sideways.
   console.log('\n390px layouts (overflow)');
-  for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', '']]) {
+  // /ja/purinto/onamae-seal/: two three-column tables (30rem floor) sat outside
+  // .data-table-wrap and panned the page 130px sideways (2026-11-08 audit).
+  for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', ''], ['/ja/purinto/onamae-seal/', '']]) {
     const { ctx, page } = await open(url, 'narrow');
     if (typed) { await page.locator('#mainInput, input[type=text]:visible').first().fill(typed); await page.waitForTimeout(500); }
     const w = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
@@ -676,7 +916,21 @@ async function main() {
         let real;
         Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
           real = v && Object.assign({}, v, { renderPages: async function (root, o) {
-            const c = await v.renderPages(root, o); window.__ptSheet = { canvases: c, opts: o }; return c; } });
+            const c = await v.renderPages(root, o);
+            /* Still inside the rendering state here, so the boxes are real. They
+               only LOCATE the calibration bar; its length is read from pixels. */
+            const box = (cv, n) => (n && v.rectOnCanvas ? v.rectOnCanvas(cv, n) : null);
+            const cal = (c || []).map((cv) => {
+              const unit = cv.ptPlacement && cv.ptPlacement.el;
+              if (!unit) return null;
+              return {
+                bar: box(cv, unit.querySelector('.pt-credit-cal-bar')),
+                qr: box(cv, unit.querySelector('.pt-credit-qr')),
+                text: box(cv, unit.querySelector('.pt-credit-text')),
+                footer: box(cv, unit.querySelector('.pt-sheet-footer'))
+              };
+            });
+            window.__ptSheet = { canvases: c, opts: o, cal: cal }; return c; } });
         } });
       })();`;
     const { ctx, page, errors } = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop', init);
@@ -708,7 +962,29 @@ async function main() {
         const five = stacks.filter((s) => s.length === 5);
         const inter = [].concat(...five.map((s) => s.slice(1).map((c, i) => c - s[i])));
         const span = five.map((s) => s[4] - s[0]);
-        return { stacks: five.length, pxPerMm, inter, span };
+        /* The calibration bar, measured in the bitmap: the longest unbroken dark
+           run on any pixel row the bar's box covers, walked across the WHOLE
+           row so a bar longer than its box is measured in full, not clipped. */
+        // rectOnCanvas answers in fractions of the canvas; turn them into pixels.
+        const px = (r) => (r ? { x: r.x * W, y: r.y * H, w: r.w * W, h: r.h * H } : null);
+        const c0 = s.cal && s.cal[0];
+        const cal = c0 ? { bar: px(c0.bar), qr: px(c0.qr), text: px(c0.text), footer: px(c0.footer) } : null;
+        let barMm = null;
+        if (cal && cal.bar) {
+          let best = 0;
+          const y0 = Math.max(0, Math.floor(cal.bar.y)), y1 = Math.min(H - 1, Math.ceil(cal.bar.y + cal.bar.h));
+          const xs = Math.max(0, Math.floor(cal.bar.x + cal.bar.w / 2));
+          for (let y = y0; y <= y1; y++) {
+            const dark = (x) => { const i = (y * W + x) * 4; return Math.min(data[i], data[i + 1], data[i + 2]) < 200; };
+            if (!dark(xs)) continue;
+            let a = xs, b = xs;
+            while (a > 0 && dark(a - 1)) a--;
+            while (b < W - 1 && dark(b + 1)) b++;
+            best = Math.max(best, b - a + 1);
+          }
+          barMm = best / pxPerMm;
+        }
+        return { stacks: five.length, pxPerMm, inter, span, cal, barMm, H };
       });
       const tag = `${paper} ${orient} "${name}"`;
       if (!m) { check(`${tag}: the PDF's page bitmap was captured`, false, 'no canvas from renderPages'); continue; }
@@ -718,6 +994,17 @@ async function main() {
       const iMin = Math.min(...m.inter), iMax = Math.max(...m.inter), sMin = Math.min(...m.span), sMax = Math.max(...m.span);
       check(`${tag}: interline is 2.0 mm +/- 0.15`, m.inter.length && iMin >= 1.85 && iMax <= 2.15, `${iMin.toFixed(2)}..${iMax.toFixed(2)} mm (mean ${m.inter.length ? avg(m.inter).toFixed(2) : 'n/a'})`);
       check(`${tag}: heavy lines are 8.0 mm +/- 0.3 apart`, m.span.length && sMin >= 7.7 && sMax <= 8.3, `${sMin.toFixed(2)}..${sMax.toFixed(2)} mm`);
+      // A teacher cannot see whether "fit to page" shrank the sheet, so a sheet
+      // ruled in millimetres carries a bar of stated length inside its page unit.
+      check(`${tag}: page 1 carries the actual-size calibration bar`, !!(m.cal && m.cal.bar), m.cal ? 'no .pt-credit-cal-bar in the page unit' : 'no page placement');
+      if (m.cal && m.cal.bar) {
+        check(`${tag}: calibration bar is 20 mm +/- 0.3 in the bitmap`, m.barMm >= 19.7 && m.barMm <= 20.3, `${m.barMm == null ? 'n/a' : m.barMm.toFixed(2)} mm`);
+        const hit = (a, b) => !!(a && b) && a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
+        const b = m.cal.bar;
+        check(`${tag}: calibration bar overlaps neither the credit QR, the credit text nor the Name/Date row`,
+          !hit(b, m.cal.qr) && !hit(b, m.cal.text) && !hit(b, m.cal.footer), JSON.stringify(m.cal));
+        check(`${tag}: calibration bar is on the paper, not cut off the page`, b.y >= 0 && b.y + b.h <= m.H, `${b.y.toFixed(1)}..${(b.y + b.h).toFixed(1)} of ${m.H}`);
+      }
     }
     check(`${paper} ${orient}: no page errors`, !errors.length, errors.join(' | '));
     await ctx.close();
@@ -786,6 +1073,75 @@ async function main() {
     const fr = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop');
     check('a French sheet gets no English Clear names', (await fr.page.locator('.pt-roster-clear').count()) === 0);
     await fr.ctx.close();
+  }
+
+  // 17b. A share link never carries the class list unless the visitor ticks
+  // the box that says so. Children's names in a URL reach every log and chat
+  // preview the link passes through; the pages say names stay on the device.
+  console.log('\n/printables/name-tracing/ (Copy link after a class list carries no names)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    await page.fill('#pt-name-roster', 'Emma\nNoah\nAva');
+    await page.fill('#pt-name-input', 'Emma');
+    await page.waitForTimeout(300);
+    const copyLink = page.locator('.pt-share-row .bubble-btn').first();
+    await sentinel(page);
+    await copyLink.click();
+    await page.waitForTimeout(300);
+    const plain = await clip(page);
+    check('Copy link copied a link to this page', plain.includes('/printables/name-tracing/'), plain);
+    check('the copied link carries no roster', !/[?&]roster=/.test(plain), plain);
+    check('the copied link keeps the typed name', /[?&]name=Emma/.test(plain), plain);
+    const tick = page.locator('.pt-share-roster input');
+    check('the include-names tick is shown, and off', (await tick.isVisible()) && !(await tick.isChecked()));
+    await tick.check();
+    await sentinel(page);
+    await copyLink.click();
+    await page.waitForTimeout(300);
+    const opted = await clip(page);
+    check('ticking it puts the class in the link', /[?&]roster=Emma%7CNoah%7CAva/.test(opted), opted);
+    const recentHrefs = await page.evaluate(() => (localStorage.getItem('utg_printables_recent') || ''));
+    check('the recent strip never stores the class', !/roster=/.test(recentHrefs), recentHrefs.slice(0, 200));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const fr = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop');
+    check('a French sheet gets no English include-names tick', (await fr.page.locator('.pt-share-roster').count()) === 0);
+    await fr.ctx.close();
+  }
+
+  // 17c. A list that arrives in the link is the sheet: the handwriting
+  // generator previewed its demo above a carried five-word list, and files were
+  // named after nothing ("handwriting-generator-sheet.pdf") or after the slug
+  // twice ("spelling-spelling-worksheet.pdf"). And one row of tab-separated
+  // words is five words, not "1 words".
+  console.log('\nhandwriting + spelling generators (carried list preview, file names, tab row)');
+  {
+    const { ctx, page, errors } = await open('/printables/handwriting-worksheet-generator/?roster=Apple%7CBanana%7COrange%7CMango%7CGrape', 'desktop');
+    await page.waitForTimeout(500);
+    const prev = await page.locator('#pt-gen-preview').innerText();
+    check('the preview shows the carried list\'s first word, not the demo', /Apple/.test(prev) && !/The cat sat/.test(prev), prev.slice(0, 120));
+    const [d1] = await Promise.all([page.waitForEvent('download'), page.click('#pt-gen-print')]);
+    check('the list PDF is named after the list', d1.suggestedFilename() === 'handwriting-apple-banana-plus-3.pdf', d1.suggestedFilename());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const sp = await open('/printables/spelling-worksheet-generator/', 'desktop');
+    await sp.page.fill('#pt-sp-input', 'Apple\tBanana\tOrange\tMango\tGrape');
+    await sp.page.waitForTimeout(400);
+    const meta = await sp.page.locator('#pt-sp-meta').innerText();
+    check('a tab-separated row reads as 5 words', /^5 words/.test(meta), meta);
+    await sp.page.fill('#pt-sp-input', 'friend');
+    await sp.page.waitForTimeout(400);
+    const one = await sp.page.locator('#pt-sp-meta').innerText();
+    check('one word reads "1 word", not "1 words"', /^1 word\b/.test(one) && !/1 words/.test(one), one);
+    await sp.page.fill('#pt-sp-input', 'friend\nword1\nsupercalifragilisticexpialidocious');
+    await sp.page.waitForTimeout(400);
+    const why = await sp.page.locator('#pt-sp-meta').innerText();
+    check('digits and length are reported as two reasons', /no digits[^·]*word1/.test(why) && /longer than 20 letters\): supercal/.test(why), why);
+    const [d2] = await Promise.all([sp.page.waitForEvent('download'), sp.page.click('#pt-sp-print')]);
+    check('the spelling PDF has no doubled slug', !/spelling-spelling/.test(d2.suggestedFilename()) && d2.suggestedFilename() === 'spelling-friend.pdf', d2.suggestedFilename());
+    check('spelling: no page errors', !sp.errors.length, sp.errors.join(' | '));
+    await sp.ctx.close();
   }
 
   // 18. Storage blocked. Reading window.localStorage throws a SecurityError
@@ -1192,6 +1548,44 @@ async function main() {
     }
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
+  }
+
+  // 25b. A save the browser refused says so. With site data blocked the store
+  // keeps the item for this page only, and the generator's saved section still
+  // promised "Saved on this device". English pages show one line instead;
+  // a locale page has no translation for it and stays as it was.
+  console.log('\nsaved strip with storage blocked (one line, English only)');
+  {
+    const blockStorage = () => {
+      Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('blocked', 'SecurityError'); } });
+    };
+    const saveFirstSymbol = (page) => page.locator('.flag-row .symbol-save-btn').first().click({ force: true });
+    for (const [url, blocked, wantNote] of [
+      ['/library/heart-symbols/', true, true],
+      ['/library/heart-symbols/', false, false],
+      ['/id/library/simbol-love/', true, false]
+    ]) {
+      const label = `${url} storage ${blocked ? 'blocked' : 'allowed'}`;
+      const { ctx, page, errors } = await open(url, 'desktop', blocked ? blockStorage : undefined);
+      await saveFirstSymbol(page);
+      await page.waitForTimeout(200);
+      const notes = await page.locator('#symbolSavedStrip .symbol-saved-note').count();
+      check(`${label}: the strip ${wantNote ? 'says the save was not kept' : 'adds no line'}`, notes === (wantNote ? 1 : 0), String(notes));
+      check(`${label}: no page errors`, !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+    for (const [blocked, wantHint] of [[true, false], [false, true]]) {
+      const { ctx, page, errors } = await open('/', 'desktop', blocked ? blockStorage : undefined);
+      await page.fill('#mainInput', 'Luna');
+      await page.waitForTimeout(300);
+      await page.locator('#resultsGrid .save-btn').first().click();
+      await page.waitForTimeout(300);
+      const hint = await page.evaluate(() => { const h = document.querySelector('#savedSection .saved-hint'); return h ? h.textContent : null; });
+      const claims = /Saved on this device/.test(hint || '');
+      check(`/ storage ${blocked ? 'blocked' : 'allowed'}: the saved section ${wantHint ? 'keeps its hint' : 'makes no "Saved on this device" claim'}`, claims === wantHint, hint);
+      check(`/ storage ${blocked ? 'blocked' : 'allowed'}: no page errors`, !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
   }
 
   // 26. Decoration chips are buttons. They were spans with a click handler,
@@ -1797,6 +2191,226 @@ async function main() {
     check('and can change it: the share buttons are live', (await r.page.locator('#udShareRow button:disabled').count()) === 0);
     check('recipient: no page errors', !r.errors.length, r.errors.join(' | '));
     await r.ctx.close();
+  }
+
+  // 36. The YouTube hub's destination tabs. The results grid's MutationObserver
+  // re-ran on its own writes, so after typing, Video title and @Handle froze the
+  // tab in a microtask loop: no long task, no error, the page just stops
+  // answering. Each press is raced against a deadline, so a frozen page fails
+  // this case instead of hanging the run, and each tab's grid must show its own
+  // state: one search warning per card on Video title, the handle notice on
+  // @Handle, styled results everywhere else. A category tab re-renders the grid
+  // through script.js alone, so only the observer can put Video title's warnings
+  // back: a fix that switches the observer off fails that step.
+  console.log('\n/youtube/ (destination tabs stay responsive)');
+  {
+    const { ctx, page, errors } = await open('/youtube/', 'desktop');
+    const category = page.locator('#categoryTabs .category-tab:visible').nth(1);
+    check('a category tab is there to re-render the grid', (await category.count()) === 1);
+    await page.fill('#mainInput', 'Luna');
+    await page.waitForTimeout(300);
+    const read = () => page.evaluate(() => {
+      const g = document.getElementById('resultsGrid');
+      const active = document.querySelector('#youtubeContextTabs [aria-selected="true"]');
+      return {
+        active: active ? active.dataset.context : null,
+        copies: g.querySelectorAll('.copy-btn').length,
+        names: g.querySelectorAll('.style-card .style-name').length,
+        warnings: g.querySelectorAll('.style-name > .youtube-result-warning').length,
+        handleNotice: /handles only accept/.test(g.textContent)
+      };
+    });
+    const press = async (control) => {
+      let state = null;
+      const work = control.click({ timeout: 2000 })
+        .then(() => new Promise((r) => setTimeout(r, 100)))
+        .then(read)
+        .then((s) => { state = s; }, () => {});
+      await Promise.race([work, new Promise((r) => setTimeout(r, 2000))]);
+      return state;
+    };
+    const shows = {
+      styled: (s) => s.copies > 0 && s.warnings === 0 && !s.handleNotice,
+      warned: (s) => s.copies > 0 && s.names > 0 && s.warnings === s.names,
+      handle: (s) => s.handleNotice && s.copies === 0
+    };
+    const dest = (d) => page.locator(`#youtubeContextTabs [data-context="${d}"]`);
+    // [what is pressed, the destination selected after it, what the grid shows]
+    const steps = [
+      ['channel-name', dest('channel-name'), 'channel-name', 'styled'],
+      ['description', dest('description'), 'description', 'styled'],
+      ['video-title', dest('video-title'), 'video-title', 'warned'],
+      ['a category tab on video-title', category, 'video-title', 'warned'],
+      ['comment', dest('comment'), 'comment', 'styled'],
+      ['bio', dest('bio'), 'bio', 'styled'],
+      ['handle', dest('handle'), 'handle', 'handle'],
+      ['channel-name', dest('channel-name'), 'channel-name', 'styled']
+    ];
+    const bad = [];
+    for (const [label, control, active, want] of steps) {
+      const s = await press(control);
+      if (!s) { bad.push(`${label}: page did not answer within 2s`); break; }
+      if (s.active !== active || !shows[want](s)) bad.push(`${label}: ${JSON.stringify(s)}`);
+    }
+    check('every destination tab answers within 2s with its own results', !bad.length, bad.join('; '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 22. Copy is announced, not only shown. The generator's toast was visual
+  // only, so a screen reader heard nothing when Copy worked; and below 640px
+  // the result card's Preview button hides its label, which left the emoji as
+  // its whole accessible name. The toast is a polite live region whose text
+  // arrives with each copy (a change is what a live region announces) and
+  // leaves once it has faded, so the next copy is a change again.
+  console.log('\n/ (copy announced to assistive tech; Preview named at 375px)');
+  {
+    const { ctx, page, errors } = await open('/', 'narrow');
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.waitForTimeout(200);
+    const toastState = () => page.evaluate(() => {
+      const t = document.getElementById('copyToast');
+      return t && { role: t.getAttribute('role'), live: t.getAttribute('aria-live'), text: t.textContent, shown: t.classList.contains('is-visible') };
+    });
+    const pageToast = await page.evaluate(async () => {
+      const m = (await (await fetch(location.pathname)).text()).match(/id="copyToast"[^>]*>([^<]*)</);
+      return m ? m[1] : null;
+    });
+    const t0 = await toastState();
+    check('the copy toast is a polite live region after load', !!t0 && t0.role === 'status' && t0.live === 'polite', JSON.stringify(t0));
+    check('it holds no text until a copy, so the copy is a change', !!t0 && t0.text === '', JSON.stringify(t0));
+    await page.fill('#mainInput', 'Luna');
+    await page.waitForTimeout(300);
+    const copy = page.locator('#resultsGrid .copy-btn:not([disabled])').first();
+    await copy.click();
+    await page.waitForTimeout(100);
+    const t1 = await toastState();
+    check("after Copy it carries the page's own toast text", !!t1 && t1.shown && !!pageToast && t1.text === pageToast, `${JSON.stringify(t1)} vs markup ${JSON.stringify(pageToast)}`);
+    await page.waitForTimeout(2500);
+    const t2 = await toastState();
+    check('once faded it is empty again, so the next copy is a change too', !!t2 && !t2.shown && t2.text === '', JSON.stringify(t2));
+    await copy.click();
+    await page.waitForTimeout(100);
+    const t3 = await toastState();
+    check('a second Copy fills it again', !!t3 && t3.shown && t3.text === pageToast, JSON.stringify(t3));
+    const preview = page.locator('#resultsGrid .preview-btn').first();
+    const label = ((await preview.locator('.preview-label').textContent()) || '').trim();
+    check('at 375px the Preview label is hidden (the case under test)', !!label && !(await preview.locator('.preview-label').isVisible()), label);
+    const name = ((await preview.ariaSnapshot()).match(/^- button "(.*)"/) || [])[1] || '';
+    check('the Preview button is named by its own label, not only its emoji', !!name && name.includes(label), `name ${JSON.stringify(name)}, label ${JSON.stringify(label)}`);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 2026-11-08 quality lab, four journeys a real browser found broken.
+  //
+  // (a) The blank-name chips (U+3164, U+2800) on four library pages looked
+  // clickable and did nothing: decorations-showcase.js was not on the page.
+  // An invisible character cannot be selected by hand, so the chip is the
+  // only way to get one.
+  console.log('\nblank-name chips copy (library nickname pages)');
+  for (const url of ['/library/nickname-symbols/', '/es/simbolos-para-nombres/', '/id/library/simbol-nickname/', '/tr/library/semboller/']) {
+    const { ctx, page, errors } = await open(url, 'mobile');
+    const chip = page.locator('.deco-chip[data-copy]').first();
+    const want = await chip.getAttribute('data-copy');
+    await chip.scrollIntoViewIfNeeded();
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await chip.click();
+    await page.waitForTimeout(400);
+    check(`${url} chip puts its character on the clipboard`, (await clip(page)) === want, JSON.stringify(await clip(page)));
+    const rows = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check(`${url} records one copy_text`, rows.length === 1, JSON.stringify(rows));
+    const toast = await page.evaluate(() => (document.getElementById('symbolToast') || {}).textContent || '');
+    check(`${url} confirms in the page language, not " · Copied!"`, url === '/library/nickname-symbols/' || !/Copied/.test(toast + (await chip.textContent())), toast);
+    const kb = await chip.evaluate((e) => ({ tab: e.tabIndex, role: e.getAttribute('role') }));
+    check(`${url} chip is a keyboard button`, kb.tab === 0 && kb.role === 'button', JSON.stringify(kb));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // (b) "Categories at a glance" cards on the 18 bio-font pages were divs
+  // with a click handler: Tab never reached them and Enter did nothing.
+  console.log('\n/usecase/bio-font/ (glance cards work from the keyboard)');
+  for (const url of ['/usecase/bio-font/', '/ar/usecase/khat-bio/']) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    const card = page.locator('.glance-card').nth(1);
+    const cat = await card.getAttribute('data-glance-cat');
+    await page.locator('.glance-card').first().focus();
+    await page.keyboard.press('Tab');
+    const reached = await page.evaluate(() => document.activeElement && document.activeElement.dataset.glanceCat);
+    check(`${url} Tab reaches the next card`, reached === cat, String(reached));
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(600);
+    const st = await page.evaluate((c) => {
+      const t = document.querySelector(`.decoration-tab[data-deco-tab="${c}"]`);
+      return { active: !!t && (t.classList.contains('active') || t.getAttribute('aria-selected') === 'true'), focused: document.activeElement === t };
+    }, cat);
+    check(`${url} Enter opens that category and focus follows it`, st.active && st.focused, JSON.stringify(st));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // (c) The library hubs dropped the search and the filter on Back: the box
+  // is autocomplete="off" and the pills are not form fields.
+  console.log('\nlibrary hubs keep the search and filter across Back and reload');
+  for (const [url, term] of [['/library/', 'heart'], ['/ko/library/', '하트']]) {
+    const { ctx, page, errors } = await open(url, 'mobile');
+    const visible = () => page.evaluate(() => [...document.querySelectorAll('.lib-entry')].filter((e) => e.offsetParent).length);
+    const all = await visible();
+    await page.fill('#libSearch', term);
+    await page.locator('.lib-pill').first().click();
+    await page.waitForTimeout(1500);
+    const n1 = await visible();
+    const pressed = () => page.evaluate(() => [...document.querySelectorAll('.lib-pill[aria-pressed="true"]')].map((b) => b.dataset.value).join());
+    const p1 = await pressed();
+    const e0 = (await dl(page)).filter((e) => /^library_/.test(e.event)).length;
+    await page.goto(new URL('/about/', page.url()).href);
+    await page.goBack();
+    await page.waitForTimeout(1200);
+    check(`${url} Back keeps the search, the filter and the results`,
+      (await page.inputValue('#libSearch')) === term && (await pressed()) === p1 && !!p1 && (await visible()) === n1 && n1 < all,
+      `${await page.inputValue('#libSearch')} / ${await pressed()} / ${await visible()} (was ${n1} of ${all})`);
+    await page.reload();
+    await page.waitForTimeout(1200);
+    check(`${url} reload keeps them too`, (await page.inputValue('#libSearch')) === term && (await visible()) === n1);
+    check(`${url} restoring sends no library_* row`, (await dl(page)).filter((e) => /^library_/.test(e.event)).length === 0, String(e0));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // (d) On an LTR page an Arabic-first name previewed with its words in the
+  // opposite order to the app it was pasted into (they take direction from
+  // the first strong character, as the RTL pages here already did).
+  console.log('\n/ (an Arabic-first name previews right-to-left)');
+  {
+    const { ctx, page, errors } = await open('/', 'narrow');
+    await page.fill('#mainInput', 'مرحبا Luna');
+    await page.waitForTimeout(500);
+    const bidi = await page.evaluate(() => {
+      const p = document.querySelector('#resultsGrid .style-preview');
+      const i = document.getElementById('mainInput');
+      return [getComputedStyle(p).unicodeBidi, getComputedStyle(i).unicodeBidi];
+    });
+    check('the preview and the input take their direction from the text', bidi[0] === 'plaintext' && bidi[1] === 'plaintext', JSON.stringify(bidi));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // (e) The zalgo box opens with a sample. Its first edit cleared the box
+  // inside beforeinput and let the browser insert the keystroke, which the
+  // browser had already planned against the old text: "zalgo" arrived as
+  // "algo" (always in WebKit; in Chromium once the sample was selected).
+  console.log('\n/usecase/zalgo-text/ (the first keystroke survives the sample)');
+  for (const [how, prep] of [['caret at the end', async (p) => { await p.keyboard.press('End'); }], ['sample selected', async (p) => { await p.keyboard.press('ControlOrMeta+a'); }]]) {
+    const { ctx, page, errors } = await open('/usecase/zalgo-text/', 'desktop');
+    await page.click('#mainInput');
+    await prep(page);
+    await page.keyboard.type('zalgo', { delay: 25 });
+    await page.waitForTimeout(400);
+    check(`zalgo: typing with the ${how} keeps every letter`, (await page.inputValue('#mainInput')) === 'zalgo', JSON.stringify(await page.inputValue('#mainInput')));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
   }
 
   // Reversible interactions are only tested once they have come back: every
