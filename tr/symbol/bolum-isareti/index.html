@@ -95,6 +95,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Formatting codes",
+      "url": "https://minecraft.wiki/w/Formatting_codes"
+    }
+  ],
   "headline": "Bölüm İşareti (§): Anlamı, Tarihi ve Nasıl Yazılır",
   "alternateName": [
     "bölüm sembolü",
@@ -250,6 +257,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>Roblox / PlayStation / Xbox kimliği</td><td>Hayır, yalnızca harf ve rakam</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MINECRAFT -->
+<section class="editorial-section" id="minecraft">
+  <span class="article-section-label">Minecraft</span>
+  <h2>Minecraft'ta Bölüm İşareti</h2>
+  <p>Minecraft'ta § bir biçimlendirme kodu başlatır: § işaretinden sonra gelen bir rakam ya da harf, ardından gelen metnin rengini veya stilini değiştirir; yani <code>§c</code> metni kırmızı yapar, <code>§l</code> kalın yapar, <code>§r</code> ise sıfırlar. Oyunun § işaretini kabul edip etmemesi sürüme ve yazdığın metin alanına bağlıdır.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Sürüm</th><th>§ nerede çalışır</th><th>Nerede çalışmaz</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Java Edition</td><td>Oyun dışındaki metinler: <code>server.properties</code> (sunucunun MOTD'si), <code>pack.mcmeta</code>, <code>splashes.txt</code> ve kaynak paketlerindeki dil dosyaları, dünya adları (bir NBT düzenleyiciyle <code>level.dat</code> içinde veya dünya klasörünün adında ayarlanır) ve veri paketlerindeki <code>/tellraw</code> ile <code>/title</code>; JSON metni burada işareti <code>\u00a7</code> olarak yazar</td><td>Sohbet: § yazmak, tek oyunculu modda bile oyundan atılmana yol açar, bu yüzden <code>/say</code> içine konamaz. Kitap ve kalem: § artık yazılamaz ya da yapıştırılamaz.</td></tr>
+        <tr><td>Bedrock Edition</td><td>Sohbet (<code>/msg</code> dahil), kitap ve kalem metni, ad ve yazar, boyasız tabelalar ve asma tabelalar, örs ve haritacılık masalarındaki eşya adları ve dünya adları</td><td>Realm adları ve oyuncu adları biçimlendirme kodlarını reddeder. Parti sohbetinde bir biçimlendirme kodu mesajın tamamını sansürler. Yeni menülerin çoğu kodu renklendirmek yerine düz metin olarak gösterir.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Biçimlendirme kodları, Minecraft'ın iki sisteminden eski olanıdır: Java Edition artık oyun içi metni JSON metin bileşenleriyle biçimlendiriyor; sohbette seni oyundan atan bir § işaretinin bir <code>/tellraw</code> komutunun içinde hâlâ çalışmasının nedeni budur. Bir kodu Bedrock'ta kitap veya tabelada denemek için § işaretini bu sayfanın en üstünden kopyala.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOURCES -->
+<section class="editorial-section">
+  <span class="article-section-label">Kaynaklar</span>
+  <div class="source-note">
+    <p>Sürüm tablosundaki Minecraft davranışı, Minecraft Wiki'nin <a href="https://minecraft.wiki/w/Formatting_codes" rel="nofollow noopener" target="_blank">Biçimlendirme kodları</a> maddesine dayanır (28 Ekim 2026'da okundu): Java sohbetinde oyundan atılma, § işaretinin kitaplardan kaldırılması, biçimlendirme kodlarını gösteren Bedrock alanları ve Realm adı, oyuncu adı ve parti sohbeti sınırları.</p>
   </div>
 </section>
 

@@ -95,6 +95,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Formatting codes",
+      "url": "https://minecraft.wiki/w/Formatting_codes"
+    }
+  ],
   "headline": "علامة القسم (§): المعنى والتاريخ وكيفية كتابتها",
   "alternateName": ["رمز القسم", "الإس المزدوجة", "Signum Sectionis"],
   "description": "علامة القسم § (U+00A7) بالتفصيل — أصلها القانوني في العصور الوسطى، واستخدامها للاستشهاد بالقوانين، وكيف تكتبها على ويندوز/ماك.",
@@ -227,6 +234,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>اسم المستخدم في روبلوكس / بلايستيشن / إكس بوكس</td><td>لا — أحرف وأرقام فقط</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MINECRAFT -->
+<section class="editorial-section" id="minecraft">
+  <span class="article-section-label">Minecraft</span>
+  <h2>علامة القسم في Minecraft</h2>
+  <p>في Minecraft تبدأ § رمز تنسيق: تغيّر § متبوعة برقم أو حرف لون النص الذي يليها أو نمطه، فيجعل <code>§c</code> النص أحمر، ويجعله <code>§l</code> غامقاً، ويعيد <code>§r</code> التنسيق إلى وضعه الأصلي. وقبول اللعبة للرمز § يعتمد على الإصدار وعلى حقل النص الذي تكتبه فيه.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>الإصدار</th><th>أين تعمل §</th><th>أين لا تعمل</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Java Edition</td><td>النصوص خارج اللعب: <code>server.properties</code> (رسالة اليوم MOTD للخادم)، و<code>pack.mcmeta</code>، و<code>splashes.txt</code> وملفات اللغة داخل حزم الموارد، وأسماء العوالم (تُضبط في <code>level.dat</code> بمحرر NBT أو في اسم مجلد العالم)، والأمران <code>/tellraw</code> و<code>/title</code> داخل حزم البيانات، حيث يكتبها نص JSON على الشكل <code>\u00a7</code></td><td>الدردشة: كتابة § تفصلك عن اللعبة حتى في اللعب الفردي، لذلك لا يمكن وضعها في <code>/say</code>. الكتاب والريشة: لم يعد بالإمكان كتابة § أو لصقها.</td></tr>
+        <tr><td>Bedrock Edition</td><td>الدردشة (بما فيها <code>/msg</code>)، ونص الكتاب والريشة، والاسم والمؤلف، واللافتات واللافتات المعلّقة غير المصبوغة، وأسماء العناصر في السندان وطاولة رسم الخرائط، وأسماء العوالم</td><td>أسماء Realm وأسماء اللاعبين ترفض رموز التنسيق. وفي دردشة المجموعة يؤدي رمز التنسيق إلى حجب الرسالة كاملة. وتعرض معظم القوائم الأحدث الرمز كنص عادي بدل تلوين النص.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>رموز التنسيق هي الأقدم بين نظامي Minecraft: فـ Java Edition تنسّق النص داخل اللعبة الآن عبر مكوّنات نص JSON، ولهذا تظل § التي تفصلك عن اللعبة في الدردشة تعمل داخل أمر <code>/tellraw</code>. ولتجربة رمز في كتاب أو لافتة في Bedrock، انسخ § من أعلى هذه الصفحة.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOURCES -->
+<section class="editorial-section">
+  <span class="article-section-label">المصادر</span>
+  <div class="source-note">
+    <p>يعتمد سلوك Minecraft في جدول الإصدارات على مقالة <a href="https://minecraft.wiki/w/Formatting_codes" rel="nofollow noopener" target="_blank">رموز التنسيق</a> في Minecraft Wiki (قُرئت في 28 أكتوبر 2026): الفصل عن اللعبة عند كتابة § في دردشة Java، وإزالة § من الكتب، وحقول Bedrock التي تعرض رموز التنسيق، وقيود أسماء Realm وأسماء اللاعبين ودردشة المجموعة.</p>
   </div>
 </section>
 

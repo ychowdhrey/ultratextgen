@@ -92,6 +92,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Formatting codes",
+      "url": "https://minecraft.wiki/w/Formatting_codes"
+    }
+  ],
   "headline": "Ký Hiệu Điều Khoản (§): Ý Nghĩa, Lịch Sử Và Cách Gõ",
   "description": "Ký hiệu điều khoản § (U+00A7) được giải thích — nguồn gốc pháp lý thời Trung Cổ, cách nó được dùng để trích dẫn luật, và cách gõ trên Windows/Mac.",
   "author": {
@@ -214,6 +221,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <button class="flag-emoji symbol-tile" data-symbol="&amp;" aria-label="Sao chép Ampersand">&amp;</button>
       <span class="flag-label">Ampersand</span>
     </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MINECRAFT -->
+<section class="editorial-section" id="minecraft">
+  <span class="article-section-label">Minecraft</span>
+  <h2>Ký hiệu điều khoản trong Minecraft</h2>
+  <p>Trong Minecraft, § mở đầu một mã định dạng: § kèm một chữ số hoặc một chữ cái sẽ đổi màu hoặc kiểu của đoạn văn bản đứng sau nó, nên <code>§c</code> làm chữ đỏ, <code>§l</code> làm chữ đậm và <code>§r</code> đặt lại định dạng. Game có chấp nhận § hay không tùy thuộc vào phiên bản và ô văn bản bạn nhập vào.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Phiên bản</th><th>Nơi § dùng được</th><th>Nơi không dùng được</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Java Edition</td><td>Văn bản ngoài lúc chơi: <code>server.properties</code> (MOTD của máy chủ), <code>pack.mcmeta</code>, <code>splashes.txt</code> và các tệp ngôn ngữ trong gói tài nguyên, tên thế giới (đặt trong <code>level.dat</code> bằng trình chỉnh sửa NBT hoặc trong tên thư mục của thế giới), và <code>/tellraw</code> hoặc <code>/title</code> trong gói dữ liệu, nơi văn bản JSON viết nó là <code>\u00a7</code></td><td>Chat: gõ § sẽ làm bạn bị ngắt kết nối, kể cả khi chơi một người, nên không thể đưa nó vào <code>/say</code>. Sách và bút lông: không còn gõ hay dán § được nữa.</td></tr>
+        <tr><td>Bedrock Edition</td><td>Chat (kể cả <code>/msg</code>), văn bản trong sách và bút lông, tên và tác giả, biển và biển treo chưa nhuộm, tên vật phẩm trên đe và bàn bản đồ, và tên thế giới</td><td>Tên Realm và tên người chơi từ chối mã định dạng. Trong chat nhóm, một mã định dạng khiến cả tin nhắn bị kiểm duyệt. Hầu hết các menu mới hơn hiển thị mã dưới dạng văn bản thường thay vì tô màu.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Mã định dạng là hệ thống cũ hơn trong hai hệ thống của Minecraft: Java Edition nay định dạng văn bản trong game bằng các thành phần văn bản JSON, đó là lý do một § làm bạn bị ngắt kết nối trong chat vẫn dùng được bên trong lệnh <code>/tellraw</code>. Để thử một mã trong sách hoặc biển của Bedrock, hãy sao chép § ở đầu trang này.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOURCES -->
+<section class="editorial-section">
+  <span class="article-section-label">Nguồn</span>
+  <div class="source-note">
+    <p>Hành vi của Minecraft trong bảng phiên bản dựa theo bài <a href="https://minecraft.wiki/w/Formatting_codes" rel="nofollow noopener" target="_blank">Mã định dạng</a> của Minecraft Wiki (đọc ngày 28 tháng 10 năm 2026): việc bị ngắt kết nối khi gõ § trong chat Java, việc § bị gỡ khỏi sách, các ô trong Bedrock hiển thị mã định dạng, và giới hạn với tên Realm, tên người chơi và chat nhóm.</p>
   </div>
 </section>
 

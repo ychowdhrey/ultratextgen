@@ -60,7 +60,7 @@
       "id": "motd-blocks",
       "label": "서버 목록 배너 블록",
       "h2": "서버 목록 배너 블록",
-      "intro": "MOTD 배너에 쓰는 채움과 음영 블록.",
+      "intro": "MOTD 배너에 쓰는 채움과 음영 블록. MOTD를 § 코드로 꾸미고 있나요? <a href=\"/ko/symbol/jeol-giho/#minecraft\">절 기호 페이지</a>에서 자바와 베드락 중 어디서 §를 쓸 수 있는지 확인할 수 있습니다.",
       "symbols": [
         {
           "char": "█",

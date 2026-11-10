@@ -92,6 +92,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Formatting codes",
+      "url": "https://minecraft.wiki/w/Formatting_codes"
+    }
+  ],
   "headline": "章節符號 §：複製貼上、法條引用與輸入方式 | UltraTextGen",
   "description": "點一下複製章節符號 §，附法條引用的正確寫法、Alt 代碼與 HTML 寫法。",
   "author": {
@@ -222,6 +229,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <button class="flag-emoji symbol-tile" data-symbol="*" aria-label="複製 星號註">*</button>
       <span class="flag-label">星號註</span>
     </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MINECRAFT -->
+<section class="editorial-section" id="minecraft">
+  <span class="article-section-label">Minecraft</span>
+  <h2>當個創世神中的章節符號</h2>
+  <p>在當個創世神中，§ 是格式代碼的開頭：§ 後面接一個數字或字母，就會改變其後文字的顏色或樣式，所以 <code>§c</code> 會讓文字變紅色，<code>§l</code> 變粗體，<code>§r</code> 則恢復原樣。遊戲是否接受 §，取決於版本，也取決於你輸入的文字欄位。</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>版本</th><th>§ 可以使用的地方</th><th>不能使用的地方</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Java Edition</td><td>遊戲進行以外的文字：<code>server.properties</code>（伺服器的 MOTD）、<code>pack.mcmeta</code>、<code>splashes.txt</code>、資源包裡的語言檔、世界名稱（用 NBT 編輯器在 <code>level.dat</code> 中設定，或直接用世界資料夾的名稱），以及資料包中的 <code>/tellraw</code> 或 <code>/title</code>（JSON 文字要寫成 <code>\u00a7</code>）</td><td>聊天：輸入 § 會讓你斷線，單人遊戲也一樣，所以 § 不能放進 <code>/say</code>。書與筆：§ 已經無法再輸入或貼上。</td></tr>
+        <tr><td>Bedrock Edition</td><td>聊天（包含 <code>/msg</code>）、書與筆的文字、書名與作者、沒有染色的告示牌與懸掛式告示牌、鐵砧與製圖台上的物品名稱，以及世界名稱</td><td>領域名稱與玩家名稱不接受格式代碼。在派對聊天中，只要有格式代碼，整則訊息就會被審查。較新的選單大多會把代碼當成一般文字顯示，不會上色。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>格式代碼是當個創世神兩套系統中較舊的一套：Java Edition 現在是用 JSON 文字元件來設定遊戲內文字的樣式，所以在聊天中會讓你斷線的 §，放進 <code>/tellraw</code> 指令裡仍然可以使用。想在 Bedrock 的書或告示牌上試試代碼，可以複製本頁最上方的 §。</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOURCES -->
+<section class="editorial-section">
+  <span class="article-section-label">資料來源</span>
+  <div class="source-note">
+    <p>版本表中的當個創世神行為，依據 Minecraft Wiki 的 <a href="https://minecraft.wiki/w/Formatting_codes" rel="nofollow noopener" target="_blank">格式化代碼</a> 條目（2026年10月28日查閱）：Java 聊天斷線、書中移除 §、Bedrock 會顯示格式代碼的欄位，以及領域名稱、玩家名稱與派對聊天的限制。</p>
   </div>
 </section>
 

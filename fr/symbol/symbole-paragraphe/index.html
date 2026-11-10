@@ -95,6 +95,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Formatting codes",
+      "url": "https://minecraft.wiki/w/Formatting_codes"
+    }
+  ],
   "headline": "Symbole paragraphe (§) : signe de section, histoire et saisie",
   "alternateName": [
     "symbole paragraphe",
@@ -240,6 +247,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>Nom d'utilisateur Roblox / PlayStation / Xbox</td><td>Non, caractères alphanumériques uniquement</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MINECRAFT -->
+<section class="editorial-section" id="minecraft">
+  <span class="article-section-label">Minecraft</span>
+  <h2>Le signe de section dans Minecraft</h2>
+  <p>Dans Minecraft, § démarre un code de formatage : § suivi d'un chiffre ou d'une lettre change la couleur ou le style du texte qui suit. Ainsi, <code>§c</code> colore le texte en rouge, <code>§l</code> le met en gras et <code>§r</code> le réinitialise. Que le jeu accepte ou non le §, cela dépend de l'édition et du champ de texte dans lequel tu le saisis.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Édition</th><th>Où § fonctionne</th><th>Où il ne fonctionne pas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Java Edition</td><td>Le texte hors du gameplay : <code>server.properties</code> (le MOTD du serveur), <code>pack.mcmeta</code>, <code>splashes.txt</code> et les fichiers de langue des packs de ressources, les noms de monde (définis dans <code>level.dat</code> avec un éditeur NBT ou dans le nom du dossier du monde), et <code>/tellraw</code> ou <code>/title</code> dans les packs de données, où le texte JSON l'écrit <code>\u00a7</code></td><td>Chat : taper § te déconnecte, même en solo, donc il ne peut pas aller dans <code>/say</code>. Livre et plume : § ne peut plus être tapé ni collé.</td></tr>
+        <tr><td>Bedrock Edition</td><td>Chat (y compris <code>/msg</code>), texte des livres et plumes, nom et auteur, pancartes et pancartes suspendues sans teinture, noms d'objets dans les enclumes et les tables de cartographie, et noms de monde</td><td>Les noms de Realm et les noms de joueur refusent les codes de formatage. Dans le chat de groupe, un code de formatage censure tout le message. La plupart des menus plus récents affichent le code en texte brut au lieu de le colorer.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Les codes de formatage sont le plus ancien des deux systèmes de Minecraft : la Java Edition met désormais en forme le texte en jeu avec des composants de texte JSON, ce qui explique qu'un § qui te déconnecte dans le chat fonctionne pourtant dans une commande <code>/tellraw</code>. Pour essayer un code dans un livre ou sur une pancarte Bedrock, copie le § en haut de cette page.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOURCES -->
+<section class="editorial-section">
+  <span class="article-section-label">Sources</span>
+  <div class="source-note">
+    <p>Le comportement de Minecraft dans le tableau des éditions suit l'article <a href="https://minecraft.wiki/w/Formatting_codes" rel="nofollow noopener" target="_blank">Codes de formatage</a> du Minecraft Wiki (consulté le 28 octobre 2026) : la déconnexion dans le chat Java, la suppression du § dans les livres, les champs Bedrock qui affichent les codes de formatage, et les limites sur les noms de Realm, les noms de joueur et le chat de groupe.</p>
   </div>
 </section>
 
