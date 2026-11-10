@@ -1,5 +1,7 @@
 # Editorial Footprint Risk — calibration and false-positive review (2026-08-26)
 
+> **Historical policy supersession (2026-11-09):** The publishing freeze referenced in this dated research was lifted site-wide by owner decision on 2026-08-29. These passages impose no current publishing or top-250 traffic freeze. Named owner holds, experiments and ordinary SEO safeguards remain independent.
+
 How every threshold in this system was derived, what the first version got
 wrong, and what a human reading the pages concluded about the scores.
 
