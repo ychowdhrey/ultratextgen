@@ -126,3 +126,24 @@ def check_page(rel, src, ranges, emoji):
     for ln, raw, dec, prov in iter_tiles(src):
         for d in classify(raw, dec, prov, ranges, emoji):
             yield d, ln, dec
+
+
+GATED = {"unassigned-copy", "odd-regional-indicator", "bad-keycap", "stray-joiner", "zwj-not-emoji", "nfc-fragile-literal"}
+
+
+def new_defects(base_src, head_src, ranges, emoji, gated=GATED):
+    """Defects a page has in head_src beyond those it already had in base_src ('' for a new page).
+
+    Counted per (defect, decoded tile), so moving or duplicating an existing defective tile is not new, and
+    adding a second copy of one is. Returns [(defect, line, decoded_tile)] for the head occurrences in excess."""
+    import collections
+    have = collections.Counter((d, t) for d, _l, t in check_page("", base_src, ranges, emoji) if d in gated)
+    out = []
+    for d, ln, t in check_page("", head_src, ranges, emoji):
+        if d not in gated:
+            continue
+        if have[(d, t)] > 0:
+            have[(d, t)] -= 1
+        else:
+            out.append((d, ln, t))
+    return out

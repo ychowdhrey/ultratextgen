@@ -190,6 +190,7 @@ Required, blocking checks:
 - `check:symbol-collection-link`
 - `check:symbol-pages`
 - `check:text-object-grids`
+- `check:tile-unicode`
 - `check:tool-duplication`
 - `check:translation-parity`
 - `check:updates-verification`
@@ -244,6 +245,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:stencil`
 - `test:symbol-pages`
 - `test:text-object-grids`
+- `test:tile-unicode`
 - `test:unicode-reference-sets`
 - `test:word-puzzles`
 - `test:word-search`

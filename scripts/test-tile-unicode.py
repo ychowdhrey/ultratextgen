@@ -74,5 +74,52 @@ class T(unittest.TestCase):
             self.assertEqual(subprocess.run([sys.executable, audit, "--root", d, "--fail-on", "hardening"], capture_output=True).returncode, 0)
 
 
+class Delta(unittest.TestCase):
+    def tile(self, v):
+        return '<button class="symbol-tile" data-symbol="%s">x</button>\n' % v
+
+    def test_delta_counts_only_additions(self):
+        bad = self.tile("&#x1D549;")
+        self.assertEqual(tu.new_defects(bad, bad, RANGES, EMOJI), [])  # live on base: not new
+        self.assertEqual(len(tu.new_defects(bad, bad + bad, RANGES, EMOJI)), 1)  # a second copy is new
+        self.assertEqual(len(tu.new_defects("", bad, RANGES, EMOJI)), 1)  # a new page
+        self.assertEqual(tu.new_defects(bad, self.tile("&#x2115;"), RANGES, EMOJI), [])  # the repair
+        self.assertEqual(tu.new_defects("", self.tile("&#x2126;") + self.tile("\U0001F600"), RANGES, EMOJI), [])  # negative control
+
+    def test_cli_exit_codes_in_a_real_repo(self):
+        gate = os.path.join(HERE, "check-tile-unicode.py")
+        with tempfile.TemporaryDirectory() as d:
+            def git(*a):
+                subprocess.run(["git", *a], cwd=d, check=True, capture_output=True)
+
+            def run(base="main"):
+                return subprocess.run([sys.executable, gate, "--root", d, "--base", base], capture_output=True, text=True)
+
+            def write(body):
+                with open(os.path.join(d, "usecase", "x", "index.html"), "w", encoding="utf-8") as f:
+                    f.write(body)
+            git("init", "-q"); git("config", "user.email", "t@t"); git("config", "user.name", "t")
+            os.makedirs(os.path.join(d, "usecase", "x"))
+            write(self.tile("A") + self.tile("&#x1D549;"))  # the base already carries one defect
+            git("add", "-A"); git("commit", "-qm", "base"); git("branch", "-M", "main"); git("checkout", "-qb", "feat")
+            write(self.tile("A") + self.tile("&#x1D549;") + self.tile("B"))  # unrelated edit, live defect untouched
+            git("commit", "-qam", "edit")
+            self.assertEqual(run().returncode, 0)  # delta: a pre-existing defect does not fail the PR
+            write(self.tile("A") + self.tile("&#x1D549;") + self.tile("&#x1D549;"))  # a second one
+            git("commit", "-qam", "worse")
+            r = run()
+            self.assertEqual(r.returncode, 1, r.stdout)
+            self.assertIn("unassigned-copy", r.stdout)
+            write(self.tile("A") + self.tile("&#x2115;"))  # repaired
+            git("commit", "-qam", "fix")
+            self.assertEqual(run().returncode, 0)
+            self.assertEqual(run("no-such-ref").returncode, 2)  # UNKNOWN, never 0
+
+    def test_gate_script_runs_on_this_repo(self):
+        gate = os.path.join(HERE, "check-tile-unicode.py")
+        r = subprocess.run([sys.executable, gate, "--base", "HEAD"], capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)  # nothing changed vs HEAD: clean, not UNKNOWN
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)
