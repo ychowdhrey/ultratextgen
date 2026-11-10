@@ -77,6 +77,14 @@ on:
   pull_request:
   workflow_dispatch:
 
+# A newer push to the same pull request supersedes the older run (2026-11-10, Actions audit).  Each run is ~10 minutes of one
+# runner, about 60% of it real-browser checks; a run on a commit that has already been replaced reports on code nobody will merge.
+# Only the run for the PR's latest commit decides the required check, so cancelling the stale one removes no coverage.  Manual
+# runs get their own group per run and are never cancelled.
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('validate-site-{0}', github.ref) || format('validate-site-{0}', github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   validate:
     # Pinned, not ubuntu-latest: on 2026-11-07 ubuntu-latest became ubuntu-26.04, where the

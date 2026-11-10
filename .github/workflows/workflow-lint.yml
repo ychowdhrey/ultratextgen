@@ -37,6 +37,15 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v5
+        with:
+          # The lint reads only .github/workflows/ (scripts/check-workflows.py WORKFLOWS) and imports nothing from the repo, so
+          # the job checks out just those paths: 28 s of a 32 s job was materialising the full tree (2026-11-10 audit).  If the
+          # script ever reads another path, add it here; a missing path makes the lint fail loudly, never pass.
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/
+            /scripts/check-workflows.py
 
       - name: Setup Python
         uses: actions/setup-python@v6
