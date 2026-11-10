@@ -335,15 +335,23 @@
     /* Shuffle BEFORE the length sort, so words of equal length enter in seed
        order. Without this, a list whose words are mostly the same length lays
        itself down in the order it was typed no matter what the seed says. */
-    const order = shuffle(words.slice(), next).sort((a, b) => b.letters.length - a.letters.length);
+    const sorted = shuffle(words.slice(), next).sort((a, b) => b.letters.length - a.letters.length);
 
-    // The longest word goes down the middle, horizontally. Everything else
-    // hangs off it, which is why it is the longest: it offers the most letters
-    // to cross.
-    const first = order[0];
-    if (first.letters.length > CW_MAX) {
+    /* A word longer than the grid cap can never be placed. Set it aside and
+       report it unplaced, and build the puzzle from the rest: refusing the
+       whole list because one answer is too long ("Declaration of
+       Independence" is 25 letters) left the teacher with no puzzle and a
+       message about shared letters, which was the wrong problem. */
+    const tooLong = sorted.filter((w) => w.letters.length > CW_MAX);
+    const order = sorted.filter((w) => w.letters.length <= CW_MAX);
+    if (!order.length) {
       return Object.assign({}, empty, { unplaced: words.slice(), words: words.slice() });
     }
+
+    // The longest word that fits goes down the middle, horizontally.
+    // Everything else hangs off it, which is why it is the longest: it offers
+    // the most letters to cross.
+    const first = order[0];
     const mid = Math.floor(WORK / 2);
     const startC = mid - Math.floor(first.letters.length / 2);
     write(grid, first.letters, mid, startC, ACROSS);
@@ -352,7 +360,7 @@
       minR: mid, maxR: mid,
       minC: startC, maxC: startC + first.letters.length - 1
     };
-    const unplaced = [];
+    const unplaced = tooLong.slice();
 
     for (let w = 1; w < order.length; w++) {
       const word = order[w];
