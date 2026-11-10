@@ -1041,6 +1041,39 @@ here so they aren't lost. Update as they're closed or new ones appear.
     first-parent merge commits (73 since 2026-10-24) with per-PR files from
     `git diff <merge>^1 <merge>`, fed to `weekly_pr_digest.py` on stdin. The
     window overlaps the 10-24 review by a few days.
+29. **Review of 2026-11-07 (PRs #1161-#1175, 13 merged since 10-31): no new
+    lane; the Events row is stale, and every unclassified path is an already
+    tracked classifier gap.**
+    - **Events is now a product segment, not "generator exists, no governing
+      doc"** (#1164). The lane row still describes the PR #457 state. It now
+      has a capability config (`data/event_capabilities.json`), a governing doc
+      (`docs/events-capability-matrix.md`), a validator
+      (`scripts/check-event-capabilities.js`, in the generated gate inventory),
+      a static pre-render (`scripts/lib/event-prerender.js`), and the helpers
+      `refresh-event-pages.py`, `sync_events_hub.py` and
+      `verify-event-pages.js` beside `generate_event_page_from_spec.py`. The
+      row's governing-doc and validator cells should be updated by a human; not
+      edited in place here per this review's small, additive mandate.
+    - **Redirect twins** (#1174): `check-redirects.js` and
+      `scripts/lib/redirects-parse.js` now gate `_redirects`; the rule
+      `.claude/rules/discovery-and-routing.md` was updated with it. Placed in
+      the Routing lane; no map change beyond this note.
+    - **Printables translation key parity** (#1169): an i18n gate for
+      `js/printables/`, already in the generated inventory as
+      `check:printables-i18n-parity`. Placed.
+    - **Placed, no map change:** the Printables number-tracing, word-list and
+      word-search work (#1163, #1165, #1168, #1171), ASCII tool-first banner
+      (#1161), share-surface fixes (#1172, #1173), and the gate-inventory
+      one-line-per-gate change (#1175, generator
+      `npm run build:gate-inventory`).
+    - **Open classifier gaps, unchanged:** 6 of 13 PRs carry an unclassified
+      path, and each is already named: `llms.txt` (gap #24), `.claude/` rules
+      and skills plus `reportcard.md` (gap #25) and root `*.test.js` such as
+      `header.test.js` (gap #26). The `LANE_RULES` additions those gaps name
+      would clear the signal. Still unmade, per this mandate.
+    Input note: `gh` is not installed; the PR set came from the GitHub MCP
+    closed-PR list (13 merged since 2026-10-31) with per-PR files from
+    `git diff <merge>^1 <merge>`, fed to `weekly_pr_digest.py` on stdin.
 
 ---
 
