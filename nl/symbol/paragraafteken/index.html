@@ -95,6 +95,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Formatting codes",
+      "url": "https://minecraft.wiki/w/Formatting_codes"
+    }
+  ],
   "headline": "Paragraafteken (§) kopiëren — betekenis, herkomst & zo typ je het",
   "alternateName": [
     "Paragraafteken",
@@ -270,6 +277,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>Roblox- / PlayStation- / Xbox-gebruikersnaam</td><td>Nee, alleen alfanumeriek</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MINECRAFT -->
+<section class="editorial-section" id="minecraft">
+  <span class="article-section-label">Minecraft</span>
+  <h2>Het paragraafteken in Minecraft</h2>
+  <p>In Minecraft start § een opmaakcode: § gevolgd door een cijfer of een letter verandert de kleur of de stijl van de tekst erna. Zo maakt <code>§c</code> tekst rood, maakt <code>§l</code> hem vet en zet <code>§r</code> hem terug. Of het spel het § accepteert, hangt af van de editie en van het tekstveld waarin je het typt.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Editie</th><th>Waar § werkt</th><th>Waar het niet werkt</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Java Edition</td><td>Tekst buiten het spel zelf: <code>server.properties</code> (de MOTD van de server), <code>pack.mcmeta</code>, <code>splashes.txt</code> en taalbestanden in resourcepacks, wereldnamen (ingesteld in <code>level.dat</code> met een NBT-editor of in de naam van de wereldmap) en <code>/tellraw</code> of <code>/title</code> in datapacks, waar JSON-tekst het schrijft als <code>\u00a7</code></td><td>Chat: als je § typt, word je van de server losgekoppeld, ook in singleplayer, dus het kan niet in <code>/say</code>. Boek en veer: § kan niet meer worden getypt of geplakt.</td></tr>
+        <tr><td>Bedrock Edition</td><td>Chat (inclusief <code>/msg</code>), tekst in boek en veer, naam en auteur, borden en hangende borden zonder verf, itemnamen in aambeelden en kaarttafels, en wereldnamen</td><td>Realm-namen en spelernamen weigeren opmaakcodes. In de partychat wordt het hele bericht gecensureerd zodra het een opmaakcode bevat. In de meeste nieuwere menu's wordt de code als gewone tekst getoond in plaats van gekleurd.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Opmaakcodes zijn de oudste van de twee systemen van Minecraft: de Java Edition maakt tekst in het spel nu op met JSON-tekstcomponenten. Daarom werkt een § die je in de chat loskoppelt toch binnen een <code>/tellraw</code>-commando. Wil je een code uitproberen in een Bedrock-boek of op een bord, kopieer dan het § bovenaan deze pagina.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOURCES -->
+<section class="editorial-section">
+  <span class="article-section-label">Bronnen</span>
+  <div class="source-note">
+    <p>Het gedrag van Minecraft in de editietabel volgt het artikel <a href="https://minecraft.wiki/w/Formatting_codes" rel="nofollow noopener" target="_blank">Formatting codes</a> van de Minecraft Wiki (gelezen op 28 oktober 2026): het loskoppelen in de Java-chat, het verwijderen van § uit boeken, de Bedrock-velden die opmaakcodes tonen, en de beperkingen voor Realm-namen, spelernamen en partychat.</p>
   </div>
 </section>
 

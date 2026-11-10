@@ -39,7 +39,7 @@
       "id": "motd-blocks",
       "label": "Blok MOTD",
       "h2": "Blok Shading Server List & MOTD",
-      "intro": "Elemen blok solid dan shading buat banner MOTD, progress bar, dan pembatas gaya pixel.",
+      "intro": "Elemen blok solid dan shading buat banner MOTD, progress bar, dan pembatas gaya pixel. Mau mewarnai MOTD pakai kode §? <a href=\"/id/symbol/simbol-section/#minecraft\">Halaman simbol section</a> menunjukkan di mana § bisa dipakai di Java dan Bedrock.",
       "symbols": [
         { "char": "█", "label": "Blok Penuh" },
         { "char": "▓", "label": "Shading Gelap" },

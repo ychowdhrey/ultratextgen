@@ -82,7 +82,7 @@
       "id": "motd-blocks",
       "label": "Bloques MOTD",
       "h2": "Bloques de sombreado para la lista de servidores y el MOTD",
-      "intro": "Bloques sólidos y sombreados para banners de MOTD, barras de progreso y separadores estilo pixel.",
+      "intro": "Bloques sólidos y sombreados para banners de MOTD, barras de progreso y separadores estilo pixel. ¿Vas a colorear un MOTD con códigos §? La <a href=\"/es/symbol/signo-de-seccion/#minecraft\">página del signo de sección</a> muestra dónde funciona § en Java y en Bedrock.",
       "symbols": [
         {
           "char": "█",

@@ -94,6 +94,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Formatting codes",
+      "url": "https://minecraft.wiki/w/Formatting_codes"
+    }
+  ],
   "headline": "절 기호 (§): 의미, 역사 & 입력 방법",
   "description": "절 기호 § (U+00A7) 설명 — 중세 법률에서 온 유래, 법률을 인용하는 방법, Windows/Mac에서 입력하는 방법까지.",
   "author": {
@@ -265,6 +272,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>Roblox / PlayStation / Xbox 사용자 이름</td><td>불가 — 영숫자만 허용</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MINECRAFT -->
+<section class="editorial-section" id="minecraft">
+  <span class="article-section-label">Minecraft</span>
+  <h2>마인크래프트의 절 기호</h2>
+  <p>마인크래프트에서 §는 서식 코드의 시작을 뜻합니다. § 뒤에 숫자나 글자를 붙이면 그 뒤에 오는 글자의 색이나 스타일이 바뀌어서, <code>§c</code>는 글자를 빨간색으로, <code>§l</code>은 굵게, <code>§r</code>은 원래대로 되돌립니다. 게임이 §를 받아 주는지는 에디션과, 입력하는 텍스트 칸에 따라 다릅니다.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>에디션</th><th>§를 쓸 수 있는 곳</th><th>쓸 수 없는 곳</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>자바 에디션 (Java Edition)</td><td>게임 플레이 밖의 텍스트: <code>server.properties</code>(서버의 MOTD), <code>pack.mcmeta</code>, <code>splashes.txt</code>, 리소스 팩의 언어 파일, 월드 이름(NBT 편집기로 <code>level.dat</code>에서 설정하거나 월드 폴더 이름으로 지정), 그리고 데이터 팩의 <code>/tellraw</code>나 <code>/title</code>(JSON 텍스트에서는 <code>\u00a7</code>로 씁니다)</td><td>채팅: §를 입력하면 싱글 플레이에서도 접속이 끊기므로 <code>/say</code>에는 넣을 수 없습니다. 책과 깃펜: §를 더 이상 입력하거나 붙여넣을 수 없습니다.</td></tr>
+        <tr><td>베드락 에디션 (Bedrock Edition)</td><td>채팅(<code>/msg</code> 포함), 책과 깃펜 텍스트, 이름과 저자, 염료를 쓰지 않은 표지판과 매다는 표지판, 모루와 지도 제작대의 아이템 이름, 월드 이름</td><td>렐름 이름과 플레이어 이름은 서식 코드를 거부합니다. 파티 채팅에서는 서식 코드가 있으면 메시지 전체가 검열됩니다. 새로 나온 메뉴 대부분은 코드를 색으로 바꾸지 않고 글자 그대로 보여 줍니다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>서식 코드는 마인크래프트의 두 가지 방식 중 오래된 쪽입니다. 자바 에디션은 이제 게임 안 텍스트를 JSON 텍스트 컴포넌트로 꾸밉니다. 채팅에서는 접속을 끊는 §가 <code>/tellraw</code> 명령어 안에서는 그대로 동작하는 이유가 이것입니다. 베드락의 책이나 표지판에서 코드를 시험해 보려면 이 페이지 맨 위의 §를 복사하세요.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOURCES -->
+<section class="editorial-section">
+  <span class="article-section-label">출처</span>
+  <div class="source-note">
+    <p>에디션 표의 마인크래프트 동작은 Minecraft Wiki의 <a href="https://minecraft.wiki/w/Formatting_codes" rel="nofollow noopener" target="_blank">Formatting codes</a> 문서(2026년 10월 28일 확인)를 따릅니다. 자바 채팅의 접속 끊김, 책에서 §가 제거된 것, 서식 코드를 표시하는 베드락 입력 칸, 렐름 이름·플레이어 이름·파티 채팅의 제한이 해당됩니다.</p>
   </div>
 </section>
 

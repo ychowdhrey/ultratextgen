@@ -95,6 +95,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Formatting codes",
+      "url": "https://minecraft.wiki/w/Formatting_codes"
+    }
+  ],
   "headline": "セクション記号（§）：意味・由来・入力方法とコピペ",
   "alternateName": [
     "節記号",
@@ -237,6 +244,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>Roblox・PSN・XboxのID</td><td>いいえ — 英数字のみ</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MINECRAFT -->
+<section class="editorial-section" id="minecraft">
+  <span class="article-section-label">Minecraft</span>
+  <h2>マインクラフトのセクション記号</h2>
+  <p>マインクラフトでは、§ は装飾コードの始まりを表します。§ の後ろに数字か英字を続けると、その後のテキストの色やスタイルが変わり、<code>§c</code> は赤、<code>§l</code> は太字、<code>§r</code> は装飾のリセットになります。ゲームが § を受け付けるかどうかは、エディションと、入力するテキスト欄によって決まります。</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>エディション</th><th>§ が使える場所</th><th>§ が使えない場所</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Java Edition</td><td>ゲームプレイ外のテキスト: <code>server.properties</code>(サーバーのMOTD)、<code>pack.mcmeta</code>、<code>splashes.txt</code>、リソースパック内の言語ファイル、ワールド名(NBTエディタで <code>level.dat</code> に設定するか、ワールドフォルダの名前で指定)、そしてデータパックの <code>/tellraw</code> や <code>/title</code>(JSONテキストでは <code>\u00a7</code> と書きます)</td><td>チャット: § を入力すると、シングルプレイでも接続が切断されるため、<code>/say</code> には入れられません。本と羽根ペン: § は入力も貼り付けもできなくなりました。</td></tr>
+        <tr><td>Bedrock Edition</td><td>チャット(<code>/msg</code> を含む)、本と羽根ペンのテキスト、タイトルと著者名、染料を使っていない看板と吊り下げ看板、金床と製図台でのアイテム名、ワールド名</td><td>レルム名とプレイヤー名は装飾コードを受け付けません。パーティーチャットでは、装飾コードがあるとメッセージ全体が検閲されます。新しいメニューの多くは、コードを色付けせずにそのまま文字として表示します。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>装飾コードは、マインクラフトの2つの仕組みのうち古いほうです。Java Edition は現在、ゲーム内テキストをJSONテキストコンポーネントで装飾しています。チャットで接続が切断される § が <code>/tellraw</code> コマンドの中では使えるのはそのためです。Bedrockの本や看板でコードを試すには、このページの上部にある § をコピーしてください。</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOURCES -->
+<section class="editorial-section">
+  <span class="article-section-label">出典</span>
+  <div class="source-note">
+    <p>エディション表のマインクラフトの挙動は、Minecraft Wikiの記事 <a href="https://minecraft.wiki/w/Formatting_codes" rel="nofollow noopener" target="_blank">Formatting codes</a>(2026年10月28日閲覧)に基づいています。Javaのチャット切断、本からの § の削除、装飾コードを表示するBedrockの入力欄、レルム名・プレイヤー名・パーティーチャットの制限が該当します。</p>
   </div>
 </section>
 
