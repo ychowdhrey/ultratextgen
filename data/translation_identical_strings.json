@@ -49,6 +49,24 @@
         "reason": "Apple product names, cited in Latin script inside otherwise Arabic prose",
         "found_on": "ar/updates/uae-dirham-symbol-unicode-18/",
         "added": "2026-09-01"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "ar/symbol/ramz-alqism/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "ar/symbol/ramz-alqism/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "ar/symbol/ramz-alqism/",
+        "added": "2026-11-10"
       }
     ],
     "bs": [
@@ -1527,6 +1545,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "de/library/islamische-symbole/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "de/symbol/paragraphenzeichen/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "de/symbol/paragraphenzeichen/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "de/symbol/paragraphenzeichen/",
+        "added": "2026-11-10"
       }
     ],
     "es": [
@@ -3479,6 +3515,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "es/library/simbolos-islamicos/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "es/symbol/signo-de-seccion/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "es/symbol/signo-de-seccion/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "es/symbol/signo-de-seccion/",
+        "added": "2026-11-10"
       }
     ],
     "fi": [
@@ -4473,6 +4527,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "fr/library/symboles-islamiques/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "fr/symbol/symbole-paragraphe/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "fr/symbol/symbole-paragraphe/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "fr/symbol/symbole-paragraphe/",
+        "added": "2026-11-10"
       }
     ],
     "hi": [
@@ -5621,6 +5693,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "id/library/simbol-islami/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "id/symbol/simbol-section/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "id/symbol/simbol-section/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "id/symbol/simbol-section/",
+        "added": "2026-11-10"
       }
     ],
     "it": [
@@ -6361,6 +6451,24 @@
         "reason": "\"bubble\" is the Italian name of this lettering style; de/en/fr/pt/tl keep the same mood tab",
         "found_on": "it/usecase/font-per-bio/",
         "added": "2026-08-30"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "it/symbol/simbolo-di-sezione/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "it/symbol/simbolo-di-sezione/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "it/symbol/simbolo-di-sezione/",
+        "added": "2026-11-10"
       }
     ],
     "ja": [
@@ -6453,6 +6561,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "ja/library/islamic-symbols/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "ja/symbol/sekushon-kigou/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "ja/symbol/sekushon-kigou/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "ja/symbol/sekushon-kigou/",
+        "added": "2026-11-10"
       }
     ],
     "ko": [
@@ -6569,6 +6695,12 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "ko/library/islam-gihou/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "ko/symbol/jeol-giho/",
+        "added": "2026-11-10"
       }
     ],
     "ms": [
@@ -7275,6 +7407,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "nl/library/islamitische-symbolen/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "nl/symbol/paragraafteken/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "nl/symbol/paragraafteken/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "nl/symbol/paragraafteken/",
+        "added": "2026-11-10"
       }
     ],
     "no": [
@@ -7945,6 +8095,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "pl/library/symbole-islamskie/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "pl/symbol/znak-paragrafu/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "pl/symbol/znak-paragrafu/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "pl/symbol/znak-paragrafu/",
+        "added": "2026-11-10"
       }
     ],
     "pt": [
@@ -8571,6 +8739,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "pt/library/simbolos-islamicos/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "pt/symbol/simbolo-de-secao/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "pt/symbol/simbolo-de-secao/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "pt/symbol/simbolo-de-secao/",
+        "added": "2026-11-10"
       }
     ],
     "ro": [
@@ -8737,6 +8923,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "ru/library/islamskie-simvoly/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "ru/symbol/znak-paragrafa/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "ru/symbol/znak-paragrafa/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "ru/symbol/znak-paragrafa/",
+        "added": "2026-11-10"
       }
     ],
     "sk": [
@@ -9471,6 +9675,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "th/library/islamic-symbols/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "th/symbol/khreuangmai-matra/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "th/symbol/khreuangmai-matra/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "th/symbol/khreuangmai-matra/",
+        "added": "2026-11-10"
       }
     ],
     "tl": [
@@ -10273,6 +10495,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "tr/library/islami-semboller/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "tr/symbol/bolum-isareti/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "tr/symbol/bolum-isareti/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "tr/symbol/bolum-isareti/",
+        "added": "2026-11-10"
       }
     ],
     "vi": [
@@ -10755,6 +10995,24 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "vi/library/ky-hieu-hoi-giao/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "vi/symbol/section-sign/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "vi/symbol/section-sign/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "vi/symbol/section-sign/",
+        "added": "2026-11-10"
       }
     ],
     "zh-tw": [
@@ -10799,6 +11057,24 @@
         "reason": "this string is the copy payload (data-symbol), not a label: the whole point of the combo is to paste the set greeting, which is a fixed Arabic transliteration. This page's visible labels ARE translated (the same tile reads 齋月祝福語組合), so the Latin survives only where it is the thing being copied. Unlike ja/ko/th/ru/vi/tr, the zh-tw label does not quote the Latin phrase at all.",
         "found_on": "zh-tw/library/yisilan-fuhao/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Bedrock Edition",
+        "reason": "official edition name of Minecraft: Bedrock Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "zh-tw/symbol/section-sign/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Java Edition",
+        "reason": "official edition name of Minecraft: Java Edition, shown unchanged on the game's own launcher and site; readers match the table row to the edition they own by this exact name, and the surrounding prose is translated",
+        "found_on": "zh-tw/symbol/section-sign/",
+        "added": "2026-11-10"
+      },
+      {
+        "string": "Minecraft",
+        "reason": "the game's name; every locale renders it in Latin script as the section label, and the surrounding prose is translated",
+        "found_on": "zh-tw/symbol/section-sign/",
+        "added": "2026-11-10"
       }
     ]
   }
