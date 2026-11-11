@@ -115,6 +115,14 @@ check('an HTML document is not a stub',
 check('prose mentioning site-verification is not a stub',
   isVerificationStub('<p>Add a google-site-verification: token to your root.</p>'), false);
 check('empty file is not a stub', isVerificationStub(''), false);
+check('Petal Search bare hex token is a stub',
+  isVerificationStub('ff044916b7'), true);
+check('bare token with trailing newline is a stub',
+  isVerificationStub('ff044916b7\n'), true);
+check('a short word is not a bare-token stub',
+  isVerificationStub('deadbee'), false);
+check('hex token plus markup is not a stub',
+  isVerificationStub('ff044916b7<p>hi</p>'), false);
 
 /* ---- the shipped Naver file itself, end to end ---------------------------- */
 {
