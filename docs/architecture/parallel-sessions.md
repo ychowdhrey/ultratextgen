@@ -110,6 +110,19 @@ clone) and it says so rather than reporting a reassuring zero.
 `npm run check:stranded-work` is the batch equivalent, with
 `data/stranded_work_exclusions.json` for branches knowingly left untracked.
 
+**No merge-base has two meanings (2026-11-11).** On a shallow clone it is the graft
+hiding the ancestor: UNMEASURABLE, and the check fails closed. On a full clone it means
+the branch shares no history with main: measured on 2026-11-11, 381 branches share a root
+commit main does not have, none newer than 2026-07-10, because main's history was
+rewritten then. Those are reported as UNRELATED with their age and fail the run only
+when recent. Before that split they failed every scheduled run (2026-11-01..11) while
+the summary said "this is a shallow checkout", which the CI checkout is not.
+`--json` writes one recovery record per non-clean branch, including
+`superseded-candidate` when every commit already has an equivalent patch on main
+(`git cherry`). The records are advice: nothing merges, deletes or rebases a branch.
+Tests: `scripts/test-check-stranded-work.py` (fixture repositories; a shallow clone,
+a recently stranded branch and a recent unrelated branch must each fail).
+
 ## Shallow clones defeat history questions
 
 Sessions here work a shallow clone, so `git log -S` bottoms out at the graft and

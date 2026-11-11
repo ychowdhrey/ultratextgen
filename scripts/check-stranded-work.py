@@ -53,8 +53,10 @@ import pathlib
 import subprocess
 import sys
 
-REPO = pathlib.Path(__file__).resolve().parent.parent
-LEDGER = REPO / 'data' / 'stranded_work_exclusions.json'
+import os
+
+REPO = pathlib.Path(os.environ.get('STRANDED_WORK_REPO') or pathlib.Path(__file__).resolve().parent.parent)
+LEDGER = REPO / 'data' / 'stranded_work_exclusions.json'  # read relative to the measured repo
 MAIN = 'origin/main'
 
 
@@ -73,36 +75,71 @@ def branches():
         yield name
 
 
-def classify(branch, tracked_refs):
-    """MERGED / TRACKED / STRANDED / UNMEASURABLE for one branch."""
+def is_shallow():
+    return git('rev-parse', '--is-shallow-repository') == 'true'
+
+
+def classify(branch, tracked_refs, shallow=None):
+    """MERGED / TRACKED / STRANDED / UNRELATED / UNMEASURABLE for one branch.
+
+    No merge-base means two different things depending on the clone, and the
+    difference decides whether the run may pass:
+
+    * shallow clone: the graft hides the common ancestor. UNMEASURABLE, and it
+      fails closed -- this clone cannot answer the question.
+    * full clone: the branch and main genuinely share no history. Measured
+      2026-11-11 on a full clone: all 381 such branches share one root commit
+      that main does not have, and none carries a commit newer than
+      2026-07-10 -- main's history was rewritten then. UNRELATED is reported
+      with its age; it fails the run only when it is recent, exactly like
+      STRANDED. Before this split the 381 failed every scheduled run (and
+      were described as "a shallow checkout", which the CI checkout is not).
+    """
     tip = git('rev-parse', branch)
     if not tip:
         return None
-
-    # An unresolvable merge-base means this clone cannot answer the question.
-    # Saying "clean" here is how the whole class stays invisible.
-    if not git('merge-base', MAIN, branch):
-        return {'state': 'UNMEASURABLE', 'branch': branch, 'tip': tip[:9],
-                'commits': 0, 'age': None}
-
-    on_main = subprocess.run(
-        ['git', 'merge-base', '--is-ancestor', tip, MAIN], cwd=REPO
-    ).returncode == 0
-    if on_main:
-        return {'state': 'MERGED', 'branch': branch, 'tip': tip[:9],
-                'commits': 0, 'age': None}
-
-    n = int(git('rev-list', '--count', f'{MAIN}..{branch}') or 0)
+    if shallow is None:
+        shallow = is_shallow()
     iso = git('log', '-1', '--format=%cI', branch)
     age = None
     if iso:
         when = dt.datetime.fromisoformat(iso)
         age = (dt.datetime.now(dt.timezone.utc) - when).days
 
+    if not git('merge-base', MAIN, branch):
+        return {'state': 'UNMEASURABLE' if shallow else 'UNRELATED', 'branch': branch,
+                'tip': tip[:9], 'commits': 0, 'age': age, 'equivalent': None}
+
+    on_main = subprocess.run(
+        ['git', 'merge-base', '--is-ancestor', tip, MAIN], cwd=REPO
+    ).returncode == 0
+    if on_main:
+        return {'state': 'MERGED', 'branch': branch, 'tip': tip[:9],
+                'commits': 0, 'age': age, 'equivalent': None}
+
+    n = int(git('rev-list', '--count', '--no-merges', f'{MAIN}..{branch}') or 0)
+    # `git cherry` marks a commit '-' when an equivalent patch is already on
+    # main (cherry-picked or re-landed by another PR). All '-' means the work
+    # reached main another way: a superseded candidate, not lost work.
+    cherry = git('cherry', MAIN, branch).splitlines()
+    equivalent = sum(1 for c in cherry if c.startswith('-'))
+
     short = branch.split('/', 1)[1] if '/' in branch else branch
     state = 'TRACKED' if short in tracked_refs else 'STRANDED'
     return {'state': state, 'branch': branch, 'tip': tip[:9],
-            'commits': n, 'age': age}
+            'commits': n, 'age': age, 'equivalent': equivalent,
+            'unique': max(len(cherry) - equivalent, 0)}
+
+
+def recovery_action(r, excl):
+    """The recommended action for one stranded branch. Advisory: nothing here
+    merges, deletes, rebases or force-pushes anyone's branch."""
+    if r['branch'] in excl:
+        return 'excluded', excl[r['branch']].get('reason', 'no reason given')
+    if r.get('unique') == 0 and r.get('commits'):
+        return 'superseded-candidate', ('every commit has an equivalent patch on main; '
+                                        'confirm, then record in the exclusions ledger')
+    return 'open-pr', 'open a PR from the branch as it stands (a merge commit, never a rebase)'
 
 
 def load_exclusions():
@@ -136,6 +173,7 @@ def main():
     ap.add_argument('--fail-newer-than-days', type=int, default=None,
                     help='fail only on stranded branches whose newest commit is at most this many days old; '
                          'older ones are listed as a standing backlog without failing (the scheduled run uses 3)')
+    ap.add_argument('--json', help='also write every non-clean branch as a recovery record (category, action) to this file')
     args = ap.parse_args()
 
     tracked = read_open_prs(args.open_prs)
@@ -157,7 +195,8 @@ def main():
     print(f'  open PRs: {len(tracked)}')
 
     excl = load_exclusions()
-    rows = [r for r in (classify(b, tracked) for b in branches()) if r]
+    shallow = is_shallow()
+    rows = [r for r in (classify(b, tracked, shallow) for b in branches()) if r]
 
     buckets = {}
     for r in rows:
@@ -167,10 +206,18 @@ def main():
                 if r['branch'] not in excl]
     excluded = [r for r in buckets.get('STRANDED', []) if r['branch'] in excl]
     unmeasurable = buckets.get('UNMEASURABLE', [])
+    unrelated = buckets.get('UNRELATED', [])
+    window = args.fail_newer_than_days
 
+    def recent(r):
+        # A branch with no measurable age counts as recent, so it can never be waved through.
+        return window is None or r['age'] is None or r['age'] <= window
+
+    print(f'  clone:    {"SHALLOW" if shallow else "full"}')
     print(f'  branches: {len(rows)}  '
           f'({len(buckets.get("MERGED", []))} merged, '
-          f'{len(buckets.get("TRACKED", []))} tracked by an open PR)')
+          f'{len(buckets.get("TRACKED", []))} tracked by an open PR, '
+          f'{len(unrelated)} with unrelated history)')
     print('')
 
     if stranded:
@@ -179,15 +226,25 @@ def main():
         print('')
         for r in stranded:
             age = f'{r["age"]}d' if r['age'] is not None else '?'
+            action, _ = recovery_action(r, excl)
             print(f'  {r["branch"]}')
-            print(f'    {r["commits"]} commit(s) not on main, newest {age} old, tip {r["tip"]}')
+            print(f'    {r["commits"]} commit(s) not on main ({r["unique"]} with no equivalent patch on main), '
+                  f'newest {age} old, tip {r["tip"]} -> {action}')
         print('')
 
     if unmeasurable:
-        print(f'{len(unmeasurable)} branch(es) UNMEASURABLE in this clone '
-              '(no merge-base with main).')
-        print('  This is a shallow checkout. Run on a full clone; do not read')
-        print('  this as "clean".')
+        print(f'{len(unmeasurable)} branch(es) UNMEASURABLE: this is a shallow clone, so no merge-base')
+        print('  could be resolved. Run on a full clone; do not read this as "clean".')
+        print('')
+
+    if unrelated:
+        newest = min((r['age'] for r in unrelated if r['age'] is not None), default=None)
+        print(f'{len(unrelated)} branch(es) share NO history with main on this full clone (a history')
+        print(f'  rewrite left them behind); newest commit {newest}d old. Their content cannot be')
+        print('  measured against main by ancestry; recover by reading, never by merging.')
+        late = [r for r in unrelated if recent(r)]
+        for r in late:
+            print(f'  RECENT: {r["branch"]} tip {r["tip"]}, newest {r["age"]}d old')
         print('')
 
     if excluded:
@@ -196,20 +253,39 @@ def main():
             print(f'  {r["branch"]} — {excl[r["branch"]].get("reason", "no reason given")}')
         print('')
 
-    # A check that is red every day on the same old branches stops being read, and then hides the new one. With
-    # --fail-newer-than-days, only work stranded recently fails the run; the backlog is still listed above on every run.
-    # A branch with no measurable age counts as recent, so it can never be waved through.
-    if args.fail_newer_than_days is not None:
-        recent = [r for r in stranded if r['age'] is None or r['age'] <= args.fail_newer_than_days]
-        backlog = len(stranded) - len(recent)
-        if backlog:
-            print(f'{backlog} of these are older than {args.fail_newer_than_days} day(s): standing backlog, '
-                  'reported every run, not failed.')
-            print('')
-        stranded = recent
+    new_stranded = [r for r in stranded if recent(r)]
+    new_unrelated = [r for r in unrelated if recent(r)]
+    backlog = [r for r in stranded if not recent(r)]
+    if window is not None and backlog:
+        print(f'{len(backlog)} stranded branch(es) are older than {window} day(s): standing backlog, '
+              'reported every run, not failed.')
+        print('')
 
-    if not stranded and not unmeasurable:
-        print('No newly stranded work. ✓' if args.fail_newer_than_days is not None else 'No untracked work. ✓')
+    if args.json:
+        def rec(r, category):
+            action, why = recovery_action(r, excl) if r['state'] == 'STRANDED' else (
+                'read-and-decide' if r['state'] == 'UNRELATED' else 'rerun-on-full-clone', '')
+            return {**r, 'category': category, 'action': action, 'action_basis': why}
+        out = {
+            'base': git('rev-parse', MAIN), 'clone': 'shallow' if shallow else 'full',
+            'generated_at': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'),
+            'fail_newer_than_days': window,
+            'counts': {'branches': len(rows), 'merged': len(buckets.get('MERGED', [])),
+                       'tracked': len(buckets.get('TRACKED', [])), 'new_stranded': len(new_stranded),
+                       'historical_stranded': len(backlog), 'excluded': len(excluded),
+                       'superseded_candidates': sum(1 for r in stranded if recovery_action(r, excl)[0] == 'superseded-candidate'),
+                       'unrelated_history': len(unrelated), 'unrelated_recent': len(new_unrelated),
+                       'unmeasurable': len(unmeasurable)},
+            'records': ([rec(r, 'new-stranded') for r in new_stranded]
+                        + [rec(r, 'historical-stranded') for r in backlog]
+                        + [rec(r, 'excluded') for r in excluded]
+                        + [rec(r, 'unrelated-history') for r in unrelated]
+                        + [rec(r, 'unmeasurable') for r in unmeasurable]),
+        }
+        pathlib.Path(args.json).write_text(json.dumps(out, indent=1, sort_keys=True) + '\n', encoding='utf-8')
+
+    if not new_stranded and not unmeasurable and not new_unrelated:
+        print('No newly stranded work. ✓' if window is not None else 'No untracked work. ✓')
         return 0
 
     print('Each of these is finished work that will never reach main on its own.')

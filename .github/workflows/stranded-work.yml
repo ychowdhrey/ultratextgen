@@ -14,10 +14,23 @@ name: Stranded work
 # fetch-depth: 0 is load-bearing, not hygiene. On a shallow checkout
 # `git merge-base` cannot resolve a common ancestor for most branches, and a
 # naive count then reports a branch's entire history as unmerged. The script
-# reports those as UNMEASURABLE rather than clean; on a full clone there are
-# none.
+# reports those as UNMEASURABLE rather than clean.
+#
+# On a full clone a missing merge-base means something else: the branch shares
+# no history with main. Measured 2026-11-11: 381 branches share a root commit
+# main does not have, none newer than 2026-07-10 (main's history was rewritten
+# then). The script now reports those as UNRELATED with their age; until then
+# they failed every scheduled run while the summary called this clone shallow.
+# Each run also writes stranded-work.json: one recovery record per non-clean
+# branch (new / historical / excluded / unrelated / unmeasurable, plus the
+# advised action). Advisory only: nothing here merges, deletes or rebases.
 
 on:
+  pull_request:
+    paths:
+      - 'scripts/check-stranded-work.py'
+      - 'scripts/test-check-stranded-work.py'
+      - '.github/workflows/stranded-work.yml'
   schedule:
     - cron: '0 7 * * *'   # daily, 07:00 UTC — after the Monday digest's 06:00
   workflow_dispatch:
@@ -27,7 +40,18 @@ permissions:
   pull-requests: read
 
 jobs:
+  tests:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: python3 scripts/test-check-stranded-work.py
+
   stranded-work:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -58,7 +82,7 @@ jobs:
           # in the summary every day but no longer turns the run red on the same branches day after day (10 of 10 runs
           # red, 2026-11-01..10).  Drop the flag to fail on the whole backlog again.
           python3 scripts/check-stranded-work.py --open-prs open-prs.json --fail-newer-than-days 3 \
-            | tee stranded-work.log
+            --json stranded-work.json | tee stranded-work.log
 
       - name: Job summary
         if: always()
@@ -69,6 +93,15 @@ jobs:
             cat stranded-work.log || echo "(no output — the check did not run)"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the recovery records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stranded-work-${{ github.run_id }}
+          path: stranded-work.json
+          if-no-files-found: warn
+          retention-days: 30
 
       - name: Fail the run if any branch carries untracked work
         if: steps.stranded.outcome == 'failure'
