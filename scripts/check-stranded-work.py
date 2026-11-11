@@ -133,6 +133,9 @@ def main():
     ap.add_argument('--open-prs', help='JSON file of open PRs (else stdin)')
     ap.add_argument('--max-age-days', type=int, default=None,
                     help='ignore branches older than this (triage aid only)')
+    ap.add_argument('--fail-newer-than-days', type=int, default=None,
+                    help='fail only on stranded branches whose newest commit is at most this many days old; '
+                         'older ones are listed as a standing backlog without failing (the scheduled run uses 3)')
     args = ap.parse_args()
 
     tracked = read_open_prs(args.open_prs)
@@ -193,8 +196,20 @@ def main():
             print(f'  {r["branch"]} — {excl[r["branch"]].get("reason", "no reason given")}')
         print('')
 
+    # A check that is red every day on the same old branches stops being read, and then hides the new one. With
+    # --fail-newer-than-days, only work stranded recently fails the run; the backlog is still listed above on every run.
+    # A branch with no measurable age counts as recent, so it can never be waved through.
+    if args.fail_newer_than_days is not None:
+        recent = [r for r in stranded if r['age'] is None or r['age'] <= args.fail_newer_than_days]
+        backlog = len(stranded) - len(recent)
+        if backlog:
+            print(f'{backlog} of these are older than {args.fail_newer_than_days} day(s): standing backlog, '
+                  'reported every run, not failed.')
+            print('')
+        stranded = recent
+
     if not stranded and not unmeasurable:
-        print('No untracked work. ✓')
+        print('No newly stranded work. ✓' if args.fail_newer_than_days is not None else 'No untracked work. ✓')
         return 0
 
     print('Each of these is finished work that will never reach main on its own.')
