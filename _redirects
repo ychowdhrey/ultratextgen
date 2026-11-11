@@ -528,6 +528,13 @@
 # URL still lands on the index. See docs/llms-txt.md.
 /en/llms.txt  /llms.txt  301
 
+# Petal Search (Huawei) site verification. Its verifier fetches the exact
+# /ff044916b7.html URL and wants a 200 with the token as the body. Pages
+# 308-redirects any real *.html file to its extensionless path, so the token
+# lives in a .txt file and this rewrite (200 = serve, no redirect) answers the
+# .html URL. Do not delete: removing it un-verifies the site.
+/ff044916b7.html  /ff044916b7.txt  200
+
 /404  /404.html  200
 
 # ---------------------------------------------------------------------------
