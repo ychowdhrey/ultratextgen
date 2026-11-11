@@ -62,6 +62,22 @@ t("toPlain: styled -> ascii", D.toPlain("𝗕𝗼𝗹𝗱 𝓼𝓬𝓻𝓲𝓹�
 t("toPlain: keeps accents", D.toPlain("café niño"), "café niño");
 t("toPlain: keeps CJK", D.toPlain("漢字テスト"), "漢字テスト");
 t("toPlain: small caps", D.toPlain("ʜᴇʟʟᴏ"), "hello");
+// Real letters of other scripts and ordinals stay as written: "Convert fancy text
+// to plain" once turned хорошо into xорошо and 3º into 3o.
+t("toPlain: keeps Russian х", D.toPlain("хорошо"), "хорошо");
+t("toPlain: keeps a Russian sentence", D.toPlain("Привет, хорошо!"), "Привет, хорошо!");
+t("toPlain: keeps Macedonian dze", D.toPlain("Ѕлава ѕвезда"), "Ѕлава ѕвезда");
+t("toPlain: keeps Spanish ordinals", D.toPlain("3º piso, nº 5"), "3º piso, nº 5");
+t("toPlain: keeps feminine ordinal", D.toPlain("1ª"), "1ª");
+t("toPlain: keeps trademark", D.toPlain("Brand™"), "Brand™");
+t("toPlain: keeps Navajo ǫ", D.toPlain("hózhǫ́"), "hózhǫ́");
+t("toPlain: borrowed letters un-style inside a styled word", D.toPlain("ʜᴇʟʟᴏ ѕᴍᴀʟʟ ᴄᴀᴘѕ"), "hello small caps");
+t("toPlain: Cyrillic м is not borrowed", D.toPlain("ѕмᴀʟʟ"), "sмall");
+t("toPlain: ǫ in small caps", D.toPlain("ǫᴜɪᴄᴋ"), "quick");
+t("toPlain: mixed line keeps the real word", D.toPlain("ʜᴇʟʟᴏ хорошо"), "hello хорошо");
+t("toPlain: styled digits still fold", D.toPlain("𝟓 ① ﬁle"), "5 1 file");
+t("inspect: Russian and ordinals hold no styled letters", D.inspect("Привет, хорошо! 3º nº 5 Brand™").styled, 0);
+t("inspect: counts the styled word only", D.inspect("ʜᴇʟʟᴏ хорошо").styled, 5);
 t("gsmSafe recovers GSM-7", C.gsmInfo(D.gsmSafe("“Hello” — it’s 🙂 fine")).encoding, "GSM-7");
 
 // --- R-02: fancy -> plain is offered on code-point destinations too ---

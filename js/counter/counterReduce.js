@@ -44,16 +44,49 @@
     "ᴠ": "v", "ᴡ": "w", "х": "x", "ʏ": "y", "ᴢ": "z"
   };
 
+  /* Three entries of SMALL_CAPS are real letters of other scripts that
+     small-caps generators borrow: Cyrillic х (Russian, Ukrainian…), ѕ
+     (Macedonian dze) and ǫ (Navajo, Lithuanian). They are mapped only
+     inside a word that also holds another styled letter, so "ʜᴇʟʟᴏ ѕᴍᴀʟʟ"
+     un-styles while "хорошо" and "hǫ́ǫ́" stay as written. */
+  const BORROWED = { "ѕ": 1, "х": 1, "ǫ": 1 };
+  /* Ordinary text that NFKD would fold: Spanish, Portuguese, Italian and
+     French ordinals (3º, nº 5, 1ª) and the trademark sign. No UTG style
+     emits them, so folding them un-styles nothing and corrupts real text. */
+  const KEEP = { "º": 1, "ª": 1, "™": 1 };
+  const WORD_RE = /[\p{L}\p{M}]+|[^\p{L}\p{M}]+/gu;
+  const LETTERISH = /[\p{L}\p{M}]/u;
+
+  function foldChar(ch) {
+    if (ch.codePointAt(0) < 128 || KEEP[ch]) return ch;
+    const nfkd = ch.normalize("NFKD");
+    return /^[A-Za-z0-9]+$/.test(nfkd) ? nfkd : ch;
+  }
+
+  function isStyled(ch) {
+    if (BORROWED[ch]) return false;
+    if (SMALL_CAPS[ch]) return true;
+    return ch.codePointAt(0) >= 128 && foldChar(ch) !== ch;
+  }
+
+  /* Calls emit(original, plain) once per character. inspect() counts with
+     the same walk, so the "N styled letters" line and the button agree. */
+  function walkPlain(str, emit) {
+    for (const part of str.match(WORD_RE) || []) {
+      const chars = Array.from(part);
+      if (!LETTERISH.test(chars[0])) {        // digits, spaces, punctuation: per character
+        for (const ch of chars) emit(ch, foldChar(ch));
+        continue;
+      }
+      const styledWord = chars.some(isStyled); // a real word is left whole
+      for (const ch of chars) emit(ch, styledWord ? (SMALL_CAPS[ch] || foldChar(ch)) : ch);
+    }
+  }
+
   function toPlain(str) {
     if (!str) return "";
     let out = "";
-    for (const ch of str) {
-      const cp = ch.codePointAt(0);
-      if (cp < 128) { out += ch; continue; }
-      if (SMALL_CAPS[ch]) { out += SMALL_CAPS[ch]; continue; }
-      const nfkd = ch.normalize("NFKD");
-      out += /^[A-Za-z0-9]+$/.test(nfkd) ? nfkd : ch;
-    }
+    walkPlain(str, (ch, plain) => { out += plain; });
     return out;
   }
 
@@ -478,13 +511,7 @@
     const invisible = countInvisible(s);
     const combining = (s.match(COMBINING_RE) || []).length;
     let styled = 0;
-    for (const ch of s) {
-      const cp = ch.codePointAt(0);
-      if (cp < 128) continue;
-      if (SMALL_CAPS[ch]) { styled++; continue; }
-      const nfkd = ch.normalize("NFKD");
-      if (/^[A-Za-z0-9]+$/.test(nfkd)) styled++;
-    }
+    walkPlain(s, (ch, plain) => { if (plain !== ch) styled++; });
     const counts = ns.counterCounts;
     const nonGsm = counts ? counts.gsmInfo(s).flipChars : [];
     return { invisible, combining, styled, nonGsm };
