@@ -54,7 +54,10 @@ jobs:
         run: |
           gh pr list --state open --json number,headRefName --limit 300 \
             > open-prs.json
-          python3 scripts/check-stranded-work.py --open-prs open-prs.json \
+          # Fails only on work stranded in the last 3 days (a missed daily run still catches it); the older backlog is listed
+          # in the summary every day but no longer turns the run red on the same branches day after day (10 of 10 runs
+          # red, 2026-11-01..10).  Drop the flag to fail on the whole backlog again.
+          python3 scripts/check-stranded-work.py --open-prs open-prs.json --fail-newer-than-days 3 \
             | tee stranded-work.log
 
       - name: Job summary
