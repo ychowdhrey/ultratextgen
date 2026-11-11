@@ -34,6 +34,12 @@ const SKIP_DIRS = ['node_modules', 'reports', 'data', 'functions', 'fonts'];
 // "<service>-site-verification: <filename>" line as the entire content.
 const VERIFICATION_STUB_RE = /^[\w-]+-site-verification:\s/;
 
+// Petal Search (Huawei) is the exception to that single-line shape: its
+// HTML-file method issues `<token>.html` whose entire content is the bare hex
+// token, with no prefix. Matched narrowly (the whole file is one 8-64 char hex
+// word) so a real page, which always has markup, can never be mistaken for it.
+const BARE_TOKEN_STUB_RE = /^[0-9a-f]{8,64}$/;
+
 // Pages that must NOT carry the AdSense loader (added 2026-09-20). Two
 // classes, both checked by scripts/check-ads.js as "loader absent":
 //  - the 404 page. Google's placement policy disallows ads on screens without
@@ -83,7 +89,8 @@ function shouldSkipPath(filePath, root) {
 // Separate from shouldSkipPath() because it needs the file body, which the
 // callers only read once they know the path itself is not skippable.
 function isVerificationStub(content) {
-  return VERIFICATION_STUB_RE.test(content.trimStart());
+  return VERIFICATION_STUB_RE.test(content.trimStart()) ||
+    BARE_TOKEN_STUB_RE.test(content.trim());
 }
 
 module.exports = {
