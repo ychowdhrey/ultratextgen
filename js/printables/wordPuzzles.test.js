@@ -217,12 +217,29 @@ const CLUED = [
   eq(one.height, 1, "crossword: a one-row grid is still read correctly (rectangle bounds)");
 }
 
-/* 10. A word longer than the grid cap is refused, not silently truncated */
+/* 10. A word longer than the grid cap is refused, not silently truncated,
+       and does not take the rest of the list down with it */
 {
   const long = "A".repeat(CW.CW_MAX + 4);
   const p = CW.build({ input: long + "\nCAT", seed: "x" });
-  eq(p.entries.length, 0, "crossword: an over-long word produces no entry");
-  ok(p.unplaced.length >= 1, "crossword: and is reported unplaced");
+  ok(!p.entries.some((e) => (e.letters || "").length > CW.CW_MAX),
+     "crossword: an over-long word produces no entry");
+  ok(p.unplaced.some((w) => w.letters.length === long.length), "crossword: and is reported unplaced");
+  eq(p.entries.length, 1, "crossword: the word that fits (CAT) is still placed");
+  ok(p.width <= CW.CW_MAX && p.height <= CW.CW_MAX, "crossword: the grid stays inside the cap");
+
+  const only = CW.build({ input: long, seed: "x" });
+  eq(only.entries.length, 0, "crossword: a list of only over-long words builds nothing");
+  eq(only.unplaced.length, 1, "crossword: and reports it unplaced");
+
+  // The reported case: a social-studies list with a 25-letter answer.
+  const social = ["Declaration of Independence", "Constitution", "Liberty", "Colony", "Patriot", "Revolution"].join("\n");
+  const s = CW.build({ input: social, seed: "week-12" });
+  const longWord = s.words.find((w) => w.letters.length > CW.CW_MAX);
+  ok(longWord, "crossword: the 25-letter answer is longer than the cap (" + CW.CW_MAX + ")");
+  ok(s.unplaced.some((w) => w.key === longWord.key), "crossword: the 25-letter answer is reported unplaced");
+  ok(s.entries.length >= 1, "crossword: the other answers still build a puzzle — " + s.entries.length + " placed");
+  eq(s.entries.length + s.unplaced.length, 6, "crossword: every answer is either placed or reported");
 }
 
 /* 11. ß is one cell, never expanded to SS */
