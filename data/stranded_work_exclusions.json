@@ -1,6 +1,14 @@
 {
   "_readme": "Branches deliberately left carrying commits that no open PR tracks. Same bar as every other ledger here: entries are discussed decisions, never added to make a check pass. The default fix for a flagged branch is to open a PR from it as it stands. Ships empty.",
   "_shape": { "origin/claude/example-branch": { "reason": "why this work is abandoned rather than untracked", "date": "YYYY-MM-DD" } },
+  "origin/claude/inspiring-babbage-eg3rec": {
+    "reason": "Tile Unicode delta gate: its gate, workflow wiring and rules text are on main (check:tile-unicode, test:tile-unicode). The one line main lacks is the generated gate-inventory sentence in docs/README.md, which main regenerated with its own count. Reconciled 2026-11-11 by content check.",
+    "date": "2026-11-11"
+  },
+  "origin/claude/loving-tesla-rim7te": {
+    "reason": "PR #1104 closed unmerged. Main fixed the same two unassigned-code-point tiles: fr/usecase/pseudo-free-fire is identical, and usecase/stylish-name uses a different valid replacement letter. Reconciled 2026-11-11 by content check.",
+    "date": "2026-11-11"
+  },
   "origin/claude/focused-mccarthy-xmeqit": {
     "reason": "Carries only a merge of main (PR #988); no content of its own. Owner decision 2026-10-08.",
     "date": "2026-10-08"

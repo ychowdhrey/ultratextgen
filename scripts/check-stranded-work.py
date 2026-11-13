@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Find work that will never reach `main` because nothing tracks it.
+"""Find work that will never reach `main` because nothing tracks it, and plan a recovery task for each.
 
 The failure this exists for
 ---------------------------
@@ -18,97 +18,65 @@ Recorded instances in this repository alone:
 
 Two of those sat undetected for two months.
 
+What it reports, and when it fails
+----------------------------------
+The definitions live in `scripts/lib/stranded_work.py`. In short: a branch whose
+content main already has (squash, cherry-pick, redone elsewhere) is LANDED and
+never a task; a branch carrying content main lacks with no open PR is STRANDED and
+gets one recovery issue; branches cut before main's history was rewritten on
+2026-07-10 share no commit with main and are measured by content (DISJOINT), their
+residue listed in one recovery issue.
+
+The run fails only on something NEW: a stranded branch with no recovery task, a
+task closed while its work is still stranded, new commits on a stranded branch, or
+a branch new to the pre-rewrite list. A known backlog item has its task and is
+reported every run without turning it red. That replaces an age cut-off: a branch
+whose PR is closed unmerged a week after its last commit is newly stranded, and a
+"newer than N days" rule would never have alerted on it.
+
 Two design constraints, both learned from getting them wrong
 ------------------------------------------------------------
-**1. This must run on a FULL clone, which means CI, not a session.** Sessions
-here get a shallow clone. Measured on one: `git merge-base origin/main <branch>`
-returns EMPTY for 381 of 757 branches, because main's graft boundary hides the
-common ancestor -- and `git rev-list main..branch` then happily reports the
-branch's entire history as unmerged. A first attempt at this measurement
-reported "399 branches carrying 420,704 commits", which is nonsense. So an
-unresolvable merge-base is reported as UNMEASURABLE and is never silently
-treated as clean.
+**1. Ancestry needs a full clone.** On a shallow clone `git merge-base` is empty
+for most branches and `git rev-list main..branch` then reports a branch's whole
+history as unmerged ("399 branches carrying 420,704 commits" was one such
+measurement). A shallow clone's empty merge-base is UNMEASURABLE and fails the run
+(exit 3). On a full clone an empty merge-base means genuinely unrelated history,
+which is measured by content instead. The 381 "unmeasurable" branches the
+scheduled run reported every day through 2026-11-11 were that case, on a full
+clone: all of them hang off the pre-rewrite root.
 
-**2. It fails closed.** No PR data supplied means it cannot tell STRANDED from
-TRACKED, and it says so and exits non-zero rather than printing a reassuring
-"0 stranded". A coordination check whose silence reads as success is the exact
-failure mode this repository has recorded four times against CI and once
-against its own work-in-progress plane.
+**2. It fails closed.** No open-PR data means it cannot tell STRANDED from TRACKED
+(exit 2). No recovery-task list means it cannot tell new from known, so everything
+stranded is planned as new and the run fails.
 
-Open-PR data arrives on stdin rather than being fetched, so the script is
-network-free and testable with a fixture -- the same reason
-`scripts/weekly_pr_digest.py` reads PRs that way.
+Inputs arrive as files, so the script is network-free and testable; the workflow
+fetches them with `gh` and applies the planned tasks with
+`scripts/apply-stranded-work-tasks.py`.
 
 Usage:
-    gh pr list --state open --json number,headRefName --limit 300 \\
-      | python3 scripts/check-stranded-work.py
+    gh pr list --state open --json number,headRefName --limit 300 > prs.json
+    gh issue list --label stranded-work --state all --json number,state,body --limit 500 > tasks.json
+    python3 scripts/check-stranded-work.py --open-prs prs.json --tasks tasks.json --plan-out plan.json
 
-    python3 scripts/check-stranded-work.py --open-prs prs.json
-    python3 scripts/check-stranded-work.py --max-age-days 400
+Exit: 0 nothing new · 1 newly stranded work (tasks planned) · 2 no open-PR data · 3 UNMEASURABLE (shallow clone)
 """
 import argparse
-import datetime as dt
 import json
+import os
 import pathlib
-import subprocess
 import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / 'lib'))
+import stranded_work as sw  # noqa: E402
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
 LEDGER = REPO / 'data' / 'stranded_work_exclusions.json'
-MAIN = 'origin/main'
 
 
-def git(*args):
-    return subprocess.run(
-        ['git', *args], capture_output=True, text=True, cwd=REPO
-    ).stdout.strip()
-
-
-def branches():
-    out = git('for-each-ref', '--format=%(refname:short)', 'refs/remotes/origin')
-    for name in out.splitlines():
-        name = name.strip()
-        if not name or name.endswith('/HEAD') or name == MAIN:
-            continue
-        yield name
-
-
-def classify(branch, tracked_refs):
-    """MERGED / TRACKED / STRANDED / UNMEASURABLE for one branch."""
-    tip = git('rev-parse', branch)
-    if not tip:
-        return None
-
-    # An unresolvable merge-base means this clone cannot answer the question.
-    # Saying "clean" here is how the whole class stays invisible.
-    if not git('merge-base', MAIN, branch):
-        return {'state': 'UNMEASURABLE', 'branch': branch, 'tip': tip[:9],
-                'commits': 0, 'age': None}
-
-    on_main = subprocess.run(
-        ['git', 'merge-base', '--is-ancestor', tip, MAIN], cwd=REPO
-    ).returncode == 0
-    if on_main:
-        return {'state': 'MERGED', 'branch': branch, 'tip': tip[:9],
-                'commits': 0, 'age': None}
-
-    n = int(git('rev-list', '--count', f'{MAIN}..{branch}') or 0)
-    iso = git('log', '-1', '--format=%cI', branch)
-    age = None
-    if iso:
-        when = dt.datetime.fromisoformat(iso)
-        age = (dt.datetime.now(dt.timezone.utc) - when).days
-
-    short = branch.split('/', 1)[1] if '/' in branch else branch
-    state = 'TRACKED' if short in tracked_refs else 'STRANDED'
-    return {'state': state, 'branch': branch, 'tip': tip[:9],
-            'commits': n, 'age': age}
-
-
-def load_exclusions():
-    if not LEDGER.exists():
+def load_exclusions(path):
+    if not path.exists():
         return {}
-    data = json.loads(LEDGER.read_text(encoding='utf-8'))
+    data = json.loads(path.read_text(encoding='utf-8'))
     return {k: v for k, v in data.items() if not k.startswith('_')}
 
 
@@ -119,105 +87,142 @@ def read_open_prs(path):
     raw = raw.strip()
     if not raw:
         return None
-    data = json.loads(raw)
     refs = set()
-    for pr in data:
+    for pr in json.loads(raw):
         ref = pr.get('headRefName') or (pr.get('head') or {}).get('ref')
         if ref:
             refs.add(ref)
     return refs
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--open-prs', help='JSON file of open PRs (else stdin)')
-    ap.add_argument('--max-age-days', type=int, default=None,
-                    help='ignore branches older than this (triage aid only)')
-    ap.add_argument('--fail-newer-than-days', type=int, default=None,
-                    help='fail only on stranded branches whose newest commit is at most this many days old; '
-                         'older ones are listed as a standing backlog without failing (the scheduled run uses 3)')
-    args = ap.parse_args()
+def residue_line(r):
+    res = r.get('residue') or {}
+    return f'{sum(res.values())} line(s) in {len(res)} file(s) not on main'
 
-    tracked = read_open_prs(args.open_prs)
 
-    print('Stranded-work check')
-    print(f'  base:     {MAIN} @ {git("rev-parse", "--short", MAIN)}')
+def run(repo_path, open_prs, tasks_path, plan_out, repo_slug, ledger, out=print):
+    repo = sw.Repo(repo_path)
+    tracked = read_open_prs(open_prs)
+
+    out('Stranded-work check')
+    out(f'  base:     {repo.main} @ {repo.git("rev-parse", "--short", repo.main).strip()}')
 
     if tracked is None:
-        print('  open PRs: NONE SUPPLIED')
-        print('')
-        print('Cannot distinguish tracked work from stranded work without the')
-        print('open-PR list, and reporting "0 stranded" from here would be a')
-        print('reassuring lie. Pipe it in:')
-        print('')
-        print('  gh pr list --state open --json number,headRefName --limit 300 \\')
-        print('    | python3 scripts/check-stranded-work.py')
+        out('  open PRs: NONE SUPPLIED')
+        out('')
+        out('Cannot distinguish tracked work from stranded work without the')
+        out('open-PR list, and reporting "0 stranded" from here would be a')
+        out('reassuring lie. Pass it in:')
+        out('')
+        out('  gh pr list --state open --json number,headRefName --limit 300 > prs.json')
+        out('  python3 scripts/check-stranded-work.py --open-prs prs.json')
         return 2
 
-    print(f'  open PRs: {len(tracked)}')
-
-    excl = load_exclusions()
-    rows = [r for r in (classify(b, tracked) for b in branches()) if r]
-
-    buckets = {}
+    tasks = sw.read_tasks(tasks_path)
+    excl = load_exclusions(ledger)
+    rows, shallow = sw.classify_all(repo, tracked, excl)
+    by = {}
     for r in rows:
-        buckets.setdefault(r['state'], []).append(r)
+        by.setdefault(r['state'], []).append(r)
+    n = lambda s: len(by.get(s, []))  # noqa: E731
+    disjoint = by.get('DISJOINT', [])
+    pre_residue = [r for r in disjoint if r['residue']]
 
-    stranded = [r for r in buckets.get('STRANDED', [])
-                if r['branch'] not in excl]
-    excluded = [r for r in buckets.get('STRANDED', []) if r['branch'] in excl]
-    unmeasurable = buckets.get('UNMEASURABLE', [])
+    out(f'  open PRs: {len(tracked)}')
+    out(f'  tasks:    {"NONE SUPPLIED - everything stranded is treated as new" if tasks is None else len(tasks)}')
+    out(f'  branches: {len(rows)}  ({n("MERGED")} merged, {n("TRACKED")} tracked by an open PR, '
+        f'{n("LANDED")} landed by content, {len(disjoint)} pre-rewrite, {n("EXCLUDED")} excluded)')
+    out('')
 
-    print(f'  branches: {len(rows)}  '
-          f'({len(buckets.get("MERGED", []))} merged, '
-          f'{len(buckets.get("TRACKED", []))} tracked by an open PR)')
-    print('')
-
+    stranded = sorted(by.get('STRANDED', []), key=lambda r: (-(r.get('age') or 0), r['branch']))
     if stranded:
-        stranded.sort(key=lambda r: (-(r['age'] or 0), r['branch']))
-        print(f'{len(stranded)} branch(es) carry commits that no open PR tracks:')
-        print('')
+        out(f'{len(stranded)} branch(es) carry work that no open PR tracks:')
+        out('')
         for r in stranded:
-            age = f'{r["age"]}d' if r['age'] is not None else '?'
-            print(f'  {r["branch"]}')
-            print(f'    {r["commits"]} commit(s) not on main, newest {age} old, tip {r["tip"]}')
-        print('')
+            task = (tasks or {}).get('branch:' + r['short'])
+            ref = f'task #{task["number"]} ({task.get("state", "?").lower()})' if task else 'NO TASK YET'
+            out(f'  {r["branch"]}  [{ref}]')
+            out(f'    {r["commits"]} commit(s) not on main, newest {r.get("age", "?")}d old, tip {r["tip"]}; '
+                f'{residue_line(r)}')
+        out('')
+
+    landed = by.get('LANDED', [])
+    if landed:
+        out(f'{len(landed)} branch(es) are not ancestors of main but everything they change is on main '
+            '(squashed, cherry-picked or redone); safe to delete, never a task:')
+        for r in sorted(landed, key=lambda r: r['branch']):
+            out(f'  {r["branch"]}  ({r["commits"]} commit(s), tip {r["tip"]})')
+        out('')
+
+    if disjoint:
+        moved = sum(1 for r in disjoint if not r['residue'] and r['moved'])
+        out(f'{len(disjoint)} branch(es) predate the 2026-07-10 history rewrite (no common commit with main; '
+            'measured by content):')
+        out(f'  {len(disjoint) - len(pre_residue) - moved} have every commit on main')
+        out(f'  {moved} differ only in paths moved out of this repository by the rewrite')
+        out(f'  {len(pre_residue)} carry content main does not have (one recovery task lists them):')
+        for r in sorted(pre_residue, key=lambda r: -sum(r['residue'].values())):
+            out(f'    {r["branch"]}  newest {r.get("date", "?")}; {residue_line(r)}')
+        out('')
+
+    unmeasurable = by.get('UNMEASURABLE', [])
+    if unmeasurable:
+        out(f'{len(unmeasurable)} branch(es) UNMEASURABLE: no merge-base in this SHALLOW clone.')
+        out('  Run on a full clone (fetch-depth: 0); do not read this as "clean".')
+        out('')
+
+    excluded = by.get('EXCLUDED', [])
+    if excluded:
+        out(f'{len(excluded)} excluded by {ledger.name}, reported not failed:')
+        for r in excluded:
+            out(f'  {r["branch"]} — {excl[r["branch"]].get("reason", "no reason given")}')
+        out('')
+    stale = sorted(set(excl) - {r['branch'] for r in excluded})
+    if stale:
+        out(f'{len(stale)} {ledger.name} entr(ies) no longer match an unmerged branch (merged, tracked by an open PR, or deleted); '
+            'the entry can go:')
+        for b in stale:
+            out(f'  {b}')
+        out('')
+
+    plan = sw.plan_tasks(rows, tasks, repo_slug)
+    if plan_out:
+        pathlib.Path(plan_out).write_text(json.dumps(plan, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    alerts = [a for a in plan if a['alert']]
+    if plan:
+        out(f'Recovery tasks: {sum(a["action"] == "create" for a in plan)} to open, '
+            f'{sum(a["action"] == "reopen" for a in plan)} to reopen, {sum(a["action"] == "update" for a in plan)} to update, '
+            f'{sum(a["action"] == "close" for a in plan)} to close.')
+        for a in plan:
+            target = f'#{a["issue"]}' if a.get('issue') else 'new issue'
+            out(f'  {a["action"]:6} {target:>10}  {a["key"]}{"  <- NEW" if a["alert"] else ""}')
+        out('')
 
     if unmeasurable:
-        print(f'{len(unmeasurable)} branch(es) UNMEASURABLE in this clone '
-              '(no merge-base with main).')
-        print('  This is a shallow checkout. Run on a full clone; do not read')
-        print('  this as "clean".')
-        print('')
+        return 3
+    if alerts:
+        out(f'{len(alerts)} newly stranded item(s). Each is finished work that will never reach main on its own;')
+        out('its recovery task says how to land it, or how to record it as deliberately left.')
+        return 1
+    known = len(stranded) + (1 if pre_residue else 0)
+    out(f'No newly stranded work. ✓  ({known} known item(s), each with an open recovery task)' if known
+        else 'No untracked work. ✓')
+    return 0
 
-    if excluded:
-        print(f'{len(excluded)} excluded by {LEDGER.name}, reported not failed:')
-        for r in excluded:
-            print(f'  {r["branch"]} — {excl[r["branch"]].get("reason", "no reason given")}')
-        print('')
 
-    # A check that is red every day on the same old branches stops being read, and then hides the new one. With
-    # --fail-newer-than-days, only work stranded recently fails the run; the backlog is still listed above on every run.
-    # A branch with no measurable age counts as recent, so it can never be waved through.
-    if args.fail_newer_than_days is not None:
-        recent = [r for r in stranded if r['age'] is None or r['age'] <= args.fail_newer_than_days]
-        backlog = len(stranded) - len(recent)
-        if backlog:
-            print(f'{backlog} of these are older than {args.fail_newer_than_days} day(s): standing backlog, '
-                  'reported every run, not failed.')
-            print('')
-        stranded = recent
-
-    if not stranded and not unmeasurable:
-        print('No newly stranded work. ✓' if args.fail_newer_than_days is not None else 'No untracked work. ✓')
-        return 0
-
-    print('Each of these is finished work that will never reach main on its own.')
-    print('Open a PR from the branch as it stands — do not rebase, amend or')
-    print('force-push someone else\'s branch; a merge commit keeps their')
-    print('checkout valid. If a branch is deliberately abandoned, record it in')
-    print(f'{LEDGER.relative_to(REPO)} with a reason.')
-    return 1
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--open-prs', help='JSON file of open PRs (else stdin)')
+    ap.add_argument('--tasks', help='JSON file of existing recovery issues (gh issue list --label stranded-work '
+                                    '--state all --json number,state,body). Omit and everything stranded is new.')
+    ap.add_argument('--plan-out', help='write the planned task actions here, for apply-stranded-work-tasks.py')
+    ap.add_argument('--repo-slug', default=os.environ.get('GITHUB_REPOSITORY'),
+                    help='owner/name, for compare links in task bodies (default: $GITHUB_REPOSITORY)')
+    ap.add_argument('--repo-path', default=str(REPO), help=argparse.SUPPRESS)
+    ap.add_argument('--exclusions', default=str(LEDGER), help=argparse.SUPPRESS)
+    args = ap.parse_args()
+    return run(args.repo_path, args.open_prs, args.tasks, args.plan_out, args.repo_slug,
+               pathlib.Path(args.exclusions))
 
 
 if __name__ == '__main__':

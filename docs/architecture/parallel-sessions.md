@@ -108,7 +108,42 @@ than `@{u}`, since a branch created with `checkout -B <name> origin/main` has
 clone) and it says so rather than reporting a reassuring zero.
 
 `npm run check:stranded-work` is the batch equivalent, with
-`data/stranded_work_exclusions.json` for branches knowingly left untracked.
+`data/stranded_work_exclusions.json` for branches knowingly left untracked. The daily
+**Stranded work** workflow runs it on a full clone and keeps one GitHub issue (label
+`stranded-work`) per stranded branch, as the recovery task. Definitions are in
+`scripts/lib/stranded_work.py` and the tests are `npm run test:stranded-work`.
+
+- **It fails only on something new.** That means a stranded branch with no task, a
+  task closed while its work is still stranded, new commits on a stranded branch, or a
+  branch new to the pre-rewrite list. The known backlog stays in its open issues and is
+  reported every run. A task closes itself once its branch merges, an open PR tracks
+  it, its content is on main, or it is excluded. This replaced a "newer than 3 days"
+  cut-off, which could never alert on a branch whose PR was closed unmerged a week after
+  its last commit.
+- **Content, not ancestry, decides "landed".** A branch that is not an ancestor of main
+  but whose added lines are all in main's files, and whose removed lines are all gone,
+  is LANDED. That covers work that arrived by squash, cherry-pick or a later PR that
+  redid it. It is reported as safe to delete and never becomes a task. It is line-set
+  containment, so the task shows its residue by file and a person decides.
+- **No merge-base on a full clone means history was rewritten, not "unmeasurable".**
+  main was rewritten on 2026-07-10: the new root is `1476ae1` and the old root is
+  `e512cc9`. Every branch cut before that has no common commit with main on any clone.
+  Through 2026-11-11 the run reported these 381 branches as UNMEASURABLE "shallow
+  checkout" every day, while running on a full clone. They are measured by content
+  now. A commit counts as on main when main has one with the same author date, email
+  and subject. Paths that never existed in main's history were moved out by the
+  rewrite. Only a shallow clone still reads UNMEASURABLE, with exit 3.
+
+**Reconciliation of 2026-11-11** (the backlog this change inherited):
+
+| Group | Branches | Outcome |
+|---|---|---|
+| Stranded, already on main by content | 3 (`editorial-footprint-risk-system-m8xani`, `fix-latin1-superscript-count`, `wonderful-tesla-vbcs4c-section-sign-minecraft`) | LANDED; no task |
+| Stranded, residue is generated output or a differently fixed line | 2 (`inspiring-babbage-eg3rec`, `loving-tesla-rim7te`) | excluded, with the evidence in the ledger entry |
+| Stranded, content main lacks | 9 | one recovery task each, filed on the first run |
+| Pre-rewrite, every commit on main | 212 | reconciled |
+| Pre-rewrite, only paths moved out by the rewrite | 128 | reconciled |
+| Pre-rewrite, content main lacks | 41 | one recovery task listing all of them; none can be PR'd |
 
 ## Shallow clones defeat history questions
 
