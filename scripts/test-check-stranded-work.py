@@ -1,144 +1,227 @@
 #!/usr/bin/env python3
-"""Fixture tests for scripts/check-stranded-work.py.
+"""Tests for the stranded-work detector, against throwaway git repositories.
 
-Each case builds a throwaway repository with a bare `origin`, so the script's
-real git calls run unmodified. The negative cases are the point: a shallow
-clone, a recently stranded branch and a recent branch with unrelated history
-must each fail the run; only old unrelated history and old stranded work may
-pass it (2026-11-11: 381 pre-rewrite branches failed every scheduled run).
+Each fixture is a bare "origin" plus a full clone, built so that every state the detector
+distinguishes exists exactly once, including the pre-rewrite case that the daily run reported
+as 381 UNMEASURABLE branches until 2026-11-11. Run: python3 scripts/test-check-stranded-work.py
 """
-import datetime as dt
+import io
 import json
 import os
 import pathlib
 import subprocess
 import sys
 import tempfile
-import unittest
+import contextlib
 
-SCRIPT = pathlib.Path(__file__).resolve().parent / 'check-stranded-work.py'
+HERE = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE / 'lib'))
+sys.path.insert(0, str(HERE))
+import stranded_work as sw  # noqa: E402
+
+check = __import__('check-stranded-work')
+
+FAILS = []
+
+
+def expect(cond, msg):
+    print(('  ok   ' if cond else '  FAIL ') + msg)
+    if not cond:
+        FAILS.append(msg)
 
 
 def sh(cwd, *args, env=None):
-    # isolated from the caller's git config (signing hooks, identities)
-    e = dict(os.environ, GIT_AUTHOR_NAME='t', GIT_AUTHOR_EMAIL='t@t', GIT_COMMITTER_NAME='t',
-             GIT_COMMITTER_EMAIL='t@t', GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM='1', **(env or {}))
-    return subprocess.run(args, cwd=cwd, env=e, capture_output=True, text=True, check=True).stdout
+    r = subprocess.run(args, cwd=cwd, capture_output=True, text=True, env={**os.environ, **(env or {})})
+    if r.returncode:
+        raise RuntimeError(f'{args}: {r.stderr}')
+    return r.stdout.strip()
 
 
-def commit(cwd, name, text, days_ago=0):
-    pathlib.Path(cwd, name).write_text(text)
-    sh(cwd, 'git', 'add', name)
-    when = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days_ago)).strftime('%Y-%m-%dT%H:%M:%S+0000')
-    sh(cwd, 'git', 'commit', '-q', '-m', name, '--date', when, env={'GIT_COMMITTER_DATE': when})
+def commit(cwd, msg, files, date, delete=()):
+    for path, text in files.items():
+        p = pathlib.Path(cwd, path)
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(text)
+        sh(cwd, 'git', 'add', path)
+    for path in delete:
+        sh(cwd, 'git', 'rm', '-q', path)
+    env = {'GIT_AUTHOR_DATE': date, 'GIT_COMMITTER_DATE': date}
+    sh(cwd, 'git', 'commit', '-q', '-m', msg, env=env)
+    return sh(cwd, 'git', 'rev-parse', 'HEAD')
 
 
-class Fixture:
-    def __init__(self):
-        self.tmp = tempfile.TemporaryDirectory()
-        root = pathlib.Path(self.tmp.name)
-        self.origin, self.work, self.clone = root / 'origin.git', root / 'work', root / 'clone'
-        sh(root, 'git', 'init', '-q', '--bare', str(self.origin))
-        sh(root, 'git', 'init', '-q', '-b', 'main', str(self.work))
-        sh(self.work, 'git', 'remote', 'add', 'origin', str(self.origin))
-        commit(self.work, 'base.txt', 'base', days_ago=200)
-        sh(self.work, 'git', 'push', '-q', 'origin', 'main')
+def build(root):
+    """Return (clone path, bare path). Branch → intended state is in the names."""
+    root = pathlib.Path(root)
+    bare, work = root / 'origin.git', root / 'work'
+    sh(root, 'git', 'init', '-q', '--bare', str(bare))
+    sh(root, 'git', 'init', '-q', '-b', 'main', str(work))
+    for k, v in (('user.email', 'a@example.com'), ('user.name', 'A'), ('commit.gpgsign', 'false')):
+        sh(work, 'git', 'config', k, v)
+    sh(work, 'git', 'remote', 'add', 'origin', str(bare))
+    d = lambda n: f'2026-08-{n:02d}T10:00:00+00:00'  # noqa: E731
 
-    def branch(self, name, files, days_ago=0, orphan=False, from_ref='main'):
-        if orphan:
-            sh(self.work, 'git', 'checkout', '-q', '--orphan', name)
-            sh(self.work, 'git', 'rm', '-q', '-rf', '.')
-        else:
-            sh(self.work, 'git', 'checkout', '-q', '-b', name, from_ref)
-        for f in files:
-            commit(self.work, f, f, days_ago=days_ago)
-        sh(self.work, 'git', 'push', '-q', 'origin', name)
-        sh(self.work, 'git', 'checkout', '-q', 'main')
+    # Pre-rewrite history: old root, then a branch off it.
+    sh(work, 'git', 'checkout', '-q', '--orphan', 'old')
+    # The old root carries a path the rewrite filtered out, so its tree (and every SHA after it) differs.
+    commit(work, 'init', {'page.html': 'a\nb\n', 'strategy/readme.md': 'old\n'}, d(1))
+    commit(work, 'add strategy doc', {'strategy/plan.md': 'secret\n'}, d(2))
+    commit(work, 'add faq', {'page.html': 'a\nb\nfaq\n'}, d(3))
+    old_tip = sh(work, 'git', 'rev-parse', 'HEAD')
+    sh(work, 'git', 'checkout', '-q', '-b', 'old-reconciled')          # every commit has a twin on main
+    sh(work, 'git', 'checkout', '-q', old_tip)
+    sh(work, 'git', 'checkout', '-q', '-b', 'old-moved')               # only touches a moved-out path
+    commit(work, 'more strategy', {'strategy/plan.md': 'secret\nmore\n'}, d(4))
+    sh(work, 'git', 'checkout', '-q', old_tip)
+    sh(work, 'git', 'checkout', '-q', '-b', 'old-residue')             # content main never got
+    commit(work, 'add pricing table', {'page.html': 'a\nb\nfaq\npricing table\n'}, d(5))
 
-    def run(self, prs=(), shallow=False):
-        if self.clone.exists():
-            sh(self.clone.parent, 'rm', '-rf', str(self.clone))
-        if shallow:
-            sh(self.clone.parent, 'git', 'clone', '-q', '--depth', '1', '--no-single-branch',
-               f'file://{self.origin}', str(self.clone))
-        else:
-            sh(self.clone.parent, 'git', 'clone', '-q', str(self.origin), str(self.clone))
-        prs_file = pathlib.Path(self.tmp.name, 'prs.json')
-        prs_file.write_text(json.dumps([{'number': i + 1, 'headRefName': b} for i, b in enumerate(prs)]))
-        out_json = pathlib.Path(self.tmp.name, 'out.json')
-        r = subprocess.run([sys.executable, str(SCRIPT), '--open-prs', str(prs_file), '--fail-newer-than-days', '3',
-                            '--json', str(out_json)], capture_output=True, text=True,
-                           env=dict(os.environ, STRANDED_WORK_REPO=str(self.clone), GIT_CONFIG_GLOBAL=os.devnull))
-        data = json.loads(out_json.read_text()) if out_json.exists() else None
-        return r.returncode, r.stdout, data
+    # Rewritten main: same author dates, emails and subjects, strategy/ filtered out.
+    sh(work, 'git', 'checkout', '-q', '--orphan', 'main')
+    sh(work, 'git', 'rm', '-rq', '--cached', '.')
+    for p in ('page.html', 'strategy'):
+        sh(work, 'rm', '-rf', p)
+    commit(work, 'init', {'page.html': 'a\nb\n'}, d(1))
+    commit(work, 'add faq', {'page.html': 'a\nb\nfaq\n'}, d(3))
+    base = sh(work, 'git', 'rev-parse', 'HEAD')
+
+    def branch(name, *commits):
+        sh(work, 'git', 'checkout', '-q', '-b', name, base)
+        for c in commits:
+            commit(work, *c)
+        sh(work, 'git', 'checkout', '-q', 'main')
+
+    branch('merged', ('merged work', {'merged.txt': 'm\n'}, d(10)))
+    branch('stranded', ('lost page', {'lost.html': 'lost line\n'}, d(11)))
+    branch('tracked', ('pr work', {'tracked.txt': 't\n'}, d(12)))
+    branch('excluded', ('dead work', {'dead.txt': 'd\n'}, d(13)))
+    branch('landed', ('fix typo', {'page.html': 'a\nb\nfaq\nfixed\n'}, d(14)))
+    branch('deletes', ('drop page', {}, d(15), ('page.html',)))
+    sh(work, 'git', 'merge', '-q', '--no-ff', '-m', 'Merge merged', 'merged')
+    # The landed branch's change reaches main as a different commit (a squash), so it is not an ancestor.
+    commit(work, 'squash: fix typo', {'page.html': 'a\nb\nfaq\nfixed\n'}, d(16))
+
+    for b in ('main', 'merged', 'stranded', 'tracked', 'excluded', 'landed', 'deletes',
+              'old-reconciled', 'old-moved', 'old-residue'):
+        sh(work, 'git', 'push', '-q', 'origin', b)
+    sh(work, 'git', 'fetch', '-q', 'origin')
+    return work, bare
 
 
-class StrandedWork(unittest.TestCase):
-    def setUp(self):
-        self.f = Fixture()
+def run(work, tasks=None, prs=('tracked',), excl=('origin/excluded',), tmp=None):
+    tmp = pathlib.Path(tmp)
+    prs_path = tmp / 'prs.json'
+    prs_path.write_text(json.dumps([{'number': 1, 'headRefName': p} for p in prs]))
+    tasks_path = None
+    if tasks is not None:
+        tasks_path = tmp / 'tasks.json'
+        tasks_path.write_text(json.dumps(tasks))
+    ledger = tmp / 'excl.json'
+    ledger.write_text(json.dumps({b: {'reason': 'test', 'date': '2026-11-11'} for b in excl}))
+    plan_path = tmp / 'plan.json'
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        code = check.run(str(work), str(prs_path), tasks_path and str(tasks_path), str(plan_path), 'o/r', ledger)
+    plan = json.loads(plan_path.read_text()) if plan_path.exists() else []
+    return code, buf.getvalue(), plan
 
-    def tearDown(self):
-        self.f.tmp.cleanup()
 
-    def test_clean_repository_passes(self):
-        rc, out, data = self.f.run()
-        self.assertEqual(rc, 0, out)
-        self.assertEqual(data['counts']['new_stranded'], 0)
+def main():
+    with tempfile.TemporaryDirectory() as tmp:
+        work, bare = build(tmp)
+        repo = sw.Repo(work)
+        rows, shallow = sw.classify_all(repo, {'tracked'}, {'origin/excluded'})
+        st = {r['short']: r for r in rows}
 
-    def test_recently_stranded_branch_fails(self):
-        self.f.branch('claude/new-work', ['a.txt'], days_ago=0)
-        rc, out, data = self.f.run()
-        self.assertEqual(rc, 1, out)
-        self.assertEqual([r['action'] for r in data['records'] if r['category'] == 'new-stranded'], ['open-pr'])
+        print('classification (full clone)')
+        expect(not shallow, 'fixture clone is full')
+        for name, want in (('merged', 'MERGED'), ('stranded', 'STRANDED'), ('tracked', 'TRACKED'),
+                           ('excluded', 'EXCLUDED'), ('landed', 'LANDED'), ('deletes', 'STRANDED'),
+                           ('old-reconciled', 'DISJOINT'), ('old-moved', 'DISJOINT'), ('old-residue', 'DISJOINT')):
+            expect(st.get(name, {}).get('state') == want, f'{name} -> {want} (got {st.get(name, {}).get("state")})')
+        expect(st['old-reconciled']['residue'] == {}, 'pre-rewrite branch whose commits all have twins on main: no residue')
+        expect(st['old-moved']['residue'] == {} and st['old-moved']['moved'] == ['strategy/plan.md'],
+               'pre-rewrite branch touching only a moved-out path: no residue, path reported as moved')
+        expect(st['old-residue']['residue'] == {'page.html': 1}, 'pre-rewrite branch with a new line: residue 1 line')
+        expect(st['deletes']['residue'] == {'page.html': 1}, 'a deletion main does not have counts as residue')
+        expect(st['stranded']['residue'] == {'lost.html': 1}, 'a new file counts its lines as residue')
 
-    def test_tracked_branch_passes(self):
-        self.f.branch('claude/new-work', ['a.txt'], days_ago=0)
-        rc, out, _ = self.f.run(prs=['claude/new-work'])
-        self.assertEqual(rc, 0, out)
+        print('exit codes and alerts')
+        code, out, plan = run(work, tmp=tmp)
+        expect(code == 1, f'no task list: everything stranded is new, exit 1 (got {code})')
+        keys = sorted(a['key'] for a in plan)
+        expect(keys == ['branch:deletes', 'branch:stranded', 'pre-rewrite'], f'creates one task per item (got {keys})')
+        expect(all(a['action'] == 'create' and a['alert'] for a in plan), 'every first sighting is an alert')
+        expect('compare/main...stranded' in next(a['body'] for a in plan if a['key'] == 'branch:stranded'),
+               'task body carries the compare link')
 
-    def test_old_stranded_is_backlog_not_failure(self):
-        self.f.branch('claude/old-work', ['a.txt'], days_ago=30)
-        rc, out, data = self.f.run()
-        self.assertEqual(rc, 0, out)
-        self.assertEqual(data['counts']['historical_stranded'], 1)
+        def issues(state='OPEN', tips=None, members='old-residue'):
+            tips = tips or {}
+            out = []
+            for i, a in enumerate(plan, start=10):
+                fields = sw.parse_marker(a['body'])
+                if a['key'] in tips:
+                    fields['tip'] = tips[a['key']]
+                if a['key'] == 'pre-rewrite':
+                    fields['members'] = members
+                out.append({'number': i, 'state': state,
+                            'body': sw.marker(**fields) + '\nbody'})
+            return out
 
-    def test_old_unrelated_history_is_reported_not_failed(self):
-        self.f.branch('claude/pre-rewrite', ['x.txt'], days_ago=120, orphan=True)
-        rc, out, data = self.f.run()
-        self.assertEqual(rc, 0, out)
-        self.assertEqual(data['clone'], 'full')
-        self.assertEqual(data['counts']['unrelated_history'], 1)
-        self.assertIn('share NO history', out)
+        code, out, plan2 = run(work, tasks=issues(), tmp=tmp)
+        expect(code == 0, f'known backlog with open tasks: exit 0 (got {code})')
+        expect(plan2 == [], f'known backlog: no task changes (got {[a["action"] for a in plan2]})')
+        expect('No newly stranded work' in out, 'says so')
 
-    def test_recent_unrelated_history_fails(self):
-        self.f.branch('claude/fresh-orphan', ['x.txt'], days_ago=0, orphan=True)
-        rc, out, data = self.f.run()
-        self.assertEqual(rc, 1, out)
-        self.assertEqual(data['counts']['unrelated_recent'], 1)
+        code, _, plan3 = run(work, tasks=issues(state='CLOSED'), tmp=tmp)
+        expect(code == 1 and sorted((a['action'], a['key']) for a in plan3)
+               == [('reopen', 'branch:deletes'), ('reopen', 'branch:stranded'), ('reopen', 'pre-rewrite')],
+               f'task closed while work still stranded: reopened, alert (got {code}, {[a["action"] for a in plan3]})')
 
-    def test_shallow_clone_fails_closed(self):
-        self.f.branch('claude/old-work', ['a.txt'], days_ago=30)
-        commit(self.f.work, 'main2.txt', 'm', days_ago=10)
-        sh(self.f.work, 'git', 'push', '-q', 'origin', 'main')
-        rc, out, data = self.f.run(shallow=True)
-        self.assertEqual(data['clone'], 'shallow')
-        self.assertGreater(data['counts']['unmeasurable'], 0, out)
-        self.assertEqual(rc, 1, out)
+        code, _, plan4 = run(work, tasks=issues(tips={'branch:stranded': 'deadbeef0'}), tmp=tmp)
+        expect(code == 1 and [a['action'] for a in plan4] == ['update'],
+               f'new commits on a stranded branch: update + alert (got {code}, {[a["action"] for a in plan4]})')
 
-    def test_cherry_picked_work_is_a_superseded_candidate(self):
-        self.f.branch('claude/landed-elsewhere', ['p.txt'], days_ago=20)
-        tip = sh(self.f.work, 'git', 'rev-parse', 'claude/landed-elsewhere').strip()
-        sh(self.f.work, 'git', 'cherry-pick', tip)
-        sh(self.f.work, 'git', 'push', '-q', 'origin', 'main')
-        rc, out, data = self.f.run()
-        actions = {r['branch']: r['action'] for r in data['records']}
-        self.assertEqual(actions['origin/claude/landed-elsewhere'], 'superseded-candidate')
+        code, _, plan5 = run(work, tasks=issues(members='old-residue,old-gone'), tmp=tmp)
+        expect(code == 0 and [a['action'] for a in plan5] == ['update'] and not plan5[0]['alert'],
+               'a pre-rewrite branch resolving: body updated, no alert')
 
-    def test_no_pr_data_is_not_a_pass(self):
-        r = subprocess.run([sys.executable, str(SCRIPT)], capture_output=True, text=True, stdin=subprocess.DEVNULL,
-                           env=dict(os.environ, STRANDED_WORK_REPO=str(self.f.work)))
-        self.assertEqual(r.returncode, 2, r.stdout)
+        code, _, plan6 = run(work, tasks=issues(members=''), tmp=tmp)
+        expect(code == 1 and plan6[0]['alert'] and 'old-residue' in plan6[0]['comment'],
+               'a branch new to the pre-rewrite list: alert naming it')
+
+        code, _, plan7 = run(work, tasks=issues(), prs=('tracked', 'stranded'), tmp=tmp)
+        closes = [a for a in plan7 if a['action'] == 'close']
+        expect(code == 0 and len(closes) == 1 and closes[0]['key'] == 'branch:stranded'
+               and 'open PR' in closes[0]['comment'], 'a PR opened for the branch closes its task')
+
+        code, _, plan8 = run(work, tasks=issues(), excl=('origin/excluded', 'origin/deletes'), tmp=tmp)
+        expect(code == 0 and [(a['action'], a['key']) for a in plan8] == [('close', 'branch:deletes')],
+               'an exclusion closes the task without an alert')
+
+        code, out, _ = run(work, tasks=issues(), excl=('origin/excluded', 'origin/merged'), tmp=tmp)
+        expect('entr(ies) no longer match' in out and 'origin/merged' in out, 'a stale exclusion is reported')
+
+        print('fails closed')
+        buf = io.StringIO()
+        empty = pathlib.Path(tmp, 'empty.json')
+        empty.write_text('')
+        with contextlib.redirect_stdout(buf):
+            code = check.run(str(work), str(empty), None, None, None, pathlib.Path(tmp, 'none.json'))
+        expect(code == 2, f'no open-PR data: exit 2 (got {code})')
+
+        shallow_dir = pathlib.Path(tmp, 'shallow')
+        sh(tmp, 'git', 'clone', '-q', '--depth', '1', '--no-single-branch', f'file://{bare}', str(shallow_dir))
+        code, out, _ = run(shallow_dir, tasks=[], tmp=tmp)
+        expect(code == 3 and 'UNMEASURABLE' in out, f'shallow clone: UNMEASURABLE, exit 3, never clean (got {code})')
+
+    print('')
+    if FAILS:
+        print(f'{len(FAILS)} FAILED')
+        return 1
+    print('all passed')
+    return 0
 
 
 if __name__ == '__main__':
-    unittest.main(verbosity=1)
+    sys.exit(main())

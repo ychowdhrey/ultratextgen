@@ -1,36 +1,27 @@
 name: Stranded work
 
-# Finds branches carrying commits that no open PR tracks — work that is
-# finished, gate-passing, and will never reach `main` because a merged PR
-# cannot track new work.
+# Finds branches carrying work that no open PR tracks — finished, gate-passing,
+# and never reaching `main` because a merged PR cannot track new work — and
+# keeps one recovery issue (label `stranded-work`) per stranded branch.
 #
-# NOT a PR gate, deliberately. The repository carries a real backlog of such
-# branches (16 at the time this shipped, the oldest 70 days), so a gating
-# version would be red on every PR regardless of what that PR did, which is
-# precisely how a check earns the right to be ignored. It runs on a schedule
-# and fails its own run instead, which is visible in the Actions tab without
-# blocking anyone's merge.
+# NOT a PR gate, deliberately. It runs on a schedule and fails its own run,
+# visible in the Actions tab without blocking anyone's merge. It fails only on
+# something NEW: a stranded branch with no recovery issue, an issue closed while
+# its work is still stranded, new commits on a stranded branch, or a branch new
+# to the pre-rewrite list. The known backlog lives in its open issues and is
+# reported every run without turning it red; an issue closes itself once its
+# branch is merged, tracked by an open PR, landed by content, or excluded in
+# data/stranded_work_exclusions.json. (Before 2026-11-11 the run was red every
+# day: first on the whole backlog, then on 381 "unmeasurable" branches that were
+# in fact cut before main's 2026-07-10 history rewrite and so shared no commit
+# with main on any clone. They are measured by content now.)
 #
 # fetch-depth: 0 is load-bearing, not hygiene. On a shallow checkout
 # `git merge-base` cannot resolve a common ancestor for most branches, and a
 # naive count then reports a branch's entire history as unmerged. The script
-# reports those as UNMEASURABLE rather than clean.
-#
-# On a full clone a missing merge-base means something else: the branch shares
-# no history with main. Measured 2026-11-11: 381 branches share a root commit
-# main does not have, none newer than 2026-07-10 (main's history was rewritten
-# then). The script now reports those as UNRELATED with their age; until then
-# they failed every scheduled run while the summary called this clone shallow.
-# Each run also writes stranded-work.json: one recovery record per non-clean
-# branch (new / historical / excluded / unrelated / unmeasurable, plus the
-# advised action). Advisory only: nothing here merges, deletes or rebases.
+# reports those as UNMEASURABLE (exit 3) rather than clean.
 
 on:
-  pull_request:
-    paths:
-      - 'scripts/check-stranded-work.py'
-      - 'scripts/test-check-stranded-work.py'
-      - '.github/workflows/stranded-work.yml'
   schedule:
     - cron: '0 7 * * *'   # daily, 07:00 UTC — after the Monday digest's 06:00
   workflow_dispatch:
@@ -38,20 +29,10 @@ on:
 permissions:
   contents: read
   pull-requests: read
+  issues: write        # recovery tasks: create, reopen, update, close
 
 jobs:
-  tests:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v6
-        with:
-          python-version: '3.11'
-      - run: python3 scripts/test-check-stranded-work.py
-
   stranded-work:
-    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -78,11 +59,22 @@ jobs:
         run: |
           gh pr list --state open --json number,headRefName --limit 300 \
             > open-prs.json
-          # Fails only on work stranded in the last 3 days (a missed daily run still catches it); the older backlog is listed
-          # in the summary every day but no longer turns the run red on the same branches day after day (10 of 10 runs
-          # red, 2026-11-01..10).  Drop the flag to fail on the whole backlog again.
-          python3 scripts/check-stranded-work.py --open-prs open-prs.json --fail-newer-than-days 3 \
-            --json stranded-work.json | tee stranded-work.log
+          # Idempotent. Listing by a label that does not exist yet must not be what fails the very first run.
+          gh label create stranded-work --force --color B60205 \
+            --description 'Work on a branch that no open PR tracks (daily Stranded work run)'
+          gh issue list --label stranded-work --state all --json number,state,body --limit 500 \
+            > tasks.json
+          python3 scripts/check-stranded-work.py --open-prs open-prs.json --tasks tasks.json \
+            --plan-out stranded-plan.json | tee stranded-work.log
+
+      # Runs whatever the check concluded: a red run still files its tasks, a green one still closes resolved ones.
+      - name: Apply recovery tasks
+        id: tasks
+        if: always() && hashFiles('stranded-plan.json') != ''
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/apply-stranded-work-tasks.py stranded-plan.json | tee stranded-tasks.log
 
       - name: Job summary
         if: always()
@@ -92,19 +84,14 @@ jobs:
             echo '```'
             cat stranded-work.log || echo "(no output — the check did not run)"
             echo '```'
+            echo "### Recovery tasks — \`${{ steps.tasks.outcome }}\`"
+            echo '```'
+            cat stranded-tasks.log 2>/dev/null || echo "(not run)"
+            echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Keep the recovery records
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: stranded-work-${{ github.run_id }}
-          path: stranded-work.json
-          if-no-files-found: warn
-          retention-days: 30
-
-      - name: Fail the run if any branch carries untracked work
-        if: steps.stranded.outcome == 'failure'
+      - name: Fail the run on newly stranded work, or if the tasks could not be filed
+        if: steps.stranded.outcome == 'failure' || steps.tasks.outcome == 'failure'
         run: |
-          echo "Branches carrying commits no open PR tracks — see the summary."
+          echo "check: ${{ steps.stranded.outcome }} · recovery tasks: ${{ steps.tasks.outcome }} — see the summary."
           exit 1
