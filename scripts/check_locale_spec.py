@@ -40,6 +40,7 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
 from collection_sets import sets_in  # noqa: E402
+import canonical_intents as ci  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://ultratextgen.com"
@@ -66,6 +67,16 @@ def live_collection_sets(rel):
 
 def rd(path):
     return io.open(os.path.join(ROOT, path), encoding="utf-8", errors="replace").read()
+
+
+def _registry():
+    # Loaded once; an unreadable registry is UNKNOWN for any spec that needs it.
+    if not hasattr(_registry, "cache"):
+        try:
+            _registry.cache = ci.load(ROOT)
+        except ci.RegistryUnavailable as e:
+            _registry.cache = e
+    return _registry.cache
 
 
 def en_parent_of(spec):
@@ -141,33 +152,74 @@ def check(path, strict=False):
         E("hreflang has no self-reference — the single most-repeated mesh bug on this site")
     elif by[lang][0] != want_canon:
         E(f"hreflang self-reference is {by[lang][0]!r}, expected {want_canon!r}")
-    if "en" not in by:
-        E('hreflang has no "en" entry — cluster membership is derived from it')
-    if "x-default" not in by:
-        E('hreflang has no "x-default"')
-    elif "en" in by and by["x-default"][0] != by["en"][0]:
-        W(f'x-default ({by["x-default"][0]}) does not match en ({by["en"][0]})')
     for k, v in by.items():
         if len(v) > 1:
             E(f'hreflang declares "{k}" {len(v)} times')
 
-    # --- EN parent exists, and lane is inherited -----------------------------
-    en_folder, en_slug = en_parent_of(spec)
-    if not en_slug:
-        E("could not resolve an EN parent from the hreflang block")
+    # --- the cluster's reference page ----------------------------------------
+    # With an English member: the English page, as before. Without one (allowed
+    # since 2026-11-14 — a page may originate in any qualified language): the
+    # canonical intent record that pins a member of this cluster names the
+    # reference page (its primary, else origin-locale page). The origin page
+    # itself has nothing to be compared against.
+    if "en" in by:
+        if "x-default" not in by:
+            E('hreflang has no "x-default"')
+        elif by["x-default"][0] != by["en"][0]:
+            W(f'x-default ({by["x-default"][0]}) does not match en ({by["en"][0]})')
+        en_folder, en_slug = en_parent_of(spec)
+        if not en_slug:
+            E("could not resolve an EN parent from the hreflang block")
+            return errs, warns
+        ref_rel = f"{en_folder}/{en_slug}/index.html"
+        ref_folder = en_folder
+        ref_href = f"{SITE}/{en_folder}/{en_slug}/"
+        ref_label = "EN parent"
+    else:
+        reg = _registry()
+        if isinstance(reg, Exception):
+            E(f"UNKNOWN: no \"en\" entry, and the canonical intent registry cannot be read ({reg})")
+            return errs, warns
+        members = [h.get("href") for h in hl if h.get("lang") != "x-default"]
+        rec = ci.record_for(reg, members + [want_canon])
+        if not rec:
+            E('no "en" entry and no canonical intent: a page with no English sibling must map to a record in '
+              'data/canonical_intents.json that pins it or a sibling (an English page is NOT required; see '
+              'docs/architecture/language-neutral-intents.md)')
+            return errs, warns
+        by_lang = {k: v[0] for k, v in by.items() if k != "x-default"}
+        want_xd = ci.expected_x_default(rec, by_lang, reg.get("policy"))
+        have_xd = by.get("x-default", [None])[0]
+        if want_xd is None and have_xd:
+            E(f"x-default {have_xd} declared, but {rec['id']} has no x-default (no English member and no declared "
+              f"xDefault); drop it rather than pointing it at a page that is not the default")
+        elif want_xd and have_xd != want_xd:
+            E(f"x-default is {have_xd!r}, expected {want_xd!r} for {rec['id']}")
+        ref_href = ci.reference_page(rec)
+        ref_label = f"reference page ({rec['id']})"
+        if ref_href == want_canon:
+            # The origin (or primary) page: nothing to compare tiles or combo
+            # sets against. Everything below that is about the page itself
+            # (FAQ depth, related links, duplicates, untranslated copy) still runs.
+            ref_rel = None
+        else:
+            ref_rel = ci.url_to_rel(ref_href)
+            parts = ref_rel.split("/")
+            ref_folder = parts[1] if len(parts) > 2 else parts[0]
+
+    # --- reference page exists, and lane is inherited ------------------------
+    en_rel = ref_rel
+    if en_rel and not os.path.exists(os.path.join(ROOT, en_rel)):
+        E(f"{ref_label} {en_rel} does not exist on disk")
         return errs, warns
-    en_rel = f"{en_folder}/{en_slug}/index.html"
-    if not os.path.exists(os.path.join(ROOT, en_rel)):
-        E(f"EN parent {en_rel} does not exist on disk")
-        return errs, warns
-    if en_folder != folder:
-        E(f"lane mismatch: EN parent is /{en_folder}/ but page_type routes to /{folder}/")
+    if en_rel and ref_folder != folder:
+        E(f"lane mismatch: {ref_label} is /{ref_folder}/ but page_type routes to /{folder}/")
 
     # --- tile parity with the LIVE EN page, not its spec ---------------------
-    live, mine = live_tile_count(en_rel), spec_tile_count(spec)
-    if live != mine:
-        E(f"tile count {mine} != live EN parent's {live} ({en_rel}) — "
-          f"check the EN spec is not stale against its own page")
+    live, mine = (live_tile_count(en_rel) if en_rel else None), spec_tile_count(spec)
+    if en_rel and live != mine:
+        E(f"tile count {mine} != live {ref_label}'s {live} ({en_rel}) — "
+          f"check the reference spec is not stale against its own page")
 
     # --- combo-set parity with the LIVE EN page ------------------------------
     # ERROR on absence, WARN on a count gap, deliberately different strengths.
@@ -176,11 +228,11 @@ def check(path, strict=False):
     # group-count gap is a thin section, not a missing one, and 17 pairs carry
     # it today — gating on that would make this permanently red, which is how
     # a check gets ignored.
-    en_sets = live_collection_sets(en_rel)
+    en_sets = live_collection_sets(en_rel) if en_rel else {}
     mine_sets = spec.get("collections") or []
     if en_sets and not mine_sets:
         ids = ", ".join(sorted(en_sets))
-        E(f"EN parent {en_rel} renders a combo-set section (#{ids}, "
+        E(f"{ref_label} {en_rel} renders a combo-set section (#{ids}, "
           f"{sum(en_sets.values())} groups) but this spec declares no "
           f"'collections' — those tiles are built at runtime by buildGrids(), "
           f"so a page without the section still passes every tile count")
@@ -189,7 +241,7 @@ def check(path, strict=False):
           f"{spec.get('copy_pattern')!r} — the generator only emits the "
           "section for copy_pattern 'collection'")
     elif en_sets and mine_sets and sum(en_sets.values()) != len(mine_sets):
-        W(f"{len(mine_sets)} combo-set groups against the live EN parent's "
+        W(f"{len(mine_sets)} combo-set groups against the live {ref_label}'s "
           f"{sum(en_sets.values())} ({en_rel})")
 
     # --- the depth the id batch established as the floor ---------------------
@@ -224,9 +276,9 @@ def check(path, strict=False):
         if os.path.basename(os.path.dirname(p)) == slug:
             continue
         s = io.open(p, encoding="utf-8", errors="replace").read()
-        if re.search(rf'hreflang="en"\s+href="{re.escape(SITE)}/{en_folder}/{re.escape(en_slug)}/"', s):
-            E(f"{os.path.relpath(p, ROOT)} already claims the same EN parent "
-              f"({en_folder}/{en_slug}) — duplicate claimant, resolve before building")
+        if re.search(rf'hreflang="[^"]+"\s+href="{re.escape(ref_href)}"', s):
+            E(f"{os.path.relpath(p, ROOT)} already claims the same {ref_label} "
+              f"({ref_href}) — duplicate claimant, resolve before building")
 
     # --- untranslated copy ---------------------------------------------------
     for field in ("title", "hero_h1", "hero_tagline", "intro", "meta_description"):

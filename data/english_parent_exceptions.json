@@ -1,4 +1,5 @@
 {
+  "_readme_retired_2026_11_14": "RETIRED 2026-11-14 (owner-directed language-neutral architecture). An English parent is no longer required, so this ledger is no longer an approval mechanism and no script reads it. Every entry below was migrated to a canonical intent record in data/canonical_intents.json (see each entry's migratedTo); the entries are preserved unchanged as the auditable history of each ratification. Do not add entries.",
   "_readme": "Machine-readable ledger of the English-Parent Rule's ratified local-only exceptions — locale pages explicitly agreed to exist with NO live English parent (see `.claude/rules/localization.md`, which holds the full narrative for each). This file is the state the tooling consults; `docs/decisions/local-only-locale-exceptions.md` is the reasoning of record. Read by scripts/check-locale-parent-gap.js: a newly-added locale page whose canonical URL is listed here passes the no-en-parent check instead of failing it. Do NOT add an entry here unilaterally — every entry must reflect a real, discussed ratification with the user, the same bar as data/translation_parity_exceptions.json and data/locale_parent_gap_audit.json. Entry shape: { localeUrl (full canonical https URL, trailing slash), reason (why no EN parent exists — 'no-EN-demand-by-construction' cases vs 'EN-SERP-consolidation' cases are different claims, name which), agreed (YYYY-MM-DD), enDemandBasis (what was known about EN-side demand at ratification), lastRechecked (YYYY-MM-DD or null — date of the last reverse-demand sweep), nextRecheck (YYYY-MM-DD — when the EN side should next be checked), verdict (latest re-check outcome: null until first sweep, then 'exception-stands' | 'veto' (EN demand exists but the EN SERP consolidates the term onto an existing page — building a parent would cannibalize it) | 'build-parent' (EN demand found on a distinct SERP — build the EN parent, wire the cluster, then REMOVE this entry)) }. The standing decision rule when EN demand appears is ownership-check-before-build: demand alone never auto-triggers the EN build — run the 'check who already owns it' test on the English SERP first, then build or record a dated veto.",
   "exceptions": [
     {
@@ -8,7 +9,8 @@
       "enDemandBasis": "No English speaker searches 'gal moji converter' as a query distinct from the plain homepage generator — asserted at ratification, not instrument-checked.",
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "write-in-gal-moji"
     },
     {
       "localeUrl": "https://ultratextgen.com/ko/font-byeonhwan/",
@@ -17,7 +19,8 @@
       "enDemandBasis": "Asserted at ratification, not instrument-checked.",
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "style-text-to-stand-out/latin-text-for-cjk-readers"
     },
     {
       "localeUrl": "https://ultratextgen.com/zh-tw/yingwen-ziti/",
@@ -26,7 +29,8 @@
       "enDemandBasis": "Asserted at ratification, not instrument-checked.",
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "style-text-to-stand-out/latin-text-for-cjk-readers"
     },
     {
       "localeUrl": "https://ultratextgen.com/id/tulisan-cuping/",
@@ -35,7 +39,8 @@
       "enDemandBasis": "'font cuping'/'cuping font' shows substantial combined ID-market demand at low difficulty; 'cuping' is not a term English speakers search — the ID-side number is measured, the EN-side zero is asserted.",
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "cute-lisping-text-transform"
     },
     {
       "localeUrl": "https://ultratextgen.com/fr/changeur-de-police/",
@@ -45,7 +50,8 @@
       "lastRechecked": "2026-08-11",
       "nextRecheck": "2026-11-01",
       "verdict": "veto",
-      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on."
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on.",
+      "migratedTo": "style-text-to-stand-out/font-changer"
     },
     {
       "localeUrl": "https://ultratextgen.com/fr/police-d-ecriture/",
@@ -55,7 +61,8 @@
       "lastRechecked": "2026-08-11",
       "nextRecheck": "2026-11-01",
       "verdict": "veto",
-      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on."
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on.",
+      "migratedTo": "style-text-to-stand-out/typeface-generator"
     },
     {
       "localeUrl": "https://ultratextgen.com/fr/ecriture-speciale/",
@@ -64,7 +71,8 @@
       "enDemandBasis": "Negligible FR volume in the 26-day GSC pull; EN side never checked.",
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "style-text-to-stand-out/special-writing"
     },
     {
       "localeUrl": "https://ultratextgen.com/id/usecase/nama-discord-keren/",
@@ -73,7 +81,8 @@
       "enDemandBasis": "GSC (Jul 2-28 2026) shows zero query overlap with the page that owns the nickname-generator parent: nama-discord-keren draws 118 impressions led by 'nama discord keren' (63) and 'nama role discord keren' (13), while id/usecase/nama-panggilan/ draws 28 led by 'buat nama panggilan keren' (5). EN side: no EN Discord-name page exists at all — this is an absent-parent claim, not a no-EN-demand claim, so the reverse-demand sweep should ask whether an EN Discord-name parent is worth building, not whether EN demand exists.",
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "pick-a-platform-username/discord"
     },
     {
       "localeUrl": "https://ultratextgen.com/it/font-copia-e-incolla/",
@@ -83,7 +92,8 @@
       "lastRechecked": "2026-08-11",
       "nextRecheck": "2026-11-01",
       "verdict": "veto",
-      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on."
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on.",
+      "migratedTo": "style-text-to-stand-out/font-changer"
     },
     {
       "localeUrl": "https://ultratextgen.com/it/caratteri-speciali/",
@@ -93,7 +103,8 @@
       "lastRechecked": "2026-08-11",
       "nextRecheck": "2026-11-01",
       "verdict": "veto",
-      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. Same consolidation finding as the font-converter cluster: this is a generator page ('scrivi il testo e diventa subito un carattere speciale'), whose EN equivalent is the homepage. Also positively resolved the open question in this entry's own text -- it was never a mis-parent of library/special-characters, because that cluster already carries a real IT member (it/library/caratteri-speciali-simboli), a symbol COLLECTION, which is a different content type from this generator. The two do not compete."
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. Same consolidation finding as the font-converter cluster: this is a generator page ('scrivi il testo e diventa subito un carattere speciale'), whose EN equivalent is the homepage. Also positively resolved the open question in this entry's own text -- it was never a mis-parent of library/special-characters, because that cluster already carries a real IT member (it/library/caratteri-speciali-simboli), a symbol COLLECTION, which is a different content type from this generator. The two do not compete.",
+      "migratedTo": "style-text-to-stand-out/special-characters-generator"
     },
     {
       "localeUrl": "https://ultratextgen.com/ru/niki-standoff-2/",
@@ -103,7 +114,8 @@
       "lastRechecked": null,
       "nextRecheck": "2026-11-01",
       "verdict": null,
-      "recheckEvidence": "NOT BACKFILLED 2026-08-11 and deliberately so: the export available on that date was filtered to Vietnam, which cannot say anything about a Russian-market page. Recording the non-check so a future pass does not mistake this entry's silence for a completed one. Needs a RU-market pull."
+      "recheckEvidence": "NOT BACKFILLED 2026-08-11 and deliberately so: the export available on that date was filtered to Vietnam, which cannot say anything about a Russian-market page. Recording the non-check so a future pass does not mistake this entry's silence for a completed one. Needs a RU-market pull.",
+      "migratedTo": "make-accepted-game-name/standoff-2"
     },
     {
       "localeUrl": "https://ultratextgen.com/vi/ki-tu-dac-biet-lien-quan/",
@@ -113,7 +125,8 @@
       "lastRechecked": "2026-09-25",
       "nextRecheck": "2026-12-01",
       "verdict": "exception-stands",
-      "recheckEvidence": "INSTRUMENT BACKFILL 2026-08-11. *** THE DATA DOES NOT SUPPORT THIS PAGE, THOUGH IT DOES NOT CONTRADICT THE EXCEPTION ITSELF. *** First-party GSC cross-tab, Vietnam, 40 days: this page recorded ZERO impressions -- it is absent from the export entirely. The 'lien quan' query family is owned almost completely by vi/usecase/ten-lien-quan-dep/ (458 of 468 impressions, 22 clicks). The EXCEPTION remains correct on its own terms: it is a claim about parentage (no EN Arena of Valor page exists to translate), and that is still true. What is now in doubt is whether the page should exist at all -- it is a fold candidate into ten-lien-quan-dep. Verdict deliberately left null rather than flipped, per the rule that a backfill contradicting a live page's status is a discussion with the user, not a silent reversal. ADDITIONAL CONSTRAINT: a separate open content question names this exact URL as do-not-touch pending an in-game U+3164 check, so any fold must clear that hold first."
+      "recheckEvidence": "INSTRUMENT BACKFILL 2026-08-11. *** THE DATA DOES NOT SUPPORT THIS PAGE, THOUGH IT DOES NOT CONTRADICT THE EXCEPTION ITSELF. *** First-party GSC cross-tab, Vietnam, 40 days: this page recorded ZERO impressions -- it is absent from the export entirely. The 'lien quan' query family is owned almost completely by vi/usecase/ten-lien-quan-dep/ (458 of 468 impressions, 22 clicks). The EXCEPTION remains correct on its own terms: it is a claim about parentage (no EN Arena of Valor page exists to translate), and that is still true. What is now in doubt is whether the page should exist at all -- it is a fold candidate into ten-lien-quan-dep. Verdict deliberately left null rather than flipped, per the rule that a backfill contradicting a live page's status is a discussion with the user, not a silent reversal. ADDITIONAL CONSTRAINT: a separate open content question names this exact URL as do-not-touch pending an in-game U+3164 check, so any fold must clear that hold first.",
+      "migratedTo": "make-accepted-game-name/arena-of-valor-special-characters"
     },
     {
       "localeUrl": "https://ultratextgen.com/vi/font-chu-dep/",
@@ -123,7 +136,8 @@
       "lastRechecked": "2026-08-11",
       "nextRecheck": "2026-11-01",
       "verdict": "exception-stands",
-      "recheckEvidence": "INSTRUMENT BACKFILL 2026-08-11 (this entry shipped 2026-08-11 with all instruments null; the ledger's own rule says such an entry is a bridge, not a pass, and is complete only once backfilled). First-party GSC query x landing-page cross-tab, Vietnam, 40 days: the page draws 20,828 impressions / 573 clicks -- the #2 Vietnamese page on the site after /vi/ itself. On its own head term 'font chu dep' it holds 10,052 imp / 307 clicks at pos 7.2. The structural claim (diacritic-safe styling is Vietnamese-specific) is now backed by real volume rather than asserted. FLAGGED, NOT ACTIONED: /vi/ outranks it on that same head term (28,253 imp / 1,204 clicks at pos 6.4), i.e. the hub takes ~2.8x the spoke. That is a partial hub-eats-spoke pattern, but both earn heavily and /vi/ is the site's single largest locale asset (234,906 imp), so no de-targeting is proposed here -- see the review register."
+      "recheckEvidence": "INSTRUMENT BACKFILL 2026-08-11 (this entry shipped 2026-08-11 with all instruments null; the ledger's own rule says such an entry is a bridge, not a pass, and is complete only once backfilled). First-party GSC query x landing-page cross-tab, Vietnam, 40 days: the page draws 20,828 impressions / 573 clicks -- the #2 Vietnamese page on the site after /vi/ itself. On its own head term 'font chu dep' it holds 10,052 imp / 307 clicks at pos 7.2. The structural claim (diacritic-safe styling is Vietnamese-specific) is now backed by real volume rather than asserted. FLAGGED, NOT ACTIONED: /vi/ outranks it on that same head term (28,253 imp / 1,204 clicks at pos 6.4), i.e. the hub takes ~2.8x the spoke. That is a partial hub-eats-spoke pattern, but both earn heavily and /vi/ is the site's single largest locale asset (234,906 imp), so no de-targeting is proposed here -- see the review register.",
+      "migratedTo": "style-text-to-stand-out/accent-safe-styles"
     },
     {
       "localeUrl": "https://ultratextgen.com/it/scritte-particolari/",
@@ -132,7 +146,8 @@
       "enDemandBasis": "None established, deliberately. Its French sibling's own GSC pull found negligible volume either way, and no IT-side pull has ever been run. Listed as a fold candidate awaiting a decision, not as a demand-backed exception.",
       "lastRechecked": null,
       "nextRecheck": "2026-09-15",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "style-text-to-stand-out/special-writing"
     },
     {
       "localeUrl": "https://ultratextgen.com/es/imprimibles/abecedario-para-colorear/letra-enye/",
@@ -141,7 +156,8 @@
       "enDemandBasis": "None, and none is possible by construction — 'printable letter enye' is not an English query. The ES-side demand is real and directly evidenced: 'letra ñ para colorear' 1,220/mo in the owner-supplied 10-market Semrush export (2026-08-13 pull), which is mid-pack among the per-letter set and larger than 9 of the 26 A-Z letters it sits alongside. Difficulty KD27, in line with the rest of the family.",
       "lastRechecked": null,
       "nextRecheck": "2026-10-11",
-      "verdict": "ratified 2026-08-12. Unlike most entries in this ledger, this exception is not expected to expire: an English parent cannot appear later because the letter will not enter the English alphabet. The nextRecheck date is aligned with review-register item 42 (the ES printables 60-day readout) purely so the whole cluster is re-examined together — if that readout fires the stop rule, this page is reviewed for retirement alongside its 26 siblings, not on its own merits."
+      "verdict": "ratified 2026-08-12. Unlike most entries in this ledger, this exception is not expected to expire: an English parent cannot appear later because the letter will not enter the English alphabet. The nextRecheck date is aligned with review-register item 42 (the ES printables 60-day readout) purely so the whole cluster is re-examined together — if that readout fires the stop rule, this page is reviewed for retirement alongside its 26 siblings, not on its own merits.",
+      "migratedTo": "letter-colouring-page/enye"
     },
     {
       "localeUrl": "https://ultratextgen.com/ko/yeongmun-ireum-byeonhwan/",
@@ -150,7 +166,8 @@
       "enDemandBasis": "Not instrument-checked. The KR cluster (Semrush KR, 2026-10-04 user export) is about 5,200/mo Google-only: 영문 이름 변환기 2,400, 영문 이름 표기법 880, 여권 영문 이름 변환 590, 한글 로마자 변환 480, 이름 영문 표기 390, 한글 이름 영어 변환 390. English-side demand for a Korean-name romanizer (e.g. K-pop fans) was asserted to be a different job and was not measured.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "romanize-a-name-from-native-script/korean"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/",
@@ -159,7 +176,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): children: ひらがな 練習 プリント 9,900/mo, カタカナ プリント 8,100/mo, 漢字 練習 プリント 2,400/mo.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "browse-printables/japanese-school"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/hiragana-renshu/",
@@ -168,7 +186,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): ひらがな 練習 プリント 9,900/mo.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "practise-letter-formation/hiragana"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/katakana-renshu/",
@@ -177,7 +196,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): カタカナ プリント 8,100/mo.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "practise-letter-formation/katakana"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/kanji-renshu/",
@@ -186,7 +206,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): 漢字 練習 プリント 2,400/mo.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "practise-letter-formation/kanji"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/namae-nazorigaki/",
@@ -195,7 +216,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): 名前 練習 プリント 480/mo.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "practise-writing-own-name/japanese-scripts"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/alphabet-renshu/",
@@ -204,7 +226,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): unsized.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "practise-letter-formation/latin-alphabet-four-line"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/eigo-4sen/",
@@ -213,7 +236,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): unsized.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "practise-school-handwriting-model/japanese-four-line-paper"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/unpitsu/",
@@ -222,7 +246,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): unsized.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "practise-letter-formation/pre-writing-strokes"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/romaji-renshu/",
@@ -231,7 +256,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): unsized.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "practise-school-handwriting-model/romaji"
     },
     {
       "localeUrl": "https://ultratextgen.com/ja/purinto/hiragana-nurie/",
@@ -240,7 +266,8 @@
       "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): ひらがな ぬりえ 590/mo.",
       "lastRechecked": null,
       "nextRecheck": "2027-01-04",
-      "verdict": null
+      "verdict": null,
+      "migratedTo": "letter-colouring-page/hiragana"
     }
   ]
 }

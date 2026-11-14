@@ -828,6 +828,26 @@ jobs:
         continue-on-error: true
         run: npm run check:locale-parent-gap -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-parent-gap.log
 
+      # Every published page maps to a canonical intent; a page may originate in
+      # any qualified language (2026-11-14, docs/architecture/language-neutral-intents.md).
+      # Whole-tree STATE check: data/canonical_intents.json against the hreflang
+      # mesh — malformed records, pinned pages that are not siblings, one cluster
+      # claimed by two intents, one intent split over two clusters, a
+      # locale-specific intent that gained a sibling, and any cluster with no
+      # English member and no record. The migration left that backlog at zero.
+      - name: Run canonical intent registry check
+        id: canonical_intents
+        continue-on-error: true
+        run: npm run check:canonical-intents | tee canonical-intents.log
+
+      # The language-neutral cluster model's unit tests: English-first
+      # regression, Korean/Japanese/French-first publication and expansion,
+      # locale-specific, missing demand, duplicate prevention, x-default policy.
+      - name: Run intent cluster model tests
+        id: intent_clusters_tests
+        continue-on-error: true
+        run: npm run test:intent-clusters | tee intent-clusters-tests.log
+
       - name: Run locale parent gap audit (whole-site, informational)
         id: locale_parent_gap_audit
         continue-on-error: true
@@ -1603,6 +1623,16 @@ jobs:
             cat locale-parent-gap.log
             echo '```'
             echo ""
+            echo "### Canonical intent registry check — \`${{ steps.canonical_intents.outcome }}\`"
+            echo '```'
+            cat canonical-intents.log
+            echo '```'
+            echo ""
+            echo "### Intent cluster model tests — \`${{ steps.intent_clusters_tests.outcome }}\`"
+            echo '```'
+            cat intent-clusters-tests.log
+            echo '```'
+            echo ""
             echo "### Locale spec check — \`${{ steps.locale_spec.outcome }}\`"
             echo '```'
             cat locale-spec.log
@@ -1809,6 +1839,8 @@ jobs:
         # enforce these systems on new/changed pages.
         if: steps.hreflang.outcome == 'failure' ||
           steps.hreflang_completeness.outcome == 'failure' ||
+          steps.canonical_intents.outcome == 'failure' ||
+          steps.intent_clusters_tests.outcome == 'failure' ||
           steps.library.outcome == 'failure' ||
           steps.funding_choices.outcome == 'failure' ||
           steps.printables_surface_wiring.outcome == 'failure' ||
