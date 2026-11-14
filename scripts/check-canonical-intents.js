@@ -45,6 +45,10 @@ const pubPath = pubIdx !== -1 ? args[pubIdx + 1] : null;
 const rootIdx = args.indexOf('--root');
 const root = rootIdx !== -1 ? path.resolve(args[rootIdx + 1]) : ROOT;
 
+// With `--publication-json -` the JSON owns stdout, so the human report moves
+// to stderr: a consumer parses stdout and must never receive report lines.
+if (pubPath === '-') console.log = (...a) => process.stderr.write(a.join(' ') + '\n');
+
 function main() {
   const model = ic.buildIntentModel(root);
   const problems = ic.validateRegistry(model, LOCALES);
@@ -103,7 +107,9 @@ function main() {
       });
     }
     const body = JSON.stringify({ generated_by: 'scripts/check-canonical-intents.js', clusters: rows }, null, 1) + '\n';
-    if (pubPath === '-') process.stdout.write(body);
+    // Synchronous: process.exit() below would otherwise truncate a piped
+    // stdout write at the pipe buffer (observed at 64 KiB).
+    if (pubPath === '-') fs.writeSync(1, body);
     else fs.writeFileSync(pubPath, body);
     if (pubPath !== '-') console.log(`  publication view: ${pubPath} (${rows.length} clusters)`);
   }
