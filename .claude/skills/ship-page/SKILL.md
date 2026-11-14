@@ -16,7 +16,9 @@ An UltraTextGen page is shipped when it is *justified, uniquely targeted,
 generated through the house pipeline, wired into its hub and mesh, carrying its
 art, and green through the real CI gates* — all in one change. The `steward`
 skill's rules apply throughout; for a locale page, switch to the `locale-batch`
-skill (the English-Parent Rule comes first there).
+skill. Any qualified language may publish an intent first (2026-11-14): a page with no
+English sibling needs a `data/canonical_intents.json` record, never an English page
+built only to parent it (`docs/architecture/language-neutral-intents.md` §3).
 
 Work the steps in order. Each exists because skipping it produced a recorded
 failure — the invariants are in `.claude/rules/content-architecture.md` and the case
