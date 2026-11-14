@@ -85,7 +85,7 @@ New pages with no English member (passed: canonical intent registered, gate clea
 
 All 108 gates: **107/108** on the first run. The one failure, `spec_sentence_reuse`, was the test fixture's English tagline
 reusing a stock sentence ("Click any symbol to copy it.") that the gate rightly refuses; rewritten through the generator.
-Re-run: RESULT_PHASE2B.
+Re-run (fixture commit `8bf7ccfcba`): **108/108 pass**, exit 0.
 
 A defect the end-to-end found, fixed on the branch (`4a2abf8f94`): adding a cluster's first English sibling needed **two**
 `sync:locale-mesh --fix` runs, because one `audit-hreflang --fix` pass computes the expected x-default from the tree as it was
@@ -110,7 +110,13 @@ passes); the second e2e run converged in one invocation.
 
 `ja/symbol/odoriji/` (踊り字 々 〃 ゝ, `find-and-copy-a-symbol/iteration-marks`) and `fr/symbol/barre-oblique/` (/ and \\,
 `find-and-copy-a-symbol/slash`), each registered, built by the generator with a self-reference only, hub entries added,
-collection links synced, whole-tree artifacts regenerated. All 108 gates: RESULT_JAFR.
+collection links synced, whole-tree artifacts regenerated (fixture commit `f1a83cab5d`). All 108 gates: **108/108 pass**.
+The gap gate's own lines:
+
+```
+  ✓ fr/symbol/barre-oblique/index.html  intent find-and-copy-a-symbol/slash  (classified as symbol/barre-oblique → mirror)
+  ✓ ja/symbol/odoriji/index.html  intent find-and-copy-a-symbol/iteration-marks  (classified as symbol/odoriji → mirror)
+```
 
 ## 4. Rendered pages
 
@@ -143,7 +149,7 @@ byte-identical to the pre-change script.
 
 ## 6. Existing-site regression on the branch itself
 
-`python3 scripts/run-ci-gates.py --base main` on the branch (no fixtures): RESULT_REAL.
+`python3 scripts/run-ci-gates.py --base main` on the branch (no fixtures), at `fdbdbe7add`: **108/108 pass**, exit 0. The 106 gates that existed before pass unchanged; the two new ones (`canonical_intents`, `intent_clusters_tests`) pass.
 
 ## 7. What this does not test
 
