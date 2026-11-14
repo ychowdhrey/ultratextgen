@@ -546,6 +546,32 @@
       ],
       "kicker": "LIB",
       "added": "2026-10-27"
+    },
+    "ko-library-kkubeok-imotikon": {
+      "title": "꾸벅 이모티콘",
+      "sub": "꾸벅 인사, 사과, 감사. 누르면 복사됩니다.",
+      "glyphs": [
+        "orz",
+        "m(_ _)m",
+        "(_ _)",
+        "OTL",
+        "<(_ _)>"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-14"
+    },
+    "ko-library-baksu-imotikon": {
+      "title": "박수 이모티콘",
+      "sub": "👏 짝짝짝. 박수 이모지와 응원 조합.",
+      "glyphs": [
+        "👏",
+        "👏🏻",
+        "👏🏼",
+        "👏🏽",
+        "👏🏾"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-14"
     }
   }
 }
