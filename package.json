@@ -139,7 +139,7 @@
     "audit:library-hub-parity": "node scripts/check-library-hub-parity.js --all",
     "check:locale-parent-gap": "node scripts/check-locale-parent-gap.js",
     "check:canonical-intents": "node scripts/check-canonical-intents.js",
-    "test:intent-clusters": "node scripts/lib/intent-clusters.test.js",
+    "test:intent-clusters": "node scripts/lib/intent-clusters.test.js && python3 scripts/lib/canonical_intents.test.py",
     "check:locale-spec": "python3 scripts/check_locale_spec.py --all-locale",
     "audit:locale-collection-parity": "python3 scripts/check-locale-collection-parity.py --all",
     "check:locale-collection-parity": "python3 scripts/check-locale-collection-parity.py",
