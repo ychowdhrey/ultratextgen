@@ -18,8 +18,13 @@ Read it in full before the first page of any batch** — this skill enforces its
 ordering and adds the guard rails around it; it does not replace it. The invariants
 are in `.claude/rules/localization.md` and the evidence behind each one is in
 `docs/architecture/translation-parity.md`, `docs/locale-parent-governance.md` and
-`docs/decisions/local-only-locale-exceptions.md`. The `steward` skill's rules apply
+`docs/architecture/language-neutral-intents.md`. The `steward` skill's rules apply
 throughout.
+
+**Since 2026-11-14 the source of a batch need not be English.** A batch translates an
+existing cluster from its representative page (the English page for an English-first
+family, the origin page otherwise). A page that *originates* in a locale is not a
+batch: it is a new page (`ship-page`) with a `data/canonical_intents.json` record.
 
 ## Scope check before anything else
 
@@ -90,9 +95,11 @@ the template.
 
 Copy `data/library_page_specs/_TEMPLATE.example.json` to `<locale-slug>.json`:
 `lang`, the **native** slug, canonical, **full hreflang including the page's
-own self-reference and `x-default` → EN** (a ko batch shipped 25 pages with no
-`x-default` because the specs lacked it — fix specs, not just pages), and
-`page_type` inherited from the EN source, never re-decided. Translate the
+own self-reference and the cluster's expected `x-default`** (→ EN for an
+English-first cluster; for a cluster with no English member, whatever its
+`data/canonical_intents.json` record resolves to, often none). A ko batch shipped 25
+pages with no `x-default` because the specs lacked it — fix specs, not just pages.
+`page_type` is inherited from the source page, never re-decided. Translate the
 copy; don't transliterate it. Then:
 
 ```bash
@@ -126,9 +133,11 @@ gate working: sync them or raise it — never add a
 
 ### 8. After merging main, re-sweep for duplicate claimants
 
-No two pages in one locale may declare the same `hreflang="en"` parent. Git
-merges those cleanly (26 pairs once survived a merge); this grep, not path
-conflicts, is the collision detector. Found one → keep the more-integrated
+No two pages in one locale may belong to the same cluster (declare the same
+`hreflang="en"` parent, or name the same origin page in a cluster with no English
+member). Git merges those cleanly (26 pairs once survived a merge); this sweep, not
+path conflicts, is the collision detector; `check:locale-parent-gap` fails a new
+page that duplicates one. Found one → keep the more-integrated
 page, 301 the other, repoint references.
 
 ### 9. Feed back what the batch learned

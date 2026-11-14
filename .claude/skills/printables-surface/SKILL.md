@@ -33,8 +33,10 @@ query copy-paste Unicode already serves.
 ## 2. If it is a new URL, it is a new page first
 
 Run the `ship-page` skill: demand evidence, "check who already owns it", the
-Hub-vs-Spoke spoke test, and — for a locale page — the English-Parent Rule via
-`locale-batch`. A printable does not bypass any of it.
+Hub-vs-Spoke spoke test, and — for a locale page — the canonical-intent check via
+`locale-batch` (a printable may originate in any qualified language; it then needs a
+`data/canonical_intents.json` record, not an English page). A printable does not
+bypass any of it.
 
 ## 3. Check nothing already owns this tool
 

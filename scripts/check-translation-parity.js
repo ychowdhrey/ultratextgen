@@ -33,6 +33,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { discoverClusters, normalizeUrl } = require('./lib/translation-clusters');
+const { buildIntentModel } = require('./lib/intent-clusters');
 
 const SITE = 'https://ultratextgen.com';
 const { createFingerprinter } = require('./lib/content-fingerprint');
@@ -98,13 +99,31 @@ function oldContent(rel) {
 
 // ─── Current site state (HEAD / working tree) ──────────────────────────────
 
-const { byUrl, clusters, localeCodes } = discoverClusters(ROOT);
-const { fingerprint, diff, score } = createFingerprinter(byUrl, localeCodes);
+const discovered = discoverClusters(ROOT);
+const { byUrl, clusters, localeCodes } = discovered;
+
+// Language-neutral clusters (2026-11-14). A cluster with no English member is
+// compared against its REFERENCE page, the registry's representative (primary,
+// else origin locale member), exactly the way an English-anchored cluster is
+// compared against its English page. Until now such a cluster was skipped
+// entirely: a Korean + French pair could drift apart with nothing watching.
+// Below, "EN"/"enAnchor" means "the cluster's reference page"; for every
+// English-anchored cluster that is still the English page, unchanged.
+const intentModel = buildIntentModel(ROOT, { discovered });
+const neutralIdentity = new Map(); // url -> intent key, English-less clusters only
+for (const c of intentModel.clusters.values()) {
+  if (c.enUrl) continue;
+  for (const u of c.members) neutralIdentity.set(u, c.key);
+  if (c.members.length < 2 || clusters.has(c.representative)) continue;
+  clusters.set(c.representative, new Set(c.members));
+}
+
+const { fingerprint, diff, score } = createFingerprinter(byUrl, localeCodes, { neutralIdentity });
 
 const changedSet = new Set(changedFiles);
 
-// enUrl -> Set of member urls, for quick "which cluster is this page in" lookups
-const clusterOf = new Map(); // canonical url -> en anchor url
+// reference url -> Set of member urls, for quick "which cluster is this page in" lookups
+const clusterOf = new Map(); // canonical url -> reference (EN, or the English-less cluster's representative)
 for (const [enUrl, members] of clusters) {
   for (const m of members) clusterOf.set(m, enUrl);
 }
@@ -338,8 +357,8 @@ if (flagged.length) {
   const partial = new Set(partiallyExcused.map((p) => `${p.enUrl}|${p.localeUrl}`));
   for (const f of flagged) {
     console.log(`✗ ${f.changedRel} changed content, but its translation sibling was not updated in this branch:`);
-    console.log(`    EN:     ${f.enRel}`);
-    console.log(`    locale: ${f.localeRel}`);
+    console.log(`    reference: ${f.enRel}`);
+    console.log(`    sibling:   ${f.localeRel}`);
     if (partial.has(`${f.enUrl}|${f.localeUrl}`)) {
       // Without this line a scoped entry reads as a ledger that isn't working.
       console.log(

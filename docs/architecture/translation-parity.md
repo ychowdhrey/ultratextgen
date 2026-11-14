@@ -443,3 +443,15 @@ nothing enforced a sync because this is an IT-FR-only cluster with no EN member.
 `data/translation_parity_exceptions.json` requires an `enUrl`, so it does not fit
 this pair as-is. Needs a decision — port the content, or record the divergence
 deliberately — not left to drift by default.
+
+**Resolved 2026-11-14 (the mechanism; the content question stays open).** With the
+language-neutral intent model (`language-neutral-intents.md`), a cluster with no
+English member is a cluster: `check-translation-parity.js` pairs each member with the
+cluster's reference page (the registered representative: primary, else origin
+locale), `audit-hreflang-completeness.js` and `check-locale-mesh.js` check its mesh,
+and an exception for such a pair is keyed `(referenceUrl, localeUrl)` in the same
+ledger. The fr/it font-changer cluster is `style-text-to-stand-out/font-changer`
+with `fr/changeur-de-police/` as reference. Whether its IT side should port the
+2026-07-26 content is still a content decision nobody has made; the gate now fires
+the next time either side changes structurally. `it/caratteri-speciali/` was split
+out of that cluster on 2026-08-02 and is its own intent.

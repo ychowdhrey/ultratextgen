@@ -41,6 +41,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR / "lib"))
 import symbol_collection_link as scl  # noqa: E402
+import canonical_intents as ci  # noqa: E402
 
 REPO = SCRIPT_DIR.parent
 EN_ALTERNATE_RE = re.compile(
@@ -52,6 +53,10 @@ H1_RE = re.compile(r"<h1[^>]*>(.*?)</h1>", re.IGNORECASE | re.DOTALL)
 
 def read(path):
     return path.read_text(encoding="utf-8")
+
+
+ALTERNATE_HREF_RE = re.compile(
+    r'<link[^>]*\brel="alternate"[^>]*\bhreflang="(?!x-default)[^"]+"[^>]*\bhref="([^"]+)"', re.IGNORECASE)
 
 
 def en_parent(html, lane):
@@ -88,6 +93,17 @@ def main(argv=None):
         new, status = scl.apply(html)
         results.append((page, html, new, status))
 
+    # A locale symbol page with no English parent is valid since 2026-11-14 when a
+    # canonical intent record pins it or a sibling (data/canonical_intents.json).
+    # It has no English collection to inherit, so it takes the locale's own
+    # library hub, the same fallback a translation with no translated collection
+    # gets. A page with neither stays UNKNOWN.
+    try:
+        registry = ci.load(str(REPO))
+    except ci.RegistryUnavailable as e:
+        registry = None
+        registry_error = str(e)
+
     if not args.no_locales:
         for lang in locales():
             # The locale's own translation of each EN collection, with its label.
@@ -118,6 +134,17 @@ def main(argv=None):
             for page in sorted((REPO / lang / "symbol").glob("*/index.html")):
                 html = read(page)
                 parent = en_parent(html, "symbol")
+                if parent is None and EN_ALTERNATE_RE.search(html) is None:
+                    if registry is None:
+                        results.append((page, html, html, f"registry-unreadable: {registry_error}"))
+                        continue
+                    if ci.record_for(registry, ALTERNATE_HREF_RE.findall(html)):
+                        href, label = hub
+                        new, status = scl.apply_locale(html, lang, href, label)
+                        results.append((page, html, new, status))
+                        continue
+                    results.append((page, html, html, "no-en-parent-and-no-canonical-intent"))
+                    continue
                 if parent is None or parent not in en_collection:
                     results.append((page, html, html, "no-en-parent"))
                     continue

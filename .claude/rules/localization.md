@@ -3,7 +3,7 @@ paths:
   - "{ar,bs,cs,da,de,es,fi,fr,hi,hr,hu,id,it,ja,ko,ms,nl,no,pl,pt,ro,ru,sk,sr,sv,th,tl,tr,uk,vi,zh-tw}/**"
   - "locales/**"
   - "i18n.js"
-  - "data/{core_parent_set,locale_qualification_tiers,locale_parent_gap_audit,english_parent_exceptions,parity_catalogue_pages,translation_parity_exceptions,translation_identical_strings,numeric_parity_exceptions,locale_glossary,library_hub_i18n,em_dash_locale_policy}.json"
+  - "data/{core_parent_set,locale_qualification_tiers,locale_parent_gap_audit,canonical_intents,english_parent_exceptions,parity_catalogue_pages,translation_parity_exceptions,translation_identical_strings,numeric_parity_exceptions,locale_glossary,library_hub_i18n,em_dash_locale_policy}.json"
   - "data/library_page_specs/*/**"
   - "scripts/**/*{locale,translation,hreflang,parity}*"
 ---
@@ -13,42 +13,64 @@ paths:
 Deeper reference: `docs/locale-parent-governance.md` (registries, flowchart,
 tooling), `docs/library-locale-translation-workflow.md` (the batch procedure),
 `docs/local-language-intelligence.md` (vocabulary library),
-`docs/architecture/translation-parity.md` (why each parity axis exists).
-Ratified local-only exceptions and their reasoning: `docs/decisions/local-only-locale-exceptions.md`.
+`docs/architecture/translation-parity.md` (why each parity axis exists),
+`docs/architecture/language-neutral-intents.md` (canonical intents, origin locale, x-default policy).
+The retired local-only exceptions and their reasoning: `docs/decisions/local-only-locale-exceptions.md`.
 
 **For a translation batch, use the `locale-batch` skill.** This file is the set of
 things that must remain true; the skill is how to achieve them in order.
 
-## 1. The English-Parent Rule
+## 1. Every page maps to a canonical intent; English is not a mandatory parent
 
-Every non-English page needs a **live English parent** — the same feature,
-category, symbol or library page already shipped at its canonical non-locale URL.
+*Changed 2026-11-14 (owner-directed). Until then this section was the English-Parent
+Rule: every non-English page needed a live English parent or a ratified exception in
+`data/english_parent_exceptions.json`. That ledger is retired and read by no script;
+its entries were migrated. Model: `docs/architecture/language-neutral-intents.md`.*
 
-- **Yes, a parent exists** → proceed as a translation: reuse the EN page's
-  structure and JS wiring, translate the copy, wire full reciprocal `hreflang`.
-- **No parent** → do not build the localized page. Build the English version
-  first, then translate. A genuinely local-only concept is a **discussed, explicit
-  exception**, never a default, and it is recorded in
-  `data/english_parent_exceptions.json` — the ledger `check-locale-parent-gap.js`
-  reads. Prose is the reasoning of record; the ledger is the state.
-- **When EN demand appears later for a page holding an exception**, do not build
-  the parent directly. Run "check who already owns it" against the **English**
-  SERP first. Two outcomes only: **build** (EN SERP distinct, no existing owner) or
-  **veto** (EN SERP consolidates the term onto a page we already own) recorded as a
-  dated `verdict`. Demand never auto-triggers the build.
+Every published page maps to a **canonical intent**: the user need it serves,
+independent of language. An intent may originate in **any qualified language**, and
+demand decides which other languages get a page. No language is a mandatory parent.
+
+- **The intent already has a page in another language** → this is a translation or
+  an expansion: reuse that cluster's structure and JS wiring (the English page's for
+  an English-first family, the representative page's otherwise), translate the copy,
+  wire full reciprocal `hreflang`. Nothing about the existing pages changes: their
+  URLs, canonicals and the intent's id stay as they are.
+- **No page serves the intent anywhere** → it may originate in this locale. Add a
+  record to `data/canonical_intents.json` (id, `originLocale`, `pages`, `scope` with
+  its evidence, `registered`) and build the page with the normal generator. It clears
+  the same Core-Parent / locale-qualification gate a translation clears, classified
+  by its own lane (`node scripts/check-locale-parent-tier.js <locale>/<lane>/<slug> <locale>`).
+  Never build an English page only to "parent" it.
+- **Scope is a semantic claim with evidence**: `locale-specific` only when the need
+  cannot be the same intent in another language (a script, orthography or register
+  that exists in one language). Unmeasured or zero demand, missing competitor data or
+  English not being a priority market is never evidence for it.
+- **One intent, one page per language.** A second page in a language the cluster
+  already covers, or in a language the record lists in `localeOwners` or
+  `inapplicableLocales`, fails `check:locale-parent-gap`.
+- **When English (or any language's) demand appears for an intent without that
+  language**, do not build directly. Run "check who already owns it" against that
+  language's SERP first. **Build** when no existing page owns the term; otherwise
+  record the owner in the record's `localeOwners`. Demand never auto-triggers a build.
 
 ## 2. hreflang reciprocity includes the page itself
 
-Every page's hreflang block carries a **self-referencing entry for its own URL**,
-and `x-default` points at the EN canonical — never at the page itself on a non-EN
-page. The missing self-reference is this site's single most-repeated mesh bug.
+Every page's hreflang block carries a **self-referencing entry for its own URL**.
+`x-default` is the cluster's **expected default**: the record's declared `xDefault`
+in `data/canonical_intents.json`, else the first member in the policy's fallback
+order (English, so every English-first cluster keeps x-default → its EN canonical),
+else **none**. It never points at the page itself on a non-English page and never
+defaults to a cluster's origin page; a Korean-only page has no x-default.
+The missing self-reference is this site's single most-repeated mesh bug.
 Absence and correctness are separate questions: a page with no `x-default` at all
 is a different defect from one pointing the wrong way.
 
 Four distinct mesh failure modes exist, and each needs its own pass: pairwise
 non-reciprocity, **mutual** omission (no edge in either direction, so nothing for a
 reciprocity walk to catch), a **cross-cluster** edge (perfectly reciprocal and
-still wrong — two EN parents claiming one translation), and a missing `x-default`.
+still wrong — two clusters claiming one translation), and a missing `x-default`.
+Clusters with **no English member** are checked for all of these since 2026-11-14.
 A fifth is also reciprocal and wrong: a **code sent to another language's page**
 (`sr-ME` → `/hr/` until 2026-10-27). A regional alias names its own language's page
 (`ro-MD` → `/ro/`); `check:hreflang` fails on a mismatch and never auto-fixes it.

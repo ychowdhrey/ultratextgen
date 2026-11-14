@@ -145,6 +145,7 @@ Required, blocking checks:
 
 - `check:accent-notice`
 - `check:accessibility`
+- `check:canonical-intents`
 - `check:case-policy`
 - `check:collection-grids`
 - `check:counter-claims`
@@ -220,6 +221,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:i18n-faq-schema`
 - `test:image-selection`
 - `test:indexnow`
+- `test:intent-clusters`
 - `test:ja-sheets`
 - `test:kana-readings`
 - `test:label-geometry`

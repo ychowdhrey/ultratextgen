@@ -157,24 +157,34 @@ for (const page of pages) {
   }
 }
 
-// Whether a placeholder-homepage claim is a ratified local-only exception or an
-// unratified one is adjudicated by the English-Parent Rule ledger, and enforced
-// on newly-added pages by scripts/check-locale-parent-gap.js. This audit only
-// annotates, so an unratified claim is still visible here rather than silent.
-const ratifiedLocalOnly = (() => {
-  try {
-    const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/english_parent_exceptions.json'), 'utf8'));
-    return new Set((raw.exceptions || []).map((e) => normalize(e.localeUrl)));
-  } catch {
-    return new Set();
-  }
-})();
+// The language-neutral intent model (2026-11-14, scripts/lib/intent-clusters.js):
+// which cluster each page is in regardless of whether it has an English member,
+// its canonical intent, and the x-default the registry expects for it. A
+// placeholder-homepage claim on a page that is pinned in data/canonical_intents.json
+// is the recorded legacy shape of a registered page; on any other page it is
+// unexplained. (Until 2026-11-14 this read data/english_parent_exceptions.json,
+// now retired.) This audit only annotates, so an unregistered claim stays visible.
+const intentClusters = require('./lib/intent-clusters');
+const intentModel = intentClusters.buildIntentModel(ROOT);
+const registeredPages = new Set(
+  intentModel.registry.intents.flatMap((r) => (r.pages || []).map((u) => normalize(u)))
+);
+function intentClusterOf(url) {
+  const key = intentModel.clusterOfUrl.get(url);
+  return key ? intentModel.clusters.get(key) : null;
+}
 
-// x-default direction. CLAUDE.md: x-default ALWAYS points at the English
-// canonical, and must never point at a non-EN page (least of all at itself).
-// Reciprocity alone can't catch this — a cluster can be perfectly reciprocal
-// while every member's x-default points at the Spanish URL — so it needs its
-// own pass. This has been the single most-repeated hreflang bug on the site.
+// x-default direction. Reciprocity alone can't catch a wrong x-default — a
+// cluster can be perfectly reciprocal while every member's x-default points at
+// the Spanish URL — so it needs its own pass. This has been the single
+// most-repeated hreflang bug on the site.
+//
+// Policy (2026-11-14, docs/architecture/language-neutral-intents.md §x-default):
+// a cluster registered in data/canonical_intents.json gets the x-default the
+// registry resolves (its declared xDefault, else the policy fallback order —
+// English first when an English member exists — else none). An unregistered
+// cluster with an English member keeps the old rule: x-default = that member.
+// It never defaults to a page's own URL on a non-English page.
 const badXDefault = []; // { page, current, expected }
 // A block with NO x-default at all. The direction pass below cannot see this
 // class — its first act is `if (!xd) continue`, so a page that never declares
@@ -203,13 +213,26 @@ for (const page of pages) {
     continue;
   }
 
-  // The cluster's English member, as this page itself declares it.
+  const ic = intentClusterOf(page.canonical);
+  if (ic && ic.idSource === 'registry') {
+    const exp = ic.expectedXDefault;
+    if (exp.mode === 'none') {
+      if (xd) badXDefault.push({ page, current: xd.href, expected: null, source: exp.source });
+    } else if (!xd) {
+      missingXDefault.push({ page, expected: exp.href, source: exp.source });
+    } else if (xd.href !== exp.href) {
+      badXDefault.push({ page, current: xd.href, expected: exp.href, source: exp.source });
+    }
+    continue;
+  }
+
+  // Unregistered: the cluster's English member, as this page itself declares it.
   const enAlt = page.alternates.find((a) => a.hreflang === 'en');
-  if (!enAlt) continue; // no EN member declared — nothing to assert against
+  if (!enAlt) continue; // no EN member and no record — check:canonical-intents reports the missing record
   if (!xd) {
-    missingXDefault.push({ page, expected: enAlt.href });
+    missingXDefault.push({ page, expected: enAlt.href, source: 'legacy:en' });
   } else if (xd.href !== enAlt.href) {
-    badXDefault.push({ page, current: xd.href, expected: enAlt.href });
+    badXDefault.push({ page, current: xd.href, expected: enAlt.href, source: 'legacy:en' });
   }
 }
 
@@ -284,7 +307,7 @@ console.log(`  Placeholder EN-homepage claims:  ${placeholderEnFallback.length} 
 console.log(`  Headless targets (no hreflang):  ${headless.size}`);
 console.log(`  Locale pages with no self-ref:   ${missingSelfRef.length}`);
 console.log(`  Broken hreflang targets:         ${brokenList.length}`);
-console.log(`  x-default not pointing at EN:    ${badXDefault.length}`);
+console.log(`  x-default not the expected one:  ${badXDefault.length}`);
 console.log(`  x-default missing entirely:      ${missingXDefault.length}`);
 console.log(`  Code language ≠ target language: ${langMismatch.length}`);
 if (langMismatch.length) {
@@ -304,9 +327,9 @@ if (placeholderEnFallback.length) {
   console.log('');
   console.log('Placeholder EN-homepage claims (subpage names the bare homepage as its EN version — the homepage is NOT expected to link back; never auto-fixed):');
   for (const item of placeholderEnFallback) {
-    const tag = ratifiedLocalOnly.has(item.page.canonical)
-      ? 'ratified local-only'
-      : 'NOT in data/english_parent_exceptions.json — verify this claim';
+    const tag = registeredPages.has(item.page.canonical)
+      ? 'registered canonical intent (legacy placeholder shape)'
+      : 'NOT pinned in data/canonical_intents.json — verify this claim';
     console.log(`  · ${item.page.rel}  ->  ${item.target.rel}  [${tag}]`);
   }
 }
@@ -326,8 +349,9 @@ if (missingSelfRef.length) {
     console.log(`  \u2717 ${r.rel}  (${what})`);
   }
   console.log('    Fix: add <link rel="alternate" hreflang="<locale>" href="<its own canonical>">, plus the x-default');
-  console.log('    that matches its status — the cluster\'s EN member for a translation, or the bare homepage');
-  console.log('    for a page ratified local-only in data/english_parent_exceptions.json.');
+  console.log('    the canonical intent registry resolves for its cluster (node scripts/check-canonical-intents.js');
+  console.log('    --publication-json - prints it); a cluster with no English member needs a record in');
+  console.log('    data/canonical_intents.json, never an English page.');
 }
 if (brokenList.length) {
   console.log('');
@@ -336,14 +360,14 @@ if (brokenList.length) {
 }
 if (badXDefault.length) {
   console.log('');
-  console.log('x-default pointing somewhere other than the cluster\'s EN member:');
+  console.log('x-default pointing somewhere other than the cluster\'s expected default:');
   for (const item of badXDefault) {
-    console.log(`  ✗ ${item.page.rel}  x-default -> ${item.current}  (should be ${item.expected})`);
+    console.log(`  ✗ ${item.page.rel}  x-default -> ${item.current}  (should be ${item.expected || 'absent'}; ${item.source})`);
   }
 }
 if (missingXDefault.length) {
   console.log('');
-  console.log('No x-default tag at all (the cluster names an EN member, the page never points at it):');
+  console.log('No x-default tag at all (the cluster has an expected default the page never declares):');
   for (const item of missingXDefault) {
     console.log(`  ✗ ${item.page.rel}  (should add x-default -> ${item.expected})`);
   }
@@ -504,7 +528,7 @@ if (FIX) {
 
     for (const { sourcePage, hreflang: targetLangFromSource } of sources) {
       cluster.set(targetLangFromSource, target.canonical);
-      cluster.set(sourcePage.ownLang || 'en', sourcePage.canonical);
+      cluster.set(sourcePage.ownLang || sourcePage.htmlLang || 'en', sourcePage.canonical);
       for (const a of sourcePage.alternates) {
         if (isHomepage(a.href)) continue; // placeholder fallback, not a real sibling — don't propagate
         if (a.hreflang === 'x-default') {
@@ -518,7 +542,17 @@ if (FIX) {
     // source had a stale href for it under the same hreflang code).
     const targetLang = sources[0].hreflang;
     cluster.set(targetLang, target.canonical);
-    if (!xDefaultHref) xDefaultHref = cluster.get('en') || target.canonical;
+    // x-default: the registry's expectation for the target's cluster when it is
+    // registered; else the English member; else NONE. It used to fall back to
+    // the target's own URL, which on a non-English page is the self-pointing
+    // x-default the policy forbids (and on an English-less cluster would make
+    // every member its own default).
+    const targetCluster = intentClusterOf(target.canonical);
+    if (targetCluster && targetCluster.idSource === 'registry') {
+      xDefaultHref = targetCluster.expectedXDefault.href;
+    } else if (!xDefaultHref) {
+      xDefaultHref = cluster.get('en') || null;
+    }
 
     const content = fs.readFileSync(target.filePath, 'utf8');
     const lines = content.split('\n');
@@ -537,7 +571,7 @@ if (FIX) {
     const blockLines = sortedLangs.map(
       (lang) => `${indent}<link rel="alternate" hreflang="${lang}" href="${cluster.get(lang)}">`
     );
-    blockLines.push(`${indent}<link rel="alternate" hreflang="x-default" href="${xDefaultHref}">`);
+    if (xDefaultHref) blockLines.push(`${indent}<link rel="alternate" hreflang="x-default" href="${xDefaultHref}">`);
 
     lines.splice(canonIdx + 1, 0, ...blockLines);
     fs.writeFileSync(target.filePath, lines.join('\n'), 'utf8');
@@ -557,10 +591,11 @@ if (FIX) {
       continue;
     }
     const html = fs.readFileSync(item.page.filePath, 'utf8');
-    const patched = html.replace(
-      /(<link\s+rel="alternate"\s+hreflang="x-default"\s+href=")([^"]*)(")/i,
-      `$1${item.expected}$3`
-    );
+    const patched = item.expected
+      ? html.replace(/(<link\s+rel="alternate"\s+hreflang="x-default"\s+href=")([^"]*)(")/i, `$1${item.expected}$3`)
+      // The cluster has no default (registered, no listed-language member, no
+      // declared xDefault): remove the tag rather than invent one.
+      : html.replace(/^[ \t]*<link\s+rel="alternate"\s+hreflang="x-default"\s+href="[^"]*"\s*\/?>[ \t]*\r?\n/im, '');
     if (patched === html) continue; // tag shape didn't match — leave for manual review
     fs.writeFileSync(item.page.filePath, patched);
     xDefaultFixed++;
@@ -589,13 +624,13 @@ if (FIX) {
 
   console.log(`🔧 Fixed ${filesFixed} file(s), added ${linksAdded} hreflang link(s).`);
   if (xDefaultAdded) {
-    console.log(`🔧 Added ${xDefaultAdded} missing x-default tag(s), pointing at each cluster's EN canonical.`);
+    console.log(`🔧 Added ${xDefaultAdded} missing x-default tag(s), pointing at each cluster's expected default.`);
   }
   if (xDefaultFixed) {
-    console.log(`🔧 Repointed ${xDefaultFixed} x-default tag(s) at their cluster's EN canonical.`);
+    console.log(`🔧 Repointed or removed ${xDefaultFixed} x-default tag(s) to match each cluster's expected default.`);
   }
   if (skippedHomepageTargets) {
-    console.log(`ℹ️  ${skippedHomepageTargets} placeholder EN-homepage claim(s) left untouched — a subpage names the homepage as its EN version; that is the ratified local-only shape, not a repairable gap.`);
+    console.log(`ℹ️  ${skippedHomepageTargets} placeholder EN-homepage claim(s) left untouched — a subpage names the homepage as its EN version; that is a recorded legacy shape, not a repairable gap.`);
   }
   if (skippedOutOfScope) {
     console.log(`⚠️  Skipped ${skippedOutOfScope} fix(es) outside --scope-files (named files + their cluster members). Run unscoped to apply site-wide.`);

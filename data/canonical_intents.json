@@ -1,0 +1,656 @@
+{
+  "_readme": "Canonical intent publication registry (adopted 2026-11-14, owner-directed). Every published page maps to a canonical intent; a page may originate in any qualified language. This file records the intents whose hreflang cluster cannot be named by an English member: any cluster with no English page must have a record here, and any other cluster may. A cluster with an English member and no record has the implicit id legacy:<english path>. Membership is NOT stored here: it is the hreflang mesh, read by scripts/lib/intent-clusters.js. `pages` pins the record to its cluster (the origin page at least); the mesh supplies every other language. The id never changes when a language is added or the primary page moves. Model and field reference: docs/architecture/language-neutral-intents.md. Validated by `npm run check:canonical-intents` (CI-gated). A record is a normal intent registration, not an exception: no English page, planned or otherwise, is implied or required.",
+  "schemaVersion": 1,
+  "policy": {
+    "xDefaultFallbackOrder": [
+      "en"
+    ],
+    "xDefaultFallbackOrderReason": "x-default serves visitors whose language no member matches. When a record declares no xDefault, the first member in a listed language is used; English is listed because it is the broadest fallback for an unmatched visitor and the site root's language. It is never the origin page by default, and a cluster with no listed-language member gets no x-default.",
+    "scopes": {
+      "cross-language": "The user need could meaningfully exist in more than one language. It does not mean any other language should be built; demand decides that.",
+      "locale-specific": "The need's meaning or function cannot be the same intent in another language, with evidence (a script, orthography or register that exists only in one language). Missing demand data, zero volume or an unfamiliar translation is never evidence for this scope.",
+      "pending-review": "The semantic question is open; the record states it in openQuestions. The page stays valid while it is open."
+    }
+  },
+  "intents": [
+    {
+      "id": "write-in-gal-moji",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/gal-moji/"
+      ],
+      "scope": "locale-specific",
+      "scopeBasis": "The page converts Japanese kana into ギャル文字 lookalike glyphs. The transform is defined on Japanese script and the register exists only in Japanese, so no other language can have the same page. Playful registers in other languages (leetspeak, alay, 火星文) are different transforms and would be their own intents.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-07-25",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/latin-text-for-cjk-readers",
+      "originLocale": "ko",
+      "pages": [
+        "https://ultratextgen.com/ko/font-byeonhwan/",
+        "https://ultratextgen.com/zh-tw/yingwen-ziti/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). These two pages frame that job for readers of a CJK script styling Latin text: an audience, not a different job.",
+      "localeOwners": {
+        "en": "https://ultratextgen.com/"
+      },
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Origin locale is the member listed first in the 2026-07-25 ratification; both pages were ratified in the same pass."
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-07-25",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "cute-lisping-text-transform",
+      "originLocale": "id",
+      "pages": [
+        "https://ultratextgen.com/id/tulisan-cuping/"
+      ],
+      "scope": "locale-specific",
+      "scopeBasis": "The transform rewrites Indonesian phonemes (r to l, s to c, community-fixed forms). It is defined by Indonesian orthography, so it cannot be the same function in another language. A baby-talk register in another language would be a different transform.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-07-26",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/font-changer",
+      "originLocale": "fr",
+      "pages": [
+        "https://ultratextgen.com/fr/changeur-de-police/",
+        "https://ultratextgen.com/it/font-copia-e-incolla/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). 'Changeur de police' and 'font copia e incolla' are that job under a font-changer name.",
+      "localeOwners": {
+        "en": "https://ultratextgen.com/"
+      },
+      "localeOwnerBasis": {
+        "en": "Reverse-demand sweep 2026-08-11, direct SERP observation: English 'font changer' / 'font converter' results rank the same competitors' root pages as 'font generator', so a separate English URL would compete with the homepage (consolidation veto)."
+      },
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-07-26",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/typeface-generator",
+      "originLocale": "fr",
+      "pages": [
+        "https://ultratextgen.com/fr/police-d-ecriture/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). 'Police d'écriture' is that job under the word for typeface.",
+      "localeOwners": {
+        "en": "https://ultratextgen.com/"
+      },
+      "localeOwnerBasis": {
+        "en": "Same 2026-08-11 SERP consolidation finding as style-text-to-stand-out/font-changer."
+      },
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-07-26",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/special-writing",
+      "originLocale": "fr",
+      "pages": [
+        "https://ultratextgen.com/fr/ecriture-speciale/",
+        "https://ultratextgen.com/it/scritte-particolari/"
+      ],
+      "scope": "pending-review",
+      "scopeBasis": "Not settled. The 2026-07-26 GSC pull found negligible volume either way; the French page was left in place as a fold candidate while two siblings were redirected to /fr/, and the Italian page was recorded only so the gate could see it. Whether it is a distinct job or a duplicate of each locale's homepage generator has never been decided.",
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Fold into each locale's homepage generator, or keep as a distinct intent?"
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-07-26",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "pick-a-platform-username/discord",
+      "originLocale": "id",
+      "pages": [
+        "https://ultratextgen.com/id/usecase/nama-discord-keren/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Picking a Discord display name is the same job in every language; the platform-username family already has English members (TikTok, Roblox, nickname generator). Only the Discord member of that family is missing in English, which is a family question, not a locale-specific job.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-08-03",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/special-characters-generator",
+      "originLocale": "it",
+      "pages": [
+        "https://ultratextgen.com/it/caratteri-speciali/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). The page is a generator ('scrivi il testo e diventa subito un carattere speciale'), so its English equivalent is the homepage.",
+      "localeOwners": {
+        "en": "https://ultratextgen.com/"
+      },
+      "localeOwnerBasis": {
+        "en": "2026-08-11 SERP observation recorded on the original entry: same consolidation as the font-changer cluster."
+      },
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Fold candidate: it/library/caratteri-speciali-simboli/ serves the symbol-collection side of 'caratteri speciali' in Italian."
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-08-02",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "make-accepted-game-name/standoff-2",
+      "originLocale": "ru",
+      "pages": [
+        "https://ultratextgen.com/ru/niki-standoff-2/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Making a game nickname with symbols is one job across the game-name family (Free Fire, PUBG, Mobile Legends, Arena of Valor all have English members). Standoff 2's audience is concentrated in CIS markets, which is a demand fact, not evidence that the job differs in another language.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-08-11",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "make-accepted-game-name/arena-of-valor-special-characters",
+      "originLocale": "vi",
+      "pages": [
+        "https://ultratextgen.com/vi/ki-tu-dac-biet-lien-quan/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Special characters for Arena of Valor (Liên Quân) names: one object in the global game-name family, whose English Arena of Valor generator exists and is already the parent of vi/usecase/ten-lien-quan-dep/.",
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Fold candidate into vi/usecase/ten-lien-quan-dep/ (the 2026-08-11 Vietnam GSC cross-tab recorded zero impressions for this page).",
+        "Content hold: the U+3164 blank-name copy is do-not-touch pending an in-game check."
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-08-11",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/accent-safe-styles",
+      "originLocale": "vi",
+      "pages": [
+        "https://ultratextgen.com/vi/font-chu-dep/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). This page's value is showing which styles keep Vietnamese tone marks. Wanting fancy text that keeps accents is the same job in any accented language; English pages already answer it (answers/fancy-text-with-n-and-accented-letters/, answers/why-fancy-text-removes-accents/). Vietnamese stacking is a parameter of the job, not a different job.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-08-11",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "letter-colouring-page/enye",
+      "originLocale": "es",
+      "pages": [
+        "https://ultratextgen.com/es/imprimibles/abecedario-para-colorear/letra-enye/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "A colouring page for one letter is one job (the alphabet colouring family has English members for A-Z). Ñ is an object of that job that exists only in alphabets containing it, so the page can exist in any such language, never in English.",
+      "inapplicableLocales": {
+        "en": "Ñ is not a letter of the English alphabet, so an English page for it cannot exist (evidence of a different alphabet, not of missing demand)."
+      },
+      "xDefault": "site-root",
+      "legacyHreflangEnPlaceholder": true,
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-08-12",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "romanize-a-name-from-native-script/korean",
+      "originLocale": "ko",
+      "pages": [
+        "https://ultratextgen.com/ko/yeongmun-ireum-byeonhwan/"
+      ],
+      "scope": "pending-review",
+      "scopeBasis": "Not settled. The page romanizes Hangul names under the Revised Romanization of Korean with the passport rule. Ratified Korean-only on 2026-10-04 on the assertion that English speakers romanizing a Korean name (for example K-pop fans) do a different job; that assertion was never measured. Romanizing a name from a native script is a job in other scripts too (Japanese, Chinese, Thai, Russian), each with its own rule set.",
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Is an English speaker romanizing a Korean name the same job as this page's (passport-rule romanization by Korean speakers)?"
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "browse-printables/japanese-school",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/"
+      ],
+      "scope": "locale-specific",
+      "scopeBasis": "A hub of Japanese school printables (kana, kanji, masu, 運筆, 英語4線, romaji). The owner ruled on 2026-10-04 that it is not the Japanese sibling of /printables/, because its collection is defined by the Japanese school curriculum.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "practise-letter-formation/hiragana",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/hiragana-renshu/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Practising letter formation by tracing is one job (English: printables/letter-tracing/). Hiragana is the object; learners of Japanese outside Japan practise it too. Built Japanese-first on 2026-10-04; English demand has not been measured, which is not evidence that the job differs.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "practise-letter-formation/katakana",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/katakana-renshu/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Same job as practise-letter-formation/hiragana with katakana as the object.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "practise-letter-formation/kanji",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/kanji-renshu/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Same letter-formation job with kanji (MEXT grade presets) as the object; learners of Japanese and of Chinese characters elsewhere practise the same characters.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "practise-writing-own-name/japanese-scripts",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/namae-nazorigaki/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Tracing one's own name is one job (English: printables/name-tracing/). This page renders it in kana/kanji masu or on Japanese four-line paper: the script and ruling are parameters of the job.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "practise-letter-formation/latin-alphabet-four-line",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/alphabet-renshu/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Latin alphabet tracing on the Japanese school four-line ruling. Tracing the alphabet is the job English printables/letter-tracing/ already serves; the four-line ruling is a parameter.",
+      "localeOwners": {
+        "en": "https://ultratextgen.com/printables/letter-tracing/"
+      },
+      "localeOwnerBasis": {
+        "en": "English alphabet tracing is already served by printables/letter-tracing/; an English page for the Japanese ruling would compete with it."
+      },
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "practise-school-handwriting-model/japanese-four-line-paper",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/eigo-4sen/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Blank 英語4線 handwriting paper: the ruling a school uses for its handwriting model is a parameter of the handwriting-practice job, not a separate job.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "practise-letter-formation/pre-writing-strokes",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/unpitsu/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "運筆 pre-writing stroke sheets: pre-writing line tracing is an early-years job in any language.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "practise-school-handwriting-model/romaji",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/romaji-renshu/"
+      ],
+      "scope": "pending-review",
+      "scopeBasis": "Not settled. Romaji practice under 令和7年内閣告示第4号 with 訓令式 for comparison is taught in Japanese schools; learners of Japanese elsewhere also learn romaji, usually Hepburn. Whether those are one job with a parameter or two jobs has not been decided.",
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Is romaji practice for Japanese schoolchildren the same job as romaji practice for learners of Japanese?"
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "letter-colouring-page/hiragana",
+      "originLocale": "ja",
+      "pages": [
+        "https://ultratextgen.com/ja/purinto/hiragana-nurie/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Colouring hollow letters is one job (English: printables/alphabet-coloring-pages/); hiragana is the object.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "data/english_parent_exceptions.json",
+        "agreed": "2026-10-04",
+        "note": "Ratified under the English-Parent Rule as a no-English-parent exception. The original entry, with its reason, demand basis and re-check history, is preserved unchanged in data/english_parent_exceptions.json (retired 2026-11-14); this record replaces it as the page's canonical-intent mapping."
+      }
+    },
+    {
+      "id": "get-a-symbol-kit-for-a-profile/free-fire-special-characters",
+      "originLocale": "vi",
+      "pages": [
+        "https://ultratextgen.com/vi/ki-tu-dac-biet-ff/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Special characters for Free Fire names: one object in the global game-name/symbol-kit family (English: usecase/free-fire-name-generator/).",
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Possible duplicate: vi/library/ky-tu-dac-biet-free-fire/ serves the same Free Fire symbol kit in Vietnamese."
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/letter-fonts",
+      "originLocale": "es",
+      "pages": [
+        "https://ultratextgen.com/es/fuentes-de-letras/",
+        "https://ultratextgen.com/pt/letras-diferentes/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). 'Fuentes de letras' and 'letras diferentes' are that job under a letter-fonts name.",
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Origin locale not established from history (shallow clone); set to the member listed first."
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/character-converter",
+      "originLocale": "it",
+      "pages": [
+        "https://ultratextgen.com/it/convertitore-di-caratteri/",
+        "https://ultratextgen.com/pt/conversor-de-letras/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). 'Convertitore di caratteri' and 'conversor de letras' are that job under a converter name.",
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Origin locale not established from history (shallow clone); set to the member listed first.",
+        "Overlap: it/font-copia-e-incolla/ (style-text-to-stand-out/font-changer) is a second Italian font-changer page."
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/3d-text",
+      "originLocale": "it",
+      "pages": [
+        "https://ultratextgen.com/it/scritte-3d/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). 3D and decorated lettering is that job with a decorative output.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/online-font-generator",
+      "originLocale": "it",
+      "pages": [
+        "https://ultratextgen.com/it/generatore-di-font/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). 'Generatore di font' is that job's own name.",
+      "localeOwners": {
+        "en": "https://ultratextgen.com/"
+      },
+      "localeOwnerBasis": {
+        "en": "The English homepage is the font generator; an English page under this name would duplicate it."
+      },
+      "xDefault": "site-root",
+      "openQuestions": [
+        "Overlap: /it/ (the Italian homepage generator) serves the same job."
+      ],
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "make-accepted-game-name/mobile-legends-names-girls",
+      "originLocale": "id",
+      "pages": [
+        "https://ultratextgen.com/id/usecase/nama-ml-keren-girl/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Mobile Legends nicknames: one object in the global game-name family. The 'girl' framing is an audience, not a job.",
+      "xDefault": "https://ultratextgen.com/usecase/nickname-generator/",
+      "legacyXDefault": true,
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "make-accepted-game-name/mobile-legends-names-boys",
+      "originLocale": "id",
+      "pages": [
+        "https://ultratextgen.com/id/usecase/nama-ml-keren-cowok/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Mobile Legends nicknames: one object in the global game-name family. The 'boy' framing is an audience, not a job.",
+      "xDefault": "https://ultratextgen.com/usecase/nickname-generator/",
+      "legacyXDefault": true,
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "make-accepted-game-name/free-fire-names-boys",
+      "originLocale": "id",
+      "pages": [
+        "https://ultratextgen.com/id/usecase/nama-ff-keren-cowok/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Free Fire nicknames (English: usecase/free-fire-name-generator/). The 'boy' framing is an audience, not a job.",
+      "xDefault": "https://ultratextgen.com/usecase/free-fire-name-generator/",
+      "legacyXDefault": true,
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "make-accepted-game-name/free-fire-names-girls",
+      "originLocale": "id",
+      "pages": [
+        "https://ultratextgen.com/id/usecase/nama-ff-keren-cewek/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Free Fire nicknames (English: usecase/free-fire-name-generator/). The 'girl' framing is an audience, not a job.",
+      "xDefault": "https://ultratextgen.com/usecase/free-fire-name-generator/",
+      "legacyXDefault": true,
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "matching-names-for-a-pair/free-fire",
+      "originLocale": "id",
+      "pages": [
+        "https://ultratextgen.com/id/usecase/nama-couple-ff-aesthetic/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Matching names for a couple or pair is a job in any language; Free Fire is the object here.",
+      "xDefault": "https://ultratextgen.com/usecase/free-fire-name-generator/",
+      "legacyXDefault": true,
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "style-text-to-stand-out/rare-letters",
+      "originLocale": "es",
+      "pages": [
+        "https://ultratextgen.com/es/letras-raras/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Styling text in Unicode letters is the site's core job in every language (the English homepage generator serves it). 'Letras raras' is that job under a rare-letters name.",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    },
+    {
+      "id": "find-and-copy-a-symbol/letters-from-other-alphabets",
+      "originLocale": "es",
+      "pages": [
+        "https://ultratextgen.com/es/letras-en-otros-idiomas/"
+      ],
+      "scope": "cross-language",
+      "scopeBasis": "Finding and copying letters from other alphabets is one job in any language (the symbol-collection family serves it in English).",
+      "xDefault": "site-root",
+      "registered": "2026-11-14",
+      "provenance": {
+        "source": "site-wide sweep 2026-11-14",
+        "agreed": null,
+        "note": "Published with no English member and never recorded in data/english_parent_exceptions.json (it shipped before the English-Parent gate covered it, or under a placeholder shape). Registered 2026-11-14 so every published page maps to a canonical intent. Scope classified from the page's own job (title, H1, tool); no earlier decision about it is on record."
+      }
+    }
+  ]
+}

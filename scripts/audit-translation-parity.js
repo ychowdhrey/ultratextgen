@@ -30,6 +30,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { discoverClusters } = require('./lib/translation-clusters');
+const { buildIntentModel } = require('./lib/intent-clusters');
 const { createFingerprinter } = require('./lib/content-fingerprint');
 const { loadExceptions, createExceptionResolver, EXCEPTIONS_PATH } = require('./lib/parity-exceptions');
 
@@ -43,13 +44,27 @@ const jsonPath = jsonIdx !== -1 ? args[jsonIdx + 1] : null;
 
 // ─── Discover every page + its declared hreflang cluster ──────────────────
 
-const { byUrl, clusters, localeCodes } = discoverClusters(ROOT);
+const discovered = discoverClusters(ROOT);
+const { byUrl, clusters, localeCodes } = discovered;
+
+// English-less clusters (2026-11-14): audited against their registered
+// representative page, the same way check-translation-parity.js gates them.
+// The "EN" columns below then name that reference page.
+const intentModel = buildIntentModel(ROOT, { discovered });
+const neutralIdentity = new Map();
+for (const c of intentModel.clusters.values()) {
+  if (c.enUrl) continue;
+  for (const u of c.members) neutralIdentity.set(u, c.key);
+  if (c.members.length < 2 || clusters.has(c.representative)) continue;
+  clusters.set(c.representative, new Set(c.members));
+}
 
 // ─── Fingerprinting ─────────────────────────────────────────────────────
 
 const { fingerprint: fingerprintHtml, diff: diffFingerprints, score: scoreDiff } = createFingerprinter(
   byUrl,
-  localeCodes
+  localeCodes,
+  { neutralIdentity }
 );
 // relPath is what tells the fingerprinter whether this is a pillar catalogue
 // index (inventory links, expected to diverge) — the audit and the PR gate must
@@ -148,7 +163,7 @@ const log = (s = '') => {
 };
 
 log('Translation Parity Audit');
-log(`  hreflang clusters with an EN anchor:     ${clusters.size}`);
+log(`  hreflang clusters with a reference page: ${clusters.size}`);
 log(`  locale pairs compared:                   ${[...clusters.values()].reduce((n, s) => n + s.size - 1, 0)}`);
 log(`  actionable drift (likely a missed sync): ${actionable.length}`);
 log(`  bulk/coverage-gap pairs (score > ${BULK_THRESHOLD}):     ${bulk.length}`);

@@ -1,5 +1,13 @@
 # Ratified local-only locale exceptions
 
+> **Superseded 2026-11-14 (owner-directed).** English is no longer a mandatory parent, so a
+> page with no English sibling needs no exception: it needs a canonical intent record in
+> `data/canonical_intents.json`. `data/english_parent_exceptions.json` is retired and read by no
+> script; every entry was migrated (each carries `migratedTo`) and classified by scope
+> (`docs/architecture/language-neutral-intents.md` §5). The reasoning below stays the record of
+> why each page was built; its "no EN demand by construction" claims are demand claims, which
+> the new model does not treat as evidence that an intent is locale-specific.
+
 Every page below has **no live English parent** and was discussed and explicitly
 ratified as an exception to the English-Parent Rule
 (`.claude/rules/localization.md` §1). The prose here is the reasoning of record;

@@ -78,26 +78,34 @@ console.log(`  mode: ${FIX ? 'fix' : 'report'}${explicitFiles.length ? `, scoped
 console.log('');
 console.log(`── Step 1: hreflang reciprocity (scripts/audit-hreflang.js${FIX ? ' --fix' : ''}) ──`);
 console.log('');
-try {
-  execFileSync(
-    'node',
-    [
-      'scripts/audit-hreflang.js',
-      ...(FIX ? ['--fix'] : []),
-      // Scope the fix pass to the named files + their own cluster members,
-      // so a scoped run can never mutate unrelated clusters (the `148fcd59`
-      // failure). Report mode ignores this — it never writes anyway.
-      ...(FIX && explicitFiles.length ? ['--scope-files', ...explicitFiles] : []),
-    ],
-    {
-      cwd: ROOT,
-      stdio: 'inherit',
-    }
-  );
-} catch {
-  // audit-hreflang.js exits 1 when it finds (or, in report mode, still has)
-  // unresolved issues — that's expected, informational output, not a reason
-  // for this fixer tool to fail.
+// In --fix mode the repair is re-run until it converges (at most 3 passes).
+// One pass computes every expectation from the tree as it was when the pass
+// started, so a fix that changes a cluster (adding a page's first English
+// sibling, for instance) can create a follow-up the same pass could not see:
+// the x-default the registry policy now expects. Found by the 2026-11-14
+// Korean-first end-to-end test, where the second pass was needed by hand.
+const hreflangArgs = [
+  'scripts/audit-hreflang.js',
+  ...(FIX ? ['--fix'] : []),
+  // Scope the fix pass to the named files + their own cluster members,
+  // so a scoped run can never mutate unrelated clusters (the `148fcd59`
+  // failure). Report mode ignores this — it never writes anyway.
+  ...(FIX && explicitFiles.length ? ['--scope-files', ...explicitFiles] : []),
+];
+for (let pass = 1; pass <= (FIX ? 3 : 1); pass++) {
+  let out = '';
+  try {
+    out = execFileSync('node', hreflangArgs, { cwd: ROOT, encoding: 'utf8' });
+  } catch (e) {
+    // audit-hreflang.js exits 1 when it finds (or, in report mode, still has)
+    // unresolved issues — that's expected, informational output, not a reason
+    // for this fixer tool to fail.
+    out = String(e.stdout || '');
+  }
+  process.stdout.write(out);
+  const wrote = /🔧 (Fixed [1-9]|Added [1-9]|Repointed or removed [1-9])/.test(out);
+  if (!FIX || !wrote) break;
+  if (pass < 3) console.log(`\n  (pass ${pass} changed files; re-running so dependent repairs converge)\n`);
 }
 console.log('');
 
