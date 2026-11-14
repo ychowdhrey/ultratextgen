@@ -130,6 +130,7 @@ These run across page types rather than producing a type.
 | `pinterest-publish-test.yml` | manual (`workflow_dispatch`) | `scripts/publish-pinterest-pin.py` — single-pin Pinterest API v5 publish, deliberately a phase-3 proof of concept (no `schedule:` trigger, no looping over rows yet) |
 | `pinterest-insights.yml` | manual (`workflow_dispatch`) | `scripts/pinterest-insights.py` — read-only account/per-pin analytics from the real Pinterest account; never writes |
 | `link-rot.yml` | manual (`workflow_dispatch`) | `audit-link-rot.js` — checks whether a cited external source still loads; deliberately never scheduled or gating, because it depends on the public internet and hosts that rate-limit (new this week, PR #869) |
+| `stranded-work.yml` | daily 07:00 UTC + manual | `check-stranded-work.py` then `apply-stranded-work-tasks.py` (shared logic in `scripts/lib/stranded_work.py`; `npm run check:stranded-work`, `test:stranded-work`) — finds branches carrying commits that no open PR tracks and keeps one recovery issue per branch under the `stranded-work` label. Deliberately **not** a PR gate: it fails only its own scheduled run, and only on something new (a stranded branch with no recovery issue, an issue closed while its work is still stranded, new commits on a stranded branch); the known backlog is reported without turning the run red. Needs `fetch-depth: 0`. Knowingly abandoned branches are recorded in `data/stranded_work_exclusions.json`; mechanism and history in [`architecture/parallel-sessions.md`](./architecture/parallel-sessions.md). Present since 2026-09-19 and reworked in PRs #1196, #1199 and #1200; row added by the 2026-11-14 review |
 | `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`ads.txt`/`scripts/check-ads.js`) | `check-ads.js` (AdSense loader deployed site-wide; also guards `ads.txt` against Journey lines reappearing) |
 | `workflow-lint.yml` | on `pull_request` + `push` (master/main) + manual, no path filter | `check-workflows.py` (gating, no `continue-on-error`) — lints every `.github/workflows/*.yml` for the shape Actions needs (trigger, `jobs`, `runs-on`, steps with `uses`/`run`), plus the two failure modes that hid past incidents: a step that pipes into `tee`/similar with no `pipefail` in effect, and a `continue-on-error: true` step whose `outcome` nobody reads. Added 2026-08-08 (PR #731) as a **second, deliberately separate** lint surface from `validate.yml`'s own copy of the same check — a step inside `validate.yml` can't catch `validate.yml` itself failing to parse (exactly what happened 2026-08-07), so this file exists to survive when the big one breaks; do not consolidate them. Was itself missing from this table with zero footprint until now, the same blind spot Known gaps #16 already tracks for the `validate.yml` row below. |
 | `validate.yml` | on `pull_request` (+ manual) | Its own copy of `check-workflows.py` runs first and is also gating. Blocking gates: see [Gate inventory](#gate-inventory) below. Plus four whole-site audits that run every PR but are **informational only** (`continue-on-error`, never fail the job) because they carry a large, deliberately-paced backlog that would otherwise be permanently red: `check-image-assets.py` (Pinterest pins), `sync_symbol_spoke_links.py --check` (symbol peer-link dashboard), `audit-locale-parent-gap.js` (locale translation coverage), and `audit-library-hub-coverage.js` (library hub coverage). **`check-editorial-footprint.js` is no longer purely informational** — since 2026-09-02 its step outcome is in the blocking `if:` list too, because the forward-only per-locale em-dash/spaced-hyphen rules now exit 1 (every other rule still reports and exits 0; see the Editorial Footprint Risk operational-tracks row and `CLAUDE.md`). Supersedes the old path-filtered `image-assets-check.yml` (retired). **Historical caveat (found + fixed 2026-08-05/06, PRs #714/#715):** every step here pipes into `tee`, and a pipeline's exit status is its *last* command's — `tee` always succeeds, so `steps.<id>.outcome` was `'success'` regardless of the validator's own exit code until `defaults.run.shell: bash` (which enables `pipefail`) was added at the job level. Every gate listed above was **silently non-blocking from 2026-07-22 (when this workflow was written) until 2026-08-06** — **a green "Validate Site" check on any PR merged before that date carries no information; do not cite one as evidence a page passed anything.** Full writeup in the workflow file's own header comment and in `CLAUDE.md`. This row itself has now gone stale and been hand-corrected on **eight** consecutive review cycles (2026-07-31, 2026-08-01, 2026-08-08, 2026-08-15, 2026-08-22, 2026-08-29, 2026-09-05, and this one — nine new gates found missing this time, all landed 2026-09-05/10 via PR #867 [`check-share-save-tags.js`, `check-explorer-strings.js`, `test:saved-items`], #865 [`test:zalgo-engine`], #869 [`test:link-health`], #873 [`test:i18n-faq-schema`, `check-accessibility.js`, and the rename of `test:cta-tracking` → `test:header-analytics` — same file, `header.test.js`, now also gating a `copy_text` item-identity engine, not just the `cta_click` classifiers], and #873/#876 [`check-collection-grid-prerender.js`, `check-country-flag-prerender.js`]) as gates were added without a matching edit here — see Known gaps #16, whose own text already said the *next* recurrence should be a generator, not another hand-edit; still hand-edited here because this review's mandate is a small, additive diff to this file only. This is the eighth consecutive cycle this row has gone stale, and the second in a row where the count of missing gates was in the double digits (eleven last cycle, nine this one); flagging the escalation again rather than unilaterally building the generator Known gaps #16 already proposed. **Ninth consecutive cycle, this review (2026-09-19):** three gates short this time — `check-redirects.js`, `test:indexnow`, `test:qr`, all landed 2026-09-15 in PRs #885–#887 — the smallest gap yet, but the ninth in a row regardless. Still not building the generator here, for the same reason as every prior occurrence (this review's mandate is a small, additive diff to this file); noting, again, that "still hand-edited" is no longer a status update at nine repetitions. |
@@ -144,6 +145,7 @@ Required, blocking checks:
 
 - `check:accent-notice`
 - `check:accessibility`
+- `check:canonical-intents`
 - `check:case-policy`
 - `check:collection-grids`
 - `check:counter-claims`
@@ -219,6 +221,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:i18n-faq-schema`
 - `test:image-selection`
 - `test:indexnow`
+- `test:intent-clusters`
 - `test:ja-sheets`
 - `test:kana-readings`
 - `test:label-geometry`
@@ -1075,6 +1078,68 @@ here so they aren't lost. Update as they're closed or new ones appear.
       would clear the signal. Still unmade, per this mandate.
     Input note: `gh` is not installed; the PR set came from the GitHub MCP
     closed-PR list (13 merged since 2026-10-31) with per-PR files from
+    `git diff <merge>^1 <merge>`, fed to `weekly_pr_digest.py` on stdin.
+30. **Review of 2026-11-14 (PRs #1167-#1200, 27 merged since 11-07): no new
+    lane; one workflow was missing from the workflows table, one new
+    verification-stub shape, and the classifier gaps are unchanged.**
+    - **`stranded-work.yml` had no row in the workflows table** although the
+      workflow has existed since 2026-09-19. Three PRs reworked it this week
+      (#1196, #1199, #1200): it now files one recovery issue per stranded
+      branch, fails only on newly stranded work, and measures branches cut
+      before main's 2026-07-10 history rewrite by content instead of reporting
+      them as unmeasurable. The row is added above in this review. #1200 merged
+      with no net diff, because its branch took #1199's detector before merging.
+    - **A stranded gate was recovered** (#1191): `check:tile-unicode` and
+      `test:tile-unicode` were built on a branch whose PR had already merged,
+      so they never reached main. Review #28 above described the tile Unicode
+      audit as shipped in #1097; the delta gate half of it only reached main
+      this week. Both are in the generated gate inventory now.
+    - **Link reachability is a new gate in the Routing and discovery area**
+      (#1176): `check-link-reachability.js` and `audit-link-reachability.js`
+      over `scripts/lib/link-graph.js` fail a PR that leaves an indexable page
+      unreachable from `/`, with the ledger
+      `data/link_reachability_exceptions.json`. It is in the generated
+      inventory (`check:link-reachability`, `test:link-graph`) and in
+      `.claude/rules/ledgers.md`; the operational-tracks table has no row
+      naming it. The closest row, "Link health / link rot", is about external
+      sources and is a different question.
+    - **A fourth verification-stub shape** (#1195, #1197): Petal Search
+      verifies at `/ff044916b7.html`, a 10-character hex name with no engine
+      prefix. The token lives in `ff044916b7.txt` and a `200` rewrite in
+      `_redirects` answers the `.html` URL, because Pages redirects a real
+      `.html` file to its extensionless path. Neither file matches
+      `ROOT_VERIFICATION_RE` (letters, then 12 or more hex characters, `.html`
+      only), so both are unclassified; same root cause as gap #22. The
+      Search-engine webmaster verification row and its doc do not name Petal
+      Search yet.
+    - **CI cost** (#1193): `validate.yml` now cancels a superseded run on the
+      same pull request, and `workflow-lint.yml` uses a sparse checkout. No
+      gate changed; the `validate.yml` row does not mention the concurrency
+      group.
+    - **Privacy of typed text** (#1180, #1184, #1187, #1167): typed text, the
+      kaomoji face and printable names no longer travel in the address bar or
+      share links. The invariant is recorded in
+      `.claude/rules/copy-share-analytics.md`; placed in the Distribution
+      loops track, whose row still describes `?q=` sharing and should be read
+      against that rule by a human.
+    - **Placed, no map change:** the Printables calibration bar and crossword
+      fix (#1170, #1194), the copy and tile repairs (#1179, #1182, #1183,
+      #1186, #1198), locale corrections (#1185, #1189), the Minecraft section
+      sign table and its 16 locale mirrors (#1192), and the docs-only PRs
+      (#1177, #1178, #1181, #1188, #1190).
+    - **Open classifier gaps, unchanged, and now recurring manual work:** 12
+      of 27 PRs carry an unclassified path. Apart from the Petal stub above,
+      each is already named: `.claude/` rules and skills plus `reportcard.md`
+      (gap #25), root `*.test.js` (gap #26) and root `decorations-showcase.js`
+      (gap #26). Seven consecutive reviews have re-listed these by hand and
+      left `LANE_RULES` unedited, which passes this section's own threshold of
+      three weeks for systematizing. Step 2 of the review already permits a
+      `LANE_RULES` edit; the routine prompt limits the diff to this file. One
+      of the two has to give: either a human lands the rules, or the
+      routine prompt is widened to include `scripts/weekly_pr_digest.py`.
+    Input note: `gh` is not installed; the PR set came from `origin/main`
+    first-parent merge commits (27 since 2026-11-07, titles cross-checked
+    against the GitHub closed-PR list) with per-PR files from
     `git diff <merge>^1 <merge>`, fed to `weekly_pr_digest.py` on stdin.
 
 ---

@@ -43,6 +43,7 @@
 const fs = require('fs');
 const path = require('path');
 const { discoverClusters, normalizeUrl } = require('./lib/translation-clusters');
+const { buildIntentModel } = require('./lib/intent-clusters');
 
 const ROOT = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
@@ -64,7 +65,12 @@ function isHomepage(url) {
 
 // ─── Discover clusters (anchor = the EN URL each member's own hreflang="en" points at) ──
 
-const { byUrl, clusters } = discoverClusters(ROOT);
+const discovered = discoverClusters(ROOT);
+const { byUrl, clusters } = discovered;
+// Language-neutral clusters (2026-11-14): clusters with no English member are
+// checked for N-way coverage too. They used to be invisible here, because
+// membership was reconstructed only from each page's own hreflang="en".
+const intentModel = buildIntentModel(ROOT, { discovered });
 
 let scopeRels = null;
 if (scopeFiles.length) {
@@ -75,6 +81,7 @@ const incomplete = []; // { anchor, memberRel, missing: [{hreflang, href, viaRel
 
 const duplicateClusters = []; // { anchor, lang, members: [rec, rec, ...] } — two+ members claim the same locale
 
+const clusterWork = [];
 for (const [anchor, memberSet] of clusters) {
   const anchorIsHomepage = isHomepage(anchor);
   const members = [...memberSet]
@@ -83,7 +90,18 @@ for (const [anchor, memberSet] of clusters) {
     // Exclude placeholder claims: a non-homepage page whose only "en" claim
     // is the bare homepage is NOT a real sibling of the homepage cluster.
     .filter((rec) => !(anchorIsHomepage && !isHomepage(rec.canonical)));
+  clusterWork.push({ anchor, members });
+}
+let englishLessClusters = 0;
+for (const c of intentModel.clusters.values()) {
+  if (c.enUrl) continue; // English-anchored: covered by the loop above, unchanged
+  const members = c.members.map((u) => byUrl.get(u)).filter(Boolean);
+  if (members.length < 2) continue;
+  englishLessClusters++;
+  clusterWork.push({ anchor: c.key, members });
+}
 
+for (const { anchor, members } of clusterWork) {
   if (members.length < 2) continue; // nothing to reconcile
 
   // A cluster is "ambiguous" when two members declare the SAME own language
@@ -154,7 +172,20 @@ function anchorOf(rec) {
   if (!rec) return null;
   if (rec.ownLang === 'en') return rec.canonical;
   const enAlt = rec.alternates.find((a) => a.hreflang === 'en');
-  return enAlt ? enAlt.href : null;
+  if (enAlt) return enAlt.href;
+  // No English claim: the page's language-neutral cluster (registered intent
+  // id, or an unregistered key). Never null for a page in a cluster, so an
+  // English-less page naming a page from another cluster is examined too.
+  const key = intentModel.clusterOfUrl.get(rec.canonical);
+  const c = key ? intentModel.clusters.get(key) : null;
+  if (!c || c.enUrl || c.members.length < 2) return null;
+  return `intent:${c.key}`;
+}
+function neutralAnchorOf(rec) {
+  // The same page's anchor expressed as a language-neutral key, so an
+  // English-anchored page and an English-less page in ONE cluster compare equal.
+  const key = rec && intentModel.clusterOfUrl.get(rec.canonical);
+  return key || null;
 }
 
 for (const [, rec] of byUrl) {
@@ -167,7 +198,7 @@ for (const [, rec] of byUrl) {
     if (!target) continue; // broken target — audit-hreflang.js reports these
     const toAnchor = anchorOf(target);
     if (!toAnchor) continue; // headless target — likewise
-    if (toAnchor !== fromAnchor) {
+    if (toAnchor !== fromAnchor && neutralAnchorOf(rec) !== neutralAnchorOf(target)) {
       crossCluster.push({
         fromRel: rec.rel, fromAnchor, code: alt.hreflang, toRel: target.rel, toAnchor,
       });
@@ -179,6 +210,7 @@ for (const [, rec] of byUrl) {
 
 console.log('hreflang Cluster Completeness Audit');
 console.log(`  Clusters with >=2 real members:  ${[...clusters.values()].filter((s) => s.size >= 2).length}`);
+console.log(`  Clusters with no English member, >=2 members (checked since 2026-11-14): ${englishLessClusters}`);
 console.log(`  Pages with missing sibling entries: ${incomplete.length}`);
 console.log(`  Duplicate-page clusters (NOT auto-fixed): ${duplicateClusters.length}`);
 console.log(`  Cross-cluster edges (NOT auto-fixed):     ${crossCluster.length}`);

@@ -132,7 +132,8 @@ date live on these pages and only one is a stamp:
 
 `dateModified` is not a verification date and must not be used as one. Locale
 entries carry **one** localized pill and no `Published` half, and its date must
-equal the EN parent's `Verified` date.
+equal the EN parent's `Verified` date. An entry with no English parent (registered in
+`data/canonical_intents.json`, allowed since 2026-11-14) carries its own single pill.
 
 ## A title outlives the status it reports
 

@@ -11,6 +11,7 @@ you are deciding where a new piece of knowledge belongs.
 |---|---|---|
 | [`claude-context-architecture.md`](./claude-context-architecture.md) | the four-layer context design and the contract for adding knowledge | root `CLAUDE.md` |
 | [`content-lanes.md`](./content-lanes.md) | Guide/Answer, Library/Symbol, the `updates/` pillar, hub↔spoke and peer link generation, library hub coverage, the cannibalization record, tool duplication | `content-architecture` |
+| [`language-neutral-intents.md`](./language-neutral-intents.md) | canonical intents, origin locale, the language-neutral cluster model, x-default policy, the retired English-Parent Rule and its migration (2026-11-14) | `localization` |
 | [`translation-parity.md`](./translation-parity.md) | every parity axis and why it exists, the hreflang mesh's four failure modes, the three untranslated-string classes, numeric parity, locale string attestation | `localization` |
 | [`frontend-runtime.md`](./frontend-runtime.md) | module map, load order, the flair layer, opt-in surfaces, the platform-preview modal, pre-rendering | `frontend-javascript`, `html-pages` |
 | [`unicode-style-registry.md`](./unicode-style-registry.md) | the style object's real shape, the five `type` values, and the 2026-08-11 correction | `unicode-style-registry` |

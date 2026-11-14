@@ -33,7 +33,7 @@ operating system around the website:
   area; the docs' dated corrections often reverse the paragraph above them. Where
   new knowledge belongs: `docs/architecture/claude-context-architecture.md`.
 - **`data/*.json` ledgers are machine-read state** backing CI gates
-  (`english_parent_exceptions.json`, `translation_parity_exceptions.json`,
+  (`canonical_intents.json`, `translation_parity_exceptions.json`,
   `translation_identical_strings.json`, `library_hub_exclusions.json`,
   `core_parent_set.json`, `locale_qualification_tiers.json`,
   `locale_parent_gap_audit.json`, `parity_catalogue_pages.json`,
@@ -174,11 +174,14 @@ A change is not safe merely because the page renders. Before shipping:
 
 Locale pages are first-class products, not mechanical translations.
 
-- **English-Parent Rule first**: every `<lang>/…` page needs a live EN parent or
-  a discussed, ledgered exception (`data/english_parent_exceptions.json`).
-  Run `node scripts/check-locale-parent-tier.js <path> <locale>` *before*
-  starting locale work — it tells you mirror/gate/skip and which questions a
-  gap check must answer.
+- **Canonical intent first** (since 2026-11-14 English is no mandatory parent):
+  every page maps to a canonical intent. A page joining an existing cluster is a
+  translation; a page that originates in its locale needs a record in
+  `data/canonical_intents.json` with an evidenced `scope`, never an English page
+  built to parent it (`docs/architecture/language-neutral-intents.md`). Run
+  `node scripts/check-locale-parent-tier.js <path> <locale>` *before* starting
+  locale work (the path may be the locale page itself) — it tells you
+  mirror/gate/skip and which questions a gap check must answer.
 - **Evidence-backed wording is load-bearing.** Locale copy is often chosen from
   researched local vocabulary with status, register, and avoid-when guidance
   (see `docs/local-language-intelligence.md`). Never silently replace such

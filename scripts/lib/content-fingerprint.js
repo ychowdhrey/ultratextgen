@@ -65,8 +65,16 @@ const CONTENT_LINK_RE = /^\/(category|library|symbol|guide|answers|usecase|updat
 /**
  * @param {Map} byUrl - from discoverClusters(): normalized canonical -> record
  * @param {Set} localeCodes - from discoverClusters(): known locale hreflang codes
+ * @param {object} [opts]
+ * @param {Map} [opts.neutralIdentity] - canonical url -> its cluster's language-neutral
+ *   identity, for pages whose cluster has no English member (from
+ *   scripts/lib/intent-clusters.js). Without it, a link to an English-less page
+ *   falls back to locale-prefix stripping, which invents an English-looking path
+ *   ("/ko/library/x/" -> "/library/x/") that can collide with a real English slug
+ *   and makes two siblings' links to one intent compare unequal.
  */
-function createFingerprinter(byUrl, localeCodes) {
+function createFingerprinter(byUrl, localeCodes, opts = {}) {
+  const neutralIdentity = opts.neutralIdentity || null;
   const localeCodesSorted = [...localeCodes].sort((a, b) => b.length - a.length); // longest first (zh-tw before zh)
 
   function stripLocalePrefix(pathname) {
@@ -98,6 +106,9 @@ function createFingerprinter(byUrl, localeCodes) {
     try {
       const u = href.startsWith('http') ? new URL(href) : new URL(href, 'https://ultratextgen.com/');
       const full = normalizeUrl(u.origin + u.pathname);
+      // An English-less cluster's identity is its intent key, compared as-is:
+      // every sibling's link to any member of that cluster normalizes to it.
+      if (neutralIdentity && neutralIdentity.has(full)) return `intent:${neutralIdentity.get(full)}`;
       const resolved = identityHref(full);
       let p = new URL(resolved).pathname.replace(/\/+$/, '/') || '/';
       p = stripLocalePrefix(p);

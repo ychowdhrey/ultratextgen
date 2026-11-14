@@ -50,7 +50,8 @@ narrower query with a *different* SERP intent.
 
 These apply **within each locale independently**. When a collision surfaces on
 pages too new to have GSC signal, resolve structurally by mirroring what the live
-EN parent hub already does — do not invent a locale-specific judgement call.
+EN parent hub (or, for a cluster with no English member, its reference page) already
+does — do not invent a locale-specific judgement call.
 
 A de-confliction retarget can fail later by the hub simply *winning the new term
 too*: "the spoke owns term B today" is a fact with a shelf life, not a structural

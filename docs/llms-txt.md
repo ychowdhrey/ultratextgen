@@ -117,7 +117,11 @@ every one of them a ratified no-English-parent page from CLAUDE.md's
 "Localization Workflow" section (`ja/gal-moji`, `id/tulisan-cuping`, the `fr`
 and `it` clusters …), 17 of which are ledgered in
 `data/english_parent_exceptions.json`. That is a fact about the hreflang graph,
-not a guess about the page.
+not a guess about the page. *(Note 2026-11-14: that ledger is retired; every such
+page now maps to a record in `data/canonical_intents.json`, and English is no longer
+a mandatory parent. A locale root page that originates in its language still lands in
+this bucket, whose heading predates the change; a page inside a lane directory is
+filed under its lane. See `architecture/language-neutral-intents.md` §6.)*
 
 ### The one hand-maintained table, and why it is not automatable
 

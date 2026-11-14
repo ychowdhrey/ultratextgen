@@ -1,5 +1,17 @@
 # Locale Parent Governance
 
+> **Correction 2026-11-14 (owner-directed): English is no longer a mandatory parent.** The
+> registries, the flowchart and the gap check below still decide *whether a page may ship in a
+> locale*; what changed is *what they classify*. For a page whose cluster has an English member,
+> the English page's path is classified exactly as described here. For a page with no English
+> member (a page that originates in its locale), its own lane is classified through a lane map
+> learned from the site (`ja/purinto` → `printables`), and the page must map to a record in
+> `data/canonical_intents.json`. `check-locale-parent-gap.js` no longer reads
+> `data/english_parent_exceptions.json` (retired). A ledger entry for an unclassified page is
+> keyed on its lane-mapped path rather than on a null pattern no entry could match. Wherever the
+> text below says "every locale page has a live English parent", read "every page maps to a
+> canonical intent". Model: `docs/architecture/language-neutral-intents.md`.
+
 This document is the deep reference for the Core Parent Set / Locale
 Qualification Tier registries, the per-(parent, locale) decision flowchart,
 the five scripts that automate and enforce them, and the mesh-automation hook

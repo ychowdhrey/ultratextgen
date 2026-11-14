@@ -5,38 +5,46 @@
  * check-locale-parent-gap.js
  *
  * Per-PR gate: for every NEW locale HTML file added in this branch (path
- * starts with a locale code and didn't exist at the merge-base), resolve its
- * EN parent via its hreflang cluster, classify the (parent, locale) pair
- * with scripts/lib/locale-parent-registry.js's decide(), and require a
- * passing data/locale_parent_gap_audit.json entry whenever the decision
- * needed one — i.e. this page was built against the registry's default
- * recommendation (a gated-tail parent, a Tier-3/held locale, or a
- * script-incompatible parent+locale pair) rather than the innocent-by-
- * default Core-parent mirror path.
+ * starts with a locale code and didn't exist at the merge-base), decide
+ * whether it may ship under the language-neutral intent model (2026-11-14,
+ * docs/architecture/language-neutral-intents.md):
+ *
+ *   1. it maps to a canonical intent — through an English member of its
+ *      hreflang cluster (implicit legacy id) or a record in
+ *      data/canonical_intents.json. A page may originate in ANY qualified
+ *      language; an English page is never required;
+ *   2. it does not duplicate the page that already serves that intent in its
+ *      language (a second member in the same language, or a recorded
+ *      localeOwners page), and its language is not one the record lists as
+ *      inapplicable or excluded by a locale-specific scope;
+ *   3. it clears the Core Parent Set / locale-qualification gate: the
+ *      English member's path is classified when there is one (unchanged),
+ *      otherwise the page's own lane; a build against the registry's default
+ *      needs a passing data/locale_parent_gap_audit.json entry.
+ *
+ * The per-page rule is evaluateNewLocalePage() in scripts/lib/intent-clusters.js.
  *
  * This is the enforcement half of scripts/audit-locale-parent-gap.js, the
  * same way scripts/check-translation-parity.js enforces what
- * scripts/audit-translation-parity.js discovers: the audit finds the
- * existing sitewide backlog; this stops a NEW ungated build from shipping
- * without a recorded pre-build check.
+ * scripts/audit-translation-parity.js discovers.
  *
  * Usage:
  *   node scripts/check-locale-parent-gap.js                 # diff against origin/main
  *   node scripts/check-locale-parent-gap.js --base main      # diff against a different ref
  *
- * Exit code 0 = clean (or nothing new to check), 1 = an unaudited build found.
+ * Exit code 0 = clean (or nothing new to check), 1 = a page that may not ship,
+ * 2 = UNKNOWN (base ref or canonical-intent registry unreadable).
  */
 
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
-const { discoverClusters, normalizeUrl } = require('./lib/translation-clusters');
+const { discoverClusters } = require('./lib/translation-clusters');
 const { decide, LOCALES } = require('./lib/locale-parent-registry');
+const { buildIntentModel, evaluateNewLocalePage } = require('./lib/intent-clusters');
 
 const ROOT = path.resolve(__dirname, '..');
 const GAP_LEDGER_PATH = path.join(ROOT, 'data', 'locale_parent_gap_audit.json');
-const EN_PARENT_EXCEPTIONS_PATH = path.join(ROOT, 'data', 'english_parent_exceptions.json');
-const SITE_ORIGIN = 'https://ultratextgen.com';
 
 const args = process.argv.slice(2);
 const baseIdx = args.indexOf('--base');
@@ -92,7 +100,17 @@ const LOCALE_PREFIX_RE = new RegExp(`^(${LOCALES.join('|')})/`);
 
 // ─── Current site state (HEAD / working tree) ──────────────────────────────
 
-const { byUrl } = discoverClusters(ROOT);
+const discovered = discoverClusters(ROOT);
+const model = buildIntentModel(ROOT, { discovered });
+if (!model.registry.exists || model.registry.error) {
+  // An unreadable registry is UNKNOWN, never "nothing to check": every page
+  // with no English member would otherwise read as unregistered, or worse, pass.
+  console.error(
+    `Locale Parent Gap Check: UNKNOWN — ${path.relative(ROOT, model.registry.path)} ` +
+      (model.registry.exists ? `could not be parsed (${model.registry.error})` : 'is missing')
+  );
+  process.exit(2);
+}
 
 // ─── Ledger ─────────────────────────────────────────────────────────────
 
@@ -105,125 +123,34 @@ if (fs.existsSync(GAP_LEDGER_PATH)) {
     console.error(`WARNING: could not parse ${path.relative(ROOT, GAP_LEDGER_PATH)}: ${e.message}`);
   }
 }
-function passingLedgerEntry(pattern, locale) {
-  return ledgerEntries.find(
-    (e) => e.pattern === pattern && e.locale === locale && (e.verdict === 'mirror' || e.verdict === 'gate-pass')
-  );
-}
-
-// Ratified English-Parent-Rule exceptions — locale pages explicitly agreed to
-// exist with no EN parent (see data/english_parent_exceptions.json's _readme
-// and `.claude/rules/localization.md` ratifications). Keyed by normalized
-// canonical URL.
-let enParentExceptionUrls = new Set();
-if (fs.existsSync(EN_PARENT_EXCEPTIONS_PATH)) {
-  try {
-    const parsed = JSON.parse(fs.readFileSync(EN_PARENT_EXCEPTIONS_PATH, 'utf8'));
-    enParentExceptionUrls = new Set(
-      (parsed.exceptions || []).map((e) => normalizeUrl(e.localeUrl)).filter(Boolean)
-    );
-  } catch (e) {
-    console.error(`WARNING: could not parse ${path.relative(ROOT, EN_PARENT_EXCEPTIONS_PATH)}: ${e.message}`);
-  }
-}
 
 // ─── Check every newly-added locale page ───────────────────────────────────
+//
+// The admission rule lives in scripts/lib/intent-clusters.js
+// (evaluateNewLocalePage) so the unit tests exercise exactly what CI runs.
+// Since 2026-11-14 it does not ask whether an English page exists: a page must
+// map to a canonical intent, must not duplicate the page that already serves
+// that intent in its language, and must clear the same Core-Parent /
+// locale-qualification gate as a translation. data/english_parent_exceptions.json
+// is retired and is no longer read here.
 
 const flagged = [];
 let checked = 0;
+const passedOrigin = [];
 
 for (const rel of addedFiles) {
   if (!LOCALE_PREFIX_RE.test(rel)) continue; // not a locale page — not this gate's job
-  const filePath = path.join(ROOT, rel);
-  if (!fs.existsSync(filePath)) continue; // deleted later in the same branch
-
-  const rec = [...byUrl.values()].find((r) => r.rel === rel);
-  if (!rec) {
-    // No canonical tag at all. A real page always carries one (see CLAUDE.md,
-    // "HTML Page Conventions") — a new locale index.html without it would
-    // otherwise slip past this gate entirely, since it can't join the
-    // hreflang system it's supposed to be checked against.
-    if (!rel.endsWith('/index.html')) continue; // fragments/partials — not pages
-    const impliedUrl = normalizeUrl(`${SITE_ORIGIN}/${rel.replace(/index\.html$/, '')}`);
-    if (enParentExceptionUrls.has(impliedUrl)) continue; // ratified local-only page
-    checked++;
-    flagged.push({
-      rel,
-      localeCode: (rel.match(LOCALE_PREFIX_RE) || [])[1] || '?',
-      problem: 'no-en-parent',
-      detail:
-        'This new locale page has no <link rel="canonical"> tag at all, so it cannot join the hreflang ' +
-        'system and its EN parent can\'t be classified. Add the canonical + hreflang block (see CLAUDE.md, ' +
-        '"HTML Page Conventions" and "Localization Workflow — the English-Parent Rule"), or — if this is a ' +
-        'genuinely local-only page — ratify it with the user and record it in data/english_parent_exceptions.json.',
-    });
-    continue;
-  }
-  if (rec.ownLang === 'en') continue;
-  if (!rec.ownLang) {
-    // No self-referencing hreflang entry (typically no hreflang block at
-    // all). These used to be skipped silently — exactly how a local-only
-    // page could ship ungated. A ratified exception passes here; anything
-    // else falls through and is judged by the no-en-parent branch below.
-    if (enParentExceptionUrls.has(rec.canonical)) continue;
-  }
-
+  if (!fs.existsSync(path.join(ROOT, rel))) continue; // deleted later in the same branch
+  const verdict = evaluateNewLocalePage({ rel, model, decide, ledgerEntries, locales: LOCALES });
+  if (verdict.status === 'skip') continue;
   checked++;
-  const localeCode = rec.ownLang
-    ? rec.ownLang.toLowerCase()
-    : (rel.match(LOCALE_PREFIX_RE) || [])[1] || '?';
-
-  const enAlt = rec.alternates.find((a) => a.hreflang === 'en');
-  const enRec = enAlt ? byUrl.get(enAlt.href) : null;
-
-  if (!enRec) {
-    if (enParentExceptionUrls.has(rec.canonical)) {
-      // Ratified English-Parent-Rule exception — passes by explicit,
-      // recorded decision (data/english_parent_exceptions.json).
-      console.log(`  ratified local-only exception (passes): ${rel}`);
-      continue;
+  if (verdict.status === 'pass') {
+    if (verdict.cluster && !verdict.cluster.enUrl) {
+      passedOrigin.push({ rel, id: verdict.cluster.key, classifiedPath: verdict.classifiedPath, decision: verdict.result.decision });
     }
-    flagged.push({
-      rel,
-      localeCode,
-      problem: 'no-en-parent',
-      detail:
-        'This new locale page declares no resolvable hreflang="en" alternate, so its EN parent ' +
-        "(and therefore its Core Parent Set pattern) can't be classified. Add the hreflang link " +
-        '(see `.claude/rules/localization.md`), run ' +
-        '`npm run sync:locale-mesh -- --fix` if the EN parent already exists, or — if this is a ' +
-        'genuinely local-only page — ratify it with the user and record it in ' +
-        'data/english_parent_exceptions.json.',
-    });
     continue;
   }
-
-  // A ratified local-only page's documented shape is hreflang="en" pointing at
-  // the bare EN homepage as a generic placeholder (CLAUDE.md, "Ratified
-  // local-only exceptions"). That href RESOLVES, so the !enRec carve-out above
-  // never fires for it, and decide() then classifies the homepage — which is
-  // unclassified in the Core Parent Set, falls through to the gated tail, and
-  // demands a ledger entry keyed on a null pattern that no entry can ever
-  // match. Same class of bug, and same fix, as the placeholder-EN-homepage
-  // case already documented for audit-hreflang-completeness.js: the exception
-  // IS the recorded decision, so it passes here regardless of whether its
-  // placeholder happens to resolve.
-  // Verified against a deliberately unratified copy of the same page, per
-  // Per `.claude/rules/tooling-and-gates.md`, adding a validator is not the
-  // the copy is flagged and the script exits 1, so this is scoped to the
-  // ledger rather than a blanket bypass.
-  if (enParentExceptionUrls.has(rec.canonical)) {
-    console.log(`  ratified local-only exception (passes, placeholder EN parent): ${rel}`);
-    continue;
-  }
-
-  const result = decide(enRec.rel, localeCode);
-  if (!result.requiresLedgerEntry) continue; // Core-parent default-mirror path — passes silently
-
-  const pass = passingLedgerEntry(result.parentInfo.pattern, localeCode);
-  if (!pass) {
-    flagged.push({ rel, localeCode, enRel: enRec.rel, result, problem: 'missing-ledger-entry' });
-  }
+  flagged.push({ rel, ...verdict });
 }
 
 // ─── Report ─────────────────────────────────────────────────────────────
@@ -235,26 +162,37 @@ console.log(`  new locale pages checked:   ${checked}`);
 console.log(`  problems found:             ${flagged.length}`);
 console.log('');
 
+if (passedOrigin.length) {
+  console.log('New pages with no English member (passed: canonical intent registered, gate cleared):');
+  for (const p of passedOrigin) {
+    console.log(`  ✓ ${p.rel}  intent ${p.id}  (classified as ${p.classifiedPath} → ${p.decision})`);
+  }
+  console.log('');
+}
+
 if (flagged.length) {
   for (const f of flagged) {
-    if (f.problem === 'no-en-parent') {
-      console.log(`✗ ${f.rel} — ${f.detail}`);
+    if (f.problem !== 'missing-ledger-entry') {
+      console.log(`✗ ${f.rel} [${f.problem}] — ${f.detail}`);
       console.log('');
       continue;
     }
+    const origin = f.cluster && !f.cluster.enUrl;
     console.log(`✗ ${f.rel} (locale: ${f.localeCode}) ships against the registry's default, with no recorded pre-build check:`);
-    console.log(`    EN parent:        ${f.enRel}`);
+    console.log(`    canonical intent: ${f.cluster ? f.cluster.key : '(none)'}`);
+    console.log(`    classified as:    ${f.classifiedPath}${origin ? ' (its own lane; the cluster has no English member, which is allowed)' : ' (the cluster\'s English member)'}`);
     console.log(`    matched pattern:  ${f.result.parentInfo.pattern || '(unclassified)'}  (tier: ${f.result.parentInfo.tier})`);
     console.log(`    decision:         ${f.result.decision}`);
     console.log(`    reason:           ${f.result.reason}`);
     console.log(
-      '    Missing instrument questions: competitor footprint in this locale? keyword volume in this locale ' +
-        "(Semrush)? EN page's own GSC impressions from this locale's language queries?"
+      '    Missing instrument questions: competitor footprint in this locale? keyword volume in this locale? ' +
+        (origin
+          ? 'first-party impressions on this locale\'s existing pages for the same job?'
+          : "the English page's own GSC impressions from this locale's language queries?")
     );
     console.log(
-      '    Fix: record the result in data/locale_parent_gap_audit.json (see its "_readme") once you\'ve run the ' +
-        'check, or raise it with the user before treating it as agreed — same bar as `.claude/rules/localization.md`\'s English-Parent ' +
-        'Rule exceptions.'
+      `    Fix: record the result in data/locale_parent_gap_audit.json with pattern "${f.ledgerKey}" and locale "${f.localeCode}" ` +
+        '(see its "_readme") once you have run the check, or raise it with the user before treating it as agreed.'
     );
     console.log('');
   }

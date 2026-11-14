@@ -28,6 +28,8 @@
 const fs = require('fs');
 const path = require('path');
 const { inspect, inspectLocale, enParentOf, iso } = require('./lib/updates-verification.js');
+const { loadIntentRegistry } = require('./lib/intent-clusters');
+const { normalizeUrl } = require('./lib/translation-clusters');
 
 const REPO = path.resolve(__dirname, '..');
 const DIR = path.join(REPO, 'updates');
@@ -88,16 +90,48 @@ function main() {
     if (r.pill && r.pill.verified) enVerified.set(path.relative(REPO, f), iso(r.pill.verified));
   }
 
+  // A locale entry with NO English parent is valid since 2026-11-14 when a
+  // canonical intent record pins it or a sibling (data/canonical_intents.json):
+  // it then carries its own verification date, checked like a locale pill but
+  // with nothing to match it against. An entry with neither still fails.
+  const registry = loadIntentRegistry(REPO);
+  const pinned = new Set(registry.intents.flatMap((r) => (r.pages || []).map(normalizeUrl)));
+  const pinsSibling = (file) => {
+    const html = fs.readFileSync(file, 'utf8');
+    const re = /<link rel="alternate" hreflang="(?!x-default)[^"]+" href="([^"]+)"/g;
+    for (const m of html.matchAll(re)) if (pinned.has(normalizeUrl(m[1]))) return true;
+    return false;
+  };
+
   const locales = localeEntries();
   for (const f of locales) {
     const rel = path.relative(REPO, f);
     const parent = enParentOf(f);
+    if (!parent) {
+      if (!registry.exists || registry.error) {
+        failed += 1;
+        console.log(`FAIL  ${rel}`);
+        console.log(`        UNKNOWN: no hreflang="en" and data/canonical_intents.json is unreadable`);
+        continue;
+      }
+      if (pinsSibling(f)) {
+        const r = inspectLocale(f, null);
+        if (r.errors.length) {
+          failed += 1;
+          console.log(`FAIL  ${rel}`);
+          r.errors.forEach((e) => console.log(`        ${e}`));
+        } else {
+          console.log(`ok    ${rel}  origin entry (no English parent; registered canonical intent; own verification pill)`);
+        }
+        continue;
+      }
+    }
     const parentDate = parent ? enVerified.get(parent) : null;
     if (!parentDate) {
       failed += 1;
       console.log(`FAIL  ${rel}`);
       console.log(`        cannot resolve an EN parent with a Verified date`
-        + (parent ? ` (declares hreflang="en" -> ${parent})` : ' (no hreflang="en")'));
+        + (parent ? ` (declares hreflang="en" -> ${parent})` : ' (no hreflang="en", and no canonical intent record pins it or a sibling)'));
       continue;
     }
     const r = inspectLocale(f, parentDate);

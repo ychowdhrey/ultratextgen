@@ -29,7 +29,8 @@ grandfathered.
 
 | Ledger | Holds | Read by |
 |---|---|---|
-| `english_parent_exceptions.json` | a locale page ratified as needing **no** EN parent | `check-locale-parent-gap.js` |
+| `canonical_intents.json` | the canonical intent of every hreflang cluster with no English member (any cluster may have one): id, origin locale, pinned pages, scope, x-default, locale owners | `scripts/lib/intent-clusters.js` (`check:canonical-intents`, `check-locale-parent-gap.js`, the hreflang and parity gates) |
+| `english_parent_exceptions.json` | **retired 2026-11-14**, read by no script: the history of pages once ratified as needing no EN parent; every entry carries `migratedTo` | — |
 | `translation_parity_exceptions.json` | one discussed EN↔locale pair allowed to diverge | `check-translation-parity.js` |
 | `translation_identical_strings.json` | a string whose **correct** translation is byte-identical to English | `check-locale-translation.js` |
 | `numeric_parity_exceptions.json` | one discussed `(page, slot, value)` divergence | `check-numeric-parity.js` |

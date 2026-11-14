@@ -50,8 +50,8 @@ These hold everywhere, in every file, for every task.
 5. **One query, one page.** Before creating any page, check whether an existing page
    in the same locale — including that locale's hub or homepage — already targets and
    ranks for the term. Volume alone is never justification.
-6. **Every non-English page needs a live English parent.** A local-only page is a
-   discussed, explicit exception recorded in a ledger, never a default.
+6. **No language is a mandatory parent** (2026-11-14). Every page maps to a canonical intent
+   (`data/canonical_intents.json`) and may originate in any qualified language, same gates.
 7. **Verify absence before asserting it.** "X doesn't exist yet" needs an alias sweep
    and a look in other lanes, never one exact grep. A pass once planned five pieces of
    work and found four had already shipped.

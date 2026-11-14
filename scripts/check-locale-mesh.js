@@ -31,6 +31,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { discoverClusters } = require('./lib/translation-clusters');
+const { buildIntentModel } = require('./lib/intent-clusters');
 const { findRewriteCandidates } = require('./lib/locale-link-rewrite');
 const { LOCALES } = require('./lib/locale-parent-registry');
 
@@ -92,7 +93,12 @@ if (changedLocaleFiles.length === 0) {
 
 // ─── Current site state (HEAD / working tree) ──────────────────────────────
 
-const { byUrl, clusters } = discoverClusters(ROOT);
+const discovered = discoverClusters(ROOT);
+const { byUrl, clusters } = discovered;
+// Language-neutral clusters (2026-11-14): a changed page in a cluster with no
+// English member is checked against ITS cluster. It used to fall back to a
+// one-page "cluster" of itself, so a Korean + French pair was never checked.
+const intentModel = buildIntentModel(ROOT, { discovered });
 
 // enUrl -> Set of member urls (same lookup shape check-translation-parity.js uses)
 const clusterOf = new Map();
@@ -115,7 +121,11 @@ function isHomepage(url) {
 }
 
 function reciprocityIssuesForCluster(enUrl) {
-  const members = clusters.get(enUrl);
+  let members = clusters.get(enUrl);
+  if (!members) {
+    const c = intentModel.clusters.get(enUrl);
+    if (c && !c.enUrl) members = new Set(c.members);
+  }
   if (!members) return [];
   const issues = [];
   for (const url of members) {
@@ -153,7 +163,7 @@ for (const rel of changedLocaleFiles) {
   const rec = [...byUrl.values()].find((r) => r.rel === rel);
   if (!rec) continue; // no canonical tag — not part of the hreflang system at all
 
-  const enAnchor = clusterOf.get(rec.canonical) || rec.canonical;
+  const enAnchor = clusterOf.get(rec.canonical) || intentModel.clusterOfUrl.get(rec.canonical) || rec.canonical;
   const issues = reciprocityIssuesForCluster(enAnchor);
   if (issues.length) flaggedMesh.push({ rel, issues });
 
