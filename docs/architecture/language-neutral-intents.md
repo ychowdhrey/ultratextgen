@@ -13,7 +13,7 @@ Supersedes: the English-Parent Rule as it stood in `.claude/rules/localization.m
 and root `CLAUDE.md` hard line 6 until 2026-11-14, and `data/english_parent_exceptions.json`
 as an approval mechanism (retired, preserved; see "Migration").
 
-Test evidence: [`evidence/language-neutral-intents-test-report-2026-11-14.md`](./evidence/language-neutral-intents-test-report-2026-11-14.md).
+Test evidence: [`evidence/language-neutral-intents/test-report-2026-11-14.md`](./evidence/language-neutral-intents/test-report-2026-11-14.md).
 
 ---
 
@@ -164,6 +164,7 @@ What assumed English was the parent, and what each now does. "KO" = a Korean-onl
 | `check-locale-mesh.js` (gate) | a KO page's "cluster" was itself | its English-less cluster |
 | `check-translation-parity.js` (gate), `audit-translation-parity.js` | English↔locale pairs only | English-less clusters paired against their reference page |
 | `lib/content-fingerprint.js` | a link to a KO page became an invented English path | resolves to the intent's identity when the caller passes `neutralIdentity` |
+| `sync-locale-mesh.js` (fixer) | one repair pass | repeats the repair until it writes nothing (≤ 3 passes): adding a cluster's first English page implies an x-default the first pass cannot see |
 | `check-locale-parent-tier.js` (advisory) | took an English path | also takes a locale-origin path |
 | `data/english_parent_exceptions.json` | approval mechanism | retired; read by no script; history kept |
 | sitemap, search index, library hubs | — | never required English (file walk / directory listing) |
@@ -211,6 +212,11 @@ its own review, not part of this change.
 - **Hub facets** (`lib/library-hub-data.js`) are inherited from an English slug; a KO-only
   library page is listed with no facets. **Off-lane hub coverage** (`findOffLanePages`)
   finds a locale root page only through an English library parent.
+- **Symbol peer links** (`sync_symbol_spoke_links.py`, `check-new-symbol-peer-links.py`) key
+  obligations on the English spoke slug. A Korean-first symbol page gets its collection line
+  (the locale's library hub) but no peer links from locale collections until an English sibling
+  exists; the end-to-end test saw 14 links injected the moment English was added. Not a
+  failure, fewer inbound links.
 - **`data/locale_parent_gap_audit.json`** and `data/core_parent_set.json` key on English
   lane patterns. An origin page is classified through the lane map learned from the site
   (`ja/purinto` → `printables`), so the same entries apply to it.
