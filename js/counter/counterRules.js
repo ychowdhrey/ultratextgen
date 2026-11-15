@@ -286,7 +286,11 @@
     { id: "pinterest-description", platform: "pinterest", field: "Pin description", label: "Pinterest pin description", limit: 800, group: "posts" },
     { id: "pinterest-title", platform: "pinterest", field: "Pin title", label: "Pinterest pin title", limit: 100, group: "titles" },
 
-    { id: "whatsapp-about", platform: "whatsapp", field: "About", label: "WhatsApp About", limit: 139, group: "bios" },
+    /* 50: faq.whatsapp.com/752120927696324 ("Your WhatsApp About can include
+       an emoji and up to 50 characters of text"), verified 2026-11-15. The
+       About now expires after a chosen duration and its emoji is picked
+       separately, so 50 is the text field; 139 was the old About limit. */
+    { id: "whatsapp-about", platform: "whatsapp", field: "About", label: "WhatsApp About", limit: 50, group: "bios" },
 
     { id: "vk-status", platform: "vk", field: "Status", label: "VK status", limit: 140, group: "bios" },
 

@@ -37,7 +37,7 @@
     { id: "ig-bio", label: "Описание профиля Instagram", limit: 150, group: "bios" },
     { id: "tiktok-bio", label: "Описание профиля TikTok", limit: 80, group: "bios" },
     { id: "telegram-bio", label: "Описание профиля Telegram", limit: 70, group: "bios" },
-    { id: "whatsapp-about", label: "Статус «О себе» в WhatsApp", limit: 139, group: "bios" },
+    { id: "whatsapp-about", label: "Статус «О себе» в WhatsApp", limit: 50, group: "bios" },
     { id: "li-headline", label: "Заголовок профиля LinkedIn", limit: 220, group: "bios" },
 
     { id: "discord-nick", label: "Ник на сервере Discord", limit: 32, group: "usernames" },
