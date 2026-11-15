@@ -1,39 +1,34 @@
-# Official Unicode character names stay verbatim; the label around them is translated
+# A Unicode character name cited as the identifier stays as written; everything around it is translated
 
-**Owner decision, 2026-11-08.** Not yet executed on any page: this records the rule
-and reconciles `.claude/rules/localization.md` §5 with it. Page edits follow in their
-own PRs.
+**Owner decision, 2026-11-08**, confirming the owner's execution brief of 2026-10-28 for the
+invisible-character family: *"Distinguish technical identifiers from user-facing
+descriptions. Do not translate standardized identifiers or alter copied characters."*
+Not yet executed as a page change; this records the rule and reconciles
+`.claude/rules/localization.md` §5 with it. The invisible-character family (29
+control-character names across about 17 locales) already follows it and stays as it is.
 
 ## The rule
 
-1. **An official Unicode character name is an identifier, not English.** Where a page
-   presents it *as* the identifier, it keeps the formal ALL-CAPS form exactly as the
-   Unicode Standard writes it (`ZERO WIDTH JOINER`, `HANGUL FILLER`, `WORD JOINER`),
-   in every locale and in any slot, a tile label included.
-2. **It must read as the identifier.** It sits beside the reader's own label and is
-   marked as the official name: a "Unicode name" label in the page's language, a
-   `<code>` element, or `lang="en"` on the element that carries it. A bare English
-   string with nothing marking it is still untranslated copy.
-3. **The human label is translated.** The heading, card title, section label or
-   `aria-label` that names the thing for the reader is page copy and is written in the
-   page's language, with `ZERO WIDTH JOINER` beside it as its official name. Use the
-   word the locale's own pages already use for the character where one exists.
-4. **A title-case rendering is a label, not the identifier.** `Zero Width Joiner` is
-   English prose, so a locale page translates it. Only the formal form in rule 1 is
-   exempt.
-
-## Why
-
-The invisible-character family carries 29 control-character names. Localising the
-identifier breaks the one thing a reader uses it for (finding the same character in
-Unicode charts, `unicode.org` lookups, developer docs and font tools), while leaving the
-human label in English leaves a locale page half in English. Keeping both, and saying
-which is which, serves both readers.
+1. **A character name cited as the character's identifier stays as written, in every
+   locale.** That covers the formal Unicode name (`ZERO WIDTH JOINER`) and the
+   title-case rendering a page cites with the code point (`Zero Width Space: U+200B`,
+   `Hangul Filler (U+3164)`). It is how a reader finds the same character in Unicode
+   charts, developer documentation and font tools, so translating it breaks the job it
+   does.
+2. **It must read as the identifier**: paired with its code point, labelled as the
+   Unicode name in the page's language, or set in `<code>` or `lang="en"`. A bare English
+   phrase with nothing marking it is untranslated copy, not an identifier.
+3. **Everything around it is translated**: the explanation, the section heading, the card
+   title, the verb in an `aria-label` ("Kopieer …", "Salin …") and any human-facing
+   description of what the character does. Neither may be mistaken for the other.
+4. **The same name used as ordinary prose or as a human label**, not cited as the
+   identifier, is page copy and is translated. Use the word the locale's own pages already
+   use for the character where one exists.
 
 ## Earlier rule
 
-Until this decision the localization rule exempted the ALL-CAPS name only where it was
-*cited* (prose, a table cell, a tile label) and called it a defect in a heading, card
-title, section label or `aria-label`. That is unchanged for an unmarked name; what
-changed is that a marked official name beside a translated label is correct in any
-slot.
+Until this decision the localization rule exempted only the ALL-CAPS form, called
+title-case renderings never exempt, and treated a name in a heading or `aria-label` as a
+defect regardless. The owner's 2026-10-28 brief and this decision overrule that for a name
+cited as the identifier; the rest of the rule (translate the surrounding copy, never ledger
+an untranslated string as identical) is unchanged.
