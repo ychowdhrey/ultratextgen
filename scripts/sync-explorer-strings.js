@@ -85,7 +85,11 @@ const SELECTION_KEYS = {};
 
 const TARGETS = [
   { file: path.join(ROOT, 'symbol-explorer.js'), keys: KEYS },
-  { file: path.join(ROOT, 'js', 'share', 'image-selection.js'), keys: SELECTION_KEYS, createMissing: true }
+  { file: path.join(ROOT, 'js', 'share', 'image-selection.js'), keys: SELECTION_KEYS, createMissing: true },
+  // The decoration chips' copied/failed word (2026-11-15): the showcase runs
+  // on pages with neither i18n.js nor symbol-explorer.js, so it carries its
+  // own two strings, built from the JSON like the selection table.
+  { file: path.join(ROOT, 'decorations-showcase.js'), keys: { copied: 'copyButtons.copied', failed: 'copyButtons.failed' }, createMissing: true }
 ];
 
 /** English is the in-code fallback and ships no copyButtons block, by design

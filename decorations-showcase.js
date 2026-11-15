@@ -7,28 +7,142 @@
 (function () {
   "use strict";
 
-  // Chip confirmation words, one pair per page language. Same wording as
-  // symbol-explorer.js's toast table (its "copied" without the trailing
-  // colon), so a chip and a tile on one page say the same thing.
-  var LABELS = {
-    en: ["Copied", "Failed"], vi: ["Đã sao chép", "Thất bại"],
-    pt: ["Copiado", "Falhou"], es: ["Copiado", "Falló"],
-    de: ["Kopiert", "Fehlgeschlagen"], id: ["Disalin", "Gagal"],
-    tr: ["Kopyalandı", "Başarısız"], fr: ["Copié", "Échec"],
-    nl: ["Gekopieerd", "Mislukt"], it: ["Copiato", "Errore"],
-    pl: ["Skopiowano", "Błąd"], th: ["คัดลอกแล้ว", "ล้มเหลว"],
-    zh: ["已複製", "失敗"], ko: ["복사됨", "실패"],
-    ar: ["تم النسخ", "فشل"], no: ["Kopiert", "Mislyktes"],
-    ja: ["コピーしました", "失敗しました"], ru: ["Скопировано", "Ошибка"],
-    da: ["Kopieret", "Mislykkedes"], sv: ["Kopierat", "Misslyckades"],
-    cs: ["Zkopírováno", "Selhalo"], sk: ["Skopírované", "Zlyhalo"],
-    hr: ["Kopirano", "Neuspjelo"], bs: ["Kopirano", "Neuspjelo"],
-    sr: ["Копирано", "Neuspelo"], ro: ["Copiat", "Eșuat"],
-    hu: ["Másolva", "Sikertelen"], hi: ["कॉपी हुआ", "विफल"],
-    tl: ["Kinopya", "Nabigo"], fi: ["Kopioitu", "Epäonnistui"]
+  // Chip confirmation words. English lives here; every other language is
+  // copied from locales/<lang>.json (ui.copyButtons) by
+  // `npm run sync:explorer-strings`, and `check:explorer-strings` fails when
+  // they drift. Never hand-author an entry.
+  const UI_STRINGS = {
+    en: {
+      copied: "✓ Copied",
+      failed: "✗ Failed"
+    },
+    ar: {
+      copied: "✓ تم النسخ",
+      failed: "✗ فشل"
+    },
+    bs: {
+      copied: "✓ Kopirano",
+      failed: "✗ Neuspjelo"
+    },
+    cs: {
+      copied: "✓ Zkopírováno",
+      failed: "✗ Selhalo"
+    },
+    da: {
+      copied: "✓ Kopieret",
+      failed: "✗ Mislykkedes"
+    },
+    de: {
+      copied: "✓ Kopiert",
+      failed: "✗ Fehlgeschlagen"
+    },
+    es: {
+      copied: "✓ Copiado",
+      failed: "✗ Falló"
+    },
+    fi: {
+      copied: "✓ Kopioitu",
+      failed: "✗ Epäonnistui"
+    },
+    fr: {
+      copied: "✓ Copié",
+      failed: "✗ Échec"
+    },
+    hi: {
+      copied: "✓ कॉपी हो गया",
+      failed: "✗ विफल"
+    },
+    hr: {
+      copied: "✓ Kopirano",
+      failed: "✗ Neuspjelo"
+    },
+    hu: {
+      copied: "✓ Másolva",
+      failed: "✗ Sikertelen"
+    },
+    id: {
+      copied: "✓ Tersalin",
+      failed: "✗ Gagal"
+    },
+    it: {
+      copied: "✓ Copiato",
+      failed: "✗ Errore"
+    },
+    ja: {
+      copied: "✓ コピーしました",
+      failed: "✗ 失敗しました"
+    },
+    ko: {
+      copied: "✓ 복사됨",
+      failed: "✗ 실패"
+    },
+    ms: {
+      copied: "✓ Disalin",
+      failed: "✗ Gagal"
+    },
+    nl: {
+      copied: "✓ Gekopieerd",
+      failed: "✗ Mislukt"
+    },
+    no: {
+      copied: "✓ Kopiert",
+      failed: "✗ Mislyktes"
+    },
+    pl: {
+      copied: "✓ Skopiowano",
+      failed: "✗ Błąd"
+    },
+    pt: {
+      copied: "✓ Copiado",
+      failed: "✗ Falhou"
+    },
+    ro: {
+      copied: "✓ Copiat",
+      failed: "✗ Eșuat"
+    },
+    ru: {
+      copied: "✓ Скопировано",
+      failed: "✗ Ошибка"
+    },
+    sk: {
+      copied: "✓ Skopírované",
+      failed: "✗ Zlyhalo"
+    },
+    sr: {
+      copied: "✓ Kopirano",
+      failed: "✗ Neuspelo"
+    },
+    sv: {
+      copied: "✓ Kopierad",
+      failed: "✗ Misslyckades"
+    },
+    th: {
+      copied: "✓ คัดลอกแล้ว",
+      failed: "✗ ล้มเหลว"
+    },
+    tl: {
+      copied: "✓ Nakopya",
+      failed: "✗ Nabigo"
+    },
+    tr: {
+      copied: "✓ Kopyalandı",
+      failed: "✗ Başarısız"
+    },
+    uk: {
+      copied: "✓ Скопійовано",
+      failed: "✗ Помилка"
+    },
+    vi: {
+      copied: "✓ Đã sao chép",
+      failed: "✗ Thất bại"
+    },
+    zh: {
+      copied: "✓ 已複製",
+      failed: "✗ 失敗"
+    }
   };
-  var LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
-  var WORDS = LABELS[LANG] || LABELS.en;
+  const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
+  const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
 
   // Resolves only when the text is on the clipboard; rejects when neither
   // writeText nor execCommand put it there. script.js publishes the site's
@@ -36,15 +150,15 @@
   // contract for the few pages that load this file without script.js.
   function localWrite(text) {
     function legacy() {
-      var focused = document.activeElement;
-      var ta = document.createElement("textarea");
+      const focused = document.activeElement;
+      const ta = document.createElement("textarea");
       ta.value = text;
       ta.setAttribute("readonly", "");
       ta.style.position = "absolute";
       ta.style.left = "-9999px";
       document.body.appendChild(ta);
       ta.select();
-      var ok = false;
+      let ok = false;
       try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
       document.body.removeChild(ta);
       if (focused && typeof focused.focus === "function") focused.focus();
@@ -57,7 +171,7 @@
   }
 
   function writeClipboard(text) {
-    var ns = window.UltraTextGen;
+    const ns = window.UltraTextGen;
     if (ns && typeof ns.writeClipboard === "function") return ns.writeClipboard(text);
     return localWrite(text);
   }
@@ -65,7 +179,7 @@
   // One polite live region for the whole showcase, created on first use, so a
   // screen reader hears the outcome once. Skipped where the page already has
   // a copy toast that announces (symbol-explorer.js takes those pages below).
-  var statusEl = null;
+  let statusEl = null;
   function announce(msg) {
     if (!statusEl) {
       statusEl = document.createElement("div");
@@ -81,8 +195,8 @@
   }
 
   function showState(chip, ok) {
-    var label = chip.querySelector(".deco-chip-label");
-    var word = ok ? WORDS[0] : WORDS[1];
+    const label = chip.querySelector(".deco-chip-label");
+    const word = (ok ? STR.copied : STR.failed) || (ok ? UI_STRINGS.en.copied : UI_STRINGS.en.failed);
     if (label) label.setAttribute("data-copy-msg", word);
     chip.classList.remove("copied", "copy-failed");
     chip.classList.add(ok ? "copied" : "copy-failed");
@@ -90,23 +204,23 @@
     chip._decoTimer = window.setTimeout(function () {
       chip.classList.remove("copied", "copy-failed");
     }, ok ? 1200 : 2400);
-    var name = label ? label.textContent.trim() : "";
+    const name = label ? label.textContent.trim() : "";
     announce(name ? word + ": " + name : word);
   }
 
   function init() {
-    var chips = document.querySelectorAll(".deco-chip[data-copy]");
+    const chips = document.querySelectorAll(".deco-chip[data-copy]");
     Array.prototype.forEach.call(chips, function (chip) {
       chip.setAttribute("role", "button");
       chip.setAttribute("tabindex", "0");
       function fire() {
-        var text = chip.getAttribute("data-copy");
+        const text = chip.getAttribute("data-copy");
         // Where symbol-explorer.js is on the page, use its copy path: it
         // falls back to execCommand, says "failed" when neither path worked,
         // shows its localized toast and records one copy_text.
-        var ns = window.UltraTextGen;
+        const ns = window.UltraTextGen;
         if (ns && typeof ns.copyText === "function" && document.getElementById("symbolToast")) {
-          var name = chip.querySelector(".deco-chip-label");
+          const name = chip.querySelector(".deco-chip-label");
           ns.copyText(text, chip, name ? name.textContent.trim() : text, "button");
           return;
         }
