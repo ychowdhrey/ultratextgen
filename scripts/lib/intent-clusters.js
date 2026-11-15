@@ -50,6 +50,7 @@
 const fs = require('fs');
 const path = require('path');
 const { discoverClusters, normalizeUrl } = require('./translation-clusters');
+const { functionalFingerprint } = require('./functional-fingerprint');
 
 const SITE_ORIGIN = 'https://ultratextgen.com';
 const SITE_ROOT_URL = `${SITE_ORIGIN}/`;
@@ -427,16 +428,101 @@ function validateRegistry(model, locales) {
       if (!valid.has(lc(loc))) P('bad-inapplicable-locale', `inapplicableLocales key ${loc} is not a known locale`);
       if (!why || String(why).length < 10) P('bad-inapplicable-reason', `inapplicableLocales.${loc} needs a reason`);
       if (cluster.byLang.has(lc(loc))) P('inapplicable-but-published', `inapplicableLocales lists ${loc}, but the cluster has a ${loc} page`);
+      const demandWhy = demandOnlyReason(why);
+      if (demandWhy) {
+        P('inapplicable-for-demand-reason',
+          `inapplicableLocales.${loc} rests on "${demandWhy}". Missing, low or unmeasured demand is a priority fact, never ` +
+          'evidence that the job cannot exist in a language. Leave the language out of the record (expansion priority is ' +
+          'decided by demand evidence elsewhere) or give the semantic reason (a script, letter or register that does not exist there).');
+      }
+    }
+    const evidenceMap = rec.localeOwnerEvidence || {};
+    for (const loc of Object.keys(evidenceMap)) {
+      if (!(rec.localeOwners || {})[loc]) P('fold-evidence-without-owner', `localeOwnerEvidence.${loc} has no matching localeOwners.${loc}`);
     }
     for (const [loc, owner] of Object.entries(rec.localeOwners || {})) {
       if (!valid.has(lc(loc))) P('bad-locale-owner-locale', `localeOwners key ${loc} is not a known locale`);
       const u = normalizeUrl(owner);
-      if (!model.byUrl.has(u)) P('locale-owner-missing', `localeOwners.${loc} = ${owner} is not a page in this tree`);
+      const ownerRec = model.byUrl.get(u);
+      if (!ownerRec) P('locale-owner-missing', `localeOwners.${loc} = ${owner} is not a page in this tree`);
       if (cluster.members.includes(u)) P('locale-owner-is-member', `localeOwners.${loc} = ${owner} is already a member of the cluster; list only pages OUTSIDE it`);
       if (cluster.byLang.has(lc(loc))) P('locale-owner-and-member', `localeOwners names an owner for ${loc}, but the cluster also publishes a ${loc} page: two pages, one intent, one locale`);
+      for (const p of checkFoldEvidence({ rec, loc, ownerRec, evidence: evidenceMap[loc], model })) P(p.code, p.message, p.level);
     }
   }
   return out;
+}
+
+// ─── verified folds (added 2026-11-15) ──────────────────────────────────────
+//
+// A locale owner OUTSIDE the cluster is a fold: a broader page in that language
+// is said to serve this intent already, so no dedicated page is built. A claim
+// in prose is not proof: a page can mention the job's keyword and lack the tool
+// that does it. `localeOwnerEvidence.<loc>` makes the claim checkable, and this
+// validator checks it against the owner page itself:
+//
+//   verified            YYYY-MM-DD the evidence was read
+//   ownerSatisfiesJob   how the owner page does the job (>= 20 chars)
+//   whyNotSeparateUrl   why a separate URL would duplicate it (>= 20 chars)
+//   mustContain         strings the owner page must carry (the symbols, names or
+//                       examples the job needs); each is looked up in the HTML
+//   requiredCapabilities functional-fingerprint keys the owner page must carry
+//                       (scripts/lib/functional-fingerprint.js), e.g. copy-tiles
+//
+// A fold with only a prose localeOwnerBasis is reported (warning) as
+// unverified, so its parity gap stays visible instead of disappearing behind
+// the fold label. An owner with neither is an error for records registered from
+// FOLD_EVIDENCE_REQUIRED_FROM on, a warning for older ones (recorded as they were).
+const FOLD_EVIDENCE_REQUIRED_FROM = '2026-11-15';
+const FOLD_TEXT_MIN = 20;
+
+function checkFoldEvidence({ rec, loc, ownerRec, evidence, model }) {
+  const out = [];
+  const add = (code, message, level = 'error') => out.push({ code, message, level });
+  const basis = (rec.localeOwnerBasis || {})[loc];
+  const isNew = String(rec.registered || '') >= FOLD_EVIDENCE_REQUIRED_FROM;
+  if (!evidence) {
+    if (basis) {
+      add('fold-unverified', `localeOwners.${loc} rests on a prose basis only; it is an unverified fold until localeOwnerEvidence.${loc} names what the owner page carries (mustContain, requiredCapabilities)`, 'warning');
+    } else {
+      add('fold-unevidenced', `localeOwners.${loc} has neither localeOwnerEvidence.${loc} nor localeOwnerBasis.${loc}: a fold needs evidence that the owner page does the job`, isNew ? 'error' : 'warning');
+    }
+    return out;
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(evidence.verified || ''))) add('fold-evidence-bad-date', `localeOwnerEvidence.${loc}.verified must be YYYY-MM-DD`);
+  for (const f of ['ownerSatisfiesJob', 'whyNotSeparateUrl']) {
+    if (!evidence[f] || String(evidence[f]).trim().length < FOLD_TEXT_MIN) add('fold-evidence-incomplete', `localeOwnerEvidence.${loc}.${f} must say it in at least ${FOLD_TEXT_MIN} characters`);
+  }
+  const must = Array.isArray(evidence.mustContain) ? evidence.mustContain : [];
+  const caps = Array.isArray(evidence.requiredCapabilities) ? evidence.requiredCapabilities : [];
+  if (!must.length) add('fold-evidence-incomplete', `localeOwnerEvidence.${loc}.mustContain must list what the owner page carries for this job (symbols, names, examples)`);
+  if (!caps.length) add('fold-evidence-incomplete', `localeOwnerEvidence.${loc}.requiredCapabilities must list the functional capabilities the job needs (e.g. "copy-tiles")`);
+  if (!ownerRec) return out; // locale-owner-missing is already reported
+  const text = ownerRec.html.normalize('NFC');
+  const missingText = must.filter((s) => !text.includes(String(s).normalize('NFC')));
+  if (missingText.length) {
+    add('fold-content-missing', `localeOwners.${loc} = ${urlToPath(ownerRec.canonical)} does not carry ${missingText.map((s) => JSON.stringify(s)).join(', ')}: the fold is claimed, the content is not there`);
+  }
+  const fp = functionalFingerprint(ownerRec.html);
+  const missingCaps = caps.filter((c) => !fp.capabilities.includes(c));
+  if (missingCaps.length) {
+    add('fold-capability-missing', `localeOwners.${loc} = ${urlToPath(ownerRec.canonical)} lacks ${missingCaps.join(', ')}: a page that mentions the job without the tool that does it is partial coverage, not a fold`);
+  }
+  return out;
+}
+
+// Demand is a priority fact, never a semantic one (language-neutral-intents.md
+// §1.5). A reason built on it is refused unless the phrase is negated ("evidence
+// of a different alphabet, not of missing demand").
+const DEMAND_REASON_RE = /\b(?:(?:no|low|zero|little|insufficient|missing|unmeasured|weak|limited|negligible)\s+(?:\w+\s+)?(?:demand|volume|search(?:es)?|search volume|traffic|interest|queries)|not\s+(?:a\s+)?priority(?:\s+market)?|no\s+(?:english\s+)?(?:parent|page)\s+(?:exists|yet)|(?:not|never)\s+searched|nobody\s+searches)\b/i;
+
+function demandOnlyReason(why) {
+  const s = String(why || '');
+  const m = DEMAND_REASON_RE.exec(s);
+  if (!m) return null;
+  const before = s.slice(Math.max(0, m.index - 24), m.index);
+  if (/\b(?:not|never|nor|isn't|is not)\b[^.;]*$/i.test(before)) return null;
+  return m[0];
 }
 
 /** Every cluster with no English member and no registry record that has a locale page in it. */
@@ -559,6 +645,9 @@ function normalizeUrlLocal(u) {
 
 module.exports = {
   evaluateNewLocalePage,
+  checkFoldEvidence,
+  demandOnlyReason,
+  FOLD_EVIDENCE_REQUIRED_FROM,
   SITE_ORIGIN,
   SITE_ROOT_URL,
   REGISTRY_REL,

@@ -498,6 +498,123 @@ console.log('I. Downstream: x-default policy, lane map, fingerprint identity');
   });
 }
 
+// ─── J ──────────────────────────────────────────────────────────────────────
+// Verified folds (2026-11-15): a broader page in a language is recorded as the
+// owner of a narrower intent only with evidence the validator can check against
+// the owner page itself. A keyword mention is not a fold.
+console.log('J. Verified folds (localeOwners + localeOwnerEvidence)');
+{
+  const TILE = (sym) => `<button class="symbol-tile" data-symbol="${sym}">${sym}</button>`;
+  const FOLD_SITE = {
+    'library/angel-emoji/': { lang: 'en', alts: [], body: `<main>${TILE('😇')}${TILE('👼')}</main>` },
+    // Broader Korean face-emoji page that carries both angel glyphs as copy tiles.
+    'ko/library/eolgul-imoji/': { lang: 'ko', alts: [], body: `<main><h2>천사 이모지</h2>${TILE('😇')}${TILE('👼')}</main>` },
+    // Broader Korean page that names the job in prose but has no tiles at all.
+    'ko/library/mention-only/': { lang: 'ko', alts: [], body: '<main><p>천사 이모지 😇 👼 를 찾고 있나요?</p></main>' },
+  };
+  const evidence = (extra = {}) => Object.assign({
+    verified: '2026-11-15',
+    ownerSatisfiesJob: 'The angel section copies both angel emoji with one tap.',
+    whyNotSeparateUrl: 'A Korean angel page would repeat that section and compete with it.',
+    mustContain: ['😇', '👼'],
+    requiredCapabilities: ['copy-tiles'],
+  }, extra);
+  const foldRecord = (owner, ev, extra = {}) => intent('find-and-copy-an-emoji/angel', 'en', ['library/angel-emoji/'], Object.assign({
+    registered: '2026-11-15',
+    localeOwners: { ko: S + owner },
+    localeOwnerEvidence: ev === undefined ? { ko: evidence() } : ev,
+  }, extra));
+
+  test('demand + a broader page that really serves the job: the fold validates', () => {
+    const root = site(FOLD_SITE, [foldRecord('ko/library/eolgul-imoji/')]);
+    const m = model(root);
+    assert.deepStrictEqual(errorsOf(m), []);
+    cleanup(root);
+  });
+  test('the verified owner blocks a duplicate Korean URL for the same intent', () => {
+    const root = site(Object.assign({}, FOLD_SITE, {
+      'library/angel-emoji/': { lang: 'en', alts: [['ko', 'ko/library/cheonsa-imoji/']], body: `<main>${TILE('😇')}</main>` },
+      'ko/library/cheonsa-imoji/': { lang: 'ko', alts: [['en', 'library/angel-emoji/']], body: `<main>${TILE('😇')}</main>` },
+    }), [foldRecord('ko/library/eolgul-imoji/')]);
+    const v = admit(model(root), 'ko/library/cheonsa-imoji/index.html');
+    assert.strictEqual(v.status, 'fail');
+    assert.strictEqual(v.problem, 'intent-already-served');
+    cleanup(root);
+  });
+  test('a broader page that mentions the keyword but lacks the copy tool is refused as a fold', () => {
+    const root = site(FOLD_SITE, [foldRecord('ko/library/mention-only/')]);
+    const codes = errorsOf(model(root)).map((p) => p.code);
+    assert.ok(codes.includes('fold-capability-missing'), codes.join(','));
+    cleanup(root);
+  });
+  test('a fold whose owner page does not carry the job\'s content is refused', () => {
+    const root = site(FOLD_SITE, [foldRecord('ko/library/eolgul-imoji/', { ko: evidence({ mustContain: ['😇', '🪽'] }) })]);
+    const codes = errorsOf(model(root)).map((p) => p.code);
+    assert.ok(codes.includes('fold-content-missing'), codes.join(','));
+    cleanup(root);
+  });
+  test('a new fold with no evidence at all is an error; a legacy prose-only fold stays visible as a warning', () => {
+    const root = site(FOLD_SITE, [foldRecord('ko/library/eolgul-imoji/', {})]);
+    assert.ok(errorsOf(model(root)).some((p) => p.code === 'fold-unevidenced'));
+    cleanup(root);
+    const root2 = site(FOLD_SITE, [foldRecord('ko/library/eolgul-imoji/', {}, {
+      registered: '2026-11-14', localeOwnerBasis: { ko: 'Recorded before structured evidence existed (fixture).' },
+    })]);
+    const all = ic.validateRegistry(model(root2), LOCALES);
+    assert.deepStrictEqual(all.filter((p) => p.level === 'error'), []);
+    assert.ok(all.some((p) => p.level === 'warning' && p.code === 'fold-unverified'), 'a prose-only fold must stay visible');
+    cleanup(root2);
+  });
+  test('incomplete evidence (no reason a URL would duplicate, no capabilities) is refused', () => {
+    const root = site(FOLD_SITE, [foldRecord('ko/library/eolgul-imoji/', { ko: evidence({ whyNotSeparateUrl: '', requiredCapabilities: [] }) })]);
+    const n = errorsOf(model(root)).filter((p) => p.code === 'fold-evidence-incomplete').length;
+    assert.strictEqual(n, 2);
+    cleanup(root);
+  });
+  test('one broader Korean page can own several narrower intents and each keeps its own id', () => {
+    const root = site(Object.assign({}, FOLD_SITE, {
+      'library/halo-emoji/': { lang: 'en', alts: [], body: `<main>${TILE('😇')}</main>` },
+    }), [
+      foldRecord('ko/library/eolgul-imoji/'),
+      intent('find-and-copy-an-emoji/halo', 'en', ['library/halo-emoji/'], {
+        registered: '2026-11-15', localeOwners: { ko: S + 'ko/library/eolgul-imoji/' },
+        localeOwnerEvidence: { ko: evidence({ mustContain: ['😇'] }) },
+      }),
+    ]);
+    const m = model(root);
+    assert.deepStrictEqual(errorsOf(m), []);
+    assert.strictEqual(clusterOf(m, 'library/angel-emoji/').key, 'find-and-copy-an-emoji/angel');
+    assert.strictEqual(clusterOf(m, 'library/halo-emoji/').key, 'find-and-copy-an-emoji/halo');
+    // The owner page is not merged into either cluster: a fold is not an hreflang edge.
+    assert.deepStrictEqual(clusterOf(m, 'ko/library/eolgul-imoji/').members, [`${S}ko/library/eolgul-imoji/`]);
+    cleanup(root);
+  });
+}
+
+// ─── K ──────────────────────────────────────────────────────────────────────
+console.log('K. Inapplicability is semantic, never demand');
+{
+  const SITE = { 'es/imprimibles/letra-enye/': { lang: 'es', alts: [] } };
+  const rec = (why) => intent('letter-colouring-page/enye', 'es', ['es/imprimibles/letra-enye/'], { inapplicableLocales: { en: why } });
+  for (const why of ['No demand in English markets.', 'Low search volume in Korea, not worth a page.',
+    'English is not a priority market.', 'Zero searches measured on Semrush US.']) {
+    test(`refused: "${why}"`, () => {
+      const root = site(SITE, [rec(why)]);
+      assert.ok(errorsOf(model(root)).some((p) => p.code === 'inapplicable-for-demand-reason'));
+      cleanup(root);
+    });
+  }
+  test('accepted: a semantic reason that explicitly negates demand (the live Ñ record)', () => {
+    const root = site(SITE, [rec('Ñ is not a letter of the English alphabet, so an English page for it cannot exist (evidence of a different alphabet, not of missing demand).')]);
+    assert.deepStrictEqual(errorsOf(model(root)), []);
+    cleanup(root);
+  });
+  test('demandOnlyReason ignores negated phrases and names the offending one', () => {
+    assert.strictEqual(ic.demandOnlyReason('Never because of low volume; the script differs.'), null);
+    assert.strictEqual(ic.demandOnlyReason('Weak demand in this market'), 'Weak demand');
+  });
+}
+
 console.log('');
 console.log(`${passes} passed, ${failures} failed`);
 process.exit(failures ? 1 : 0);
