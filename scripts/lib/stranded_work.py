@@ -29,6 +29,13 @@ UNMEASURABLE  no merge-base in a SHALLOW clone. The clone cannot answer; never r
 has. It is line-set containment, so it can call a line present when main has the same text elsewhere
 in the file (a false LANDED for an exact duplicate line), and it reports a line main later rewrote as
 missing. The task shows the files and counts so a person decides; the number is never the decision.
+
+A task names no default recovery (2026-11-15). Its first option used to be "open a PR from the
+branch as it stands", and #1218 was opened that way and closed within the hour, because that commit
+was already on record as needing a decision on how to redo it against today's main, not a replay;
+its port into #1217 was reverted (aa08f976). A task now asks the reader to check for a recorded decision
+on the commits and every file before choosing, and lists every file. Bodies carry TEMPLATE_VERSION in
+their marker, so a wording change rewrites each open task once, without an alert.
 """
 import datetime as dt
 import hashlib
@@ -41,6 +48,10 @@ MAIN = 'origin/main'
 TASK_LABEL = 'stranded-work'
 MARKER_RE = re.compile(r'<!--\s*stranded-work\s+(.*?)\s*-->', re.S)
 PRE_REWRITE_KEY = 'pre-rewrite'
+#: Bumped when the task wording changes: an open task whose marker carries an older version is
+#: rewritten once (an update with no alert and no comment), so the new wording reaches the
+#: backlog and not only the tasks filed after it.
+TEMPLATE_VERSION = '2'
 
 
 class Repo:
@@ -244,12 +255,24 @@ def read_tasks(path):
     return by_key
 
 
-def _residue_table(residue, limit=25):
+def _residue_table(residue, limit=25, listed=400):
+    """The largest `limit` files as a table, every other one in a collapsed list.
+
+    A task asks the reader to check each file for a recorded decision, so it names all of them.
+    `listed` keeps the body under GitHub's 65,536-character limit on a very large branch.
+    """
+    ordered = sorted(residue.items(), key=lambda kv: (-kv[1], kv[0]))
     lines = ['| file | lines main is missing |', '|---|---|']
-    for path, n in sorted(residue.items(), key=lambda kv: (-kv[1], kv[0]))[:limit]:
+    for path, n in ordered[:limit]:
         lines.append(f'| `{path}` | {n} |')
-    if len(residue) > limit:
-        lines.append(f'| … {len(residue) - limit} more | |')
+    rest = ordered[limit:]
+    if rest:
+        lines.append(f'| … {len(rest)} more, listed below | |')
+        lines += ['', f'<details><summary>The other {len(rest)} file(s)</summary>', '']
+        lines += [f'- `{path}` ({n})' for path, n in rest[:listed]]
+        if len(rest) > listed:
+            lines.append(f'- … and {len(rest) - listed} more: see the compare link')
+        lines += ['', '</details>']
     return '\n'.join(lines)
 
 
@@ -257,7 +280,7 @@ def stranded_body(row, repo_slug):
     compare = f'https://github.com/{repo_slug}/compare/main...{row["short"]}?expand=1' if repo_slug else None
     subjects = '\n'.join(f'- {s}' for s in row.get('subjects', [])[:20])
     total = sum(row['residue'].values())
-    return f"""{marker(key='branch:' + row['short'], tip=row['tip'])}
+    return f"""{marker(key='branch:' + row['short'], tip=row['tip'], v=TEMPLATE_VERSION)}
 `{row['short']}` carries {row.get('commits', '?')} commit(s) that no open PR tracks, newest {row.get('date', '?')} \
 ({row.get('age', '?')} days old). {total} changed line(s) across {len(row['residue'])} file(s) are not on main.
 
@@ -269,13 +292,23 @@ def stranded_body(row, repo_slug):
 
 {_residue_table(row['residue'])}
 
-**Recover it, one of three ways**
+**Before you choose**
 
-1. **It should ship:** open a PR from the branch as it stands{f' ([compare]({compare}))' if compare else ''}. Do not rebase, \
-amend or force-push it; merge `main` into it if it conflicts. This task closes itself on the next daily run once the PR is open.
+Work left on a branch is not always meant to ship as it stands: it may have been left on purpose, or held until someone \
+decides how to redo it on today's `main`. Before opening a PR, cherry-picking or porting any of it, check for a recorded \
+decision on these commits, on every file listed above, and in any PR already opened from this branch, closed ones included. \
+A recorded decision outranks this issue. If that decision is still pending, leave this issue open: it is the record that \
+the work is not on main.
+
+**Then resolve it one of three ways** (none of them is the default)
+
+1. **It should ship as it stands, and no recorded decision says otherwise:** open a PR from the branch\
+{f' ([compare]({compare}))' if compare else ''}. Do not rebase, amend or force-push it; merge `main` into it if it conflicts. \
+This task closes itself on the next daily run once the PR is open.
 2. **Main already has it in another form:** check the files above against main. If the residue is only generated output \
 or a line main fixed differently, record the branch in `data/stranded_work_exclusions.json` with that reason.
-3. **It is abandoned:** record it in `data/stranded_work_exclusions.json` with the reason, or delete the branch.
+3. **It will not ship from this branch** (it is abandoned, or a recorded decision says to redo it on a fresh branch from \
+`main`): record it in `data/stranded_work_exclusions.json` with the reason, or delete the branch once nothing depends on it.
 
 Closing this issue without one of those reopens it on the next run: the detector, not the issue, is the record.
 
@@ -289,10 +322,11 @@ def pre_rewrite_body(rows):
     for r in sorted(rows, key=lambda r: -sum(r['residue'].values())):
         top = ', '.join(f'`{p}`' for p, _ in sorted(r['residue'].items(), key=lambda kv: -kv[1])[:3])
         table.append(f'| `{r["short"]}` | {r.get("date", "?")} | {len(r["residue"])} | {sum(r["residue"].values())} | {top} |')
-    return f"""{marker(key=PRE_REWRITE_KEY, set=digest, members=','.join(members))}
+    return f"""{marker(key=PRE_REWRITE_KEY, set=digest, members=','.join(members), v=TEMPLATE_VERSION)}
 {len(members)} branch(es) were cut before main's history was rewritten on 2026-07-10 and carry content main does not have. \
 They share no commit with main, so none can be merged or opened as a PR; each needs the content ported onto a fresh branch \
-from main, or an exclusion recording why it is dropped.
+from main, or an exclusion recording why it is dropped. Before porting any of it, check for a recorded decision on the files \
+involved: a branch may have been left on purpose.
 
 {chr(10).join(table)}
 
@@ -309,7 +343,8 @@ def plan_tasks(rows, tasks, repo_slug=None):
 
     Each action: {'action': create|reopen|update|close, 'issue', 'title', 'body', 'comment', 'alert', 'key'}.
     `alert` marks what is newly stranded: a branch with no task, a task closed while the work is still stranded, new
-    commits on a stranded branch, or a branch new to the pre-rewrite list. Only alerts fail the run.
+    commits on a stranded branch, or a branch new to the pre-rewrite list. Only alerts fail the run. An open task written
+    from an older TEMPLATE_VERSION gets a `refresh` update: new body, no comment, no alert.
     `tasks` None (no task list supplied) plans a create for everything, so nothing is waved through.
     """
     known = tasks if tasks is not None else {}
@@ -332,6 +367,9 @@ def plan_tasks(rows, tasks, repo_slug=None):
                             'comment': f'New commits on `{row["short"]}` since this task was filed: tip moved '
                                        f'`{issue["fields"].get("tip")}` → `{row["tip"]}`, and no open PR tracks them.',
                             'alert': True})
+        elif issue['fields'].get('v') != TEMPLATE_VERSION:
+            actions.append({'action': 'update', 'key': key, 'issue': issue['number'], 'title': title, 'body': body,
+                            'comment': None, 'alert': False, 'refresh': True})
 
     pre = [r for r in rows if r['state'] == 'DISJOINT' and r['residue']]
     issue = known.get(PRE_REWRITE_KEY)
@@ -357,6 +395,9 @@ def plan_tasks(rows, tasks, repo_slug=None):
                 actions.append({'action': 'reopen' if reopen else 'update', 'key': PRE_REWRITE_KEY,
                                 'issue': issue['number'], 'title': title, 'body': body, 'comment': ' '.join(note),
                                 'alert': bool(added) or reopen})
+            elif issue['fields'].get('v') != TEMPLATE_VERSION:
+                actions.append({'action': 'update', 'key': PRE_REWRITE_KEY, 'issue': issue['number'], 'title': title,
+                                'body': body, 'comment': None, 'alert': False, 'refresh': True})
 
     by_branch = {r['short']: r for r in rows}
     for key, issue in known.items():

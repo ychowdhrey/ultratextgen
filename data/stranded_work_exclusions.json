@@ -1,5 +1,5 @@
 {
-  "_readme": "Branches deliberately left carrying commits that no open PR tracks. Same bar as every other ledger here: entries are discussed decisions, never added to make a check pass. The default fix for a flagged branch is to open a PR from it as it stands. Ships empty.",
+  "_readme": "Branches deliberately left carrying commits that no open PR tracks. Same bar as every other ledger here: entries are discussed decisions, never added to make a check pass. A flagged branch usually ships through a PR opened from it as it stands, but none of the recovery task's outcomes is a default: check for a recorded decision on its commits and files first, because some branches are left or held on purpose. Ships empty.",
   "_shape": { "origin/claude/example-branch": { "reason": "why this work is abandoned rather than untracked", "date": "YYYY-MM-DD" } },
   "origin/claude/inspiring-babbage-eg3rec": {
     "reason": "Tile Unicode delta gate: its gate, workflow wiring and rules text are on main (check:tile-unicode, test:tile-unicode). The one line main lacks is the generated gate-inventory sentence in docs/README.md, which main regenerated with its own count. Reconciled 2026-11-11 by content check.",
