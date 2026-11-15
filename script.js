@@ -2320,6 +2320,32 @@ const decorations = window.UTG_DECORATIONS
       if (val.trim().length >= 2) queueGenerateEvent();
     }
 
+    // A paste longer than the room left under the box's maxlength is cut by
+    // the browser at a UTF-16 unit, which can split an emoji: a family emoji
+    // pasted with three characters to spare left "man + zero-width joiner"
+    // (measured in Chromium, 2026-11-15). Paste only the whole graphemes
+    // that fit instead; a paste that fits is left to the browser.
+    if (el.mainInput && el.mainInput.maxLength > 0) {
+      el.mainInput.addEventListener("paste", (e) => {
+        const box = el.mainInput;
+        const data = e.clipboardData ? e.clipboardData.getData("text/plain") : "";
+        const start = box.selectionStart;
+        const end = box.selectionEnd;
+        if (!data || start == null || end == null) return;
+        const room = box.maxLength - (box.value.length - (end - start));
+        if (data.length <= room) return;
+        e.preventDefault();
+        let fit = "";
+        for (const g of graphemes(data)) {
+          if (fit.length + g.length > room) break;
+          fit += g;
+        }
+        if (!fit) return;
+        box.setRangeText(fit, start, end, "end");
+        box.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+    }
+
     function syncInputUI() {
       const val = el.mainInput.value;
       const len = val.length;

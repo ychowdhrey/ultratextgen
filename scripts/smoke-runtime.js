@@ -142,6 +142,25 @@ async function main() {
     await ctx.close();
   }
 
+  // 1a. A paste that overflows maxlength keeps whole graphemes (2026-11-15).
+  // Chromium cuts an overflowing paste at a UTF-16 unit: a family emoji
+  // pasted after "xy" with five units to spare left "xy" + man + joiner.
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    const fam = '\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}';
+    const max = await page.evaluate(() => document.getElementById('mainInput').maxLength);
+    await page.fill('#mainInput', 'a'.repeat(max - 5));
+    await page.focus('#mainInput');
+    await page.keyboard.press('End');
+    await page.evaluate((t) => navigator.clipboard.writeText(t), 'xy' + fam);
+    await page.keyboard.press('Control+V');
+    await page.waitForTimeout(250);
+    const tail = (await page.inputValue('#mainInput')).slice(max - 5);
+    check('an overflowing paste keeps whole graphemes', tail === 'xy', JSON.stringify(tail));
+    check('no page errors (paste)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 1b. Typed text stays on the device. The FAQ on / (and 19 other English
   // generators, plus the locale homes) says nothing you type is sent to a
   // server; until 2026-11-07 script.js wrote the input into ?q= on every
