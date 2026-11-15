@@ -116,6 +116,14 @@
 
   // ---- print + download ----------------------------------------------------
 
+  /* A saved file is recorded by surface and format only (output_download,
+     header.js): never the typed text or the file name. Fired after the blob
+     exists and the download was handed to the browser. */
+  function trackDownload(surface, format) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.trackOutputDownload === "function") ns.trackOutputDownload(surface, format);
+  }
+
   function printNodes(nodes, title) {
     if (!printRoot) { window.print(); return; }
     printRoot.innerHTML = "";
@@ -135,6 +143,9 @@
     // inline !important (an ad anchor unit), so without this the printed
     // sheet carries the page's ads. Shared with printablesEngine.js.
     if (window.UltraTextGen && window.UltraTextGen.hideForPrint) window.UltraTextGen.hideForPrint(printRoot);
+    // Print is recorded the way the cursive sheet records it (printable_output),
+    // so a print reads the same in every engine.
+    if (window.UltraTextGen && window.UltraTextGen.trackPrintable) window.UltraTextGen.trackPrintable("print", "huruf_keren");
     window.print();
     document.body.classList.remove("is-printing");
     if (window.UltraTextGen && window.UltraTextGen.restorePrint) window.UltraTextGen.restorePrint();
@@ -165,6 +176,7 @@
       a.download = "huruf-keren-" + charSlug(ch) + ".png";
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(url), 1000);
+      trackDownload("huruf_keren", "png");
     }, "image/png");
   }
 
