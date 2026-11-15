@@ -76,6 +76,7 @@
     "test:tile-unicode": "python3 scripts/test-tile-unicode.py",
     "check:zalgo-decodes": "node scripts/check-zalgo-decodes.js",
     "check:redirects": "node scripts/check-redirects.js",
+    "test:redirects-parse": "node scripts/lib/redirects-parse.test.js",
     "check:explorer-strings": "node scripts/sync-explorer-strings.js",
     "sync:explorer-strings": "node scripts/sync-explorer-strings.js --write",
     "test:saved-items": "node js/saved/savedItems.test.js",

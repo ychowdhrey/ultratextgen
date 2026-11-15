@@ -535,7 +535,12 @@
 # .html URL. Do not delete: removing it un-verifies the site.
 /ff044916b7.html  /ff044916b7.txt  200
 
-/404  /404.html  200
+# No rule for /404 (removed 2026-11-15). `/404  /404.html  200` stood here from
+# 2026-05-03 and looped in production: the rewrite asks for /404.html, Pages
+# 308s every *.html to its extensionless path, and that path is /404 again, so
+# /404 and /404.html both answered `308 -> /404` forever. Cloudflare's parser
+# accepts the rule; the loop only shows at runtime. Without it, unmatched paths
+# still get the branded 404.html with status 404.
 
 # ---------------------------------------------------------------------------
 # SPLAT / PLACEHOLDER RULES - KEEP THESE LAST, ALWAYS.

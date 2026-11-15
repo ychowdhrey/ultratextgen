@@ -54,6 +54,10 @@ preserved. Everything past the dynamic cap is dropped **in silence**.
   exists. A retired directory with one rule therefore 404s on its other spelling
   (70 such URLs were live on 2026-11-01). Write the pair side by side.
 - When Functions are active on a route, the Function runs **before** `_redirects`.
+- **Never 200-rewrite a path to its own `.html` file** (`/x  /x.html  200`). Pages 308s
+  every `x.html` to `/x`, so the rewrite loops for ever, and the parser calls the rule
+  valid. `/404  /404.html  200` looped in production for six months (removed 2026-11-15).
+  Pages already serves `x.html` at `/x`; no rule is needed.
 
 `npm run check:redirects` gates all of this whole-file, the twin rule included (deliberately not
 diff-scoped — the damage a splat does is to rules *elsewhere* that the PR never

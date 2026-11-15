@@ -339,6 +339,16 @@ jobs:
         continue-on-error: true
         run: npm run check:redirects | tee redirects.log
 
+      # The runtime-loop rule above (a 200 rewrite to an .html file that Pages
+      # 308s back to its own source) on fixed rule sets, plus the gate run end
+      # to end against the real file with the old `/404  /404.html  200` put
+      # back. That rule looped in production from 2026-05-03 to 2026-11-15
+      # while the parser called it valid.
+      - name: Run _redirects parser tests
+        id: redirects_parse_tests
+        continue-on-error: true
+        run: npm run test:redirects-parse | tee redirects-parse-tests.log
+
       # Whole-site and gating, same call as the Funding Choices tag and the
       # zalgo decode check rather than the informational whole-site audits:
       # there is no backlog to be permanently red against. A page either loads
@@ -1693,6 +1703,11 @@ jobs:
             cat link-reachability.log
             echo '```'
             echo ""
+            echo "### _redirects parser tests — \`${{ steps.redirects_parse_tests.outcome }}\`"
+            echo '```'
+            cat redirects-parse-tests.log
+            echo '```'
+            echo ""
             echo "### Link-graph tests — \`${{ steps.link_graph_tests.outcome }}\`"
             echo '```'
             cat link-graph-tests.log
@@ -1921,6 +1936,7 @@ jobs:
           steps.library_link_mirror.outcome == 'failure' ||
           steps.link_reachability.outcome == 'failure' ||
           steps.link_graph_tests.outcome == 'failure' ||
+          steps.redirects_parse_tests.outcome == 'failure' ||
           steps.editorial_footprint.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
           steps.efr_gate.outcome == 'failure' ||
