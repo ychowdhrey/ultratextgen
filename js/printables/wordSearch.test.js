@@ -479,5 +479,14 @@ function ownCells(p) {
   eq(info.oneLetter.join(), "a", "a one-letter entry is reported");
 }
 
+// Arabic tatweel (U+0640) stretches a joining stroke; it is not a letter of
+// the word, so it never becomes a grid cell (2026-11-15).
+{
+  const w = WS.normalizeWords("\u0645\u0640\u0640\u0640\u062F\u0631\u0633\u0629")[0];
+  eq(w.letters.join(" "), "\u0645 \u062F \u0631 \u0633 \u0629", "tatweel is not a grid letter");
+  eq(w.display, "\u0645\u0640\u0640\u0640\u062F\u0631\u0633\u0629", "the word list keeps the word as typed");
+  eq(WS.normalizeWords("\u0640\u0640").length, 0, "a line of tatweel alone is not a word");
+}
+
 console.log("\nwordSearch.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

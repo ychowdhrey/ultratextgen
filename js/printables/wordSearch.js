@@ -153,7 +153,10 @@
     ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
     : null;
   const CLUSTER_RE = /\P{M}\p{M}*|\p{M}+/gu;
-  const NOT_CELL_RE = /[^\p{L}\p{M}\p{N}]/gu;
+  // U+0640 ARABIC TATWEEL is a letter by category (Lm) but only stretches the
+  // joining stroke between two letters; typed into a word it would become a
+  // grid cell of its own ("مـــدرسة" printed three bare strokes), so it goes.
+  const NOT_CELL_RE = /[^\p{L}\p{M}\p{N}]|\u0640/gu;
 
   function clusters(text) {
     const s = String(text).normalize("NFC");

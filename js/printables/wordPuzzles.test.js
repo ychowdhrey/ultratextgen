@@ -496,5 +496,13 @@ const CLUED = [
   eq(trip("", true), "", "an empty box carries nothing");
 }
 
+// Arabic tatweel (U+0640) is a stretched joining stroke, not a letter: the
+// scramble and the crossword leave it out of their cells (2026-11-15).
+{
+  const typed = "\u0645\u0640\u0640\u0640\u062F\u0631\u0633\u0629";
+  eq(SC.normalizeWords(typed)[0].letters.join(" "), "\u0645 \u062F \u0631 \u0633 \u0629", "scramble: tatweel is not a tile");
+  eq(CW.normalizeWords(typed)[0].letters.join(" "), "\u0645 \u062F \u0631 \u0633 \u0629", "crossword: tatweel is not a cell");
+}
+
 console.log("\nwordPuzzles.test.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);
