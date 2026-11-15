@@ -10,6 +10,84 @@ Newest entries come first. Numbers are only given where we could count them.
 
 ## November 2026
 
+### 14 November 2026
+
+Korean speakers can now find two new UltraTextGen collections in Korean: bowing emoticons (꾸벅 이모티콘) and clapping emoticons (박수 이모티콘).
+
+People thanking someone, apologising or cheering in a Korean chat can copy faces such as m(_ _)m or a row of 👏 from a page written for them, instead of an English page. The copy-ready items carry Korean wording such as "m(_ _)m 감사합니다" where the English page used English words, and the bowing page explains how to type the faces by hand. The two collections hold 28 and 23 items and are linked from the Korean library home page.
+
+### 11 November 2026
+
+The crossword maker now builds a puzzle when one answer in the list is too long for the grid.
+
+Before, a single answer longer than the grid's 24 squares stopped the whole crossword, and the page told the teacher to choose words that share letters, which was not the problem. A social studies list that included "Declaration of Independence" produced no puzzle at all. The crossword maker now builds the puzzle from the answers that fit and names the one that did not under "No room in the grid for:", so teachers can shorten that answer or leave it out.
+
+### 11 November 2026
+
+The character counter's "Convert fancy text to plain" button now leaves real letters and symbols alone.
+
+Before, the button changed letters that were never fancy text. In Russian, "хорошо" came back with a Latin x inside the word, the Spanish and Portuguese ordinals in "3º piso, nº 5" and "1ª" lost their raised marks, "Brand™" became "BrandTM", and a Navajo letter was changed. The character counter now converts only words that really contain styled letters, and its count of styled letters agrees with what the button changes, so Russian text reports none. Styled text such as small caps and bold still turns back into plain letters. The fix covers the English counter and its 17 translated versions.
+
+### 10 November 2026
+
+The section sign page now explains how the § character is used in Minecraft, in 17 languages.
+
+Minecraft players who copy § to colour or format text in the game can now see on the section sign page how it behaves in Java Edition and in Bedrock Edition, side by side in one table, with a source for the details. The section sign page carries the table in English and in 16 translations, and the Minecraft symbol pages in English, Spanish, Indonesian and Korean point to it.
+
+### 9 November 2026
+
+Translated pages in nine languages now describe their tools correctly, and three Arabic pages no longer call the ankh's looped cross a swastika.
+
+Several translated pages told readers the opposite of what the tool does. The Portuguese cursive page said to type "Joao" without the accent, the Italian and French pages said to drop accents, and the Turkish and Polish pages described their own letters wrongly, but the text styles keep accented letters. Those pages now say so, and 31 example cards in Portuguese, Italian, French, German and Turkish that copied text without its accents now copy exactly what they show. One Italian example had suggested "papa" for "papà", which means the Pope. Spanish and Portuguese name pages now include the decorative frames their text promised, the Spanish other-alphabets page now shows the Greek, Cyrillic, runic and katakana styles it describes, and the cursive signature studio's background buttons are no longer in English in six languages. In all, 22 pages in Spanish, Portuguese, French, Italian, German, Turkish, Polish, Korean and Traditional Chinese were corrected. Separately, three Arabic symbol pages used the Arabic word for a swastika for the crux ansata, and now name it as the looped cross the ankh page already uses.
+
+### 9 November 2026
+
+The French Seyès writing sheets now print a 2 cm check bar, so teachers can tell if the printer shrank the page.
+
+Seyès ruling only matches a pupil's exercise book when it prints at actual size, and a printer's "fit to page" setting can shrink it without warning. The four French Seyès practice sheets, for writing models, letters to trace, names to trace and the cursive alphabet name sheet, now print a small bar in the footer that measures 2 cm at the right size. A teacher or parent can hold a ruler to it: if the bar is shorter, the sheet was scaled. The bar was measured at 20.02 mm in an exported A4 sheet, and the rest of the footer keeps its place on A4 and Letter paper.
+
+### 9 November 2026
+
+The printable worksheet makers no longer put a class list into shared links, and they read pasted word lists and choose paper size more reliably.
+
+The worksheet pages say that typed names stay on the device, but a Copy link on the name tracing sheet used to carry every child's name in the link. Now no worksheet maker puts the class list into a shared link, the recent sheets strip does not store it, and the English pages offer a tick box, off by default, for teachers who want to share a class set on purpose. A single typed name and a spelling list still travel with the link. Other fixes for teachers and parents: a spreadsheet row of words pasted sideways now reads as a list on the spelling, word search and scramble makers, where it used to read as "1 words" and drop four of five words. The spelling worksheet says "1 word" and explains why a word was left out. A browser set to German, French, Spanish or another A4 language first now gets A4 paper even when English is a backup language. Downloaded files are named after the class or the word list, and the handwriting generator previews and prints the first word of a list carried over from another tool instead of a sample sentence.
+
+### 8 November 2026
+
+Several copy buttons that copied nothing, or copied the wrong text, now copy what they show.
+
+The before and after emoji cards said "Copied ✓" but put nothing on the clipboard. The blank name buttons on the nickname symbols pages in English, Spanish, Indonesian and Turkish did nothing when clicked, and an invisible blank character cannot be selected by hand, so those buttons are the only way to copy one. Both now copy. When typed text looked like web code, such as `I &lt;3 you &amp; Tom`, the Text Decorator cards showed one thing and copied another on all 10 cards checked, and they now copy what they show. The strikethrough, underline and slash styles no longer start the second line of multi-line text with a stray mark. People copying names, bios and captions get exactly the text on screen.
+
+### 8 November 2026
+
+Three UltraTextGen tools no longer lose a visitor's work or freeze part way through.
+
+The YouTube page froze the browser tab when someone typed a title and then pressed Video title or @Handle. It now responds normally. The Zalgo glitch text box used to drop the first letter typed over its sample, so "zalgo" came out as "algo", always in Safari's engine and in Chrome whenever the sample was selected. The first letter is now kept, including for Korean typed with an input method. The symbol library home pages used to forget a search and filter after a visitor opened a symbol and pressed Back: a search for "heart" in Emotions and Expressions showing 6 of 375 collections came back as all 375. The 20 library home pages now keep the search and filter until the tab is closed.
+
+### 8 November 2026
+
+More UltraTextGen controls now work with a keyboard and screen readers.
+
+The "categories at a glance" cards on all 18 bio font pages could only be used with a mouse. They can now be reached with Tab and opened with Enter or Space. Screen readers now announce when text has been copied on the text generator pages, and on a phone the Preview button is read as "Preview" instead of just the eye emoji. The Zalgo glitch text Frequency and Amplitude sliders now have spoken names, and on the Japanese name seal printable page two tables that pushed the page wider than a phone screen now fit.
+
+### 8 November 2026
+
+Text typed into the UltraTextGen generators no longer appears in the browser's address bar.
+
+The site says that what you type is not sent anywhere, but the main text generator copied typed text into the page address a moment after each pause, so a name such as "Jane Private" stayed in the address bar and was sent again on reload. The upside down, Zalgo, emoji and kaomoji tools did the same with their own settings. Typed text now stays only in the open tab, so reload and Back still bring it back, and it is gone when the tab is closed. Text goes into a link only when someone presses Share or Copy link, and a shared link still opens with its text filled in. Anyone typing their own name, a friend's name or a private message can use the tools without that text being kept in the page address.
+
+### 8 November 2026
+
+The text generator now shows styles that actually change Russian, Arabic, Japanese, Hindi, Korean and Thai text.
+
+Most fancy fonts only exist for Latin letters. Before, on the Russian, Arabic, Japanese, Hindi, Korean and Thai home pages, typed text in that language came back unchanged on 9 of the 11 Popular cards, so the Copy buttons copied the visitor's own text back. When the text has no Latin letters, the text generator now puts the styles that frame, re-case or mark it first, and none of the 11 Popular cards is left unchanged. English text and mixed text are shown as before. A name or greeting that starts in Arabic or another right to left script, such as "مرحبا Luna", also now previews in the same word order it will have when pasted.
+
+### 8 November 2026
+
+The Discord symbols page and four translated bullet symbol pages now name the character each tile copies.
+
+Before, several Discord symbol tiles were labelled with the name of a different character: ๑ was called a Thai letter when it is the Thai digit one, ໒ was called a Lao letter when it is the Lao digit two, and ◌ was called a combining ring instead of a dotted circle. On the Spanish, French, Portuguese and Arabic bullet symbol pages, the small triangle and the pointer had swapped labels. The labels now match the character, so people choosing a symbol by its name get the one they wanted.
+
 ### 7 November 2026
 
 Styled text from the UltraTextGen generators now keeps accents, keycap numbers and underline or strikethrough marks intact in every one of the 114 text styles.
