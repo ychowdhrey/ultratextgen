@@ -143,6 +143,10 @@ proper noun. The exemption is **scoped by slot, not by string**: exempt where it
 *cited* (prose, a table cell, a tile label), still a defect in a heading, card
 title, section label or `aria-label`, because those are page copy. Title-case
 renderings of character names are **not** exempt; only the ALL-CAPS formal form is.
+An official Unicode character name *presented as the identifier* (`ZERO WIDTH
+JOINER`) stays verbatim in every locale and any slot, provided it is marked as the
+official name (a localized "Unicode name" label, `<code>` or `lang="en"`) and sits
+beside a translated human label: `docs/decisions/unicode-character-names.md`.
 
 ## 6. Numbers are their own axis
 

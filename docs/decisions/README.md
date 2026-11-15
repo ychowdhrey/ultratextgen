@@ -10,6 +10,7 @@ exceptions, and positions that look like defects to a well-meaning audit.
 | [`printables-scope.md`](./printables-scope.md) | the typography-native boundary and the word-search decision |
 | [`limitations-become-features.md`](./limitations-become-features.md) | why a limitation gets a feature (a check, a feedback loop, a fallback) instead of a disclaimer, and the Free Fire case that settled it |
 | [`spanish-one-market.md`](./spanish-one-market.md) | one `/es/` for every Spanish-speaking market: neutral words first, the Latin American form where it must choose, and why (2026-10-09) |
+| [`unicode-character-names.md`](./unicode-character-names.md) | official Unicode character names stay verbatim (ALL-CAPS, marked as the identifier) in every locale while the label beside them is translated (2026-11-08) |
 | [`locale-case-policy.md`](./locale-case-policy.md) | Title/Capitalized/Sentence case follow the page's language on opted-in case-converter pages: the per-language rules and their sources, the opt-in that keeps protected pages unchanged, and the gate for new pages (2026-10-28) |
 
 A decision recorded here is not a decision executed. Where a decision required a
