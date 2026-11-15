@@ -9367,6 +9367,17 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
 .deco-chip.copied .deco-chip-label::after {
   content: " · Copied!";
 }
+/* decorations-showcase.js sets the page-language word on the label. */
+.deco-chip.copied .deco-chip-label[data-copy-msg]::after,
+.deco-chip.copy-failed .deco-chip-label[data-copy-msg]::after {
+  content: " · " attr(data-copy-msg);
+}
+.deco-chip.copy-failed {
+  border-color: var(--ts-fail);
+}
+.deco-chip.copy-failed .deco-chip-label {
+  color: var(--ts-fail);
+}
 
 /* Small-caps explainer — "which small style to use" comparison list.
    Global reset zeroes list padding, so the list carries its own layout. */

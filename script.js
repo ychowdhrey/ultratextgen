@@ -48,6 +48,11 @@
   // Shared namespace (also owned by game-rules.js / symbol-explorer.js). Used
   // to bridge the live decoration ("flair") state to the game name-checker.
   const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+  // The one clipboard path: resolves only when the text reached the
+  // clipboard, rejects when neither writeText nor execCommand did. Shared so
+  // standalone widgets (decorations-showcase.js) confirm a copy on the same
+  // terms as the style cards instead of on intent.
+  UTG.writeClipboard = writeClipboard;
 
   const stylesRegistry = window.textStyles || {};
   const Render = window.UltraTextGenRender;
