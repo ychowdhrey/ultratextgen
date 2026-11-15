@@ -23,6 +23,10 @@
  *     the é was encoded.
  *   - Upside Down Micro Text keeps line breaks (ab\ncd used to become "pɔ qɐ").
  *
+ *   - Decomposed Hangul jamo styles like the precomposed syllables, and a CJK
+ *     compatibility ideograph (U+F900, U+2F800, ...) keeps its identity instead
+ *     of being normalised to its unified twin (2026-11-15).
+ *
  * Whole-style wrappers stay as they were: a decorator still marks the keycap as
  * one cluster, a word wrapper still wraps it, a redact style still blacks it out.
  */
@@ -78,6 +82,30 @@ for (const [name, style] of Object.entries(S)) {
     const a = R.renderAny(nfc, style);
     const b = R.renderAny(nfd, style);
     check(a === b, `${name}: NFD ${JSON.stringify(nfd)} -> ${JSON.stringify(b)} but NFC -> ${JSON.stringify(a)}`);
+  }
+
+  // Decomposed Hangul (conjoining jamo, the way macOS file names and some
+  // pastes carry it) styles like the precomposed syllables. Jamo are letters,
+  // not marks, so this pins that composing is not limited to mark clusters.
+  for (const word of ['한국', '각 hi']) {
+    const a = R.renderAny(word.normalize('NFC'), style);
+    const b = R.renderAny(word.normalize('NFD'), style);
+    check(a === b, `${name}: NFD Hangul ${JSON.stringify(word.normalize('NFD'))} -> ${JSON.stringify(b)} but NFC -> ${JSON.stringify(a)}`);
+  }
+
+  // A CJK compatibility ideograph keeps its identity (2026-11-08 audit). NFC
+  // maps U+F900 to U+8C48 and U+2F800 to U+4E3D; per-cluster composing used to
+  // apply that to every cluster, so 107 of 114 styles silently swapped the
+  // character a visitor typed. Checked wherever the style passes the unified
+  // form through untouched, i.e. where it does not restyle CJK at all.
+  for (const [compat, unified] of [['\uF900', '\u8C48'], ['\u{2F800}', '\u4E3D'], ['\uFA10', '\u585A']]) {
+    if (!R.renderAny('A' + unified + 'B', style).includes(unified)) continue;
+    const out = R.renderAny('A' + compat + 'B', style);
+    check(out.includes(compat) && !out.includes(unified),
+      `${name}: U+${compat.codePointAt(0).toString(16).toUpperCase()} -> ${JSON.stringify(out)} (became U+${unified.codePointAt(0).toString(16).toUpperCase()})`);
+    // An accent next to it is still composed in the same pass.
+    const mixed = R.renderAny(compat + 'e\u0301', style);
+    check(mixed === R.renderAny(compat + '\u00e9', style), `${name}: ${JSON.stringify(compat + 'e\u0301')} -> ${JSON.stringify(mixed)} composes differently from the precomposed form`);
   }
 }
 
