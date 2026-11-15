@@ -2470,9 +2470,11 @@ document.addEventListener("click", async (e) => {
 
     btn.classList.add("copied");
     showCopyToast();
+    announceCopyResult(true);
     setTimeout(() => btn.classList.remove("copied"), 1200);
   } catch (err) {
     console.error("Copy failed:", err);
+    announceCopyResult(false);
   }
 });
 
@@ -2803,6 +2805,29 @@ document.addEventListener("copy", () => {
     }, 1800);
   }
 
+  /* Most pages that load this file have no copy toast, so a copy there was
+     confirmed only by the button's label swap, which assistive tech does not
+     announce, and a refused copy said nothing at all. On those pages one
+     hidden polite status region, created on first use, says "Copied" or
+     "Failed" once the clipboard has answered. Pages with the toast keep it
+     as their announcement, unchanged, so nothing is said twice. */
+  let copyStatusEl = null;
+  function announceCopyResult(ok) {
+    if (el.copyToast) return;
+    if (!copyStatusEl) {
+      copyStatusEl = document.createElement("div");
+      copyStatusEl.className = "sr-only";
+      copyStatusEl.setAttribute("role", "status");
+      copyStatusEl.setAttribute("aria-live", "polite");
+      copyStatusEl.setAttribute("aria-atomic", "true");
+      document.body.appendChild(copyStatusEl);
+    }
+    const msg = ok ? STR.copied : STR.failed;
+    // Emptied first so a second copy of the same word is announced again.
+    copyStatusEl.textContent = "";
+    setTimeout(() => { copyStatusEl.textContent = msg; }, 50);
+  }
+
 // Update a copy button's visible label. Decorated buttons keep their icon and
 // ↵ hint intact; undecorated ones (other controllers' plain buttons) fall back
 // to the old whole-button swap.
@@ -2838,6 +2863,7 @@ document.addEventListener("click", async (e) => {
     setCopyBtnLabel(btn, STR.copied);
     btn.classList.add("copied");
     showCopyToast();
+    announceCopyResult(true);
     setTimeout(() => {
       setCopyBtnLabel(btn, STR.copy);
       btn.classList.remove("copied");
@@ -2852,6 +2878,7 @@ document.addEventListener("click", async (e) => {
     console.error("Copy failed:", err);
     setCopyBtnLabel(btn, STR.failed);
     btn.classList.add("copy-error");
+    announceCopyResult(false);
     setTimeout(() => {
       setCopyBtnLabel(btn, STR.copy);
       btn.classList.remove("copy-error");
