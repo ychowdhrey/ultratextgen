@@ -78,11 +78,9 @@
      reversal that is meant to be all of "hard". For such a word every
      direction is mirrored left-right, so each level means the same thing in
      both scripts; "hard" already allows all eight and is unchanged. */
-  const RTL_LETTER_RE = /^[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF\u{10800}-\u{10FFF}\u{1E800}-\u{1EFFF}]/u;
   const MIRROR = { E: "W", W: "E", SE: "SW", SW: "SE", NE: "NW", NW: "NE", S: "S", N: "N" };
   function dirsForWord(letters, dirNames) {
-    const first = letters.find((l) => /\p{L}/u.test(l));
-    return first && RTL_LETTER_RE.test(first) ? dirNames.map((n) => MIRROR[n] || n) : dirNames;
+    return listParser().isRtl(letters) ? dirNames.map((n) => MIRROR[n] || n) : dirNames;
   }
 
   // FNV-1a over the seed text, so a seed can be a child's name and still land
