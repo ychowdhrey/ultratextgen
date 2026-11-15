@@ -161,6 +161,39 @@ async function main() {
     await ctx.close();
   }
 
+  // 1b-pre. A decoration chip confirms only what the clipboard did
+  // (2026-11-15). It used to add "Copied!" on a refused write, and a held
+  // Enter key copied once per auto-repeat.
+  {
+    const refuse = `Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } }); document.execCommand = () => false;`;
+    const { ctx, page, errors } = await open('/linkedin/', 'desktop', refuse);
+    const chip = page.locator('.deco-chip[data-copy]').first();
+    await chip.scrollIntoViewIfNeeded();
+    await chip.click();
+    await page.waitForTimeout(300);
+    const cls = await chip.getAttribute('class');
+    const refusedRows = (await dl(page)).filter((e) => e.event === 'copy_text').length;
+    check('a refused chip copy says failed, not copied', /copy-failed/.test(cls) && !/\bcopied\b/.test(cls), cls);
+    check('a refused chip copy records no copy_text', refusedRows === 0, String(refusedRows));
+    check('no page errors (refused chip)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/linkedin/', 'desktop');
+    const chip = page.locator('.deco-chip[data-copy]').first();
+    await chip.scrollIntoViewIfNeeded();
+    await chip.focus();
+    await page.keyboard.down('Enter');
+    await page.keyboard.down('Enter');
+    await page.keyboard.down('Enter');
+    await page.keyboard.up('Enter');
+    await page.waitForTimeout(400);
+    const rows = (await dl(page)).filter((e) => e.event === 'copy_text').length;
+    check('a held Enter on a chip copies once', rows === 1, String(rows));
+    check('no page errors (held chip)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 1b. Typed text stays on the device. The FAQ on / (and 19 other English
   // generators, plus the locale homes) says nothing you type is sent to a
   // server; until 2026-11-07 script.js wrote the input into ?q= on every

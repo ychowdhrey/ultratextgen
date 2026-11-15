@@ -239,6 +239,8 @@
       chip.addEventListener("keydown", function (e) {
         if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
           e.preventDefault();
+          // A held key repeats keydown; one press is one copy.
+          if (e.repeat) return;
           fire();
         }
       });
