@@ -455,3 +455,54 @@ with `fr/changeur-de-police/` as reference. Whether its IT side should port the
 2026-07-26 content is still a content decision nobody has made; the gate now fires
 the next time either side changes structurally. `it/caratteri-speciali/` was split
 out of that cluster on 2026-08-02 and is its own intent.
+
+## 12. Functional parity: does the sibling do the same job (added 2026-11-15)
+
+Every axis above compares what a page **says**. None compares what it **does**. The English nickname page loads
+`decorators.js`, `tag-studio.js` and `decorations-showcase.js`; its Korean sibling loads `flair-engine.js` instead. Both carry one
+textarea and comparable sections, so the structural gate reads them as in sync, and a translated page could ship without the tool
+its reference page runs while every gate passed.
+
+`scripts/lib/functional-fingerprint.js` reads a page's capabilities as language-independent keys: the first-party **scripts** it
+loads (page chrome excluded: `header.js`, `footer.js`, and `i18n.js`, which exists only on locale pages), the opt-in **flags**
+(`window.UTG_*`), the opt-in **attributes** (`data-case-policy`, `data-cascade`, `data-extreme`, `data-skin-tone`), id-bearing
+**controls** (`input`, `textarea`, `select`; ids are code, not copy) and **copy tiles**. Translated copy cannot move it.
+
+| Tool | Kind | Measures |
+|---|---|---|
+| `npm run audit:functional-parity` | whole-site, informational | every sibling against its cluster's reference page; `--json` for every pair, `--compare A B` for any two pages (e.g. whether a broader page really carries a job's tool) |
+| `npm run check:functional-parity` | CI-gated, **delta** | a capability gap a change **introduces**: the reference gains a tool no sibling follows, a sibling loses one, or a **new** page ships without its reference's tool (a new page has no base, so every gap it carries is new) |
+
+**Backlog at introduction: 378 of 3,869 sibling pairs** lack at least one capability their reference offers (led by
+`decorations-showcase.js` 216, `UTG_DECORATOR_PROFILE` 202, `decorators.js` 202, `accent-notice.js` 114). That is why the gate is a
+delta: pre-existing gaps are reported, never failed and never silenced. A local addition (a sibling has a capability the reference
+lacks, like the Korean romanizer) is reported and never fails: locale-specific functionality is allowed. A repair shrinks the gap set
+and is reported as converged.
+
+Verified before it was trusted, each probe outside the branch's changed set: a German sibling losing `decorators.js` → exit 1; the
+reference gaining a module no sibling has → exit 1 (14 siblings named); a wording-only edit of the reference → exit 0; a Turkish
+sibling gaining the module it lacked → exit 0 with one converged pair; a brand-new Swedish page copied from its reference without
+`decorators.js` → exit 1. Both new steps go red through `run-ci-gates.py --only` on a broken tree. Unit tests:
+`npm run test:functional-parity`.
+
+A deliberate divergence is an owner decision recorded in `data/translation_parity_exceptions.json` as `suppress.functional` (`true`,
+or a list of capability keys); a blanket entry (no `suppress`) excuses the pair as it does for structure.
+
+## 13. An exception records an intentional divergence; it never replaces research (added 2026-11-15)
+
+Three things are deliberately **not** parity exceptions, and each has its own record:
+
+| Situation | Record |
+|---|---|
+| A language is not worth a page today (expansion priority) | none: demand evidence decides later; nothing is recorded as inapplicable |
+| A broader page in that language already serves the intent (a fold) | `localeOwners` + `localeOwnerEvidence` in `data/canonical_intents.json`, checked against the owner page (`language-neutral-intents.md` §1.6) |
+| The job cannot exist in that language | `inapplicableLocales`, with a semantic reason (a script, letter or register); a demand reason fails `check:canonical-intents` |
+| Two equivalent pages deliberately differ in content or function | **a parity exception** |
+
+`npm run check:parity-exception-policy` (CI-gated, delta) applies to every entry a change **adds or edits**; the 196 entries that
+existed on 2026-11-15 are grandfathered. A new entry carries `canonicalIntentId`, `difference`, `evidence`, `userImpact`,
+`alternativesConsidered`, `decision {by, date, ref}` and a `reviewDate` after `agreed`, and may not rest on a prohibited ground:
+missing keyword volume or demand data, low demand, no English parent (English is not a mandatory parent), a validator failing, or a
+translation being inconvenient. The rules live in `scripts/lib/parity-exceptions.js` (`validateProposedEntry`), so tooling that
+drafts a proposal checks it with `--file <entries.json>` before anyone is asked. The ledger's own `_readme` still describes the
+earlier entry shape; updating it is a ledger change for the owner, not part of this one.

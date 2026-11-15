@@ -109,6 +109,13 @@ If it is, update the sibling(s) in the same change **or** record why they diverg
 Divergence must be an explicit, agreed decision — never silence. Do not add a
 parity exception unilaterally.
 
+**Parity is also functional** (2026-11-15): a sibling must load the tools, controls and copy tiles its reference page offers.
+`check:functional-parity` fails a change that introduces such a gap, a new translation shipped without its reference's tool
+included; existing gaps are reported by `audit:functional-parity`, never failed. A **fold** (`localeOwners`) needs
+`localeOwnerEvidence` the gate checks on the owner page; an **exception** needs evidence, an owner decision and a review date, and
+never rests on missing or low demand, a missing English parent, a failing validator or inconvenience
+(`docs/architecture/translation-parity.md` §12–§13).
+
 **Repairing drift is not creating it.** A backfill necessarily touches one side
 only; the gate measures convergence toward the untouched sibling and reports such
 pairs rather than failing them. When the gate flags a pair, sync it — do not reach
