@@ -44,6 +44,7 @@ is a second source of truth. When you find one of these, find its generator.
 | Sources-block JSON-LD | `npm run fix:source-attribution -- --write` | `check:source-attribution` |
 | the gate inventory in `docs/README.md` | `npm run build:gate-inventory` | `check:gate-inventory` |
 | `README.md` page lists | `npm run sync-readme` | the weekly workflow |
+| the "Occasions" word-list chips on the word scramble and spelling makers (between `occasion word lists` markers) | `node scripts/build-occasion-wordlists.js --write`, from the word-search hand-off words in `data/event_page_specs/` | `test:spelling` (each chip must equal its spec's list) |
 | `_root.html` | `npm run build` (a copy of `index.html`) | — |
 
 ## Two traps
