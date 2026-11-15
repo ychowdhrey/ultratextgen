@@ -88,7 +88,6 @@
       linkCopied: "Đã sao chép liên kết",
       failed: "✗ Thất bại",
       downloadImage: "Tải ảnh xuống",
-      addAllToImage: "Thêm cả {n} vào ảnh",
       formats: { inline: "Một hàng", vertical: "Dọc", comma: "Dấu phẩy", space: "Cách", bullet: "Gạch đầu dòng" }
     },
     pt: {
@@ -111,7 +110,6 @@
       failed: "✗ Falhou",
       copyLink: "Copiar link",
       downloadImage: "Baixar imagem",
-      addAllToImage: "Adicionar todos ({n}) a uma imagem",
       formats: { inline: "Em linha", vertical: "Na vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
     },
     es: {
@@ -141,7 +139,6 @@
       toneDark: "Oscuro",
       copyLink: "Copiar enlace",
       downloadImage: "Descargar imagen",
-      addAllToImage: "Añadir los {n} a una imagen",
       formats: { inline: "En línea", vertical: "En vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
     },
     de: {
@@ -171,7 +168,6 @@
       toneDark: "Dunkel",
       copyLink: "Link kopieren",
       downloadImage: "Bild herunterladen",
-      addAllToImage: "Alle {n} ins Bild",
       formats: { inline: "Nebeneinander", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
     },
     id: {
@@ -194,7 +190,6 @@
       failed: "✗ Gagal",
       copyLink: "Salin tautan",
       downloadImage: "Unduh gambar",
-      addAllToImage: "Tambah semua {n} ke gambar",
       formats: { inline: "Sebaris", vertical: "Vertikal", comma: "Koma", space: "Spasi", bullet: "Butir" }
     },
     tr: {
@@ -217,7 +212,6 @@
       failed: "✗ Başarısız",
       copyLink: "Bağlantıyı kopyala",
       downloadImage: "Görseli indir",
-      addAllToImage: "Tümünü ({n}) görsele ekle",
       formats: { inline: "Yan yana", vertical: "Alt alta", comma: "Virgüllü", space: "Boşluklu", bullet: "Maddeli" }
     },
     fr: {
@@ -247,7 +241,6 @@
       toneDark: "Foncée",
       copyLink: "Copier le lien",
       downloadImage: "Télécharger l’image",
-      addAllToImage: "Ajouter les {n} à une image",
       formats: { inline: "En ligne", vertical: "Verticale", comma: "Virgules", space: "Espaces", bullet: "Liste" }
     },
     nl: {
@@ -277,7 +270,6 @@
       toneDark: "Donker",
       copyLink: "Link kopiëren",
       downloadImage: "Afbeelding downloaden",
-      addAllToImage: "Alle {n} aan een afbeelding toevoegen",
       formats: { inline: "Op één regel", vertical: "Verticaal", comma: "Komma's", space: "Spaties", bullet: "Lijst" }
     },
     it: {
@@ -300,7 +292,6 @@
       failed: "✗ Errore",
       copyLink: "Copia link",
       downloadImage: "Scarica immagine",
-      addAllToImage: "Aggiungi tutti ({n}) a un’immagine",
       formats: { inline: "In linea", vertical: "Verticale", comma: "Virgola", space: "Spazio", bullet: "Elenco puntato" }
     },
     pl: {
@@ -323,7 +314,6 @@
       failed: "✗ Błąd",
       copyLink: "Kopiuj link",
       downloadImage: "Pobierz obraz",
-      addAllToImage: "Dodaj wszystkie ({n}) do obrazu",
       formats: { inline: "W linii", vertical: "Pionowo", comma: "Przecinki", space: "Spacje", bullet: "Punktory" }
     },
     th: {
@@ -345,7 +335,6 @@
       linkCopied: "คัดลอกลิงก์แล้ว",
       failed: "✗ ล้มเหลว",
       downloadImage: "ดาวน์โหลดรูปภาพ",
-      addAllToImage: "เพิ่มทั้งหมด {n} ลงในรูปภาพ",
       formats: { inline: "เรียงบรรทัดเดียว", vertical: "แนวตั้ง", comma: "จุลภาค", space: "เว้นวรรค", bullet: "บุลเล็ต" }
     },
     zh: {
@@ -367,7 +356,6 @@
       linkCopied: "已複製連結",
       failed: "✗ 失敗",
       downloadImage: "下載圖片",
-      addAllToImage: "全部加入圖片（{n}）",
       formats: { inline: "單行", vertical: "直式", comma: "逗號", space: "空格", bullet: "項目符號" }
     },
     ko: {
@@ -396,7 +384,6 @@
       toneMediumDark: "약간 어두운 피부",
       toneDark: "어두운 피부",
       downloadImage: "이미지 다운로드",
-      addAllToImage: "{n}개 모두 이미지에 추가",
       formats: { inline: "한 줄로", vertical: "세로로", comma: "쉼표로", space: "공백으로", bullet: "불릿으로" }
     },
     ar: {
@@ -418,7 +405,6 @@
       linkCopied: "تم نسخ الرابط",
       failed: "✗ فشل",
       downloadImage: "تنزيل الصورة",
-      addAllToImage: "إضافة الكل ({n}) إلى صورة",
       formats: { inline: "متتالٍ", vertical: "عمودي", comma: "بفواصل", space: "بمسافات", bullet: "نقطي" }
     },
     no: {
@@ -447,7 +433,6 @@
       toneMediumDark: "Middels mørk",
       toneDark: "Mørk",
       downloadImage: "Last ned bilde",
-      addAllToImage: "Legg alle {n} i et bilde",
       formats: { inline: "På linje", vertical: "Vertikalt", comma: "Komma", space: "Mellomrom", bullet: "Punktliste" }
     },
     ja: {
@@ -476,7 +461,6 @@
       toneMediumDark: "やや濃い",
       toneDark: "濃い",
       downloadImage: "画像をダウンロード",
-      addAllToImage: "{n}個すべてを画像に追加",
       formats: { inline: "1行", vertical: "縦並び", comma: "カンマ区切り", space: "スペース区切り", bullet: "箇条書き" }
     },
     ru: {
@@ -505,7 +489,6 @@
       toneMediumDark: "Средне-тёмный",
       toneDark: "Тёмный",
       downloadImage: "Скачать картинку",
-      addAllToImage: "Добавить все ({n}) в картинку",
       formats: { inline: "В строку", vertical: "Столбиком", comma: "Через запятую", space: "Через пробел", bullet: "Список" }
     },
     da: {
@@ -527,7 +510,6 @@
       linkCopied: "Link kopieret",
       failed: "✗ Mislykkedes",
       downloadImage: "Download billede",
-      addAllToImage: "Tilføj alle {n} til et billede",
       formats: { inline: "På linje", vertical: "Lodret", comma: "Komma", space: "Mellemrum", bullet: "Punktopstilling" }
     },
     sv: {
@@ -549,7 +531,6 @@
       linkCopied: "Länk kopierad",
       failed: "✗ Misslyckades",
       downloadImage: "Ladda ner bild",
-      addAllToImage: "Lägg alla {n} i en bild",
       formats: { inline: "På rad", vertical: "Vertikalt", comma: "Kommatecken", space: "Mellanslag", bullet: "Punktlista" }
     },
     cs: {
@@ -571,7 +552,6 @@
       linkCopied: "Odkaz zkopírován",
       failed: "✗ Selhalo",
       downloadImage: "Stáhnout obrázek",
-      addAllToImage: "Přidat všechny ({n}) do obrázku",
       formats: { inline: "Na řádek", vertical: "Svisle", comma: "Čárky", space: "Mezery", bullet: "Odrážky" }
     },
     sk: {
@@ -593,7 +573,6 @@
       linkCopied: "Odkaz skopírovaný",
       failed: "✗ Zlyhalo",
       downloadImage: "Stiahnuť obrázok",
-      addAllToImage: "Pridať všetky ({n}) do obrázka",
       formats: { inline: "Na riadok", vertical: "Zvisle", comma: "Čiarky", space: "Medzery", bullet: "Odrážky" }
     },
     hr: {
@@ -615,7 +594,6 @@
       linkCopied: "Poveznica kopirana",
       failed: "✗ Neuspjelo",
       downloadImage: "Preuzmi sliku",
-      addAllToImage: "Dodaj sve ({n}) u sliku",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Popis" }
     },
     bs: {
@@ -637,7 +615,6 @@
       linkCopied: "Link kopiran",
       failed: "✗ Neuspjelo",
       downloadImage: "Preuzmi sliku",
-      addAllToImage: "Dodaj sve ({n}) u sliku",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Spisak" }
     },
     sr: {
@@ -659,7 +636,6 @@
       linkCopied: "Link kopiran",
       failed: "✗ Neuspelo",
       downloadImage: "Preuzmi sliku",
-      addAllToImage: "Dodaj sve ({n}) u sliku",
       formats: { inline: "У низу", vertical: "Усправно", comma: "Зарези", space: "Размаци", bullet: "Списак" }
     },
     ro: {
@@ -681,7 +657,6 @@
       linkCopied: "Link copiat",
       failed: "✗ Eșuat",
       downloadImage: "Descarcă imaginea",
-      addAllToImage: "Adaugă toate ({n}) într-o imagine",
       formats: { inline: "Pe un rând", vertical: "Pe verticală", comma: "Cu virgulă", space: "Cu spațiu", bullet: "Listă" }
     },
     hu: {
@@ -703,7 +678,6 @@
       linkCopied: "Link másolva",
       failed: "✗ Sikertelen",
       downloadImage: "Kép letöltése",
-      addAllToImage: "Mind a képhez ({n})",
       formats: { inline: "Egy sorban", vertical: "Függőlegesen", comma: "Vesszővel", space: "Szóközzel", bullet: "Felsorolás" }
     },
     hi: {
@@ -725,7 +699,6 @@
       linkCopied: "लिंक कॉपी हो गया",
       failed: "✗ विफल",
       downloadImage: "इमेज डाउनलोड करें",
-      addAllToImage: "सभी {n} इमेज में जोड़ें",
       formats: { inline: "एक लाइन में", vertical: "ऊपर-नीचे", comma: "कॉमा से", space: "स्पेस से", bullet: "बुलेट में" }
     },
     tl: {
@@ -747,7 +720,6 @@
       linkCopied: "Nakopya ang link",
       failed: "✗ Nabigo",
       downloadImage: "I-download ang larawan",
-      addAllToImage: "Idagdag lahat ({n}) sa larawan",
       formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Listahan" }
     },
     /* fi and ms were missing until 2026-09-10, so their 5 collection pages
@@ -776,7 +748,6 @@
       linkCopied: "Linkki kopioitu",
       failed: "✗ Epäonnistui",
       downloadImage: "Lataa kuva",
-      addAllToImage: "Lisää kaikki {n} kuvaan",
       formats: { inline: "Rivi", vertical: "Pysty", comma: "Pilkku", space: "V\u00e4lily\u00f6nti", bullet: "Luettelo" }
     },
     ms: {
@@ -798,7 +769,6 @@
       linkCopied: "Pautan disalin",
       failed: "✗ Gagal",
       downloadImage: "Muat turun imej",
-      addAllToImage: "Tambah semua {n} ke imej",
       formats: { inline: "Satu baris", vertical: "Menegak", comma: "Koma", space: "Ruang", bullet: "Senarai" }
     },
     uk: {
@@ -820,7 +790,6 @@
       linkCopied: "Посилання скопійовано",
       failed: "✗ Помилка",
       downloadImage: "Завантажити зображення",
-      addAllToImage: "Додати всі {n} до зображення",
       formats: { inline: "В один рядок", vertical: "Стовпчиком", comma: "Через кому", space: "Через пробіл", bullet: "Списком" }
     }
   };
@@ -1493,8 +1462,7 @@
     toneMediumLight: "skinTone.mediumLight",
     toneMedium: "skinTone.medium",
     toneMediumDark: "skinTone.mediumDark",
-    toneDark: "skinTone.dark",
-    addAllToImage: "imageSelection.addAllToImage"
+    toneDark: "skinTone.dark"
   };
 
   const STAR_OUTLINE = "☆";
@@ -1858,101 +1826,14 @@
       wrap.appendChild(row);
       group.parentNode.insertBefore(wrap, group.nextSibling);
     });
-    decorateTopEntry();
     decorateCollectionSections();
-  }
-
-  /* When the first tile section is long, its own entry button sits far down
-     the page (after 203 tiles on the flags page: about 11,000px on a phone),
-     and nothing near the top says an image can be made. So a long first
-     section also gets the entry ABOVE its grid. The same one selection; a
-     short first section keeps only the button after it. */
-  const TOP_ENTRY_MIN_TILES = 24;
-  function decorateTopEntry() {
-    if (document.querySelector(".symbol-section-actions--top")) return;
-    const first = Array.prototype.find.call(document.querySelectorAll(".flag-rows"), function (g) {
-      return !g.closest(".symbol-saved-strip");
-    });
-    if (!first) return;
-    const tiles = first.querySelectorAll(".symbol-tile[data-symbol]");
-    if (tiles.length < TOP_ENTRY_MIN_TILES) return;
-    if (!Array.prototype.some.call(tiles, function (tile) { return isDrawable(tile.getAttribute("data-symbol")); })) return;
-    const wrap = document.createElement("div");
-    wrap.className = "symbol-section-actions symbol-section-actions--top";
-    const row = document.createElement("div");
-    row.className = "result-share-row";
-    row.appendChild(buildSelectEntry());
-    wrap.appendChild(row);
-    first.parentNode.insertBefore(wrap, first);
   }
 
   /* A collection container (the named sets buildGrids renders, ASEAN among
      them) gets the image entry only: it has never had a section Share, and
      adding one is not part of this change. The entry appears only where at
      least one set is a member list that "Add all" can actually offer. */
-  /* Every member-list set carries its own "Add all n to an image" button,
-     always visible (2026-10-02, owner feedback: on the flags page the only
-     way in was an entry button below all seven sets, and a set's own
-     button appeared only after that). Pressing it opens the selection and
-     adds THAT set, in one step: still the set's own explicit button, never
-     a side effect of where an entry button sits. Inside the mode the same
-     button reads "Add all n" / "Remove all n" (painted by
-     image-selection.js). */
-  let setSeq = 0;
-  function paintSetButton(btn) {
-    if (selectionCount() !== null) return; // the open selection paints it
-    const label = btn.querySelector(".symbol-collection-add-label");
-    const n = (btn._utgValues || []).length;
-    if (label) label.textContent = t("addAllToImage", "Add all {n} to an image").replace("{n}", String(n));
-    btn.classList.remove("is-all-selected");
-  }
-
-  function decorateSetButtons() {
-    collectionRegistry.forEach(function (entry) {
-      const sections = entry.container.querySelectorAll(".flag-grid-section");
-      entry.groups.forEach(function (g, gi) {
-        const section = sections[gi];
-        if (!section || !g || !isMemberList(g.flags)) return;
-        if (section.querySelector(".symbol-collection-add")) return;
-        const heading = section.querySelector("h3, h2");
-        if (heading && !heading.id) heading.id = "utgSet" + (++setSeq);
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "symbol-collection-add";
-        if (heading) btn.setAttribute("aria-describedby", heading.id);
-        btn.innerHTML = (UTGX.icons && UTGX.icons.image ? UTGX.icons.image : "") +
-          '<span class="symbol-collection-add-label"></span>';
-        btn._utgValues = g.flags.map(function (v) { return String(v).trim(); });
-        const display = section.querySelector(".flag-grid-display");
-        if (display && display.nextSibling) display.parentNode.insertBefore(btn, display.nextSibling);
-        else section.appendChild(btn);
-        paintSetButton(btn);
-      });
-    });
-  }
-
-  document.addEventListener("click", function (e) {
-    const btn = e.target.closest(".symbol-collection-add");
-    if (!btn || btn.getAttribute("aria-busy") === "true") return;
-    // Already loaded: act now, in the same tick as the press.
-    if (ns.imageSelection) {
-      if (!ns.imageSelection.isActive()) ns.imageSelection.open(btn);
-      ns.imageSelection.toggleSet(btn);
-      return;
-    }
-    btn.setAttribute("aria-busy", "true");
-    loadSelectionModule().then(function (sel) {
-      btn.removeAttribute("aria-busy");
-      if (!sel.isActive()) sel.open(btn);
-      sel.toggleSet(btn);
-    }).catch(function (err) {
-      btn.removeAttribute("aria-busy");
-      console.error(err);
-    });
-  });
-
   function decorateCollectionSections() {
-    decorateSetButtons();
     collectionRegistry.forEach(function (entry) {
       const container = entry.container;
       if (!container || !container.parentNode) return;
@@ -1971,7 +1852,6 @@
 
   function repaintSelectEntries() {
     document.querySelectorAll(".symbol-select-btn").forEach(paintSelectEntry);
-    document.querySelectorAll(".symbol-collection-add").forEach(paintSetButton);
   }
   document.addEventListener("utg:imageselectionchange", repaintSelectEntries);
 
