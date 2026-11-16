@@ -1,88 +1,67 @@
-# Updates opportunity scan — 2026-11-09
+# Updates opportunity scan — 2026-11-16
 
-**Result: nothing genuinely new this week, but last week's finding (UTC #189's
-five Unicode 19.0 approvals) is now independently corroborated by a second
-Consortium source and still awaiting a build decision.**
+**Result: nothing new and actionable this week.** The UTC #189 finding from
+two weeks ago is unchanged and still awaiting a build decision; one minor new
+scheduling fact surfaced in lane (a), not actionable on its own.
 
-## Carried-forward finding: UTC #189's approvals, now double-confirmed
+## Carried-forward finding: UTC #189's approvals, still pending a decision
 
-Last week's record (2026-11-02, PR #1177) found that UTC #189 approved four
-new emoji (U+1FA7F Ornate Bottle, U+1FACB Orchid, U+1FACA Vulture, U+1F6DA
-Inukshuk) and one new RGI ZWJ sequence ("eyes looking right") for Unicode
-19.0, verified against the meeting's own minutes. Nothing has been built on
-the site for this yet — confirmed again this week via fresh grep across
-`.html`/`.js`/`.json` — and the user has not yet decided what, if anything, to
-build.
+Still nothing built for the four new Unicode 19.0 emoji (Ornate Bottle,
+Orchid, Vulture, Inukshuk) and the "eyes looking right" ZWJ sequence
+reported 2026-11-02 and corroborated 2026-11-09 — confirmed again this week
+via fresh grep. The black/white reference-image action item (189-A94) is now
+confirmed, directly from the full UTC #189 minutes text (posted for the first
+time this window, revision date 2026-11-12), to go privately to a named
+individual rather than any public page — so there is structurally nothing
+further to check there. No change to the options from the original report:
+a dated `updates/` entry, `symbol/` pages once stable, both, or wait.
 
-This week's check followed up on the minutes' two action items:
+## Lane (a) — new Unicode Consortium versions/emoji
 
-- **[189-A93]** (update the pipeline): confirmed independently. Fetched
-  `unicode.org/alloc/Pipeline.html` directly and verified in the raw HTML
-  (not just the tag-stripped text, which initially looked like it covered
-  only one row) that all four new emoji share a single status cell via
-  `rowspan="3"` reading "2026-Oct-27 / Accepted," linked to the same
-  `189-C33` consensus item. Their row carries the `acceptednotinballot` CSS
-  class, whose own page legend reads "accepted by UTC, but not yet in ISO
-  ballot" — i.e. genuinely accepted at the Unicode Consortium level, one step
-  short of the separate ISO/IEC standardization ballot. This is the first
-  confirmation of last week's finding from a source other than the meeting
-  minutes themselves.
-- **[189-A94]** (black/white reference images): still nothing public. Reading
-  the actual action-item text shows why — it directs the images be delivered
-  privately to a named individual, not posted anywhere public. Checked
-  `unicode.org/emoji/proposals.html`, a `charts-19.0/` path (doesn't exist
-  yet), and the full L2/L2026 document index (tops out at the same document
-  number as last week) — nothing changed, as expected.
+**Nothing actionable, one minor new fact.** The full UTC #189 minutes
+document (`unicode.org/L2/L2026/26232.htm`) was posted for the first time
+this window — only the bare agenda existed before. It confirms UTC #190 is
+scheduled for **January 20–22, 2027**, hosted by Apple at its Infinite Loop
+campus (verified directly: "Apple offers to host UTC #190 on January 20–22,
+2027... the meeting will be held at the Infinite Loop campus"). Also
+recorded in the same minutes: UTC #191 (UCB, Apr 13–15 2027), UTC #192
+(Microsoft, Jul 27–29 2027), UTC #193 (Apple, tentative, Oct 25–27 2027).
+Purely a scheduling fact with no Check-surface impact on its own — noted so
+a future scan recognizes the date rather than re-discovering it, and so the
+next UTC #190-adjacent scan knows when to expect real minutes.
 
-Everything else in lane (a) came back clean: blog.unicode.org has no post in
-November yet; the errata page is unchanged; no device/app confirmed rendering
-Emoji 18.0 by default via a primary source (only the same recycled "Spring
-2027" speculation already known); no new UTC #190 schedule or other
-Consortium decision found.
-
-**Still nothing built, still the user's call.** The options from last week
-stand unchanged: a dated `updates/` entry, individual `symbol/` pages once
-codepoints/glyphs are stable (not live in any font yet), both, or wait for
-further movement (the ISO ballot stage, or actual font support).
+Everything else unchanged from baseline: Pipeline.html's status for the four
+emoji is unchanged (still "2026-Oct-27 Accepted," no further movement);
+blog.unicode.org has no November post; the errata page is unchanged; no
+primary-source confirmation of any device/app defaulting to Emoji 18.0
+glyphs. One tangential document noted but out of this lane's scope: L2/26-274
+"U-Source Horizontal Extension," a CJK ideograph property document posted
+2026-11-10 — flagged only in case it matters to a different lane later.
 
 ## Lane (b) — platform formatting/character-support rule changes
 
-**Nothing new.** All 12 tracked platforms (now including Bluesky) checked
-against official sources; every surface came back clean for the window.
-Noted and correctly set aside as out of scope: a Nov 5 X/Twitter Livestream
-API addition, a Nov 16 Discord "Server Web Pages" discoverability post, a Nov
-4 Discord-WoW-guild integration, and Meta/Pinterest ToS updates effective
-later in November — none are character-limit or formatting-rule changes.
-
-Also worth recording: the site's own counter/platform facts were
-independently corrected twice this past week by other sessions (both already
-merged) — the counter now judges every platform in its correct unit
-(graphemes vs UTF-16 vs code points vs bytes, with Bluesky's real dual caps:
-300 graphemes / 3,000 bytes for posts, 256 graphemes / 2,560 bytes for bio),
-Pinterest's pin-description limit is confirmed at 800, and YouTube comments
-are now correctly documented as supporting `*bold*`/`_italic_`/`-strikethrough-`
-formatting. This scan's own research briefing initially mis-stated the
-Bluesky post limit as "3,000 graphemes" (confusing the byte cap with the
-grapheme cap) — the research agent's independent checking caught the correct
-external fact (300 graphemes, unchanged) regardless, and a direct read of
-`js/counter/counterRules.js` confirmed the site's own code has always had it
-right. No site defect; a briefing error on this scan's part, corrected here
-for the record.
+**Nothing new.** All 13 tracked platforms (Discord, Instagram, LinkedIn,
+TikTok, WhatsApp, Snapchat, Telegram, X/Twitter, YouTube, Meta/Facebook,
+Threads, Pinterest, Bluesky) checked against official sources for the
+window; every surface came back clean. Two near-misses correctly ruled out
+by their literal page dates: a WhatsApp "Member Tags, Text Stickers" post and
+a Telegram "AI Summaries" post both looked promising in search results but
+are dated January 2026, not this window.
 
 ## Lane (c) — per-game nickname rule changes
 
-**Nothing new.** Every tracked field matched baseline. VRChat published a new
-developer update (Nov 5, build 2026.4.2) — public-instance ownership tools,
-Quick Menu redesign, a default theme change, Unity 6 SDK open beta; its one
-mention of "display name" is about whose name shows as an instance owner, not
-a charset/length/cooldown change. Its next update is scheduled Nov 19, just
-past this window. Free Fire's OB56 has not shipped early; only unofficial fan
-projections exist (Nov 21 advance server vs. Dec 13/16 global, neither
-official nor verifiable further).
+**Nothing new.** Every tracked field matched baseline. VRChat's 2026.4.2
+open beta (Nov 10) added world Like/Dislike buttons — not a name-rule
+change; its next dev update (Nov 19) falls just past this window. Free Fire's
+OB56 still hasn't shipped; unofficial fan projections remain unconfirmed by
+Garena. Clash of Clans' Nov 10 "Clash On" update (Star Bonus rework, Magic
+Snacks, Ranked Medals) has no name-rule content. A Standoff 2 forum mention
+of a possible future nickname obscenity filter was checked and correctly not
+reported — no date, not a charset/length/cooldown change.
 
 ## Cadence and process items — still carried forward, still undecided
 
-Both items remain open, now in their third consecutive week unaddressed:
+Both items remain open, now in their fourth consecutive week unaddressed:
 
 1. **Cadence.** Still the user's call per the routine's own 2026-08-24 note.
 2. **Stale trigger prompt.** Still points at the superseded external
@@ -90,8 +69,8 @@ Both items remain open, now in their third consecutive week unaddressed:
 
 ## Ranked opportunities
 
-1. UTC #189's five Unicode 19.0 characters/sequences — now independently
-   corroborated by the Pipeline page, still awaiting a build decision from
-   last week's report.
-2. Nothing else new this week.
-3. (Process items, carried forward) Cadence decision and stale trigger prompt.
+1. Nothing new and actionable this week.
+2. (Still pending from 2026-11-02/09) UTC #189's five Unicode 19.0
+   characters/sequences — awaiting a build decision.
+3. (Process items, carried forward) Cadence decision and stale trigger
+   prompt, now four weeks unaddressed.
