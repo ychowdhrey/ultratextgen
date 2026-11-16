@@ -69,7 +69,11 @@ jobs:
 
       # --submit-indexnow announces ONLY the URLs whose <lastmod> this run
       # advanced, to Bing/Naver/Seznam/Yandex/Yep via api.indexnow.org. It runs
-      # after the sitemap and cache are written and can never fail this job.
+      # after the sitemap and cache are written and can never fail this step.
+      # Pages it could not announce are queued in data/indexnow-pending.json
+      # (committed below) and sent, oldest first and at most 1,000 per run, by
+      # the next working run; the last step of this job turns the run red when
+      # that happens, so a skipped announcement is never silent again.
       #
       # This replaced Cloudflare Crawler Hints on 2026-09-13 (user decision).
       # Crawler Hints fires on CACHE state, so it had been announcing ~1,398
@@ -83,6 +87,8 @@ jobs:
       # The flag is opt-in per run, so `npm run prebuild` locally never
       # announces. See scripts/lib/indexnow.js for the mass-bump ceiling.
       - name: Run sitemap generator
+        env:
+          INDEXNOW_STATUS_FILE: ${{ runner.temp }}/indexnow-status.json
         run: node scripts/update-sitemap.js --submit-indexnow
 
       - name: Commit updated sitemap.xml
@@ -93,7 +99,7 @@ jobs:
           # writes it every run; if only sitemap.xml is staged, the cache is
           # silently discarded and every later run compares against a frozen
           # snapshot instead of the previous run's state.
-          git add sitemap.xml data/sitemap-lastmod-cache.json
+          git add sitemap.xml data/sitemap-lastmod-cache.json data/indexnow-pending.json
           git diff --cached --quiet || git commit -m "chore: regenerate sitemap.xml [skip ci]"
           git push
 
@@ -113,3 +119,30 @@ jobs:
           git add js/search/index
           git diff --cached --quiet || git commit -m "chore: regenerate search index [skip ci]"
           git push
+
+      # Last on purpose. IndexNow can never fail the generator step, because the
+      # sitemap and cache must commit whatever an engine says. But a run that
+      # could not announce must not stay green either: from 2026-10-05 to
+      # 2026-11-15 every run skipped IndexNow (several key-shaped files at the
+      # root) and every run was green. Its pages are queued in
+      # data/indexnow-pending.json and go out on the next working run; this step
+      # makes sure someone hears about it. A missing status file is UNKNOWN and
+      # fails too.
+      - name: Fail if IndexNow could not announce
+        if: always()
+        shell: bash
+        env:
+          INDEXNOW_STATUS_FILE: ${{ runner.temp }}/indexnow-status.json
+        run: |
+          if [ ! -f "$INDEXNOW_STATUS_FILE" ]; then
+            echo "::error::IndexNow status unknown: the generator wrote no status file"
+            exit 1
+          fi
+          status=$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).status)' "$INDEXNOW_STATUS_FILE")
+          echo "IndexNow status: $status"
+          cat "$INDEXNOW_STATUS_FILE"
+          case "$status" in
+            submitted|skip) exit 0 ;;
+            refuse) echo "::warning::IndexNow refused a mass bump (see the generator log)"; exit 0 ;;
+            *) echo "::error::IndexNow did not announce ($status). Pages are queued in data/indexnow-pending.json."; exit 1 ;;
+          esac
