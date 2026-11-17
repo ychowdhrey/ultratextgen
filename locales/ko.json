@@ -108,7 +108,8 @@
       "title": "미리보기",
       "titleFor": "{style} 미리보기",
       "dialogAriaLabel": "플랫폼 미리보기",
-      "closeAriaLabel": "미리보기 닫기"
+      "closeAriaLabel": "미리보기 닫기",
+      "illustrative": "일반 미리보기 (특정 앱이 아님)"
     },
     "imageSelection": {
       "selectImage": "골라서 이미지로 공유",

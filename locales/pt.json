@@ -209,7 +209,8 @@
       "title": "Pré-visualização",
       "titleFor": "Pré-visualização: {style}",
       "dialogAriaLabel": "Pré-visualização por plataforma",
-      "closeAriaLabel": "Fechar pré-visualização"
+      "closeAriaLabel": "Fechar pré-visualização",
+      "illustrative": "Pré-visualização genérica, não de um app específico"
     },
     "imageSelection": {
       "selectImage": "Selecionar e compartilhar imagem",

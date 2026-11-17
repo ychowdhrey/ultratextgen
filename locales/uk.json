@@ -108,7 +108,8 @@
       "title": "Попередній перегляд",
       "titleFor": "Попередній перегляд: {style}",
       "dialogAriaLabel": "Перегляд на платформі",
-      "closeAriaLabel": "Закрити перегляд"
+      "closeAriaLabel": "Закрити перегляд",
+      "illustrative": "Загальний перегляд, не конкретний застосунок"
     },
     "imageSelection": {
       "selectImage": "Вибрати й поділитися зображенням",

@@ -209,7 +209,8 @@
       "title": "Aperçu",
       "titleFor": "Aperçu : {style}",
       "dialogAriaLabel": "Aperçu par plateforme",
-      "closeAriaLabel": "Fermer l'aperçu"
+      "closeAriaLabel": "Fermer l'aperçu",
+      "illustrative": "Aperçu générique, pas une appli précise"
     },
     "imageSelection": {
       "selectImage": "Choisir et partager en image",

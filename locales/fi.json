@@ -108,7 +108,8 @@
       "title": "Esikatselu",
       "titleFor": "Esikatselu: {style}",
       "dialogAriaLabel": "Alustan esikatselu",
-      "closeAriaLabel": "Sulje esikatselu"
+      "closeAriaLabel": "Sulje esikatselu",
+      "illustrative": "Yleinen esikatselu, ei tietty sovellus"
     },
     "imageSelection": {
       "selectImage": "Valitse ja jaa kuvana",

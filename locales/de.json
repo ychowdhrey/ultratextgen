@@ -209,7 +209,8 @@
       "title": "Vorschau",
       "titleFor": "Vorschau: {style}",
       "dialogAriaLabel": "Plattform-Vorschau",
-      "closeAriaLabel": "Vorschau schließen"
+      "closeAriaLabel": "Vorschau schließen",
+      "illustrative": "Allgemeine Vorschau, keine bestimmte App"
     },
     "imageSelection": {
       "selectImage": "Auswählen und als Bild teilen",

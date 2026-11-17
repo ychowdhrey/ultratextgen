@@ -6746,6 +6746,14 @@ body.preview-open { overflow: hidden; }
   line-height: 1.45;
 }
 
+/* Generic frame: the page names no platform (defaultPreviewPlatform). It
+   follows the site theme on purpose, because it depicts no third-party app,
+   and its one line of text says so in the reader's language. */
+.pv-generic { background: var(--bg-base); color: var(--text-primary); border: 1px dashed var(--border-light); }
+.pv-gen-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: var(--text-muted); }
+.pv-gen-body { font-size: 0.95rem; }
+.pv-gen-note { margin: 10px 0 0; font-size: 0.75rem; color: var(--text-secondary); }
+
 /* Instagram profile bio */
 .pv-instagram { --pv-bg: #ffffff; --pv-fg: #111827; --pv-muted: #737373;
   background: var(--pv-bg); color: var(--pv-fg); border: 1px solid #e5e7eb; }

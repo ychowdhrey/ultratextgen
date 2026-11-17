@@ -1500,6 +1500,34 @@ async function main() {
     await ctx.close();
   }
 
+  // 28c. The platform preview opens on a frame the page has a reason for: a
+  // platform hub on its own mockup, a page with no destination on the generic
+  // frame (labelled in the page's language), and the homepages on Instagram as
+  // before, pending the owner's call (OPP-20261106-ecry7).
+  console.log('\nplatform preview: which frame a page opens on');
+  for (const [url, want, note] of [
+    ['/', 'pv-instagram', null], ['/instagram/', 'pv-instagram', null], ['/discord/', 'pv-discord', null],
+    ['/category/bold-fonts/', 'pv-generic', 'Generic preview, not a specific app'],
+    ['/de/fette-schrift/', 'pv-generic', 'Allgemeine Vorschau, keine bestimmte App']
+  ]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    try {
+      await page.waitForTimeout(600);
+      await page.click('.preview-btn');
+      await page.waitForTimeout(300);
+      const got = await page.evaluate(() => {
+        const m = document.querySelector('#previewBody .pv-mock');
+        const n = document.querySelector('#previewBody .pv-gen-note');
+        return { cls: m ? m.className : '', note: n ? n.textContent : null, active: document.querySelectorAll('.preview-tab.active').length };
+      });
+      check(`${url} preview opens on ${want}`, got.cls.split(' ').includes(want) && got.note === note && got.active === (note ? 0 : 1), JSON.stringify(got));
+    } catch (e) {
+      check(`${url} preview: every step ran`, false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 29. A monogram with accented initials downloaded as "download", with no
   // extension: the browser drops a non-ASCII filename. The initials fold to
   // ASCII, so the file keeps its name and its type.

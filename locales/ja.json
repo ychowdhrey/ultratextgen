@@ -208,7 +208,8 @@
       "title": "プレビュー",
       "titleFor": "{style}のプレビュー",
       "dialogAriaLabel": "プラットフォームのプレビュー",
-      "closeAriaLabel": "プレビューを閉じる"
+      "closeAriaLabel": "プレビューを閉じる",
+      "illustrative": "一般的なプレビュー（特定のアプリではありません）"
     },
     "imageSelection": {
       "selectImage": "選んで画像で共有",

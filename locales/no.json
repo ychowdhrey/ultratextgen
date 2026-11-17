@@ -132,7 +132,8 @@
       "title": "Forhåndsvisning",
       "titleFor": "Forhåndsvisning: {style}",
       "dialogAriaLabel": "Plattformsforhåndsvisning",
-      "closeAriaLabel": "Lukk forhåndsvisning"
+      "closeAriaLabel": "Lukk forhåndsvisning",
+      "illustrative": "Generell forhåndsvisning, ikke en bestemt app"
     },
     "imageSelection": {
       "selectImage": "Velg og del som bilde",

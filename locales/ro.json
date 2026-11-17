@@ -132,7 +132,8 @@
       "title": "Previzualizare",
       "titleFor": "Previzualizare: {style}",
       "dialogAriaLabel": "Previzualizare pe platforme",
-      "closeAriaLabel": "Închide previzualizarea"
+      "closeAriaLabel": "Închide previzualizarea",
+      "illustrative": "Previzualizare generică, nu o aplicație anume"
     },
     "imageSelection": {
       "selectImage": "Selectează și distribuie ca imagine",

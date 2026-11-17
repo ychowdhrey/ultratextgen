@@ -132,7 +132,8 @@
       "title": "Предпросмотр",
       "titleFor": "Предпросмотр: {style}",
       "dialogAriaLabel": "Предпросмотр платформы",
-      "closeAriaLabel": "Закрыть предпросмотр"
+      "closeAriaLabel": "Закрыть предпросмотр",
+      "illustrative": "Общий предпросмотр, не конкретное приложение"
     },
     "imageSelection": {
       "selectImage": "Выбрать и поделиться картинкой",

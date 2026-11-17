@@ -209,7 +209,8 @@
       "title": "Vista previa",
       "titleFor": "Vista previa: {style}",
       "dialogAriaLabel": "Vista previa por plataforma",
-      "closeAriaLabel": "Cerrar vista previa"
+      "closeAriaLabel": "Cerrar vista previa",
+      "illustrative": "Vista previa genérica, no de una app concreta"
     },
     "imageSelection": {
       "selectImage": "Seleccionar y compartir imagen",
