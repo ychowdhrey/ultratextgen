@@ -161,7 +161,15 @@ eq(WL.fromParam(WL.toCarry("fr[ie]nd\nbec[au]se", false).join("|")), "fr[ie]nd\n
     const joined = {};
     chips.forEach((c) => {
       const base = c.key.replace(/-\d+$/, "");
-      ok(!!SOURCES[base] || /^family-(at|an|it|op|ug)$/.test(c.key), rel + ": " + c.key + " is a known list");
+      ok(!!SOURCES[base] || /^family-(at|an|it|op|ug)$/.test(c.key) || /^occasion-/.test(c.key), rel + ": " + c.key + " is a known list");
+      // An occasion chip is the event page's own word-search list, one copy
+      // (scripts/build-occasion-wordlists.js writes it from the spec).
+      if (/^occasion-/.test(c.key)) {
+        const specFile = path.join(ROOT, "data", "event_page_specs", c.key.slice(9) + ".json");
+        const spec = fs.existsSync(specFile) ? JSON.parse(fs.readFileSync(specFile, "utf8")) : null;
+        const ho = spec && ((spec.experience || {}).handoffs || []).find((h) => h.target === "word_search");
+        eq(c.words.join("|"), ho ? ho.params.words.join("|") : "(no spec list)", rel + ": " + c.key + " is the event spec's word-search list");
+      }
       ok(c.words.length <= cap, rel + ": " + c.key + " fits the tool's cap of " + cap + " (" + c.words.length + ")");
       eq(c.n, c.words.length, rel + ": " + c.key + " states its own count");
       eq(read(c.words.join("\n")), c.words.length, rel + ": the tool reads every word of " + c.key);

@@ -148,8 +148,11 @@ A **formal identifier is not English** — a Unicode block or character name, a
 CSS/LaTeX literal, a keyboard shortcut, an HTML entity, a country name, a platform
 proper noun. The exemption is **scoped by slot, not by string**: exempt where it is
 *cited* (prose, a table cell, a tile label), still a defect in a heading, card
-title, section label or `aria-label`, because those are page copy. Title-case
-renderings of character names are **not** exempt; only the ALL-CAPS formal form is.
+title, section label or `aria-label`, because those are page copy. A Unicode character
+name cited as the identifier (with its code point, or marked as the Unicode name) stays
+as written in every locale, title-case or ALL-CAPS; the copy around it is translated,
+and the same name used as a heading or human label is page copy (owner decision
+2026-11-08: `docs/decisions/unicode-character-names.md`).
 
 ## 6. Numbers are their own axis
 

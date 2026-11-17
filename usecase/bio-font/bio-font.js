@@ -24,7 +24,7 @@
     discord:   { label: "Discord About Me", limit: 300, note: "Discord “About Me” supports full Unicode — styled fonts, symbols and emoji all work in bios, nicknames and server names." },
     x:         { label: "X (Twitter) bio", limit: 160, note: "X supports Unicode in both your bio and display name. Bold or script styles help a personal brand stand out." },
     tinder:    { label: "Tinder About me", limit: 500, note: "Tinder has no native font option, so Unicode is the only way to style your profile. Style your name or one key line so it stays readable." },
-    whatsapp:  { label: "WhatsApp About", limit: 139, note: "WhatsApp's About field supports Unicode fonts and emoji. It's short — 139 characters — so style your name or one short line, not a paragraph." },
+    whatsapp:  { label: "WhatsApp About", limit: 50, note: "WhatsApp's About field supports Unicode fonts and emoji. It's short: 50 characters of text plus one emoji, so style your name or one short line, not a paragraph." },
     facebook:  { label: "Facebook bio",   limit: 101, note: "Facebook's personal-profile Intro/bio is tight — 101 characters. Style a short phrase or your name; save longer text for a post instead." }
   };
 

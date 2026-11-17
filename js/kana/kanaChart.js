@@ -273,11 +273,13 @@
     if (!el.printRoot) { window.print(); return; }
     el.printRoot.innerHTML = "";
     el.printRoot.appendChild(chartSheet());
-    sendToPrinter();
+    sendToPrinter("kana_chart");
   }
 
-  function sendToPrinter() {
+  function sendToPrinter(sheet) {
     document.body.classList.add("is-printing");
+    // Recorded the way the cursive sheet records a print (printable_output).
+    if (window.UltraTextGen && window.UltraTextGen.trackPrintable) window.UltraTextGen.trackPrintable("print", sheet);
     // Hide the page inline as well: the stylesheet rule cannot beat an
     // inline !important (an ad anchor unit), so without this the printed
     // sheet carries the page's ads. Shared with printablesEngine.js.
@@ -364,7 +366,7 @@
     cred.textContent = URL_LINE;
     wrap.appendChild(cred);
     el.printRoot.appendChild(wrap);
-    sendToPrinter();
+    sendToPrinter("kana_practice");
   }
 
   /* --------------------------------------------------------------
@@ -491,6 +493,7 @@
       });
       P.download(blob, PNG_PREFIX + (anyReading() ? "" : "-blank") + ".pdf");
     } catch (err) { return false; }
+    trackDownload("kana_chart", "pdf");
     return true;
   }
 
@@ -509,6 +512,14 @@
      PNG export (Canvas — mirrors the visible chart)
      -------------------------------------------------------------- */
 
+  /* A saved file is recorded by surface and format only (output_download,
+     header.js): never the typed text or the file name. Fired after the blob
+     exists and the download was handed to the browser. */
+  function trackDownload(surface, format) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.trackOutputDownload === "function") ns.trackOutputDownload(surface, format);
+  }
+
   function downloadCanvas(canvas, filename) {
     canvas.toBlob((blob) => {
       if (!blob) return;
@@ -520,6 +531,7 @@
       a.click();
       document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(url), 1000);
+      trackDownload("kana_chart", "png");
     }, "image/png");
   }
 

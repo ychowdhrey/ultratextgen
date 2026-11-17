@@ -72,6 +72,17 @@
     hard: ["E", "S", "SE", "NE", "W", "N", "NW", "SW"]
   };
 
+  /* A word in a right-to-left script is read from right to left, so its
+     forwards is west. Without this an Arabic or Hebrew word on "easy" (E and
+     S only) always ran left to right: backwards to its reader, which is the
+     reversal that is meant to be all of "hard". For such a word every
+     direction is mirrored left-right, so each level means the same thing in
+     both scripts; "hard" already allows all eight and is unchanged. */
+  const MIRROR = { E: "W", W: "E", SE: "SW", SW: "SE", NE: "NW", NW: "NE", S: "S", N: "N" };
+  function dirsForWord(letters, dirNames) {
+    return listParser().isRtl(letters) ? dirNames.map((n) => MIRROR[n] || n) : dirNames;
+  }
+
   // FNV-1a over the seed text, so a seed can be a child's name and still land
   // on a well-spread 32-bit value.
   function hashSeed(text) {
@@ -153,7 +164,10 @@
     ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
     : null;
   const CLUSTER_RE = /\P{M}\p{M}*|\p{M}+/gu;
-  const NOT_CELL_RE = /[^\p{L}\p{M}\p{N}]/gu;
+  // U+0640 ARABIC TATWEEL is a letter by category (Lm) but only stretches the
+  // joining stroke between two letters; typed into a word it would become a
+  // grid cell of its own ("مـــدرسة" printed three bare strokes), so it goes.
+  const NOT_CELL_RE = /[^\p{L}\p{M}\p{N}]|\u0640/gu;
 
   function clusters(text) {
     const s = String(text).normalize("NFC");
@@ -335,7 +349,7 @@
     for (const w of order) {
       if (w.letters.length > size) { unplaced.push(w); continue; }
       const candidates = [];
-      for (const name of dirNames) {
+      for (const name of dirsForWord(w.letters, dirNames)) {
         const d = DIRS[name];
         for (let r = 0; r < size; r++) {
           for (let c = 0; c < size; c++) {

@@ -166,6 +166,28 @@ t("pinterest pin description is 800", R.LIMITS.find(r => r.id === "pinterest-des
 t("pinterest pin title stays 100", R.LIMITS.find(r => r.id === "pinterest-title").limit, 100);
 t("801 characters do not fit a pin description", R.analyze("a".repeat(801), "pinterest-description").fits, false);
 t("800 characters fit a pin description", R.analyze("a".repeat(800), "pinterest-description").fits, true);
+/* WhatsApp About: "an emoji and up to 50 characters of text"
+   (faq.whatsapp.com/752120927696324, verified 2026-11-15); was 139. Every
+   counter page's limit table states the same number as this rule. */
+t("whatsapp about is 50", R.LIMITS.find(r => r.id === "whatsapp-about").limit, 50);
+t("51 characters do not fit a WhatsApp About", R.analyze("a".repeat(51), "whatsapp-about").fits, false);
+t("50 characters fit a WhatsApp About", R.analyze("a".repeat(50), "whatsapp-about").fits, true);
+{
+  const path = require("path");
+  const root = path.join(__dirname, "..", "..");
+  const ru = fs.readFileSync(path.join(root, "ru", "schetchik-slov-i-simvolov", "counter-ru.js"), "utf8");
+  t("the Russian counter's own WhatsApp row says 50", /id: "whatsapp-about"[^}]*limit: 50\b/.test(ru), true);
+  const pages = ["character-counter", "ar/addad-al-huruf-wal-kalimat", "de/woerter-zeichen-zaehlen", "es/contador-de-palabras-y-caracteres", "fi/merkkilaskuri",
+    "fr/compteur-de-mots-et-de-caracteres", "id/penghitung-kata-dan-karakter", "it/contatore-di-parole-e-caratteri", "ja/mojisu-kaunto",
+    "ko/geuljasu-segi", "nl/woorden-en-tekens-tellen", "pl/licznik-slow-i-znakow", "pt/contador-de-palavras-e-caracteres",
+    "ru/schetchik-slov-i-simvolov", "th/nap-kham-lae-tua-akson", "tr/karakter-sayaci", "vi/dem-tu-dem-ky-tu", "zh-tw/zishu-tongji"];
+  const stale = pages.filter((pg) => {
+    const html = fs.readFileSync(path.join(root, pg, "index.html"), "utf8");
+    const row = html.split("\n").find((l) => /<tr><td>.*(WhatsApp|왓츠앱|واتساب)/.test(l) && /class="num"/.test(l));
+    return !row || !/<td class="num">50<\/td>/.test(row);
+  });
+  t("every counter page's WhatsApp About row says 50", stale.join(","), "");
+}
 
 /* ---------- The verdict counts in the destination's own unit ----------
    measure() honoured a rule's countMode while analyze() and fitsAll(), which

@@ -48,6 +48,11 @@
   // Shared namespace (also owned by game-rules.js / symbol-explorer.js). Used
   // to bridge the live decoration ("flair") state to the game name-checker.
   const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+  // The one clipboard path: resolves only when the text reached the
+  // clipboard, rejects when neither writeText nor execCommand did. Shared so
+  // standalone widgets (decorations-showcase.js) confirm a copy on the same
+  // terms as the style cards instead of on intent.
+  UTG.writeClipboard = writeClipboard;
 
   const stylesRegistry = window.textStyles || {};
   const Render = window.UltraTextGenRender;
@@ -2315,6 +2320,32 @@ const decorations = window.UTG_DECORATIONS
       if (val.trim().length >= 2) queueGenerateEvent();
     }
 
+    // A paste longer than the room left under the box's maxlength is cut by
+    // the browser at a UTF-16 unit, which can split an emoji: a family emoji
+    // pasted with three characters to spare left "man + zero-width joiner"
+    // (measured in Chromium, 2026-11-15). Paste only the whole graphemes
+    // that fit instead; a paste that fits is left to the browser.
+    if (el.mainInput && el.mainInput.maxLength > 0) {
+      el.mainInput.addEventListener("paste", (e) => {
+        const box = el.mainInput;
+        const data = e.clipboardData ? e.clipboardData.getData("text/plain") : "";
+        const start = box.selectionStart;
+        const end = box.selectionEnd;
+        if (!data || start == null || end == null) return;
+        const room = box.maxLength - (box.value.length - (end - start));
+        if (data.length <= room) return;
+        e.preventDefault();
+        let fit = "";
+        for (const g of graphemes(data)) {
+          if (fit.length + g.length > room) break;
+          fit += g;
+        }
+        if (!fit) return;
+        box.setRangeText(fit, start, end, "end");
+        box.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+    }
+
     function syncInputUI() {
       const val = el.mainInput.value;
       const len = val.length;
@@ -2465,9 +2496,11 @@ document.addEventListener("click", async (e) => {
 
     btn.classList.add("copied");
     showCopyToast();
+    announceCopyResult(true);
     setTimeout(() => btn.classList.remove("copied"), 1200);
   } catch (err) {
     console.error("Copy failed:", err);
+    announceCopyResult(false);
   }
 });
 
@@ -2798,6 +2831,29 @@ document.addEventListener("copy", () => {
     }, 1800);
   }
 
+  /* Most pages that load this file have no copy toast, so a copy there was
+     confirmed only by the button's label swap, which assistive tech does not
+     announce, and a refused copy said nothing at all. On those pages one
+     hidden polite status region, created on first use, says "Copied" or
+     "Failed" once the clipboard has answered. Pages with the toast keep it
+     as their announcement, unchanged, so nothing is said twice. */
+  let copyStatusEl = null;
+  function announceCopyResult(ok) {
+    if (el.copyToast) return;
+    if (!copyStatusEl) {
+      copyStatusEl = document.createElement("div");
+      copyStatusEl.className = "sr-only";
+      copyStatusEl.setAttribute("role", "status");
+      copyStatusEl.setAttribute("aria-live", "polite");
+      copyStatusEl.setAttribute("aria-atomic", "true");
+      document.body.appendChild(copyStatusEl);
+    }
+    const msg = ok ? STR.copied : STR.failed;
+    // Emptied first so a second copy of the same word is announced again.
+    copyStatusEl.textContent = "";
+    setTimeout(() => { copyStatusEl.textContent = msg; }, 50);
+  }
+
 // Update a copy button's visible label. Decorated buttons keep their icon and
 // ↵ hint intact; undecorated ones (other controllers' plain buttons) fall back
 // to the old whole-button swap.
@@ -2833,6 +2889,7 @@ document.addEventListener("click", async (e) => {
     setCopyBtnLabel(btn, STR.copied);
     btn.classList.add("copied");
     showCopyToast();
+    announceCopyResult(true);
     setTimeout(() => {
       setCopyBtnLabel(btn, STR.copy);
       btn.classList.remove("copied");
@@ -2847,6 +2904,7 @@ document.addEventListener("click", async (e) => {
     console.error("Copy failed:", err);
     setCopyBtnLabel(btn, STR.failed);
     btn.classList.add("copy-error");
+    announceCopyResult(false);
     setTimeout(() => {
       setCopyBtnLabel(btn, STR.copy);
       btn.classList.remove("copy-error");

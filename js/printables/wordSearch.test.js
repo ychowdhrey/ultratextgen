@@ -479,5 +479,28 @@ function ownCells(p) {
   eq(info.oneLetter.join(), "a", "a one-letter entry is reported");
 }
 
+// Arabic tatweel (U+0640) stretches a joining stroke; it is not a letter of
+// the word, so it never becomes a grid cell (2026-11-15).
+{
+  const w = WS.normalizeWords("\u0645\u0640\u0640\u0640\u062F\u0631\u0633\u0629")[0];
+  eq(w.letters.join(" "), "\u0645 \u062F \u0631 \u0633 \u0629", "tatweel is not a grid letter");
+  eq(w.display, "\u0645\u0640\u0640\u0640\u062F\u0631\u0633\u0629", "the word list keeps the word as typed");
+  eq(WS.normalizeWords("\u0640\u0640").length, 0, "a line of tatweel alone is not a word");
+}
+
+// A right-to-left word reads forwards right to left (2026-11-15). On easy and
+// medium an Arabic or Hebrew word never runs left to right, which is the
+// reversal "hard" exists to add; a Latin word in the same grid is unaffected.
+for (const level of ["easy", "medium"]) {
+  for (const seed of ["Emma", "Noah", "Aisha"]) {
+    const r = WS.build({ words: "\u0642\u0645\u0631\n\u0634\u0645\u0633\n\u0643\u062A\u0627\u0628\n\u05E9\u05DC\u05D5\u05DD\nmoon\nstar", seed: seed, level: level });
+    const rtl = r.placed.filter((p) => /[\u0590-\u08FF]/.test(p.letters[0]));
+    const ltr = r.placed.filter((p) => !/[\u0590-\u08FF]/.test(p.letters[0]));
+    ok(rtl.length === 4 && ltr.length === 2, level + "/" + seed + ": every word is placed");
+    ok(rtl.every((p) => p.dc <= 0), level + "/" + seed + ": no right-to-left word runs left to right (" + rtl.map((p) => p.dir).join(",") + ")");
+    ok(ltr.every((p) => p.dc >= 0), level + "/" + seed + ": no left-to-right word runs right to left (" + ltr.map((p) => p.dir).join(",") + ")");
+  }
+}
+
 console.log("\nwordSearch.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

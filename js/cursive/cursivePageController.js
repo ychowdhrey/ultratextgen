@@ -282,6 +282,14 @@
     return String(label || "signature").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "signature";
   }
 
+  /* A saved file is recorded by surface and format only (output_download,
+     header.js): never the typed text or the file name. Fired after the blob
+     exists and the download was handed to the browser. */
+  function trackDownload(surface, format) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.trackOutputDownload === "function") ns.trackOutputDownload(surface, format);
+  }
+
   // Hand a Blob to the browser as a download, then release the object URL.
   function saveBlob(blob, filename) {
     if (!blob) return;
@@ -320,7 +328,11 @@
     }
     ctx.fillStyle = o.ink || "#1a1a2e";
     ctx.fillText(text, width / 2, height * 0.52);
-    canvas.toBlob((blob) => saveBlob(blob, "cursive-" + sigSlug(label) + ".png"), "image/png");
+    canvas.toBlob((blob) => {
+      if (!blob) return;
+      saveBlob(blob, "cursive-" + sigSlug(label) + ".png");
+      trackDownload("cursive", "png");
+    }, "image/png");
   }
 
   // Vector export. Same <text>-element approach printablesEngine.js already
@@ -365,6 +377,7 @@
     svg.appendChild(node);
     const markup = '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(svg);
     saveBlob(new Blob([markup], { type: "image/svg+xml;charset=utf-8" }), "cursive-" + sigSlug(label) + ".svg");
+    trackDownload("cursive", "svg");
   }
 
   function downloadLetterPNG(ch, glyphPair) {
@@ -387,6 +400,7 @@
       a.download = "cursive-letter-" + ch.toLowerCase() + ".png";
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(url), 1000);
+      trackDownload("cursive_letter", "png");
     }, "image/png");
   }
 

@@ -142,6 +142,58 @@ async function main() {
     await ctx.close();
   }
 
+  // 1a. A paste that overflows maxlength keeps whole graphemes (2026-11-15).
+  // Chromium cuts an overflowing paste at a UTF-16 unit: a family emoji
+  // pasted after "xy" with five units to spare left "xy" + man + joiner.
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    const fam = '\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}';
+    const max = await page.evaluate(() => document.getElementById('mainInput').maxLength);
+    await page.fill('#mainInput', 'a'.repeat(max - 5));
+    await page.focus('#mainInput');
+    await page.keyboard.press('End');
+    await page.evaluate((t) => navigator.clipboard.writeText(t), 'xy' + fam);
+    await page.keyboard.press('Control+V');
+    await page.waitForTimeout(250);
+    const tail = (await page.inputValue('#mainInput')).slice(max - 5);
+    check('an overflowing paste keeps whole graphemes', tail === 'xy', JSON.stringify(tail));
+    check('no page errors (paste)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 1b-pre. A decoration chip confirms only what the clipboard did
+  // (2026-11-15). It used to add "Copied!" on a refused write, and a held
+  // Enter key copied once per auto-repeat.
+  {
+    const refuse = `Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } }); document.execCommand = () => false;`;
+    const { ctx, page, errors } = await open('/linkedin/', 'desktop', refuse);
+    const chip = page.locator('.deco-chip[data-copy]').first();
+    await chip.scrollIntoViewIfNeeded();
+    await chip.click();
+    await page.waitForTimeout(300);
+    const cls = await chip.getAttribute('class');
+    const refusedRows = (await dl(page)).filter((e) => e.event === 'copy_text').length;
+    check('a refused chip copy says failed, not copied', /copy-failed/.test(cls) && !/\bcopied\b/.test(cls), cls);
+    check('a refused chip copy records no copy_text', refusedRows === 0, String(refusedRows));
+    check('no page errors (refused chip)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/linkedin/', 'desktop');
+    const chip = page.locator('.deco-chip[data-copy]').first();
+    await chip.scrollIntoViewIfNeeded();
+    await chip.focus();
+    await page.keyboard.down('Enter');
+    await page.keyboard.down('Enter');
+    await page.keyboard.down('Enter');
+    await page.keyboard.up('Enter');
+    await page.waitForTimeout(400);
+    const rows = (await dl(page)).filter((e) => e.event === 'copy_text').length;
+    check('a held Enter on a chip copies once', rows === 1, String(rows));
+    check('no page errors (held chip)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 1b. Typed text stays on the device. The FAQ on / (and 19 other English
   // generators, plus the locale homes) says nothing you type is sent to a
   // server; until 2026-11-07 script.js wrote the input into ?q= on every

@@ -496,5 +496,51 @@ const CLUED = [
   eq(trip("", true), "", "an empty box carries nothing");
 }
 
+// Arabic tatweel (U+0640) is a stretched joining stroke, not a letter: the
+// scramble and the crossword leave it out of their cells (2026-11-15).
+{
+  const typed = "\u0645\u0640\u0640\u0640\u062F\u0631\u0633\u0629";
+  eq(SC.normalizeWords(typed)[0].letters.join(" "), "\u0645 \u062F \u0631 \u0633 \u0629", "scramble: tatweel is not a tile");
+  eq(CW.normalizeWords(typed)[0].letters.join(" "), "\u0645 \u062F \u0631 \u0633 \u0629", "crossword: tatweel is not a cell");
+}
+
+// A crossword from an all right-to-left list is mirrored: each Across answer
+// starts at its numbered square and reads leftwards, as an Arabic or Hebrew
+// reader reads (2026-11-15). A left-to-right or mixed list is unchanged.
+{
+  const lists = [
+    "\u0642\u0645\u0631\n\u0634\u0645\u0633\n\u0643\u062A\u0627\u0628\n\u0645\u062F\u0631\u0633\u0629\n\u0633\u0644\u0627\u0645\n\u0642\u0644\u0645",
+    "\u05E9\u05DC\u05D5\u05DD\n\u05D1\u05D9\u05EA\n\u05DE\u05D9\u05DD\n\u05E1\u05E4\u05E8\n\u05D9\u05DC\u05D3"
+  ];
+  for (const input of lists) {
+    for (const seed of ["Emma", "Noah", "Aisha"]) {
+      const b = CW.build({ input: input, seed: seed });
+      ok(b.rtl === true, seed + ": an all-RTL list is marked rtl");
+      ok(b.across.length >= 1, seed + ": the RTL grid has an Across answer");
+      for (const e of b.across) {
+        let read = "";
+        for (let i = 0; i < e.length; i++) read += b.grid[e.row][e.col - i];
+        eq(read, e.letters, seed + ": Across " + e.number + " reads right to left from its square");
+        ok(e.col + 1 >= b.width || !b.grid[e.row][e.col + 1], seed + ": Across " + e.number + " has an open square to its right");
+        eq(b.numbers[e.row][e.col], e.number, seed + ": Across " + e.number + " is numbered at its first (rightmost) square");
+      }
+      for (const e of b.down) {
+        let read = "";
+        for (let i = 0; i < e.length; i++) read += b.grid[e.row + i][e.col];
+        eq(read, e.letters, seed + ": Down " + e.number + " still reads top to bottom");
+      }
+      // Mirroring changes direction only: no run the list never asked for, and
+      // every word is either an entry or reported unplaced (a word that shares
+      // no letter with the rest cannot cross, in either direction).
+      eq(b.strays.length, 0, seed + ": no stray runs in the mirrored grid");
+      eq(b.entries.length + b.unplaced.length, b.words.length, seed + ": every word is placed or reported");
+    }
+  }
+  const en = CW.build({ input: "moon\nstar\nsun\nplanet\ncomet", seed: "Emma" });
+  ok(en.rtl === false, "an English list is not mirrored");
+  const mixed = CW.build({ input: "\u0642\u0645\u0631\nmoon\nstar", seed: "Emma" });
+  ok(mixed.rtl === false, "a mixed list keeps the left-to-right grid");
+}
+
 console.log("\nwordPuzzles.test.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

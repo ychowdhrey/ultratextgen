@@ -1135,9 +1135,21 @@ function renderRedact(text, style) {
   const HOLD_RE = /[\u{F0000}-\u{FFFFD}]/u;
   const HOLD_ALL = /[\u{F0000}-\u{FFFFD}]/gu;
 
+  // CJK compatibility ideographs carry a canonical singleton decomposition,
+  // so NFC replaces each with its unified twin (U+F900 -> U+8C48). That is a
+  // different character to the visitor and to any platform that keeps it, so
+  // composing leaves them exactly as typed and composes everything around them.
+  const COMPAT_IDEOGRAPH_RE = /[\uF900-\uFAFF\u{2F800}-\u{2FA1F}]/u;
+  const COMPAT_IDEOGRAPH_SPLIT = /([\uF900-\uFAFF\u{2F800}-\u{2FA1F}])/u;
+
+  function composeCluster(g) {
+    if (!COMPAT_IDEOGRAPH_RE.test(g)) return g.normalize('NFC');
+    return g.split(COMPAT_IDEOGRAPH_SPLIT).map((part, i) => (i % 2 ? part : part.normalize('NFC'))).join('');
+  }
+
   function composeClusters(text) {
     if (text === text.normalize('NFC')) return text;
-    return splitGraphemes(text).map(g => g.normalize('NFC')).join('');
+    return splitGraphemes(text).map(composeCluster).join('');
   }
 
   function renderAny(text, style) {

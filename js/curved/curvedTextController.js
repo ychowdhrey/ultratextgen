@@ -212,6 +212,14 @@
     document.body.removeChild(ta);
   }
 
+  /* A saved file is recorded by surface and format only (output_download,
+     header.js): never the typed text or the file name. Fired after the blob
+     exists and the download was handed to the browser. */
+  function trackDownload(surface, format) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.trackOutputDownload === "function") ns.trackOutputDownload(surface, format);
+  }
+
   function downloadBlob(blob, filename) {
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
@@ -226,6 +234,7 @@
   function downloadSvg() {
     if (!lastSvg) return;
     downloadBlob(new Blob([lastSvg], { type: "image/svg+xml" }), "curved-text.svg");
+    trackDownload("curved_text", "svg");
     toast(I18N.toastSvgDownloaded || "SVG downloaded");
   }
 
@@ -247,7 +256,7 @@
       ctx.drawImage(img, 0, 0);
       URL.revokeObjectURL(url);
       canvas.toBlob(function (pngBlob) {
-        if (pngBlob) { downloadBlob(pngBlob, "curved-text.png"); toast(I18N.toastPngDownloaded || "PNG downloaded"); }
+        if (pngBlob) { downloadBlob(pngBlob, "curved-text.png"); trackDownload("curved_text", "png"); toast(I18N.toastPngDownloaded || "PNG downloaded"); }
       }, "image/png");
     };
     img.onerror = function () { URL.revokeObjectURL(url); toast(I18N.toastPngFailed || "PNG export failed"); };

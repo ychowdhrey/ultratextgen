@@ -188,6 +188,14 @@
     });
   }
 
+  /* A saved file is recorded by surface and format only (output_download,
+     header.js): never the typed text or the file name. Fired after the blob
+     exists and the download was handed to the browser. */
+  function trackDownload(surface, format) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.trackOutputDownload === "function") ns.trackOutputDownload(surface, format);
+  }
+
   function downloadBlob(blob, filename) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -235,6 +243,7 @@
     if (!lastSvg) return;
     svgWithEmbeddedFonts().then(function (svg) {
       downloadBlob(new Blob([svg], { type: "image/svg+xml" }), "old-roblox-font.svg");
+      trackDownload("old_roblox_font", "svg");
       toast("SVG downloaded");
     });
   }
@@ -257,7 +266,7 @@
         ctx.drawImage(img, 0, 0);
         URL.revokeObjectURL(url);
         canvas.toBlob(function (pngBlob) {
-          if (pngBlob) { downloadBlob(pngBlob, "old-roblox-font.png"); toast("PNG downloaded"); }
+          if (pngBlob) { downloadBlob(pngBlob, "old-roblox-font.png"); trackDownload("old_roblox_font", "png"); toast("PNG downloaded"); }
         }, "image/png");
       };
       img.onerror = function () { URL.revokeObjectURL(url); toast("PNG export failed"); };

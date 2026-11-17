@@ -315,6 +315,41 @@ t('output_download carries a fixed surface and format, never text', () => {
   eq(CI.downloadPayload().download_surface, undefined, 'a missing surface clears the key');
 });
 
+// Every output_download call site in js/ names its surface and format as
+// fixed snake_case literals. A variable there could carry a typed name or a
+// file name into the payload, which the event exists never to do.
+t('output_download call sites pass only fixed literals', () => {
+  const files = [];
+  (function walk(dir) {
+    for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, ent.name);
+      if (ent.isDirectory()) walk(full);
+      else if (ent.name.endsWith('.js') && !ent.name.endsWith('.test.js')) files.push(full);
+    }
+  })(path.join(__dirname, 'js'));
+  let calls = 0;
+  const LIT = /^\s*"[a-z][a-z0-9_]*"\s*$/;
+  for (const file of files) {
+    const src = fs.readFileSync(file, 'utf8');
+    const re = /\b(trackDownload|trackOutputDownload)\(([^()]*)\)/g;
+    let m;
+    while ((m = re.exec(src))) {
+      const args = m[2].split(',');
+      // The wrapper's own definition and its pass-through call.
+      if (/\bfunction\s+$/.test(src.slice(Math.max(0, m.index - 10), m.index))) continue;
+      if (m[2].trim() === 'surface, format') continue;
+      if (m[1] === 'trackOutputDownload' && args.length === 2 && LIT.test(args[0]) && /^\s*format\s*$/.test(args[1])) { calls++; continue; }
+      // A one-argument wrapper (image-to-ASCII) fixes the surface itself.
+      if (args.length === 1 && LIT.test(args[0]) && /function trackDownload\(format\)/.test(src)) { calls++; continue; }
+      if (args.length !== 2 || !args.every((a) => LIT.test(a))) {
+        throw new Error(path.relative(__dirname, file) + ': ' + m[0] + ' is not two fixed literals');
+      }
+      calls++;
+    }
+  }
+  if (calls < 10) throw new Error('expected at least 10 output_download call sites, found ' + calls);
+});
+
 // ── copy_look: which look of a two-look symbol left the page ────────────
 t('copy_look is always a key, cleared unless the caller sets it', () => {
   const p = CI.copyPayload('symbol_tile', '★');

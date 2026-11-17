@@ -218,7 +218,19 @@
     return String(value == null ? "" : value).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
   }
 
+  /* Does this word read right to left? Decided by its first letter: Hebrew,
+     Arabic, Syriac, Thaana, NKo and the other right-to-left blocks, their
+     presentation forms, and the supplementary RTL ranges. The word search and
+     the crossword both ask it, so a grid's direction rules have one owner. */
+  const RTL_LETTER_RE = /^[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF\u{10800}-\u{10FFF}\u{1E800}-\u{1EFFF}]/u;
+  function isRtl(letters) {
+    const list = Array.isArray(letters) ? letters : Array.from(String(letters == null ? "" : letters));
+    const first = list.find((l) => /\p{L}/u.test(l));
+    return !!first && RTL_LETTER_RE.test(first);
+  }
+
   ns.wordList = {
+    isRtl: isRtl,
     parse: parse,
     unmark: unmark,
     spelling: spellingList,

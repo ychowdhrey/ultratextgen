@@ -139,7 +139,10 @@
     ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
     : null;
   const CLUSTER_RE = /\P{M}\p{M}*|\p{M}+/gu;
-  const NOT_CELL_RE = /[^\p{L}\p{M}\p{N}]/gu;
+  // U+0640 ARABIC TATWEEL is a letter by category (Lm) but only stretches the
+  // joining stroke between two letters; typed into a word it would become a
+  // grid cell of its own ("مـــدرسة" printed three bare strokes), so it goes.
+  const NOT_CELL_RE = /[^\p{L}\p{M}\p{N}]|\u0640/gu;
 
   function clusters(text) {
     const s = String(text).normalize("NFC");
@@ -273,9 +276,9 @@
     for (let i = 0; i < letters.length; i++) grid[r + dr * i][c + dc * i] = letters[i];
   }
 
-  function readRun(grid, r, c, dir) {
+  function readRun(grid, r, c, dir, rtl) {
     const dr = dir === DOWN ? 1 : 0;
-    const dc = dir === ACROSS ? 1 : 0;
+    const dc = dir === ACROSS ? (rtl ? -1 : 1) : 0;
     const out = [];
     let rr = r, cc = c;
     while (cell(grid, rr, cc)) { out.push(grid[rr][cc]); rr += dr; cc += dc; }
@@ -286,19 +289,25 @@
      cell takes the next number if it STARTS a run of two or more in either
      direction. One number can head both an Across and a Down entry, which is
      why the number is assigned to the cell and then read twice. */
-  function numberGrid(grid, height, width) {
+  function numberGrid(grid, height, width, rtl) {
     const numbers = [];
     for (let r = 0; r < height; r++) numbers.push(new Array(width).fill(0));
     const starts = [];
     let n = 0;
+    // A right-to-left grid is numbered the way it is read: each row from the
+    // right, and an Across entry starts where the square to its right is open.
+    const step = rtl ? -1 : 1;
     for (let r = 0; r < height; r++) {
-      for (let c = 0; c < width; c++) {
+      for (let i = 0; i < width; i++) {
+        const c = rtl ? width - 1 - i : i;
         if (!grid[r][c]) continue;
-        const leftOpen = c === 0 || !grid[r][c - 1];
-        const rightRuns = c + 1 < width && !!grid[r][c + 1];
+        const before = c - step;
+        const after = c + step;
+        const beforeOpen = before < 0 || before >= width || !grid[r][before];
+        const afterRuns = after >= 0 && after < width && !!grid[r][after];
         const upOpen = r === 0 || !grid[r - 1][c];
         const downRuns = r + 1 < height && !!grid[r + 1][c];
-        const a = leftOpen && rightRuns;
+        const a = beforeOpen && afterRuns;
         const d = upOpen && downRuns;
         if (!a && !d) continue;
         n++;
@@ -422,10 +431,18 @@
       out.push(row);
     }
 
-    const numbered = numberGrid(out, height, width);
+    /* A list in a right-to-left script is laid out as usual and then mirrored
+       left to right: an Across answer then reads from the right, as its
+       reader reads, while Down answers and every crossing stay as they were.
+       Only a list that is right to left throughout is mirrored; a mixed list
+       keeps the left-to-right grid, since one grid cannot read both ways. */
+    const rtl = words.length > 0 && words.every((w) => listParser().isRtl(w.letters));
+    if (rtl) out.forEach((row) => row.reverse());
+    const numbered = numberGrid(out, height, width, rtl);
     const byKey = Object.create(null);
     for (const p of placed) {
-      byKey[p.key] = { row: p.row - bbox.minR, col: p.col - bbox.minC, dir: p.dir };
+      const col = p.col - bbox.minC;
+      byKey[p.key] = { row: p.row - bbox.minR, col: rtl ? width - 1 - col : col, dir: p.dir };
     }
 
     /* Verify, do not trust. Read every numbered run back out of the finished
@@ -438,7 +455,7 @@
     const strays = [];
     const found = Object.create(null);
     for (const s of numbered.starts) {
-      const run = readRun(out, s.row, s.col, s.dir);
+      const run = readRun(out, s.row, s.col, s.dir, rtl);
       const word = wantKeys[run];
       if (!word) { strays.push({ number: s.number, dir: s.dir, letters: run }); continue; }
       found[run] = true;
@@ -464,6 +481,7 @@
       unplaced: finalUnplaced,
       strays: strays,
       placedAt: byKey,
+      rtl: rtl,
       seed: o.seed == null ? "" : String(o.seed)
     };
   }
