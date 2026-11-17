@@ -16,6 +16,15 @@ name: Stranded work
 # in fact cut before main's 2026-07-10 history rewrite and so shared no commit
 # with main on any clone. They are measured by content now.)
 #
+# Recovery stage (2026-11-17). Every run also qualifies each stranded branch: a deterministic
+# decision record (scripts/lib/stranded_work.py, qualify) that is written into its task and kept
+# as the run's artifact. A branch that passes every check (docs only, small, merges cleanly,
+# overwrites nothing newer, no decision, no PR ever closed unmerged, nothing on main citing it) may
+# get a DRAFT PR from the branch as it stands. That step runs only when the repository variable
+# STRANDED_AUTO_RECOVERY is 'true'; otherwise the run lists what it would open. A PR opened with
+# GITHUB_TOKEN starts no workflow run, so its gates run when a person marks it ready or pushes to
+# it. Nothing here merges, and an open or draft PR never closes a task: main having the work does.
+#
 # fetch-depth: 0 is load-bearing, not hygiene. On a shallow checkout
 # `git merge-base` cannot resolve a common ancestor for most branches, and a
 # naive count then reports a branch's entire history as unmerged. The script
@@ -28,8 +37,14 @@ on:
 
 permissions:
   contents: read
-  pull-requests: read
+  pull-requests: write # read open/closed PRs; open qualified draft recovery PRs (switched off by default)
   issues: write        # recovery tasks: create, reopen, update, close
+
+# Two overlapping runs would plan from the same issue list and both act on it. Queue, never cancel:
+# a cancelled apply step can leave half a plan applied, which the next run repairs but should not have to.
+concurrency:
+  group: stranded-work
+  cancel-in-progress: false
 
 jobs:
   stranded-work:
@@ -57,15 +72,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr list --state open --json number,headRefName --limit 300 \
+          gh pr list --state open --json number,headRefName,isDraft,body --limit 300 \
             > open-prs.json
+          # Closed PRs, all of them (a truncated list would hide an old rejection): one closed unmerged from a
+          # branch blocks its automated recovery.
+          gh pr list --state closed --json number,headRefName,mergedAt --limit 5000 \
+            > closed-prs.json
           # Idempotent. Listing by a label that does not exist yet must not be what fails the very first run.
           gh label create stranded-work --force --color B60205 \
             --description 'Work on a branch that no open PR tracks (daily Stranded work run)'
           gh issue list --label stranded-work --state all --json number,state,body --limit 500 \
             > tasks.json
-          python3 scripts/check-stranded-work.py --open-prs open-prs.json --tasks tasks.json \
-            --plan-out stranded-plan.json | tee stranded-work.log
+          python3 scripts/check-stranded-work.py --open-prs open-prs.json --closed-prs closed-prs.json \
+            --tasks tasks.json --plan-out stranded-plan.json --decisions-out stranded-decisions.json \
+            | tee stranded-work.log
 
       # Runs whatever the check concluded: a red run still files its tasks, a green one still closes resolved ones.
       - name: Apply recovery tasks
@@ -74,7 +94,22 @@ jobs:
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/apply-stranded-work-tasks.py stranded-plan.json | tee stranded-tasks.log
+          AUTO_RECOVERY: ${{ vars.STRANDED_AUTO_RECOVERY }}
+        run: |
+          flag=()
+          if [ "$AUTO_RECOVERY" = "true" ]; then flag=(--recover); fi
+          python3 scripts/apply-stranded-work-tasks.py stranded-plan.json "${flag[@]}" | tee stranded-tasks.log
+
+      - name: Keep the decision record
+        if: always() && hashFiles('stranded-decisions.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: stranded-work-decisions
+          path: |
+            stranded-decisions.json
+            stranded-plan.json
+            stranded-work.log
+          retention-days: 90
 
       - name: Job summary
         if: always()
