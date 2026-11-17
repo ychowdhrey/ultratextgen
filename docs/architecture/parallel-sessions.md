@@ -116,8 +116,9 @@ clone) and it says so rather than reporting a reassuring zero.
 - **It fails only on something new.** That means a stranded branch with no task, a
   task closed while its work is still stranded, new commits on a stranded branch, or a
   branch new to the pre-rewrite list. The known backlog stays in its open issues and is
-  reported every run. A task closes itself once its branch merges, an open PR tracks
-  it, its content is on main, or it is excluded. This replaced a "newer than 3 days"
+  reported every run. A task closes itself once its branch merges, its content is on
+  main, or a terminal decision is recorded for it (an open PR closed it too, until
+  2026-11-17: see below). This replaced a "newer than 3 days"
   cut-off, which could never alert on a branch whose PR was closed unmerged a week after
   its last commit.
 - **Content, not ancestry, decides "landed".** A branch that is not an ancestor of main
@@ -143,6 +144,54 @@ clone) and it says so rather than reporting a reassuring zero.
   now. A commit counts as on main when main has one with the same author date, email
   and subject. Paths that never existed in main's history were moved out by the
   rewrite. Only a shallow clone still reads UNMEASURABLE, with exit 3.
+
+- **A PR is a proposal, not a ship (2026-11-17).** An open or draft PR from the branch
+  used to close its task. Now the task stays open, names the PR, and closes only when
+  the branch is MERGED or LANDED or a terminal decision is recorded. A PR closed
+  without merging is remembered as a rejection. A recovery PR from a fresh branch
+  declares the task it recovers with `<!-- stranded-recovery key=branch:<name> -->` in
+  its description; while it is open the branch is RECOVERING and no second recovery is
+  planned.
+- **Decisions have a kind and a tip (2026-11-17).** A ledger entry's `disposition` is
+  terminal (LANDED, SUPERSEDED, ABANDONED: the task closes) or open (INTENTIONAL_HOLD,
+  NEEDS_EVIDENCE, DEPENDENCY_BLOCKED: the branch is HELD, its task stays open, shows
+  the decision and never alerts). An entry with `tip` covers that commit only: once
+  the branch moves past it, the decision no longer applies and the new commits strand
+  again, so a decision about old work cannot wave new work through.
+  `check:stranded-work-ledger` gates the file on every PR; `test:stranded-work` is
+  gated there too, because the daily run itself is not a PR gate.
+- **Main commits that name a branch are shown on its task.** A non-merge commit on
+  main whose message names the branch or one of its unmerged commits is listed as
+  "main already mentions this work": the signature of a partial recovery, a re-land
+  or a revert (`d423c5fa0f`, `990d0b8641`, `d1945cefde` and `aa08f9766b` all are). It
+  closes nothing, because a citation is not proof the whole branch landed:
+  `990d0b8641` recovered two of six pages.
+- **Qualification and the guarded recovery stage (2026-11-17).** Every stranded branch
+  gets a deterministic decision record, written into its task and kept as the run's
+  artifact: no recorded decision, shares history with main, no open or rejected PR,
+  nothing on main citing it, only `docs/*.md` that no generator owns, at most 20 files
+  and 1,000 lines, merges cleanly, and overwrites nothing main changed since the
+  branch was cut. Only a branch passing all of them may get a **draft** PR from the
+  branch as it stands, and only when the repository variable `STRANDED_AUTO_RECOVERY`
+  is `true`; the apply step asks GitHub again for an open PR first, and the workflow
+  takes a concurrency lock. Everything else is owner review. Pages, shared runtime,
+  ledgers and generated files are never in scope, because this repository cannot see
+  a page's revenue and a replay can overwrite newer code. On the 2026-11-17 backlog
+  0 of 9 branches qualified, which matched a manual audit of each one. A PR opened
+  with `GITHUB_TOKEN` starts no workflow run, so its gates run when a person marks it
+  ready.
+
+**Reconciliation of 2026-11-17.** Each of the 9 tasks and 41 pre-rewrite branches was
+audited against main by content, commit history and recorded decisions, and the
+outcome recorded in the ledger with its tip:
+
+| Outcome | Branches |
+|---|---|
+| LANDED | 8 (1 stranded, 7 pre-rewrite) |
+| SUPERSEDED | 28 (3 stranded, 25 pre-rewrite) |
+| ABANDONED | 8 pre-rewrite (research moved out by the rewrite, hand-written `sitemap.xml`, unsafe `noindex` or middleware changes) |
+| Held, task open | 5: INTENTIONAL_HOLD 2 (`bold-goodall-fc33am` image selection, `sv-competitive-analysis-eub4hl` `grader-tecken`), NEEDS_EVIDENCE 1 (`cny-page-brainstorm-3toe0h` Idul Fitri/Adha), DEPENDENCY_BLOCKED 2 (`pending-tasks-repo-lab-b6666g` 24 English blurbs, `ultratextgen-multilingual-expansion-x0r13j` tr/vi name-ideas pages) |
+| Recoverable now | 1 pre-rewrite (`emoji-combos-seo-zxgw55`, two cross-links), ported onto a fresh branch |
 
 **Reconciliation of 2026-11-11** (the backlog this change inherited):
 
