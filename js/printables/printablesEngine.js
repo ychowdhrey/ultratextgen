@@ -13348,6 +13348,10 @@
   }
   function cwAnswerOn() { return !!(el.cwAnswer && el.cwAnswer.checked); }
 
+  // The crossword ladder's rung count (crossword.LEVELS in wordPuzzles.js),
+  // stated here because the roster is parsed before that module may load.
+  const CW_ROSTER_LEVELS = 3;
+
   function cwBuild(seed) {
     const ns = puzzleNs("crossword");
     if (!ns) return null;
@@ -13361,7 +13365,9 @@
      crossword is solved visually and reading 200 squares aloud one at a time
      is hostile rather than accessible. The clue list below is the real
      content and is fully readable. */
-  function cwGridNode(built, showAnswer) {
+  function cwGridNode(built, showAnswer, hints) {
+    const hinted = Object.create(null);
+    (hints || []).forEach((h) => { hinted[h.row + ":" + h.col] = true; });
     const grid = document.createElement("div");
     grid.className = "pt-cw-grid" + (showAnswer ? " is-answer" : "");
     grid.style.setProperty("--pt-cw-cols", String(built.width));
@@ -13381,7 +13387,7 @@
             n.textContent = String(num);
             box.appendChild(n);
           }
-          if (showAnswer) {
+          if (showAnswer || hinted[r + ":" + c]) {
             const g = document.createElement("b");
             g.className = "pt-cw-letter";
             g.textContent = letter;
@@ -13423,8 +13429,8 @@
      it would hand the solver every answer; without them the sheet would be
      unsolvable, and "fill the grid from the bank" is the standard classroom
      format for a spelling list that has no definitions attached. */
-  function cwWordBankNode(built) {
-    if (built.entries.some((e) => e.clue)) return null;
+  function cwWordBankNode(built, force) {
+    if (!force && built.entries.some((e) => e.clue)) return null;
     const wrap = document.createElement("div");
     wrap.className = "pt-cw-bank";
     const h = document.createElement("h4");
@@ -13444,7 +13450,10 @@
     return wrap;
   }
 
-  function cwSheetNode(seedName, showAnswer) {
+  /* level: a class-set line's own number ("Noah 2"), or null for the sheet the
+     tool has always printed. What each level hands the child is
+     crossword.help() in wordPuzzles.js, where it is tested. */
+  function cwSheetNode(seedName, showAnswer, level) {
     const built = cwBuild(seedName);
     const sheet = document.createElement("div");
     sheet.className = "pt-search-sheet pt-cw-sheet";
@@ -13456,9 +13465,13 @@
       T.crossword.forWhom, showAnswer, T.crossword.answerKey);
     sheet.appendChild(h);
 
-    sheet.appendChild(cwGridNode(built, showAnswer));
+    const ns = puzzleNs("crossword");
+    const help = (ns && ns.help) ? ns.help(level, built.entries.some((e) => e.clue))
+      : { bank: false, firstLetters: false };
+    sheet.appendChild(cwGridNode(built, showAnswer,
+      help.firstLetters && !showAnswer && ns.hintSquares ? ns.hintSquares(built) : null));
 
-    const bank = cwWordBankNode(built);
+    const bank = cwWordBankNode(built, help.bank);
     if (bank) sheet.appendChild(bank);
 
     const cols = document.createElement("div");
@@ -13535,14 +13548,17 @@
     const holder = document.createElement("div");
     holder.className = "pt-search-print-holder";
     const answer = cwAnswerOn();
-    const names = rosterNames(el.cwRoster);
-    if (names.length >= 2) {
+    const entries = rosterEntries(el.cwRoster, CW_ROSTER_LEVELS);
+    if (entries.length >= 2) {
       holder.classList.add("pt-class-set");
       /* Keys grouped after the whole class, not behind each child: a teacher
          prints the stack once and keeps the keys, and a key behind a child's
-         sheet is a key handed to that child. */
-      appendSheetPages(holder, names, (n) => cwSheetNode(n, false));
-      if (answer) appendSheetPages(holder, names, (n) => cwSheetNode(n, true));
+         sheet is a key handed to that child. A line carrying its own number
+         ("Noah 1") gets that much help; a bare line gets the sheet as it
+         always printed. The key is built at the child's level too, so a
+         level-2 key carries the bank the child's sheet had. */
+      appendSheetPages(holder, entries, (e) => cwSheetNode(e.name, false, e.level));
+      if (answer) appendSheetPages(holder, entries, (e) => cwSheetNode(e.name, true, e.level));
       printWrap("", holder, "crossword");
       return;
     }
@@ -13557,7 +13573,10 @@
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderCwPreview, 160); };
     el.cwInput.addEventListener("input", schedule);
     if (el.cwHeading) el.cwHeading.addEventListener("input", schedule);
-    if (el.cwRoster) el.cwRoster.addEventListener("input", schedule);
+    if (el.cwRoster) {
+      annotateRosterPlaceholder(el.cwRoster, CW_ROSTER_LEVELS);
+      el.cwRoster.addEventListener("input", schedule);
+    }
     if (el.cwAnswer) el.cwAnswer.addEventListener("change", renderCwPreview);
     if (el.cwPrint) el.cwPrint.addEventListener("click", printCrossword);
     if (el.cwPng) el.cwPng.addEventListener("click", () => { pngMode = true; printCrossword(); });

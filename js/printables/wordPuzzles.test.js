@@ -542,5 +542,53 @@ const CLUED = [
   ok(mixed.rtl === false, "a mixed list keeps the left-to-right grid");
 }
 
+// The per-child crossword ladder (owner ruling 2026-11-10): level 1 hands
+// over a word bank and each answer's first letter, level 2 the bank only,
+// level 3 and no level are the sheet as it always printed. A clue-less list
+// keeps its bank at every level, or the sheet could not be solved.
+{
+  const help = CW.help;
+  eq(CW.LEVELS, 3, "crossword: three levels");
+  eq(JSON.stringify(help(null, true)), JSON.stringify({ bank: false, firstLetters: false }), "no level with clues: clues only, as before");
+  eq(JSON.stringify(help(null, false)), JSON.stringify({ bank: true, firstLetters: false }), "no level without clues: bank, as before");
+  eq(JSON.stringify(help(3, true)), JSON.stringify(help(null, true)), "level 3 with clues is the unchanged sheet");
+  eq(JSON.stringify(help(3, false)), JSON.stringify(help(null, false)), "level 3 without clues keeps the bank");
+  eq(JSON.stringify(help(2, true)), JSON.stringify({ bank: true, firstLetters: false }), "level 2: bank even with clues");
+  eq(JSON.stringify(help(1, true)), JSON.stringify({ bank: true, firstLetters: true }), "level 1: bank and first letters");
+  eq(JSON.stringify(help(1, false)), JSON.stringify({ bank: true, firstLetters: true }), "level 1 without clues: bank and first letters");
+  eq(JSON.stringify(help(7, true)), JSON.stringify(help(null, true)), "an out-of-range level is no level");
+
+  const p = CW.build({ input: CLUED.join("\n"), seed: "Noah" });
+  const sq = CW.hintSquares(p);
+  const starts = new Set(p.entries.map((e) => e.row + ":" + e.col));
+  eq(sq.length, starts.size, "one hint per distinct start square");
+  for (const h of sq) {
+    const e = p.entries.find((x) => x.row === h.row && x.col === h.col);
+    ok(!!e && e.letters[0] === h.letter, "hint at " + h.row + "," + h.col + " is its entry's first letter");
+  }
+  // A square shared by an across and a down start is given once.
+  const shared = p.entries.filter((e) => p.entries.some((f) => f !== e && f.row === e.row && f.col === e.col));
+  if (shared.length) ok(sq.filter((h) => h.row === shared[0].row && h.col === shared[0].col).length === 1, "a shared start square is hinted once");
+
+  // A mirrored grid hints the square the reader starts from.
+  const ar = CW.build({ input: "\u0642\u0645\u0631\n\u0646\u062c\u0645\n\u0634\u0645\u0633", seed: "Emma" });
+  if (ar.rtl && ar.entries.length) {
+    const h = CW.hintSquares(ar);
+    ok(h.every((x) => ar.entries.some((e) => e.row === x.row && e.col === x.col && e.letters[0] === x.letter)),
+      "right-to-left: each hint is the reader's first letter");
+  }
+  eq(CW.hintSquares(null).length, 0, "no grid, no hints");
+}
+
+// The engine parses a class-set line's number before wordPuzzles.js may have
+// loaded, so it states the rung count itself. The two must agree, or "Noah 3"
+// would be a level on one side and part of the name on the other.
+{
+  const eng = fs.readFileSync(path.join(__dirname, "printablesEngine.js"), "utf8");
+  const m = eng.match(/const CW_ROSTER_LEVELS = (\d+);/);
+  ok(!!m, "printablesEngine.js declares CW_ROSTER_LEVELS");
+  if (m) eq(parseInt(m[1], 10), CW.LEVELS, "engine and crossword module agree on the number of levels");
+}
+
 console.log("\nwordPuzzles.test.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);
