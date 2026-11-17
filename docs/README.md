@@ -157,6 +157,7 @@ Required, blocking checks:
 - `check:external-refs`
 - `check:faq-schema`
 - `check:fitted-page-fit`
+- `check:functional-parity`
 - `check:funding-choices`
 - `check:gate-inventory`
 - `check:glyph-metrics-tag`
@@ -180,6 +181,7 @@ Required, blocking checks:
 - `check:new-page-images`
 - `check:new-symbol-peer-links`
 - `check:numeric-parity`
+- `check:parity-exception-policy`
 - `check:print-export-properties`
 - `check:printables-i18n-parity`
 - `check:printables-surface-wiring`
@@ -215,6 +217,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:editorial-footprint`
 - `test:efr`
 - `test:format-marks`
+- `test:functional-parity`
 - `test:game-rules`
 - `test:generator-parity`
 - `test:header-analytics`
@@ -231,6 +234,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:llms`
 - `test:moon-phase`
 - `test:name-reports`
+- `test:parity-exception-policy`
 - `test:practice-row`
 - `test:print-paper`
 - `test:printables-i18n-parity`

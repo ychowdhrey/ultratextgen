@@ -218,6 +218,37 @@ jobs:
         continue-on-error: true
         run: npm run check:translation-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee translation-parity.log
 
+      # Functional parity (2026-11-15, docs/architecture/translation-parity.md §12):
+      # a change must not introduce a capability gap, i.e. a tool module, opt-in
+      # surface, control or copy tiles the cluster's reference page offers and a
+      # sibling lacks. Delta-scoped because the site carries a backlog (378 pairs on
+      # 2026-11-15; npm run audit:functional-parity); a new page has no base, so
+      # a translation shipped without its reference's tool fails here.
+      - name: Run functional parity check
+        id: functional_parity
+        continue-on-error: true
+        run: npm run check:functional-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee functional-parity.log
+
+      - name: Run functional parity tests
+        id: functional_parity_tests
+        continue-on-error: true
+        run: npm run test:functional-parity | tee functional-parity-tests.log
+
+      # A new or edited parity exception must carry canonical intent, difference,
+      # evidence, user impact, alternatives, the owner decision and a review date,
+      # and may not rest on missing volume, low demand, a missing English parent,
+      # a failing validator or an inconvenient translation. Earlier entries are
+      # grandfathered (delta only).
+      - name: Run parity exception policy check
+        id: parity_exception_policy
+        continue-on-error: true
+        run: npm run check:parity-exception-policy -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee parity-exception-policy.log
+
+      - name: Run parity exception policy tests
+        id: parity_exception_policy_tests
+        continue-on-error: true
+        run: npm run test:parity-exception-policy | tee parity-exception-policy-tests.log
+
       - name: Run locale mesh check
         id: locale_mesh
         continue-on-error: true
@@ -1454,6 +1485,26 @@ jobs:
             cat translation-parity.log
             echo '```'
             echo ""
+            echo "### Functional parity check — \`${{ steps.functional_parity.outcome }}\`"
+            echo '```'
+            cat functional-parity.log
+            echo '```'
+            echo ""
+            echo "### Functional parity tests — \`${{ steps.functional_parity_tests.outcome }}\`"
+            echo '```'
+            cat functional-parity-tests.log
+            echo '```'
+            echo ""
+            echo "### Parity exception policy check — \`${{ steps.parity_exception_policy.outcome }}\`"
+            echo '```'
+            cat parity-exception-policy.log
+            echo '```'
+            echo ""
+            echo "### Parity exception policy tests — \`${{ steps.parity_exception_policy_tests.outcome }}\`"
+            echo '```'
+            cat parity-exception-policy-tests.log
+            echo '```'
+            echo ""
             echo "### Locale mesh check — \`${{ steps.locale_mesh.outcome }}\`"
             echo '```'
             cat locale-mesh.log
@@ -1869,6 +1920,10 @@ jobs:
           steps.new_images.outcome == 'failure' ||
           steps.new_symbol_peer_links.outcome == 'failure' ||
           steps.parity.outcome == 'failure' ||
+          steps.functional_parity.outcome == 'failure' ||
+          steps.functional_parity_tests.outcome == 'failure' ||
+          steps.parity_exception_policy.outcome == 'failure' ||
+          steps.parity_exception_policy_tests.outcome == 'failure' ||
           steps.locale_mesh.outcome == 'failure' ||
           steps.link_health_tests.outcome == 'failure' ||
           steps.source_attribution.outcome == 'failure' ||

@@ -102,6 +102,43 @@ the reason (Ñ is not an English letter). `localeOwners` records pages **outside
 cluster that already serve the intent in a language (the English homepage serves the
 font-changer job): a new page in that language for that intent fails as a duplicate.
 
+### 1.6 Verified folds (added 2026-11-15)
+
+A `localeOwners` entry is a **fold**: a broader page in that language is said to serve the intent, so no dedicated page is built
+and a new one fails as a duplicate. Until 2026-11-15 the claim was prose (`localeOwnerBasis`), and nothing checked that the owner
+page carries the job: a page that mentions a keyword without the tool that does the job counted the same as one that does it, and the
+parity gap disappeared behind the label. `localeOwnerEvidence.<locale>` makes the claim checkable, and `check:canonical-intents`
+checks it against the owner page's own HTML:
+
+```json
+"localeOwnerEvidence": {
+  "ko": {
+    "verified": "2026-11-15",
+    "ownerSatisfiesJob": "The angel section copies both angel emoji with one tap.",
+    "whyNotSeparateUrl": "A Korean angel page would repeat that section and compete with it.",
+    "mustContain": ["😇", "👼"],
+    "requiredCapabilities": ["copy-tiles"]
+  }
+}
+```
+
+| Finding | Level |
+|---|---|
+| a `mustContain` string is not on the owner page (`fold-content-missing`) | error |
+| a `requiredCapabilities` key (functional fingerprint, `translation-parity.md` §12) is missing (`fold-capability-missing`) | error |
+| evidence incomplete (`ownerSatisfiesJob` / `whyNotSeparateUrl` short, empty lists, bad date) | error |
+| an owner with no evidence and no basis, on a record registered from 2026-11-15 (`fold-unevidenced`) | error (warning on older records) |
+| an owner with a prose basis only (`fold-unverified`) | warning: visible, so the gap is not hidden |
+
+One broader page may own several narrower intents; each stays its own record with its own id, and the owner page is never added to
+their hreflang clusters (a fold is not an hreflang edge). Of the six owners recorded on 2026-11-14, five carry prose bases and read as
+`fold-unverified`; `style-text-to-stand-out/latin-text-for-cjk-readers` carries none and reads as `fold-unevidenced` (a warning on
+that older record). Both stay visible until someone adds the evidence.
+
+`inapplicableLocales` reasons are checked too: a reason that rests on demand ("no demand", "low search volume", "not a priority
+market", "zero searches") fails as `inapplicable-for-demand-reason`, unless the phrase is negated ("evidence of a different alphabet,
+not of missing demand").
+
 ## 2. Registry fields
 
 ```json
@@ -115,6 +152,7 @@ font-changer job): a new page in that language for that intent fails as a duplic
   "inapplicableLocales": {},
   "localeOwners": {},
   "localeOwnerBasis": {},
+  "localeOwnerEvidence": {},
   "xDefault": null,
   "openQuestions": [],
   "registered": "2026-11-14",
