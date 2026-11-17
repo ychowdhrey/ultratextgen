@@ -91,7 +91,7 @@ Two design choices carry the principle:
 
 | Limitation | Feature |
 |---|---|
-| A platform publishes no rules | A checker that runs before the reader commits (`js/gamename/game-rules.js`, 20 rule rows), plus a public board of what players got (`/api/name-reports`) |
+| A platform publishes no rules | A checker that runs before the reader commits (`js/gamename/game-rules.js`, 21 rule rows), plus a public board of what players got (`/api/name-reports`) |
 | Sources conflict on a rule | Encode the stricter reading as a warning, never a fact (`weightUncertain`, `reportedBlocked`), and measure every hypothesis per report |
 | A character may render as boxes on some phones | Name the exact characters at risk (the checker's per-glyph panel), and let players report it ("It shows as boxes") |
 | A rule changed and nobody announced it | The same reports, dated, show the step change; that is news no one else can publish |
