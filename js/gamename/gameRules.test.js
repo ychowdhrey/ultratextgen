@@ -125,6 +125,141 @@ t("unknown game: says why", unk.issues, ["unknown-game"]);
 t("unknown game: no limit is invented", unk.limit, 0);
 t("known game is unchanged: ff still fails an over-long name", G.analyze("a name that is far too long for any game to accept", "ff").level, "fail");
 
+// --- Xbox: two length tiers (support.xbox.com gamertag pages, read 2026-11-17) ---
+// "Gamertags can be up to 15 characters long, including spaces. They can't start
+// with a number. Gamertags that are 13 characters or longer must be unique and
+// contain only Latin alphanumeric characters and no special characters."
+const xb = (s) => { const r = G.analyze(s, "xbox"); return [r.level, r.effective + "/" + r.limit, r.issues]; };
+t("xbox: 12 Latin fits the guaranteed limit", xb("CrimsonSpect"), ["ok", "12/12", []]);
+t("xbox: 13 Latin is possible only if unique (warn, not reject)", xb("CrimsonSpectr"), ["warn", "13/15", ["unique-required"]]);
+t("xbox: 14 Latin, a ready-made name on the Xbox page", xb("CrimsonSpectre"), ["warn", "14/15", ["unique-required"]]);
+t("xbox: 15 Latin with a space is the ceiling", xb("Crimson Spectre"), ["warn", "15/15", ["unique-required"]]);
+t("xbox: 16 Latin is over 15", xb("CrimsonSpectreXY"), ["fail", "16/15", ["over-limit"]]);
+t("xbox: accented Latin is Latin-based (FAQ), so 14 can be taken if unique", xb("ÉlodieMartinez"), ["warn", "14/15", ["unique-required"]]);
+t("xbox: 12 Hangul fits", xb("김민준김민준김민준김민준"), ["ok", "12/12", []]);
+t("xbox: 13 Hangul is over the 12 that applies to non-Latin names", xb("김민준김민준김민준김민준김"), ["fail", "13/12", ["over-limit"]]);
+t("xbox: 13 mixing Latin and Cyrillic is over 12", xb("AlexАлександр"), ["fail", "13/12", ["over-limit"]]);
+t("xbox: cannot start with a number, at any length", xb("1Crimson")[0], "fail");
+t("xbox: a symbol is still refused", xb("Sanz★")[2].indexOf("charset") !== -1, true);
+t("xbox: the counter stays at the guaranteed 12 for short names", G.analyze("Sanz", "xbox").limit, 12);
+t("xbox: a unique-required name reports no over-limit to analytics", G.analyze("CrimsonSpectre", "xbox").effective > G.analyze("CrimsonSpectre", "xbox").limit, false);
+t("xbox: the unique note is English and from the rule", G.defaultReason("unique-required", G.RULES.xbox).indexOf("nobody else has") !== -1, true);
+
+// --- what did NOT change: games without an official character rule ---
+t("free fire: Hangul still warns (no published rule; held for the in-game test)", G.analyze("민준", "ff").issues, ["unknown-chars"]);
+t("pubg: an accent still warns", G.analyze("José", "pubg").issues, ["unknown-chars"]);
+t("mobile legends: Hangul still warns and is too short", G.analyze("민준", "ml").issues, ["too-short", "unknown-chars"]);
+t("roblox display name: unchanged, strict", G.analyze("민준", "robloxDisplay").issues, ["too-short", "unknown-chars", "strict-symbols"]);
+t("classifyChar is untouched (script.js reads it): Hangul is still unknown", G.classifyChar("민"), "unknown");
+
+// --- a failure says why: English fallback, username fields only ---
+t("fallback: Roblox username space has a reason", G.defaultReason("space", G.RULES.roblox).length > 0, true);
+t("fallback: Roblox charset uses the validator's wording", G.defaultReason("charset", G.RULES.roblox), "Roblox usernames take only letters A to Z, numbers 0 to 9 and one underscore.");
+t("fallback: no sentence for Free Fire's unsourced no-space rule", G.defaultReason("space", G.RULES.ff), "");
+t("fallback: no sentence for PUBG's unsourced no-space rule", G.defaultReason("space", G.RULES.pubg), "");
+const notesOf = (mount) => walk(mount).filter((n) => /^gr-note gr-note-/.test(n.className)).map((n) => n.textContent);
+function typeInto(mount, name) {
+  const box = walk(mount).find((n) => n.className === "gr-input");
+  box.value = name; box.fire("input");
+}
+mounts.enRoblox = makeEl("div");
+G.initChecker({ mount: "enRoblox", games: ["roblox"], text: { issue: {} } });
+typeInto(mounts.enRoblox, "Budi Santoso");
+t("English page: a Roblox username with a space says why", notesOf(mounts.enRoblox).length, 2);
+mounts.ownText = makeEl("div");
+G.initChecker({ mount: "ownText", games: ["roblox"], text: { issue: { space: "PAGE TEXT" } } });
+typeInto(mounts.ownText, "Budi Santoso");
+t("a page's own string wins over the fallback", notesOf(mounts.ownText)[0], "PAGE TEXT");
+mounts.ffSpace = makeEl("div");
+G.initChecker({ mount: "ffSpace", games: ["ff"], text: { issue: {} } });
+typeInto(mounts.ffSpace, "Budi Santoso");
+t("English page: Free Fire space failure gets no invented reason", notesOf(mounts.ffSpace), []);
+mounts.pubgOld = makeEl("div");
+G.initChecker({ mount: "pubgOld", games: ["pubg"], text: { issue: { "no-space": "PUBG TEXT" } } });
+typeInto(mounts.pubgOld, "Budi Santoso");
+t("the PUBG page's 'no-space' string stays unshown (unsourced rule, not revived)", notesOf(mounts.pubgOld), []);
+mounts.xboxNote = makeEl("div");
+G.initChecker({ mount: "xboxNote", games: ["xbox"], text: { issue: {} } });
+typeInto(mounts.xboxNote, "CrimsonSpectre");
+t("English Xbox page: the unique note shows", notesOf(mounts.xboxNote).length, 1);
+document.documentElement = { lang: "ja" };
+mounts.jaRoblox = makeEl("div");
+G.initChecker({ mount: "jaRoblox", games: ["roblox"], text: { issue: {} } });
+typeInto(mounts.jaRoblox, "Budi Santoso");
+t("a page in another language gets no English fallback", notesOf(mounts.jaRoblox), []);
+delete document.documentElement;
+
+// --- the couple generator: an empty name gets no fit badge ---
+new Function(fs.readFileSync(__dirname + "/couple-generator.js", "utf8"))();
+["cA", "cB", "cThemes", "cOut"].forEach((id) => { mounts[id] = makeEl(id === "cA" || id === "cB" ? "input" : "div"); });
+mounts.cA.value = "";
+mounts.cB.value = "Nisa";
+window.UltraTextGen.coupleGenerator.init({
+  inputAId: "cA", inputBId: "cB", themesId: "cThemes", outputId: "cOut", game: "ff",
+  themes: [{ id: "u", label: "u", a: { prefix: "꧁", suffix: "꧂" }, b: { prefix: "꧁", suffix: "꧂" } }],
+  text: { statusOk: "OK", statusWarn: "WARN", statusFail: "FAIL" }
+});
+const badges = mounts.cOut.children.map((card) => walk(card).filter((n) => /^gr-badge/.test(n.className)).length);
+t("couple: the empty name's card has no badge, the typed one has one", badges, [0, 1]);
+
+// --- ready-made names on every page meet the sourced rule of the page's own game ---
+// A page lists names under one game (its first checker tab). For a game whose
+// limit and charset come from the platform itself, a listed name that fails
+// that rule is a sample the page should not offer. Games with no published
+// rule (Free Fire, PUBG, Mobile Legends, Liên Quân, Standoff 2, TikTok, YouTube
+// channel name) are not judged here: their limits are the open question.
+const SOURCED = ["stumbleguys", "robloxDisplay", "roblox", "xbox", "psn", "fortnite", "valorant", "vrchat",
+  "coc", "clashroyale", "minecraft", "youtubeHandle", "discord", "discordUsername"];
+// Pages in a running search-engine indexing measurement keep their HTML as it
+// is until that measurement is read, so these names wait for that, not for a
+// decision. Each must still fail (a fixed one must leave this list), and no
+// other name may.
+const HELD = {
+  "de/usecase/stumble-guys-namensgenerator/index.html": ["ᴡᴀᴄᴋᴇʟᴘᴜᴅᴅɪɴɢ", "✦ᴄʜᴀᴏꜱɢᴏʙʟɪɴ✦", "꧁ꜱᴄʜʟᴀᴘᴘꜱᴏᴄᴋᴇɴ꧂", "ʙᴀɴᴀɴᴇɴꜱᴄʜᴀʟᴇ", "✧˖°𝕂𝕣𝕚𝕥𝕫𝕖𝕝°˖✧", "•ꜱᴇʀɪᴇɴꜱɪᴇɢᴇʀ•"],
+  "fr/usecase/pseudo-stumble-guys/index.html": ["✦ᴄʜᴀᴏꜱɢᴏʙᴇʟɪɴ✦", "⚡ʀᴏɪᴍᴀʟᴀᴅʀᴏɪᴛ⚡", "✧˖°ℂ𝕙𝕠𝕦𝕔𝕙𝕠𝕦°˖✧", "•ᴄʜᴀꜱꜱᴇᴜʀᴅᴇᴄᴏᴜʀᴏɴɴᴇ•", "ᴠɪꜰ", "ʙᴀᴍ"],
+  "id/usecase/nama-stumble-guys-keren/index.html": ["꧁ꜱᴇɴɢɢᴏʟꜱᴜɴɢꜱᴀɴɢ꧂", "•ᴘᴇᴍʙᴜʀᴜᴍᴀʜᴋᴏᴛᴀ•"],
+  "it/usecase/nomi-stumble-guys/index.html": ["✦ꜰᴏʟʟᴇᴛᴛᴏᴄᴀᴏꜱ✦", "⚡ʀᴇɪᴍᴘᴀᴄᴄɪᴀᴛᴏ⚡", "•ᴄᴀᴄᴄɪᴀᴄᴏʀᴏɴᴀ•"],
+  "usecase/stumble-guys-name-generator/index.html": ["✦ᴄʜᴀᴏꜱɢᴏʙʟɪɴ✦", "꧁ꜱʟɪᴘᴘʏꜱᴏᴄᴋꜱ꧂", "ᴋɪɴɢᴏғᴛʜᴇʜɪʟʟ", "•ᴄʀᴏᴡɴᴄʜᴀꜱᴇʀ•"],
+  "tr/usecase/stumble-guys-nick/index.html": ["⋆｡˚𝓕𝓪𝓼𝓾𝓵𝔂𝓮˚｡⋆", "✧˖°𝕂𝕒𝕣𝕒𝕝𝕒𝕞𝕒°˖✧", "ᴘᴀᴛ"],
+  "pl/usecase/nazwy-do-robloxa/index.html": ["ᴼᴳ"],
+  "id/usecase/nama-roblox-keren/index.html": ["ᴼᴳ"]
+};
+const path = require("path");
+const ROOT = path.resolve(__dirname, "../..");
+function pagesWithChecker(dir, out) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (e.name.startsWith(".") || e.name === "node_modules") continue;
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) pagesWithChecker(full, out);
+    else if (e.name === "index.html") out.push(full);
+  }
+  return out;
+}
+const unescapeHtml = (s) => s.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+const found = {};
+let judged = 0, pagesJudged = 0;
+for (const file of pagesWithChecker(ROOT, [])) {
+  const html = fs.readFileSync(file, "utf8");
+  if (html.indexOf("uname-chip") === -1 || html.indexOf("game-rules.js") === -1) continue;
+  const m = html.match(/data-games?="([^"]+)"/) || html.match(/games\s*:\s*\[\s*["']([a-zA-Z0-9]+)/);
+  const game = m ? m[1].split(",")[0].trim() : null;
+  if (SOURCED.indexOf(game) === -1) continue;
+  pagesJudged++;
+  const rel = path.relative(ROOT, file).split(path.sep).join("/");
+  for (const mm of html.matchAll(/class="uname-chip[^"]*"[^>]*data-symbol="([^"]+)"/g)) {
+    const name = unescapeHtml(mm[1]);
+    judged++;
+    if (G.analyze(name, game).level === "fail") (found[rel] = found[rel] || []).push(name);
+  }
+}
+t("ready-made names: some pages were judged (the scan is not empty)", pagesJudged > 10 && judged > 150, true);
+const unexpected = [];
+Object.keys(found).forEach((rel) => found[rel].forEach((n) => { if (!(HELD[rel] || []).includes(n)) unexpected.push(rel + " " + n); }));
+t("ready-made names: none breaks its game's sourced rule, outside the held list", unexpected, []);
+const stale = [];
+Object.keys(HELD).forEach((rel) => HELD[rel].forEach((n) => { if (!(found[rel] || []).includes(n)) stale.push(rel + " " + n); }));
+t("ready-made names: every held name still fails (remove fixed ones from HELD)", stale, []);
+
 // --- the reporter needs a page opt-in AND the board module ---
 mounts.plain = makeEl("div");
 G.initChecker({ mount: "plain", games: ["ff"], text: {} });

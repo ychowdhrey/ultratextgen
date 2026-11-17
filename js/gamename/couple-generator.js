@@ -105,7 +105,7 @@
     }
 
     // ---- One result card ------------------------------------------------
-    function buildCard(label, composed) {
+    function buildCard(label, composed, typed) {
       const card = el("div", "couple-card");
 
       card.appendChild(el("div", "uname-note", label));
@@ -121,8 +121,10 @@
       chip.textContent = composed;
       card.appendChild(chip);
 
-      // Fit badge (Free Fire etc.) — reuse the shared rule engine.
-      if (ns.gameRules && ns.gameRules.analyze) {
+      // Fit badge (Free Fire etc.) — reuse the shared rule engine. Not for an
+      // empty name: the frame alone (꧁꧂) is not a name anyone would rename to,
+      // and it scored "safe".
+      if (ns.gameRules && ns.gameRules.analyze && String(typed || "").trim()) {
         const report = ns.gameRules.analyze(composed, gameId);
         const meta = el("div", "gr-meta");
         const badge = el("span", "gr-badge gr-badge-" + report.level);
@@ -152,8 +154,8 @@
     function render() {
       const pair = currentPair();
       output.innerHTML = "";
-      output.appendChild(buildCard(text.labelA || "You", pair.a));
-      output.appendChild(buildCard(text.labelB || "Partner", pair.b));
+      output.appendChild(buildCard(text.labelA || "You", pair.a, inputA.value));
+      output.appendChild(buildCard(text.labelB || "Partner", pair.b, inputB.value));
     }
 
     // ---- Wiring ---------------------------------------------------------
