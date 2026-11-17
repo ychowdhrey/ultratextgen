@@ -304,6 +304,19 @@ restore and the inbound-link behaviour; it fails 8 checks on the pre-change tree
 these 31 pages no longer carries typed text; a `?q=`/`?text=` landing there comes
 from a shared link or an old bookmark/history entry.
 
+**Measured effect on GA4 page views (added 2026-11-15).** The two changes above
+also changed how many page views GA4 records. GA4 had been counting the
+address-bar rewrites as page views (history-change page views), one per typing
+pause. In the GA4 property export (all countries except one Singapore crawler
+stream), `page_view` events per session were 2.15 to 2.60 on every day of
+2026-11-01..07, 1.75 on 2026-11-08 (the deploy day) and 1.22 to 1.56 on every
+day of 2026-11-09..13. Over the same days `ad_impression` per session stayed at
+2.41 to 2.88, `copy_text` and `scroll` per session did not move, and AdSense's
+own impression count ran on without a break (5,125 to 5,751 a day,
+2026-11-05..12). So page views before 2026-11-08 include the rewrite views, and
+ad revenue was not affected. Compare page views, pages per session and any
+revenue-per-page-view figure only within one side of 2026-11-08.
+
 **Kaomoji generator, same change (2026-11-08).** `kaomojiPageController` wrote
 the current face to `?q=` on Copy, Copy link, a recent-face tap and Clear, and the
 face can be text the visitor typed into the face field. The address bar now never
