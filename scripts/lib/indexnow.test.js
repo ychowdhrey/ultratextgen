@@ -15,6 +15,7 @@ const assert = require('assert');
 const {
   sanitizeUrls, chunk, buildPayload, planSubmission, submit, statusNote,
   discoverKey, MASS_BUMP_CEILING, MAX_URLS_PER_REQUEST,
+  backlogSince, planRun, BACKLOG_PER_RUN,
 } = require('./indexnow');
 
 let pass = 0, fail = 0;
@@ -133,10 +134,111 @@ t('trailing whitespace in the key file is tolerated', () => {
   assert.strictEqual(discoverKey('/r', fsStub({ [`${KEY}.txt`]: `${KEY}\n` })).key, KEY);
 });
 t('two candidate key files is an error, never an arbitrary pick', () => {
-  const r = discoverKey('/r', fsStub({ [`${KEY}.txt`]: KEY, 'abcdef1234567890.txt': 'abcdef1234567890' }));
+  const other = '0123456789abcdef0123456789abcdef';
+  const r = discoverKey('/r', fsStub({ [`${KEY}.txt`]: KEY, [`${other}.txt`]: other }));
   assert.strictEqual(r.key, null);
   assert.ok(/exactly one/.test(r.reason));
 });
+// The site root as it stood from 2026-11-11: the key, Seznam's verification
+// token (added 2026-10-04, which stopped every run from 2026-10-05) and Petal
+// Search's, which contains its own stem exactly like a key does.
+const ROOT_2026_11 = {
+  [`${KEY}.txt`]: KEY,
+  'seznam-wmt-OYYRrpCRT8ceh7oE7zNlN8u55zXFZyEW.txt': 'OYYRrpCRT8ceh7oE7zNlN8u55zXFZyEW',
+  'ff044916b7.txt': 'ff044916b7',
+  'robots.txt': 'User-agent: *',
+  'ads.txt': 'google.com, pub-0, DIRECT',
+  'llms.txt': '# UltraTextGen',
+};
+t('the real root: verification tokens beside the key do not stop discovery', () => {
+  const r = discoverKey('/r', fsStub(ROOT_2026_11));
+  assert.strictEqual(r.key, KEY, r.reason);
+  assert.strictEqual(r.file, `${KEY}.txt`);
+});
+t('a self-named token that is not 32-hex (Petal) is never taken for the key', () => {
+  const r = discoverKey('/r', fsStub({ 'ff044916b7.txt': 'ff044916b7' }));
+  assert.strictEqual(r.key, null);
+});
+t('an uppercase or short hex stem is not the Bing-generated key form', () => {
+  assert.strictEqual(discoverKey('/r', fsStub({ [`${KEY.toUpperCase()}.txt`]: KEY.toUpperCase() })).key, null);
+  assert.strictEqual(discoverKey('/r', fsStub({ [`${KEY.slice(1)}.txt`]: KEY.slice(1) })).key, null);
+});
+
+// ─── backlogSince: what to catch up on after announcements stopped ──────────
+
+{
+  const announced = {
+    '/a/': { hash: 'h1', lastmod: '2026-10-01' },
+    '/b/': { hash: 'h1', lastmod: '2026-10-01' },
+    '/c/': { hash: 'h1', lastmod: '2026-10-01' },
+    '/gone/': { hash: 'h1', lastmod: '2026-10-01' },
+  };
+  const current = {
+    '/a/': { hash: 'h2', lastmod: '2026-10-20' },   // changed
+    '/b/': { hash: 'h1', lastmod: '2026-10-01' },   // unchanged
+    '/c/': { hash: 'h9', lastmod: '2026-10-01' },   // re-baselined hash, no reader-visible change
+    '/new/': { hash: 'h1', lastmod: '2026-10-07' }, // added after the last announcement
+  };
+  const live = ['/a/', '/b/', '/c/', '/new/'];
+  t('backlog = lastmod advanced or page new, oldest change first', () => {
+    assert.deepStrictEqual(backlogSince(announced, current, live, BASE), [`${BASE}/new/`, `${BASE}/a/`]);
+  });
+  t('a hash that moved without its lastmod (a re-baseline) is not a change', () => {
+    assert.ok(!backlogSince(announced, current, live, BASE).includes(`${BASE}/c/`));
+  });
+  t('a page no longer live is not announced', () => {
+    assert.ok(!backlogSince(announced, { ...current, '/gone/': { hash: 'x', lastmod: '2026-11-01' } }, live, BASE).includes(`${BASE}/gone/`));
+  });
+}
+
+// ─── planRun: today's changes plus a bounded slice of the queue ─────────────
+
+{
+  const live = urls(4887).concat(urls(10, 'today'));
+  const base = { liveUrls: live, totalUrls: live.length, baseUrl: BASE, key: KEY, enabled: true };
+  t('a 4,368-page backlog drains BACKLOG_PER_RUN at a time, today first', () => {
+    const p = planRun({ ...base, bumpedUrls: urls(10, 'today'), pending: urls(4368) });
+    assert.strictEqual(p.action, 'submit');
+    assert.strictEqual(p.urls.length, 10 + BACKLOG_PER_RUN);
+    assert.deepStrictEqual(p.urls.slice(0, 10), urls(10, 'today'));
+    assert.strictEqual(p.carry.length, 4368 - BACKLOG_PER_RUN);
+    assert.strictEqual(p.carry[0], urls(4368)[BACKLOG_PER_RUN]);
+  });
+  t('no single run exceeds the mass-bump ceiling while draining', () => {
+    const p = planRun({ ...base, bumpedUrls: [], pending: urls(4368) });
+    assert.ok(p.urls.length / live.length <= MASS_BUMP_CEILING, String(p.urls.length));
+  });
+  t('the whole 4,368-page backlog is gone in five runs', () => {
+    let q = urls(4368); let runs = 0;
+    while (q.length) { q = planRun({ ...base, bumpedUrls: [], pending: q }).carry; runs++; }
+    assert.strictEqual(runs, 5);
+  });
+  t('a page both changed today and queued is sent once', () => {
+    const p = planRun({ ...base, bumpedUrls: [`${BASE}/p1/`], pending: [`${BASE}/p1/`, `${BASE}/p2/`] });
+    assert.deepStrictEqual(p.urls, [`${BASE}/p1/`, `${BASE}/p2/`]);
+  });
+  t('a queued page that has since been deleted is dropped', () => {
+    const p = planRun({ ...base, bumpedUrls: [], pending: [`${BASE}/deleted/`, `${BASE}/p1/`] });
+    assert.deepStrictEqual(p.urls, [`${BASE}/p1/`]);
+  });
+  t('a mass bump today is still refused and not queued, but the backlog still drains', () => {
+    const p = planRun({ ...base, bumpedUrls: urls(3000), pending: urls(5, 'today') });
+    assert.strictEqual(p.action, 'submit');
+    assert.deepStrictEqual(p.urls, urls(5, 'today'));
+    assert.ok(p.refusedToday && /ceiling/.test(p.refusedToday));
+    assert.deepStrictEqual(p.carry, []);
+  });
+  t('nothing changed and nothing queued is a skip with an empty carry', () => {
+    const p = planRun({ ...base, bumpedUrls: [], pending: [] });
+    assert.strictEqual(p.action, 'skip');
+    assert.deepStrictEqual(p.carry, []);
+  });
+  t('not enabled leaves the queue untouched', () => {
+    const p = planRun({ ...base, enabled: false, bumpedUrls: urls(3), pending: urls(7) });
+    assert.strictEqual(p.action, 'skip');
+    assert.strictEqual(p.carry.length, 7);
+  });
+}
 
 // ─── payload + batching ──────────────────────────────────────────────────────
 

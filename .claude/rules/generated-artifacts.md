@@ -5,7 +5,7 @@ paths:
   - "{library,symbol}/index.html"
   - "*/{library,symbol}/index.html"
   - "docs/README.md"
-  - "data/{sitemap-lastmod-cache,generated_page_art,og_style_registry,locale_glossary,editorial_footprint_baseline}.json"
+  - "data/{sitemap-lastmod-cache,indexnow-pending,generated_page_art,og_style_registry,locale_glossary,editorial_footprint_baseline}.json"
   - "assets/{og,hero,specimen,printables-previews}/**"
   - "js/printables/cursiveRouteData.js"
   - "js/search/index/**"
@@ -19,6 +19,7 @@ is a second source of truth. When you find one of these, find its generator.
 | Artifact | Generator | Gate |
 |---|---|---|
 | `sitemap.xml` | `npm run prebuild` (`scripts/update-sitemap.js`) — daily workflow, auto-commits with `[skip ci]` | `test:sitemap-images`, `test:content-significance` |
+| `data/indexnow-pending.json` (pages changed but not yet announced to IndexNow) | the daily sitemap workflow (`update-sitemap.js --submit-indexnow`); written only when it announces, never by a local `prebuild` | `test:indexnow`; the workflow's last step fails when a run could not announce |
 | `data/unicode_assigned_ranges.json` | `python3 scripts/build-unicode-assigned.py` (from `DerivedAge`; re-run when a new Unicode version publishes) | `check:symbol-pages` (reads it; exits 2 when missing) |
 | `llms.txt` (whole tree, 85 files) | `npm run build:llms -- --write` | `check:llms` (whole-tree) |
 | `js/search/index/<locale>.json` (header search) | `npm run build:search-index -- --write`, from the same page reading as `llms.txt`; the daily sitemap workflow also regenerates it | `check:search-index`, `test:site-search` |

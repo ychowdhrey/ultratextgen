@@ -40,6 +40,27 @@ const MAX_URLS_PER_REQUEST = 10000; // protocol limit
 const KEY_RE = /^[A-Za-z0-9-]{8,128}$/;
 
 /**
+ * Which root .txt file IS the key. The protocol allows any 8-128 character
+ * key, but this site's key is the 32-character lowercase hex form that Bing
+ * Webmaster Tools generates, and other engines' verification tokens share the
+ * root with it. KEY_RE alone matched those too: the Seznam token
+ * (`seznam-wmt-….txt`, added 2026-10-04) made discovery refuse every run from
+ * 2026-10-05 to 2026-11-15, and Petal Search's `ff044916b7.txt` (2026-11-11)
+ * even contains its own stem, exactly like a key. Rotating the key stays one
+ * file rename, as long as the new key is generated in the same form.
+ */
+const KEY_FILE_RE = /^[0-9a-f]{32}$/;
+
+/**
+ * How much of the catch-up backlog one run may announce. A skipped or failed
+ * run queues its pages instead of dropping them, and the queue drains in
+ * slices of this size so that a long outage never comes back as one run that
+ * looks like a mass bump: 1,000 is the largest genuine content day on record
+ * (1,003 on 2026-09-10) and about 20% of the site, half the ceiling below.
+ */
+const BACKLOG_PER_RUN = 1000;
+
+/**
  * Refuse to announce a mass bump.
  *
  * Derived from this site's own runs, not picked: the largest GENUINE content
@@ -107,7 +128,7 @@ function buildPayload({ host, key, keyLocation, urlList }) {
  */
 function discoverKey(rootDir, fs) {
   const candidates = fs.readdirSync(rootDir)
-    .filter((f) => f.endsWith('.txt') && KEY_RE.test(f.slice(0, -4)));
+    .filter((f) => f.endsWith('.txt') && KEY_FILE_RE.test(f.slice(0, -4)));
   if (candidates.length === 0) return { key: null, reason: 'no IndexNow key file at the repo root' };
   if (candidates.length > 1) {
     return { key: null, reason: `several candidate key files at the repo root (${candidates.join(', ')}) — exactly one must exist` };
@@ -144,6 +165,60 @@ function planSubmission({ bumpedUrls, totalUrls, baseUrl, key, enabled, force = 
     };
   }
   return { action: 'submit', reason: `${urls.length} changed page(s)`, urls };
+}
+
+/**
+ * The pages to catch up on after announcements stopped: every live URL whose
+ * <lastmod> advanced since the cache that was last announced, plus every live
+ * URL that cache did not have. Oldest change first, so a backlog drains in the
+ * order it built up. Both caches are update-sitemap.js's own
+ * `{ url: { hash, lastmod } }` map; <lastmod> is compared rather than the hash
+ * because a re-baseline rewrites hashes without any page changing.
+ */
+function backlogSince(announcedCache, currentCache, liveUrls, baseUrl) {
+  const out = [];
+  for (const url of liveUrls) {
+    const now = currentCache[url];
+    if (!now) continue;
+    const then = announcedCache[url];
+    if (!then || now.lastmod > then.lastmod) out.push({ url, lastmod: now.lastmod });
+  }
+  out.sort((a, b) => (a.lastmod < b.lastmod ? -1 : a.lastmod > b.lastmod ? 1 : a.url.localeCompare(b.url)));
+  return out.map((e) => `${baseUrl}${e.url}`);
+}
+
+/**
+ * One run's plan, with a queue. Today's changed pages are judged exactly as
+ * planSubmission() always judged them (a mass bump is still refused and never
+ * queued). On top of them the run takes up to BACKLOG_PER_RUN URLs from the
+ * pending queue, oldest first. `carry` is what stays queued if the
+ * announcement then succeeds; the caller carries everything when it does not.
+ * Only URLs still in the sitemap are kept: a page deleted while queued is not
+ * announced.
+ */
+function planRun({ bumpedUrls, pending = [], liveUrls, totalUrls, baseUrl, key, enabled, force = false, backlogPerRun = BACKLOG_PER_RUN }) {
+  const today = planSubmission({ bumpedUrls, totalUrls, baseUrl, key, enabled, force });
+  if (today.action === 'skip' && !/no pages changed/.test(today.reason)) {
+    return { ...today, carry: pending, backlog: 0 };
+  }
+  if (today.action === 'error') return { ...today, carry: pending, backlog: 0 };
+
+  const live = liveUrls ? new Set(liveUrls) : null;
+  const fresh = today.action === 'submit' ? today.urls : [];
+  const freshSet = new Set(fresh);
+  const queue = sanitizeUrls(pending, baseUrl).filter((u) => !freshSet.has(u) && (!live || live.has(u)));
+  const slice = queue.slice(0, backlogPerRun);
+  const carry = queue.slice(backlogPerRun);
+  const urls = [...fresh, ...slice];
+
+  const parts = [];
+  if (fresh.length) parts.push(`${fresh.length} changed page(s)`);
+  if (today.action === 'refuse') parts.push(`today's set refused: ${today.reason}`);
+  if (slice.length) parts.push(`${slice.length} queued page(s) from the backlog, ${carry.length} left after this run`);
+  if (!urls.length) {
+    return { action: today.action === 'refuse' ? 'refuse' : 'skip', reason: parts.join('; ') || 'no pages changed', urls: [], carry, backlog: 0 };
+  }
+  return { action: 'submit', reason: parts.join('; '), urls, carry, backlog: slice.length, refusedToday: today.action === 'refuse' ? today.reason : null };
 }
 
 /**
@@ -188,7 +263,11 @@ module.exports = {
   MAX_URLS_PER_REQUEST,
   MASS_BUMP_CEILING,
   KEY_RE,
+  KEY_FILE_RE,
+  BACKLOG_PER_RUN,
   discoverKey,
+  backlogSince,
+  planRun,
   sanitizeUrls,
   chunk,
   buildPayload,
