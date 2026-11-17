@@ -251,6 +251,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:spec-sentence-reuse`
 - `test:spelling`
 - `test:stencil`
+- `test:stranded-work`
 - `test:symbol-pages`
 - `test:text-object-grids`
 - `test:tile-unicode`
