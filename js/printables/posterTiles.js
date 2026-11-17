@@ -684,6 +684,7 @@
   function busy(btn, on) { if (btn) { if (on) btn.setAttribute("aria-busy", "true"); else btn.removeAttribute("aria-busy"); } }
 
   function makePdf() {
+    if (sampleRefused()) return Promise.resolve();
     const btn = $("bb-pdf");
     busy(btn, true);
     return Promise.all([loadPdf(), fontsReady(), loadStencil()]).then((res) => {
@@ -748,6 +749,7 @@
 
   /* The assembled letters as one image, for a print shop or a slide. */
   function makePng() {
+    if (sampleRefused()) return Promise.resolve();
     const btn = $("bb-png");
     busy(btn, true);
     return Promise.all([fontsReady(), loadStencil()]).then(() => {
@@ -874,6 +876,11 @@
     if (h) { h.min = lim[0]; h.max = lim[1]; }
   }
 
+  /* The page's own sample letters, greyed and badged until the visitor types
+     (printPrefs.sampleGuard). Set in init, after any preset is applied. */
+  let sample = null;
+  const sampleRefused = () => !!(sample && sample.refuse());
+
   function init() {
     if (!$("bb-preview")) return;
     if (PP && PP.mountPrintNote) {
@@ -929,6 +936,8 @@
     if (pdf) pdf.addEventListener("click", makePdf);
     const png = $("bb-png");
     if (png) png.addEventListener("click", makePng);
+
+    if (PP && PP.sampleGuard) sample = PP.sampleGuard({ host: $("bb-preview"), fields: [input] });
 
     let t = 0;
     window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(refresh, 150); });

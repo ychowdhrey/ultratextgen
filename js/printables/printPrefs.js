@@ -27,6 +27,7 @@
  *                   the sheet's title + name-and-date line, for all three engines
  *   calibrationBar(unit) the actual-size check bar's geometry, for every engine
  *   mountNameCarry(o) / nameKitLinks(lang, path) / carriedName()
+ *   sampleGuard(o)  greys and badges an untouched page sample; refuse() gates exports
  *                   the "same word, another sheet" row and its per-locale list
  *
  * Load it BEFORE any engine that uses it. It has no dependencies.
@@ -290,6 +291,96 @@
   function shareLabels() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
     return Object.assign({}, SHARE_I18N.en, SHARE_I18N[lang] || {});
+  }
+
+  /* An untouched page sample (owner ruling 2026-11-10, OPP r28pc). Three
+     tools open with letters already in their boxes so the preview is not
+     blank: monogram-maker's J S L, bulletin-board-letters' A, cross-stitch-
+     letters' HOME. Nothing told the visitor those were the page's, so a sheet
+     downloaded untouched printed somebody else's initials as if they were
+     real output. labelEngine.js already solved this for name labels (the
+     example lives in the preview, greyed and badged); this is the same rule
+     for tools that keep their sample in the field.
+
+     sampleGuard(o) decides once, after the engine has applied any preset,
+     carried name or restored state: the sample is on when every field still
+     holds the value the page's HTML gave it. Typing or pasting in any field
+     turns it off for good. While it is on, the preview host is greyed and an
+     "Example" badge sits above it; refuse() is the export gate, and it moves
+     the visitor to the field instead of writing the file. It never touches
+     typed text, never fires an analytics event, and a page whose fields
+     start empty or carry a preset is never marked.
+
+     o = { host, fields: [input…], cue: "short call to type", onChange } */
+  const EXAMPLE_I18N = {
+    en: { example: "Example", edit: "Type your own" },
+    de: { example: "Beispiel", edit: "Eigenen Text eingeben" },
+    fr: { example: "Exemple", edit: "Tape ton texte" },
+    es: { example: "Ejemplo", edit: "Escribe tu texto" },
+    it: { example: "Esempio", edit: "Scrivi il tuo testo" },
+    pt: { example: "Exemplo", edit: "Digite o seu texto" },
+    pl: { example: "Przykład", edit: "Wpisz swój tekst" },
+    nl: { example: "Voorbeeld", edit: "Typ je eigen tekst" },
+    id: { example: "Contoh", edit: "Ketik teks kamu" },
+    tr: { example: "Örnek", edit: "Kendi metnini yaz" }
+  };
+  function exampleLabels() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    return Object.assign({}, EXAMPLE_I18N.en, EXAMPLE_I18N[lang] || {});
+  }
+  function sampleGuard(o) {
+    const fields = (o && o.fields || []).filter(Boolean);
+    const host = o && o.host;
+    let on = !!host && fields.length > 0 &&
+      fields.some((f) => f.value) && fields.every((f) => f.value === f.defaultValue);
+    let badge = null;
+    const L = exampleLabels();
+    const focusFirst = () => {
+      const f = fields[0];
+      if (!f) return;
+      f.focus();
+      if (f.select) f.select();
+    };
+    if (on) {
+      badge = document.createElement("button");
+      badge.type = "button";
+      badge.className = "pt-sample-badge";
+      const strong = document.createElement("strong");
+      strong.textContent = L.example;
+      const span = document.createElement("span");
+      span.textContent = "\u270e " + (o.cue || L.edit);
+      badge.appendChild(strong);
+      badge.appendChild(span);
+      badge.addEventListener("click", focusFirst);
+      host.insertAdjacentElement("beforebegin", badge);
+      host.classList.add("pt-is-sample");
+    }
+    const off = () => {
+      if (!on) return;
+      on = false;
+      host.classList.remove("pt-is-sample");
+      if (badge) badge.remove();
+      if (o.onChange) o.onChange(false);
+    };
+    fields.forEach((f) => {
+      f.addEventListener("input", off);
+      f.addEventListener("paste", off);
+    });
+    return {
+      isOn: () => on,
+      /* The export gate: true means "do not write the file", and the visitor
+         is taken to the field. The badge pulses so the reason is on screen. */
+      refuse: () => {
+        if (!on) return false;
+        focusFirst();
+        if (badge) {
+          badge.classList.remove("is-nudge");
+          void badge.offsetWidth;
+          badge.classList.add("is-nudge");
+        }
+        return true;
+      }
+    };
   }
 
   function panelLabels() {
@@ -1101,6 +1192,8 @@
     SCALES: SCALES,
     defaultPaper: defaultPaper,
     shareLabels: shareLabels,
+    exampleLabels: exampleLabels,
+    sampleGuard: sampleGuard,
     sheetPreviewUrl: sheetPreviewUrl,
     stateSummary: stateSummary,
     readRecent: readRecent,

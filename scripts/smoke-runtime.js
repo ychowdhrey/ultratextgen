@@ -1455,6 +1455,51 @@ async function main() {
     await ctx.close();
   }
 
+  // 28b. A page's own sample letters (monogram J S L, cross-stitch HOME,
+  // bulletin board A) are badged "Example" and greyed until the visitor types,
+  // and Download writes no file while they are untouched: it moves focus to
+  // the field instead. A preset link is the visitor's own and is never badged
+  // (printPrefs.sampleGuard; owner ruling 2026-11-10, OPP r28pc).
+  for (const [url, field, pdfBtn, typed] of [
+    ['/printables/monogram-maker/', '#mono-left', '#mono-print', 'Q'],
+    ['/printables/cross-stitch-letters/', '#cs-input', '#cs-print', 'NOAH'],
+    ['/printables/bulletin-board-letters/', '#bb-text', '#bb-pdf', 'B']
+  ]) {
+    console.log(`\n${url} (untouched sample is an example, not output)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.waitForTimeout(500);
+      const badged = await page.evaluate(() => !!document.querySelector('.pt-sample-badge') && !!document.querySelector('.pt-is-sample'));
+      check(`${url} untouched sample is badged and greyed`, badged);
+      let early = 0;
+      const count = () => { early++; };
+      page.on('download', count);
+      await page.click(pdfBtn);
+      await page.click(pdfBtn);
+      await page.waitForTimeout(1500);
+      page.off('download', count);
+      const focus = await page.evaluate(() => document.activeElement && '#' + document.activeElement.id);
+      check(`${url} Download writes nothing while the sample is untouched, and goes to the field`, early === 0 && focus === field, `downloads ${early}, focus ${focus}`);
+      await page.fill(field, typed);
+      await page.waitForTimeout(400);
+      const cleared = await page.evaluate(() => !document.querySelector('.pt-sample-badge') && !document.querySelector('.pt-is-sample'));
+      check(`${url} typing clears the badge`, cleared);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click(pdfBtn)]);
+      check(`${url} Download writes the typed sheet`, /\.pdf$/.test(d.suggestedFilename()), d.suggestedFilename());
+    } catch (e) {
+      check(`${url} sample guard: every step ran`, false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page } = await open('/printables/monogram-maker/?l=A&c=B&r=C', 'desktop');
+    await page.waitForTimeout(500);
+    check('a preset monogram link is not badged as an example', !(await page.$('.pt-sample-badge')));
+    await ctx.close();
+  }
+
   // 29. A monogram with accented initials downloaded as "download", with no
   // extension: the browser drops a non-ASCII filename. The initials fold to
   // ASCII, so the file keeps its name and its type.

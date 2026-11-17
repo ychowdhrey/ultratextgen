@@ -385,6 +385,7 @@
   }
 
   function downloadPNG() {
+    if (sampleRefused()) return;
     withCanvas(function (canvas, base) {
       canvas.toBlob(function (blob) {
         if (!blob) return;
@@ -402,6 +403,7 @@
   }
 
   function shareImage() {
+    if (sampleRefused()) return;
     withCanvas(function (canvas, base) {
       canvas.toBlob(function (blob) {
         if (!blob) return;
@@ -431,6 +433,7 @@
   }
 
   function savePdf() {
+    if (sampleRefused()) return;
     withCanvas(function (canvas, base) {
       loadPdfModule().then(function (P) {
         if (!P || !P.supported()) { printMonogram(); return; }
@@ -753,6 +756,11 @@
     actionRow.insertAdjacentElement("afterend", emptyNote);
   }
 
+  /* The page's own sample letters, greyed and badged until the visitor types
+     (printPrefs.sampleGuard). Set in init, after any preset is applied. */
+  let sample = null;
+  const sampleRefused = () => !!(sample && sample.refuse());
+
   /* ---------- init ---------- */
 
   function init() {
@@ -847,6 +855,7 @@
 
     mountEmptyNote(actionRow);
     applyPreset();
+    if (PP && PP.sampleGuard) sample = PP.sampleGuard({ host: byId("mono-preview"), fields: boxes(), cue: T.typeInitials });
     render();
     syncActions();
     // Re-render once Playfair loads so measured positions are exact.
