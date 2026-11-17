@@ -32,6 +32,8 @@ const isAbsolute = (p) => /^[a-zA-Z][\w+.-]*:\/\//.test(p) || p.startsWith("//")
  * source ("Infinite loop detected in this rule and has been ignored"). Narrow on
  * purpose: it flags `/  /index.html  200`, which the parser really does reject,
  * and leaves `/404  /404.html  200`, which it really does accept. Both observed.
+ * Accepted is not the same as working: that second rule loops at RUNTIME, which
+ * is what htmlRewriteLoops() below catches.
  */
 const isSelfLoop = (from, to) =>
   to === `${from.replace(/\/$/, "")}/index.html` || to === `${from}index.html`;
@@ -165,4 +167,27 @@ function missingSlashTwins(rules, servesPage) {
   return out;
 }
 
-module.exports = { parseRedirects, missingSlashTwins, PERMITTED_STATUS_CODES, MAX_STATIC_REDIRECT_RULES, MAX_DYNAMIC_REDIRECT_RULES };
+/**
+ * 200 rewrites that Cloudflare's parser accepts and the runtime turns into an
+ * endless redirect. Pages 308s every request for `x.html` to `/x` (and
+ * `x/index.html` to `/x/`), and a 200 rewrite is a fresh request for its target,
+ * so a rewrite whose target normalises back to its own source answers
+ * `308 -> source` for ever.
+ *
+ * Found 2026-11-15: `/404  /404.html  200` had stood since 2026-05-03, and
+ * production answered both /404 and /404.html with `308 -> /404` (reproduced
+ * under `npx wrangler pages dev .`, where the rule parses as valid). A crawler
+ * that reached /404, which every 404 response names in its og:url, recorded a
+ * redirect loop. isSelfLoop() above cannot see this: it models the parser.
+ *
+ * @param {Array} rules - parseRedirects(text).rules
+ * @returns {Array<{lineNo, from, to}>}
+ */
+function htmlRewriteLoops(rules) {
+  const normalise = (to) => to.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
+  return rules
+    .filter((r) => r.status === 200 && !r.ownDynamic && /\.html$/.test(r.to) && normalise(r.to) === r.from)
+    .map(({ lineNo, from, to }) => ({ lineNo, from, to }));
+}
+
+module.exports = { parseRedirects, missingSlashTwins, htmlRewriteLoops, PERMITTED_STATUS_CODES, MAX_STATIC_REDIRECT_RULES, MAX_DYNAMIC_REDIRECT_RULES };

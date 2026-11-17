@@ -239,6 +239,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:print-paper`
 - `test:printables-i18n-parity`
 - `test:qr`
+- `test:redirects-parse`
 - `test:render-invariants`
 - `test:renderer-unicode`
 - `test:romanize`

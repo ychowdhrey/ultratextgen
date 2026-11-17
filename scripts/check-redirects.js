@@ -25,7 +25,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { parseRedirects, missingSlashTwins, MAX_STATIC_REDIRECT_RULES, MAX_DYNAMIC_REDIRECT_RULES } = require("./lib/redirects-parse.js");
+const { parseRedirects, missingSlashTwins, htmlRewriteLoops, MAX_STATIC_REDIRECT_RULES, MAX_DYNAMIC_REDIRECT_RULES } = require("./lib/redirects-parse.js");
 
 const argv = process.argv.slice(2);
 const fileArg = argv.indexOf("--file");
@@ -94,6 +94,17 @@ if (twins.length) {
     `exactly and adds its own slash 308 only while the directory exists, so the other spelling of a ` +
     `retired URL serves 404:\n${sample}` + (twins.length > 12 ? `\n        ... and ${twins.length - 12} more` : "") +
     `\n      Fix: add the twin line beside its original, same target and status.`
+  );
+}
+
+// A 200 rewrite to an .html file that Pages 308s straight back to the source
+// (added 2026-11-15; see htmlRewriteLoops). The parser accepts it, so only this
+// check stands between it and a redirect loop in production.
+for (const loop of htmlRewriteLoops(r.rules)) {
+  errors.push(
+    `${file}:${loop.lineNo}  redirect loop at runtime: Pages 308s ${loop.to} back to ${loop.from}, ` +
+    `so this 200 rewrite answers \`308 -> ${loop.from}\` for ever\n      ${loop.from}  ${loop.to}  200\n` +
+    `      Fix: delete the rule. Pages already serves ${loop.to} at ${loop.from}.`
   );
 }
 
