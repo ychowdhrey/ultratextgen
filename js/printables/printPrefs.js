@@ -293,7 +293,7 @@
     return Object.assign({}, SHARE_I18N.en, SHARE_I18N[lang] || {});
   }
 
-  /* An untouched page sample (owner ruling 2026-11-10, OPP r28pc). Three
+  /* An untouched page sample (owner decision 2026-11-10). Three
      tools open with letters already in their boxes so the preview is not
      blank: monogram-maker's J S L, bulletin-board-letters' A, cross-stitch-
      letters' HOME. Nothing told the visitor those were the page's, so a sheet

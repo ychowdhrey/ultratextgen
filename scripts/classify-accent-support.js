@@ -131,7 +131,7 @@ function differingCores(a, b) {
 // every letter-swap style alike. Pairing them here made one deliberate
 // pass-through mark every letter-swap style "partial" (2026-11-17: 35 full
 // instead of 80), which is not what "partial" means to the page that reads
-// these buckets (OPP-20261106-6ukjc).
+// these buckets (owner decision 2026-11-10).
 function accentConsistency(R) {
   const PAIRS = [['e', 'é'], ['e', 'ê'], ['e', 'ệ'], ['o', 'ô'], ['a', 'ă'],
                  ['u', 'ư'], ['u', 'ữ'], ['n', 'ñ'], ['c', 'ç'],

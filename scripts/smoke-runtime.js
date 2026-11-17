@@ -1459,7 +1459,7 @@ async function main() {
   // bulletin board A) are badged "Example" and greyed until the visitor types,
   // and Download writes no file while they are untouched: it moves focus to
   // the field instead. A preset link is the visitor's own and is never badged
-  // (printPrefs.sampleGuard; owner ruling 2026-11-10, OPP r28pc).
+  // (printPrefs.sampleGuard; owner decision 2026-11-10).
   for (const [url, field, pdfBtn, typed] of [
     ['/printables/monogram-maker/', '#mono-left', '#mono-print', 'Q'],
     ['/printables/cross-stitch-letters/', '#cs-input', '#cs-print', 'NOAH'],
@@ -1503,7 +1503,7 @@ async function main() {
   // 28c. The platform preview opens on a frame the page has a reason for: a
   // platform hub on its own mockup, a page with no destination on the generic
   // frame (labelled in the page's language), and the homepages on Instagram as
-  // before, pending the owner's call (OPP-20261106-ecry7).
+  // before, pending an open owner decision.
   console.log('\nplatform preview: which frame a page opens on');
   for (const [url, want, note] of [
     ['/', 'pv-instagram', null], ['/instagram/', 'pv-instagram', null], ['/discord/', 'pv-discord', null],

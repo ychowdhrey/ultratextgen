@@ -2072,7 +2072,7 @@ const decorations = window.UTG_DECORATIONS
     }
     /* No verified destination. The homepage and each locale homepage keep the
        Instagram frame they have always opened on: which frame a homepage
-       should show is the owner's open call (OPP-20261106-ecry7, D-P13), so it
+       should show is still an open owner decision (2026-11-10), so it
        is left exactly as it was. Every other page used to fall through to
        Instagram as well, which showed a Facebook or category page's text in a
        fake Instagram profile. Those pages now open on a plainly generic frame
