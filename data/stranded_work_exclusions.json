@@ -1,6 +1,14 @@
 {
-  "_readme": "Branches deliberately left carrying commits that no open PR tracks. Same bar as every other ledger here: entries are discussed decisions, never added to make a check pass. A flagged branch usually ships through a PR opened from it as it stands, but none of the recovery task's outcomes is a default: check for a recorded decision on its commits and files first, because some branches are left or held on purpose. Ships empty.",
-  "_shape": { "origin/claude/example-branch": { "reason": "why this work is abandoned rather than untracked", "date": "YYYY-MM-DD" } },
+  "_readme": "Branches whose work no open PR tracks and which a person has decided about. Same bar as every other ledger here: entries are discussed decisions, never added to make a check pass. `disposition` says what was decided. TERMINAL (LANDED: main has it by content or by an equivalent change; SUPERSEDED: a newer implementation replaced it; ABANDONED: it will not ship) makes the branch EXCLUDED and closes its recovery task. OPEN (INTENTIONAL_HOLD, NEEDS_EVIDENCE, DEPENDENCY_BLOCKED) keeps the task open as HELD: the work is still not on main, it never alerts and it is never recovered automatically. An entry with no disposition reads as ABANDONED (every entry before 2026-11-17). `tip` pins the decision to the commit it was made on: once the branch moves past it, the decision no longer covers the new commits and the branch is stranded again. `npm run check:stranded-work-ledger` validates every entry. None of the recovery task's outcomes is a default: check for a recorded decision on the branch's commits and files first, because some branches are left or held on purpose.",
+  "_shape": {
+    "origin/claude/example-branch": {
+      "disposition": "SUPERSEDED",
+      "tip": "abc123456",
+      "reason": "why, with the main commit or path that shows it",
+      "date": "YYYY-MM-DD",
+      "issue": 1234
+    }
+  },
   "origin/claude/inspiring-babbage-eg3rec": {
     "reason": "Tile Unicode delta gate: its gate, workflow wiring and rules text are on main (check:tile-unicode, test:tile-unicode). The one line main lacks is the generated gate-inventory sentence in docs/README.md, which main regenerated with its own count. Reconciled 2026-11-11 by content check.",
     "date": "2026-11-11"
@@ -44,5 +52,348 @@
   "origin/claude/top-pending-lab-opportunities-o3h3oh": {
     "reason": "July hreflang repairs superseded by the locale-mesh gates; its comment fix is already enforced by check:external-refs on main. Owner decision 2026-10-08.",
     "date": "2026-10-08"
+  },
+  "origin/claude/bold-goodall-fc33am": {
+    "disposition": "INTENTIONAL_HOLD",
+    "tip": "0f39cdfa6",
+    "reason": "0f39cdfa6 (image-selection fallback chain, tray Clear all, selection_error) was pushed after PR #981 merged and is not on main. A replay conflicts in 34 files, so it needs a re-implementation decision against today's main, not a cherry-pick: #1218 (a PR from this branch) was closed unmerged, and a port in #1217 was reverted (aa08f9766b). Held until the owner decides whether and how to redo it.",
+    "date": "2026-11-17",
+    "issue": 1204
+  },
+  "origin/claude/cny-page-brainstorm-3toe0h": {
+    "disposition": "NEEDS_EVIDENCE",
+    "tip": "dd340881c",
+    "reason": "Of six Indonesian pages, the Imlek pair was rebuilt and shipped in 990d0b8641. The Idul Fitri and Idul Adha pairs (id/events/idul-fitri, id/events/idul-adha and their answers pages) were held then because they had no English parent; that requirement was retired on 2026-11-14, so what remains is a canonical-intent record (against events/eid-mubarak) and a demand check for Idul Adha. They must be rebuilt through the current event generator: this branch's generator diff is older than main's and would revert its lunar-date machinery.",
+    "date": "2026-11-17",
+    "issue": 1205
+  },
+  "origin/claude/elegant-lovelace-86t0rs": {
+    "disposition": "SUPERSEDED",
+    "tip": "6c9f64f5b",
+    "reason": "pt/imprimiveis/etiquetas-escolares was re-landed on main in d1945cefde (2026-10-25) on the name-labels journey #1107 shipped, with the same copy, presets and Pimaco sheet names. The residue is the 2026-10-07 markup that journey replaced, plus generated llms.txt and search-index lines.",
+    "date": "2026-11-17",
+    "issue": 1206
+  },
+  "origin/claude/lingojam-utg-features-q10wp8": {
+    "disposition": "SUPERSEDED",
+    "tip": "e59d4d14d",
+    "reason": "Its pages exist on main in other forms: category/subscript and category/superscript (b6b44f635f), glitch text as the zalgo page, PUBG and Fortnite as usecase/pubg-name-generator (054c2a4620) and usecase/fortnite-name-generator (e2873d01e2). The codes-and-ciphers category, Caesar cipher and one-way Morse are not on main; they are a separate product decision, not a replay, and this branch's category/ancient-fonts edit would revert newer FAQ and metadata copy.",
+    "date": "2026-11-17",
+    "issue": 1207
+  },
+  "origin/claude/pending-tasks-repo-lab-b6666g": {
+    "disposition": "DEPENDENCY_BLOCKED",
+    "tip": "5f643f76d",
+    "reason": "Most of it landed: no locale page still carries the English language-switcher label, shared-block strings or tile labels it translated (7921850588, afa0e000db, 621ca4b324). Left: 24 English related-card blurbs on {ar,ja,nl,th}/answers/what-font-does-{pinterest,whatsapp}-use and 3 fr/it bio-tab labels. A replay conflicts on 24 files and would revert later em-dash and date fixes, so they need a fresh edit, which waits on the revenue review those 8 live pages require and a native check of the fr/it labels.",
+    "date": "2026-11-17",
+    "issue": 1208
+  },
+  "origin/claude/pins-backlog-build-u78bcb": {
+    "disposition": "SUPERSEDED",
+    "tip": "b4d9cc9ad",
+    "reason": "The 13 part files split a 2026-07-24 data/pinterest_pins_upload.csv that main has since regenerated in the current schema (one source since 4d588271a3). Uploading these would use a stale schema, which .claude/rules/pinterest.md forbids; split the current file with scripts/split_pinterest_upload.py if batches are needed.",
+    "date": "2026-11-17",
+    "issue": 1209
+  },
+  "origin/claude/sv-competitive-analysis-eub4hl": {
+    "disposition": "INTENTIONAL_HOLD",
+    "tip": "57171677c",
+    "reason": "15 of its 16 Swedish pages are resolved: 10 rebuilt from its copy in d423c5fa0f, 4 built independently on main, and grekiska-alfabetet and kon-symboler dropped as duplicate claimants of grekiska-bokstaver and konssymboler. grader-tecken (EN parent symbol/degree-symbol) was held by 30df7cc001 because it would open an sv/symbol/ lane, which is the owner's decision.",
+    "date": "2026-11-17",
+    "issue": 1210
+  },
+  "origin/claude/ultratextgen-agent-deploy-w42t7f": {
+    "disposition": "LANDED",
+    "tip": "8e09098b4",
+    "reason": "Its fixes are on main: charset and viewport (1a03d9cab6), wrong html lang values (3480e89021), links to 301s (87fe86fc7a) and duplicate redirects (887cab2000). The residue is a zh-tw/zh-TW lang case change (language tags are case-insensitive) and a _redirects hunk that would now delete the only copies of three live 301s; do not replay.",
+    "date": "2026-11-17",
+    "issue": 1211
+  },
+  "origin/claude/ultratextgen-multilingual-expansion-x0r13j": {
+    "disposition": "DEPENDENCY_BLOCKED",
+    "tip": "6b50ad27e",
+    "reason": "The TikTok name-generator hreflang wiring landed in e42367f6b6. Left: tr and vi TikTok name-ideas pages, which data/core_parent_set.json cannot admit until the owner decides whether platform directories get an entry there; tr and vi Instagram name-ideas pages, which need a demand check and a rebuild (the HTML predates current page furniture); and a tr/gorunmez-karakter retitle that needs a query-by-page Search Console cut first.",
+    "date": "2026-11-17",
+    "issue": 1212
+  },
+  "origin/claude/amazing-noether-fng1d4": {
+    "disposition": "ABANDONED",
+    "tip": "894dfdb36",
+    "reason": "Branch-only work is a research backlog doc (docs/opportunity-register.md) plus a docs/jtbd-principles.md section pointing to it. Research/opportunity registers were deliberately moved out of the public repo (main ec46826c20, 9e7a6998ff), and the pointer would fail check:external-refs and hard line 9. Remaining commits are shared pre-rewrite history: Semrush uploads deleted on-branch, a research audit doc, and the pinterest-kit superseded by main 7651ffca1e.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/fervent-goodall-ys0C3": {
+    "disposition": "SUPERSEDED",
+    "tip": "3594cfcfb",
+    "reason": "The branch deletes library/copyright-trademark-symbols and folds 8 symbols into special-characters. Main kept that page (last edited 22827e977f, 2026-09-21), localized it into 4 locales, and it already carries all the folded symbols (Ⓒ Ⓡ ℅ ℀ ℁ ℆ ⁂). Porting would delete a live URL. The data/library_opportunities.csv hunk is research data removed from the public repo by ec46826c20.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/fix-dark-mode-persistence-oxmjY": {
+    "disposition": "SUPERSEDED",
+    "tip": "2b4937a44",
+    "reason": "header.js on main (lines 637-659) restores the darkMode localStorage preference before paint, guards blocked storage, persists on toggle and sets aria-pressed. The button is bound right after the header markup is injected, so the branch's DOMContentLoaded deferral (2b4937a44, 2026-03-07) is moot.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/fix-zalgo-formatting-EE3PZ": {
+    "disposition": "SUPERSEDED",
+    "tip": "4bc73da8b",
+    "reason": "usecase/zalgo-text/index.html on main already loads /style.css (line 89), and the page has had about 20 later fixes through acdb1b5156 (2026-11-08). The branch's Google Fonts imports (Plus Jakarta Sans, JetBrains Mono) are absent on main and would go against the self-hosted font rule.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/fix-zalgo-preview-font-rendering-j6t4r": {
+    "disposition": "SUPERSEDED",
+    "tip": "77e943cd2",
+    "reason": "On main, usecase/zalgo-text/zalgo-text.css sets the preview to system-ui with line-height 5 and padding 80px. zalgo-text.js splits the mark budget proportionally (up 0.55/0.60, mid capped at 2) and adds per-zone Above/Through/Below sliders. Both objectives of 77e943cd2 are met in rewritten code.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/gracious-mccarthy-hhs55s": {
+    "disposition": "SUPERSEDED",
+    "tip": "9d52c0e3e",
+    "reason": "On main, data/id_pinterest_pins_upload.csv (Title, Media URL, ... on media.ultratextgen.com) is generated by scripts/generate-id-pins.py through build_pinterest_upload.py. The upload CSV schema was single-sourced in 4d588271a3, and .claude/rules/pinterest.md forbids hand-authored upload CSVs. Remaining commits are shared pre-rewrite history.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/great-shannon-63p1nt": {
+    "disposition": "SUPERSEDED",
+    "tip": "3a7d87ebd",
+    "reason": "scripts/generate-collection-pins.py on main derives data/collection_pins_upload.csv through scripts/build_pinterest_upload.py, which is the schema source of truth (4d588271a3). The branch's separate data/pinterest_upload_collections.csv writer is redundant.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/hindi-localization-page-26wtrz": {
+    "disposition": "SUPERSEDED",
+    "tip": "15efbd93c",
+    "reason": "The Hindi locale launched on main in 8f7b7c8b05 (2026-07-10): hi/index.html (lang=hi), hi/guide, hi/usecase, 'hi' in i18n.js line 165, and hreflang=hi in index.html. pt/index.html has Abecedario A-Z and Simbolos sections (lines 519, 567) and pl/index.html has 28 abc-line rows. The branch's hand-built homepage and switcher hunks conflict with that newer architecture.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/improve-zalgo-effect-dVANI": {
+    "disposition": "SUPERSEDED",
+    "tip": "77bf76885",
+    "reason": "On main, the usecase/zalgo-text preview has min-height 140px, padding 80px and line-height 5. zalgo-text.js splits the budget proportionally, with per-zone sliders. The larger output area and up/down balance from 77bf76885 are delivered by rewritten code.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/move-strategic-content-private-v4860e": {
+    "disposition": "SUPERSEDED",
+    "tip": "06089fd3a",
+    "reason": "Every research doc and backlog script the branch removes is absent on main (removed again by 9e7a6998ff on 2026-07-24 and ec46826c20 on 2026-08-03). The 3-line CLAUDE.md rule is now enforced by CLAUDE.md hard line 9 and the check:external-refs gate. CLAUDE.md was rebuilt under a ~250-line budget, so the prose hunk has no anchor.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/printables-hub-improvements-vdlplq": {
+    "disposition": "SUPERSEDED",
+    "tip": "18aead1fb",
+    "reason": "js/printables/printablesEngine.js on main is a 14,718-line rewrite. @page is written at print time by applyPageStyle() (style.css about line 13007), break-inside: avoid is applied throughout, and one-page fixes landed as 85e25eea8d and 1fb2029228. The 18aead1fb trace-line and print-CSS hunks target code that no longer exists.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/relaxed-hawking-1hl7oo": {
+    "disposition": "LANDED",
+    "tip": "dd53c4b46",
+    "reason": "The same Spanish board migration is on main as 7651ffca1e (2026-06-18): scripts/generate-es-pins.py (R2 upload) and data/es_pinterest_pins{,_upload}.csv. The only residue is assets/pinterest/es/*.png. That folder is gitignored, and .claude/rules/pinterest.md keeps pin images in R2, never in git.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/session-start-fupyfx": {
+    "disposition": "LANDED",
+    "tip": "ec305c2b2",
+    "reason": "The kaomoji spokes (angry, blushing, bunny, flower, heart, sad, shrug, star, dongers, lenny-face, plus cat/crying/cute/happy/love/sparkle) are on main via 01d3f7c799 (2026-07-10) and 10e297afd4 (2026-06-30). They have since been edited (26eb15999e, 55694d23b8), are linked from library/text-faces-kaomoji, and have art in generate-site-art.py and assets/og. The residue is later rewording, plus pin PNGs that are gitignored by rule.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/ultratextgen-pending-opportunities-b7qgm1": {
+    "disposition": "ABANDONED",
+    "tip": "553861ed0",
+    "reason": "A GSC re-score of data/library_opportunities.csv (1,588 changed lines) plus a GSC diagnosis doc. This is research data that ec46826c20 (2026-08-03) deliberately removed from the public repo. Porting would violate hard line 9.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/claude/zealous-franklin-1452gm": {
+    "disposition": "SUPERSEDED",
+    "tip": "e12aad43a",
+    "reason": "Main serves number coloring pages at printables/alphabet-coloring-pages/number-0..9 (f6692e37e4, 2026-07-18), and the engine supports CFG.chars and charset alnum. A separate printables/number-coloring-pages hub would compete with those pages for the same query (hard line 5).",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/add-faq-section-to-footer": {
+    "disposition": "SUPERSEDED",
+    "tip": "6360ceb3f",
+    "reason": "Platform pages were rewritten with their own category-link FAQ blocks (e.g. discord/index.html:915 'Explore font styles for Discord', whatsapp/index.html:608). FAQ moved out of <footer> in e04418cb10, and the generated static footer links the categories, so the branch's absolute-URL 'Popular Text Styles' blocks are obsolete.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/add-homepage-localization-groundwork": {
+    "disposition": "SUPERSEDED",
+    "tip": "3e83b285f",
+    "reason": "The groundwork itself is on main (6a62222c5e, merge 9c58339bea). The residue is only PR #92's follow-up (title &amp; and de/fr/pt/es wording), and main has since replaced the homepage title (index.html:53) and rewritten those locale strings.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/add-horizontal-decoration-option": {
+    "disposition": "SUPERSEDED",
+    "tip": "897599d51",
+    "reason": "Copilot draft of the vertical text generator. Main shipped its own implementation the same day (d0f9496e7e, d71d7297ce) in js/vertical/*, with all 12 layouts and the bullets/arrows/dots/dividers/emojis/flags decoration tabs, now live at usecase/vertical-text/ in 15 locales.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/add-missing-symbols-to-star-section": {
+    "disposition": "SUPERSEDED",
+    "tip": "3356c6ab9",
+    "reason": "Every data-symbol the branch adds (41) is present in main's library/star-symbols/index.html (57 symbols). The remaining residue is label and description wording on a page main has since re-laid-out (55694d23b8) and edited (d88673fa15).",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/add-vertical-text-generator": {
+    "disposition": "SUPERSEDED",
+    "tip": "5a346e9cb",
+    "reason": "Competing Copilot draft (5 layouts) of the vertical text generator. Main's implementation (d0f9496e7e, d71d7297ce; js/vertical/verticalLayouts.js and verticalDecoratorData.js) is a superset and is live.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/add-vertical-text-generator-again": {
+    "disposition": "SUPERSEDED",
+    "tip": "a0cea97bf",
+    "reason": "Competing Copilot draft of the vertical text generator. Main's js/vertical/* implementation (d0f9496e7e, d71d7297ce) already has all 12 layouts and every decoration group.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/add-word-wrappers-category": {
+    "disposition": "SUPERSEDED",
+    "tip": "0f4be240a",
+    "reason": "The word-wrappers category was repositioned as text-decorator: main's _redirects:166-169 301 /category/word-wrappers/ to /category/text-decorator/, and styles.js registers 'text-decorator'.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/audit-arrow-symbols-completeness": {
+    "disposition": "SUPERSEDED",
+    "tip": "231600f95",
+    "reason": "All 51 symbols on the branch's arrow-symbols page are present in main's library/arrow-symbols/index.html (223 symbols). The residue is only label wording on a page main has since expanded.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/audit-linkedin-symbol-library": {
+    "disposition": "SUPERSEDED",
+    "tip": "6e0be8b16",
+    "reason": "The branch cut the page to 70 symbols and added emoji. Main rebuilt library/linkedin-symbol-library/ as a 489-symbol text-symbol library ('Arrows, Bullets & Numbers'), linking out to the arrow/bullet/checkmark/cross/number pages (024c61683b).",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/audit-low-value-content": {
+    "disposition": "ABANDONED",
+    "tip": "51d38c754",
+    "reason": "May 2026 AdSense-approval pass that noindexed 10 pages (incl. category/cursive-fonts, usecase/text-to-emoji, instagram, x, youtube). None is noindexed on main, which keeps developing them under the revenue-protection policy, so porting would de-index revenue pages. The sitemap is generated and already excludes noindex pages (2dcf718af2).",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/fix-broken-styles-js": {
+    "disposition": "SUPERSEDED",
+    "tip": "988c3f175",
+    "reason": "A Feb 2026 repair of a styles.js snapshot. Main's styles.js is a later positional registry that parses cleanly (node --check), and porting this snapshot would clobber it.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/fix-homepage-localization-issue": {
+    "disposition": "SUPERSEDED",
+    "tip": "8968ba075",
+    "reason": "The same job landed via other PRs: c00c130b5e (#114, HTMLRewriter English meta), 98b7239d08 (fetch /_root to bypass negotiation) and 426023cad4 (the real ?lang= cause). Main's _headers already sets Cache-Control no-store on /.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/fix-middleware-i18n-handling": {
+    "disposition": "ABANDONED",
+    "tip": "35d312729",
+    "reason": "It would widen the middleware to /usecase/zalgo-text/, but main deliberately scopes Functions to / and /api/name-reports via _routes.json for Workers-quota reasons (548b2f72ed). The French-at-/ incident was later traced to a _redirects ?lang= rule (426023cad4), not per-path negotiation.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/fix-quirks-mode-html-files": {
+    "disposition": "LANDED",
+    "tip": "7e9e1dfbf",
+    "reason": "Every page .html on main (4,903 of 4,905 files; the other two are a verification file and a script fragment) begins with <!DOCTYPE html>. A doctype on the same line as <html> is standards mode, so the residue is whitespace only.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/fix-title-encoding-bug": {
+    "disposition": "SUPERSEDED",
+    "tip": "3e1b17b19",
+    "reason": "The '&amp;' in <title> was valid HTML, not a bug. Main has since replaced the homepage title (index.html:53) and rewritten the de/fr/pt/es locale strings this branch tweaked.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/fix-word-wrappers-style-mismatch": {
+    "disposition": "SUPERSEDED",
+    "tip": "8b2e2f6d4",
+    "reason": "It fixes a word-wrappers slug in styles.js, but that category no longer exists: main 301s it to /category/text-decorator/ (_redirects:166-169) and registers 'text-decorator' instead.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/promote-faq-category-to-h2": {
+    "disposition": "ABANDONED",
+    "tip": "417f143d8",
+    "reason": "h2.faq-category is already main's convention. The residue is five cross-sell 'mood' FAQ entries with em dashes and absolute URLs on pages main has rewritten, and main already links /usecase/comment-font/ from the homepage tip card (index.html:429), the strikethrough compare card and the generated footer.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/update-category-tabs-layout": {
+    "disposition": "LANDED",
+    "tip": "a07b4a935",
+    "reason": "Main's script.js has collapseCategoryTabs() ('two visible rows on desktop' with a More/Less toggle, script.js:1279-1360) and style.css .category-tabs.expanded, which is the same behaviour.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/update-hero-headings-fonts": {
+    "disposition": "LANDED",
+    "tip": "c7b1b3a18",
+    "reason": "The owner made the Font to Fonts h1 change directly in 65e09e185c (2026-02-07). Later h1s were changed deliberately (e.g. 'Cursive Name Generator', 'Gothic Font Generator'), and 9 of the 16 URLs now 301 elsewhere.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/update-hero-headline-fonts": {
+    "disposition": "LANDED",
+    "tip": "4aa7103ed",
+    "reason": "Duplicate of update-hero-headings-fonts. The Font to Fonts h1 change landed directly as 65e09e185c (2026-02-07), and the h1s have since been deliberately reworded.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/update-sitemap-xml": {
+    "disposition": "ABANDONED",
+    "tip": "0a29dda54",
+    "reason": "A hand-written sitemap.xml. sitemap.xml is a generated file on main (npm run prebuild runs scripts/update-sitemap.js, since 76aa62dd51) and must never be hand-edited or ported.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/update-sitemap-xml-again": {
+    "disposition": "ABANDONED",
+    "tip": "4051eb7d2",
+    "reason": "Duplicate hand-written sitemap.xml. sitemap.xml is generated on main by scripts/update-sitemap.js via npm run prebuild (76aa62dd51) and is never ported.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/update-sitemap-xml-content": {
+    "disposition": "ABANDONED",
+    "tip": "c9d81ecce",
+    "reason": "Duplicate hand-written sitemap.xml. sitemap.xml is generated on main by scripts/update-sitemap.js via npm run prebuild (76aa62dd51) and is never ported.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/copilot/update-whatsapp-index-html": {
+    "disposition": "SUPERSEDED",
+    "tip": "3560ead15",
+    "reason": "Main's whatsapp/index.html was rebuilt with seven FAQ groups on formatting, lists/quotes, inline code/monospace and devices. The branch's em-dashed title/meta/H1 rewrite would be a separate GSC-gated snippet decision, not stranded work.",
+    "date": "2026-11-17",
+    "issue": 1213
+  },
+  "origin/fix/vertical-text-guide-slug": {
+    "disposition": "LANDED",
+    "tip": "0ec69abf5",
+    "reason": "Main's guide hub links /guide/vertical-text-guide/ (guide/index.html:460) and _redirects:110-112 301 /guide/vertical-text/ there. The branch commit 0ec69abf5e is a one-file upload that deletes 58 files, so it must never be merged.",
+    "date": "2026-11-17",
+    "issue": 1213
   }
 }

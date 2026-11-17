@@ -48,7 +48,7 @@ grandfathered.
 | `source_resource_links.json` | a link that is a destination, not evidence, by **route and domain** | `check-source-attribution.js` |
 | `source_link_health.json` | per-URL fetch history; **never hand-edited** | `audit-link-rot.js` |
 | `sitemap-lastmod-cache.json` | per-URL content hash + lastmod; re-baselined, not edited | `update-sitemap.js` |
-| `stranded_work_exclusions.json` | a branch knowingly left untracked | `check-stranded-work.py` |
+| `stranded_work_exclusions.json` | the decision on a branch no open PR tracks: a terminal `disposition` closes its task, an open one holds it; `tip` pins the decision to the commit it saw | `check-stranded-work.py` (`check:stranded-work-ledger` gates it) |
 | `library_hub_i18n.json` | per-locale hub facet labels | `build-library-hub.js` |
 | `source_block_labels.json` | each locale's own word for "Sources" | `source-attribution.js` |
 | `accent_notice_copy.json`, `accent-support.json` | the accent notice and per-style accent coverage | `build-accent-notice.js` |
