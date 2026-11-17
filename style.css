@@ -6746,6 +6746,14 @@ body.preview-open { overflow: hidden; }
   line-height: 1.45;
 }
 
+/* Generic frame: the page names no platform (defaultPreviewPlatform). It
+   follows the site theme on purpose, because it depicts no third-party app,
+   and its one line of text says so in the reader's language. */
+.pv-generic { background: var(--bg-base); color: var(--text-primary); border: 1px dashed var(--border-light); }
+.pv-gen-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: var(--text-muted); }
+.pv-gen-body { font-size: 0.95rem; }
+.pv-gen-note { margin: 10px 0 0; font-size: 0.75rem; color: var(--text-secondary); }
+
 /* Instagram profile bio */
 .pv-instagram { --pv-bg: #ffffff; --pv-fg: #111827; --pv-muted: #737373;
   background: var(--pv-bg); color: var(--pv-fg); border: 1px solid #e5e7eb; }
@@ -13366,6 +13374,23 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 }
 .pt-field-count.is-full { color: var(--accent-purple); }
 .pt-field-hint,
+/* An untouched page sample (printPrefs.sampleGuard): the preview is greyed
+   and an "Example" badge above it says the letters are the page's, not the
+   visitor's. Preview only: no print-surface rule, so nothing to carry in the
+   export clone. `filter` rather than `opacity` because the cross-stitch chart
+   already sets an inline opacity for ink saver, and the two must compose. */
+.pt-is-sample { filter: opacity(0.42); }
+.pt-sample-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+  margin: 0 auto 0.5rem; padding: 0.45rem 0.9rem; min-height: 44px;
+  border: 2px solid var(--accent-purple); border-radius: var(--radius);
+  background: var(--bg-white); color: var(--text-primary);
+  font: inherit; font-size: 0.9rem; cursor: text;
+}
+.pt-sample-badge span { color: var(--accent-purple); font-weight: 700; }
+.pt-sample-badge.is-nudge { animation: pt-sample-nudge 0.5s ease-in-out 2; }
+@keyframes pt-sample-nudge { 50% { box-shadow: 0 0 0 4px var(--accent-purple); } }
+@media (prefers-reduced-motion: reduce) { .pt-sample-badge.is-nudge { animation: none; outline: 3px solid var(--accent-purple); } }
 .pt-field-note {
   font-size: 0.78rem;
   color: var(--text-secondary);

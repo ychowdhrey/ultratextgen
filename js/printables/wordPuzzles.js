@@ -582,8 +582,49 @@
     };
   }
 
+  /* A crossword's level is how much of the answer the sheet hands over, not
+     how big the grid is (owner ruling 2026-11-10 on the per-child ladder).
+     A child's crossword has to be built from the same words as the rest of
+     the class so one answer key per child still makes sense, and a smaller
+     grid would drop words; the help is what varies.
+
+       1  word bank, and each answer's first letter already in its square
+       2  word bank, even when the list has clues
+       3  clues only: the sheet as it always printed
+
+     Level 3 and "no level" are the same sheet on purpose, and so is any level
+     on a list with no clues for the bank: a crossword with neither clues nor a
+     bank cannot be solved, so the bank is never taken away. */
+  const CW_LEVELS = 3;
+  function crosswordHelp(level, hasClues) {
+    const lv = (level >= 1 && level <= CW_LEVELS) ? level : null;
+    return {
+      bank: !hasClues || lv === 1 || lv === 2,
+      firstLetters: lv === 1
+    };
+  }
+  /* The squares a level-1 sheet pre-fills: the first square of every entry,
+     read from the finished grid so a mirrored (right-to-left) grid gives the
+     square its reader starts from. Two entries that start in one square give
+     that square once. */
+  function crosswordHintSquares(built) {
+    const out = [];
+    const seen = Object.create(null);
+    if (!built || !built.entries) return out;
+    for (const e of built.entries) {
+      const k = e.row + ":" + e.col;
+      if (seen[k]) continue;
+      seen[k] = true;
+      out.push({ row: e.row, col: e.col, letter: built.grid[e.row][e.col] });
+    }
+    return out;
+  }
+
   ns.crossword = {
     build: buildCrossword,
+    help: crosswordHelp,
+    hintSquares: crosswordHintSquares,
+    LEVELS: CW_LEVELS,
     normalizeWords: function (input) { return normalizeWords(input, true); },
     readRun: readRun,
     ACROSS: ACROSS,

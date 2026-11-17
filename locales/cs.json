@@ -208,7 +208,8 @@
       "title": "Náhled",
       "titleFor": "Náhled: {style}",
       "dialogAriaLabel": "Náhled platformy",
-      "closeAriaLabel": "Zavřít náhled"
+      "closeAriaLabel": "Zavřít náhled",
+      "illustrative": "Obecný náhled, ne konkrétní aplikace"
     },
     "imageSelection": {
       "selectImage": "Vybrat a sdílet jako obrázek",

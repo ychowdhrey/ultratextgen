@@ -108,7 +108,8 @@
       "title": "Előnézet",
       "titleFor": "Előnézet: {style}",
       "dialogAriaLabel": "Platform-előnézet",
-      "closeAriaLabel": "Előnézet bezárása"
+      "closeAriaLabel": "Előnézet bezárása",
+      "illustrative": "Általános előnézet, nem egy adott alkalmazás"
     },
     "imageSelection": {
       "selectImage": "Kiválasztás és megosztás képként",

@@ -353,5 +353,20 @@ t("emoji removal: digits, hash and asterisk stay", stripE("#1 *a* 2025"), "#1 *a
 t("emoji removal: a joiner between non-emoji letters stays", stripE("\u0915\u094D\u200D\u0937 ok"), "\u0915\u094D\u200D\u0937 ok");
 t("emoji removal: a single regional indicator is not a flag", stripE("a\u{1F1FA}b"), "a\u{1F1FA}b");
 
+// Provenance: a limit is a claim, so each rule says where it comes from.
+// Either the platform's own page and the date it was read, or a reason it has
+// none yet. Never both, never neither.
+{
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  const today = new Date().toISOString().slice(0, 10);
+  const bad = R.LIMITS.filter((r) => {
+    const sourced = typeof r.source === "string" && /^https:\/\//.test(r.source) &&
+      typeof r.verified === "string" && iso.test(r.verified) && r.verified <= today;
+    const unsourced = typeof r.unsourced === "string" && r.unsourced.trim().length > 0;
+    return sourced === unsourced;
+  }).map((r) => r.id);
+  t("every rule is sourced (https source + past ISO date) or says why not, never both", bad.join(", "), "");
+}
+
 console.log(fail ? "\n" + fail + " FAILURES" : "\nall green");
 process.exit(fail ? 1 : 0);

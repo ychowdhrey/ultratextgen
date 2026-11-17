@@ -209,7 +209,8 @@
       "title": "Podgląd",
       "titleFor": "Podgląd: {style}",
       "dialogAriaLabel": "Podgląd platformy",
-      "closeAriaLabel": "Zamknij podgląd"
+      "closeAriaLabel": "Zamknij podgląd",
+      "illustrative": "Ogólny podgląd, nie konkretna aplikacja"
     },
     "imageSelection": {
       "selectImage": "Wybierz i udostępnij obraz",

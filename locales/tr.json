@@ -209,7 +209,8 @@
       "title": "Önizleme",
       "titleFor": "Önizleme: {style}",
       "dialogAriaLabel": "Platform önizlemesi",
-      "closeAriaLabel": "Önizlemeyi kapat"
+      "closeAriaLabel": "Önizlemeyi kapat",
+      "illustrative": "Genel önizleme, belirli bir uygulama değil"
     },
     "imageSelection": {
       "selectImage": "Seç ve görsel olarak paylaş",

@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "image": "https://ultratextgen.com/guide/assets/og/fancy-fonts-and-accents.png",
   "mainEntityOfPage": "https://ultratextgen.com/guide/fancy-fonts-and-accents/",
   "datePublished": "2026-07-01T00:00:00+00:00",
-  "dateModified": "2026-07-11T00:00:00+00:00"
+  "dateModified": "2026-11-17T00:00:00+00:00"
 }
 </script>
 
@@ -110,12 +110,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Why do my accents disappear or turn plain when I use a fancy font?",
-      "acceptedAnswer": { "@type": "Answer", "text": "In this generator they mostly no longer do: 77 of the 112 styles keep your accents styled, including every core typography style. Unicode has no single styled version of á, ñ or ữ, so the generator splits each accented letter into its base letter plus its combining mark, styles the base like any other letter, and reattaches the original mark on top. Bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿, with the ñ styled too. What still shows a plain accent: the 8 upside-down styles, 13 novelty styles that use exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and a handful of one-piece letters like đ, ø and ß that have no separate mark to lift off." }
+      "acceptedAnswer": { "@type": "Answer", "text": "In this generator they mostly no longer do: 80 of the 114 styles keep your accents styled, including every core typography style. Unicode has no single styled version of á, ñ or ữ, so the generator splits each accented letter into its base letter plus its combining mark, styles the base like any other letter, and reattaches the original mark on top. Bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿, with the ñ styled too. What still shows a plain accent: the 8 upside-down styles, 13 novelty styles that use exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and a handful of one-piece letters like đ, ø and ß that have no separate mark to lift off." }
     },
     {
       "@type": "Question",
       "name": "Which fancy fonts keep accents like á, ñ and ữ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Almost all the core typography styles now: 77 of the 112 styles fully preserve accents, including every bold, italic, script, cursive, fraktur/gothic, double-struck, small caps and monospace variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each one keeps the accent by styling the base letter and riding the original mark back on top. The ones that keep a plain accent are the 8 upside-down / flip styles, 13 novelty styles that substitute exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters đ, ø, ß, ł and ı that have no mark to reattach. You can compare them on the generator." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Almost all the core typography styles now: 80 of the 114 styles fully preserve accents, including every bold, italic, script, cursive, fraktur/gothic, double-struck, small caps and monospace variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each one keeps the accent by styling the base letter and riding the original mark back on top. The ones that keep a plain accent are the 8 upside-down / flip styles, 13 novelty styles that substitute exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters đ, ø, ß, ł and ı that have no mark to reattach. You can compare them on the generator." }
     },
     {
       "@type": "Question",
@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Key Takeaways</h2>
   <ul>
     <li>Unicode has no single styled á, ñ or ữ, so this generator <strong>splits each accented letter, styles the base, and reattaches the original mark</strong>. The accent now rides on the styled letter instead of dropping to plain.</li>
-    <li><strong>The vast majority of styles keep every accent</strong>: 77 of 112, including every bold, italic, script, gothic/fraktur, double-struck and small-caps variant, alongside the mark/symbol styles. The exceptions are novelty styles: the <strong>8 upside-down styles</strong> and <strong>13 exotic-alphabet ones</strong> (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), plus about ten <strong>one-piece letters</strong> (đ ø ß ł ı …) with no separate mark to carry.</li>
+    <li><strong>The vast majority of styles keep every accent</strong>: 80 of 114, including every bold, italic, script, gothic/fraktur, double-struck and small-caps variant, alongside the mark/symbol styles. The exceptions are novelty styles: the <strong>8 upside-down styles</strong> and <strong>14 exotic-alphabet ones</strong> (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, regional-indicator letters, runic, Canadian syllabics), plus about ten <strong>one-piece letters</strong> (đ ø ß ł ı …) with no separate mark to carry.</li>
     <li>Spanish, French and even <strong>Vietnamese now style fully, tone marks included</strong>. The one letter that still never converts is <strong>đ</strong>, which is its own character with no accent to lift off.</li>
     <li>Reattached marks make device rendering <em>more</em> relevant, not less: the same string can look clean on Chrome/iPhone and detached on Firefox/old Android. Placement depends on the <em>reader's</em> device, not yours, so test on the worst one.</li>
   </ul>
@@ -229,7 +229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The Framework</span>
     <h2>Which Styles Keep Your Accents: and Which Don't</h2>
     <div class="editorial-block">
-      <p>Here's the useful part. We ran every style in this generator through the engine, and then through a real browser, since combining marks depend on font fallback, not just valid Unicode. The result: <strong>77 of 112 styles fully preserve accents</strong>, including every core typography style. The exceptions fall into a few named groups, each for a different reason.</p>
+      <p>Here's the useful part. We ran every style in this generator through the engine, and then through a real browser, since combining marks depend on font fallback, not just valid Unicode. The result: <strong>80 of 114 styles fully preserve accents</strong>, including every core typography style. The exceptions fall into a few named groups, each for a different reason.</p>
     </div>
 
     <div class="data-table-wrap">
@@ -237,7 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <thead><tr><th>Behaviour</th><th>How it works</th><th>Styles</th><th>Accented letter…</th></tr></thead>
         <tbody>
           <tr>
-            <td><strong>✓ Fully preserved</strong> (77)</td>
+            <td><strong>✓ Fully preserved</strong> (80)</td>
             <td>Splits the letter into base + mark, styles the base, re-appends the mark — <em>or</em> adds a mark / wraps in symbols without touching the letter</td>
             <td>Bold, Italic, Script/Cursive, Fraktur/Gothic, Double-struck, Small Caps, Monospace, Superscript/Subscript, plus Strikethrough, Underline, Slash, Wavy and the bracket/symbol word-wraps</td>
             <td>keeps every accent &amp; tone mark, styled to match its neighbours</td>
@@ -249,9 +249,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <td>rides along unflipped while the rest of the word turns over</td>
           </tr>
           <tr>
-            <td><strong>✕ Partial — exotic block</strong> (13)</td>
+            <td><strong>✕ Partial — exotic block</strong> (14)</td>
             <td>Substitute into Unicode blocks with poor combining-mark support, so they keep the plain accented letter <em>by design</em> — a reattached mark would show as a tofu box or vanish</td>
-            <td>Bubble / Cute / Light / Spaced, Bubble Tiles, Squared, Emoji Block, Fullwidth, Katakana, Bopomofo, Runic, Canadian Syllabics</td>
+            <td>Bubble / Cute / Light / Spaced, Bubble Tiles, Squared, Emoji Block, Regional Indicator, Fullwidth, Katakana, Bopomofo, Runic, Canadian Syllabics</td>
             <td>stays plain (a safe fallback) while the rest of the word styles</td>
           </tr>
           <tr>
@@ -301,7 +301,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Desktop vs Mobile</span>
     <h2>Why the Same Text Looks Fine on One Screen and Broken on Another</h2>
     <div class="editorial-block">
-      <p>Now that marks are reattached across most styles, this part matters <em>more</em>, not less: in fact it's exactly why the 13 exotic-block styles above keep the plain accent instead of a reattached one. Even when an accent is placed correctly, whether it looks right depends on the reader's device, browser, and screen, so you can't judge accented styled text from your own phone alone.</p>
+      <p>Now that marks are reattached across most styles, this part matters <em>more</em>, not less: in fact it's exactly why the 14 exotic-block styles above keep the plain accent instead of a reattached one. Even when an accent is placed correctly, whether it looks right depends on the reader's device, browser, and screen, so you can't judge accented styled text from your own phone alone.</p>
 
       <h3>The browser flip: Chrome vs Firefox</h3>
       <p>When an accent is stored as a separate combining mark, Chrome, Edge and Safari quietly re-compose it onto its letter before drawing (they normalise to NFC). <strong>Firefox does not</strong>: it hands the sequence to the font as-is. So a reattached accent that looks perfect in Chrome can render as a <em>floating, offset mark</em> in Firefox on the very same page. Same text, opposite result, decided entirely by the reader's browser.</p>
@@ -465,13 +465,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Why do my accents disappear or turn plain when I use a fancy font?</button>
     <div class="faq-answer">
-      <p>In this generator they mostly no longer do: 77 of the 112 styles keep your accents styled, including every core typography style. Unicode has no single styled version of á, ñ or ữ, so the generator splits each accented letter into its base letter plus its combining mark, styles the base like any other letter, and reattaches the original mark on top. Bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿, with the ñ styled too. What still shows a plain accent: the 8 upside-down styles, 13 novelty styles that use exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and a handful of one-piece letters like đ, ø and ß that have no separate mark to lift off.</p>
+      <p>In this generator they mostly no longer do: 80 of the 114 styles keep your accents styled, including every core typography style. Unicode has no single styled version of á, ñ or ữ, so the generator splits each accented letter into its base letter plus its combining mark, styles the base like any other letter, and reattaches the original mark on top. Bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿, with the ñ styled too. What still shows a plain accent: the 8 upside-down styles, 13 novelty styles that use exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and a handful of one-piece letters like đ, ø and ß that have no separate mark to lift off.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Which fancy fonts keep accents like á, ñ and ữ?</button>
     <div class="faq-answer">
-      <p>Almost all the core typography styles now: 77 of the 112 styles fully preserve accents, including every bold, italic, script, cursive, fraktur/gothic, double-struck, small caps and monospace variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each one keeps the accent by styling the base letter and riding the original mark back on top. The ones that keep a plain accent are the 8 upside-down / flip styles, 13 novelty styles that substitute exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters đ, ø, ß, ł and ı that have no mark to reattach. You can compare them on the <a href="/">generator</a>.</p>
+      <p>Almost all the core typography styles now: 80 of the 114 styles fully preserve accents, including every bold, italic, script, cursive, fraktur/gothic, double-struck, small caps and monospace variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each one keeps the accent by styling the base letter and riding the original mark back on top. The ones that keep a plain accent are the 8 upside-down / flip styles, 13 novelty styles that substitute exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters đ, ø, ß, ł and ı that have no mark to reattach. You can compare them on the <a href="/">generator</a>.</p>
     </div>
   </div>
   <div class="faq-item">

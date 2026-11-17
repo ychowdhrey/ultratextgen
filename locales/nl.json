@@ -209,7 +209,8 @@
       "title": "Voorbeeld",
       "titleFor": "Voorbeeld: {style}",
       "dialogAriaLabel": "Platformvoorbeeld",
-      "closeAriaLabel": "Voorbeeld sluiten"
+      "closeAriaLabel": "Voorbeeld sluiten",
+      "illustrative": "Algemeen voorbeeld, geen specifieke app"
     },
     "imageSelection": {
       "selectImage": "Selecteer en deel als afbeelding",

@@ -510,6 +510,7 @@
   function exportName() { return "cross-stitch-" + (slugify(state.text) || "pattern"); }
 
   function downloadPNG() {
+    if (sampleRefused()) return;
     const canvas = buildCanvas();
     if (!canvas) return;
     canvas.toBlob(function (blob) {
@@ -527,6 +528,7 @@
   }
 
   function shareImage() {
+    if (sampleRefused()) return;
     const canvas = buildCanvas();
     if (!canvas) return;
     canvas.toBlob(function (blob) {
@@ -556,6 +558,7 @@
   }
 
   function savePdf() {
+    if (sampleRefused()) return;
     const canvas = buildCanvas();
     if (!canvas) return;
     loadPdfModule().then(function (P) {
@@ -741,6 +744,11 @@
   }
 
 
+  /* The page's own sample letters, greyed and badged until the visitor types
+     (printPrefs.sampleGuard). Set in init, after any preset is applied. */
+  let sample = null;
+  const sampleRefused = () => !!(sample && sample.refuse());
+
   function init() {
     /* Ctrl+P without Download PDF: hide the site chrome and say which button
        prints the sheet (printPrefs.js owns the note and its translations). */
@@ -844,6 +852,7 @@
     }
 
     applyPreset(input);
+    if (PP && PP.sampleGuard) sample = PP.sampleGuard({ host: $("#cs-chart"), fields: [input] });
     render();
   }
 

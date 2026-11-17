@@ -209,7 +209,8 @@
       "title": "Anteprima",
       "titleFor": "Anteprima: {style}",
       "dialogAriaLabel": "Anteprima per piattaforma",
-      "closeAriaLabel": "Chiudi anteprima"
+      "closeAriaLabel": "Chiudi anteprima",
+      "illustrative": "Anteprima generica, non di un'app specifica"
     },
     "imageSelection": {
       "selectImage": "Seleziona e condividi immagine",

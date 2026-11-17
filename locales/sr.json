@@ -132,7 +132,8 @@
       "title": "Pregled",
       "titleFor": "Pregled: {style}",
       "dialogAriaLabel": "Pregled platforme",
-      "closeAriaLabel": "Zatvori pregled"
+      "closeAriaLabel": "Zatvori pregled",
+      "illustrative": "Opšti pregled, nije određena aplikacija"
     },
     "imageSelection": {
       "selectImage": "Izaberi i podeli kao sliku",

@@ -8,10 +8,10 @@
     }
   },
   "counts": {
-    "full": 76,
+    "full": 80,
     "partial": 22,
     "na": 8,
-    "none": 6
+    "none": 4
   },
   "styles": [
     {
@@ -105,6 +105,26 @@
       "example_vi": "𝔙𝔦𝔢̣̂𝔱"
     },
     {
+      "name": "Ultra Alternating Bold",
+      "slug": "ultra-alternating-bold",
+      "type": "procedure",
+      "category": "bold",
+      "groupSlug": "alternating",
+      "bucket": "full",
+      "example_es": "𝗦e𝗻̃o𝗿",
+      "example_vi": "𝗩i𝗲̣̂t"
+    },
+    {
+      "name": "Ultra Alternating Italic",
+      "slug": "ultra-alternating-italic",
+      "type": "procedure",
+      "category": "italic",
+      "groupSlug": "alternating",
+      "bucket": "full",
+      "example_es": "𝘚e𝘯̃o𝘳",
+      "example_vi": "𝘝i𝘦̣̂t"
+    },
+    {
       "name": "Ultra Bold",
       "slug": "ultra-bold",
       "type": "map",
@@ -143,6 +163,16 @@
       "bucket": "full",
       "example_es": "𝐒𝐞𝐧̃𝐨𝐫",
       "example_vi": "𝐕𝐢𝐞̣̂𝐭"
+    },
+    {
+      "name": "Ultra Bold w Alternating Italic",
+      "slug": "ultra-bold-alternating-italic",
+      "type": "procedure",
+      "category": "bold",
+      "groupSlug": "alternating",
+      "bucket": "full",
+      "example_es": "𝗦𝘦𝗻̃𝘰𝗿",
+      "example_vi": "𝗩𝘪𝗲̣̂𝘵"
     },
     {
       "name": "Ultra Bubble Angle",
@@ -433,6 +463,16 @@
       "bucket": "full",
       "example_es": "𝑆𝑒𝑛̃𝑜𝑟",
       "example_vi": "𝑉𝑖𝑒̣̂𝑡"
+    },
+    {
+      "name": "Ultra Italic Switch Serifs",
+      "slug": "ultra-italic-switch-serifs",
+      "type": "procedure",
+      "category": "italic",
+      "groupSlug": "alternating",
+      "bucket": "full",
+      "example_es": "𝘚𝑒𝘯̃𝑜𝘳",
+      "example_vi": "𝘝𝑖𝘦̣̂𝑡"
     },
     {
       "name": "Ultra Light Slash",
@@ -1085,41 +1125,21 @@
       "example_vi": "tệiV"
     },
     {
-      "name": "Ultra Alternating Bold",
-      "slug": "ultra-alternating-bold",
+      "name": "Ultra Cuping",
+      "slug": "cuping",
       "type": "procedure",
-      "category": "bold",
-      "groupSlug": "alternating",
+      "category": "novelty",
+      "groupSlug": "cuping",
       "bucket": "none",
-      "example_es": "Señor",
+      "example_es": "Ceñol",
       "example_vi": "Việt"
     },
     {
-      "name": "Ultra Alternating Italic",
-      "slug": "ultra-alternating-italic",
+      "name": "Ultra Gal Moji",
+      "slug": "gal-moji",
       "type": "procedure",
-      "category": "italic",
-      "groupSlug": "alternating",
-      "bucket": "none",
-      "example_es": "Señor",
-      "example_vi": "Việt"
-    },
-    {
-      "name": "Ultra Bold w Alternating Italic",
-      "slug": "ultra-bold-alternating-italic",
-      "type": "procedure",
-      "category": "bold",
-      "groupSlug": "alternating",
-      "bucket": "none",
-      "example_es": "Señor",
-      "example_vi": "Việt"
-    },
-    {
-      "name": "Ultra Italic Switch Serifs",
-      "slug": "ultra-italic-switch-serifs",
-      "type": "procedure",
-      "category": "italic",
-      "groupSlug": "alternating",
+      "category": "novelty",
+      "groupSlug": "gal-moji",
       "bucket": "none",
       "example_es": "Señor",
       "example_vi": "Việt"

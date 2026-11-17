@@ -208,7 +208,8 @@
       "title": "Preview",
       "titleFor": "Preview ng {style}",
       "dialogAriaLabel": "Preview sa platform",
-      "closeAriaLabel": "Isara ang preview"
+      "closeAriaLabel": "Isara ang preview",
+      "illustrative": "Pangkalahatang preview, hindi isang partikular na app"
     },
     "imageSelection": {
       "selectImage": "Pumili at i-share bilang larawan",

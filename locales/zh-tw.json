@@ -108,7 +108,8 @@
       "title": "預覽",
       "titleFor": "{style} 預覽",
       "dialogAriaLabel": "平台預覽",
-      "closeAriaLabel": "關閉預覽"
+      "closeAriaLabel": "關閉預覽",
+      "illustrative": "通用預覽，並非特定應用程式"
     },
     "imageSelection": {
       "selectImage": "選取並以圖片分享",

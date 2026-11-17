@@ -2044,6 +2044,9 @@ const decorations = window.UTG_DECORATIONS
 
   // Aliases for English platform hubs whose path segment is not the key.
   const PREVIEW_SEGMENT_ALIASES = { twitter: "x" };
+  // The frame a page with no verified destination opens on. Not a tab: it
+  // stands for no platform, so no tab is shown as selected while it is up.
+  const PREVIEW_GENERIC = "generic";
 
   function previewKeyForPath(path) {
     const seg = (String(path || "").split("/")[1] || "").toLowerCase();
@@ -2067,7 +2070,23 @@ const decorations = window.UTG_DECORATIONS
         if (parent) return parent;
       } catch (err) { /* malformed href: fall through */ }
     }
-    return "instagram";
+    /* No verified destination. The homepage and each locale homepage keep the
+       Instagram frame they have always opened on: which frame a homepage
+       should show is still an open owner decision (2026-11-10), so it
+       is left exactly as it was. Every other page used to fall through to
+       Instagram as well, which showed a Facebook or category page's text in a
+       fake Instagram profile. Those pages now open on a plainly generic frame
+       labelled as such, and the tabs still offer every real mockup. */
+    if (isHomePath(window.location.pathname)) return "instagram";
+    return PREVIEW_GENERIC;
+  }
+  // "/" or "/<the page's own language>/": the site's homepages, and nothing
+  // else (a two-letter directory that is not this page's language is not one).
+  function isHomePath(path) {
+    const p = String(path || "/").replace(/index\.html$/, "").toLowerCase();
+    if (p === "/") return true;
+    const lang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
+    return !!lang && (p === "/" + lang + "/" || p === "/" + lang);
   }
 
   let previewPlatform = defaultPreviewPlatform();
@@ -2136,6 +2155,13 @@ const decorations = window.UTG_DECORATIONS
         return `
           <div class="pv-mock pv-tiktok">
             <div class="pv-tt-row">${av}<div><div class="pv-tt-name">${name}</div><div class="pv-text pv-tt-msg"></div><div class="pv-tt-meta">2h · 💬</div></div><span class="pv-tt-like">♥<br>1.2K</span></div>
+          </div>`;
+      case PREVIEW_GENERIC:
+        return `
+          <div class="pv-mock pv-generic">
+            <div class="pv-gen-head">${av}<div>${name}</div></div>
+            <div class="pv-text pv-gen-body"></div>
+            <p class="pv-gen-note">${escapeHtml(uiText("stylePreview.illustrative", "Generic preview, not a specific app"))}</p>
           </div>`;
       default:
         return `<div class="pv-mock"><div class="pv-text"></div></div>`;
