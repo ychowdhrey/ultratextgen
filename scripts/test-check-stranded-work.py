@@ -155,7 +155,7 @@ def main():
         expect('compare/main...stranded' in next(a['body'] for a in plan if a['key'] == 'branch:stranded'),
                'task body carries the compare link')
 
-        def issues(state='OPEN', tips=None, members='old-residue'):
+        def issues(state='OPEN', tips=None, members='old-residue', version=sw.TEMPLATE_VERSION):
             tips = tips or {}
             out = []
             for i, a in enumerate(plan, start=10):
@@ -164,6 +164,10 @@ def main():
                     fields['tip'] = tips[a['key']]
                 if a['key'] == 'pre-rewrite':
                     fields['members'] = members
+                if version is None:
+                    fields.pop('v', None)
+                else:
+                    fields['v'] = version
                 out.append({'number': i, 'state': state,
                             'body': sw.marker(**fields) + '\nbody'})
             return out
@@ -201,6 +205,39 @@ def main():
 
         code, out, _ = run(work, tasks=issues(), excl=('origin/excluded', 'origin/merged'), tmp=tmp)
         expect('entr(ies) no longer match' in out and 'origin/merged' in out, 'a stale exclusion is reported')
+
+        code, out, plan9 = run(work, tasks=issues(version=None), tmp=tmp)
+        refreshed = [a for a in plan9 if a.get('refresh')]
+        expect(code == 0 and len(plan9) == 3 and len(refreshed) == 3
+               and all(a['action'] == 'update' and not a['alert'] and not a.get('comment') for a in refreshed),
+               f'tasks written from an older template: one silent rewrite each, no alert '
+               f'(got {code}, {[(a["action"], a.get("refresh")) for a in plan9]})')
+        expect('(wording refresh)' in out, 'the refresh is labelled in the run output')
+        code, _, plan10 = run(work, tasks=issues(version=None, tips={'branch:stranded': 'deadbeef0'}), tmp=tmp)
+        expect(code == 1 and [a['alert'] for a in plan10 if a['key'] == 'branch:stranded'] == [True],
+               'new commits still alert when the template is also old')
+
+        print('task wording (2026-11-15: #1218 was opened from a branch whose commit a recorded decision held)')
+        body = next(a['body'] for a in plan if a['key'] == 'branch:stranded')
+        expect('none of them is the default' in body, 'no recovery is called the default')
+        expect('Before opening a PR, cherry-picking or porting' in body and 'check for a recorded decision' in body,
+               'asks for a recorded decision before a PR, a cherry-pick or a port')
+        expect(body.index('**Before you choose**') < body.index('1. **'), 'the check comes before the options')
+        expect('ship as it stands, and no recorded decision says otherwise' in body, 'the PR option is conditional')
+        expect('It should ship:** open a PR' not in body, 'the unconditional first option is gone')
+        expect(not any(t in body.lower() for t in ('utg-work', 'control plane', 'wip-', '-lab')),
+               'names no tool or workspace outside this repository')
+        pre = next(a['body'] for a in plan if a['key'] == 'pre-rewrite')
+        expect('check for a recorded decision on the files' in pre, 'the pre-rewrite task asks the same before a port')
+        many = {'short': 'big', 'tip': 'abc123456', 'commits': 1, 'date': '2026-11-15', 'age': 0,
+                'residue': {f'locales/l{i:02d}.json': 30 - i for i in range(30)}, 'subjects': ['abc1234567 big']}
+        big = sw.stranded_body(many, 'o/r')
+        expect(all(f'`{path}`' in big for path in many['residue']), 'every file is named, not only the largest 25')
+        expect('<summary>The other 5 file(s)</summary>' in big, 'the rest sit in a collapsed list')
+        huge = sw.stranded_body(dict(many, residue={f'docs/research/a-long-folder-name/p{i:04d}.html': 1
+                                                    for i in range(3000)}), 'o/r')
+        expect(len(huge) < 65536 and 'and 2575 more' in huge,
+               f'a 3,000-file branch stays under the issue body limit and says what it left out ({len(huge)} chars)')
 
         print('fails closed')
         buf = io.StringIO()

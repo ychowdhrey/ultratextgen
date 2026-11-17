@@ -195,7 +195,8 @@ def run(repo_path, open_prs, tasks_path, plan_out, repo_slug, ledger, out=print)
             f'{sum(a["action"] == "close" for a in plan)} to close.')
         for a in plan:
             target = f'#{a["issue"]}' if a.get('issue') else 'new issue'
-            out(f'  {a["action"]:6} {target:>10}  {a["key"]}{"  <- NEW" if a["alert"] else ""}')
+            out(f'  {a["action"]:6} {target:>10}  {a["key"]}{"  <- NEW" if a["alert"] else ""}'
+                f'{"  (wording refresh)" if a.get("refresh") else ""}')
         out('')
 
     if unmeasurable:

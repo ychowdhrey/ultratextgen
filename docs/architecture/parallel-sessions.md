@@ -125,6 +125,16 @@ clone) and it says so rather than reporting a reassuring zero.
   is LANDED. That covers work that arrived by squash, cherry-pick or a later PR that
   redid it. It is reported as safe to delete and never becomes a task. It is line-set
   containment, so the task shows its residue by file and a person decides.
+- **A recovery task names no default (2026-11-15).** Its first option used to read "open a PR
+  from the branch as it stands". A session followed it for `claude/bold-goodall-fc33am`:
+  #1218 was opened and closed within the hour, and the commit's port into #1217 was reverted
+  (`aa08f976`), because the commit was already on record as needing a decision on how to redo
+  it against today's main, not a replay (#1218's description has the detail). A task now asks
+  for a recorded decision on its commits, on every file and in any PR already opened from the
+  branch before anyone chooses, and says none of the three outcomes is the default. It lists
+  every file, the rest of them collapsed under the table of the largest 25, because the check
+  is per file. Each body carries a template version in its marker, so a wording change rewrites
+  every open task once, with no comment and no alert.
 - **No merge-base on a full clone means history was rewritten, not "unmeasurable".**
   main was rewritten on 2026-07-10: the new root is `1476ae1` and the old root is
   `e512cc9`. Every branch cut before that has no common commit with main on any clone.
