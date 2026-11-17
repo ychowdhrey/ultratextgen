@@ -128,11 +128,27 @@
     // unverified. Verified 2026-09-25.
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
     standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
-    // Display names: at least 1 and at most 32 characters, special characters
-    // and emojis allowed (Discord Help, "New Usernames & Display Names",
-    // support.discord.com/hc/en-us/articles/12620128861463, updated
-    // 2026-10-08, read 2026-10-08).
-    discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display" },
+    // Discord has two name fields, and this one is the DISPLAY name: at least 1
+    // and at most 32 characters, and the article lists "special characters,
+    // spaces, emoji, uppercase, lowercase and non-Latin characters" as allowed
+    // (Discord Help, "New Usernames & Display Names",
+    // support.discord.com/hc/en-us/articles/12620128861463, read 2026-10-08 and
+    // again 2026-11-17). `anyScript`: a letter, mark or digit of any script is
+    // the player's own name, not an unknown character, so 민준, José or राहुल
+    // pass here instead of warning that they may show as boxes. Symbols the
+    // engine does not know still warn: that warning is about how a device
+    // draws them, which the article does not settle. The username is a
+    // different field with different rules: `discordUsername` below.
+    discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display", anyScript: true },
+    // Discord USERNAME (the unique @name), same article: 2 to 32 characters,
+    // only a-z, 0-9, underscore and period, no two periods in a row, unique,
+    // case-insensitive and forced to lowercase (so a capital is lowered, not
+    // refused, and the pattern accepts it). No page offers this tab yet; it is
+    // here so the two Discord fields are never checked as one.
+    discordUsername: {
+      label: "Discord (username)", limit: 32, min: 2, weighted: false, noSpace: true, field: "username",
+      asciiPattern: /^(?!.*\.\.)[A-Za-z0-9_.]+$/, charPattern: /^[A-Za-z0-9_.]+$/
+    },
     tiktok: { label: "TikTok", limit: 30, min: 1, weighted: false, noSpace: false, field: "display" },
     // Epic display name: 3-16 characters, changeable once every two weeks.
     // Epic publishes no character list, so decorative Unicode stays a warning.

@@ -145,6 +145,30 @@ t("xbox: the counter stays at the guaranteed 12 for short names", G.analyze("San
 t("xbox: a unique-required name reports no over-limit to analytics", G.analyze("CrimsonSpectre", "xbox").effective > G.analyze("CrimsonSpectre", "xbox").limit, false);
 t("xbox: the unique note is English and from the rule", G.defaultReason("unique-required", G.RULES.xbox).indexOf("nobody else has") !== -1, true);
 
+// --- Discord: the display name allows non-Latin characters; the username does not ---
+// Discord Help, "New Usernames & Display Names" (read 2026-10-08 and 2026-11-17).
+const dd = (s) => { const r = G.analyze(s, "discord"); return [r.level, r.issues, r.perChar.filter((p) => p.verdict !== "pass").length]; };
+t("discord display: Hangul is the player's name, not an unknown", dd("민준"), ["ok", [], 0]);
+t("discord display: Latin-1 accents pass", dd("José"), ["ok", [], 0]);
+t("discord display: Devanagari with its vowel signs passes", dd("राहुल"), ["ok", [], 0]);
+t("discord display: Han passes", dd("张伟"), ["ok", [], 0]);
+t("discord display: Arabic still passes", dd("مرحبا"), ["ok", [], 0]);
+t("discord display: 32 characters fit", G.analyze("x".repeat(32), "discord").level, "ok");
+t("discord display: 33 characters do not", G.analyze("x".repeat(33), "discord").issues, ["over-limit"]);
+t("discord display: a symbol the engine does not know still warns (rendering, not acceptance)", G.analyze("Sanz᭡", "discord").issues, ["unknown-chars"]);
+t("discord display: spaces are allowed", G.analyze("Budi Santoso", "discord").level, "ok");
+const du = (s) => { const r = G.analyze(s, "discordUsername"); return [r.level, r.issues]; };
+t("discord username is its own field", G.RULES.discordUsername.field, "username");
+t("discord username: letters, digits, underscore and period", du("jose_99.bot"), ["ok", []]);
+t("discord username: capitals are lowered by Discord, not refused", du("JoseBot"), ["ok", []]);
+t("discord username: Hangul is refused", du("민준"), ["fail", ["charset"]]);
+t("discord username: an accent is refused", du("José"), ["fail", ["charset"]]);
+t("discord username: two periods in a row are refused", du("jose..bot"), ["fail", ["charset"]]);
+t("discord username: one character is too short", du("a"), ["fail", ["too-short"]]);
+t("discord username: 2 characters fit", du("ab"), ["ok", []]);
+t("discord username: 33 characters do not", du("a".repeat(33))[1], ["over-limit"]);
+t("discord username: a space is refused", du("jose bot")[1].indexOf("space") !== -1, true);
+
 // --- what did NOT change: games without an official character rule ---
 t("free fire: Hangul still warns (no published rule; held for the in-game test)", G.analyze("민준", "ff").issues, ["unknown-chars"]);
 t("pubg: an accent still warns", G.analyze("José", "pubg").issues, ["unknown-chars"]);
