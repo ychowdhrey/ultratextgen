@@ -35,7 +35,9 @@
                (redact blackout, pattern fill)
 
    Output:
-     - data/accent-support.json  (consumed by the guide + generator UI)
+     - data/accent-support.json  (the record behind the counts the accents guide
+                                  and its three answer pages quote; no runtime
+                                  script reads it)
      - a human-readable summary table on stdout
 
    Run:  node scripts/classify-accent-support.js
@@ -120,10 +122,20 @@ function differingCores(a, b) {
 // wrapper/mark, so the accent got it too) OR the accented core was itself
 // transformed. It is INCONSISTENT — the half-styled look — when the base was
 // swapped for a distinct glyph (𝗲, ⦅e⦆, 𝖊, ǝ) while the accent stayed plain.
+//
+// Only letters that DECOMPOSE (base + combining mark) are paired here. The
+// one-piece letters (đ ø ł ð þ ħ), the two-letter ones (ß æ œ) and Turkish
+// dotless ı are a separate class with their own row in the guide's table and
+// their own line in accent-notice.js: renderer.js folds them (đ -> d) or
+// passes them through (ı stays ı, because a dotted i is another letter) in
+// every letter-swap style alike. Pairing them here made one deliberate
+// pass-through mark every letter-swap style "partial" (2026-11-17: 35 full
+// instead of 80), which is not what "partial" means to the page that reads
+// these buckets (OPP-20261106-6ukjc).
 function accentConsistency(R) {
   const PAIRS = [['e', 'é'], ['e', 'ê'], ['e', 'ệ'], ['o', 'ô'], ['a', 'ă'],
-                 ['u', 'ư'], ['u', 'ữ'], ['n', 'ñ'], ['c', 'ç'], ['d', 'đ'],
-                 ['i', 'ı'], ['s', 'ş'], ['g', 'ğ']];
+                 ['u', 'ư'], ['u', 'ữ'], ['n', 'ñ'], ['c', 'ç'],
+                 ['s', 'ş'], ['g', 'ğ']];
   let consistent = 0;
   for (const [base, acc] of PAIRS) {
     const [coreBase, coreAcc] = differingCores(R(base), R(acc));
