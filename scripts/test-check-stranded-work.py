@@ -470,6 +470,14 @@ def main():
         code, out, _ = run(shallow_dir, tasks=[], tmp=tmp)
         expect(code == 3 and 'UNMEASURABLE' in out, f'shallow clone: UNMEASURABLE, exit 3, never clean (got {code})')
 
+    print('the repository ledger (gated here: the daily run is not a PR gate)')
+    real = check.LEDGER
+    try:
+        problems = check.validate_ledger(check.load_exclusions(real))
+    except ValueError as e:
+        problems = [f'unreadable: {e}']
+    expect(real.exists() and not problems, f'{real.name} is readable, every entry valid ({problems[:3]})')
+
     print('')
     if FAILS:
         print(f'{len(FAILS)} FAILED')

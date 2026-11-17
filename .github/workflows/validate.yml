@@ -323,13 +323,13 @@ jobs:
 
       # The daily Stranded work run is not a PR gate, so its own tests and its ledger are checked here: a change to
       # the detector, the task processor or data/stranded_work_exclusions.json is red before it merges, not on the
-      # next 07:00 run. Whole-suite and state, not delta: both stand at zero.
+      # next 07:00 run. Whole-suite and state, not delta: both stand at zero. One command on purpose (the suite ends by
+      # validating the real ledger): run-ci-gates.py replays a step under sh, where a two-line step reports only its
+      # last line's status.
       - name: Run stranded-work tests and ledger check
         id: stranded_work_tests
         continue-on-error: true
-        run: |
-          npm run test:stranded-work | tee stranded-work-tests.log
-          npm run check:stranded-work-ledger | tee -a stranded-work-tests.log
+        run: npm run test:stranded-work | tee stranded-work-tests.log
 
       # Whole-site and gating, like the Funding Choices tag check and unlike the
       # informational whole-site audits: there is no backlog to be permanently
