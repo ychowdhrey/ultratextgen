@@ -322,7 +322,8 @@
     pl: { example: "Przykład", edit: "Wpisz swój tekst" },
     nl: { example: "Voorbeeld", edit: "Typ je eigen tekst" },
     id: { example: "Contoh", edit: "Ketik teks kamu" },
-    tr: { example: "Örnek", edit: "Kendi metnini yaz" }
+    tr: { example: "Örnek", edit: "Kendi metnini yaz" },
+    ja: { example: "見本", edit: "自分の文字を入力" }
   };
   function exampleLabels() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
