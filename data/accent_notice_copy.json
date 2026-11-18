@@ -74,6 +74,12 @@
       "upsideDown": "Il tuo testo contiene lettere accentate. Alcune lettere come <b>à</b>, <b>è</b> o <b>ù</b> non hanno un gemello capovolto in Unicode e restano dritte. <a href=\"/guide/fancy-fonts-and-accents/\">Come si comportano gli accenti →</a>",
       "icon": "◌́"
     },
+    "kk": {
+      "icon": "◌́",
+      "dismiss": "Жабу",
+      "default": "Мәтініңізде белгісі бар латын әріптері бар. Жуан, жазба, готика және басқа стильдердің көбі <b>ä</b>, <b>ğ</b>, <b>ö</b> және <b>ü</b> әріптерін белгісімен сақтайды. Бірнешеуі (төңкерілген мәтін және <b>ı</b> сияқты белгілі нұсқасы жоқ әріптер) қарапайым әріпке айналады. <a href=\"/guide/fancy-fonts-and-accents/\">Қай стильдер белгілерді сақтайды →</a>",
+      "otherScript": "Бұл стильдер латын әліпбиінен жасалған, сондықтан қазақ әріптері өз пішінін сақтайды. Сызу, асты сызу, үсті сызу және жақтау стильдері қазақ әріптерінде де жұмыс істейді, ал мәтіндегі латын әріптері мен сандар безендіріледі."
+    },
     "nl": {
       "dismiss": "Sluiten",
       "default": "Je tekst bevat accenten of een trema. Vet, sierlijk, gotisch en bijna alle andere stijlen behouden nu <b>ë</b>, <b>é</b> en <b>ï</b> mét het teken. Een enkele (omgekeerde tekst, en letters zonder accentvorm zoals <b>ł đ ø</b>) valt terug op gewone letters. <a href=\"/guide/fancy-fonts-and-accents/\">Welke stijlen accenten houden →</a>",

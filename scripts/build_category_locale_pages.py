@@ -139,7 +139,8 @@ BATCHES = {
             ("de", "de/durchgestrichener-text"), ("es", "es/letra-tachada"),
             ("id", "id/tulisan-coret"), ("it", "it/testo-barrato"),
             ("pl", "pl/przekreslony-tekst"), ("pt", "pt/letra-tachada"),
-            ("ru", "ru/zacherknutyy-tekst"), ("tr", "tr/ustu-cizili-yazi"),
+            ("ru", "ru/zacherknutyy-tekst"),
+            ("kk", "kk/syzylgan-matin"), ("tr", "tr/ustu-cizili-yazi"),
             ("vi", "vi/chu-gach-ngang"),
         ],
         "rows": [

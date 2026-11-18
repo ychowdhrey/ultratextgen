@@ -4594,7 +4594,8 @@ LOCALE_MOTIFS.update(_typo_set("category-strikethrough-text", {
     "id-tulisan-coret": "coret", "pt-letra-tachada": "tachada", "es-letra-tachada": "tachada",
     "de-durchgestrichener-text": "durchgestrichen", "tr-ustu-cizili-yazi": "çizili",
     "it-testo-barrato": "barrato", "pl-przekreslony-tekst": "przekreślony",
-    "ru-zacherknutyy-tekst": "зачёркнутый", "vi-chu-gach-ngang": "gạch ngang"}))
+    "ru-zacherknutyy-tekst": "зачёркнутый", "vi-chu-gach-ngang": "gạch ngang",
+    "kk-syzylgan-matin": "сызылған"}))
 LOCALE_MOTIFS.update(_typo_set("category-cursive-fonts", {
     "id-tulisan-sambung": "Sambung", "de-schreibschrift": "Schreibschrift", "it-lettere-in-corsivo": "Corsivo",
     "es-letra-cursiva": "Cursiva", "ko-pilgichae-byeonhwan": "필기체", "ja-hikkitai": "筆記体",
@@ -4622,7 +4623,7 @@ for _en, _slugs in {
                           "de-woerter-zeichen-zaehlen", "fr-compteur-de-mots-et-de-caracteres",
                           "tr-karakter-sayaci", "it-contatore-di-parole-e-caratteri",
                           "es-contador-de-palabras-y-caracteres", "pl-licznik-slow-i-znakow",
-                          "ru-schetchik-slov-i-simvolov", "vi-dem-tu-dem-ky-tu"],
+                          "ru-schetchik-slov-i-simvolov", "vi-dem-tu-dem-ky-tu", "kk-soz-sanau"],
     "printables-cursive-alphabet": ["pt-imprimiveis-alfabeto-cursivo", "de-zum-ausdrucken-schreibschrift",
                                     "fr-imprimables-alphabet-cursif", "it-da-stampare-alfabeto-corsivo",
                                     "es-imprimibles-alfabeto-cursiva", "nl-om-uit-te-printen-schrijfletters"],

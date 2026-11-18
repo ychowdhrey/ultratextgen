@@ -791,6 +791,27 @@
       failed: "✗ Помилка",
       downloadImage: "Завантажити зображення",
       formats: { inline: "В один рядок", vertical: "Стовпчиком", comma: "Через кому", space: "Через пробіл", bullet: "Списком" }
+    },
+    kk: {
+      copied: "Көшірілді: ",
+      copyFormat: "Көшіру пішімі",
+      copyCollection: " Жинақты көшіру",
+      copiedBtn: " Көшірілді!",
+      save: "Сақтау",
+      saved: "Сақталды",
+      share: "Бөлісу",
+      shareImage: "Сурет ретінде бөлісу",
+      clearAll: "Барлығын тазалау",
+      copyLabel: "Көшіру",
+      selectImage: "Таңдап, сурет ретінде бөлісу",
+      viewSelection: "Таңдалғанды көру ({n})",
+      lookPlain: "Қарапайым нұсқасын көшіру",
+      lookEmoji: "Эмодзи нұсқасын көшіру",
+      lookNote: "Кейбір қолданбалар оны бәрібір түрлі түсті етіп көрсетеді.",
+      linkCopied: "Сілтеме көшірілді",
+      failed: "✗ Қате",
+      downloadImage: "Суретті жүктеп алу",
+      formats: { inline: "Бір жолға", vertical: "Бағанмен", comma: "Үтір арқылы", space: "Бос орын арқылы", bullet: "Тізіммен" }
     }
   };
   /* @collection-grid-strings:end */

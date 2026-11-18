@@ -1,6 +1,6 @@
 {
  "note": "Legacy (no data-case-policy) case outputs. See scripts/build-case-legacy-snapshot.js.",
- "source_ref": "62ea21612e579c12cb11692c4eae80c3a7d5a349",
+ "source_ref": "38b5a01a03240657c2e21cef53d8cd725b5aaa0c",
  "corpus_sha256": "9eb6565080ec5a90364ba930e187b669e47e0814e5eb645893c51f33bcff0ac6",
  "by_lang_style": {
   "(none)|UPPERCASE": "86d84da54522fc5a60c7506728bff7bf29e4d0df353f209ffb0e9af07e52f101",
@@ -240,7 +240,14 @@
   "uk|Title Case": "75a2ae7354b2c78ee8dc5253e06ed504602c93da607e74eab1d9685d2662330f",
   "uk|Sentence case": "8e043446e78618d5872bf22f44bd11553e14f57e92dafb18cb46447d2ff5393b",
   "uk|aLtErNaTiNg CaSe": "159d1d08136c1617c85fbfa23cc13e1441e4d567959afe23573d82747e877dfe",
-  "uk|tOGGLE cASE": "5c8682ed7bf633c5af3a7301428527ac5879f3df436899b1b435c3cfc62d5fa4"
+  "uk|tOGGLE cASE": "5c8682ed7bf633c5af3a7301428527ac5879f3df436899b1b435c3cfc62d5fa4",
+  "kk|UPPERCASE": "86d84da54522fc5a60c7506728bff7bf29e4d0df353f209ffb0e9af07e52f101",
+  "kk|lowercase": "e0ce36356e2b7baee8de1eb70c394507c8d9069563f44514fe437aef51e802f2",
+  "kk|Capitalized Case": "f61b2ab3957a16e6901eb02bbb574031a3fbbd310b99db9fb6b7bc1054747cdd",
+  "kk|Title Case": "75a2ae7354b2c78ee8dc5253e06ed504602c93da607e74eab1d9685d2662330f",
+  "kk|Sentence case": "8e043446e78618d5872bf22f44bd11553e14f57e92dafb18cb46447d2ff5393b",
+  "kk|aLtErNaTiNg CaSe": "159d1d08136c1617c85fbfa23cc13e1441e4d567959afe23573d82747e877dfe",
+  "kk|tOGGLE cASE": "5c8682ed7bf633c5af3a7301428527ac5879f3df436899b1b435c3cfc62d5fa4"
  },
  "by_style": {
   "Alternating Upside Down": "54d39acf6e9dba74dba310237a1c7d7cbee8a6acefbddc7bf375def7ccf2d768",

@@ -91,17 +91,24 @@
      sits right after it. Any letter that is not Latin counts, so the test is
      the script of each letter and not a list of languages. */
   var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-  if (lang !== 'en' && lang.indexOf('en-') !== 0) return;
+  // A locale that ships its own sentence (data/accent_notice_copy.json
+  // `otherScript`, baked as a hidden .accent-notice-script span; kk since
+  // 2026-11-18) gets it in its own language. Every other locale is unchanged.
+  var localScript = notice.querySelector('.accent-notice-script');
+  if (lang !== 'en' && lang.indexOf('en-') !== 0 && !localScript) return;
 
   var scriptNotice = document.createElement('div');
   scriptNotice.className = 'accent-notice';
   scriptNotice.id = 'scriptNotice';
   scriptNotice.setAttribute('role', 'note');
   scriptNotice.hidden = true;
+  var scriptText = localScript ? localScript.innerHTML :
+    'These styles are built from the Latin alphabet, so letters from other scripts keep their own shape. Styles that only add spacing, lines or marks still work on them, and any English letters and numbers in the same text are styled.';
+  var scriptDismiss = localScript && closeBtn ? closeBtn.getAttribute('aria-label') : 'Dismiss';
   scriptNotice.innerHTML =
     '<span class="accent-notice-icon" aria-hidden="true">Aa</span>' +
-    '<span class="accent-notice-text">These styles are built from the Latin alphabet, so letters from other scripts keep their own shape. Styles that only add spacing, lines or marks still work on them, and any English letters and numbers in the same text are styled.</span>' +
-    '<button type="button" class="accent-notice-close" id="scriptNoticeClose" aria-label="Dismiss">\u2715</button>';
+    '<span class="accent-notice-text">' + scriptText + '</span>' +
+    '<button type="button" class="accent-notice-close" id="scriptNoticeClose" aria-label="' + scriptDismiss + '">\u2715</button>';
   notice.parentNode.insertBefore(scriptNotice, notice.nextSibling);
 
   var scriptDismissed = false;

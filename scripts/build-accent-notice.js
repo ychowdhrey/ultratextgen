@@ -149,12 +149,15 @@ function enParentOf(html) {
   return p ? p + "/index.html" : "index.html";
 }
 
-function block(text, dismiss, indent, openTag, comment, icon) {
+function block(text, dismiss, indent, openTag, comment, icon, otherScript) {
   return [
     comment === false ? null : COMMENT,
     openTag || OPEN,
     `  <span class="accent-notice-icon" aria-hidden="true">${icon || "◌́"}</span>`,
     `  <span class="accent-notice-text">${text}</span>`,
+    // Only a locale that defines otherScript gets this line, so every other
+    // page bakes byte-identical to before (accent-notice.js falls back to English).
+    otherScript ? `  <span class="accent-notice-script" hidden>${otherScript}</span>` : null,
     `  <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="${dismiss}">✕</button>`,
     "</div>",
   ].filter((l) => l !== null).map((l) => (l ? indent + l : l)).join("\n");
@@ -282,11 +285,11 @@ function main() {
       const indent = indentAt(html, start);
       const openTag = (html.slice(existing).match(/^<div\b[^>]*>/) || [OPEN])[0];
       next = html.slice(0, start) +
-             block(text, entry.dismiss, indent, openTag, hadComment, entry.icon).trimStart() +
+             block(text, entry.dismiss, indent, openTag, hadComment, entry.icon, entry.otherScript).trimStart() +
              html.slice(closeIdx + "</div>".length);
     } else {
       const indent = indentAt(html, html.lastIndexOf("<", end));
-      next = html.slice(0, end) + "\n\n" + block(text, entry.dismiss, indent, null, true, entry.icon) + html.slice(end);
+      next = html.slice(0, end) + "\n\n" + block(text, entry.dismiss, indent, null, true, entry.icon, entry.otherScript) + html.slice(end);
     }
     next = withScriptTag(next);
     if (next === null) { failed.push([rel, "no place for the script tag"]); continue; }
