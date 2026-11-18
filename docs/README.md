@@ -189,6 +189,7 @@ Required, blocking checks:
 - `check:runtime-smoke`
 - `check:share-save-tags`
 - `check:source-attribution`
+- `check:spec-drift`
 - `check:spec-sentence-reuse`
 - `check:static-footer`
 - `check:symbol-collection-link`
