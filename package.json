@@ -101,6 +101,7 @@
     "test:renderer-unicode": "node renderer.unicode.test.js",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "test:romanize": "node js/romanize/korean-romanize.test.js",
+    "test:old-roblox": "node js/oldroblox/oldRobloxText.test.js",
     "test:qr": "node js/printables/qr.test.js",
     "test:ja-sheets": "node js/printables/jaSheets.test.js && python3 scripts/build-ja-print-fonts.py --check",
     "check:ja-printables": "node scripts/check-ja-printables.js",

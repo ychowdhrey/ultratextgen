@@ -643,6 +643,15 @@ jobs:
         continue-on-error: true
         run: npm run test:romanize | tee romanize-tests.log
 
+      # Gating, no backlog: the old Roblox font export is sized by an estimate, not
+      # a measurement, and a wide (Hangul, kana, CJK) name was cropped in both the
+      # SVG and the PNG with no warning. Pins main's bytes for Latin and every other
+      # non-wide line, and the two-column count for wide characters.
+      - name: Old Roblox font builder tests
+        id: old_roblox_tests
+        continue-on-error: true
+        run: npm run test:old-roblox | tee old-roblox-tests.log
+
       # Gating, no backlog: the QR encoder that stamps a way back to the site
       # onto every printed sheet and PNG export. Its one failure mode is a
       # symbol that looks perfectly well-formed and that no phone can read, so
@@ -1654,6 +1663,11 @@ jobs:
             cat romanize-tests.log
             echo '```'
             echo ""
+            echo "### Old Roblox font builder tests — \`${{ steps.old_roblox_tests.outcome }}\`"
+            echo '```'
+            cat old-roblox-tests.log
+            echo '```'
+            echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
             echo "### Japanese worksheet engine tests — \`${{ steps.ja_sheets_tests.outcome }}\`"
             echo "### Japanese printables render check — \`${{ steps.ja_printables.outcome }}\`"
@@ -2007,6 +2021,7 @@ jobs:
           steps.llms_index_tests.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.romanize_tests.outcome == 'failure' ||
+          steps.old_roblox_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
           steps.moon_phase_tests.outcome == 'failure' ||
           steps.unicode_reference_sets.outcome == 'failure' ||
