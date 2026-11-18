@@ -1,0 +1,129 @@
+{
+  "slug": "awareness-ribbons",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Awareness Ribbon Symbols: Copy & Paste Ribbon Emojis",
+  "meta_description": "Browse and copy awareness ribbon symbols, health icons, and cause-related Unicode characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/awareness-ribbons/",
+  "breadcrumb": "Awareness Ribbon Symbols",
+  "hero_h1": "Awareness Ribbon Symbols",
+  "hero_tagline": "A reference collection of awareness ribbon symbols, health icons, and cause-related Unicode characters. Click any symbol to copy it instantly.",
+  "intro": "This library contains awareness ribbon emojis, medals and badge symbols, hearts, stars, accessibility symbols, and cause-related Unicode characters. Symbols are organized by category for easy browsing.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/awareness-ribbons/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/solidaritaetsschleifen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/awareness-ribbons/" }
+  ],
+  "sections": [
+    {
+      "id": "ribbon-emojis",
+      "label": "Ribbon Emojis",
+      "h2": "Ribbon Emojis",
+      "intro": "Standard ribbon emoji symbols used for awareness and decoration.",
+      "symbols": [
+        { "char": "🎀", "label": "Ribbon" },
+        { "char": "🎗️", "label": "Reminder Ribbon" }
+      ]
+    },
+    {
+      "id": "medal-and-badge-symbols",
+      "label": "Medal and Badge Symbols",
+      "h2": "Medal and Badge Symbols",
+      "intro": "Medals, badges, and honor symbols related to awareness causes.",
+      "symbols": [
+        { "char": "🏅", "label": "Sports Medal" },
+        { "char": "🎖️", "label": "Military Medal" },
+        { "char": "🥇", "label": "1st Place Medal" },
+        { "char": "🥈", "label": "2nd Place Medal" },
+        { "char": "🥉", "label": "3rd Place Medal" },
+        { "char": "🏆", "label": "Trophy" }
+      ]
+    },
+    {
+      "id": "cause-and-awareness-symbols",
+      "label": "Cause and Awareness Symbols",
+      "h2": "Cause and Awareness Symbols",
+      "intro": "Symbols commonly associated with awareness campaigns, health, and social causes.",
+      "symbols": [
+        { "char": "⚕", "label": "Medical Symbol" },
+        { "char": "♿", "label": "Wheelchair Symbol" },
+        { "char": "☮", "label": "Peace Symbol" },
+        { "char": "☢", "label": "Radioactive Sign" },
+        { "char": "☣", "label": "Biohazard Sign" },
+        { "char": "💚", "label": "Green Heart" },
+        { "char": "💜", "label": "Purple Heart" },
+        { "char": "🧡", "label": "Orange Heart" }
+      ]
+    },
+    {
+      "id": "heart-and-love-awareness",
+      "label": "Heart and Love Awareness Symbols",
+      "h2": "Heart and Love Awareness Symbols",
+      "intro": "Heart-shaped symbols used in awareness and love-related causes.",
+      "symbols": [
+        { "char": "♡", "label": "White Heart Suit" },
+        { "char": "❤", "label": "Red Heart" },
+        { "char": "🩷", "label": "Pink Heart" },
+        { "char": "💛", "label": "Yellow Heart" },
+        { "char": "💗", "label": "Pink (Breast Cancer)" },
+        { "char": "💙", "label": "Blue (Awareness)" },
+        { "char": "❤️", "label": "Red (HIV/AIDS)" }
+      ]
+    },
+    {
+      "id": "star-and-recognition",
+      "label": "Star and Recognition Symbols",
+      "h2": "Star and Recognition Symbols",
+      "intro": "Stars and symbols used for recognition and attention.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "⭐", "label": "White Medium Star" },
+        { "char": "🌟", "label": "Glowing Star" }
+      ]
+    },
+    {
+      "id": "accessibility-symbols",
+      "label": "Accessibility Symbols",
+      "h2": "Accessibility Symbols",
+      "intro": "Symbols related to accessibility, inclusion, and assistive needs.",
+      "symbols": [
+        { "char": "♿", "label": "Wheelchair Symbol" },
+        { "char": "⚠", "label": "Warning Sign" },
+        { "char": "🦽", "label": "Manual Wheelchair" },
+        { "char": "🦼", "label": "Motorized Wheelchair" },
+        { "char": "🦯", "label": "White Cane" },
+        { "char": "🦻", "label": "Ear with Hearing Aid" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Browse dozens of heart emojis and Unicode heart characters organized by style and color."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Star characters from basic filled and outlined stars to multi-pointed decorative variants."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Faith and spiritual symbols including crosses, crescents, stars, and peace signs from major world traditions."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Emoji Flag Explorer",
+      "desc": "Browse 195 country flags by region, plus regional sets and special flags like 🏴‍☠️ and 🏳️‍🌈."
+    },
+    {
+      "href": "/symbol/autism-symbol/",
+      "title": "Autism Symbol",
+      "desc": "The infinity symbol (∞ ♾️) autistic self-advocates use for autism and neurodiversity, and why it replaced the puzzle piece 🧩."
+    }
+  ]
+}

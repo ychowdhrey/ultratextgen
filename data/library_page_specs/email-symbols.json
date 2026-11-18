@@ -1,0 +1,189 @@
+{
+  "slug": "email-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Email Symbols — Copy & Paste Icons for Signatures",
+  "meta_description": "Copy and paste email symbols — signature contact icons (✉ ☎), subject-line grabbers, professional bullets, and status markers. Click any symbol to copy.",
+  "canonical": "https://ultratextgen.com/library/email-symbols/",
+  "breadcrumb": "Email Symbols",
+  "hero_h1": "Email Symbols",
+  "hero_tagline": "A reference collection of symbols optimized for email: subject line attention grabbers, professional bullets, dividers, signature icons, and reaction symbols. Click any symbol to copy it instantly.",
+  "intro": "Browse and copy email-optimized Unicode symbols organized by use case: from eye-catching subject line symbols to clean professional bullets, dividers, status indicators, contact icons, and response reactions.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/email-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-email/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/imeil-giho/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/email-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/email-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "subject-line",
+      "label": "Subject Line",
+      "h2": "Subject Line Attention Grabbers",
+      "intro": "High-visibility symbols that stand out in email subject lines and increase open rates.",
+      "symbols": [
+        { "char": "⚡", "label": "Lightning Bolt" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🎯", "label": "Bullseye" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "🚀", "label": "Rocket" },
+        { "char": "📢", "label": "Loudspeaker" },
+        { "char": "📣", "label": "Megaphone" },
+        { "char": "🆕", "label": "New" },
+        { "char": "🔔", "label": "Bell" },
+        { "char": "💡", "label": "Light Bulb" },
+        { "char": "❗", "label": "Exclamation Mark" }
+      ]
+    },
+    {
+      "id": "pro-bullets",
+      "label": "Professional Bullets",
+      "h2": "Professional Bullet Symbols",
+      "intro": "Clean and minimal bullet point characters for structured email body text.",
+      "symbols": [
+        { "char": "▸", "label": "Small Right Filled Triangle" },
+        { "char": "▹", "label": "Small Right Outline Triangle" },
+        { "char": "◆", "label": "Black Diamond" },
+        { "char": "➤", "label": "Right-Pointing Pointer" },
+        { "char": "◇", "label": "White Diamond" },
+        { "char": "●", "label": "Black Circle" },
+        { "char": "○", "label": "White Circle" },
+        { "char": "‣", "label": "Triangular Bullet" },
+        { "char": "▪", "label": "Small Black Square" },
+        { "char": "▫", "label": "Small White Square" },
+        { "char": "•", "label": "Bullet" }
+      ]
+    },
+    {
+      "id": "dividers",
+      "label": "Dividers & Separators",
+      "h2": "Email Divider & Separator Symbols",
+      "intro": "Line characters for visually separating sections in email content.",
+      "symbols": [
+        { "char": "─", "label": "Light Horizontal" },
+        { "char": "═", "label": "Double Horizontal" },
+        { "char": "━", "label": "Heavy Horizontal" },
+        { "char": "│", "label": "Vertical Bar" },
+        { "char": "┃", "label": "Heavy Vertical Bar" },
+        { "char": "—", "label": "Em Dash" },
+        { "char": "·", "label": "Middle Dot" },
+        { "char": "⋯", "label": "Midline Horizontal Ellipsis" },
+        { "char": "〰", "label": "Wavy Dash" },
+        { "char": "|", "label": "Vertical Line" },
+        { "char": "⁃", "label": "Hyphen Bullet" },
+        { "char": "┄", "label": "Light Triple Dash" }
+      ]
+    },
+    {
+      "id": "status-priority",
+      "label": "Status & Priority",
+      "h2": "Status & Priority Symbols",
+      "intro": "Color-coded status and priority indicators for task and project communication.",
+      "symbols": [
+        { "char": "🔴", "label": "Red (Urgent)" },
+        { "char": "🟡", "label": "Yellow (Pending)" },
+        { "char": "🟢", "label": "Green (Done)" },
+        { "char": "✅", "label": "Completed" },
+        { "char": "❌", "label": "Cancelled" },
+        { "char": "❓", "label": "Question Mark" },
+        { "char": "🆘", "label": "SOS" },
+        { "char": "🆓", "label": "Free" },
+        { "char": "⚠️", "label": "Warning" },
+        { "char": "ℹ️", "label": "Info" },
+        { "char": "🔵", "label": "Blue (In Progress)" },
+        { "char": "⏰", "label": "Alarm Clock" },
+        { "char": "📌", "label": "Pushpin" }
+      ]
+    },
+    {
+      "id": "contact-icons",
+      "label": "Contact & Signature Icons",
+      "h2": "Contact & Signature Icons",
+      "intro": "Icons for email signatures, contact details, and professional closing sections.",
+      "symbols": [
+        { "char": "📧", "label": "Email" },
+        { "char": "📱", "label": "Mobile Phone" },
+        { "char": "📞", "label": "Telephone Receiver" },
+        { "char": "🌐", "label": "Website / Globe" },
+        { "char": "📍", "label": "Location Pin" },
+        { "char": "☎", "label": "Telephone" },
+        { "char": "💼", "label": "Briefcase" },
+        { "char": "🔗", "label": "Link" },
+        { "char": "📎", "label": "Paperclip" },
+        { "char": "🖊", "label": "Pen" },
+        { "char": "✉", "label": "Envelope" },
+        { "char": "✆", "label": "Telephone Location (text)" },
+        { "char": "☏", "label": "White Telephone (text)" },
+        { "char": "⌂", "label": "House / Address (text)" },
+        { "char": "✎", "label": "Pencil (text)" },
+        { "char": "📠", "label": "Fax Machine" },
+        { "char": "℻", "label": "Facsimile Sign (text)" }
+      ]
+    },
+    {
+      "id": "reaction-response",
+      "label": "Reaction & Response",
+      "h2": "Reaction & Response Symbols",
+      "intro": "Symbols for quick email reactions, acknowledgments, and closing sentiments.",
+      "symbols": [
+        { "char": "👍", "label": "Thumbs Up" },
+        { "char": "👎", "label": "Thumbs Down" },
+        { "char": "✅", "label": "Approved" },
+        { "char": "❌", "label": "Rejected" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "🙏", "label": "Thank You" },
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "💡", "label": "Idea" },
+        { "char": "🎉", "label": "Celebration" },
+        { "char": "❤️", "label": "Heart" },
+        { "char": "🔥", "label": "Fire" }
+      ]
+    }
+  ],
+  "faq_h2": "Email symbols, answered",
+  "faq": [
+    {
+      "q": "Do email symbols work in Gmail and Outlook?",
+      "a": "Yes. These are standard Unicode characters, so they display in Gmail, Outlook, Apple Mail, and most modern clients on both desktop and mobile. Text-style glyphs (✆ ☎ ✉ ▸ •) are the most reliable; full-colour emoji also work but can render slightly differently between clients."
+    },
+    {
+      "q": "How do I add an email or phone icon to my signature?",
+      "a": "Click the icon you want (✉ for email, ☎ or ✆ for phone, 🌐 for website, 📍 for address) to copy it, then paste it at the start of each line in your email signature. Text-style glyphs keep a clean, professional look and won't clash with your signature's font colour."
+    },
+    {
+      "q": "Will symbols in a subject line send my email to spam?",
+      "a": "A single, relevant symbol is generally fine and can lift open rates. The spam risk comes from overuse: multiple flashy emoji, ALL CAPS, and spammy words together. Use one tasteful symbol that matches the message, and keep the rest of the subject line clean."
+    },
+    {
+      "q": "What's the difference between an email symbol and an email emoji?",
+      "a": "Text symbols (✉ ☎ ▸ —) are monochrome glyphs that inherit your text colour and stay subtle, which suits professional signatures and bullets. Emoji (📧 📱 🔥) are full-colour pictographs that grab attention, which suits subject lines and casual reactions. This page includes both."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Professional Unicode symbols tested and curated for LinkedIn posts and comments."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Checkmark Symbols",
+      "desc": "Check marks, cross marks, and status indicators for lists and comparisons."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "Straight, curved, double, triangle, and emoji arrows for formatting."
+    },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "LinkedIn Comment Styling",
+      "desc": "Techniques and templates for professional LinkedIn comments."
+    }
+  ]
+}

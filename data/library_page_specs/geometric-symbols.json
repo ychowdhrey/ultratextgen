@@ -1,0 +1,190 @@
+{
+  "slug": "geometric-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Geometric Symbols: Copy & Paste Circles, Diamonds & Shapes",
+  "meta_description": "Browse and copy geometric shape symbols — circles, diamonds, squares, triangles, and decorative shapes for formatting and design.",
+  "canonical": "https://ultratextgen.com/library/geometric-symbols/",
+  "breadcrumb": "Geometric Symbols",
+  "hero_h1": "Geometric Symbols",
+  "hero_tagline": "A reference collection of geometric shape symbols: circles, diamonds, squares, triangles, and decorative shapes for formatting and design. Click any symbol to copy it instantly.",
+  "intro": "Browse and copy geometric Unicode symbols organized by shape type. From classic circles and diamonds to colored emoji squares, bullet markers, and unusual shapes: everything in one place.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/geometric-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-geometricos/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-geometri/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/dohyeong-giho/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-geometrici/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/geometrik-semboller/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-geometricos/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/geometricheskie-simvoly/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/zukei-kigou/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/geometrische-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/geometric-symbols/" },
+    { "lang": "no", "href": "https://ultratextgen.com/no/library/geometriske-symboler/" }
+  ],
+  "sections": [
+    {
+      "id": "circles",
+      "label": "Circle Symbols",
+      "h2": "Circle Symbols",
+      "intro": "Solid, outlined, and colored circle characters in Unicode and emoji.",
+      "symbols": [
+        { "char": "●", "label": "Black Circle" },
+        { "char": "○", "label": "White Circle" },
+        { "char": "◉", "label": "Fisheye" },
+        { "char": "◎", "label": "Bullseye" },
+        { "char": "⊙", "label": "Circled Dot" },
+        { "char": "⊚", "label": "Circled Ring Operator" },
+        { "char": "⬤", "label": "Large Black Circle" },
+        { "char": "◌", "label": "Dotted Circle" },
+        { "char": "🔴", "label": "Red Circle" },
+        { "char": "🟡", "label": "Yellow Circle" },
+        { "char": "🟢", "label": "Green Circle" },
+        { "char": "🔵", "label": "Blue Circle" },
+        { "char": "⚪", "label": "White Circle Emoji" },
+        { "char": "⚫", "label": "Black Circle Emoji" },
+        { "char": "🟠", "label": "Orange Circle" },
+        { "char": "🟣", "label": "Purple Circle" },
+        { "char": "🟤", "label": "Brown Circle" }
+      ]
+    },
+    {
+      "id": "diamonds",
+      "label": "Diamond Symbols",
+      "h2": "Diamond Symbols",
+      "intro": "Diamond and rhombus shapes in Unicode and emoji for visual emphasis.",
+      "symbols": [
+        { "char": "◆", "label": "Black Diamond" },
+        { "char": "◇", "label": "White Diamond" },
+        { "char": "♦", "label": "Diamond Suit" },
+        { "char": "◈", "label": "White Diamond with Centre Dot" },
+        { "char": "🔶", "label": "Large Orange Diamond" },
+        { "char": "🔷", "label": "Large Blue Diamond" },
+        { "char": "💎", "label": "Gem Stone" },
+        { "char": "💠", "label": "Diamond with a Dot" },
+        { "char": "♢", "label": "White Diamond Suit" }
+      ]
+    },
+    {
+      "id": "squares",
+      "label": "Square Symbols",
+      "h2": "Square Symbols",
+      "intro": "Solid and outlined square shapes in Unicode and colored emoji variants.",
+      "symbols": [
+        { "char": "■", "label": "Black Square" },
+        { "char": "□", "label": "White Square" },
+        { "char": "◼", "label": "Medium Black Square" },
+        { "char": "◻", "label": "Medium White Square" },
+        { "char": "▪", "label": "Small Black Square" },
+        { "char": "▫", "label": "Small White Square" },
+        { "char": "🟥", "label": "Red Square" },
+        { "char": "🟧", "label": "Orange Square" },
+        { "char": "🟨", "label": "Yellow Square" },
+        { "char": "🟩", "label": "Green Square" },
+        { "char": "🟦", "label": "Blue Square" },
+        { "char": "🟪", "label": "Purple Square" },
+        { "char": "🟫", "label": "Brown Square" },
+        { "char": "⬛", "label": "Black Large Square" },
+        { "char": "⬜", "label": "White Large Square" },
+        { "char": "▭", "label": "White Rectangle" },
+        { "char": "▬", "label": "Black Rectangle" },
+        { "char": "▯", "label": "White Vertical Rectangle" },
+        { "char": "▮", "label": "Black Vertical Rectangle" },
+        { "char": "▢", "label": "White Square with Rounded Corners" }
+      ]
+    },
+    {
+      "id": "triangles",
+      "label": "Triangle Symbols",
+      "h2": "Triangle Symbols",
+      "intro": "Solid and outlined triangles pointing in every direction.",
+      "symbols": [
+        { "char": "▲", "label": "Black Up-Pointing Triangle" },
+        { "char": "△", "label": "White Up-Pointing Triangle" },
+        { "char": "▼", "label": "Black Down-Pointing Triangle" },
+        { "char": "▽", "label": "White Down-Pointing Triangle" },
+        { "char": "◀", "label": "Black Left-Pointing Triangle" },
+        { "char": "▶", "label": "Black Right-Pointing Triangle" },
+        { "char": "◄", "label": "Black Left-Pointing Pointer" },
+        { "char": "►", "label": "Black Right-Pointing Pointer" },
+        { "char": "◁", "label": "White Left-Pointing Triangle" },
+        { "char": "▷", "label": "White Right-Pointing Triangle" },
+        { "char": "🔺", "label": "Red Triangle Up" },
+        { "char": "🔻", "label": "Red Triangle Down" },
+        { "char": "⏫", "label": "Fast Up Button" },
+        { "char": "⏬", "label": "Fast Down Button" }
+      ]
+    },
+    {
+      "id": "bullets",
+      "label": "Bullet & List Markers",
+      "h2": "Bullet & List Marker Symbols",
+      "intro": "Small geometric symbols perfect for bullet points and list formatting.",
+      "symbols": [
+        { "char": "‣", "label": "Triangular Bullet" },
+        { "char": "▸", "label": "Small Right-Pointing Filled" },
+        { "char": "▹", "label": "Small Right-Pointing Outline" },
+        { "char": "▪", "label": "Small Black Square" },
+        { "char": "▫", "label": "Small White Square" },
+        { "char": "◆", "label": "Black Diamond" },
+        { "char": "◇", "label": "White Diamond" },
+        { "char": "•", "label": "Bullet" },
+        { "char": "◦", "label": "White Bullet" },
+        { "char": "∙", "label": "Bullet Operator" },
+        { "char": "‧", "label": "Hyphenation Point" },
+        { "char": "⁃", "label": "Hyphen Bullet" },
+        { "char": "⦿", "label": "Circled Bullet" },
+        { "char": "⦾", "label": "Circled White Bullet" }
+      ]
+    },
+    {
+      "id": "misc-shapes",
+      "label": "Miscellaneous Shapes",
+      "h2": "Miscellaneous Shape Symbols",
+      "intro": "Hexagons, pentagons, and other less common geometric shapes.",
+      "symbols": [
+        { "char": "⬡", "label": "White Hexagon" },
+        { "char": "⬢", "label": "Black Hexagon" },
+        { "char": "⬠", "label": "White Pentagon" },
+        { "char": "⬟", "label": "Black Pentagon" },
+        { "char": "⏣", "label": "Benzene Ring with Circle" },
+        { "char": "⎔", "label": "Software Function Symbol" },
+        { "char": "⌬", "label": "Benzene Ring" },
+        { "char": "⏢", "label": "White Trapezium" },
+        { "char": "☐", "label": "Ballot Box" },
+        { "char": "☑", "label": "Ballot Box with Check" },
+        { "char": "☒", "label": "Ballot Box with X" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "Straight, curved, double, triangle, and emoji arrows for formatting."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Checkmark Symbols",
+      "desc": "Check marks, cross marks, and status indicators for lists and comparisons."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Professional Unicode symbols tested and curated for LinkedIn."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle & Decorative Symbols",
+      "desc": "Sparkle symbols, glitter characters, and aesthetic decorators."
+    },
+    {
+      "href": "/symbol/diameter-symbol/",
+      "title": "Diameter Symbol",
+      "desc": "The diameter sign (⌀) that precedes circular dimensions on engineering drawings, plus the symbols people mistake for it."
+    }
+  ]
+}

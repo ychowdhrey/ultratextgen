@@ -1,0 +1,265 @@
+{
+  "slug": "animal-emojis",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Animal & Creature Emojis: Copy & Paste Animal Symbols",
+  "meta_description": "Browse and copy animal emojis — pets, wildlife, sea creatures, birds, and mythical beings. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/animal-emojis/",
+  "breadcrumb": "Animal & Creature Emojis",
+  "hero_h1": "Animal & Creature Emojis",
+  "hero_tagline": "A reference collection of animal emojis: pets, wildlife, sea creatures, birds, and mythical beings. Click any symbol to copy it instantly.",
+  "intro": "Browse and copy animal emojis organized by category. From household pets and wild predators to ocean creatures, mythical beasts, and farm animals: every creature in one place.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/animal-emojis/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/animal-emojis/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/animal-emojis/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/emoji-hewan/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-animales/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/hayvan-emojileri/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/emojis-animaux/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/dongmul-imoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/animal-emojis/" }
+  ],
+  "sections": [
+    {
+      "id": "domestic-animals",
+      "label": "Domestic Animals",
+      "h2": "Domestic Animal Emojis",
+      "intro": "Common household pets and companion animals.",
+      "symbols": [
+        { "char": "🐶", "label": "Dog Face" },
+        { "char": "🐕", "label": "Dog" },
+        { "char": "🐩", "label": "Poodle" },
+        { "char": "🐱", "label": "Cat Face" },
+        { "char": "🐈", "label": "Cat" },
+        { "char": "🐹", "label": "Hamster" },
+        { "char": "🐰", "label": "Rabbit Face" },
+        { "char": "🐠", "label": "Tropical Fish" },
+        { "char": "🐇", "label": "Rabbit" },
+        { "char": "🐾", "label": "Paw Prints" }
+      ]
+    },
+    {
+      "id": "farm-animals",
+      "label": "Farm Animals",
+      "h2": "Farm Animal Emojis",
+      "intro": "Livestock and animals commonly found on farms.",
+      "symbols": [
+        { "char": "🐄", "label": "Cow" },
+        { "char": "🐮", "label": "Cow Face" },
+        { "char": "🐷", "label": "Pig Face" },
+        { "char": "🐖", "label": "Pig" },
+        { "char": "🐑", "label": "Ewe" },
+        { "char": "🐐", "label": "Goat" },
+        { "char": "🐔", "label": "Chicken" },
+        { "char": "🐓", "label": "Rooster" },
+        { "char": "🐴", "label": "Horse Face" },
+        { "char": "🐎", "label": "Horse" },
+        { "char": "🦃", "label": "Turkey" },
+        { "char": "🐂", "label": "Ox" },
+        { "char": "🐃", "label": "Water Buffalo" },
+        { "char": "🐽", "label": "Pig Nose" }
+      ]
+    },
+    {
+      "id": "wild-mammals",
+      "label": "Wild Mammals",
+      "h2": "Wild Mammal Emojis",
+      "intro": "Mammals found in the wild including forest, savanna, and jungle animals.",
+      "symbols": [
+        { "char": "🦁", "label": "Lion" },
+        { "char": "🐯", "label": "Tiger Face" },
+        { "char": "🐻", "label": "Bear" },
+        { "char": "🐼", "label": "Panda" },
+        { "char": "🐨", "label": "Koala" },
+        { "char": "🦊", "label": "Fox" },
+        { "char": "🐺", "label": "Wolf" },
+        { "char": "🐘", "label": "Elephant" },
+        { "char": "🦒", "label": "Giraffe" },
+        { "char": "🦏", "label": "Rhinoceros" },
+        { "char": "🦛", "label": "Hippopotamus" },
+        { "char": "🐒", "label": "Monkey" },
+        { "char": "🐵", "label": "Monkey Face" },
+        { "char": "🦌", "label": "Deer" },
+        { "char": "🐿", "label": "Chipmunk" },
+        { "char": "🐅", "label": "Tiger" },
+        { "char": "🐆", "label": "Leopard" },
+        { "char": "🦍", "label": "Gorilla" },
+        { "char": "🦧", "label": "Orangutan" },
+        { "char": "🙈", "label": "See-No-Evil Monkey" },
+        { "char": "🙉", "label": "Hear-No-Evil Monkey" },
+        { "char": "🙊", "label": "Speak-No-Evil Monkey" },
+        { "char": "🐻‍❄️", "label": "Polar Bear" },
+        { "char": "🦓", "label": "Zebra" },
+        { "char": "🦝", "label": "Raccoon" },
+        { "char": "🦣", "label": "Mammoth" },
+        { "char": "🐭", "label": "Mouse Face" },
+        { "char": "🐁", "label": "Mouse" },
+        { "char": "🐀", "label": "Rat" },
+        { "char": "🦇", "label": "Bat" }
+      ]
+    },
+    {
+      "id": "birds",
+      "label": "Birds",
+      "h2": "Bird Emojis",
+      "intro": "Bird emojis from common to exotic species. 🐦‍⬛ Black Bird is the crow and raven emoji: Emoji 15.0 (2022) built it from 🐦 and ⬛ joined by an invisible joiner, so a device older than that shows the two side by side.",
+      "symbols": [
+        { "char": "🐦", "label": "Bird" },
+        { "char": "🐧", "label": "Penguin" },
+        { "char": "🦅", "label": "Eagle" },
+        { "char": "🦆", "label": "Duck" },
+        { "char": "🦉", "label": "Owl" },
+        { "char": "🦜", "label": "Parrot" },
+        { "char": "🦚", "label": "Peacock" },
+        { "char": "🦢", "label": "Swan" },
+        { "char": "🦩", "label": "Flamingo" },
+        { "char": "🕊", "label": "Dove" },
+        { "char": "🐦‍⬛", "label": "Black Bird (Crow, Raven)" },
+        { "char": "🪶", "label": "Feather" },
+        { "char": "🪿", "label": "Goose" },
+        { "char": "🐤", "label": "Baby Chick" },
+        { "char": "🐣", "label": "Hatching Chick" },
+        { "char": "🐥", "label": "Front-Facing Chick" }
+      ]
+    },
+    {
+      "id": "ocean-life",
+      "label": "Ocean Life",
+      "h2": "Ocean Life Emojis",
+      "intro": "Marine animals and sea creatures.",
+      "symbols": [
+        { "char": "🐳", "label": "Spouting Whale" },
+        { "char": "🐋", "label": "Whale" },
+        { "char": "🐬", "label": "Dolphin" },
+        { "char": "🦈", "label": "Shark" },
+        { "char": "🐙", "label": "Octopus" },
+        { "char": "🐚", "label": "Spiral Shell" },
+        { "char": "🦑", "label": "Squid" },
+        { "char": "🦐", "label": "Shrimp" },
+        { "char": "🐡", "label": "Blowfish" },
+        { "char": "🦭", "label": "Seal" },
+        { "char": "🐟", "label": "Fish" },
+        { "char": "🦞", "label": "Lobster" }
+      ]
+    },
+    {
+      "id": "insects-and-small-creatures",
+      "label": "Insects and Small Creatures",
+      "h2": "Insect and Small Creature Emojis",
+      "intro": "Bugs, insects, and other small animals.",
+      "symbols": [
+        { "char": "🐛", "label": "Bug" },
+        { "char": "🦋", "label": "Butterfly" },
+        { "char": "🐌", "label": "Snail" },
+        { "char": "🐜", "label": "Ant" },
+        { "char": "🐝", "label": "Honeybee" },
+        { "char": "🪲", "label": "Beetle" },
+        { "char": "🐞", "label": "Lady Beetle" },
+        { "char": "🦗", "label": "Cricket" },
+        { "char": "🕷", "label": "Spider" },
+        { "char": "🦂", "label": "Scorpion" },
+        { "char": "🪳", "label": "Cockroach" },
+        { "char": "🪱", "label": "Worm" }
+      ]
+    },
+    {
+      "id": "reptiles-and-amphibians",
+      "label": "Reptiles and Amphibians",
+      "h2": "Reptile and Amphibian Emojis",
+      "intro": "Cold-blooded animals including snakes, lizards, and frogs.",
+      "symbols": [
+        { "char": "🐍", "label": "Snake" },
+        { "char": "🦎", "label": "Lizard" },
+        { "char": "🐊", "label": "Crocodile" },
+        { "char": "🐢", "label": "Turtle" },
+        { "char": "🐸", "label": "Frog" },
+        { "char": "🦕", "label": "Sauropod" },
+        { "char": "🦖", "label": "T-Rex" }
+      ]
+    },
+    {
+      "id": "mythical-animals",
+      "label": "Mythical Animals",
+      "h2": "Mythical Animal Emojis",
+      "intro": "Fantasy and mythological creature emojis.",
+      "symbols": [
+        { "char": "🦄", "label": "Unicorn" },
+        { "char": "🐉", "label": "Dragon" },
+        { "char": "🐲", "label": "Dragon Face" },
+        { "char": "🐦‍🔥", "label": "Phoenix" }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/fish-kaomoji/", "title": "Fish Kaomoji", "desc": "Fish drawn in text characters: ><(((º>, <>< and more." },
+    {
+      "href": "/usecase/text-to-emoji/",
+      "title": "Text to Emoji Converter",
+      "desc": "Turn any sentence into emoji, spell names in emoji letters, or decode emoji back to text: free and instant."
+    },
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac & Astrology Symbols",
+      "desc": "All 12 Western zodiac signs plus planets and Chinese zodiac animals."
+    },
+    {
+      "href": "/library/flower-symbols/",
+      "title": "Flower & Nature Symbols",
+      "desc": "Flower emojis, plant symbols, and nature-themed Unicode characters."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face & Emotion Emojis",
+      "desc": "Smileys, angry faces, shrug, confused, and expressive Unicode characters."
+    },
+    {
+      "href": "/library/seahorse-emoji/",
+      "title": "Seahorse Emoji",
+      "desc": "Why there's no seahorse emoji, plus the closest ocean-creature alternatives."
+    },
+    { "href": "/library/emoji-flags/", "title": "Emoji Flag Explorer", "desc": "Browse every country flag emoji organized by region." },
+    {
+      "href": "/symbol/monarch-butterfly-emoji/",
+      "title": "Monarch Butterfly Emoji",
+      "desc": "A specific species, carved out of the generic Butterfly emoji's cross-platform rendering mismatch."
+    },
+    {
+      "href": "/symbol/orca-emoji/",
+      "title": "Orca Emoji",
+      "desc": "The black-and-white orca 🫍 with its codepoint, its keyboard routes, the platforms that draw it so far, and the marine emoji people reached…"
+    },
+    {
+      "href": "/library/bear-kaomoji/",
+      "title": "Bear Kaomoji",
+      "desc": "Copy and paste bear kaomoji: cute Japanese bear text faces with round ʕ ʔ ears."
+    },
+    {
+      "href": "/library/bunny-kaomoji/",
+      "title": "Bunny Kaomoji",
+      "desc": "Copy and paste bunny kaomoji: cute Japanese rabbit text faces with long ears."
+    },
+    {
+      "href": "/library/cat-kaomoji/",
+      "title": "Cat Kaomoji",
+      "desc": "Copy and paste cat kaomoji: cute Japanese cat text faces with whiskers, paws, and big eyes."
+    },
+    {
+      "href": "/library/cat-ascii-art/",
+      "title": "Cat ASCII Art",
+      "desc": "Original multi-line text cats: cat faces, cat loafs, long cats, and sitting cats drawn in plain characters."
+    },
+    {
+      "href": "/library/dog-kaomoji/",
+      "title": "Dog Kaomoji",
+      "desc": "Copy and paste dog kaomoji: cute Japanese puppy text faces with floppy ears and paws."
+    },
+    {
+      "href": "/library/dog-ascii-art/",
+      "title": "Dog ASCII Art",
+      "desc": "Original multi-line text dogs: puppy faces, floppy ears, sitting dogs, and bones drawn in plain characters."
+    }
+  ]
+}

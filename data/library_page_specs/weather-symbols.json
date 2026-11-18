@@ -1,0 +1,190 @@
+{
+  "slug": "weather-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Weather Symbols: Copy & Paste Weather Icons & Emojis",
+  "meta_description": "Browse and copy weather symbols, moon phases, and atmospheric Unicode characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/weather-symbols/",
+  "breadcrumb": "Weather Symbols",
+  "hero_h1": "Weather Symbols & Emojis",
+  "hero_tagline": "A reference collection of weather condition symbols, moon phases, and atmospheric Unicode characters. Click any symbol to copy it instantly.",
+  "intro": "This library contains weather condition emojis, moon phase symbols, atmospheric and temperature indicators, and related Unicode characters. Symbols are organized by weather type and category.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-29",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/weather-symbols/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-cuaca/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-pogody/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-meteo/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/wetter-symbole/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/nalssi-giho/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-del-clima/" },
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/vader-symboler/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/weather-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "sun-clear-sky",
+      "label": "Sun & Clear Sky",
+      "h2": "Sun & Clear Sky Symbols",
+      "intro": "Symbols for sunny weather, clear skies, and daylight. For the canonical sunrise → sunset → night day-cycle sequence, see <a href=\"/library/moon-celestial-symbols/#sun-progression\">Sun Progression on moon-celestial-symbols</a>.",
+      "symbols": [
+        { "char": "☀", "label": "Sun" },
+        { "char": "☼", "label": "Sun with Rays" },
+        { "char": "🌞", "label": "Sun with Face" },
+        { "char": "🌤", "label": "Mostly Sunny" },
+        { "char": "🌅", "label": "Sunrise" },
+        { "char": "🌄", "label": "Sunrise Over Mountains" },
+        { "char": "🌇", "label": "Sunset" }
+      ]
+    },
+    {
+      "id": "cloud-symbols",
+      "label": "Clouds",
+      "h2": "Cloud Symbols",
+      "intro": "Symbols for cloudy weather and overcast conditions.",
+      "symbols": [
+        { "char": "☁", "label": "Cloud" },
+        { "char": "⛅", "label": "Partly Cloudy" },
+        { "char": "🌥", "label": "Mostly Cloudy" },
+        { "char": "🌦", "label": "Sun & Rain" },
+        { "char": "🌁", "label": "Foggy" },
+        { "char": "☁️", "label": "Cloud (emoji style)" }
+      ]
+    },
+    {
+      "id": "rain-storm",
+      "label": "Rain & Storm",
+      "h2": "Rain & Storm Symbols",
+      "intro": "Symbols for precipitation, storms, lightning, and severe weather conditions.",
+      "symbols": [
+        { "char": "🌧", "label": "Rain" },
+        { "char": "⛈", "label": "Thunderstorm" },
+        { "char": "🌩", "label": "Lightning Cloud" },
+        { "char": "⚡", "label": "Lightning" },
+        { "char": "🌂", "label": "Closed Umbrella" },
+        { "char": "☂", "label": "Umbrella" },
+        { "char": "☔", "label": "Umbrella with Rain" },
+        { "char": "🌧️", "label": "Rain Cloud (emoji style)" },
+        { "char": "⛈️", "label": "Storm Cloud (emoji style)" },
+        { "char": "🌩️", "label": "Lightning Cloud (emoji style)" },
+        { "char": "☂️", "label": "Umbrella (emoji style)" },
+        { "char": "🥾", "label": "Hiking Boot" }
+      ]
+    },
+    {
+      "id": "snow-cold",
+      "label": "Snow & Cold",
+      "h2": "Snow & Cold Symbols",
+      "intro": "Snowflake variants, snowman characters, and winter precipitation symbols.",
+      "symbols": [
+        { "char": "🌨", "label": "Snowing" },
+        { "char": "❄", "label": "Snowflake" },
+        { "char": "❅", "label": "Snowflake Alt" },
+        { "char": "❆", "label": "Snowflake Heavy" },
+        { "char": "⛄", "label": "Snowman" },
+        { "char": "☃", "label": "Snowman with Snow" },
+        { "char": "🧊", "label": "Ice" }
+      ]
+    },
+    {
+      "id": "wind-tornado",
+      "label": "Wind & Tornado",
+      "h2": "Wind & Tornado Symbols",
+      "intro": "Symbols for wind, tornadoes, and atmospheric movement.",
+      "symbols": [
+        { "char": "🌬", "label": "Wind Face" },
+        { "char": "🌪", "label": "Tornado" },
+        { "char": "🌀", "label": "Cyclone" },
+        { "char": "💨", "label": "Wind" },
+        { "char": "🌪️", "label": "Tornado (emoji style)" },
+        { "char": "🌬️", "label": "Wind Face (emoji style)" },
+        { "char": "🍃", "label": "Leaf in Wind" },
+        { "char": "🎐", "label": "Wind Chime" }
+      ]
+    },
+    {
+      "id": "moon-night",
+      "label": "Moon & Night",
+      "h2": "Moon & Night Symbols",
+      "intro": "Symbols for the moon, nighttime, and lunar phases.",
+      "symbols": [
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🌛", "label": "First Quarter Moon Face" },
+        { "char": "🌜", "label": "Last Quarter Moon Face" },
+        { "char": "🌝", "label": "Full Moon Face" },
+        { "char": "🌑", "label": "New Moon" },
+        { "char": "🌒", "label": "Waxing Crescent" },
+        { "char": "🌓", "label": "First Quarter Moon" },
+        { "char": "🌔", "label": "Waxing Gibbous" },
+        { "char": "🌕", "label": "Full Moon" },
+        { "char": "🌖", "label": "Waning Gibbous" },
+        { "char": "🌗", "label": "Last Quarter Moon" },
+        { "char": "🌘", "label": "Waning Crescent" }
+      ]
+    },
+    {
+      "id": "thermometer-measurement",
+      "label": "Temperature",
+      "h2": "Thermometer & Measurement Symbols",
+      "intro": "Weather measurement and temperature symbols.",
+      "symbols": [
+        { "char": "🌡", "label": "Thermometer" },
+        { "char": "🔥", "label": "Fire / Hot" },
+        { "char": "°", "label": "Degree Sign" },
+        { "char": "℃", "label": "Celsius" },
+        { "char": "℉", "label": "Fahrenheit" }
+      ]
+    },
+    {
+      "id": "rainbow-special",
+      "label": "Rainbow & Special",
+      "h2": "Rainbow & Special Symbols",
+      "intro": "Rainbows, comets, and other atmospheric phenomena.",
+      "symbols": [
+        { "char": "🌈", "label": "Rainbow" },
+        { "char": "☄", "label": "Comet" },
+        { "char": "🌊", "label": "Ocean Wave" },
+        { "char": "💧", "label": "Droplet" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac & Astrology Symbols",
+      "desc": "Star signs, planetary symbols, and celestial body characters from the Unicode standard."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "A collection of star, sparkle, and asterisk Unicode characters across multiple styles."
+    },
+    {
+      "href": "/library/transport-symbols/",
+      "title": "Transport & Map Symbols",
+      "desc": "Vehicle, map, and directional Unicode symbols organized by transport category."
+    },
+    { "href": "/library/emoji-flags/", "title": "Emoji Flag Explorer", "desc": "All 195 country flag emojis with names, organized by region." },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Pride & LGBTQ Symbols",
+      "desc": "The rainbow flag plus heart-color combos for every LGBTQ identity."
+    },
+    {
+      "href": "/symbol/celsius-symbol/",
+      "title": "Celsius Symbol",
+      "desc": "℃ is a single Unicode character that packs the degree sign and a capital C into one glyph."
+    },
+    {
+      "href": "/symbol/fahrenheit-symbol/",
+      "title": "Fahrenheit Symbol",
+      "desc": "℉ folds the degree sign and a capital F into one Unicode character."
+    },
+    {
+      "href": "/symbol/meteor-emoji/",
+      "title": "Meteor Emoji",
+      "desc": "A streaking meteor, splitting off from Comet's decade-long identity crisis."
+    }
+  ]
+}

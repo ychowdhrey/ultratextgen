@@ -224,8 +224,13 @@ def validate_spec(spec):
                     raise SpecError(f"sections[{i}].combos[{j}] missing '{key}'")
 
     # The validator downstream requires at least 3 H2s. Each section is one
-    # H2; a collection section adds one more.
-    h2_count = len(sections) + (1 if pattern == "collection" else 0)
+    # H2; a collection section adds one more, and so does every editorial
+    # section and a FAQ with a faq_h2, which the page renders with its own H2. (Counting
+    # only tile sections refused 24 valid specs backfilled from live pages
+    # that carry one tile section and several prose sections.)
+    h2_count = (len(sections) + (1 if pattern == "collection" else 0)
+                + len(spec.get("editorial_sections") or [])
+                + (1 if spec.get("faq") and spec.get("faq_h2") else 0))
     if h2_count < 3:
         raise SpecError(
             f"need at least 3 H2 sections (have {h2_count}); add more sections"

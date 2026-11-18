@@ -1,0 +1,569 @@
+{
+  "slug": "face-emojis",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Face Emojis: Kiss, Wink, Smirk, Eye-Roll, Blush & More to Copy",
+  "meta_description": "Copy face emojis by feeling: kiss 😘, wink 😉, smirk 😏, eye-roll 🙄, blush 😊, pleading 🥺, halo 😇 and more, with meanings and combos.",
+  "canonical": "https://ultratextgen.com/library/face-emojis/",
+  "breadcrumb": "Face & Emotion Emojis",
+  "hero_h1": "Face Emojis by Feeling",
+  "hero_tagline": "Find the exact face for what you mean: kiss, wink, smirk, eye-roll, blush, pleading, sunglasses, lip bite, halo and more. Each one shows close variants, what it means, and a ready-to-paste combo. Tap any face to copy it instantly.",
+  "intro": "This hub maps the face emojis people search for by feeling: not just a glyph dump, but the right emoji for each intent with its close variants, a short note on what it means and when to use it, and a copy-ready combo for posts, bios, and replies. Below the feelings, you can still browse every face by mood.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/face-emojis/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/gesichts-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-caras/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/emojis-visages/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/emoji-wajah/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/emoji-faccine/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/emojis-de-rosto/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/yuz-emojileri/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/kao-emoji/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/emoji-mat-cuoi/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/biaoqing-emoji/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/eolgul-imoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/face-emojis/" }
+  ],
+  "sections": [
+    {
+      "id": "feel-kiss",
+      "label": "Kiss",
+      "h2": "Kiss Emoji 😘",
+      "intro": "The kiss emojis range from a flirty blown kiss to a soft, innocent peck.",
+      "symbols": [
+        { "char": "😘", "label": "Blowing a Kiss" },
+        { "char": "😗", "label": "Kissing Face" },
+        { "char": "😙", "label": "Kiss, Smiling Eyes" },
+        { "char": "😚", "label": "Kiss, Closed Eyes" },
+        { "char": "💋", "label": "Kiss Mark" },
+        { "char": "😘❤️💋", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-wink",
+      "label": "Wink",
+      "h2": "Wink Emoji 😉",
+      "intro": "A wink softens a message into a joke, a hint, or a flirt.",
+      "symbols": [
+        { "char": "😉", "label": "Winking Face" },
+        { "char": "😜", "label": "Wink + Tongue" },
+        { "char": "😏", "label": "Smirk" },
+        { "char": "😉😏✨", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-smirk",
+      "label": "Smirk",
+      "h2": "Smirk Emoji 😏",
+      "intro": "Smug, sly, flirty, or quietly confident: the smirk does a lot of work.",
+      "symbols": [
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😉", "label": "Wink" },
+        { "char": "😈", "label": "Smiling Devil" },
+        { "char": "😏😉😈", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-scared",
+      "label": "Scared",
+      "h2": "Scared Emoji 😨",
+      "intro": "From mild fear to full screaming panic.",
+      "symbols": [
+        { "char": "😨", "label": "Fearful Face" },
+        { "char": "😱", "label": "Screaming" },
+        { "char": "😰", "label": "Anxious Sweat" },
+        { "char": "😖", "label": "Overwhelmed" },
+        { "char": "😱😨💀", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-blush",
+      "label": "Blush",
+      "h2": "Blush Emoji 😊",
+      "intro": "Shy, flattered, warm, or a little flustered.",
+      "symbols": [
+        { "char": "😊", "label": "Blushing Smile" },
+        { "char": "☺️", "label": "Soft Smile" },
+        { "char": "🥰", "label": "Loved Up" },
+        { "char": "😳", "label": "Flushed" },
+        { "char": "😊🥰💗", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-confused",
+      "label": "Confused",
+      "h2": "Confused Emoji 😕",
+      "intro": "Puzzled, unsure, or 'wait, what?'",
+      "symbols": [
+        { "char": "😕", "label": "Confused Face" },
+        { "char": "😟", "label": "Worried" },
+        { "char": "🫤", "label": "Unsure" },
+        { "char": "🤔", "label": "Thinking" },
+        { "char": "😕🤔❓", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-eye-roll",
+      "label": "Eye-Roll",
+      "h2": "Eye-Roll Emoji 🙄",
+      "intro": "Annoyed, unimpressed, or 'here we go again'.",
+      "symbols": [
+        { "char": "🙄", "label": "Rolling Eyes" },
+        { "char": "😒", "label": "Unamused" },
+        { "char": "😤", "label": "Fed Up" },
+        { "char": "🙄😒😤", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-freaky",
+      "label": "Freaky",
+      "h2": "Freaky Emoji 😈",
+      "intro": "Flirty, devious, and a little wild: the 'freaky' set.",
+      "symbols": [
+        { "char": "😈", "label": "Devious" },
+        { "char": "👅", "label": "Tongue" },
+        { "char": "🫦", "label": "Lip Bite" },
+        { "char": "🥵", "label": "Hot Face" },
+        { "char": "😈👅🥵", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-sunglasses",
+      "label": "Sunglasses",
+      "h2": "Sunglasses Emoji 😎",
+      "intro": "Cool, confident, unbothered, 'deal with it'.",
+      "symbols": [
+        { "char": "😎", "label": "Sunglasses" },
+        { "char": "🥸", "label": "Disguise" },
+        { "char": "🤓", "label": "Nerd" },
+        { "char": "😎🆒🔥", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-lip-bite",
+      "label": "Lip Bite",
+      "h2": "Lip Bite Emoji 🫦",
+      "intro": "Attraction, nerves, or a flirty 'oh my'.",
+      "symbols": [
+        { "char": "🫦", "label": "Biting Lip" },
+        { "char": "😏", "label": "Smirk" },
+        { "char": "🥵", "label": "Hot Face" },
+        { "char": "🫦😏🥵", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-tongue",
+      "label": "Tongue",
+      "h2": "Tongue Emoji 😛",
+      "intro": "Playful, cheeky, silly, or 'just kidding'.",
+      "symbols": [
+        { "char": "😛", "label": "Tongue Out" },
+        { "char": "😝", "label": "Squint + Tongue" },
+        { "char": "😜", "label": "Wink + Tongue" },
+        { "char": "👅", "label": "Tongue" },
+        { "char": "😛😜😝", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-pleading",
+      "label": "Pleading",
+      "h2": "Pleading Emoji 🥺",
+      "intro": "Big puppy-dog eyes: 'pretty please' and 'so cute'.",
+      "symbols": [
+        { "char": "🥺", "label": "Pleading Face" },
+        { "char": "🥹", "label": "Holding Back Tears" },
+        { "char": "😭", "label": "Sobbing" },
+        { "char": "🥺👉👈", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-embarrassed",
+      "label": "Embarrassed",
+      "h2": "Embarrassed Emoji 😳",
+      "intro": "Flustered, awkward, or 'I can't believe I did that'.",
+      "symbols": [
+        { "char": "😳", "label": "Flushed" },
+        { "char": "😅", "label": "Awkward Relief" },
+        { "char": "🫣", "label": "Peeking" },
+        { "char": "😳😅🫣", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-annoyed",
+      "label": "Annoyed",
+      "h2": "Annoyed Emoji 😒",
+      "intro": "Unimpressed, irritated, 'really?'",
+      "symbols": [
+        { "char": "😒", "label": "Unamused" },
+        { "char": "😑", "label": "Expressionless" },
+        { "char": "🙄", "label": "Eye-Roll" },
+        { "char": "😤", "label": "Frustrated" },
+        { "char": "😒🙄😤", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-cringe",
+      "label": "Cringe",
+      "h2": "Cringe Emoji 😬",
+      "intro": "'Yikes', awkward, secondhand embarrassment.",
+      "symbols": [
+        { "char": "😬", "label": "Grimacing" },
+        { "char": "😳", "label": "Flushed" },
+        { "char": "🫠", "label": "Melting" },
+        { "char": "😬🫠💀", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-sigh",
+      "label": "Sigh",
+      "h2": "Sigh Emoji 😮‍💨",
+      "intro": "Relief, exhaustion, or 'anyway…'",
+      "symbols": [
+        { "char": "😮‍💨", "label": "Exhaling" },
+        { "char": "😔", "label": "Pensive" },
+        { "char": "😪", "label": "Worn Out" },
+        { "char": "😮‍💨😔😪", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-choking",
+      "label": "Choking",
+      "h2": "Choking Emoji 😵",
+      "intro": "Knocked out, gagging, or 'I can't breathe' (laughing).",
+      "symbols": [
+        { "char": "😵", "label": "Knocked Out" },
+        { "char": "😵‍💫", "label": "Spiral Eyes" },
+        { "char": "🤢", "label": "Gagging" },
+        { "char": "😵💀😮‍💨", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "feel-halo",
+      "label": "Halo",
+      "h2": "Halo Emoji 😇",
+      "intro": "Innocent, angelic, or playfully 'who, me?'",
+      "symbols": [
+        { "char": "😇", "label": "Halo Face" },
+        { "char": "👼", "label": "Angel" },
+        { "char": "😈", "label": "Devil (contrast)" },
+        { "char": "😇👼✨", "label": "Pairs with" }
+      ]
+    },
+    {
+      "id": "smiley-happy",
+      "label": "Smiley & Happy",
+      "h2": "Smiley & Happy Faces",
+      "intro": "Positive, joyful, and loving face emojis for expressing happiness and affection.",
+      "symbols": [
+        { "char": "😀", "label": "Grinning Face" },
+        { "char": "😃", "label": "Big Smile" },
+        { "char": "😄", "label": "Grinning with Eyes" },
+        { "char": "😁", "label": "Beaming Face" },
+        { "char": "😆", "label": "Grinning Squinting" },
+        { "char": "😅", "label": "Sweat Smile" },
+        { "char": "🤣", "label": "Rolling on Floor" },
+        { "char": "😂", "label": "Joy Tears" },
+        { "char": "🙂", "label": "Slightly Smiling" },
+        { "char": "😊", "label": "Blushing Smile" },
+        { "char": "😇", "label": "Angel Halo" },
+        { "char": "😉", "label": "Winking Face" },
+        { "char": "🤗", "label": "Hugging Face" },
+        { "char": "🥰", "label": "Smiling with Hearts" },
+        { "char": "😍", "label": "Heart Eyes" },
+        { "char": "🤩", "label": "Star Struck" },
+        { "char": "🥳", "label": "Partying Face" },
+        { "char": "😸", "label": "Grinning Cat" }
+      ]
+    },
+    {
+      "id": "affectionate-faces",
+      "label": "Affectionate Faces",
+      "h2": "Affectionate Face Emojis",
+      "intro": "Face emojis expressing love, affection, and tenderness.",
+      "symbols": [
+        { "char": "😍", "label": "Heart Eyes" },
+        { "char": "😘", "label": "Blowing a Kiss" },
+        { "char": "😗", "label": "Kissing Face" },
+        { "char": "😚", "label": "Kissing Closed Eyes" },
+        { "char": "😙", "label": "Kissing Smiling Eyes" }
+      ]
+    },
+    {
+      "id": "shrug-confusion",
+      "label": "Shrug & Confusion",
+      "h2": "Shrug & Confused Emojis",
+      "intro": "Emojis that express uncertainty, puzzlement, and the classic shrug reaction.",
+      "symbols": [
+        { "char": "🤷", "label": "Shrug" },
+        { "char": "😕", "label": "Confused Face" },
+        { "char": "🤔", "label": "Thinking Face" },
+        { "char": "😶", "label": "No Mouth" },
+        { "char": "🫤", "label": "Dotted Line Mouth" },
+        { "char": "😐", "label": "Neutral Face" },
+        { "char": "😑", "label": "Expressionless" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "🤨", "label": "Raised Eyebrow" },
+        { "char": "🧐", "label": "Monocle Face" }
+      ]
+    },
+    {
+      "id": "anger-frustration",
+      "label": "Anger & Frustration",
+      "h2": "Angry & Frustrated Emojis",
+      "intro": "Emojis for expressing anger, frustration, rage, and dark emotions.",
+      "symbols": [
+        { "char": "😠", "label": "Angry Face" },
+        { "char": "😡", "label": "Pouting Face" },
+        { "char": "🤬", "label": "Cursing Face" },
+        { "char": "💢", "label": "Anger Symbol" },
+        { "char": "😤", "label": "Steam from Nose" },
+        { "char": "👿", "label": "Angry Devil" },
+        { "char": "😈", "label": "Smiling Devil" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "☠", "label": "Skull and Crossbones" }
+      ]
+    },
+    {
+      "id": "sadness-sympathy",
+      "label": "Sadness & Sympathy",
+      "h2": "Sad & Sympathetic Emojis",
+      "intro": "Emojis conveying sadness, disappointment, grief, and empathy.",
+      "symbols": [
+        { "char": "😢", "label": "Crying Face" },
+        { "char": "😭", "label": "Loudly Crying" },
+        { "char": "😞", "label": "Disappointed" },
+        { "char": "😔", "label": "Pensive Face" },
+        { "char": "🥺", "label": "Pleading Face" },
+        { "char": "😿", "label": "Crying Cat" },
+        { "char": "😥", "label": "Sad but Relieved" },
+        { "char": "🥲", "label": "Smiling Face with Tear" },
+        { "char": "😰", "label": "Anxious with Sweat" },
+        { "char": "😩", "label": "Weary Face" },
+        { "char": "😫", "label": "Tired Face" },
+        { "char": "😓", "label": "Downcast Sweat" },
+        { "char": "😟", "label": "Worried Face" },
+        { "char": "🙁", "label": "Slightly Frowning" },
+        { "char": "🥹", "label": "Holding Back Tears" }
+      ]
+    },
+    {
+      "id": "surprise-shock",
+      "label": "Surprise & Shock",
+      "h2": "Surprised & Shocked Emojis",
+      "intro": "Emojis for expressing surprise, shock, awe, and disbelief.",
+      "symbols": [
+        { "char": "😲", "label": "Astonished Face" },
+        { "char": "😮", "label": "Face with Open Mouth" },
+        { "char": "😯", "label": "Hushed Face" },
+        { "char": "🤯", "label": "Exploding Head" },
+        { "char": "😱", "label": "Screaming in Fear" },
+        { "char": "🫢", "label": "Hands over Mouth" },
+        { "char": "😳", "label": "Flushed Face" },
+        { "char": "🤭", "label": "Hand over Mouth" },
+        { "char": "😧", "label": "Anguished Face" },
+        { "char": "😦", "label": "Frowning Open Mouth" },
+        { "char": "😨", "label": "Fearful Face" },
+        { "char": "😵‍💫", "label": "Spiral Eyes" },
+        { "char": "😬", "label": "Grimacing / Yikes" }
+      ]
+    },
+    {
+      "id": "silly-playful",
+      "label": "Silly & Playful",
+      "h2": "Silly & Playful Emojis",
+      "intro": "Fun and goofy emojis for lighthearted and comedic moments.",
+      "symbols": [
+        { "char": "😜", "label": "Winking Tongue" },
+        { "char": "🤪", "label": "Zany Face" },
+        { "char": "😝", "label": "Squinting Tongue" },
+        { "char": "🤡", "label": "Clown Face" },
+        { "char": "🥴", "label": "Woozy Face" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "😋", "label": "Savoring Food" },
+        { "char": "😛", "label": "Face with Tongue" },
+        { "char": "🫣", "label": "Peeking Eye" },
+        { "char": "🤫", "label": "Shushing Face" },
+        { "char": "🤤", "label": "Drooling Face" }
+      ]
+    },
+    {
+      "id": "cool-confident",
+      "label": "Cool & Confident",
+      "h2": "Cool & Confident Emojis",
+      "intro": "Emojis projecting confidence, style, and self-assurance.",
+      "symbols": [
+        { "char": "😎", "label": "Sunglasses Face" },
+        { "char": "🤠", "label": "Cowboy Hat" },
+        { "char": "🧐", "label": "Monocle" },
+        { "char": "🤓", "label": "Nerd Face" },
+        { "char": "🫡", "label": "Saluting Face" },
+        { "char": "🤑", "label": "Money Mouth" },
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "🥸", "label": "Disguised Face" }
+      ]
+    },
+    {
+      "id": "sick-unwell",
+      "label": "Sick & Unwell",
+      "h2": "Sick & Unwell Emojis",
+      "intro": "Emojis for illness, physical discomfort, and feeling unwell.",
+      "symbols": [
+        { "char": "🤒", "label": "Thermometer Face" },
+        { "char": "🤕", "label": "Head Bandage" },
+        { "char": "🤢", "label": "Nauseated Face" },
+        { "char": "🤮", "label": "Vomiting Face" },
+        { "char": "😴", "label": "Sleeping Face" },
+        { "char": "🥱", "label": "Yawning Face" },
+        { "char": "🫩", "label": "Face with Bags Under Eyes" },
+        { "char": "🥵", "label": "Hot Face" },
+        { "char": "🥶", "label": "Cold Face" },
+        { "char": "😵", "label": "Dizzy Face" },
+        { "char": "🤧", "label": "Sneezing Face" },
+        { "char": "😷", "label": "Medical Mask" }
+      ]
+    },
+    {
+      "id": "rare-extended",
+      "label": "Rare & Extended",
+      "h2": "Rare & Extended Face Emojis",
+      "intro": "Less commonly used face emojis including costume and novelty faces.",
+      "symbols": [
+        { "char": "🤡", "label": "Clown Face" },
+        { "char": "👹", "label": "Ogre" },
+        { "char": "👺", "label": "Goblin" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "👻", "label": "Ghost" },
+        { "char": "👽", "label": "Alien" },
+        { "char": "🤖", "label": "Robot" },
+        { "char": "🎃", "label": "Jack-O-Lantern" },
+        { "char": "🥸", "label": "Disguised Face" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "🗣", "label": "Speaking Head" },
+        { "char": "🤐", "label": "Zipper Mouth" },
+        { "char": "🤥", "label": "Lying Face" },
+        { "char": "😮‍💨", "label": "Exhaling" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Face Emojis by Feeling",
+      "paragraphs": [
+        "Jump to the feeling you want: each section has the main emoji, its close variants, a quick meaning, and a copy-ready combo. Jump to\n    <a href=\"#feel-kiss\">kiss</a>,\n    <a href=\"#feel-wink\">wink</a>,\n    <a href=\"#feel-smirk\">smirk</a>,\n    <a href=\"#feel-scared\">scared</a>,\n    <a href=\"#feel-blush\">blush</a>,\n    <a href=\"#feel-confused\">confused</a>,\n    <a href=\"#feel-eye-roll\">eye-roll</a>,\n    <a href=\"#feel-freaky\">freaky</a>,\n    <a href=\"#feel-sunglasses\">sunglasses</a>,\n    <a href=\"#feel-lip-bite\">lip bite</a>,\n    <a href=\"#feel-tongue\">tongue</a>,\n    <a href=\"#feel-pleading\">pleading</a>,\n    <a href=\"#feel-embarrassed\">embarrassed</a>,\n    <a href=\"#feel-annoyed\">annoyed</a>,\n    <a href=\"#feel-cringe\">cringe</a>,\n    <a href=\"#feel-sigh\">sigh</a>,\n    <a href=\"#feel-choking\">choking</a>, or\n    <a href=\"#feel-halo\">halo</a>."
+      ]
+    },
+    {
+      "h2": "All Face Emojis by Mood",
+      "paragraphs": [
+        "Want to browse instead of search? Every face emoji is grouped by mood below: happy, affectionate, confused, angry, sad, surprised, silly, cool, sick, and rare. Tap any face to copy it."
+      ]
+    }
+  ],
+  "faq_h2": "Face emojis, answered",
+  "faq": [
+    {
+      "q": "What is the kiss emoji and how is it different from the kissing faces?",
+      "a": "The blowing-a-kiss emoji 😘 sends a kiss with a little heart and reads as flirty or loving. The plain kissing faces (😗 (neutral), 😙 (smiling eyes), and 😚 (closed eyes)) are softer and more innocent, good for friends and family. The lipstick mark 💋 stands in for the kiss itself."
+    },
+    {
+      "q": "What does the smirk emoji 😏 mean?",
+      "a": "The smirking face 😏 signals confidence, smugness, sass, or flirty suggestiveness. It is the go-to for a teasing reply, a sly hint, or a self-satisfied \"I told you so\" moment."
+    },
+    {
+      "q": "Which emoji is the lip bite emoji?",
+      "a": "The biting lip emoji is 🫦. It is widely used to flag attraction, nervousness, or a flirty \"oh my\" reaction. Some people also pair the smirk 😏 with it to make the meaning clearer."
+    },
+    {
+      "q": "What does the pleading face 🥺 mean?",
+      "a": "The pleading face 🥺 has big watery puppy-dog eyes. People use it to beg cutely, say \"please\", show that something is adorable, or guilt-trip a friend in a playful way."
+    },
+    {
+      "q": "Do these face emojis work on iPhone, Android, Instagram, and Discord?",
+      "a": "Yes. These are standard Unicode emojis, so they display on iPhone, Android, Instagram, TikTok, Discord, Snapchat, and WhatsApp. Tap any face on this page to copy it, then paste it wherever you type. A few of the newest faces, like the biting lip 🫦, may show as a box on very old devices."
+    }
+  ],
+  "related": [
+    {
+      "href": "/usecase/text-to-emoji/",
+      "title": "Text to Emoji Converter",
+      "desc": "Turn any sentence into emoji, spell names in emoji letters, or decode emoji back to text: free and instant."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbol Collection",
+      "desc": "Hand gesture emojis and Unicode hand symbols for every type of message."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Every heart emoji and Unicode heart character in one reference."
+    },
+    {
+      "href": "/library/body-language-emojis/",
+      "title": "Body Language Emojis",
+      "desc": "Eyes, mouths, action figures, and expressive person symbols."
+    },
+    {
+      "href": "/library/smiley-face-guide/",
+      "title": "Smiley Face Guide",
+      "desc": "Understand what each smiley face emoji means and when to use it."
+    },
+    { "href": "/library/thinking-emoji/", "title": "Thinking Emoji & Kaomoji", "desc": "Skeptical faces, honest shrugs, and pondering kaomoji." },
+    {
+      "href": "/library/sunglasses-emoji/",
+      "title": "Sunglasses Emoji & Kaomoji",
+      "desc": "The cool, confident sunglasses emoji plus deal-with-it kaomoji."
+    },
+    { "href": "/library/blush-emoji/", "title": "Blush Emoji", "desc": "Rosy-cheeked, shy, and flustered faces, plus blushing kaomoji." },
+    {
+      "href": "/library/freaky-emoji/",
+      "title": "Freaky Emoji & Kaomoji",
+      "desc": "Devilish smirks, biting-lip flirt faces, and mischievous kaomoji."
+    },
+    { "href": "/library/wink-emoji/", "title": "Wink Emoji", "desc": "The winking face, playful grins, and cheeky wink kaomoji." },
+    { "href": "/library/lip-bite-emoji/", "title": "Lip Bite Emoji & Kaomoji", "desc": "The biting-lip emoji, sly smirks, and teasing kaomoji." },
+    {
+      "href": "/library/tongue-emoji/",
+      "title": "Tongue Emoji & Kaomoji",
+      "desc": "Playful tongue-out faces, the zany grin, and cheeky kaomoji."
+    },
+    { "href": "/library/smirk-emoji/", "title": "Smirk Emoji", "desc": "Smug, confident grins and knowing sly kaomoji." },
+    { "href": "/library/confused-emoji/", "title": "Confused Emoji", "desc": "Baffled faces, spiral-eyed overload, and confused kaomoji." },
+    {
+      "href": "/library/eye-roll-emoji/",
+      "title": "Eye Roll Emoji & Kaomoji",
+      "desc": "The rolling-eyes face, flat stares, and unbothered kaomoji."
+    },
+    { "href": "/library/sick-emoji/", "title": "Sick Emoji & Kaomoji", "desc": "Queasy, feverish, and woozy faces, plus dizzy kaomoji." },
+    {
+      "href": "/library/pleading-emoji/",
+      "title": "Pleading Emoji & Kaomoji",
+      "desc": "Puppy-dog eyes, begging faces, and pretty-please combo sets."
+    },
+    {
+      "href": "/library/cringe-emoji/",
+      "title": "Cringe Emoji & Kaomoji",
+      "desc": "Grimace faces, secondhand embarrassment, and yikes reactions."
+    },
+    { "href": "/library/cowboy-emoji/", "title": "Cowboy Emoji", "desc": "The yeehaw meme, Wild West symbols, and rodeo combo sets." },
+    {
+      "href": "/symbol/cracking-face-emoji/",
+      "title": "Cracking Face Emoji",
+      "desc": "A face mid-expression, cracking under strain, final in Emoji 18.0 since it was published with Unicode 18.0 on September 16, 2026."
+    },
+    { "href": "/symbol/distorted-face-emoji/", "title": "Distorted Face Emoji", "desc": "The stretched, inflated face 🫪." },
+    {
+      "href": "/symbol/melting-face-emoji/",
+      "title": "Melting Face Emoji",
+      "desc": "A yellow face with a faint smile whose lower half is sliding away, the standard way to type \"I want to disappear\" without saying it."
+    },
+    {
+      "href": "/symbol/fight-cloud-emoji/",
+      "title": "Fight Cloud Emoji",
+      "desc": "The brawl cloud 🫯 with its codepoint, its input routes, the emotion shelf Unicode files it on, and the comic-strip convention it encodes."
+    }
+  ]
+}

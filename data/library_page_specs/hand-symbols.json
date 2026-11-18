@@ -1,0 +1,156 @@
+{
+  "slug": "hand-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Hand Symbols: Copy & Paste Hand Gesture Emojis",
+  "meta_description": "Browse and copy hand gesture emojis, pointing symbols, and finger-related Unicode characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/hand-symbols/",
+  "breadcrumb": "Hand Symbols",
+  "hero_h1": "Hand Gesture Symbols",
+  "hero_tagline": "A reference collection of hand gesture emojis, pointing symbols, and finger-related Unicode characters. Click any symbol to copy it instantly.",
+  "intro": "This library contains pointing hand symbols, gesture emojis, finger signs, and body-related hand characters from Unicode. Organized by gesture type: pointing directions, common gestures, and hand signs.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/hand-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/hand-symbole/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/simvoly-ruk/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-manos/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/te-emoji/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/son-giho/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/hand-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "pointing",
+      "label": "Pointing",
+      "h2": "Pointing Hand Emojis",
+      "symbols": [
+        { "char": "👆", "label": "Point Up" },
+        { "char": "👇", "label": "Point Down" },
+        { "char": "👈", "label": "Point Left" },
+        { "char": "👉", "label": "Point Right" },
+        { "char": "☝", "label": "Index Up" },
+        { "char": "☞", "label": "Index Right" },
+        { "char": "☜", "label": "Index Left" },
+        { "char": "☟", "label": "Index Down" },
+        { "char": "🫵", "label": "Point at Viewer" }
+      ]
+    },
+    {
+      "id": "approval",
+      "label": "Approval",
+      "h2": "Approval & Thumbs Emojis",
+      "symbols": [
+        { "char": "👍", "label": "Thumbs Up" },
+        { "char": "👎", "label": "Thumbs Down" },
+        { "char": "👌", "label": "OK Hand" },
+        { "char": "🤌", "label": "Pinched Fingers" },
+        { "char": "🙆", "label": "Gesturing OK" }
+      ]
+    },
+    {
+      "id": "gestures",
+      "label": "Gestures",
+      "h2": "Hand Gesture Emojis",
+      "symbols": [
+        { "char": "✌", "label": "Victory" },
+        { "char": "🤞", "label": "Crossed Fingers" },
+        { "char": "🤟", "label": "Love You" },
+        { "char": "🤘", "label": "Rock On" },
+        { "char": "🤙", "label": "Call Me" },
+        { "char": "🫰", "label": "Snap / Lucky" },
+        { "char": "🫱", "label": "Hand Right" },
+        { "char": "🫲", "label": "Hand Left" },
+        { "char": "🫳", "label": "Palm Down" },
+        { "char": "🫴", "label": "Palm Up" },
+        { "char": "🫷", "label": "Leftwards Pushing Hand" },
+        { "char": "🫸", "label": "Rightwards Pushing Hand" },
+        { "char": "👐", "label": "Open Hands" },
+        { "char": "🤲", "label": "Palms Up Together" },
+        { "char": "🫡", "label": "Salute" },
+        { "char": "🤦", "label": "Facepalm" },
+        { "char": "🙇", "label": "Bowing" }
+      ]
+    },
+    {
+      "id": "celebration",
+      "label": "Celebration",
+      "h2": "Celebration & Expressive Hand Emojis",
+      "symbols": [
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "👏", "label": "Clapping" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "👐", "label": "Open Hands" },
+        { "char": "🤲", "label": "Palms Up" },
+        { "char": "🫶", "label": "Heart Hands" }
+      ]
+    },
+    {
+      "id": "functional",
+      "label": "Functional",
+      "h2": "Functional Hand Symbols",
+      "symbols": [
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🖐", "label": "Fingers Splayed" },
+        { "char": "🖖", "label": "Vulcan Salute" },
+        { "char": "✍", "label": "Writing Hand" },
+        { "char": "🤳", "label": "Selfie" },
+        { "char": "🤚", "label": "Raised Back" },
+        { "char": "🖕", "label": "Middle Finger" },
+        { "char": "🦾", "label": "Mechanical Arm" },
+        { "char": "✊", "label": "Raised Fist" },
+        { "char": "👊", "label": "Oncoming Fist" },
+        { "char": "🤛", "label": "Left Fist" },
+        { "char": "🤜", "label": "Right Fist" },
+        { "char": "👋", "label": "Waving" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "A collection of heart emojis and Unicode heart characters for expressing love, appreciation, and support."
+    },
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Awareness Ribbon Symbols",
+      "desc": "Ribbon symbols and awareness cause characters available in Unicode."
+    },
+    {
+      "href": "/library/music-symbols/",
+      "title": "Music Note Symbols",
+      "desc": "Musical notes, instrument emojis, and music-related Unicode symbols."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "A reference library of Unicode symbols commonly used on LinkedIn."
+    },
+    {
+      "href": "/library/praying-hands-emoji/",
+      "title": "Praying Hands Emoji & Kaomoji",
+      "desc": "The 🙏 prayer, thank-you, and high-five emoji, plus bowing kaomoji."
+    },
+    { "href": "/library/salute-emoji/", "title": "Salute Emoji & Kaomoji", "desc": "The saluting face, Vulcan salutes, and respect kaomoji." },
+    {
+      "href": "/library/handshake-emoji/",
+      "title": "Handshake Emoji & Kaomoji",
+      "desc": "The handshake, friendly waves, and deal-making kaomoji."
+    },
+    {
+      "href": "/library/facepalm-emoji/",
+      "title": "Facepalm Emoji & Kaomoji",
+      "desc": "The facepalm, exasperated faces, and slumped-over kaomoji like orz."
+    },
+    { "href": "/library/clap-emoji/", "title": "Clap Emoji", "desc": "Applause hands and the word-for-word emphasis meme format." },
+    { "href": "/library/peace-emoji/", "title": "Peace Emoji", "desc": "Peace sign, dove, and harmony symbols for photo captions." },
+    {
+      "href": "/symbol/thumb-sign-emoji/",
+      "title": "Leftwards & Rightwards Thumb Sign Emoji",
+      "desc": "A directional pointing pair, not another approval gesture, final in Emoji 18.0 since Unicode 18.0's release on September 16, 2026."
+    }
+  ]
+}

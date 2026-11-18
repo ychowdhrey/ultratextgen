@@ -1,0 +1,212 @@
+{
+  "slug": "chess-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Chess Symbols — Copy & Paste Chess Piece Unicode",
+  "meta_description": "Copy & paste Unicode chess piece symbols — kings, queens, rooks, bishops, knights, and pawns, with piece names and notation marks. Click to copy.",
+  "canonical": "https://ultratextgen.com/library/chess-symbols/",
+  "breadcrumb": "Chess Symbols",
+  "hero_h1": "Chess Piece Symbols",
+  "hero_tagline": "Unicode chess piece symbols in white and black, plus board squares, fairy-chess pieces, and notation marks. Click any symbol to copy it instantly.",
+  "intro": "This library contains the twelve standard Unicode chess pieces: six white (outline) and six black (filled) kings, queens, rooks, bishops, knights, and pawns. It also covers board squares, the fairy-chess pieces of the Chess Symbols block, and the marks used in chess notation.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/chess-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/schach-symbole/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-xadrez/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/chess-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-ajedrez/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-echecs/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-catur/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-scacchi/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/chess-symbols/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/chess-gihou/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/schaaksymbolen/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-szachowe/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/shakhmatnye-simvoly/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/chess-symbols/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/satranc-sembolleri/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/ky-hieu-co-vua/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/guojixiangqi-fuhao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/chess-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "white-pieces",
+      "label": "White Pieces",
+      "h2": "White Chess Pieces",
+      "intro": "The six standard white (outline) chess piece symbols in Unicode: king, queen, rook, bishop, knight, and pawn.",
+      "symbols": [
+        { "char": "♔", "label": "King" },
+        { "char": "♕", "label": "Queen" },
+        { "char": "♖", "label": "Rook" },
+        { "char": "♗", "label": "Bishop" },
+        { "char": "♘", "label": "Knight" },
+        { "char": "♙", "label": "Pawn" }
+      ]
+    },
+    {
+      "id": "black-pieces",
+      "label": "Black Pieces",
+      "h2": "Black Chess Pieces",
+      "intro": "The six standard black (filled) chess piece symbols in Unicode: king, queen, rook, bishop, knight, and pawn.",
+      "symbols": [
+        { "char": "♚", "label": "King" },
+        { "char": "♛", "label": "Queen" },
+        { "char": "♜", "label": "Rook" },
+        { "char": "♝", "label": "Bishop" },
+        { "char": "♞", "label": "Knight" },
+        { "char": "♟", "label": "Pawn" }
+      ]
+    },
+    {
+      "id": "board-symbols",
+      "label": "Board & Game",
+      "h2": "Board Squares & Game Symbols",
+      "intro": "Board square characters in various sizes available in Unicode for representing chess boards.",
+      "symbols": [
+        { "char": "⬜", "label": "White Square" },
+        { "char": "⬛", "label": "Black Square" },
+        { "char": "▪", "label": "Black Small Square" },
+        { "char": "▫", "label": "White Small Square" },
+        { "char": "◻", "label": "White Med Square" },
+        { "char": "◼", "label": "Black Med Square" }
+      ]
+    },
+    {
+      "id": "extended-symbols",
+      "label": "Extended Pieces",
+      "h2": "Extended Chess Symbols",
+      "intro": "Fairy chess pieces and notation symbols from the Chess Symbols Unicode block, including neutral pieces and rotated variants.",
+      "symbols": [
+        { "char": "🨀", "label": "Neutral King" },
+        { "char": "🨁", "label": "Neutral Queen" },
+        { "char": "🨂", "label": "Neutral Rook" },
+        { "char": "🨃", "label": "Neutral Bishop" },
+        { "char": "🨄", "label": "Neutral Knight" },
+        { "char": "🨅", "label": "Neutral Pawn" },
+        { "char": "🨆", "label": "White Knight 45°" },
+        { "char": "🨇", "label": "Black Knight 45°" },
+        { "char": "🨈", "label": "Neutral Knight 45°" },
+        { "char": "🨉", "label": "White King 90°" },
+        { "char": "🨊", "label": "White Queen 90°" },
+        { "char": "🨋", "label": "White Rook 90°" },
+        { "char": "🨌", "label": "White Bishop 90°" },
+        { "char": "🨍", "label": "White Knight 90°" },
+        { "char": "🨎", "label": "White Pawn 90°" }
+      ]
+    },
+    {
+      "id": "checkers-shogi-pieces",
+      "label": "Checkers & Shogi",
+      "h2": "Checkers and Shogi Pieces",
+      "intro": "Draughts (checkers) pieces in white and black, as a plain man and as a king, and the shogi piece in four forms. In shogi game records, ☗ marks the first player (sente) and ☖ the second (gote).",
+      "symbols": [
+        { "char": "⛀", "label": "White Draughts Man" },
+        { "char": "⛁", "label": "White Draughts King" },
+        { "char": "⛂", "label": "Black Draughts Man" },
+        { "char": "⛃", "label": "Black Draughts King" },
+        { "char": "☖", "label": "White Shogi Piece" },
+        { "char": "☗", "label": "Black Shogi Piece" },
+        { "char": "⛉", "label": "Turned White Shogi Piece" },
+        { "char": "⛊", "label": "Turned Black Shogi Piece" }
+      ]
+    },
+    {
+      "id": "notation-symbols",
+      "label": "Notation & Annotation",
+      "h2": "Chess Notation & Annotation Symbols",
+      "intro": "The marks used in chess notation to record checks, captures, and the quality of a move (PGN/algebraic annotation glyphs).",
+      "symbols": [
+        { "char": "×", "label": "Capture" },
+        { "char": "+", "label": "Check" },
+        { "char": "#", "label": "Checkmate" },
+        { "char": "‡", "label": "Mate (‡)" },
+        { "char": "!", "label": "Good move" },
+        { "char": "!!", "label": "Brilliant" },
+        { "char": "?", "label": "Mistake" },
+        { "char": "??", "label": "Blunder" },
+        { "char": "!?", "label": "Interesting" },
+        { "char": "?!", "label": "Dubious" },
+        { "char": "=", "label": "Equal" },
+        { "char": "±", "label": "White better" },
+        { "char": "∓", "label": "Black better" },
+        { "char": "⩲", "label": "Slight edge" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "chess-collections",
+    "label": "Chess Collections",
+    "h2": "Chess Piece Sets",
+    "intro": "Copy a full side of pieces in standard notation order (King, Queen, Rook, Bishop, Knight, Pawn)."
+  },
+  "collection_container_id": "chessCollectionsContainer",
+  "collections": [
+    {
+      "name": "White Chess Pieces",
+      "flags": ["♔", "♕", "♖", "♗", "♘", "♙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Black Chess Pieces",
+      "flags": ["♚", "♛", "♜", "♝", "♞", "♟"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Chess Piece Names & Symbols",
+      "paragraphs": [
+        "Every chess character with its name and both colour variants. White pieces use the outline glyph; Black pieces use the filled glyph."
+      ]
+    },
+    {
+      "h2": "Chess Piece Sets",
+      "paragraphs": ["Copy a full side of pieces in standard notation order (King, Queen, Rook, Bishop, Knight, Pawn)."]
+    }
+  ],
+  "faq_h2": "Chess symbols, answered",
+  "faq": [
+    {
+      "q": "What are the chess pieces called?",
+      "a": "The six chess pieces are the King (♔/♚), Queen (♕/♛), Rook (♖/♜), Bishop (♗/♝), Knight (♘/♞), and Pawn (♙/♟). The outline glyphs are White and the filled glyphs are Black. Each is a standard Unicode character you can copy and paste anywhere text is supported."
+    },
+    {
+      "q": "How do I type chess piece symbols?",
+      "a": "The easiest way is to copy them from this page. Click any piece to copy it instantly. They live in the Unicode \"Miscellaneous Symbols\" block (U+2654–U+265F), so you can also insert them with a Unicode/hex code or your operating system's character picker, then paste into Discord, documents, or social bios."
+    },
+    {
+      "q": "What do chess notation symbols like !, ?, +, and # mean?",
+      "a": "In chess notation, + means check, # (or ‡) means checkmate, and × marks a capture. Move annotations grade quality: ! is a good move, !! brilliant, ? a mistake, ?? a blunder, !? interesting, and ?! dubious. Position symbols like =, ±, ∓, and ⩲ describe who stands better."
+    },
+    {
+      "q": "Do chess symbols work on phones, Discord, and Word?",
+      "a": "Yes. The standard king-to-pawn glyphs render on virtually every modern phone, browser, Discord, and word processor because they are long-established Unicode characters. A few extended/fairy-chess pieces are newer and may show as blank boxes on older devices. If that happens, stick to the standard white and black pieces."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Card Suit Symbols",
+      "desc": "Spades, hearts, diamonds, and clubs, plus dice and other game-related Unicode symbols."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Unicode star characters in various styles: solid, outline, and decorative."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "A curated set of Unicode symbols commonly used on LinkedIn posts and profiles."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Emoji Flag Explorer",
+      "desc": "Browse Unicode country and region flag emoji for every recognized territory."
+    },
+    { "href": "/symbol/pawn-symbol/", "title": "Pawn Symbol (♟ ♙)", "desc": "The black ♟ and white ♙ chess pawn." }
+  ]
+}

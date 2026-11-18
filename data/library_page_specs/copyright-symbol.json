@@ -1,0 +1,79 @@
+{
+  "slug": "copyright-symbol",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Copyright Symbol (©): Meaning, History & How to Type It",
+  "meta_description": "The copyright symbol © (U+00A9) explained — its 1909 legal origin, whether you still need it, and how to type it on Windows/Mac.",
+  "canonical": "https://ultratextgen.com/symbol/copyright-symbol/",
+  "breadcrumb": "Copyright Symbol",
+  "hero_h1": "Copyright Symbol (©)",
+  "hero_tagline": "What © means, whether you still need it, and how to type it: click to copy.",
+  "intro": "The circled-C notice was formally written into US law by the Copyright Act of 1909, replacing older and more cumbersome required notices like \"Entered according to Act of Congress.\" The 1952 Universal Copyright Convention helped standardize © internationally as the recognized shorthand for claiming copyright.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/copyright-symbol/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-avtorskogo-prava/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/chosakuken-kigou/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-hak-cipta/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-copyright/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/copyright-zeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/telif-hakki-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-copyright/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-copyright/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-copyright/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/copyright-symbool/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-copyright/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-huqooq-nashr/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/jeojakgwon-giho/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-laikhasit/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/copyright-symbol/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/copyright-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/copyright-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-other-legal-marks",
+      "label": "Don't Confuse It With",
+      "h2": "The Other Legal Marks",
+      "symbols": [
+        { "char": "™", "label": "Trademark Sign (U+2122) — protects brand names and logos, not creative works" },
+        { "char": "®", "label": "Registered Trademark Sign (U+00AE) — legally restricted to marks actually registered with a trademark office" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Copyright Symbol Comes From",
+      "paragraphs": [
+        "The circled-C notice was formally written into US law by the Copyright Act of 1909, replacing older and more cumbersome required notices like \"Entered according to Act of Congress.\" The 1952 Universal Copyright Convention helped standardize © internationally as the recognized shorthand for claiming copyright.",
+        "Its legal weight changed in 1989, when the US joined the Berne Convention: copyright protection became automatic the moment an original work is created, with no notice required at all. © remains standard practice anyway: it puts the public on clear notice of a claim and can help establish an earlier date of knowledge in an infringement dispute, even though it's no longer legally mandatory."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "Do I still need the © symbol for my work to be copyrighted?",
+      "a": "No, not in the US or most countries today. Since the US joined the Berne Convention in 1989, copyright protection is automatic the moment you create an original work, no notice required. Adding © is still good practice, since it clearly signals your claim and can help establish an earlier date of knowledge if you ever need to prove infringement."
+    },
+    {
+      "q": "How do you type the © symbol?",
+      "a": "On Windows, hold Alt and type 0169 on the numeric keypad (Alt+0169). On Mac, press Option+G. In HTML, use the entity &copy; or &#169;."
+    },
+    {
+      "q": "What's the difference between ©, ™, and ®?",
+      "a": "© protects creative works (writing, music, art, software). ™ signals an unregistered trademark claim on a brand name or logo. ® signals a trademark that's officially registered with a national trademark office. Using ® without real registration is illegal in the US, while © and ™ carry no such restriction."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/trademark-symbol/", "title": "™ Trademark Symbol", "desc": "An unregistered brand claim, and how it differs from ®." },
+    { "href": "/symbol/section-sign/", "title": "§ Section Sign", "desc": "The mark lawyers use to cite a specific section." },
+    {
+      "href": "/library/special-characters/",
+      "title": "All Special Characters",
+      "desc": "Punctuation, typography, and rare Unicode curiosities."
+    }
+  ]
+}

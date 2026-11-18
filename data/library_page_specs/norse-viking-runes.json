@@ -1,0 +1,234 @@
+{
+  "slug": "norse-viking-runes",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Norse & Viking Runes: Copy & Paste All Runic Characters",
+  "meta_description": "Browse and copy all runic characters — Elder Futhark, Younger Futhark, Anglo-Saxon Futhorc, and medieval runes. Click any rune to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/norse-viking-runes/",
+  "breadcrumb": "Norse / Viking Runes",
+  "hero_h1": "Norse & Viking Runes",
+  "hero_tagline": "The complete Unicode runic character set: all 89 characters from the Runic block (U+16A0–U+16FF), organized by alphabet system. Runes shared between systems appear under each. Click any rune to copy it instantly.",
+  "intro": "The Runic Unicode block (U+16A0–U+16FF) contains characters from multiple historical runic writing systems used across Scandinavia, Britain, and other Germanic regions from roughly the 2nd century CE onwards. This library organizes the complete block by alphabet system.",
+  "date_published": "2026-04-12",
+  "date_modified": "2026-04-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/norse-viking-runes/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/runas-vikingas/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/wikinger-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/norse-viking-runes/" }
+  ],
+  "sections": [
+    {
+      "id": "elder-futhark",
+      "label": "Elder Futhark",
+      "h2": "Elder Futhark (24 Runes)",
+      "symbols": [
+        { "char": "ᚠ", "label": "Fehu (Wealth)" },
+        { "char": "ᚢ", "label": "Uruz (Strength)" },
+        { "char": "ᚦ", "label": "Thurisaz (Giant)" },
+        { "char": "ᚨ", "label": "Ansuz (God)" },
+        { "char": "ᚱ", "label": "Raidho (Ride)" },
+        { "char": "ᚲ", "label": "Kenaz (Torch)" },
+        { "char": "ᚷ", "label": "Gebo (Gift)" },
+        { "char": "ᚹ", "label": "Wunjo (Joy)" },
+        { "char": "ᚺ", "label": "Hagalaz (Hail)" },
+        { "char": "ᚾ", "label": "Nauthiz (Need)" },
+        { "char": "ᛁ", "label": "Isa (Ice)" },
+        { "char": "ᛃ", "label": "Jera (Year)" },
+        { "char": "ᛇ", "label": "Eihwaz (Yew)" },
+        { "char": "ᛈ", "label": "Perthro (Dice Cup)" },
+        { "char": "ᛉ", "label": "Algiz (Elk)" },
+        { "char": "ᛊ", "label": "Sowilo (Sun)" },
+        { "char": "ᛏ", "label": "Tiwaz (God Tyr)" },
+        { "char": "ᛒ", "label": "Berkano (Birch)" },
+        { "char": "ᛖ", "label": "Ehwaz (Horse)" },
+        { "char": "ᛗ", "label": "Mannaz (Man)" },
+        { "char": "ᛚ", "label": "Laguz (Water)" },
+        { "char": "ᛜ", "label": "Ingwaz (Fertility)" },
+        { "char": "ᛞ", "label": "Dagaz (Day)" },
+        { "char": "ᛟ", "label": "Othala (Ancestral Land)" }
+      ]
+    },
+    {
+      "id": "younger-futhark",
+      "label": "Younger Futhark",
+      "h2": "Younger Futhark",
+      "symbols": [
+        { "char": "ᚠ", "label": "Fe" },
+        { "char": "ᚢ", "label": "Ur" },
+        { "char": "ᚦ", "label": "Thurs" },
+        { "char": "ᚬ", "label": "Oss" },
+        { "char": "ᚱ", "label": "Reid" },
+        { "char": "ᚴ", "label": "Kaun" },
+        { "char": "ᚼ", "label": "Hagall" },
+        { "char": "ᚾ", "label": "Naud" },
+        { "char": "ᛁ", "label": "Is" },
+        { "char": "ᛅ", "label": "Ar" },
+        { "char": "ᛋ", "label": "Sol" },
+        { "char": "ᛏ", "label": "Tyr" },
+        { "char": "ᛒ", "label": "Bjarkan" },
+        { "char": "ᛘ", "label": "Madr" },
+        { "char": "ᛚ", "label": "Logr" },
+        { "char": "ᛦ", "label": "Yr" }
+      ]
+    },
+    {
+      "id": "anglo-saxon",
+      "label": "Anglo-Saxon Futhorc",
+      "h2": "Anglo-Saxon Futhorc",
+      "symbols": [
+        { "char": "ᚪ", "label": "Ac (Oak)" },
+        { "char": "ᚫ", "label": "Aesc" },
+        { "char": "ᚣ", "label": "Yr (Anglo-Saxon)" },
+        { "char": "ᛠ", "label": "Ear" },
+        { "char": "ᛡ", "label": "Ior" },
+        { "char": "ᛢ", "label": "Cweorth" },
+        { "char": "ᛣ", "label": "Calc" },
+        { "char": "ᛤ", "label": "Cealc" },
+        { "char": "ᛥ", "label": "Stan" },
+        { "char": "ᚩ", "label": "Os (Anglo-Saxon)" },
+        { "char": "ᚸ", "label": "Gar" },
+        { "char": "ᛒ", "label": "Beorc" }
+      ]
+    },
+    {
+      "id": "medieval-specialized",
+      "label": "Medieval & Specialized",
+      "h2": "Medieval & Specialized Runes",
+      "symbols": [
+        { "char": "ᛧ", "label": "Short-Twig Yr" },
+        { "char": "ᛨ", "label": "Icelandic-Yr" },
+        { "char": "ᛩ", "label": "Q" },
+        { "char": "ᛪ", "label": "X" },
+        { "char": "ᛱ", "label": "Runic Letter K" },
+        { "char": "ᛲ", "label": "Runic Letter Sh" },
+        { "char": "ᛳ", "label": "Runic Letter Oo" },
+        { "char": "ᛴ", "label": "Runic Letter Franks Casket Os" },
+        { "char": "ᛵ", "label": "Runic Letter Franks Casket Is" },
+        { "char": "ᛶ", "label": "Runic Letter Franks Casket Eh" },
+        { "char": "ᛷ", "label": "Runic Letter Franks Casket Ac" },
+        { "char": "ᛸ", "label": "Runic Letter Franks Casket Aesc" }
+      ]
+    },
+    {
+      "id": "runic-punctuation",
+      "label": "Punctuation",
+      "h2": "Runic Punctuation & Numerals",
+      "symbols": [
+        { "char": "᛫", "label": "Single Punctuation" },
+        { "char": "᛬", "label": "Multiple Punctuation" },
+        { "char": "᛭", "label": "Cross Punctuation" },
+        { "char": "ᛮ", "label": "Arlaug (Golden Number)" },
+        { "char": "ᛯ", "label": "Tvimadur (Golden Number)" },
+        { "char": "ᛰ", "label": "Belgthor (Golden Number)" }
+      ]
+    },
+    {
+      "id": "additional-runic",
+      "label": "Complete Block Coverage",
+      "h2": "More from the Unicode Runic Block",
+      "intro": "Remaining assigned codepoints from the Unicode Runic block (U+16A0–U+16FF) not listed in the curated sections above.",
+      "symbols": [
+        { "char": "ᚡ", "label": "Runic Letter V" },
+        { "char": "ᚤ", "label": "Runic Letter Y" },
+        { "char": "ᚥ", "label": "Runic Letter W" },
+        { "char": "ᚧ", "label": "Runic Letter Eth" },
+        { "char": "ᚭ", "label": "Runic Letter Short-twig-oss O" },
+        { "char": "ᚮ", "label": "Runic Letter O" },
+        { "char": "ᚯ", "label": "Runic Letter Oe" },
+        { "char": "ᚰ", "label": "Runic Letter On" },
+        { "char": "ᚳ", "label": "Runic Letter Cen" },
+        { "char": "ᚵ", "label": "Runic Letter G" },
+        { "char": "ᚶ", "label": "Runic Letter Eng" },
+        { "char": "ᚻ", "label": "Runic Letter Haegl H" },
+        { "char": "ᚽ", "label": "Runic Letter Short-twig-hagall H" },
+        { "char": "ᚿ", "label": "Runic Letter Short-twig-naud N" },
+        { "char": "ᛀ", "label": "Runic Letter Dotted-n" },
+        { "char": "ᛂ", "label": "Runic Letter E" },
+        { "char": "ᛄ", "label": "Runic Letter Ger" },
+        { "char": "ᛆ", "label": "Runic Letter Short-twig-ar A" },
+        { "char": "ᛌ", "label": "Runic Letter Short-twig-sol S" },
+        { "char": "ᛍ", "label": "Runic Letter C" },
+        { "char": "ᛎ", "label": "Runic Letter Z" },
+        { "char": "ᛐ", "label": "Runic Letter Short-twig-tyr T" },
+        { "char": "ᛑ", "label": "Runic Letter D" },
+        { "char": "ᛓ", "label": "Runic Letter Short-twig-bjarkan B" },
+        { "char": "ᛔ", "label": "Runic Letter Dotted-p" },
+        { "char": "ᛕ", "label": "Runic Letter Open-p" },
+        { "char": "ᛙ", "label": "Runic Letter Short-twig-madr M" },
+        { "char": "ᛛ", "label": "Runic Letter Dotted-l" },
+        { "char": "ᛝ", "label": "Runic Letter Ing" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "runes-collections",
+    "label": "Runic Collections",
+    "h2": "Runic Alphabets",
+    "intro": "Copy a complete runic alphabet in canonical fuþark order."
+  },
+  "collection_container_id": "runesCollectionsContainer",
+  "collections": [
+    {
+      "name": "Elder Futhark (24 runes)",
+      "flags": [
+        "ᚠ",
+        "ᚢ",
+        "ᚦ",
+        "ᚨ",
+        "ᚱ",
+        "ᚲ",
+        "ᚷ",
+        "ᚹ",
+        "ᚺ",
+        "ᚾ",
+        "ᛁ",
+        "ᛃ",
+        "ᛇ",
+        "ᛈ",
+        "ᛉ",
+        "ᛊ",
+        "ᛏ",
+        "ᛒ",
+        "ᛖ",
+        "ᛗ",
+        "ᛚ",
+        "ᛜ",
+        "ᛞ",
+        "ᛟ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Younger Futhark (16 runes, long-branch)",
+      "flags": ["ᚠ", "ᚢ", "ᚦ", "ᚬ", "ᚱ", "ᚴ", "ᚼ", "ᚾ", "ᛁ", "ᛅ", "ᛋ", "ᛏ", "ᛒ", "ᛘ", "ᛚ", "ᛦ"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Write Your Name in Runes",
+      "paragraphs": [
+        "Type a name or word to transliterate it into Elder Futhark, using the 24 runes charted above. The result is plain Unicode text, so it copies and pastes anywhere."
+      ]
+    },
+    {
+      "h2": "Runic Alphabets",
+      "paragraphs": ["Copy a complete runic alphabet in canonical fuþark order."]
+    }
+  ],
+  "related": [
+    { "href": "/library/religious-symbols/", "title": "Religious & Spiritual Symbols", "desc": "Faith symbols from every major world religion." },
+    {
+      "href": "/library/witchy-occult-symbols/",
+      "title": "Witchy & Occult Symbols",
+      "desc": "Occult and esoteric symbols including pentagrams, moon phases, and alchemical signs."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    },
+    { "href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "Decorative Unicode symbols for bios and captions." }
+  ]
+}

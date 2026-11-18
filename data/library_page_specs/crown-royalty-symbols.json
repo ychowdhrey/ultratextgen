@@ -1,0 +1,92 @@
+{
+  "slug": "crown-royalty-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Crown & Royalty Symbols Copy & Paste — King, Queen & Tiara Symbols",
+  "meta_description": "Crown, tiara, and royalty symbols for usernames, ranking, and queen/king bios. Copy & paste chess king/queen and royal motif characters.",
+  "canonical": "https://ultratextgen.com/library/crown-royalty-symbols/",
+  "breadcrumb": "Crown & Royalty Symbols",
+  "hero_h1": "Crown & Royalty Symbols",
+  "hero_tagline": "Crowns, chess kings, queens, tiaras, and royal motif symbols for bios and usernames. Click any symbol to copy instantly.",
+  "intro": "Crown and royalty symbols signal status, authority, and self-expression in bios and display names. From chess king and queen pieces (♔ ♕ ♚ ♛) to the crown emoji 👑 and fleur-de-lis ⚜, these Unicode characters create a regal aesthetic for Instagram, TikTok, Discord, and game profiles.",
+  "date_published": "2026-04-26",
+  "date_modified": "2026-04-26",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/crown-royalty-symbols/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/crown-royalty-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/kronen-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symbole-couronne/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-corona/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/simvol-korony/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/wanggwan-giho/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/crown-royalty-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "crown-symbols",
+      "label": "Crown Symbols",
+      "h2": "Crown Symbols",
+      "symbols": [
+        { "char": "♔", "label": "White Chess King" },
+        { "char": "♕", "label": "White Chess Queen" },
+        { "char": "♚", "label": "Black Chess King" },
+        { "char": "♛", "label": "Black Chess Queen" },
+        { "char": "👑", "label": "Crown Emoji" },
+        { "char": "☥", "label": "Ankh" },
+        { "char": "⚜", "label": "Fleur-de-lis" },
+        { "char": "🤴", "label": "Prince Emoji" },
+        { "char": "👸", "label": "Princess Emoji" }
+      ]
+    },
+    {
+      "id": "chess-pieces",
+      "label": "Chess King & Queen",
+      "h2": "Chess King & Queen",
+      "symbols": [
+        { "char": "♔", "label": "White Chess King (outline)" },
+        { "char": "♕", "label": "White Chess Queen (outline)" },
+        { "char": "♚", "label": "Black Chess King (filled)" },
+        { "char": "♛", "label": "Black Chess Queen (filled)" }
+      ]
+    },
+    {
+      "id": "royal-motifs",
+      "label": "Tiaras & Royal Motifs",
+      "h2": "Tiaras & Royal Motifs",
+      "symbols": [
+        { "char": "👑", "label": "Crown Emoji" },
+        { "char": "☥", "label": "Ankh" },
+        { "char": "⚜", "label": "Fleur-de-lis" },
+        { "char": "❦", "label": "Floral Heart" },
+        { "char": "✠", "label": "Maltese Cross" },
+        { "char": "☩", "label": "Cross of Jerusalem" },
+        { "char": "🫅", "label": "Person with Crown" },
+        { "char": "💍", "label": "Ring" },
+        { "char": "🏰", "label": "Castle" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Filled vs Outlined Crown Variants",
+      "paragraphs": [
+        "Chess crown symbols come in two variants: outline (♔ ♕, technically 'white chess pieces') and filled (♚ ♛, technically 'black chess pieces'). The filled black variants (♚ ♛) often appear bolder on screen. Choose based on your aesthetic preference: both render identically in terms of Unicode support."
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/chess-symbols/", "title": "Chess Symbols", "desc": "All 12 Unicode chess pieces." },
+    { "href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "Curated aesthetic Unicode characters." },
+    { "href": "/library/star-symbols/", "title": "Star Symbol Collection", "desc": "Stars and sparkle characters." },
+    { "href": "/library/coquette-symbols/", "title": "Coquette Symbols", "desc": "Soft feminine aesthetic symbols." },
+    { "href": "/library/religious-symbols/", "title": "Religious & Spiritual Symbols", "desc": "Ankh, cross, and other faith symbols." },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Achievement Symbols",
+      "desc": "Trophies, medals, and crowns for wins, milestones, and status."
+    },
+    { "href": "/library/crown-emoji/", "title": "Crown Emoji", "desc": "Royalty, \"that's so queen/king\" slang, and flex combo sets." },
+    { "href": "/symbol/fleur-de-lis-symbol/", "title": "Fleur-de-lis Symbol", "desc": "The fleur-de-lis (⚜)." },
+    { "href": "/symbol/pawn-symbol/", "title": "Pawn Symbol (♟ ♙)", "desc": "The black ♟ and white ♙ chess pawn." }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "slug": "bullet-point-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Bullet Point Symbols: Copy & Paste List Markers",
+  "meta_description": "Browse and copy bullet point symbols, list markers, arrow bullets, checkmark bullets, and decorative bullets for documents and social posts.",
+  "canonical": "https://ultratextgen.com/library/bullet-point-symbols/",
+  "breadcrumb": "Bullet Point Symbols",
+  "hero_h1": "Bullet Point Symbols",
+  "hero_tagline": "Copy and paste bullet point characters and list markers for LinkedIn posts, emails, documents, and social media. Click any symbol to copy it instantly.",
+  "intro": "Bullet points help organize content visually in any plain-text environment. Whether you're formatting a LinkedIn post, structuring an email, or decorating a social media bio, these Unicode bullet characters copy and paste reliably across all platforms, no special software needed.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/bullet-point-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-vineta/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-puces/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-poin/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/jeom-giho/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-marcadores/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/bullet-point-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/aufzaehlungszeichen/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/bullet-point-symbols/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/opsommingstekens/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-punktowania/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/madde-imi-sembolleri/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-punto-elenco/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/bullet-point-symbols/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/markery-spiska/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/bullet-point-symbols/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/xiangmu-fuhao/" },
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/punkt-symboler/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/bullet-point-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "classic-bullets",
+      "label": "Classic Bullets",
+      "h2": "Classic Bullet Characters",
+      "intro": "Standard bullet point characters for lists and outlines.",
+      "symbols": [
+        { "char": "•", "label": "Bullet" },
+        { "char": "‣", "label": "Triangular Bullet" },
+        { "char": "◦", "label": "White Bullet" },
+        { "char": "⁃", "label": "Hyphen Bullet" },
+        { "char": "∙", "label": "Bullet Operator" },
+        { "char": "·", "label": "Middle Dot" },
+        { "char": "⊙", "label": "Circled Dot Operator" },
+        { "char": "⊚", "label": "Circled Ring Operator" },
+        { "char": "◉", "label": "Fisheye" }
+      ]
+    },
+    {
+      "id": "arrow-bullets",
+      "label": "Arrow Bullets",
+      "h2": "Arrow Bullet Characters",
+      "intro": "Arrow-style bullets for lists that need direction and emphasis.",
+      "symbols": [
+        { "char": "▸", "label": "Black Right-Pointing Small Triangle" },
+        { "char": "►", "label": "Black Right-Pointing Pointer" },
+        { "char": "→", "label": "Rightwards Arrow" },
+        { "char": "➤", "label": "Black Right Arrowhead" },
+        { "char": "➜", "label": "Heavy Round-Tipped Rightwards Arrow" },
+        { "char": "➔", "label": "Heavy Wide-Headed Rightwards Arrow" },
+        { "char": "▶", "label": "Black Right-Pointing Triangle" },
+        { "char": "▷", "label": "White Right-Pointing Triangle" }
+      ]
+    },
+    {
+      "id": "checkmark-bullets",
+      "label": "Checkmark Bullets",
+      "h2": "Checkmark & Box Bullets",
+      "intro": "Checkmarks and checkbox characters for to-do lists and feature comparisons.",
+      "symbols": [
+        { "char": "✓", "label": "Check Mark" },
+        { "char": "✔", "label": "Heavy Check Mark" },
+        { "char": "☑", "label": "Ballot Box with Check" },
+        { "char": "✅", "label": "White Heavy Check Mark" },
+        { "char": "☐", "label": "Ballot Box" },
+        { "char": "☒", "label": "Ballot Box with X" }
+      ]
+    },
+    {
+      "id": "star-diamond-bullets",
+      "label": "Star & Diamond Bullets",
+      "h2": "Star & Diamond Bullet Characters",
+      "intro": "Decorative star and diamond bullets for stylish lists.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "◆", "label": "Black Diamond" },
+        { "char": "✦", "label": "Black Four-Pointed Star" },
+        { "char": "◇", "label": "White Diamond" },
+        { "char": "◈", "label": "White Diamond Containing Black Small Diamond" },
+        { "char": "❖", "label": "Black Diamond Minus White X" },
+        { "char": "✧", "label": "White Four-Pointed Star" },
+        { "char": "✶", "label": "Six-Pointed Black Star" }
+      ]
+    },
+    {
+      "id": "decorative-bullets",
+      "label": "Decorative Bullets",
+      "h2": "Decorative Flower & Ornament Bullets",
+      "intro": "Floral and ornamental bullets for creative and aesthetic list styling.",
+      "symbols": [
+        { "char": "❀", "label": "White Florette" },
+        { "char": "❁", "label": "Eight Petalled Outlined Black Florette" },
+        { "char": "✿", "label": "Black Florette" },
+        { "char": "⚘", "label": "Flower" },
+        { "char": "✾", "label": "Six Petalled Black and White Florette" },
+        { "char": "❃", "label": "Heavy Teardrop-Spoked Pinwheel Asterisk" },
+        { "char": "✻", "label": "Teardrop-Spoked Asterisk" },
+        { "char": "❋", "label": "Heavy Eight Teardrop-Spoked Propeller Asterisk" }
+      ]
+    },
+    {
+      "id": "numbered-circled",
+      "label": "Numbered & Circled",
+      "h2": "Circled Number Bullets",
+      "intro": "Circled numbers for numbered lists that stay formatted in plain text environments.",
+      "symbols": [
+        { "char": "①", "label": "Circled Digit One" },
+        { "char": "②", "label": "Circled Digit Two" },
+        { "char": "③", "label": "Circled Digit Three" },
+        { "char": "④", "label": "Circled Digit Four" },
+        { "char": "⑤", "label": "Circled Digit Five" },
+        { "char": "⑥", "label": "Circled Digit Six" },
+        { "char": "⑦", "label": "Circled Digit Seven" },
+        { "char": "⑧", "label": "Circled Digit Eight" },
+        { "char": "⑨", "label": "Circled Digit Nine" },
+        { "char": "⑩", "label": "Circled Number Ten" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Checkmark Symbols",
+      "desc": "Check marks, tick marks, and ballot box characters for lists and forms."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "All Unicode arrow characters for navigation, direction, and list formatting."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Circles, diamonds, squares, triangles, and decorative shapes for formatting."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Symbols and special characters that work in LinkedIn posts and profiles."
+    }
+  ]
+}

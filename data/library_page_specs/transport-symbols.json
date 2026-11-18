@@ -1,0 +1,146 @@
+{
+  "slug": "transport-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Transportation Symbols 🚆 — Transport & Map Icons Copy & Paste",
+  "meta_description": "Browse and copy transport, vehicle, and travel-related Unicode symbols and emojis. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/transport-symbols/",
+  "breadcrumb": "Transport & Map Symbols",
+  "hero_h1": "Transportation & Map Symbols",
+  "hero_tagline": "A reference collection of transport, vehicle, and travel-related Unicode symbols and emojis. Click any symbol to copy it instantly.",
+  "intro": "This library contains vehicle emojis, transport mode symbols, traffic signs, and travel-related Unicode characters. Organized by transport type: land vehicles, air and sea, rail, and signage.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/transport-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-transporte/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/gyotong-giho/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/transport-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "road",
+      "label": "Road",
+      "h2": "Road Vehicles",
+      "symbols": [
+        { "char": "🚗", "label": "Car" },
+        { "char": "🚕", "label": "Taxi" },
+        { "char": "🚌", "label": "Bus" },
+        { "char": "🚎", "label": "Trolleybus" },
+        { "char": "🏎", "label": "Racing Car" },
+        { "char": "🚓", "label": "Police Car" },
+        { "char": "🚑", "label": "Ambulance" },
+        { "char": "🚒", "label": "Fire Engine" },
+        { "char": "🛻", "label": "Pickup Truck" },
+        { "char": "🚚", "label": "Delivery Truck" },
+        { "char": "🚛", "label": "Lorry" },
+        { "char": "🚐", "label": "Minibus" },
+        { "char": "🚙", "label": "SUV" },
+        { "char": "🛺", "label": "Auto Rickshaw" },
+        { "char": "🚜", "label": "Tractor" },
+        { "char": "🚍", "label": "Oncoming Bus" }
+      ]
+    },
+    {
+      "id": "two-wheeled",
+      "label": "Two-Wheeled",
+      "h2": "Two-Wheeled Vehicles",
+      "symbols": [
+        { "char": "🏍", "label": "Motorcycle" },
+        { "char": "🛵", "label": "Motor Scooter" },
+        { "char": "🚲", "label": "Bicycle" },
+        { "char": "🛴", "label": "Kick Scooter" },
+        { "char": "🛞", "label": "Wheel" },
+        { "char": "🛹", "label": "Skateboard" },
+        { "char": "🛼", "label": "Roller Skate" },
+        { "char": "🚴", "label": "Person Biking" },
+        { "char": "🚵", "label": "Mountain Biking" }
+      ]
+    },
+    {
+      "id": "rail",
+      "label": "Rail Transport",
+      "h2": "Rail Transport",
+      "symbols": [
+        { "char": "🚆", "label": "Train" },
+        { "char": "🚇", "label": "Metro" },
+        { "char": "🚈", "label": "Light Rail" },
+        { "char": "🚉", "label": "Station" },
+        { "char": "🚊", "label": "Tram" },
+        { "char": "🚝", "label": "Monorail" },
+        { "char": "🚞", "label": "Mountain Railway" },
+        { "char": "🚃", "label": "Railway Car" },
+        { "char": "🚄", "label": "High-Speed Train" },
+        { "char": "🚅", "label": "Bullet Train" },
+        { "char": "🚂", "label": "Locomotive" }
+      ]
+    },
+    {
+      "id": "air",
+      "label": "Air",
+      "h2": "Air Travel Symbols",
+      "symbols": [
+        { "char": "✈", "label": "Airplane" },
+        { "char": "🛩", "label": "Small Airplane" },
+        { "char": "🛫", "label": "Departure" },
+        { "char": "🛬", "label": "Arrival" },
+        { "char": "🚁", "label": "Helicopter" },
+        { "char": "🛸", "label": "Flying Saucer" },
+        { "char": "🚀", "label": "Rocket" },
+        { "char": "🪂", "label": "Parachute" },
+        { "char": "💺", "label": "Seat" },
+        { "char": "🛰", "label": "Satellite" }
+      ]
+    },
+    {
+      "id": "water",
+      "label": "Water",
+      "h2": "Water Transport Symbols",
+      "symbols": [
+        { "char": "🚢", "label": "Ship" },
+        { "char": "⛴", "label": "Ferry" },
+        { "char": "🛳", "label": "Passenger Ship" },
+        { "char": "⛵", "label": "Sailboat" },
+        { "char": "🚤", "label": "Speedboat" },
+        { "char": "🛶", "label": "Canoe" },
+        { "char": "⚓", "label": "Anchor" },
+        { "char": "🚣", "label": "Rowing Boat" },
+        { "char": "🛟", "label": "Ring Buoy" }
+      ]
+    },
+    {
+      "id": "map-symbols",
+      "label": "Navigation",
+      "h2": "Navigation & Map Symbols",
+      "symbols": [
+        { "char": "🚏", "label": "Bus Stop" },
+        { "char": "🚥", "label": "Traffic Light" },
+        { "char": "🚦", "label": "Vertical Traffic Light" },
+        { "char": "🚧", "label": "Construction" },
+        { "char": "⛽", "label": "Fuel Pump" },
+        { "char": "🛤", "label": "Railway Track" },
+        { "char": "🛣", "label": "Motorway" },
+        { "char": "🗺", "label": "World Map" },
+        { "char": "🧭", "label": "Compass" },
+        { "char": "📍", "label": "Location Pin" },
+        { "char": "🗾", "label": "Map of Japan" },
+        { "char": "🌐", "label": "Globe" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Emoji Flag Explorer",
+      "desc": "All 195 country flag emojis organized by region for quick reference and copying."
+    },
+    { "href": "/library/weather-symbols/", "title": "Weather Symbols", "desc": "Sun, rain, snow, and atmospheric Unicode symbols and emojis." },
+    { "href": "/library/currency-symbols/", "title": "Currency Symbols", "desc": "World currency signs and monetary Unicode symbols." },
+    { "href": "/library/hand-symbols/", "title": "Hand Symbol Collection", "desc": "Pointing hands, gestures, and finger-count emojis." },
+    {
+      "href": "/library/travel-vacation-emojis/",
+      "title": "Travel & Vacation Emojis",
+      "desc": "Planes, beaches, maps, and luggage with trip-countdown combo sets for wanderlust captions."
+    }
+  ]
+}

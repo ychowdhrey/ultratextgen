@@ -1,0 +1,383 @@
+{
+  "slug": "people-profession-emojis",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "People & Profession Emojis: Copy & Paste Job & Person Symbols",
+  "meta_description": "Browse and copy people and profession emojis: healthcare, technology, education, business, creative arts, science, and the judge emoji. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/people-profession-emojis/",
+  "breadcrumb": "People & Profession Emojis",
+  "hero_h1": "People & Profession Emojis",
+  "hero_tagline": "A complete reference of people and profession emojis organized by field: healthcare, technology, education, business, creative arts, and science. Click any emoji to copy it instantly.",
+  "intro": "Profession emojis are great for LinkedIn profiles, professional bios, email signatures, and industry-specific social media content. Unicode includes gender-neutral, male, and female variants for every profession. This collection organizes them by field so you can quickly find the right emoji for your context.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/people-profession-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-profesiones/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/people-profession-emojis/" }
+  ],
+  "sections": [
+    {
+      "id": "healthcare",
+      "label": "Healthcare",
+      "h2": "Healthcare Profession Emojis",
+      "intro": "Doctor, nurse, and medical professional emojis for healthcare content.",
+      "symbols": [
+        { "char": "👨‍⚕️", "label": "Man Health Worker" },
+        { "char": "👩‍⚕️", "label": "Woman Health Worker" },
+        { "char": "🧑‍⚕️", "label": "Health Worker" },
+        { "char": "💉", "label": "Syringe" },
+        { "char": "💊", "label": "Pill" },
+        { "char": "🏥", "label": "Hospital" },
+        { "char": "🩺", "label": "Stethoscope" },
+        { "char": "🩻", "label": "X-Ray" },
+        { "char": "🩼", "label": "Crutch" },
+        { "char": "⚕️", "label": "Medical Symbol" },
+        { "char": "🩹", "label": "Adhesive Bandage" }
+      ]
+    },
+    {
+      "id": "technology",
+      "label": "Technology",
+      "h2": "Technology Profession Emojis",
+      "intro": "Developer, programmer, and tech professional emojis for the tech industry.",
+      "symbols": [
+        { "char": "👨‍💻", "label": "Man Technologist" },
+        { "char": "👩‍💻", "label": "Woman Technologist" },
+        { "char": "🧑‍💻", "label": "Technologist" },
+        { "char": "💻", "label": "Laptop" },
+        { "char": "🖥️", "label": "Desktop Computer" },
+        { "char": "🖱️", "label": "Computer Mouse" },
+        { "char": "⌨️", "label": "Keyboard" },
+        { "char": "📱", "label": "Mobile Phone" }
+      ]
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "h2": "Education Profession Emojis",
+      "intro": "Teacher, student, and education professional emojis for academic content.",
+      "symbols": [
+        { "char": "👨‍🏫", "label": "Man Teacher" },
+        { "char": "👩‍🏫", "label": "Woman Teacher" },
+        { "char": "🧑‍🎓", "label": "Student" },
+        { "char": "👨‍🎓", "label": "Man Student" },
+        { "char": "👩‍🎓", "label": "Woman Student" },
+        { "char": "🎓", "label": "Graduation Cap" },
+        { "char": "📚", "label": "Books" },
+        { "char": "📖", "label": "Open Book" },
+        { "char": "✏️", "label": "Pencil" },
+        { "char": "📝", "label": "Memo" },
+        { "char": "🧑‍🏫", "label": "Teacher" },
+        { "char": "🍎", "label": "Red Apple" },
+        { "char": "📐", "label": "Triangular Ruler" },
+        { "char": "🏫", "label": "School" }
+      ]
+    },
+    {
+      "id": "business-finance",
+      "label": "Business & Finance",
+      "h2": "Business & Finance Profession Emojis",
+      "intro": "Office, executive, and finance professional emojis for business content.",
+      "symbols": [
+        { "char": "👨‍💼", "label": "Man Office Worker" },
+        { "char": "👩‍💼", "label": "Woman Office Worker" },
+        { "char": "🧑‍💼", "label": "Office Worker" },
+        { "char": "💼", "label": "Briefcase" },
+        { "char": "📊", "label": "Bar Chart" },
+        { "char": "📈", "label": "Chart Increasing" },
+        { "char": "📉", "label": "Chart Decreasing" },
+        { "char": "🏦", "label": "Bank" },
+        { "char": "💰", "label": "Money Bag" }
+      ]
+    },
+    {
+      "id": "creative-arts",
+      "label": "Creative & Arts",
+      "h2": "Creative & Arts Profession Emojis",
+      "intro": "Artist, musician, and creative professional emojis for creative industry content.",
+      "symbols": [
+        { "char": "👨‍🎨", "label": "Man Artist" },
+        { "char": "👩‍🎨", "label": "Woman Artist" },
+        { "char": "🧑‍🎨", "label": "Artist" },
+        { "char": "🧑‍🎤", "label": "Singer" },
+        { "char": "👨‍🎤", "label": "Man Singer" },
+        { "char": "👩‍🎤", "label": "Woman Singer" },
+        { "char": "🎭", "label": "Performing Arts" },
+        { "char": "🎬", "label": "Clapper Board" },
+        { "char": "🎤", "label": "Microphone" },
+        { "char": "🎵", "label": "Musical Note" },
+        { "char": "🎼", "label": "Musical Score" }
+      ]
+    },
+    {
+      "id": "science-engineering",
+      "label": "Science & Engineering",
+      "h2": "Science & Engineering Profession Emojis",
+      "intro": "Scientist, engineer, and researcher emojis for STEM content.",
+      "symbols": [
+        { "char": "👨‍🔬", "label": "Man Scientist" },
+        { "char": "👩‍🔬", "label": "Woman Scientist" },
+        { "char": "🧑‍🔬", "label": "Scientist" },
+        { "char": "🧑‍🔧", "label": "Mechanic" },
+        { "char": "👨‍🔧", "label": "Man Mechanic" },
+        { "char": "👩‍🔧", "label": "Woman Mechanic" },
+        { "char": "🔬", "label": "Microscope" },
+        { "char": "🔭", "label": "Telescope" },
+        { "char": "🧪", "label": "Test Tube" },
+        { "char": "⚗️", "label": "Alembic" },
+        { "char": "🧬", "label": "DNA" }
+      ]
+    },
+    {
+      "id": "construction-emoji",
+      "label": "Construction Emoji",
+      "h2": "Construction Worker Emojis",
+      "intro": "Copy the construction worker emoji and related building and trade symbols.",
+      "symbols": [
+        { "char": "👷", "label": "Construction Worker" },
+        { "char": "👷‍♂️", "label": "Man Construction Worker" },
+        { "char": "👷‍♀️", "label": "Woman Construction Worker" },
+        { "char": "🦺", "label": "Safety Vest" },
+        { "char": "🚧", "label": "Construction" },
+        { "char": "🔨", "label": "Hammer" },
+        { "char": "🏗️", "label": "Building Construction" }
+      ]
+    },
+    {
+      "id": "chef-emoji",
+      "label": "Chef Emoji",
+      "h2": "Chef & Cooking Emojis",
+      "intro": "Copy the chef emoji and related cooking and kitchen symbols.",
+      "symbols": [
+        { "char": "🧑‍🍳", "label": "Cook" },
+        { "char": "👨‍🍳", "label": "Man Cook" },
+        { "char": "👩‍🍳", "label": "Woman Cook" },
+        { "char": "🍳", "label": "Cooking" },
+        { "char": "🔪", "label": "Kitchen Knife" },
+        { "char": "🍽️", "label": "Fork and Knife with Plate" }
+      ]
+    },
+    {
+      "id": "police-emoji",
+      "label": "Police Emoji",
+      "h2": "Police & Public Safety Emojis",
+      "intro": "Copy the police officer emoji and related law enforcement symbols.",
+      "symbols": [
+        { "char": "👮", "label": "Police Officer" },
+        { "char": "👮‍♂️", "label": "Man Police Officer" },
+        { "char": "👮‍♀️", "label": "Woman Police Officer" },
+        { "char": "🚓", "label": "Police Car" },
+        { "char": "🚔", "label": "Oncoming Police Car" },
+        { "char": "🚨", "label": "Police Car Light" }
+      ]
+    },
+    {
+      "id": "judge-emoji",
+      "label": "Judge Emoji",
+      "h2": "Judge & Courtroom Emojis",
+      "intro": "Copy the judge emoji and the scales of justice. Unicode has no gavel emoji, so 🔨 Hammer is the usual stand-in beside ⚖️.",
+      "symbols": [
+        { "char": "🧑‍⚖️", "label": "Judge" },
+        { "char": "👨‍⚖️", "label": "Man Judge" },
+        { "char": "👩‍⚖️", "label": "Woman Judge" },
+        { "char": "⚖️", "label": "Balance Scale" },
+        { "char": "🔨", "label": "Hammer (gavel stand-in)" },
+        { "char": "🏛️", "label": "Classical Building" }
+      ]
+    },
+    {
+      "id": "firefighter-emoji",
+      "label": "Firefighter Emoji",
+      "h2": "Firefighter Emojis",
+      "intro": "Copy the firefighter emoji and related fire and rescue symbols.",
+      "symbols": [
+        { "char": "🧑‍🚒", "label": "Firefighter" },
+        { "char": "👨‍🚒", "label": "Man Firefighter" },
+        { "char": "👩‍🚒", "label": "Woman Firefighter" },
+        { "char": "🚒", "label": "Fire Engine" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "🧯", "label": "Fire Extinguisher" }
+      ]
+    },
+    {
+      "id": "farm-factory-emoji",
+      "label": "Farm & Factory",
+      "h2": "Farmer and Factory Worker Emojis",
+      "intro": "Farmer and factory worker emojis as a person, a man and a woman, for farming, food and manufacturing posts.",
+      "symbols": [
+        { "char": "🧑‍🌾", "label": "Farmer" },
+        { "char": "👨‍🌾", "label": "Man Farmer" },
+        { "char": "👩‍🌾", "label": "Woman Farmer" },
+        { "char": "🧑‍🏭", "label": "Factory Worker" },
+        { "char": "👨‍🏭", "label": "Man Factory Worker" },
+        { "char": "👩‍🏭", "label": "Woman Factory Worker" }
+      ]
+    },
+    {
+      "id": "pilot-astronaut-emoji",
+      "label": "Pilot & Astronaut",
+      "h2": "Pilot and Astronaut Emojis",
+      "intro": "Pilot and astronaut emojis as a person, a man and a woman, for travel, aviation and space posts.",
+      "symbols": [
+        { "char": "🧑‍✈️", "label": "Pilot" },
+        { "char": "👨‍✈️", "label": "Man Pilot" },
+        { "char": "👩‍✈️", "label": "Woman Pilot" },
+        { "char": "🧑‍🚀", "label": "Astronaut" },
+        { "char": "👨‍🚀", "label": "Man Astronaut" },
+        { "char": "👩‍🚀", "label": "Woman Astronaut" }
+      ]
+    },
+    {
+      "id": "detective-guard-emoji",
+      "label": "Detective & Guard",
+      "h2": "Detective, Guard and Ninja Emojis",
+      "intro": "Detective and guard emojis as a person, a man and a woman, plus the ninja, for mystery, security and story posts.",
+      "symbols": [
+        { "char": "🕵️", "label": "Detective" },
+        { "char": "🕵️‍♂️", "label": "Man Detective" },
+        { "char": "🕵️‍♀️", "label": "Woman Detective" },
+        { "char": "💂", "label": "Guard" },
+        { "char": "💂‍♂️", "label": "Man Guard" },
+        { "char": "💂‍♀️", "label": "Woman Guard" },
+        { "char": "🥷", "label": "Ninja" }
+      ]
+    },
+    {
+      "id": "boy-emoji",
+      "label": "Boy Emoji",
+      "h2": "Children & Family Emojis",
+      "intro": "Copy the boy emoji and related family and person symbols.",
+      "symbols": [
+        { "char": "👦", "label": "Boy" },
+        { "char": "👧", "label": "Girl" },
+        { "char": "🧒", "label": "Child" },
+        { "char": "🧑", "label": "Person" },
+        { "char": "👨‍👩‍👧‍👦", "label": "Family" },
+        { "char": "👥", "label": "Busts in Silhouette" }
+      ]
+    },
+    {
+      "id": "pregnant-emoji",
+      "label": "Pregnant Emoji",
+      "h2": "Pregnancy & Baby Emojis",
+      "intro": "Copy the pregnant woman emoji and related symbols for baby announcements.",
+      "symbols": [
+        { "char": "🤰", "label": "Pregnant Woman" },
+        { "char": "🫄", "label": "Pregnant Person" },
+        { "char": "🫃", "label": "Pregnant Man" },
+        { "char": "🤱", "label": "Breast-Feeding" },
+        { "char": "🧑‍🍼", "label": "Person Feeding Baby" },
+        { "char": "👩‍🍼", "label": "Woman Feeding Baby" },
+        { "char": "👨‍🍼", "label": "Man Feeding Baby" },
+        { "char": "👶", "label": "Baby" },
+        { "char": "🍼", "label": "Baby Bottle" }
+      ]
+    },
+    {
+      "id": "royalty-wedding-emoji",
+      "label": "Royalty & Weddings",
+      "h2": "Royalty and Wedding Emojis",
+      "intro": "Crowned figures, the prince and princess, and the tuxedo and veil emojis in person, man and woman versions, for weddings, proms and fairy tale posts.",
+      "symbols": [
+        { "char": "🫅", "label": "Person with Crown" },
+        { "char": "🤴", "label": "Prince" },
+        { "char": "👸", "label": "Princess" },
+        { "char": "🤵", "label": "Person in Tuxedo" },
+        { "char": "🤵‍♂️", "label": "Man in Tuxedo" },
+        { "char": "🤵‍♀️", "label": "Woman in Tuxedo" },
+        { "char": "👰", "label": "Person with Veil" },
+        { "char": "👰‍♂️", "label": "Man with Veil" },
+        { "char": "👰‍♀️", "label": "Woman with Veil" }
+      ]
+    },
+    {
+      "id": "head-covering-emoji",
+      "label": "Head Coverings",
+      "h2": "Turban, Skullcap and Headscarf Emojis",
+      "intro": "People wearing a turban, a skullcap or a headscarf, the head coverings the emoji set includes.",
+      "symbols": [
+        { "char": "👳", "label": "Person Wearing Turban" },
+        { "char": "👳‍♂️", "label": "Man Wearing Turban" },
+        { "char": "👳‍♀️", "label": "Woman Wearing Turban" },
+        { "char": "👲", "label": "Person with Skullcap" },
+        { "char": "🧕", "label": "Woman with Headscarf" }
+      ]
+    },
+    {
+      "id": "couples-emoji",
+      "label": "Couples",
+      "h2": "Couple, Kiss and Holding Hands Emojis",
+      "intro": "Every couple emoji: people holding hands, the kiss and the couple with heart, each in the woman and man, man and man, and woman and woman versions.",
+      "symbols": [
+        { "char": "🧑‍🤝‍🧑", "label": "People Holding Hands" },
+        { "char": "👭", "label": "Women Holding Hands" },
+        { "char": "👫", "label": "Woman and Man Holding Hands" },
+        { "char": "👬", "label": "Men Holding Hands" },
+        { "char": "💏", "label": "Kiss" },
+        { "char": "👩‍❤️‍💋‍👨", "label": "Kiss: Woman, Man" },
+        { "char": "👨‍❤️‍💋‍👨", "label": "Kiss: Man, Man" },
+        { "char": "👩‍❤️‍💋‍👩", "label": "Kiss: Woman, Woman" },
+        { "char": "💑", "label": "Couple with Heart" },
+        { "char": "👩‍❤️‍👨", "label": "Couple with Heart: Woman, Man" },
+        { "char": "👨‍❤️‍👨", "label": "Couple with Heart: Man, Man" },
+        { "char": "👩‍❤️‍👩", "label": "Couple with Heart: Woman, Woman" }
+      ]
+    },
+    {
+      "id": "family-emoji",
+      "label": "Families",
+      "h2": "Family Emojis: Every Combination",
+      "intro": "The family symbol, the newer adult and child families, and every parent and child combination with one or two parents. Each copies as one family emoji where the device supports it; an older phone may show the separate people side by side.",
+      "symbols": [
+        { "char": "👪", "label": "Family Symbol" },
+        { "char": "🧑‍🧑‍🧒", "label": "Family: Adult, Adult, Child" },
+        { "char": "🧑‍🧑‍🧒‍🧒", "label": "Family: Adult, Adult, Child, Child" },
+        { "char": "🧑‍🧒", "label": "Family: Adult, Child" },
+        { "char": "🧑‍🧒‍🧒", "label": "Family: Adult, Child, Child" },
+        { "char": "👨‍👩‍👦", "label": "Family: Man, Woman, Boy" },
+        { "char": "👨‍👩‍👧", "label": "Family: Man, Woman, Girl" },
+        { "char": "👨‍👩‍👦‍👦", "label": "Family: Man, Woman, Boy, Boy" },
+        { "char": "👨‍👩‍👧‍👧", "label": "Family: Man, Woman, Girl, Girl" },
+        { "char": "👨‍👨‍👦", "label": "Family: Man, Man, Boy" },
+        { "char": "👨‍👨‍👧", "label": "Family: Man, Man, Girl" },
+        { "char": "👨‍👨‍👧‍👦", "label": "Family: Man, Man, Girl, Boy" },
+        { "char": "👨‍👨‍👦‍👦", "label": "Family: Man, Man, Boy, Boy" },
+        { "char": "👨‍👨‍👧‍👧", "label": "Family: Man, Man, Girl, Girl" },
+        { "char": "👩‍👩‍👦", "label": "Family: Woman, Woman, Boy" },
+        { "char": "👩‍👩‍👧", "label": "Family: Woman, Woman, Girl" },
+        { "char": "👩‍👩‍👧‍👦", "label": "Family: Woman, Woman, Girl, Boy" },
+        { "char": "👩‍👩‍👦‍👦", "label": "Family: Woman, Woman, Boy, Boy" },
+        { "char": "👩‍👩‍👧‍👧", "label": "Family: Woman, Woman, Girl, Girl" },
+        { "char": "👨‍👦", "label": "Family: Man, Boy" },
+        { "char": "👨‍👦‍👦", "label": "Family: Man, Boy, Boy" },
+        { "char": "👨‍👧", "label": "Family: Man, Girl" },
+        { "char": "👨‍👧‍👦", "label": "Family: Man, Girl, Boy" },
+        { "char": "👨‍👧‍👧", "label": "Family: Man, Girl, Girl" },
+        { "char": "👩‍👦", "label": "Family: Woman, Boy" },
+        { "char": "👩‍👦‍👦", "label": "Family: Woman, Boy, Boy" },
+        { "char": "👩‍👧", "label": "Family: Woman, Girl" },
+        { "char": "👩‍👧‍👦", "label": "Family: Woman, Girl, Boy" },
+        { "char": "👩‍👧‍👧", "label": "Family: Woman, Girl, Girl" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/body-language-emojis/",
+      "title": "Body Language Emojis",
+      "desc": "Body language and activity emojis expressing movement and emotion."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Symbols and special characters that work in LinkedIn posts and profiles."
+    },
+    { "href": "/library/face-emojis/", "title": "Face Emojis", "desc": "Smiley faces, expressions, and emotion emojis for every mood." },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Achievement Symbols",
+      "desc": "Trophies, medals, ribbons, and other achievement and award symbols."
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "slug": "star-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Star Symbol Collection: Copy & Paste Star Characters & Emojis",
+  "meta_description": "Browse and copy star symbols, sparkle characters, and asterisk-related Unicode marks. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/star-symbols/",
+  "breadcrumb": "Star Symbols",
+  "hero_h1": "Star Symbol Collection",
+  "hero_tagline": "A reference collection of star symbols, sparkle characters, and asterisk-related Unicode marks. Click any symbol to copy it instantly.",
+  "intro": "This library contains star symbols in various point counts and styles, sparkle and glitter emojis, asterisk variants, and related decorative Unicode characters. Organized by shape, style, and point count.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-29",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/star-symbols/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/star-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/stern-symbole/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/simbolos-de-estrella/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-etoiles/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-bintang/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-stella/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/star-symbols/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/byeol-giho/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-gwiazdek/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-estrela/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/yildiz-sembolleri/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/ster-symbolen/" },
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/stjarna-symboler/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/ki-tu-ngoi-sao/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/zvyozdochki/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/xingxing-fuhao/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/star-symbols/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/star-symbols/" },
+    { "lang": "no", "href": "https://ultratextgen.com/no/library/stjernesymboler/" }
+  ],
+  "sections": [
+    {
+      "id": "basic-stars",
+      "label": "Basic Stars",
+      "h2": "Basic Star Symbols",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✦", "label": "Four-Pointed" },
+        { "char": "✧", "label": "White Four-Pointed" },
+        { "char": "✡", "label": "Star of David" },
+        { "char": "✩", "label": "Outlined Star" },
+        { "char": "✪", "label": "Circled Star" },
+        { "char": "✫", "label": "Open Centre" },
+        { "char": "✬", "label": "Black Centre" },
+        { "char": "✭", "label": "Outlined Black" },
+        { "char": "✮", "label": "Heavy Outlined" },
+        { "char": "✯", "label": "Pinwheel Star" },
+        { "char": "✰", "label": "Shadowed Star" },
+        { "char": "⭑", "label": "Black Small Star" },
+        { "char": "⭒", "label": "White Small Star" }
+      ]
+    },
+    {
+      "id": "multi-stars",
+      "label": "Multi-Pointed",
+      "h2": "Multi-Pointed Star Symbols",
+      "symbols": [
+        { "char": "✴", "label": "Eight-Pointed" },
+        { "char": "✵", "label": "Eight Pinwheel" },
+        { "char": "✶", "label": "Six-Pointed" },
+        { "char": "✷", "label": "Eight Rectilinear" },
+        { "char": "✸", "label": "Heavy Rectilinear" },
+        { "char": "✹", "label": "Twelve-Pointed" },
+        { "char": "🔯", "label": "Six Pointed Star" }
+      ]
+    },
+    {
+      "id": "star-emojis",
+      "label": "Star Emojis",
+      "h2": "Star Emojis",
+      "symbols": [
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "💫", "label": "Dizzy / Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌠", "label": "Shooting Star" }
+      ]
+    },
+    {
+      "id": "celestial-stars",
+      "label": "Celestial Stars",
+      "h2": "Celestial Star Symbols",
+      "symbols": [
+        { "char": "☪", "label": "Star and Crescent" },
+        { "char": "⍟", "label": "Circle Star" },
+        { "char": "⚝", "label": "Outlined White Star" },
+        { "char": "🌃", "label": "Night with Stars" }
+      ]
+    },
+    {
+      "id": "asterisks",
+      "label": "Asterisks & Sparkles",
+      "h2": "Asterisks & Sparkle Symbols",
+      "symbols": [
+        { "char": "⁂", "label": "Asterism" },
+        { "char": "⁑", "label": "Two Asterisks" },
+        { "char": "✱", "label": "Heavy Asterisk" },
+        { "char": "✲", "label": "Open Centre" },
+        { "char": "✳", "label": "Eight Spoked" },
+        { "char": "✺", "label": "Sixteen-Pointed" },
+        { "char": "✻", "label": "Teardrop-Spoked" },
+        { "char": "✼", "label": "Open Centre Teardrop" },
+        { "char": "✽", "label": "Heavy Teardrop" },
+        { "char": "❇", "label": "Sparkle" }
+      ]
+    },
+    {
+      "id": "rating-stars",
+      "label": "Rating Stars",
+      "h2": "Rating & Review Star Symbols",
+      "symbols": [
+        { "char": "★★★★★", "label": "Five Stars" },
+        { "char": "★★★★☆", "label": "Four Stars" },
+        { "char": "★★★☆☆", "label": "Three Stars" },
+        { "char": "★★☆☆☆", "label": "Two Stars" },
+        { "char": "★☆☆☆☆", "label": "One Star" },
+        { "char": "⭐⭐⭐⭐⭐", "label": "Emoji Five" },
+        { "char": "⯨", "label": "Half Star" },
+        { "char": "⯪", "label": "Half Star (right)" }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Bio Decorations",
+      "h2": "Aesthetic Star Bio Decorations",
+      "symbols": [
+        { "char": "˚｡⋆｡˚", "label": "Soft Sparkle" },
+        { "char": "⋆⭒˚｡⋆", "label": "Tiny Stars" },
+        { "char": "˚₊‧⭐‧₊˚", "label": "Framed Star" },
+        { "char": "✦ ｡ ✧ ｡ ✦", "label": "Star Divider" },
+        { "char": "⋆｡‧˚ʚ★ɞ˚‧｡⋆", "label": "Star Wings" },
+        { "char": "★彡", "label": "Star Trail" },
+        { "char": "✮⋆˙", "label": "Sparkle Accent" },
+        { "char": "｡ﾟ⭐｡ﾟ", "label": "Glow Star" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "star-collections",
+    "label": "Star Collections",
+    "h2": "Star Bio & Rating Sets",
+    "intro": "Ready-made star decorations, trails, and rating rows you can paste into a bio, caption, or review: copy the whole set in one click."
+  },
+  "collection_container_id": "starCollectionsContainer",
+  "collections": [
+    {
+      "name": "Twinkle Bio Border",
+      "flags": ["⋆", "˚", "✦", "✧", "✦", "˚", "⋆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Shooting Star Trail",
+      "flags": ["｡˚⋆★彡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Starlit Username Tag",
+      "flags": ["✩", "｡", "✫", "｡", "✩"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Five Star Rating Row",
+      "flags": ["★★★★★"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sparkle Accent Cluster",
+      "flags": ["✮", "⋆", "˙", "⭒", "˙", "⋆", "✮"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Celestial Caption Glow",
+      "flags": ["˚", "₊", "‧", "🌟", "‧", "₊", "˚"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Star Bio & Rating Sets",
+      "paragraphs": [
+        "Ready-made star decorations, trails, and rating rows you can paste into a bio, caption, or review: copy the whole set in one click."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac & Astrology Symbols",
+      "desc": "Zodiac sign glyphs and celestial symbols from the Miscellaneous Symbols Unicode block."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Heart characters and emoji variants, including colored, outlined, and decorative forms."
+    },
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Awareness Ribbon Symbols",
+      "desc": "Ribbon emoji and related awareness symbols available in Unicode."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Unicode symbols commonly supported on LinkedIn, including arrows, bullets, and special characters."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Achievement Symbols",
+      "desc": "Gold-star wins paired with trophies, medals, and award emojis."
+    },
+    {
+      "href": "/symbol/star-symbol/",
+      "title": "Star Symbol",
+      "desc": "The star symbol (★ ☆): the five-pointed star behind ratings, favorites, and bio decoration."
+    },
+    {
+      "href": "/symbol/star-of-david/",
+      "title": "Star of David",
+      "desc": "The six-pointed Star of David (✡ ✡️), the Magen David, or \"Shield of David\"."
+    },
+    { "href": "/library/star-emoji/", "title": "Star Emoji", "desc": "The picture ⭐ star emoji, five-star rating combos, and star kaomoji." },
+    {
+      "href": "/events/graduation/",
+      "title": "Graduation Text & Symbol Generator",
+      "desc": "Style a graduation caption or name live, then copy matching fonts, emoji, kaomoji, and ready-made congratulations."
+    },
+    {
+      "href": "/events/july-4th/",
+      "title": "4th of July Text & Symbol Generator",
+      "desc": "Style a 4th of July caption live, then copy matching fonts, emoji, kaomoji, and ready-made messages."
+    }
+  ]
+}

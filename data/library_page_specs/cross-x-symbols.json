@@ -1,0 +1,141 @@
+{
+  "slug": "cross-x-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Cross & X Symbols: Copy & Paste All Cross Characters",
+  "meta_description": "Browse and copy every cross and X symbol — multiplication signs, ballot marks, religious crosses, decorative dagger symbols, and more.",
+  "canonical": "https://ultratextgen.com/library/cross-x-symbols/",
+  "breadcrumb": "Cross & X Symbols",
+  "hero_h1": "Cross & X Symbols",
+  "hero_tagline": "Every cross shape in Unicode: multiplication marks, ballot X marks, religious crosses, decorative heavy crosses, and dagger symbols. Click any symbol to copy it instantly.",
+  "intro": "This library covers all cross-shaped symbols across Unicode blocks: from the mathematical multiplication sign to Latin crosses, dagger characters, and decorative cross marks. Note: this page focuses on cross shapes and forms; for faith-specific context, see the Religious & Spiritual Symbols library page.",
+  "date_published": "2026-04-12",
+  "date_modified": "2026-04-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/cross-x-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/kreuz-x-symbole/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolo-x/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-salib/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/gyocha-giho/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-cruz-e-x/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/kruis-symbool/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/cross-x-symbols/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-croix/" },
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/kors-symboler/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/cross-x-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "math-x",
+      "label": "Multiplication & Math X",
+      "h2": "Multiplication & Math X",
+      "symbols": [
+        { "char": "×", "label": "Multiplication Sign" },
+        { "char": "✕", "label": "Multiplication X" },
+        { "char": "✖", "label": "Heavy Multiplication X" },
+        { "char": "⨯", "label": "Vector or Cross Product" },
+        { "char": "⋇", "label": "Division Times" },
+        { "char": "⨰", "label": "Multiplication Sign With Dot Above" },
+        { "char": "✖️", "label": "Heavy Multiplication X" }
+      ]
+    },
+    {
+      "id": "ballot-x",
+      "label": "Ballot & Mark X",
+      "h2": "Ballot & Mark X Characters",
+      "symbols": [
+        { "char": "✗", "label": "Ballot X" },
+        { "char": "✘", "label": "Heavy Ballot X" },
+        { "char": "❌", "label": "Cross Mark Emoji" },
+        { "char": "❎", "label": "Cross Mark Button Emoji" },
+        { "char": "☓", "label": "Saltire" },
+        { "char": "𐄂", "label": "Aegean Check Mark" }
+      ]
+    },
+    {
+      "id": "religious-crosses",
+      "label": "Religious Crosses",
+      "h2": "Religious Cross Characters",
+      "symbols": [
+        { "char": "✝", "label": "Latin Cross" },
+        { "char": "✞", "label": "Shadowed White Latin Cross" },
+        { "char": "✟", "label": "Outlined Latin Cross" },
+        { "char": "✠", "label": "Maltese Cross" },
+        { "char": "☦", "label": "Orthodox Cross" },
+        { "char": "☧", "label": "Chi Rho" },
+        { "char": "☨", "label": "Cross of Lorraine" }
+      ]
+    },
+    {
+      "id": "decorative-crosses",
+      "label": "Decorative & Heavy Crosses",
+      "h2": "Decorative & Heavy Cross Characters",
+      "symbols": [
+        { "char": "✙", "label": "Outlined Greek Cross" },
+        { "char": "✚", "label": "Heavy Greek Cross" },
+        { "char": "✛", "label": "Open Centre Cross" },
+        { "char": "✜", "label": "Heavy Open Centre Cross" },
+        { "char": "✡", "label": "Star of David" },
+        { "char": "✢", "label": "Four Teardrop-Spoked Asterisk" },
+        { "char": "✣", "label": "Four Balloon-Spoked Asterisk" },
+        { "char": "✤", "label": "Heavy Four Balloon-Spoked Asterisk" },
+        { "char": "✥", "label": "Four Club-Spoked Asterisk" }
+      ]
+    },
+    {
+      "id": "daggers",
+      "label": "Daggers",
+      "h2": "Dagger Characters",
+      "symbols": [
+        { "char": "†", "label": "Dagger" },
+        { "char": "‡", "label": "Double Dagger" },
+        { "char": "⸵", "label": "Turned Semicolon" },
+        { "char": "⸸", "label": "Turned Dagger" },
+        { "char": "🗡", "label": "Dagger Emoji" },
+        { "char": "⚔", "label": "Crossed Swords" }
+      ]
+    },
+    {
+      "id": "special-cross",
+      "label": "Special",
+      "h2": "Special Cross Characters",
+      "symbols": [
+        { "char": "╳", "label": "Box Drawing Diagonal Cross" },
+        { "char": "⨉", "label": "N-Ary Times Operator" },
+        { "char": "⦻", "label": "Circle With Superimposed X" },
+        { "char": "⊗", "label": "Circled Times" }
+      ]
+    },
+    {
+      "id": "warning-cancel",
+      "label": "Warning & Cancel",
+      "h2": "Warning, Cancel & Error X Marks",
+      "symbols": [
+        { "char": "❌", "label": "Cross Mark" },
+        { "char": "❎", "label": "Cross Button" },
+        { "char": "🚫", "label": "Prohibited" },
+        { "char": "⛔", "label": "No Entry" },
+        { "char": "🛑", "label": "Stop" },
+        { "char": "⊘", "label": "No Entry Glyph" },
+        { "char": "✗", "label": "Rejected ✗" },
+        { "char": "✘ Cancelled", "label": "Cancelled Line" }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/religious-symbols/", "title": "Religious & Spiritual Symbols", "desc": "Faith symbols from every major world religion." },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Checkmark Symbols",
+      "desc": "Check marks, X marks, and completion symbols for lists and posts."
+    },
+    { "href": "/library/star-symbols/", "title": "Star Symbol Collection", "desc": "Stars, asterisks, and star variants in Unicode." },
+    { "href": "/library/geometric-symbols/", "title": "Geometric Symbols", "desc": "Circles, squares, triangles, and geometric shapes." },
+    {
+      "href": "/symbol/checkmark-symbol/",
+      "title": "Check Mark Symbol",
+      "desc": "The check mark (✓ ✔): the tick that means done, correct, or verified."
+    },
+    { "href": "/symbol/cross-symbol/", "title": "Cross Symbol", "desc": "The Latin cross (✝): the central symbol of Christianity." }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "division-sign",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Division Sign (÷): Meaning, History & How to Type It",
+  "meta_description": "The division sign ÷ (U+00F7), the obelus, explained: its 1659 origin, how to type it on Windows/Mac, and how it differs from the fraction slash.",
+  "canonical": "https://ultratextgen.com/symbol/division-sign/",
+  "breadcrumb": "Division Sign",
+  "hero_h1": "Division Sign (÷)",
+  "hero_tagline": "What ÷ means, where the obelus came from, and how to type it: click to copy.",
+  "intro": "÷ is called an <em>obelus</em>, borrowed from the Greek word for a pointed skewer or pillar. Long before it meant division, the same mark (as a dagger or short horizontal line) was used by ancient and medieval scribes to flag suspect or spurious passages in a manuscript.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/division-sign/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/tanda-bagi/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/division-sign/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/division-sign/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/bolme-isareti/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/division-sign/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-deleniya/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sinal-de-divisao/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/nanugi-giho/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/division-sign/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-divisione/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-division/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signo-de-division/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/divisionszeichen/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-dzielenia/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/deelteken/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/division-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/division-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "similar-looking-symbols",
+      "label": "Don't Confuse It With",
+      "h2": "Similar-Looking Symbols",
+      "symbols": [
+        { "char": "∕", "label": "Division Slash (U+2215): a separate character used in some math notation" },
+        { "char": "⁄", "label": "Fraction Slash (U+2044): builds inline fractions like 1⁄2" },
+        { "char": "/", "label": "Ordinary Solidus (U+002F): the plain keyboard slash" },
+        { "char": "∣", "label": "Divides (U+2223): a relation, not an operation; 3 ∣ 12 reads \"3 divides 12\"" },
+        { "char": "|", "label": "Vertical Line (U+007C): the keyboard pipe key, often typed in place of ∣ in plain text" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Division Sign Comes From",
+      "paragraphs": [
+        "÷ is called an <em>obelus</em>, borrowed from the Greek word for a pointed skewer or pillar. Long before it meant division, the same mark (as a dagger or short horizontal line) was used by ancient and medieval scribes to flag suspect or spurious passages in a manuscript.",
+        "Its use for division specifically dates to 1659, when Swiss mathematician Johann Rahn published it in his algebra textbook <em>Teutsche Algebra</em>, possibly with input from the English mathematician John Pell, who edited an English translation. The symbol spread through the UK and later the US, though it never became universal. French and other continental traditions favored the colon (:) for division instead. Today ÷ is mostly seen in early arithmetic education and on calculators; higher mathematics generally prefers writing a fraction (a/b) once expressions get more complex."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "What is the ÷ symbol called?",
+      "a": "÷ is called an obelus, from the Greek word for a pointed pillar or skewer. The same word originally described a dagger-like mark medieval scribes used to flag doubtful passages in manuscripts, long before it meant division."
+    },
+    {
+      "q": "How do you type the division sign on a keyboard or Mac?",
+      "a": "On Windows, hold Alt and type 0247 on the numeric keypad (Alt+0247). On Mac, press Option+/. In HTML, use the entity &divide; or &#247;."
+    },
+    {
+      "q": "Why don't advanced math textbooks use ÷?",
+      "a": "Once expressions get complex, fraction notation (a/b, stacked as a numerator over a denominator) shows grouping more clearly than ÷ does, especially with multiple operations. ÷ remains standard in early arithmetic and on calculators, but algebra and higher math largely switched to fraction bars and forward slashes."
+    },
+    {
+      "q": "What's the difference between ÷ and the fraction slash ⁄?",
+      "a": "÷ (U+00F7) is the standalone obelus symbol used for the operation itself. ⁄ (U+2044, fraction slash) is a typographic slash used to build a stacked-looking fraction like 1⁄2 inline, and ∕ (U+2215, division slash) is yet another separate character sometimes used in math notation for division. All three look similar but are distinct Unicode characters with different jobs."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/plus-minus/", "title": "Plus-Minus (±)", "desc": "Two possible values in one expression." },
+    { "href": "/symbol/square-root/", "title": "Square Root (√)", "desc": "A 1525 origin and the vinculum bar's job." },
+    { "href": "/symbol/infinity/", "title": "Infinity (∞)", "desc": "Where the lemniscate came from." },
+    { "href": "/library/math-symbols/", "title": "All Math Symbols", "desc": "Operators, Greek letters, set theory, and calculus notation." },
+    {
+      "href": "/symbol/less-than-greater-than/",
+      "title": "Less Than (<) & Greater Than (>) Symbols",
+      "desc": "What they mean, why they can break HTML, and how they differ from angle quotes: click to copy."
+    },
+    {
+      "href": "/symbol/multiplication-sign/",
+      "title": "Multiplication Sign",
+      "desc": "The × that means \"times\", not the letter x, plus the dot and X-mark alternatives it's routinely confused with."
+    },
+    {
+      "href": "/symbol/vertical-line/",
+      "title": "Vertical Line Symbol (|)",
+      "desc": "What | means, its Unix pipe history, and how to type it: click to copy."
+    }
+  ]
+}
