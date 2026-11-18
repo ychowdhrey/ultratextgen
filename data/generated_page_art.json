@@ -573,6 +573,71 @@
       "kicker": "LIB",
       "added": "2026-11-14"
     },
+    "ko-library-cheonsa-imotikon": {
+      "title": "천사 이모티콘",
+      "sub": "아기 천사, 수호천사, 추모 이모지.",
+      "glyphs": [
+        "👼",
+        "🪽",
+        "☁️",
+        "🌈",
+        "🌠"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-pigon-imotikon": {
+      "title": "피곤 이모티콘",
+      "sub": "지친 얼굴, 하품, 방전 조합.",
+      "glyphs": [
+        "😴",
+        "🥱",
+        "😪",
+        "😫",
+        "😩"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-hansum-imotikon": {
+      "title": "한숨 이모티콘",
+      "sub": "안도, 체념, 휴 얼굴 문자 조합.",
+      "glyphs": [
+        "😮‍💨",
+        "😌",
+        "😥",
+        "😅",
+        "😓"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-haipeun-giho": {
+      "title": "하이픈 기호",
+      "sub": "대시, 엔 대시, 엠 대시, 마이너스 모음.",
+      "glyphs": [
+        "-",
+        "‐",
+        "‑",
+        "‧",
+        "﹣"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-twitter-giho": {
+      "title": "트위터 특수 문자",
+      "sub": "X 로고, 스레드, 체크 표시.",
+      "glyphs": [
+        "𝕏",
+        "✕",
+        "✖",
+        "✗",
+        "✘"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
     "ko-library-sseokso-imotikon": {
       "title": "썩소 이모티콘",
       "sub": "능글맞은 얼굴, 의기양양 이모지, :> 조합.",
