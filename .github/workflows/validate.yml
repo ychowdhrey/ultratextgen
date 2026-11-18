@@ -921,7 +921,7 @@ jobs:
       # A page that is not localized must match its spec; a localized page may
       # differ only with an entry in data/spec_drift_exceptions.json; a new
       # locale page needs a spec, and so does its reference page. Delta against
-      # the merge base: 123 pre-existing disagreements are reported, not failed.
+      # the merge base: 125 pre-existing disagreements are reported, not failed.
       - name: Run spec drift check
         id: spec_drift
         continue-on-error: true

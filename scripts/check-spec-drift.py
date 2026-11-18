@@ -14,8 +14,8 @@ is scripts/audit-spec-drift.py. Owner rules, 2026-11-18:
      have one.
 
 DELTA, NOT STATE. On 2026-11-18, after the repair that introduced this gate, 123 specs
-still differed from their pages (57 by tiles the page has and the spec lacks, 65 by
-visible labels, 1 page the spec does not describe). Those are reported, never failed:
+still differed from their pages (56 by tiles the page has and the spec lacks, 65 by
+visible labels, 4 both ways: degree-symbol and three footballer pages under a hold). Those are reported, never failed:
 a finding counts only if it is new since the merge base. A pair whose spec or page
 this PR touches is compared at the merge base and at HEAD; a repair that moves one
 side toward the other adds nothing and passes (it measures convergence, so a

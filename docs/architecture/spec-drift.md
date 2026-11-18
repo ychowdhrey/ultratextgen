@@ -67,8 +67,8 @@ locale pages were the degraded side: their specs were left as they were and the 
 tiles restored on both pages. `check_locale_spec.py --base` caught this on its first run.
 Not every hand edit is a correction; compare with the reference before trusting one.
 
-**Left open, and reported by the audit:** 57 specs whose page has more tiles than the
-spec (9 not localized), 65 label-only differences, `degree-symbol` (the live English page
+**Left open, and reported by the audit (125 specs):** 56 specs whose page has more tiles
+than the spec (8 not localized), 65 label-only differences, `degree-symbol` (the live English page
 is a hand-built symbol page the spec does not describe at all, while its zh-tw sibling was
 generated from the 25-tile spec), three footballer combo pages held by an open
 consolidation decision, and 298 locale specs whose reference page has no spec. 1,732
