@@ -107,7 +107,10 @@ def live_tile_count(rel):
 
 
 def spec_tile_count(spec):
-    return sum(len(s.get("symbols", [])) for s in spec.get("sections", []))
+    # A section's "combos" render as copy tiles too (generate_library_page_from_spec.py
+    # draws them above the singles), so they count toward parity with the live page.
+    return sum(len(s.get("symbols", [])) + len(s.get("combos", []))
+               for s in spec.get("sections", []))
 
 
 def check(path, strict=False):
