@@ -1053,8 +1053,7 @@
       tools: [
         { label: "Лақап ат генераторы", href: "/kk/laqap-at-generatory/" },
         { label: "Көрінбейтін мәтін", href: "/kk/korinbeitin-matin/" },
-        { label: "Таңба және сөз санау", href: "/kk/soz-sanau/" },
-        { label: "Жүрек белгілері", href: "/kk/library/zhurek-belgileri/" }
+        { label: "Таңба және сөз санау", href: "/kk/soz-sanau/" }
       ],
       categories: [
         { label: "Мәтін стильдері", href: "/kk/" },
