@@ -1,0 +1,106 @@
+{
+  "A, block outline, 12 in, Letter": {
+    "sheets": 2,
+    "orient": "landscape",
+    "pieces": [
+      "A"
+    ],
+    "plan": "2e65308e38ddb8047eaf3b58a29652692ea5c978d8617e7aff691d34c1016769",
+    "sheetOps": "15e31e3afda4521bc6b59c395af73a8d10e2d2767a55d5911dfe122ec1284cdd",
+    "pdfInput": "d6dbacfe41567db48f3dde1e47c1d4d5729a7b064ccf6eda4c2ab5e4d6b389ef"
+  },
+  "Hello, block outline, each letter": {
+    "sheets": 10,
+    "orient": "landscape",
+    "pieces": [
+      "H",
+      "e",
+      "l",
+      "l",
+      "o"
+    ],
+    "plan": "40f5ce4f5207c27812e3e37050089b9e9fc920dc95d101381f58f5eb6c679ecd",
+    "sheetOps": "3a822ca285467036e55308a2321eea79ac1dfb51b094e770ef5fe17fe5492348",
+    "pdfInput": "5395613b07e543d6c75c74aaa4a154050904cc656575cf12024f0cc84f94e4be"
+  },
+  "Hello, block outline, word together": {
+    "sheets": 5,
+    "orient": "portrait",
+    "pieces": [
+      "Hello"
+    ],
+    "plan": "b95947d4e1238aa40d1ed41acfe64108e25123176634bac2bfae1370dd3eca68",
+    "sheetOps": "8c607cda993b7376d0797dfbde05778ba96e30a2fbe2d919ba814f2e02fe96cb",
+    "pdfInput": "08db9511c1d9156e884d15c2a19d47f4ea7799148e29d7c6d78e473546ff068a"
+  },
+  "Ana, bubble filled, A4 in cm": {
+    "sheets": 6,
+    "orient": "landscape",
+    "pieces": [
+      "A",
+      "n",
+      "a"
+    ],
+    "plan": "cc7349c5e9956f5f54b4b014da8b24fb01f9b9bebc79235f7e54747821141fdb",
+    "sheetOps": "44dbe201e2980fd62f955abde1a6f93d3af151244a4f7f46fca8702f45949eba",
+    "pdfInput": "9662715a9dd68df250f665e5bd3e01eabb91033b280c34ecb096f916def55f77"
+  },
+  "Hi 5, block filled, a space between": {
+    "sheets": 6,
+    "orient": "landscape",
+    "pieces": [
+      "H",
+      "i",
+      "5"
+    ],
+    "plan": "a82bbf87b05c7d431afa16a705f5127639aba26606130331f769676a5faa4a04",
+    "sheetOps": "c99b291aef17f8954515fb573913e4c3760f5291cd6d2eb363a11a49699909d4",
+    "pdfInput": "79a7831b9a51de10a7749e18cd7c577014cda9623346ce93fa4516d948663b0b"
+  },
+  "twelve characters, bubble outline": {
+    "sheets": 12,
+    "orient": "portrait",
+    "pieces": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l"
+    ],
+    "plan": "368582dc2001cec21a995660ffa9e0fb8940480db82f48280e679de700676fcb",
+    "sheetOps": "dc73bab4accb00b555491bf55982df7867f535976cce699f5290c8d301841117",
+    "pdfInput": "df586603bfc4b0898b45819d0633def52224bdf92cfdadd7aa453d98dea82496"
+  },
+  "twelve characters with spaces, word together": {
+    "sheets": 5,
+    "orient": "landscape",
+    "pieces": [
+      "Go Team Go 1"
+    ],
+    "plan": "b55633f7ba9548904bc3b2f4fb57235ce30678e8029223d806713013117280dc",
+    "sheetOps": "c7782a5d422f68e6cf31b6c71ca3b27e4d4df0f5c3796b4c5ce3fb5928ad73d6",
+    "pdfInput": "e6c2d91392e3c0f5da7a712ce3ffada671f8b6e957e5a4fcccf6c990c7ff2969"
+  },
+  "precomposed accents, ordinary text": {
+    "sheets": 6,
+    "orient": "portrait",
+    "pieces": [
+      "Z",
+      "o",
+      "ë",
+      "Á",
+      "n",
+      "h"
+    ],
+    "plan": "f22948b6314adc4024322493708a53ec3dcf1aa2ee0ab35924cb24052d34bd32",
+    "sheetOps": "e1101c597487903be23b4051a37689360022c359a68d99e3d9f31c7ef33abf42",
+    "pdfInput": "11f46b4dc48a24b5e882dcd815c859464e747c7e6ada30564fa0b95e1fde3aee"
+  }
+}
