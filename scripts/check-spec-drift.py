@@ -13,9 +13,9 @@ is scripts/audit-spec-drift.py. Owner rules, 2026-11-18:
      this PR must be generated from a spec, and that spec's reference page must itself
      have one.
 
-DELTA, NOT STATE. On 2026-11-18, after the repair that introduced this gate, 125 specs
-still differed from their pages (56 by tiles the page has and the spec lacks, 65 by
-visible labels, 4 both ways: degree-symbol and three footballer pages under a hold). Those are reported, never failed:
+DELTA, NOT STATE. After the 2026-11-18 repair three specs still differed from their
+pages (the footballer combo pages, held by an open decision) and others will drift
+between passes. Those are reported, never failed:
 a finding counts only if it is new since the merge base. A pair whose spec or page
 this PR touches is compared at the merge base and at HEAD; a repair that moves one
 side toward the other adds nothing and passes (it measures convergence, so a

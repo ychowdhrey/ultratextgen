@@ -53,12 +53,13 @@ Before the repair, 146 of 1,616 specs disagreed with their page on characters:
 
 Labels were measured too: 83 specs carried a visible label the page no longer shows.
 
-**Repaired in the same change:** the generator renders `combos` and `symbols_intro` and
-accepts a combos-only section; the two Spanish pages gained the 72 combos with Spanish
-labels; `emoji-combos` gained the 25 combo sections (200 tiles) its page had grown;
-`unit-measurement-symbols` gained its Angles section; 76 specs were written back from
-their page, NFC-fragile characters stored as `\u` escapes so an editor's normalization
-cannot undo them again.
+**Repaired.** The generator renders a section's `combos` (shipped in parallel by
+ychowdhrey/ultratextgen#1233, with its `mix_intro` hand-off line and its own gating test;
+this change adds combos-only sections, which `emoji-combos` needs). The two Spanish
+pages gained their 72 combos in that same PR. `emoji-combos` gained the 25 combo sections
+(200 tiles) its page had grown; `unit-measurement-symbols` its Angles section; 76 specs
+were written back from their page, NFC-fragile characters stored as `\u` escapes so an
+editor's normalization cannot undo them again.
 
 **The two de-duplications that were wrong.** `fr` and `es` LinkedIn pages had removed ☑
 and ☒ from the Boxes group because the same characters also appear under Checks and
@@ -67,12 +68,37 @@ locale pages were the degraded side: their specs were left as they were and the 
 tiles restored on both pages. `check_locale_spec.py --base` caught this on its first run.
 Not every hand edit is a correction; compare with the reference before trusting one.
 
-**Left open, and reported by the audit (125 specs):** 56 specs whose page has more tiles
-than the spec (8 not localized), 65 label-only differences, `degree-symbol` (the live English page
-is a hand-built symbol page the spec does not describe at all, while its zh-tw sibling was
-generated from the 25-tile spec), three footballer combo pages held by an open
-consolidation decision, and 298 locale specs whose reference page has no spec. 1,732
-library/symbol pages have no spec (91 English).
+**Second pass, same day (owner: "go ahead" on the backlog).** All of it was closed:
+
+- **121 specs written back from their pages**: 56 whose page had more tiles (missing
+  sections appended in page order) and 65 whose labels had moved on. Each was checked
+  against its reference page first: none moved a locale spec away from its reference's
+  tile count, and the one page label that was untranslated English (tr party emojis,
+  "Cupcake") was corrected on the page instead. Labels are no longer compared on tiles
+  that show none (bare symbol grids).
+- **`degree-symbol` takes the union** (owner: the spec is more complete). The English page
+  gains the spec's four tile sections, the spec the page's three look-alikes: 28 tiles,
+  as the es sibling already had. Its 18 siblings were brought to the same set (13
+  hand-built pages gained the sections, labels taken from each locale's own pages where
+  the site already names the character; de, pl and zh-tw spec and page together). The
+  tile labelled "Kelvin Sign" copied a plain K on five of them; it now copies U+212A.
+- **91 English pages had no spec**, including the reference page of all 298 locale specs
+  whose reference had none. Each now has one, built from the live page (tile and art
+  sections, combo rows, combo sets read from the page's own `buildGrids` call, editorial
+  sections, FAQ, related cards, hreflang), validated by the generator and reproducing
+  the page's tiles and labels exactly. They carry `hand_built_page: true`: the generator
+  refuses to render such a spec over its page (exit 5), because the spec does not describe
+  the page's editorial layout. The generator's three-heading minimum now counts the
+  editorial and FAQ headings a page renders.
+- **`check:spec-sentence-reuse`** treats a sentence in a new `hand_built_page` spec as
+  pre-existing when its page already carried it at the merge base (visible text or meta
+  description): a backfill records copy, it does not publish it. A sentence the backfill
+  adds that the page never had still fails.
+
+**Still open:** the three footballer combo specs (`di-maria`, `nkunku`, `rodrygo`), held by
+the open keep-or-fold decision on those pages; 1,641 locale library/symbol pages have no
+spec. The owner rule needs a spec on every page a locale is translated from, which now
+holds; a spec for each localized page would add about 20 MB of JSON and is not done.
 
 ## Why the gates are deltas
 
