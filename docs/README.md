@@ -236,6 +236,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:moon-phase`
 - `test:name-reports`
 - `test:parity-exception-policy`
+- `test:poster-tiles`
 - `test:practice-row`
 - `test:print-paper`
 - `test:printables-i18n-parity`
