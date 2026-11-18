@@ -39,6 +39,7 @@
  *   #bb-preview  the live preview (a canvas is put in it)
  *   #bb-summary  "4 sheets (2 across, 2 down)" line; #bb-counts per letter
  *   #bb-warn     limits (aria-live)
+ *   #bb-cut      names what the 12-character cap left out (aria-live)
  *   #bb-pdf #bb-png  the two downloads
  *
  * Nothing typed here reaches the dataLayer. Telemetry carries the style and
@@ -155,8 +156,33 @@
     return state.unit === "cm" ? h / 2.54 : h;
   }
 
+  /* Text is counted, capped and split by grapheme, after NFC (2026-11-18).
+     Before, the field's maxlength counted UTF-16 units and the planner split
+     by code point: a pasted "Nguyễn Thị Ánh" lost "nh" with no word, and the
+     same name pasted decomposed (NFD) printed "i" for "ị" and each combining
+     accent on sheets of its own. A letter now travels with its accents, an
+     emoji sequence is one piece, and the page names what the cap leaves out.
+     For NFC text whose graphemes are single code points (all plain letters,
+     digits and precomposed accents) the result is unchanged. */
+  const SEG = (typeof Intl !== "undefined" && Intl.Segmenter) ? new Intl.Segmenter(undefined, { granularity: "grapheme" }) : null;
+  function graphemes(s) {
+    const str = String(s || "");
+    if (SEG) return Array.from(SEG.segment(str), (x) => x.segment);
+    return Array.from(str);
+  }
+
+  function fullText() {
+    return graphemes(String(state.text || "").normalize("NFC").replace(/\s+/g, " ").trim());
+  }
+
   function cleanText() {
-    return Array.from(String(state.text || "").replace(/\s+/g, " ").trim()).slice(0, MAX_CHARS).join("");
+    return fullText().slice(0, MAX_CHARS).join("");
+  }
+
+  /* What the cap leaves out, or "" (leading space trimmed: a cut that starts
+     between two words names the word, not the gap). */
+  function droppedText() {
+    return fullText().slice(MAX_CHARS).join("").trim();
   }
 
   /* Outline weight in inches: heavy enough to cut along at arm's length,
@@ -176,9 +202,9 @@
     const st = STYLES[state.style] || STYLES.block;
     const Hin = heightIn();
     if (!text) return null;
-    const pieces = (state.layout === "word" || Array.from(text).length === 1
+    const pieces = (state.layout === "word" || graphemes(text).length === 1
       ? [text]
-      : Array.from(text).filter((c) => c !== " ")).filter((p) => inkBox(p, st));
+      : graphemes(text).filter((c) => c !== " ")).filter((p) => inkBox(p, st));
     if (!pieces.length) return null;
     // Every letter shares one scale: the set's tallest top to its lowest bottom is the height.
     const boxes = pieces.map((p) => inkBox(p, st));
@@ -549,6 +575,12 @@
     if (!(h >= lim[0] && h <= lim[1])) problem = "Choose a height from " + lim[0] + " to " + lim[1] + " " + state.unit + ".";
     else if (P && P.total > MAX_PAGES) problem = "That is " + P.total + " sheets. Up to " + MAX_PAGES + " fit in one file: choose a smaller height or fewer letters.";
     say(warn, problem);
+    // A cut word still prints: this names what was left out, it never blocks the download.
+    const cut = droppedText(), cutEl = $("bb-cut");
+    if (cutEl) cutEl.hidden = !cut;
+    say(cutEl, cut ? "Only the first " + MAX_CHARS + " characters print, so \u201c" +
+      (graphemes(cut).length > 24 ? graphemes(cut).slice(0, 24).join("") + "\u2026" : cut) +
+      "\u201d is left out. Shorten the word to choose what to keep." : "");
     const ok = !!P && !problem;
     if (pdf) pdf.disabled = !ok;
     if (png) png.disabled = !ok;
@@ -587,7 +619,7 @@
       summarize(P);
       paintPreview(P);
       const lay = $("bb-layout-field");
-      if (lay) lay.hidden = Array.from(cleanText().replace(/ /g, "")).length < 2;
+      if (lay) lay.hidden = graphemes(cleanText().replace(/ /g, "")).length < 2;
     });
   }
 
@@ -946,7 +978,8 @@
   }
 
   // Exposed for the geometry check and the scenario harness; not a public API.
-  UTG.posterTiles = { state: state, plan: plan, drawTile: drawTile, pagesOf: pagesOf, MARGIN: MARGIN, PAD: PAD, PAPER: PAPER, refresh: refresh, last: () => lastPlan };
+  UTG.posterTiles = { state: state, plan: plan, drawTile: drawTile, pagesOf: pagesOf, MARGIN: MARGIN, PAD: PAD, PAPER: PAPER, refresh: refresh, last: () => lastPlan,
+    text: { graphemes: graphemes, clean: cleanText, dropped: droppedText, MAX_CHARS: MAX_CHARS } };
 
   if (document.readyState === "complete") init();
   else window.addEventListener("DOMContentLoaded", init);
