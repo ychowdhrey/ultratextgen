@@ -21,6 +21,7 @@ open in a browser:
 | `js/printables/{qr,stencil,wordSearch,wordPuzzles}.test.js` | the printables engines |
 | `js/vertical/verticalLayouts.test.html` | vertical layout |
 | `js/skintone/skinTone.test.js` | the skin-tone picker's rule (sliced from `symbol-explorer.js`) against the toned sequences Unicode's emoji-test.txt lists for every tile in an opted-in section (`js/skintone/skinToneExpected.json`, regenerated with `npm run build:skin-tone-fixture` after any new opt-in); families, combos and toned tiles are never touched; every opted-in locale carries the picker strings |
+| `js/gamename/gameRules.test.js` | the game-name checker (`npm run test:game-rules`, gating): the in-game outcome reporter; Xbox's two length tiers; Discord's display name versus its username; the games whose verdicts must not move; which failures get an English reason; the couple generator's empty state; and every ready-made name on a page whose game has a published rule, judged by that rule (below) |
 | `scripts/test-unicode-reference-sets.py` | the complete Unicode sets on the braille, box-drawing, playing-card, dice/domino and number library pages and their locale siblings: every code point, keycap form (base + U+FE0F + U+20E3), order and label re-derived from the code point (dot bits, UCD names), label-in-name aria, locale wording, and the sets excluded because Android's system symbol font has no glyph for them (tarot trumps U+1F0E0..U+1F0F5, red joker U+1F0BF); `--self-test` mutates pages and fails unless each mutation is caught by its own check |
 
 `counter.test.html` runs against a deliberately **non-English** I18N block, so it also
@@ -125,3 +126,48 @@ review instead of an impression.
 See `docs/decisions/content-lanes.md` → "The zalgo comparison table is a Check
 surface". Two competitors blocked the fetch and are **named as unscored rather than
 guessed**.
+
+## Game-name rules: only what the platform publishes (2026-11-17)
+
+`js/gamename/game-rules.js` tells a player whether a name will be accepted before
+they spend a rename. A verdict is only as good as its source, so a repair changes a
+rule only where the platform's own page says so, and leaves alone every rule nobody
+has published.
+
+Changed on 2026-11-17, each against the platform's page read that day:
+
+| Field | Was | Now | Source |
+|---|---|---|---|
+| Xbox gamertag | every name over 12 failed | up to 12 fits; 13 to 15 in Latin letters, digits and spaces warns that the name must be unique; 13 or more with any non-Latin letter fails against the 12 that applies to it | support.xbox.com, "How to change your Xbox gamertag" and the gamertag FAQ |
+| Discord display name | Hangul, Han, Devanagari and Latin-1 accents warned "may show boxes" | any letter, mark or digit of any script passes; unknown symbols still warn | Discord Help, "New Usernames & Display Names" |
+| Discord username | not modelled (the display-name rule was the only Discord row) | its own rule: 2 to 32, a-z, 0-9, underscore and period, no two periods in a row | same article |
+
+What deliberately did not change: Free Fire, PUBG Mobile, Mobile Legends and the
+other games whose name rules are not published. Their native-letter warnings and
+their no-space failures stay as they were, and no new sentence states those rules
+as fact. Free Fire's counting is waiting on an in-game test.
+
+Two smaller repairs ship with it. A failure on an English page now says why when the
+page carries no text for that code (username fields only, for the same reason), and
+a page in another language is left exactly as it was rather than shown an English
+sentence. And the couple generator no longer rates an empty name, which was the
+frame alone (`꧁꧂`) scoring "safe".
+
+**Proof that nothing else moved.** Against the previous engine, over 1,296 strings
+(every ready-made name on the 75 checker pages plus native-script samples) and all
+20 games: 18 games return byte-identical reports, `classifyChar` (which `script.js`
+also reads) is identical for every code point from U+0000 to U+1FFFF, and
+`analyzeTag` and `outcomeSymbols` are unchanged. In Chromium, the checker and couple
+panels render identically at page load on all 75 pages: the change appears only
+after a player types.
+
+**Ready-made names.** The test reads every page that lists names under a game with a
+published rule and fails on any listed name that the rule refuses. 33 did on
+2026-11-17 (31 Stumble Guys names over its 4 to 12 characters or under 4, and 2
+Roblox display names under 3). Seven were fixed by removing decoration or, for one
+word too long on its own, keeping its head word. The other 26 sit on pages whose
+HTML is held unchanged while a search-engine indexing measurement runs; they are
+listed in the test as `HELD`, each must still fail, and a fixed one must leave the
+list. Free Fire's 253 failing names are not judged by this test at all: its limit
+is the open question.
+

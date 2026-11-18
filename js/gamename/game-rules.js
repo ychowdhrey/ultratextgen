@@ -65,8 +65,9 @@
   // Sources, verified 2026-09-25:
   //   https://support.xbox.com/en-US/help/account-profile/profile/gamertag-update-faq
   //   https://learn.microsoft.com/en-us/gaming/gdk/docs/services/fundamentals/identity/user-profile/gamertags/live-modern-gamertags-unicode
+  const XBOX_LATIN = "A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u017F"; // Latin, Latin-1, Latin Ext-A
   const XBOX_BASE =
-    "A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u017F" + // Latin, Latin-1, Latin Ext-A
+    XBOX_LATIN +
     "\\u0390-\\u03CE\\u0400-\\u045F" +                      // Greek, core Cyrillic
     "\\u0904-\\u0939\\u0985-\\u09B9" +                      // Devanagari, Bengali letters
     "\\u0E01-\\u0E30\\u0E32\\u0E33\\u0E40-\\u0E46" +        // Thai letters
@@ -127,11 +128,27 @@
     // unverified. Verified 2026-09-25.
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
     standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
-    // Display names: at least 1 and at most 32 characters, special characters
-    // and emojis allowed (Discord Help, "New Usernames & Display Names",
-    // support.discord.com/hc/en-us/articles/12620128861463, updated
-    // 2026-10-08, read 2026-10-08).
-    discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display" },
+    // Discord has two name fields, and this one is the DISPLAY name: at least 1
+    // and at most 32 characters, and the article lists "special characters,
+    // spaces, emoji, uppercase, lowercase and non-Latin characters" as allowed
+    // (Discord Help, "New Usernames & Display Names",
+    // support.discord.com/hc/en-us/articles/12620128861463, read 2026-10-08 and
+    // again 2026-11-17). `anyScript`: a letter, mark or digit of any script is
+    // the player's own name, not an unknown character, so 민준, José or राहुल
+    // pass here instead of warning that they may show as boxes. Symbols the
+    // engine does not know still warn: that warning is about how a device
+    // draws them, which the article does not settle. The username is a
+    // different field with different rules: `discordUsername` below.
+    discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display", anyScript: true },
+    // Discord USERNAME (the unique @name), same article: 2 to 32 characters,
+    // only a-z, 0-9, underscore and period, no two periods in a row, unique,
+    // case-insensitive and forced to lowercase (so a capital is lowered, not
+    // refused, and the pattern accepts it). No page offers this tab yet; it is
+    // here so the two Discord fields are never checked as one.
+    discordUsername: {
+      label: "Discord (username)", limit: 32, min: 2, weighted: false, noSpace: true, field: "username",
+      asciiPattern: /^(?!.*\.\.)[A-Za-z0-9_.]+$/, charPattern: /^[A-Za-z0-9_.]+$/
+    },
     tiktok: { label: "TikTok", limit: 30, min: 1, weighted: false, noSpace: false, field: "display" },
     // Epic display name: 3-16 characters, changeable once every two weeks.
     // Epic publishes no character list, so decorative Unicode stays a warning.
@@ -150,7 +167,10 @@
     // 20 characters long", "Only a-z, A-Z, 0-9, and _ are allowed", "Usernames
     // can have at most one _", "Username can't start or end with _", "Username
     // cannot contain spaces".
-    roblox: { label: "Roblox (username)", limit: 20, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/, singleUnderscore: true },
+    roblox: {
+      label: "Roblox (username)", limit: 20, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/, singleUnderscore: true,
+      charsetNote: "Roblox usernames take only letters A to Z, numbers 0 to 9 and one underscore."
+    },
     // Roblox display name: 3-20 characters, free, once every 7 days (Roblox
     // help centre). strict since 2026-09-25: Roblox's own display-name validator
     // (users.roblox.com/v1/display-names/validate, the sign-up path) answered
@@ -180,21 +200,34 @@
     // Xbox Gamertags accept letters from 13 alphabets, Latin digits and single
     // spaces, and must start with a letter; symbols, emoji and styled Unicode
     // (bold/script math letters, small caps) are rejected at any length. See
-    // XBOX_BASE above for the exact ranges and sources. Microsoft's July 2026
-    // console update (release date 7/15/2026, OS 10.0.26100.8866) lets a
-    // gamertag that is unique, available and Latin-only run to 15 characters;
-    // "Gamertags that are not unique or contain non-Latin characters may have a
-    // suffix and will continue to support up to 12 characters." We validate
-    // against the guaranteed 12, since uniqueness can't be known until the
-    // player tries to claim the name. Xbox counts "rendered characters", so a
-    // Thai or Devanagari diacritic does not add one (uncountedMarks).
-    // https://support.xbox.com/en-US/help/hardware-network/settings-updates/whats-new-xbox-one-system-updates
-    // (verified 2026-09-25) and /updates/xbox-gamertag-15-character-limit/.
+    // XBOX_BASE above for the exact ranges and sources. Xbox counts "rendered
+    // characters", so a Thai or Devanagari diacritic does not add one
+    // (uncountedMarks).
+    // Length has two tiers. Microsoft's support page, read 2026-11-17: "Gamertags
+    // can be up to 15 characters long, including spaces. They can't start with
+    // a number. Gamertags that are 13 characters or longer must be unique and
+    // contain only Latin alphanumeric characters and no special characters."
+    // The gamertag FAQ, read the same day: "either a 15-character max, unique
+    // alphanumeric name, or a 12-character max, Unicode-based name of your
+    // choice, with an auto-generated suffix if the gamertag is shared", and
+    // "only gamertags made with Latin-based alphabets ... are eligible to be new
+    // gamertags with no suffix".
+    //   https://support.xbox.com/en-US/help/account-profile/profile/change-xbox-live-gamertag
+    //   https://support.xbox.com/en-US/help/account-profile/profile/gamertag-update-faq
+    // So: up to 12 is the guaranteed limit (`suffixLimit`) and keeps the counter
+    // at "/ 12". 13 to 15 in Latin letters, digits and spaces (`longPattern`) can
+    // be accepted, but only if nobody else has the name, which this page cannot
+    // know: that is a warning ("unique-required"), never a rejection. 13 or more
+    // with any non-Latin letter is over the 12 that applies to it, a failure.
+    // Until 2026-11-17 every name over 12 failed, which told a player a unique
+    // 14-letter Latin gamertag would be refused when Microsoft says it can be taken.
     xbox: {
-      label: "Xbox Gamertag", limit: 12, min: 1, weighted: false, noSpace: false, field: "username",
+      label: "Xbox Gamertag", limit: 15, suffixLimit: 12, min: 1, weighted: false, noSpace: false, field: "username",
       asciiPattern: new RegExp("^[" + XBOX_BASE + "]" + XBOX_WORD + "*(?: " + XBOX_WORD + "+)*$"),
       charPattern: new RegExp("^[" + XBOX_BASE + XBOX_MARK + "0-9 ]+$"),
-      uncountedMarks: new RegExp("[" + XBOX_MARK + "]")
+      longPattern: new RegExp("^[" + XBOX_LATIN + "0-9 ]+$"),
+      uncountedMarks: new RegExp("[" + XBOX_MARK + "]"),
+      uniqueNote: "Over 12 characters: Xbox takes up to 15 only for a gamertag nobody else has, written in Latin letters, numbers and spaces. Only Xbox's availability check can tell you whether it is free."
     },
     // PSN Online IDs are plain ASCII only (no styled Unicode, ever): 3-16
     // characters, must start with a letter, then letters/numbers/hyphens/
@@ -503,6 +536,17 @@
      answer is empty rather than unfiltered. */
   let letterLike = null;
   try { letterLike = new RegExp("[\\p{L}\\p{N}]", "u"); } catch (e) { letterLike = null; }
+
+  /* A letter, combining mark or digit in any script. Read only for a rule with
+     `anyScript` (a field whose own help page allows non-Latin letters), where
+     such a character is the player's name rather than an unknown. Without
+     Unicode property escapes it answers false, which keeps the older, stricter
+     verdict rather than guessing. */
+  let anyScriptLetter = null;
+  try { anyScriptLetter = new RegExp("^[\\p{L}\\p{M}\\p{N}]$", "u"); } catch (e) { anyScriptLetter = null; }
+  function isAnyScriptLetter(ch) {
+    return !!(anyScriptLetter && anyScriptLetter.test(ch));
+  }
   function outcomeSymbols(str) {
     if (!letterLike) return [];
     const out = [];
@@ -550,10 +594,33 @@
     if (rule.reportedBlocked && rule.reportedBlocked.indexOf(base) !== -1) return "warn";
     const cls = classifyChar(base);
     if (cls === "ascii" || cls === "space") return "pass";
+    if (cls === "unknown" && rule.anyScript && isAnyScriptLetter(base)) return "pass";
     if (cls === "unknown") return "warn"; // may render as a box, client-dependent
     // safe / styled / emoji: fine almost everywhere, but strict-mode games
     // (Fortnite, Valorant) are known to strip decorative Unicode from names.
     return rule.strict ? "warn" : "pass";
+  }
+
+  /* The English reason initChecker shows on an English page that has no text
+     of its own for a code. Only the codes that fail a name, plus Xbox's
+     "unique-required", get one: a failure with no reason is the defect, and
+     the warning codes already carry a page string everywhere they can fire.
+     Username fields only. Their rules come from the platform's own validator
+     or help page; a display-name rule such as Free Fire's or PUBG's no-space
+     has no published source, and a sentence stating it as fact would be new
+     advice nobody has verified, so those stay as their pages wrote them. */
+  function defaultReason(code, rule) {
+    if (!rule || rule.field !== "username") return "";
+    const game = rule.label;
+    switch (code) {
+      case "over-limit": return "Too long for " + game + ".";
+      case "too-short": return "Too short for " + game + ": at least " + rule.min + " characters.";
+      case "space": return game + " does not accept a plain space in this name.";
+      case "underscore": return game + " allows one underscore at most, and not at the start or end.";
+      case "charset": return rule.charsetNote || (game + " does not accept one or more of these characters.");
+      case "unique-required": return rule.uniqueNote || "";
+      default: return "";
+    }
   }
 
   /* ============================
@@ -577,7 +644,9 @@
     const badChars = [];
 
     chars.forEach(function (ch) {
-      const cls = classifyChar(ch);
+      let cls = classifyChar(ch);
+      // A field that allows every script: the player's own letters are plain.
+      if (cls === "unknown" && rule.anyScript && isAnyScriptLetter(ch)) cls = "ascii";
       if (cls === "ascii") { plain++; weightedLen += 1; }
       else if (cls === "space") { spaces++; weightedLen += 1; }
       else { // safe / styled / emoji / unknown all count double where weighted
@@ -605,9 +674,23 @@
       : unescape(encodeURIComponent(str || "")).length;
     const issues = [];
 
+    // A two-tier field (Xbox): the guaranteed limit applies unless the name is
+    // past it AND written only in the script the longer tier allows. Every
+    // other rule has one limit, so `limit` is rule.limit for them.
+    let limit = rule.limit;
+    let uniqueRequired = false;
+    if (rule.suffixLimit) {
+      limit = rule.suffixLimit;
+      if (glyphs > rule.suffixLimit && rule.longPattern && rule.longPattern.test(str)) {
+        limit = rule.limit;
+        uniqueRequired = glyphs <= rule.limit;
+      }
+    }
+
     if (!glyphs) issues.push("empty");
     if (glyphs && rule.min && glyphs < rule.min) issues.push("too-short");
-    if (rule.limit && effective > rule.limit) issues.push("over-limit");
+    if (limit && effective > limit) issues.push("over-limit");
+    if (uniqueRequired) issues.push("unique-required");
     if (rule.noSpace && spaces > 0) issues.push("space");
     if (rule.asciiPattern && glyphs && !rule.asciiPattern.test(str)) issues.push("charset");
     if (rule.singleUnderscore && glyphs) {
@@ -639,7 +722,8 @@
       issues.indexOf("unknown-chars") !== -1 ||
       issues.indexOf("strict-symbols") !== -1 ||
       issues.indexOf("reported-blocked") !== -1 ||
-      issues.indexOf("weight-uncertain") !== -1
+      issues.indexOf("weight-uncertain") !== -1 ||
+      issues.indexOf("unique-required") !== -1
     ) level = "warn";
     if (issues.indexOf("empty") !== -1) level = "empty";
 
@@ -656,7 +740,7 @@
       effective: effective,
       utf16: utf16,
       utf8: utf8,
-      limit: rule.limit || 0,
+      limit: limit || 0,
       counts: { plain: plain, safe: safe, styled: styled, emoji: emoji, unknown: unknown, spaces: spaces },
       badChars: badChars,
       perChar: perChar,
@@ -677,7 +761,9 @@
          ok, warn, fail, empty,               // badge labels
          issue: { 'over-limit': …, space: …, charset: …, underscore: …,
                   'unknown-chars': …, 'strict-symbols': …, 'too-short': …,
-                  'weight-uncertain': … },
+                  'weight-uncertain': …, 'unique-required': … },
+                  // a missing failure reason falls back to defaultReason()
+                  // on an English page only
          weightNote,                           // e.g. "symbols count as 2"
          outcome: {                            // optional; omit = no reporter
            ask, publicNote,                    // "{game}" becomes the rule label
@@ -710,6 +796,19 @@
       { "reported-blocked": "Players report this game no longer accepts one of these characters — try another if the rename is refused." },
       text.issue || {}
     );
+    // A failure must say why. Several English pages offer a game whose rule
+    // can fail on a code they carry no text for, so the badge read "rejected"
+    // with nothing under it. On an English page, fall back to a plain English
+    // reason built from the rule. A page in another language is left exactly
+    // as it was: an English sentence there is a defect of its own, and those
+    // strings need the page's own translation.
+    const pageLang = (typeof document !== "undefined" && document.documentElement && document.documentElement.lang || "").toLowerCase();
+    const englishPage = !pageLang || pageLang === "en" || pageLang.indexOf("en-") === 0;
+    function reasonFor(code, rule) {
+      if (issueText[code]) return issueText[code];
+      if (!englishPage) return "";
+      return defaultReason(code, rule);
+    }
     const games = (cfg.games || ["ff"]).filter(function (g) { return RULES[g]; });
     if (!games.length) return;
 
@@ -842,7 +941,7 @@
       }
       report.issues.forEach(function (code) {
         if (code === "empty") return;
-        let msg = issueText[code];
+        let msg = reasonFor(code, rule);
         if (!msg) return;
         if (code === "unknown-chars" && report.badChars.length) {
           msg += " " + report.badChars.slice(0, 6).join(" ");
@@ -1026,6 +1125,7 @@
     classifyChar: classifyChar,
     outcomeSymbols: outcomeSymbols,
     graphemes: graphemes,
-    charVerdict: charVerdict
+    charVerdict: charVerdict,
+    defaultReason: defaultReason
   };
 })();
