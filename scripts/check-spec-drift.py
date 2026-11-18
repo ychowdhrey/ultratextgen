@@ -44,7 +44,17 @@ import spec_drift as sd  # noqa: E402
 import canonical_intents as ci  # noqa: E402
 
 ROOT = sd.ROOT
-LANE_PAGE_RE = re.compile(r"^(?:([a-z]{2}(?:-[a-z]{2})?)/)?(library|symbol)/[^/]+/index\.html$")
+LANE_PAGE_RE = re.compile(r"^(?:([^/]+)/)?(library|symbol)/[^/]+/index\.html$")
+
+
+def registry_locales():
+    """The canonical locale list (never a filesystem glob or a two-letter pattern)."""
+    path = os.path.join(ROOT, "data", "locale_qualification_tiers.json")
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return set(json.load(fh)["locales"])
+    except (OSError, ValueError, KeyError) as e:
+        raise sd.Unknown(f"data/locale_qualification_tiers.json unreadable ({e})")
 
 
 def git(*args):
@@ -103,6 +113,7 @@ def main():
 
     try:
         reg = ci.load(ROOT)
+        locales = registry_locales()
         exceptions = sd.load_exceptions(ROOT)
         by_page = sd.spec_by_page(ROOT)
         if a.files is not None:
@@ -135,6 +146,8 @@ def main():
                                   f"spec before it is localized: build the reference page's spec first, matching "
                                   f"that page, then translate from it.")
         m = LANE_PAGE_RE.match(path)
+        if m and m.group(1) and m.group(1) not in locales:
+            m = None  # not a locale directory
         if m:
             specs = by_page.get(path)
             if specs:
