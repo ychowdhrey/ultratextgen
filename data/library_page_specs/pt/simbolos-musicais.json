@@ -301,6 +301,354 @@
           "label": "Nota entre Colchetes"
         }
       ]
+    },
+    {
+      "id": "barlines-repeats-segno-coda",
+      "label": "Barras e repetições",
+      "h2": "Barras de compasso, repetições, segno e coda",
+      "intro": "Os sinais que dizem para onde ir durante a execução: barras de compasso tracejadas e curtas, pontos de repetição, segno e coda, D.C. e D.S. e os sinais de repetição de compasso. Android e Windows incluem uma fonte para todos os símbolos desta seção e das três seguintes; no iPhone e no Mac eles dependem da fonte de símbolos da Apple, que ainda não conseguimos testar, então alguns podem aparecer lá como quadrados vazios.",
+      "symbols": [
+        {
+          "char": "𝄄",
+          "label": "Barra de compasso tracejada"
+        },
+        {
+          "char": "𝄅",
+          "label": "Barra de compasso curta"
+        },
+        {
+          "char": "𝄈",
+          "label": "Pontos de repetição"
+        },
+        {
+          "char": "𝄉",
+          "label": "Dal segno (D.S.)"
+        },
+        {
+          "char": "𝄊",
+          "label": "Da capo (D.C.)"
+        },
+        {
+          "char": "𝄋",
+          "label": "Sinal de segno"
+        },
+        {
+          "char": "𝄌",
+          "label": "Sinal de coda"
+        },
+        {
+          "char": "𝄍",
+          "label": "Repetição de compasso 1"
+        },
+        {
+          "char": "𝄎",
+          "label": "Repetição de compasso 2"
+        },
+        {
+          "char": "𝄏",
+          "label": "Repetição de compasso 3"
+        }
+      ]
+    },
+    {
+      "id": "clefs-staff-time-signatures",
+      "label": "Claves e compasso",
+      "h2": "Claves de oitava, pautas e fórmulas de compasso",
+      "intro": "Claves de sol e de fá com o 8 pequeno acima ou abaixo para transpor uma oitava, claves de percussão, pautas de uma a seis linhas, o C do compasso quaternário e o C cortado do alla breve, e os bemóis e bequadros com seta usados para quartos de tom.",
+      "symbols": [
+        {
+          "char": "𝄖",
+          "label": "Pauta de 1 linha"
+        },
+        {
+          "char": "𝄗",
+          "label": "Pauta de 2 linhas"
+        },
+        {
+          "char": "𝄘",
+          "label": "Pauta de 3 linhas"
+        },
+        {
+          "char": "𝄙",
+          "label": "Pauta de 4 linhas"
+        },
+        {
+          "char": "𝄚",
+          "label": "Pentagrama (5 linhas)"
+        },
+        {
+          "char": "𝄛",
+          "label": "Pauta de 6 linhas"
+        },
+        {
+          "char": "𝄟",
+          "label": "Clave de sol 8va (oitava acima)"
+        },
+        {
+          "char": "𝄠",
+          "label": "Clave de sol 8vb (oitava abaixo)"
+        },
+        {
+          "char": "𝄣",
+          "label": "Clave de fá 8va (oitava acima)"
+        },
+        {
+          "char": "𝄤",
+          "label": "Clave de fá 8vb (oitava abaixo)"
+        },
+        {
+          "char": "𝄥",
+          "label": "Clave de percussão 1"
+        },
+        {
+          "char": "𝄦",
+          "label": "Clave de percussão 2"
+        },
+        {
+          "char": "𝄴",
+          "label": "Compasso quaternário (C)"
+        },
+        {
+          "char": "𝄵",
+          "label": "Alla breve (C cortado)"
+        },
+        {
+          "char": "𝄬",
+          "label": "Bemol com seta para cima"
+        },
+        {
+          "char": "𝄭",
+          "label": "Bemol com seta para baixo"
+        },
+        {
+          "char": "𝄮",
+          "label": "Bequadro com seta para cima"
+        },
+        {
+          "char": "𝄯",
+          "label": "Bequadro com seta para baixo"
+        },
+        {
+          "char": "𝄳",
+          "label": "Bemol de quarto de tom"
+        }
+      ]
+    },
+    {
+      "id": "notes-grace-notes-rests",
+      "label": "Figuras e pausas",
+      "h2": "Figuras, apojaturas e pausas",
+      "intro": "Figuras de um só caractere, da breve à quartifusa, as duas apojaturas e as pausas que não aparecem acima, incluindo as pausas de vários compassos e as pausas quadradas da notação antiga.",
+      "symbols": [
+        {
+          "char": "𝅜",
+          "label": "Breve"
+        },
+        {
+          "char": "𝅝",
+          "label": "Semibreve"
+        },
+        {
+          "char": "\ud834\udd5e",
+          "label": "Mínima"
+        },
+        {
+          "char": "\ud834\udd5f",
+          "label": "Semínima"
+        },
+        {
+          "char": "\ud834\udd60",
+          "label": "Colcheia"
+        },
+        {
+          "char": "\ud834\udd61",
+          "label": "Semicolcheia"
+        },
+        {
+          "char": "\ud834\udd62",
+          "label": "Fusa"
+        },
+        {
+          "char": "\ud834\udd63",
+          "label": "Semifusa"
+        },
+        {
+          "char": "\ud834\udd64",
+          "label": "Quartifusa"
+        },
+        {
+          "char": "𝆔",
+          "label": "Apojatura breve (com corte)"
+        },
+        {
+          "char": "𝆕",
+          "label": "Apojatura (sem corte)"
+        },
+        {
+          "char": "𝄩",
+          "label": "Pausa de vários compassos 1"
+        },
+        {
+          "char": "𝄺",
+          "label": "Pausa de vários compassos 2"
+        },
+        {
+          "char": "𝄽",
+          "label": "Pausa de semínima"
+        },
+        {
+          "char": "𝅀",
+          "label": "Pausa de fusa"
+        },
+        {
+          "char": "𝅁",
+          "label": "Pausa de semifusa"
+        },
+        {
+          "char": "𝅂",
+          "label": "Pausa de quartifusa"
+        },
+        {
+          "char": "𝇁",
+          "label": "Pausa de longa perfeita"
+        },
+        {
+          "char": "𝇂",
+          "label": "Pausa de longa imperfeita"
+        },
+        {
+          "char": "𝇃",
+          "label": "Pausa de breve"
+        },
+        {
+          "char": "𝇄",
+          "label": "Pausa de semibreve (mensural)"
+        },
+        {
+          "char": "𝇅",
+          "label": "Pausa de mínima (mensural)"
+        },
+        {
+          "char": "𝇆",
+          "label": "Pausa de semínima (mensural)"
+        }
+      ]
+    },
+    {
+      "id": "noteheads-mezzo-pedal",
+      "label": "Cabeças e pedal",
+      "h2": "Cabeças de nota, mezzo e pedal do piano",
+      "intro": "Formatos de cabeça de nota para bateria, notas fantasma e shape notes, em branco e preto, além da letra de dinâmica mezzo e dos sinais de pedal do piano: pisar, soltar e meio pedal.",
+      "symbols": [
+        {
+          "char": "𝅃",
+          "label": "Cabeça de nota em X"
+        },
+        {
+          "char": "𝅄",
+          "label": "Cabeça de nota em cruz (+)"
+        },
+        {
+          "char": "𝅅",
+          "label": "Cabeça de nota em X com círculo"
+        },
+        {
+          "char": "𝅆",
+          "label": "Cabeça de nota quadrada, branca"
+        },
+        {
+          "char": "𝅇",
+          "label": "Cabeça de nota quadrada, preta"
+        },
+        {
+          "char": "𝅈",
+          "label": "Cabeça de nota triangular (para cima), branca"
+        },
+        {
+          "char": "𝅉",
+          "label": "Cabeça de nota triangular (para cima), preta"
+        },
+        {
+          "char": "𝅊",
+          "label": "Cabeça de nota triangular (para a esquerda), branca"
+        },
+        {
+          "char": "𝅋",
+          "label": "Cabeça de nota triangular (para a esquerda), preta"
+        },
+        {
+          "char": "𝅌",
+          "label": "Cabeça de nota triangular (para a direita), branca"
+        },
+        {
+          "char": "𝅍",
+          "label": "Cabeça de nota triangular (para a direita), preta"
+        },
+        {
+          "char": "𝅎",
+          "label": "Cabeça de nota triangular (para baixo), branca"
+        },
+        {
+          "char": "𝅏",
+          "label": "Cabeça de nota triangular (para baixo), preta"
+        },
+        {
+          "char": "𝅐",
+          "label": "Cabeça de nota triangular (para cima à direita), branca"
+        },
+        {
+          "char": "𝅑",
+          "label": "Cabeça de nota triangular (para cima à direita), preta"
+        },
+        {
+          "char": "𝅒",
+          "label": "Cabeça de nota em meia-lua, branca"
+        },
+        {
+          "char": "𝅓",
+          "label": "Cabeça de nota em meia-lua, preta"
+        },
+        {
+          "char": "𝅔",
+          "label": "Cabeça de nota triangular arredondada, branca"
+        },
+        {
+          "char": "𝅕",
+          "label": "Cabeça de nota triangular arredondada, preta"
+        },
+        {
+          "char": "𝅖",
+          "label": "Cabeça de nota entre parênteses (nota fantasma)"
+        },
+        {
+          "char": "𝅗",
+          "label": "Cabeça de nota vazada"
+        },
+        {
+          "char": "𝅘",
+          "label": "Cabeça de nota cheia"
+        },
+        {
+          "char": "𝅙",
+          "label": "Cabeça de nota nula (invisível)"
+        },
+        {
+          "char": "𝆐",
+          "label": "Mezzo (m)"
+        },
+        {
+          "char": "𝆮",
+          "label": "Pisar o pedal (Ped.)"
+        },
+        {
+          "char": "𝆯",
+          "label": "Soltar o pedal"
+        },
+        {
+          "char": "𝆰",
+          "label": "Meio pedal"
+        }
+      ]
     }
   ],
   "collection_section": {

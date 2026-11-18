@@ -261,8 +261,51 @@
      "label": "Subrayado de bloque bajo"
     }
    ]
+  },
+  {
+    "id": "scene-breaks",
+    "h2": "Símbolos para saltos de escena y de capítulo",
+    "intro": "Un salto de escena va en una línea propia y centrada entre dos escenas o capítulos. Tres asteriscos separados por espacios (* * *) son lo que usa la mayoría de los manuscritos, y ⁂ (el asterismo) o un corazón floral como ❦ dan el acabado de libro impreso. Un lector de libros electrónicos cuyas fuentes no tengan ⁂, ❦, ❧, ☙ o ⁕ puede mostrar un recuadro vacío en su lugar, por eso * * * va primero: es texto de teclado y ninguna fuente lo pierde.",
+    "symbols": [
+      {
+        "char": "* * *",
+        "label": "Tres asteriscos espaciados"
+      },
+      {
+        "char": "⁂",
+        "label": "Asterismo"
+      },
+      {
+        "char": "❦",
+        "label": "Corazón floral"
+      },
+      {
+        "char": "❧",
+        "label": "Corazón floral girado"
+      },
+      {
+        "char": "☙",
+        "label": "Corazón floral girado e invertido"
+      },
+      {
+        "char": "⁕",
+        "label": "Signo de puntuación en flor"
+      },
+      {
+        "char": "• • •",
+        "label": "Tres viñetas espaciadas"
+      },
+      {
+        "char": "~ ~ ~",
+        "label": "Virgulillas espaciadas"
+      },
+      {
+        "char": "◆ ◆ ◆",
+        "label": "Tres rombos"
+      }
+    ]
   }
- ],
+],
  "related": [
   {
    "href": "/es/library/simbolos-de-brillo/",

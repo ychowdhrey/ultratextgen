@@ -180,6 +180,50 @@
           "label": "Terluka Hati"
         }
       ]
+    },
+    {
+      "id": "sigh-meh",
+      "label": "Hela Napas & Malas",
+      "h2": "Kaomoji Menghela Napas dan Malas",
+      "intro": "Wajah menghela napas sering membawa ε- atau =3 di salah satu sisinya: embusan udara yang keluar dari mulut. Sebagian besar wajah ini lelah, kecewa, atau sekadar tidak terkesan, dan yang terakhir adalah helaan napas lega yang dalam bahasa Jepang ditulis ホッ (hotto).",
+      "symbols": [
+        {
+          "char": "ε-(´・｀) ﾌ",
+          "label": "Hela Napas Menyerah"
+        },
+        {
+          "char": "ε-(ーдー)",
+          "label": "Helaan Napas Berat"
+        },
+        {
+          "char": "(´-ε-`)",
+          "label": "Embusan Napas"
+        },
+        {
+          "char": "( ´_ゝ`)",
+          "label": "Biasa Aja"
+        },
+        {
+          "char": "(=_=)",
+          "label": "Sudah Jenuh"
+        },
+        {
+          "char": "(ーー゛)",
+          "label": "Merasa Dikecewakan"
+        },
+        {
+          "char": "┐(￣ヘ￣)┌",
+          "label": "Terserah"
+        },
+        {
+          "char": "(´._.`)",
+          "label": "Sedikit Kecewa"
+        },
+        {
+          "char": "ε-(´∀`*)ホッ",
+          "label": "Hela Napas Lega"
+        }
+      ]
     }
   ]
 }

@@ -38,7 +38,8 @@ WHAT IS COMPARED
 
     page-only     the page copies a character the spec does not list
     spec-only     the spec lists a character the page does not copy
-    label         same character, different visible label
+    label         same character, different visible label (skipped when the page
+                  shows no label for that tile)
 """
 
 import html as htmlmod
@@ -166,8 +167,12 @@ def compare(spec, page_html):
         spec_labels.setdefault(c, l)
     for c, l in lt:
         page_labels.setdefault(c, l)
+    # A tile with no visible label (a bare symbol grid) has nothing to compare: the
+    # spec's label is then only its aria text, and inventing drift for it would fail
+    # every page built that way.
     label = sorted((c, spec_labels[c], page_labels[c]) for c in spec_labels
-                   if c in page_labels and _norm_label(spec_labels[c]) != _norm_label(page_labels[c]))
+                   if c in page_labels and _norm_label(page_labels[c])
+                   and _norm_label(spec_labels[c]) != _norm_label(page_labels[c]))
     return {"page_only": page_only, "spec_only": spec_only, "label": label,
             "spec_count": len(st), "page_count": len(lt)}
 

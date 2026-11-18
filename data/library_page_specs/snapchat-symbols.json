@@ -44,6 +44,17 @@
         { "char": "💬", "label": "Speech Balloon" },
         { "char": "🎉", "label": "Party Popper" }
       ]
+    },
+    {
+      "id": "friend-emoji-system",
+      "label": "Friend Emoji System",
+      "h2": "What Snapchat's Friend Emoji Badges Mean",
+      "symbols": [
+        { "char": "🔥", "label": "Snapstreak — day count shown beside it" },
+        { "char": "⌛", "label": "Streak About to Expire" },
+        { "char": "👶", "label": "New Friend" },
+        { "char": "🎂", "label": "Friend's Birthday" }
+      ]
     }
   ],
   "collection_section": {

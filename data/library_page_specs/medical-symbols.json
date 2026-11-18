@@ -48,7 +48,11 @@
         { "char": "💉", "label": "Syringe" },
         { "char": "🩹", "label": "Adhesive Bandage" },
         { "char": "🧬", "label": "DNA" },
-        { "char": "🚑", "label": "Ambulance" }
+        { "char": "🚑", "label": "Ambulance" },
+        { "char": "😷", "label": "Face with Medical Mask" },
+        { "char": "🏥", "label": "Hospital" },
+        { "char": "🩻", "label": "X-Ray" },
+        { "char": "❤️\u200d🩹", "label": "Mending Heart" }
       ]
     },
     {

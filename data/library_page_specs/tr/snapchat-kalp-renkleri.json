@@ -21,11 +21,11 @@
       "symbols": [
         {
           "char": "💛",
-          "label": "Yellow Heart"
+          "label": "Sarı Kalp"
         },
         {
           "char": "❤️",
-          "label": "Red Heart"
+          "label": "Kırmızı Kalp"
         },
         {
           "char": "💕",
@@ -41,19 +41,19 @@
       "symbols": [
         {
           "char": "🧡",
-          "label": "Orange Heart"
+          "label": "Turuncu Kalp"
         },
         {
           "char": "💚",
-          "label": "Green Heart"
+          "label": "Yeşil Kalp"
         },
         {
           "char": "💙",
-          "label": "Blue Heart"
+          "label": "Mavi Kalp"
         },
         {
           "char": "💜",
-          "label": "Purple Heart"
+          "label": "Mor Kalp"
         }
       ]
     },
@@ -69,7 +69,7 @@
         },
         {
           "char": "<3",
-          "label": "ASCII Text Heart"
+          "label": "ASCII Metin Kalbi"
         }
       ]
     }

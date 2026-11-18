@@ -158,6 +158,26 @@
           "label": "Mongolian Vowel Separator: U+180E"
         }
       ]
+    },
+    {
+      "id": "start-here",
+      "label": "Start Here",
+      "h2": "The Blank That Works in Most Apps",
+      "intro": "Copy the Braille Pattern Blank first. If a field shows it as a box or says the name is empty, try the Hangul Filler, then the zero width space.",
+      "symbols": [
+        {
+          "char": "⠀",
+          "label": "Braille Pattern Blank: U+2800"
+        },
+        {
+          "char": "ㅤ",
+          "label": "Hangul Filler: U+3164"
+        },
+        {
+          "char": "\u200b",
+          "label": "Zero Width Space: U+200B"
+        }
+      ]
     }
   ],
   "related": [

@@ -103,7 +103,10 @@
         { "char": "🧼", "label": "Jabón" },
         { "char": "🪥", "label": "Cepillo de dientes" },
         { "char": "🧴", "label": "Botella de crema" },
-        { "char": "📦", "label": "Paquete" }
+        { "char": "📦", "label": "Paquete" },
+        { "char": "🪪", "label": "Documento de identidad" },
+        { "char": "🪧", "label": "Pancarta" },
+        { "char": "🚬", "label": "Cigarro" }
       ]
     },
     {

@@ -210,6 +210,30 @@
           "label": "Rode cirkel"
         }
       ]
+    },
+    {
+      "id": "nodding-head-shaking",
+      "label": "Knikken en nee schudden",
+      "h2": "Emoji voor knikken en nee schudden",
+      "intro": "Emoji 15.1 (2023) voegde een knikkend gezicht voor ja en een nee schuddend gezicht voor nee toe. Beide zetten 🙂 en een pijl aan elkaar, dus een telefoon zonder die update toont 🙂↕ of 🙂↔ in twee stukken. 🙆 en 🙅 zeggen hetzelfde ja en nee, horen bij de eerste emojiset en zijn overal te zien waar emoji te zien zijn.",
+      "symbols": [
+        {
+          "char": "🙂\u200d↕️",
+          "label": "Knikkend hoofd (ja)"
+        },
+        {
+          "char": "🙂\u200d↔️",
+          "label": "Nee schuddend hoofd (nee)"
+        },
+        {
+          "char": "🙆",
+          "label": "Persoon die OK gebaart"
+        },
+        {
+          "char": "🙅",
+          "label": "Persoon die nee gebaart"
+        }
+      ]
     }
   ],
   "collection_section": {

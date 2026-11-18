@@ -289,6 +289,1434 @@
           "label": "Diferencial Parcial"
         }
       ]
+    },
+    {
+      "id": "greek-math-bold",
+      "label": "Negrito",
+      "h2": "Letras gregas em negrito",
+      "intro": "Maiúsculas, minúsculas e variantes matemáticas gregas em negrito, do bloco Unicode de símbolos alfanuméricos matemáticos, como as usadas para vetores e tensores. Cada uma é um único caractere, então o negrito continua onde a formatação some; leitores de tela podem ler como símbolo matemático, então use em textos curtos.",
+      "symbols": [
+        {
+          "char": "𝚨",
+          "label": "Alfa maiúscula"
+        },
+        {
+          "char": "𝚩",
+          "label": "Beta maiúscula"
+        },
+        {
+          "char": "𝚪",
+          "label": "Gama maiúscula"
+        },
+        {
+          "char": "𝚫",
+          "label": "Delta maiúscula"
+        },
+        {
+          "char": "𝚬",
+          "label": "Épsilon maiúscula"
+        },
+        {
+          "char": "𝚭",
+          "label": "Zeta maiúscula"
+        },
+        {
+          "char": "𝚮",
+          "label": "Eta maiúscula"
+        },
+        {
+          "char": "𝚯",
+          "label": "Teta maiúscula"
+        },
+        {
+          "char": "𝚰",
+          "label": "Iota maiúscula"
+        },
+        {
+          "char": "𝚱",
+          "label": "Kappa maiúscula"
+        },
+        {
+          "char": "𝚲",
+          "label": "Lambda maiúscula"
+        },
+        {
+          "char": "𝚳",
+          "label": "Mi maiúscula"
+        },
+        {
+          "char": "𝚴",
+          "label": "Ni maiúscula"
+        },
+        {
+          "char": "𝚵",
+          "label": "Csi maiúscula"
+        },
+        {
+          "char": "𝚶",
+          "label": "Ômicron maiúscula"
+        },
+        {
+          "char": "𝚷",
+          "label": "Pi maiúscula"
+        },
+        {
+          "char": "𝚸",
+          "label": "Rô maiúscula"
+        },
+        {
+          "char": "𝚺",
+          "label": "Sigma maiúscula"
+        },
+        {
+          "char": "𝚻",
+          "label": "Tau maiúscula"
+        },
+        {
+          "char": "𝚼",
+          "label": "Ípsilon maiúscula"
+        },
+        {
+          "char": "𝚽",
+          "label": "Fi maiúscula"
+        },
+        {
+          "char": "𝚾",
+          "label": "Qui maiúscula"
+        },
+        {
+          "char": "𝚿",
+          "label": "Psi maiúscula"
+        },
+        {
+          "char": "𝛀",
+          "label": "Ômega maiúscula"
+        },
+        {
+          "char": "𝛂",
+          "label": "Alfa minúscula"
+        },
+        {
+          "char": "𝛃",
+          "label": "Beta minúscula"
+        },
+        {
+          "char": "𝛄",
+          "label": "Gama minúscula"
+        },
+        {
+          "char": "𝛅",
+          "label": "Delta minúscula"
+        },
+        {
+          "char": "𝛆",
+          "label": "Épsilon minúscula"
+        },
+        {
+          "char": "𝛇",
+          "label": "Zeta minúscula"
+        },
+        {
+          "char": "𝛈",
+          "label": "Eta minúscula"
+        },
+        {
+          "char": "𝛉",
+          "label": "Teta minúscula"
+        },
+        {
+          "char": "𝛊",
+          "label": "Iota minúscula"
+        },
+        {
+          "char": "𝛋",
+          "label": "Kappa minúscula"
+        },
+        {
+          "char": "𝛌",
+          "label": "Lambda minúscula"
+        },
+        {
+          "char": "𝛍",
+          "label": "Mi minúscula"
+        },
+        {
+          "char": "𝛎",
+          "label": "Ni minúscula"
+        },
+        {
+          "char": "𝛏",
+          "label": "Csi minúscula"
+        },
+        {
+          "char": "𝛐",
+          "label": "Ômicron minúscula"
+        },
+        {
+          "char": "𝛑",
+          "label": "Pi minúscula"
+        },
+        {
+          "char": "𝛒",
+          "label": "Rô minúscula"
+        },
+        {
+          "char": "𝛓",
+          "label": "Sigma final"
+        },
+        {
+          "char": "𝛔",
+          "label": "Sigma minúscula"
+        },
+        {
+          "char": "𝛕",
+          "label": "Tau minúscula"
+        },
+        {
+          "char": "𝛖",
+          "label": "Ípsilon minúscula"
+        },
+        {
+          "char": "𝛗",
+          "label": "Fi minúscula"
+        },
+        {
+          "char": "𝛘",
+          "label": "Qui minúscula"
+        },
+        {
+          "char": "𝛙",
+          "label": "Psi minúscula"
+        },
+        {
+          "char": "𝛚",
+          "label": "Ômega minúscula"
+        },
+        {
+          "char": "𝚹",
+          "label": "Símbolo teta maiúsculo"
+        },
+        {
+          "char": "𝛁",
+          "label": "Nabla (operador del)"
+        },
+        {
+          "char": "𝛛",
+          "label": "Diferencial parcial"
+        },
+        {
+          "char": "𝛜",
+          "label": "Símbolo épsilon"
+        },
+        {
+          "char": "𝛝",
+          "label": "Símbolo teta"
+        },
+        {
+          "char": "𝛞",
+          "label": "Símbolo kappa"
+        },
+        {
+          "char": "𝛟",
+          "label": "Símbolo fi"
+        },
+        {
+          "char": "𝛠",
+          "label": "Símbolo rô"
+        },
+        {
+          "char": "𝛡",
+          "label": "Símbolo pi"
+        },
+        {
+          "char": "𝟊",
+          "label": "Digama maiúscula"
+        },
+        {
+          "char": "𝟋",
+          "label": "Digama minúscula"
+        }
+      ]
+    },
+    {
+      "id": "greek-math-italic",
+      "label": "Itálico",
+      "h2": "Letras gregas em itálico",
+      "intro": "Grego em itálico como aparece nas equações, por exemplo 𝜃 para um ângulo ou 𝜆 para um comprimento de onda. Cole onde o campo de texto não tem botão de itálico.",
+      "symbols": [
+        {
+          "char": "𝛢",
+          "label": "Alfa maiúscula"
+        },
+        {
+          "char": "𝛣",
+          "label": "Beta maiúscula"
+        },
+        {
+          "char": "𝛤",
+          "label": "Gama maiúscula"
+        },
+        {
+          "char": "𝛥",
+          "label": "Delta maiúscula"
+        },
+        {
+          "char": "𝛦",
+          "label": "Épsilon maiúscula"
+        },
+        {
+          "char": "𝛧",
+          "label": "Zeta maiúscula"
+        },
+        {
+          "char": "𝛨",
+          "label": "Eta maiúscula"
+        },
+        {
+          "char": "𝛩",
+          "label": "Teta maiúscula"
+        },
+        {
+          "char": "𝛪",
+          "label": "Iota maiúscula"
+        },
+        {
+          "char": "𝛫",
+          "label": "Kappa maiúscula"
+        },
+        {
+          "char": "𝛬",
+          "label": "Lambda maiúscula"
+        },
+        {
+          "char": "𝛭",
+          "label": "Mi maiúscula"
+        },
+        {
+          "char": "𝛮",
+          "label": "Ni maiúscula"
+        },
+        {
+          "char": "𝛯",
+          "label": "Csi maiúscula"
+        },
+        {
+          "char": "𝛰",
+          "label": "Ômicron maiúscula"
+        },
+        {
+          "char": "𝛱",
+          "label": "Pi maiúscula"
+        },
+        {
+          "char": "𝛲",
+          "label": "Rô maiúscula"
+        },
+        {
+          "char": "𝛴",
+          "label": "Sigma maiúscula"
+        },
+        {
+          "char": "𝛵",
+          "label": "Tau maiúscula"
+        },
+        {
+          "char": "𝛶",
+          "label": "Ípsilon maiúscula"
+        },
+        {
+          "char": "𝛷",
+          "label": "Fi maiúscula"
+        },
+        {
+          "char": "𝛸",
+          "label": "Qui maiúscula"
+        },
+        {
+          "char": "𝛹",
+          "label": "Psi maiúscula"
+        },
+        {
+          "char": "𝛺",
+          "label": "Ômega maiúscula"
+        },
+        {
+          "char": "𝛼",
+          "label": "Alfa minúscula"
+        },
+        {
+          "char": "𝛽",
+          "label": "Beta minúscula"
+        },
+        {
+          "char": "𝛾",
+          "label": "Gama minúscula"
+        },
+        {
+          "char": "𝛿",
+          "label": "Delta minúscula"
+        },
+        {
+          "char": "𝜀",
+          "label": "Épsilon minúscula"
+        },
+        {
+          "char": "𝜁",
+          "label": "Zeta minúscula"
+        },
+        {
+          "char": "𝜂",
+          "label": "Eta minúscula"
+        },
+        {
+          "char": "𝜃",
+          "label": "Teta minúscula"
+        },
+        {
+          "char": "𝜄",
+          "label": "Iota minúscula"
+        },
+        {
+          "char": "𝜅",
+          "label": "Kappa minúscula"
+        },
+        {
+          "char": "𝜆",
+          "label": "Lambda minúscula"
+        },
+        {
+          "char": "𝜇",
+          "label": "Mi minúscula"
+        },
+        {
+          "char": "𝜈",
+          "label": "Ni minúscula"
+        },
+        {
+          "char": "𝜉",
+          "label": "Csi minúscula"
+        },
+        {
+          "char": "𝜊",
+          "label": "Ômicron minúscula"
+        },
+        {
+          "char": "𝜋",
+          "label": "Pi minúscula"
+        },
+        {
+          "char": "𝜌",
+          "label": "Rô minúscula"
+        },
+        {
+          "char": "𝜍",
+          "label": "Sigma final"
+        },
+        {
+          "char": "𝜎",
+          "label": "Sigma minúscula"
+        },
+        {
+          "char": "𝜏",
+          "label": "Tau minúscula"
+        },
+        {
+          "char": "𝜐",
+          "label": "Ípsilon minúscula"
+        },
+        {
+          "char": "𝜑",
+          "label": "Fi minúscula"
+        },
+        {
+          "char": "𝜒",
+          "label": "Qui minúscula"
+        },
+        {
+          "char": "𝜓",
+          "label": "Psi minúscula"
+        },
+        {
+          "char": "𝜔",
+          "label": "Ômega minúscula"
+        },
+        {
+          "char": "𝛳",
+          "label": "Símbolo teta maiúsculo"
+        },
+        {
+          "char": "𝛻",
+          "label": "Nabla (operador del)"
+        },
+        {
+          "char": "𝜕",
+          "label": "Diferencial parcial"
+        },
+        {
+          "char": "𝜖",
+          "label": "Símbolo épsilon"
+        },
+        {
+          "char": "𝜗",
+          "label": "Símbolo teta"
+        },
+        {
+          "char": "𝜘",
+          "label": "Símbolo kappa"
+        },
+        {
+          "char": "𝜙",
+          "label": "Símbolo fi"
+        },
+        {
+          "char": "𝜚",
+          "label": "Símbolo rô"
+        },
+        {
+          "char": "𝜛",
+          "label": "Símbolo pi"
+        }
+      ]
+    },
+    {
+      "id": "greek-math-bold-italic",
+      "label": "Negrito itálico",
+      "h2": "Letras gregas em negrito itálico",
+      "intro": "Grego em negrito itálico, usado em alguns livros para grandezas vetoriais escritas em itálico.",
+      "symbols": [
+        {
+          "char": "𝜜",
+          "label": "Alfa maiúscula"
+        },
+        {
+          "char": "𝜝",
+          "label": "Beta maiúscula"
+        },
+        {
+          "char": "𝜞",
+          "label": "Gama maiúscula"
+        },
+        {
+          "char": "𝜟",
+          "label": "Delta maiúscula"
+        },
+        {
+          "char": "𝜠",
+          "label": "Épsilon maiúscula"
+        },
+        {
+          "char": "𝜡",
+          "label": "Zeta maiúscula"
+        },
+        {
+          "char": "𝜢",
+          "label": "Eta maiúscula"
+        },
+        {
+          "char": "𝜣",
+          "label": "Teta maiúscula"
+        },
+        {
+          "char": "𝜤",
+          "label": "Iota maiúscula"
+        },
+        {
+          "char": "𝜥",
+          "label": "Kappa maiúscula"
+        },
+        {
+          "char": "𝜦",
+          "label": "Lambda maiúscula"
+        },
+        {
+          "char": "𝜧",
+          "label": "Mi maiúscula"
+        },
+        {
+          "char": "𝜨",
+          "label": "Ni maiúscula"
+        },
+        {
+          "char": "𝜩",
+          "label": "Csi maiúscula"
+        },
+        {
+          "char": "𝜪",
+          "label": "Ômicron maiúscula"
+        },
+        {
+          "char": "𝜫",
+          "label": "Pi maiúscula"
+        },
+        {
+          "char": "𝜬",
+          "label": "Rô maiúscula"
+        },
+        {
+          "char": "𝜮",
+          "label": "Sigma maiúscula"
+        },
+        {
+          "char": "𝜯",
+          "label": "Tau maiúscula"
+        },
+        {
+          "char": "𝜰",
+          "label": "Ípsilon maiúscula"
+        },
+        {
+          "char": "𝜱",
+          "label": "Fi maiúscula"
+        },
+        {
+          "char": "𝜲",
+          "label": "Qui maiúscula"
+        },
+        {
+          "char": "𝜳",
+          "label": "Psi maiúscula"
+        },
+        {
+          "char": "𝜴",
+          "label": "Ômega maiúscula"
+        },
+        {
+          "char": "𝜶",
+          "label": "Alfa minúscula"
+        },
+        {
+          "char": "𝜷",
+          "label": "Beta minúscula"
+        },
+        {
+          "char": "𝜸",
+          "label": "Gama minúscula"
+        },
+        {
+          "char": "𝜹",
+          "label": "Delta minúscula"
+        },
+        {
+          "char": "𝜺",
+          "label": "Épsilon minúscula"
+        },
+        {
+          "char": "𝜻",
+          "label": "Zeta minúscula"
+        },
+        {
+          "char": "𝜼",
+          "label": "Eta minúscula"
+        },
+        {
+          "char": "𝜽",
+          "label": "Teta minúscula"
+        },
+        {
+          "char": "𝜾",
+          "label": "Iota minúscula"
+        },
+        {
+          "char": "𝜿",
+          "label": "Kappa minúscula"
+        },
+        {
+          "char": "𝝀",
+          "label": "Lambda minúscula"
+        },
+        {
+          "char": "𝝁",
+          "label": "Mi minúscula"
+        },
+        {
+          "char": "𝝂",
+          "label": "Ni minúscula"
+        },
+        {
+          "char": "𝝃",
+          "label": "Csi minúscula"
+        },
+        {
+          "char": "𝝄",
+          "label": "Ômicron minúscula"
+        },
+        {
+          "char": "𝝅",
+          "label": "Pi minúscula"
+        },
+        {
+          "char": "𝝆",
+          "label": "Rô minúscula"
+        },
+        {
+          "char": "𝝇",
+          "label": "Sigma final"
+        },
+        {
+          "char": "𝝈",
+          "label": "Sigma minúscula"
+        },
+        {
+          "char": "𝝉",
+          "label": "Tau minúscula"
+        },
+        {
+          "char": "𝝊",
+          "label": "Ípsilon minúscula"
+        },
+        {
+          "char": "𝝋",
+          "label": "Fi minúscula"
+        },
+        {
+          "char": "𝝌",
+          "label": "Qui minúscula"
+        },
+        {
+          "char": "𝝍",
+          "label": "Psi minúscula"
+        },
+        {
+          "char": "𝝎",
+          "label": "Ômega minúscula"
+        },
+        {
+          "char": "𝜭",
+          "label": "Símbolo teta maiúsculo"
+        },
+        {
+          "char": "𝜵",
+          "label": "Nabla (operador del)"
+        },
+        {
+          "char": "𝝏",
+          "label": "Diferencial parcial"
+        },
+        {
+          "char": "𝝐",
+          "label": "Símbolo épsilon"
+        },
+        {
+          "char": "𝝑",
+          "label": "Símbolo teta"
+        },
+        {
+          "char": "𝝒",
+          "label": "Símbolo kappa"
+        },
+        {
+          "char": "𝝓",
+          "label": "Símbolo fi"
+        },
+        {
+          "char": "𝝔",
+          "label": "Símbolo rô"
+        },
+        {
+          "char": "𝝕",
+          "label": "Símbolo pi"
+        }
+      ]
+    },
+    {
+      "id": "greek-math-sans-bold",
+      "label": "Sem serifa negrito",
+      "h2": "Letras gregas sem serifa em negrito",
+      "intro": "Grego sem serifa em negrito, um estilo mais simples que alguns livros didáticos usam para matrizes e tensores, e que fica limpo em títulos.",
+      "symbols": [
+        {
+          "char": "𝝖",
+          "label": "Alfa maiúscula"
+        },
+        {
+          "char": "𝝗",
+          "label": "Beta maiúscula"
+        },
+        {
+          "char": "𝝘",
+          "label": "Gama maiúscula"
+        },
+        {
+          "char": "𝝙",
+          "label": "Delta maiúscula"
+        },
+        {
+          "char": "𝝚",
+          "label": "Épsilon maiúscula"
+        },
+        {
+          "char": "𝝛",
+          "label": "Zeta maiúscula"
+        },
+        {
+          "char": "𝝜",
+          "label": "Eta maiúscula"
+        },
+        {
+          "char": "𝝝",
+          "label": "Teta maiúscula"
+        },
+        {
+          "char": "𝝞",
+          "label": "Iota maiúscula"
+        },
+        {
+          "char": "𝝟",
+          "label": "Kappa maiúscula"
+        },
+        {
+          "char": "𝝠",
+          "label": "Lambda maiúscula"
+        },
+        {
+          "char": "𝝡",
+          "label": "Mi maiúscula"
+        },
+        {
+          "char": "𝝢",
+          "label": "Ni maiúscula"
+        },
+        {
+          "char": "𝝣",
+          "label": "Csi maiúscula"
+        },
+        {
+          "char": "𝝤",
+          "label": "Ômicron maiúscula"
+        },
+        {
+          "char": "𝝥",
+          "label": "Pi maiúscula"
+        },
+        {
+          "char": "𝝦",
+          "label": "Rô maiúscula"
+        },
+        {
+          "char": "𝝨",
+          "label": "Sigma maiúscula"
+        },
+        {
+          "char": "𝝩",
+          "label": "Tau maiúscula"
+        },
+        {
+          "char": "𝝪",
+          "label": "Ípsilon maiúscula"
+        },
+        {
+          "char": "𝝫",
+          "label": "Fi maiúscula"
+        },
+        {
+          "char": "𝝬",
+          "label": "Qui maiúscula"
+        },
+        {
+          "char": "𝝭",
+          "label": "Psi maiúscula"
+        },
+        {
+          "char": "𝝮",
+          "label": "Ômega maiúscula"
+        },
+        {
+          "char": "𝝰",
+          "label": "Alfa minúscula"
+        },
+        {
+          "char": "𝝱",
+          "label": "Beta minúscula"
+        },
+        {
+          "char": "𝝲",
+          "label": "Gama minúscula"
+        },
+        {
+          "char": "𝝳",
+          "label": "Delta minúscula"
+        },
+        {
+          "char": "𝝴",
+          "label": "Épsilon minúscula"
+        },
+        {
+          "char": "𝝵",
+          "label": "Zeta minúscula"
+        },
+        {
+          "char": "𝝶",
+          "label": "Eta minúscula"
+        },
+        {
+          "char": "𝝷",
+          "label": "Teta minúscula"
+        },
+        {
+          "char": "𝝸",
+          "label": "Iota minúscula"
+        },
+        {
+          "char": "𝝹",
+          "label": "Kappa minúscula"
+        },
+        {
+          "char": "𝝺",
+          "label": "Lambda minúscula"
+        },
+        {
+          "char": "𝝻",
+          "label": "Mi minúscula"
+        },
+        {
+          "char": "𝝼",
+          "label": "Ni minúscula"
+        },
+        {
+          "char": "𝝽",
+          "label": "Csi minúscula"
+        },
+        {
+          "char": "𝝾",
+          "label": "Ômicron minúscula"
+        },
+        {
+          "char": "𝝿",
+          "label": "Pi minúscula"
+        },
+        {
+          "char": "𝞀",
+          "label": "Rô minúscula"
+        },
+        {
+          "char": "𝞁",
+          "label": "Sigma final"
+        },
+        {
+          "char": "𝞂",
+          "label": "Sigma minúscula"
+        },
+        {
+          "char": "𝞃",
+          "label": "Tau minúscula"
+        },
+        {
+          "char": "𝞄",
+          "label": "Ípsilon minúscula"
+        },
+        {
+          "char": "𝞅",
+          "label": "Fi minúscula"
+        },
+        {
+          "char": "𝞆",
+          "label": "Qui minúscula"
+        },
+        {
+          "char": "𝞇",
+          "label": "Psi minúscula"
+        },
+        {
+          "char": "𝞈",
+          "label": "Ômega minúscula"
+        },
+        {
+          "char": "𝝧",
+          "label": "Símbolo teta maiúsculo"
+        },
+        {
+          "char": "𝝯",
+          "label": "Nabla (operador del)"
+        },
+        {
+          "char": "𝞉",
+          "label": "Diferencial parcial"
+        },
+        {
+          "char": "𝞊",
+          "label": "Símbolo épsilon"
+        },
+        {
+          "char": "𝞋",
+          "label": "Símbolo teta"
+        },
+        {
+          "char": "𝞌",
+          "label": "Símbolo kappa"
+        },
+        {
+          "char": "𝞍",
+          "label": "Símbolo fi"
+        },
+        {
+          "char": "𝞎",
+          "label": "Símbolo rô"
+        },
+        {
+          "char": "𝞏",
+          "label": "Símbolo pi"
+        }
+      ]
+    },
+    {
+      "id": "greek-math-sans-bold-italic",
+      "label": "Sem serifa negrito itálico",
+      "h2": "Letras gregas sem serifa em negrito itálico",
+      "intro": "Grego sem serifa em negrito itálico, a versão inclinada do estilo anterior.",
+      "symbols": [
+        {
+          "char": "𝞐",
+          "label": "Alfa maiúscula"
+        },
+        {
+          "char": "𝞑",
+          "label": "Beta maiúscula"
+        },
+        {
+          "char": "𝞒",
+          "label": "Gama maiúscula"
+        },
+        {
+          "char": "𝞓",
+          "label": "Delta maiúscula"
+        },
+        {
+          "char": "𝞔",
+          "label": "Épsilon maiúscula"
+        },
+        {
+          "char": "𝞕",
+          "label": "Zeta maiúscula"
+        },
+        {
+          "char": "𝞖",
+          "label": "Eta maiúscula"
+        },
+        {
+          "char": "𝞗",
+          "label": "Teta maiúscula"
+        },
+        {
+          "char": "𝞘",
+          "label": "Iota maiúscula"
+        },
+        {
+          "char": "𝞙",
+          "label": "Kappa maiúscula"
+        },
+        {
+          "char": "𝞚",
+          "label": "Lambda maiúscula"
+        },
+        {
+          "char": "𝞛",
+          "label": "Mi maiúscula"
+        },
+        {
+          "char": "𝞜",
+          "label": "Ni maiúscula"
+        },
+        {
+          "char": "𝞝",
+          "label": "Csi maiúscula"
+        },
+        {
+          "char": "𝞞",
+          "label": "Ômicron maiúscula"
+        },
+        {
+          "char": "𝞟",
+          "label": "Pi maiúscula"
+        },
+        {
+          "char": "𝞠",
+          "label": "Rô maiúscula"
+        },
+        {
+          "char": "𝞢",
+          "label": "Sigma maiúscula"
+        },
+        {
+          "char": "𝞣",
+          "label": "Tau maiúscula"
+        },
+        {
+          "char": "𝞤",
+          "label": "Ípsilon maiúscula"
+        },
+        {
+          "char": "𝞥",
+          "label": "Fi maiúscula"
+        },
+        {
+          "char": "𝞦",
+          "label": "Qui maiúscula"
+        },
+        {
+          "char": "𝞧",
+          "label": "Psi maiúscula"
+        },
+        {
+          "char": "𝞨",
+          "label": "Ômega maiúscula"
+        },
+        {
+          "char": "𝞪",
+          "label": "Alfa minúscula"
+        },
+        {
+          "char": "𝞫",
+          "label": "Beta minúscula"
+        },
+        {
+          "char": "𝞬",
+          "label": "Gama minúscula"
+        },
+        {
+          "char": "𝞭",
+          "label": "Delta minúscula"
+        },
+        {
+          "char": "𝞮",
+          "label": "Épsilon minúscula"
+        },
+        {
+          "char": "𝞯",
+          "label": "Zeta minúscula"
+        },
+        {
+          "char": "𝞰",
+          "label": "Eta minúscula"
+        },
+        {
+          "char": "𝞱",
+          "label": "Teta minúscula"
+        },
+        {
+          "char": "𝞲",
+          "label": "Iota minúscula"
+        },
+        {
+          "char": "𝞳",
+          "label": "Kappa minúscula"
+        },
+        {
+          "char": "𝞴",
+          "label": "Lambda minúscula"
+        },
+        {
+          "char": "𝞵",
+          "label": "Mi minúscula"
+        },
+        {
+          "char": "𝞶",
+          "label": "Ni minúscula"
+        },
+        {
+          "char": "𝞷",
+          "label": "Csi minúscula"
+        },
+        {
+          "char": "𝞸",
+          "label": "Ômicron minúscula"
+        },
+        {
+          "char": "𝞹",
+          "label": "Pi minúscula"
+        },
+        {
+          "char": "𝞺",
+          "label": "Rô minúscula"
+        },
+        {
+          "char": "𝞻",
+          "label": "Sigma final"
+        },
+        {
+          "char": "𝞼",
+          "label": "Sigma minúscula"
+        },
+        {
+          "char": "𝞽",
+          "label": "Tau minúscula"
+        },
+        {
+          "char": "𝞾",
+          "label": "Ípsilon minúscula"
+        },
+        {
+          "char": "𝞿",
+          "label": "Fi minúscula"
+        },
+        {
+          "char": "𝟀",
+          "label": "Qui minúscula"
+        },
+        {
+          "char": "𝟁",
+          "label": "Psi minúscula"
+        },
+        {
+          "char": "𝟂",
+          "label": "Ômega minúscula"
+        },
+        {
+          "char": "𝞡",
+          "label": "Símbolo teta maiúsculo"
+        },
+        {
+          "char": "𝞩",
+          "label": "Nabla (operador del)"
+        },
+        {
+          "char": "𝟃",
+          "label": "Diferencial parcial"
+        },
+        {
+          "char": "𝟄",
+          "label": "Símbolo épsilon"
+        },
+        {
+          "char": "𝟅",
+          "label": "Símbolo teta"
+        },
+        {
+          "char": "𝟆",
+          "label": "Símbolo kappa"
+        },
+        {
+          "char": "𝟇",
+          "label": "Símbolo fi"
+        },
+        {
+          "char": "𝟈",
+          "label": "Símbolo rô"
+        },
+        {
+          "char": "𝟉",
+          "label": "Símbolo pi"
+        }
+      ]
+    },
+    {
+      "id": "greek-archaic-letters",
+      "label": "Letras arcaicas",
+      "h2": "Letras gregas arcaicas: digama, copa, sampi e outras",
+      "intro": "Letras que saíram do alfabeto clássico: digama, heta, san, copa, sampi e sho (usada para o bactriano). Estigma, copa e sampi ainda são usadas para escrever 6, 90 e 900 na numeração grega.",
+      "symbols": [
+        {
+          "char": "Ϝ",
+          "label": "Digama maiúscula"
+        },
+        {
+          "char": "ϝ",
+          "label": "Digama minúscula"
+        },
+        {
+          "char": "Ͷ",
+          "label": "Digama panfílio maiúscula"
+        },
+        {
+          "char": "ͷ",
+          "label": "Digama panfílio minúscula"
+        },
+        {
+          "char": "Ϛ",
+          "label": "Estigma maiúscula"
+        },
+        {
+          "char": "ϛ",
+          "label": "Estigma minúscula"
+        },
+        {
+          "char": "Ͱ",
+          "label": "Heta maiúscula"
+        },
+        {
+          "char": "ͱ",
+          "label": "Heta minúscula"
+        },
+        {
+          "char": "Ϻ",
+          "label": "San maiúscula"
+        },
+        {
+          "char": "ϻ",
+          "label": "San minúscula"
+        },
+        {
+          "char": "Ϙ",
+          "label": "Copa arcaico maiúscula"
+        },
+        {
+          "char": "ϙ",
+          "label": "Copa arcaico minúscula"
+        },
+        {
+          "char": "Ϟ",
+          "label": "Copa maiúscula"
+        },
+        {
+          "char": "ϟ",
+          "label": "Copa minúscula"
+        },
+        {
+          "char": "Ϡ",
+          "label": "Sampi maiúscula"
+        },
+        {
+          "char": "ϡ",
+          "label": "Sampi minúscula"
+        },
+        {
+          "char": "Ͳ",
+          "label": "Sampi arcaico maiúscula"
+        },
+        {
+          "char": "ͳ",
+          "label": "Sampi arcaico minúscula"
+        },
+        {
+          "char": "Ϸ",
+          "label": "Sho maiúscula"
+        },
+        {
+          "char": "ϸ",
+          "label": "Sho minúscula"
+        }
+      ]
+    },
+    {
+      "id": "greek-lunate-sigma",
+      "label": "Sigma lunar",
+      "h2": "Sigma lunar e suas formas editoriais",
+      "intro": "O sigma lunar ϲ é o sigma em forma de C da escrita grega tardia e bizantina. As formas invertidas e com ponto são sinais críticos das antigas edições de textos gregos, e ϶ é o épsilon lunar invertido usado na matemática.",
+      "symbols": [
+        {
+          "char": "Ϲ",
+          "label": "Sigma lunar maiúscula"
+        },
+        {
+          "char": "ϲ",
+          "label": "Sigma lunar minúscula"
+        },
+        {
+          "char": "Ͻ",
+          "label": "Sigma lunar invertido maiúscula"
+        },
+        {
+          "char": "ͻ",
+          "label": "Sigma lunar invertido minúscula"
+        },
+        {
+          "char": "Ͼ",
+          "label": "Sigma lunar com ponto maiúscula"
+        },
+        {
+          "char": "ͼ",
+          "label": "Sigma lunar com ponto minúscula"
+        },
+        {
+          "char": "Ͽ",
+          "label": "Sigma lunar invertido com ponto maiúscula"
+        },
+        {
+          "char": "ͽ",
+          "label": "Sigma lunar invertido com ponto minúscula"
+        },
+        {
+          "char": "϶",
+          "label": "Épsilon lunar invertido"
+        }
+      ]
+    },
+    {
+      "id": "greek-accented-vowels",
+      "label": "Vogais acentuadas",
+      "h2": "Vogais gregas com tonos e trema",
+      "intro": "O grego moderno marca a vogal tônica com o tonos (ά) e a vogal pronunciada separadamente com o trema (ϊ), como em Αθήνα. Use para escrever palavras e nomes gregos corretamente quando o teclado não tem layout grego.",
+      "symbols": [
+        {
+          "char": "Ά",
+          "label": "Alfa maiúscula com tonos"
+        },
+        {
+          "char": "Έ",
+          "label": "Épsilon maiúscula com tonos"
+        },
+        {
+          "char": "Ή",
+          "label": "Eta maiúscula com tonos"
+        },
+        {
+          "char": "Ί",
+          "label": "Iota maiúscula com tonos"
+        },
+        {
+          "char": "Ό",
+          "label": "Ômicron maiúscula com tonos"
+        },
+        {
+          "char": "Ύ",
+          "label": "Ípsilon maiúscula com tonos"
+        },
+        {
+          "char": "Ώ",
+          "label": "Ômega maiúscula com tonos"
+        },
+        {
+          "char": "ά",
+          "label": "Alfa minúscula com tonos"
+        },
+        {
+          "char": "έ",
+          "label": "Épsilon minúscula com tonos"
+        },
+        {
+          "char": "ή",
+          "label": "Eta minúscula com tonos"
+        },
+        {
+          "char": "ί",
+          "label": "Iota minúscula com tonos"
+        },
+        {
+          "char": "ό",
+          "label": "Ômicron minúscula com tonos"
+        },
+        {
+          "char": "ύ",
+          "label": "Ípsilon minúscula com tonos"
+        },
+        {
+          "char": "ώ",
+          "label": "Ômega minúscula com tonos"
+        },
+        {
+          "char": "Ϊ",
+          "label": "Iota maiúscula com trema"
+        },
+        {
+          "char": "Ϋ",
+          "label": "Ípsilon maiúscula com trema"
+        },
+        {
+          "char": "ϊ",
+          "label": "Iota minúscula com trema"
+        },
+        {
+          "char": "ϋ",
+          "label": "Ípsilon minúscula com trema"
+        },
+        {
+          "char": "ΐ",
+          "label": "Iota minúscula com trema e tonos"
+        },
+        {
+          "char": "ΰ",
+          "label": "Ípsilon minúscula com trema e tonos"
+        }
+      ]
     }
   ],
   "related": [

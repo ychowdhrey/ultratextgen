@@ -241,6 +241,350 @@
           "label": "Bola 8 de Sinuca"
         }
       ]
+    },
+    {
+      "id": "full-deck-52-cards",
+      "label": "Baralho completo",
+      "h2": "Todas as 52 cartas do baralho",
+      "intro": "Todas as cartas, do ás ao rei, em espadas, copas, ouros e paus, do bloco Unicode Playing Cards. São caracteres de texto, não emojis, por isso assumem a cor do texto ao redor.",
+      "symbols": [
+        {
+          "char": "🂡",
+          "label": "Ás de Espadas"
+        },
+        {
+          "char": "🂢",
+          "label": "Dois de Espadas"
+        },
+        {
+          "char": "🂣",
+          "label": "Três de Espadas"
+        },
+        {
+          "char": "🂤",
+          "label": "Quatro de Espadas"
+        },
+        {
+          "char": "🂥",
+          "label": "Cinco de Espadas"
+        },
+        {
+          "char": "🂦",
+          "label": "Seis de Espadas"
+        },
+        {
+          "char": "🂧",
+          "label": "Sete de Espadas"
+        },
+        {
+          "char": "🂨",
+          "label": "Oito de Espadas"
+        },
+        {
+          "char": "🂩",
+          "label": "Nove de Espadas"
+        },
+        {
+          "char": "🂪",
+          "label": "Dez de Espadas"
+        },
+        {
+          "char": "🂫",
+          "label": "Valete de Espadas"
+        },
+        {
+          "char": "🂭",
+          "label": "Dama de Espadas"
+        },
+        {
+          "char": "🂮",
+          "label": "Rei de Espadas"
+        },
+        {
+          "char": "🂱",
+          "label": "Ás de Copas"
+        },
+        {
+          "char": "🂲",
+          "label": "Dois de Copas"
+        },
+        {
+          "char": "🂳",
+          "label": "Três de Copas"
+        },
+        {
+          "char": "🂴",
+          "label": "Quatro de Copas"
+        },
+        {
+          "char": "🂵",
+          "label": "Cinco de Copas"
+        },
+        {
+          "char": "🂶",
+          "label": "Seis de Copas"
+        },
+        {
+          "char": "🂷",
+          "label": "Sete de Copas"
+        },
+        {
+          "char": "🂸",
+          "label": "Oito de Copas"
+        },
+        {
+          "char": "🂹",
+          "label": "Nove de Copas"
+        },
+        {
+          "char": "🂺",
+          "label": "Dez de Copas"
+        },
+        {
+          "char": "🂻",
+          "label": "Valete de Copas"
+        },
+        {
+          "char": "🂽",
+          "label": "Dama de Copas"
+        },
+        {
+          "char": "🂾",
+          "label": "Rei de Copas"
+        },
+        {
+          "char": "🃁",
+          "label": "Ás de Ouros"
+        },
+        {
+          "char": "🃂",
+          "label": "Dois de Ouros"
+        },
+        {
+          "char": "🃃",
+          "label": "Três de Ouros"
+        },
+        {
+          "char": "🃄",
+          "label": "Quatro de Ouros"
+        },
+        {
+          "char": "🃅",
+          "label": "Cinco de Ouros"
+        },
+        {
+          "char": "🃆",
+          "label": "Seis de Ouros"
+        },
+        {
+          "char": "🃇",
+          "label": "Sete de Ouros"
+        },
+        {
+          "char": "🃈",
+          "label": "Oito de Ouros"
+        },
+        {
+          "char": "🃉",
+          "label": "Nove de Ouros"
+        },
+        {
+          "char": "🃊",
+          "label": "Dez de Ouros"
+        },
+        {
+          "char": "🃋",
+          "label": "Valete de Ouros"
+        },
+        {
+          "char": "🃍",
+          "label": "Dama de Ouros"
+        },
+        {
+          "char": "🃎",
+          "label": "Rei de Ouros"
+        },
+        {
+          "char": "🃑",
+          "label": "Ás de Paus"
+        },
+        {
+          "char": "🃒",
+          "label": "Dois de Paus"
+        },
+        {
+          "char": "🃓",
+          "label": "Três de Paus"
+        },
+        {
+          "char": "🃔",
+          "label": "Quatro de Paus"
+        },
+        {
+          "char": "🃕",
+          "label": "Cinco de Paus"
+        },
+        {
+          "char": "🃖",
+          "label": "Seis de Paus"
+        },
+        {
+          "char": "🃗",
+          "label": "Sete de Paus"
+        },
+        {
+          "char": "🃘",
+          "label": "Oito de Paus"
+        },
+        {
+          "char": "🃙",
+          "label": "Nove de Paus"
+        },
+        {
+          "char": "🃚",
+          "label": "Dez de Paus"
+        },
+        {
+          "char": "🃛",
+          "label": "Valete de Paus"
+        },
+        {
+          "char": "🃝",
+          "label": "Dama de Paus"
+        },
+        {
+          "char": "🃞",
+          "label": "Rei de Paus"
+        }
+      ]
+    },
+    {
+      "id": "tarot-knights-white-joker",
+      "label": "Cavaleiros e coringa",
+      "h2": "Cavaleiros do tarô e o coringa branco",
+      "intro": "Os baralhos de tarô têm um cavaleiro entre o valete e a dama. O Unicode tem um cavaleiro por naipe, além de um coringa branco.",
+      "symbols": [
+        {
+          "char": "🂬",
+          "label": "Cavaleiro de Espadas"
+        },
+        {
+          "char": "🂼",
+          "label": "Cavaleiro de Copas"
+        },
+        {
+          "char": "🃌",
+          "label": "Cavaleiro de Ouros"
+        },
+        {
+          "char": "🃜",
+          "label": "Cavaleiro de Paus"
+        },
+        {
+          "char": "🃟",
+          "label": "Coringa Branco"
+        }
+      ]
+    },
+    {
+      "id": "tarot-trumps-red-joker",
+      "label": "Trunfos do Tarô",
+      "h2": "Trunfos do Tarô e o Coringa Vermelho",
+      "intro": "Os 21 trunfos numerados e o Louco do tarô francês, além do coringa vermelho. As fontes nativas do Android não têm desenho para estas 23 cartas (verificado nos arquivos de fonte que o Android traz), então a maioria dos celulares Android mostra um quadrado vazio. O caractere copiado continua correto e aparece em qualquer aparelho cujas fontes o incluam.",
+      "symbols": [
+        {
+          "char": "🃠",
+          "label": "Louco (0)"
+        },
+        {
+          "char": "🃡",
+          "label": "I"
+        },
+        {
+          "char": "🃢",
+          "label": "II"
+        },
+        {
+          "char": "🃣",
+          "label": "III"
+        },
+        {
+          "char": "🃤",
+          "label": "IV"
+        },
+        {
+          "char": "🃥",
+          "label": "V"
+        },
+        {
+          "char": "🃦",
+          "label": "VI"
+        },
+        {
+          "char": "🃧",
+          "label": "VII"
+        },
+        {
+          "char": "🃨",
+          "label": "VIII"
+        },
+        {
+          "char": "🃩",
+          "label": "IX"
+        },
+        {
+          "char": "🃪",
+          "label": "X"
+        },
+        {
+          "char": "🃫",
+          "label": "XI"
+        },
+        {
+          "char": "🃬",
+          "label": "XII"
+        },
+        {
+          "char": "🃭",
+          "label": "XIII"
+        },
+        {
+          "char": "🃮",
+          "label": "XIV"
+        },
+        {
+          "char": "🃯",
+          "label": "XV"
+        },
+        {
+          "char": "🃰",
+          "label": "XVI"
+        },
+        {
+          "char": "🃱",
+          "label": "XVII"
+        },
+        {
+          "char": "🃲",
+          "label": "XVIII"
+        },
+        {
+          "char": "🃳",
+          "label": "XIX"
+        },
+        {
+          "char": "🃴",
+          "label": "XX"
+        },
+        {
+          "char": "🃵",
+          "label": "XXI"
+        },
+        {
+          "char": "🂿",
+          "label": "Coringa Vermelho"
+        }
+      ]
     }
   ],
   "related": [

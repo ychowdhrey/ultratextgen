@@ -225,11 +225,11 @@
         },
         {
           "char": "𝄻",
-          "label": "İkilik sus"
+          "label": "Birlik sus"
         },
         {
           "char": "𝄼",
-          "label": "Dörtlük sus"
+          "label": "İkilik sus"
         }
       ]
     },
@@ -350,6 +350,354 @@
         {
           "char": "꒰♬꒱",
           "label": "Parantezli nota"
+        }
+      ]
+    },
+    {
+      "id": "barlines-repeats-segno-coda",
+      "label": "Ölçü çizgileri ve tekrarlar",
+      "h2": "Ölçü Çizgileri, Tekrarlar, Segno ve Coda",
+      "intro": "Çalarken nereye gideceğinizi gösteren işaretler: kesikli ve kısa ölçü çizgileri, tekrar noktaları, segno ve coda, D.C. ve D.S. ile ölçü tekrar işaretleri. Android ve Windows bu bölümdeki ve sonraki üç bölümdeki tüm semboller için bir yazı tipi içerir; iPhone ve Mac'te ise Apple'ın sembol yazı tipine bağlıdırlar ve bunu henüz test edemedik, bu yüzden bazıları orada boş kutu olarak görünebilir.",
+      "symbols": [
+        {
+          "char": "𝄄",
+          "label": "Kesikli ölçü çizgisi"
+        },
+        {
+          "char": "𝄅",
+          "label": "Kısa ölçü çizgisi"
+        },
+        {
+          "char": "𝄈",
+          "label": "Tekrar noktaları"
+        },
+        {
+          "char": "𝄉",
+          "label": "Dal segno (D.S.)"
+        },
+        {
+          "char": "𝄊",
+          "label": "Da capo (D.C.)"
+        },
+        {
+          "char": "𝄋",
+          "label": "Segno işareti"
+        },
+        {
+          "char": "𝄌",
+          "label": "Coda işareti"
+        },
+        {
+          "char": "𝄍",
+          "label": "Ölçü tekrarı 1"
+        },
+        {
+          "char": "𝄎",
+          "label": "Ölçü tekrarı 2"
+        },
+        {
+          "char": "𝄏",
+          "label": "Ölçü tekrarı 3"
+        }
+      ]
+    },
+    {
+      "id": "clefs-staff-time-signatures",
+      "label": "Anahtarlar ve ölçü",
+      "h2": "Oktav Anahtarları, Dizekler ve Ölçü İşaretleri",
+      "intro": "Bir oktav aktarmak için üstünde ya da altında küçük 8 olan sol ve fa anahtarları, vurmalı çalgı anahtarları, bir ile altı çizgi arası dizekler, 4/4 ölçünün C işareti ve alla breve'nin kesik C'si, ayrıca çeyrek sesler için kullanılan oklu bemol ve natürel işaretleri.",
+      "symbols": [
+        {
+          "char": "𝄖",
+          "label": "1 çizgili dizek"
+        },
+        {
+          "char": "𝄗",
+          "label": "2 çizgili dizek"
+        },
+        {
+          "char": "𝄘",
+          "label": "3 çizgili dizek"
+        },
+        {
+          "char": "𝄙",
+          "label": "4 çizgili dizek"
+        },
+        {
+          "char": "𝄚",
+          "label": "5 çizgili dizek (porte)"
+        },
+        {
+          "char": "𝄛",
+          "label": "6 çizgili dizek"
+        },
+        {
+          "char": "𝄟",
+          "label": "Sol anahtarı 8va (bir oktav tiz)"
+        },
+        {
+          "char": "𝄠",
+          "label": "Sol anahtarı 8vb (bir oktav pes)"
+        },
+        {
+          "char": "𝄣",
+          "label": "Fa anahtarı 8va (bir oktav tiz)"
+        },
+        {
+          "char": "𝄤",
+          "label": "Fa anahtarı 8vb (bir oktav pes)"
+        },
+        {
+          "char": "𝄥",
+          "label": "Vurmalı çalgı anahtarı 1"
+        },
+        {
+          "char": "𝄦",
+          "label": "Vurmalı çalgı anahtarı 2"
+        },
+        {
+          "char": "𝄴",
+          "label": "4/4 ölçü (C)"
+        },
+        {
+          "char": "𝄵",
+          "label": "Alla breve (kesik C)"
+        },
+        {
+          "char": "𝄬",
+          "label": "Yukarı oklu bemol"
+        },
+        {
+          "char": "𝄭",
+          "label": "Aşağı oklu bemol"
+        },
+        {
+          "char": "𝄮",
+          "label": "Yukarı oklu natürel"
+        },
+        {
+          "char": "𝄯",
+          "label": "Aşağı oklu natürel"
+        },
+        {
+          "char": "𝄳",
+          "label": "Çeyrek ton bemol"
+        }
+      ]
+    },
+    {
+      "id": "notes-grace-notes-rests",
+      "label": "Notalar ve suslar",
+      "h2": "Nota Değerleri, Çarpmalar ve Suslar",
+      "intro": "İki birlikten yüz yirmi sekizliğe kadar tek karakterlik notalar, iki çarpma notası ve yukarıda olmayan suslar; çok ölçülü suslar ve eski mensural notasyonun kare susları da dahil.",
+      "symbols": [
+        {
+          "char": "𝅜",
+          "label": "İki birlik nota (brevis)"
+        },
+        {
+          "char": "𝅝",
+          "label": "Birlik nota"
+        },
+        {
+          "char": "\ud834\udd5e",
+          "label": "İkilik nota"
+        },
+        {
+          "char": "\ud834\udd5f",
+          "label": "Dörtlük nota"
+        },
+        {
+          "char": "\ud834\udd60",
+          "label": "Sekizlik nota"
+        },
+        {
+          "char": "\ud834\udd61",
+          "label": "On altılık nota"
+        },
+        {
+          "char": "\ud834\udd62",
+          "label": "Otuz ikilik nota"
+        },
+        {
+          "char": "\ud834\udd63",
+          "label": "Altmış dörtlük nota"
+        },
+        {
+          "char": "\ud834\udd64",
+          "label": "Yüz yirmi sekizlik nota"
+        },
+        {
+          "char": "𝆔",
+          "label": "Kısa çarpma (çizgili)"
+        },
+        {
+          "char": "𝆕",
+          "label": "Uzun çarpma (çizgisiz)"
+        },
+        {
+          "char": "𝄩",
+          "label": "Çok ölçülü sus 1"
+        },
+        {
+          "char": "𝄺",
+          "label": "Çok ölçülü sus 2"
+        },
+        {
+          "char": "𝄽",
+          "label": "Dörtlük sus"
+        },
+        {
+          "char": "𝅀",
+          "label": "Otuz ikilik sus"
+        },
+        {
+          "char": "𝅁",
+          "label": "Altmış dörtlük sus"
+        },
+        {
+          "char": "𝅂",
+          "label": "Yüz yirmi sekizlik sus"
+        },
+        {
+          "char": "𝇁",
+          "label": "Longa perfecta susu"
+        },
+        {
+          "char": "𝇂",
+          "label": "Longa imperfecta susu"
+        },
+        {
+          "char": "𝇃",
+          "label": "Brevis susu"
+        },
+        {
+          "char": "𝇄",
+          "label": "Semibrevis susu"
+        },
+        {
+          "char": "𝇅",
+          "label": "Minima susu"
+        },
+        {
+          "char": "𝇆",
+          "label": "Semiminima susu"
+        }
+      ]
+    },
+    {
+      "id": "noteheads-mezzo-pedal",
+      "label": "Nota başları ve pedal",
+      "h2": "Nota Başları, Mezzo ve Piyano Pedalı",
+      "intro": "Davul yazımı, hayalet notalar ve şekilli nota (shape note) sistemi için beyaz ve siyah nota başı biçimleri, ayrıca mezzo dinamik harfi ve piyano pedal işaretleri: pedala bas, pedalı bırak ve yarım pedal.",
+      "symbols": [
+        {
+          "char": "𝅃",
+          "label": "X nota başı"
+        },
+        {
+          "char": "𝅄",
+          "label": "Artı nota başı"
+        },
+        {
+          "char": "𝅅",
+          "label": "Daire içinde X nota başı"
+        },
+        {
+          "char": "𝅆",
+          "label": "Kare nota başı, beyaz"
+        },
+        {
+          "char": "𝅇",
+          "label": "Kare nota başı, siyah"
+        },
+        {
+          "char": "𝅈",
+          "label": "Üçgen nota başı (yukarı), beyaz"
+        },
+        {
+          "char": "𝅉",
+          "label": "Üçgen nota başı (yukarı), siyah"
+        },
+        {
+          "char": "𝅊",
+          "label": "Üçgen nota başı (sola), beyaz"
+        },
+        {
+          "char": "𝅋",
+          "label": "Üçgen nota başı (sola), siyah"
+        },
+        {
+          "char": "𝅌",
+          "label": "Üçgen nota başı (sağa), beyaz"
+        },
+        {
+          "char": "𝅍",
+          "label": "Üçgen nota başı (sağa), siyah"
+        },
+        {
+          "char": "𝅎",
+          "label": "Üçgen nota başı (aşağı), beyaz"
+        },
+        {
+          "char": "𝅏",
+          "label": "Üçgen nota başı (aşağı), siyah"
+        },
+        {
+          "char": "𝅐",
+          "label": "Üçgen nota başı (sağ yukarı), beyaz"
+        },
+        {
+          "char": "𝅑",
+          "label": "Üçgen nota başı (sağ yukarı), siyah"
+        },
+        {
+          "char": "𝅒",
+          "label": "Ay biçimli nota başı, beyaz"
+        },
+        {
+          "char": "𝅓",
+          "label": "Ay biçimli nota başı, siyah"
+        },
+        {
+          "char": "𝅔",
+          "label": "Yuvarlatılmış üçgen nota başı, beyaz"
+        },
+        {
+          "char": "𝅕",
+          "label": "Yuvarlatılmış üçgen nota başı, siyah"
+        },
+        {
+          "char": "𝅖",
+          "label": "Parantez içinde nota başı (hayalet nota)"
+        },
+        {
+          "char": "𝅗",
+          "label": "Boş nota başı"
+        },
+        {
+          "char": "𝅘",
+          "label": "Dolu nota başı"
+        },
+        {
+          "char": "𝅙",
+          "label": "Görünmez nota başı"
+        },
+        {
+          "char": "𝆐",
+          "label": "Mezzo (m)"
+        },
+        {
+          "char": "𝆮",
+          "label": "Pedala bas (Ped.)"
+        },
+        {
+          "char": "𝆯",
+          "label": "Pedalı bırak"
+        },
+        {
+          "char": "𝆰",
+          "label": "Yarım pedal"
         }
       ]
     }

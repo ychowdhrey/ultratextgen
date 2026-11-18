@@ -55,6 +55,22 @@
         { "char": "🔕", "label": "Bell with Slash (muted)" },
         { "char": "📣", "label": "Megaphone" }
       ]
+    },
+    {
+      "id": "computer-emoji",
+      "label": "Computer & Device Emojis",
+      "h2": "Computer & Device Emojis",
+      "intro": "Copy computer and device emojis: desktops, laptops, controllers, and peripherals for tech posts and bios.",
+      "symbols": [
+        { "char": "💻", "label": "Laptop" },
+        { "char": "🖥️", "label": "Desktop Computer" },
+        { "char": "⌨️", "label": "Keyboard" },
+        { "char": "🖱️", "label": "Computer Mouse" },
+        { "char": "🎮", "label": "Video Game Controller" },
+        { "char": "🕹️", "label": "Joystick" },
+        { "char": "🖨️", "label": "Printer" },
+        { "char": "💾", "label": "Floppy Disk" }
+      ]
     }
   ],
   "related": [

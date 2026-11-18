@@ -225,11 +225,11 @@
         },
         {
           "char": "𝄻",
-          "label": "Pauza półnutowa"
+          "label": "Pauza całonutowa"
         },
         {
           "char": "𝄼",
-          "label": "Pauza ćwierćnutowa"
+          "label": "Pauza półnutowa"
         }
       ]
     },
@@ -350,6 +350,354 @@
         {
           "char": "꒰♬꒱",
           "label": "Nuta w nawiasach"
+        }
+      ]
+    },
+    {
+      "id": "barlines-repeats-segno-coda",
+      "label": "Kreski taktowe i repetycje",
+      "h2": "Kreski taktowe, repetycje, segno i coda",
+      "intro": "Znaki, które mówią, gdzie grać dalej: kreskowane i krótkie kreski taktowe, kropki repetycji, segno i coda, D.C. i D.S. oraz znaki powtórzenia taktu. Android i Windows mają czcionkę dla wszystkich symboli z tej sekcji i trzech kolejnych; na iPhonie i Macu zależą od czcionki symboli Apple, której jeszcze nie mogliśmy przetestować, więc niektóre mogą się tam wyświetlać jako puste kwadraty.",
+      "symbols": [
+        {
+          "char": "𝄄",
+          "label": "Kreskowana kreska taktowa"
+        },
+        {
+          "char": "𝄅",
+          "label": "Krótka kreska taktowa"
+        },
+        {
+          "char": "𝄈",
+          "label": "Kropki repetycji"
+        },
+        {
+          "char": "𝄉",
+          "label": "Dal segno (D.S.)"
+        },
+        {
+          "char": "𝄊",
+          "label": "Da capo (D.C.)"
+        },
+        {
+          "char": "𝄋",
+          "label": "Znak segno"
+        },
+        {
+          "char": "𝄌",
+          "label": "Znak coda"
+        },
+        {
+          "char": "𝄍",
+          "label": "Powtórzenie taktu 1"
+        },
+        {
+          "char": "𝄎",
+          "label": "Powtórzenie taktu 2"
+        },
+        {
+          "char": "𝄏",
+          "label": "Powtórzenie taktu 3"
+        }
+      ]
+    },
+    {
+      "id": "clefs-staff-time-signatures",
+      "label": "Klucze i metrum",
+      "h2": "Klucze oktawowe, pięciolinie i oznaczenia metrum",
+      "intro": "Klucz wiolinowy i basowy z małą ósemką nad lub pod znakiem, oznaczającą przeniesienie o oktawę, klucze perkusyjne, systemy od jednej do sześciu linii, C metrum 4/4 i przekreślone C alla breve oraz bemole i kasowniki ze strzałką używane do ćwierćtonów.",
+      "symbols": [
+        {
+          "char": "𝄖",
+          "label": "System 1-liniowy"
+        },
+        {
+          "char": "𝄗",
+          "label": "System 2-liniowy"
+        },
+        {
+          "char": "𝄘",
+          "label": "System 3-liniowy"
+        },
+        {
+          "char": "𝄙",
+          "label": "System 4-liniowy"
+        },
+        {
+          "char": "𝄚",
+          "label": "Pięciolinia"
+        },
+        {
+          "char": "𝄛",
+          "label": "System 6-liniowy"
+        },
+        {
+          "char": "𝄟",
+          "label": "Klucz wiolinowy 8va (oktawa wyżej)"
+        },
+        {
+          "char": "𝄠",
+          "label": "Klucz wiolinowy 8vb (oktawa niżej)"
+        },
+        {
+          "char": "𝄣",
+          "label": "Klucz basowy 8va (oktawa wyżej)"
+        },
+        {
+          "char": "𝄤",
+          "label": "Klucz basowy 8vb (oktawa niżej)"
+        },
+        {
+          "char": "𝄥",
+          "label": "Klucz perkusyjny 1"
+        },
+        {
+          "char": "𝄦",
+          "label": "Klucz perkusyjny 2"
+        },
+        {
+          "char": "𝄴",
+          "label": "Metrum 4/4 (C)"
+        },
+        {
+          "char": "𝄵",
+          "label": "Alla breve (przekreślone C)"
+        },
+        {
+          "char": "𝄬",
+          "label": "Bemol ze strzałką w górę"
+        },
+        {
+          "char": "𝄭",
+          "label": "Bemol ze strzałką w dół"
+        },
+        {
+          "char": "𝄮",
+          "label": "Kasownik ze strzałką w górę"
+        },
+        {
+          "char": "𝄯",
+          "label": "Kasownik ze strzałką w dół"
+        },
+        {
+          "char": "𝄳",
+          "label": "Ćwierćtonowy bemol"
+        }
+      ]
+    },
+    {
+      "id": "notes-grace-notes-rests",
+      "label": "Nuty i pauzy",
+      "h2": "Wartości nut, przednutki i pauzy",
+      "intro": "Nuty jako pojedyncze znaki, od brevis do stodwudziestoósemki, dwie przednutki oraz pauzy, których brakuje wyżej, w tym pauzy wielotaktowe i kwadratowe pauzy dawnej notacji menzuralnej.",
+      "symbols": [
+        {
+          "char": "𝅜",
+          "label": "Brevis (podwójna cała nuta)"
+        },
+        {
+          "char": "𝅝",
+          "label": "Cała nuta"
+        },
+        {
+          "char": "\ud834\udd5e",
+          "label": "Półnuta"
+        },
+        {
+          "char": "\ud834\udd5f",
+          "label": "Ćwierćnuta"
+        },
+        {
+          "char": "\ud834\udd60",
+          "label": "Ósemka"
+        },
+        {
+          "char": "\ud834\udd61",
+          "label": "Szesnastka"
+        },
+        {
+          "char": "\ud834\udd62",
+          "label": "Trzydziestodwójka"
+        },
+        {
+          "char": "\ud834\udd63",
+          "label": "Sześćdziesięcioczwórka"
+        },
+        {
+          "char": "\ud834\udd64",
+          "label": "Stodwudziestoósemka"
+        },
+        {
+          "char": "𝆔",
+          "label": "Przednutka krótka (przekreślona)"
+        },
+        {
+          "char": "𝆕",
+          "label": "Przednutka długa (bez przekreślenia)"
+        },
+        {
+          "char": "𝄩",
+          "label": "Pauza wielotaktowa 1"
+        },
+        {
+          "char": "𝄺",
+          "label": "Pauza wielotaktowa 2"
+        },
+        {
+          "char": "𝄽",
+          "label": "Pauza ćwierćnutowa"
+        },
+        {
+          "char": "𝅀",
+          "label": "Pauza trzydziestodwójkowa"
+        },
+        {
+          "char": "𝅁",
+          "label": "Pauza sześćdziesięcioczwórkowa"
+        },
+        {
+          "char": "𝅂",
+          "label": "Pauza stodwudziestoósemkowa"
+        },
+        {
+          "char": "𝇁",
+          "label": "Pauza longi doskonałej"
+        },
+        {
+          "char": "𝇂",
+          "label": "Pauza longi niedoskonałej"
+        },
+        {
+          "char": "𝇃",
+          "label": "Pauza brevis"
+        },
+        {
+          "char": "𝇄",
+          "label": "Pauza semibrevis"
+        },
+        {
+          "char": "𝇅",
+          "label": "Pauza minimy"
+        },
+        {
+          "char": "𝇆",
+          "label": "Pauza semiminimy"
+        }
+      ]
+    },
+    {
+      "id": "noteheads-mezzo-pedal",
+      "label": "Główki nut i pedał",
+      "h2": "Główki nut, mezzo i pedał fortepianu",
+      "intro": "Kształty główek nut do zapisu perkusji, nut-duchów i notacji kształtowej (shape notes), białe i czarne, a także litera dynamiki mezzo i znaki pedału fortepianu: wciśnięcie, zwolnienie i półpedał.",
+      "symbols": [
+        {
+          "char": "𝅃",
+          "label": "Główka nuty w kształcie X"
+        },
+        {
+          "char": "𝅄",
+          "label": "Główka nuty w kształcie plusa"
+        },
+        {
+          "char": "𝅅",
+          "label": "Główka nuty X w kółku"
+        },
+        {
+          "char": "𝅆",
+          "label": "Kwadratowa główka nuty, biała"
+        },
+        {
+          "char": "𝅇",
+          "label": "Kwadratowa główka nuty, czarna"
+        },
+        {
+          "char": "𝅈",
+          "label": "Trójkątna główka nuty (w górę), biała"
+        },
+        {
+          "char": "𝅉",
+          "label": "Trójkątna główka nuty (w górę), czarna"
+        },
+        {
+          "char": "𝅊",
+          "label": "Trójkątna główka nuty (w lewo), biała"
+        },
+        {
+          "char": "𝅋",
+          "label": "Trójkątna główka nuty (w lewo), czarna"
+        },
+        {
+          "char": "𝅌",
+          "label": "Trójkątna główka nuty (w prawo), biała"
+        },
+        {
+          "char": "𝅍",
+          "label": "Trójkątna główka nuty (w prawo), czarna"
+        },
+        {
+          "char": "𝅎",
+          "label": "Trójkątna główka nuty (w dół), biała"
+        },
+        {
+          "char": "𝅏",
+          "label": "Trójkątna główka nuty (w dół), czarna"
+        },
+        {
+          "char": "𝅐",
+          "label": "Trójkątna główka nuty (w górę i w prawo), biała"
+        },
+        {
+          "char": "𝅑",
+          "label": "Trójkątna główka nuty (w górę i w prawo), czarna"
+        },
+        {
+          "char": "𝅒",
+          "label": "Główka nuty w kształcie półksiężyca, biała"
+        },
+        {
+          "char": "𝅓",
+          "label": "Główka nuty w kształcie półksiężyca, czarna"
+        },
+        {
+          "char": "𝅔",
+          "label": "Zaokrąglona trójkątna główka nuty, biała"
+        },
+        {
+          "char": "𝅕",
+          "label": "Zaokrąglona trójkątna główka nuty, czarna"
+        },
+        {
+          "char": "𝅖",
+          "label": "Główka nuty w nawiasie (nuta-duch)"
+        },
+        {
+          "char": "𝅗",
+          "label": "Pusta główka nuty"
+        },
+        {
+          "char": "𝅘",
+          "label": "Pełna główka nuty"
+        },
+        {
+          "char": "𝅙",
+          "label": "Niewidoczna główka nuty"
+        },
+        {
+          "char": "𝆐",
+          "label": "Mezzo (m)"
+        },
+        {
+          "char": "𝆮",
+          "label": "Wciśnięcie pedału (Ped.)"
+        },
+        {
+          "char": "𝆯",
+          "label": "Zwolnienie pedału"
+        },
+        {
+          "char": "𝆰",
+          "label": "Półpedał"
         }
       ]
     }
