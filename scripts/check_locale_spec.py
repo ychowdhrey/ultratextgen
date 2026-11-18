@@ -76,6 +76,10 @@ def rd(path):
 
 def _registry():
     # Loaded once per tree; an unreadable registry is UNKNOWN for any spec that needs it.
+    # A cache set from outside with no tree (the canonical_intents tests inject a
+    # fixture registry that way) is honoured as is.
+    if hasattr(_registry, "cache") and getattr(_registry, "tree", None) in (None, TREE):
+        return _registry.cache
     if getattr(_registry, "tree", None) is not TREE:
         _registry.tree = TREE
         try:
