@@ -1,0 +1,242 @@
+{
+  "slug": "seonmul-imotikon",
+  "title": "선물 이모티콘 🎁 복사: 선물 상자, 리본, 깜짝 선물 조합 | UltraTextGen",
+  "meta_description": "선물 이모티콘 🎁 을 눌러서 복사하세요. 선물 상자와 리본 🎀 💝, 깜짝 축하 이모지 🎉 🥳 ✨, 생일과 감사 선물에 바로 쓰는 조합까지 모았습니다.",
+  "canonical": "https://ultratextgen.com/ko/library/seonmul-imotikon/",
+  "breadcrumb": "선물 이모티콘",
+  "hero_h1": "선물 이모티콘",
+  "hero_tagline": "선물 상자, 리본과 포장 이모지, 선물과 함께 보내는 축하 이모지. 누르면 바로 복사됩니다.",
+  "intro": "🎁 은 어떤 선물에든 쓰는 이모지입니다. 생일 선물, 이유 없이 주는 깜짝 선물, 고마움을 전하는 선물처럼 특정 명절에 묶이지 않는 모든 선물에 어울립니다. 이 페이지에는 일 년 내내 쓰는 선물 이모티콘을 모았습니다. 선물 상자와 리본, 포장 이모지, 선물과 함께 붙는 깜짝 축하 이모지, 어떤 날에도 어울리는 파티 이모지입니다. 크리스마스 게시물을 꾸미려면 아래에 연결한 크리스마스 특수문자 페이지의 산타와 선물 모음이 같은 🎁 의 명절 버전입니다. 이 페이지는 평소에 어떤 날이든 쓰는 쪽입니다.",
+  "date_published": "2026-11-18",
+  "date_modified": "2026-11-18",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "gift-wrapping",
+      "label": "선물·포장",
+      "h2": "선물과 포장 이모지",
+      "intro": "선물 그 자체와, 선물을 꾸며 주는 리본, 쇼핑백, 봉투 이모지.",
+      "symbols": [
+        {
+          "char": "🎁",
+          "label": "선물 상자"
+        },
+        {
+          "char": "🎀",
+          "label": "리본"
+        },
+        {
+          "char": "💝",
+          "label": "리본 달린 하트"
+        },
+        {
+          "char": "🛍️",
+          "label": "쇼핑백"
+        },
+        {
+          "char": "🧧",
+          "label": "빨간 봉투"
+        },
+        {
+          "char": "📦",
+          "label": "택배 상자"
+        }
+      ]
+    },
+    {
+      "id": "celebration-surprise",
+      "label": "축하·깜짝",
+      "h2": "깜짝 선물과 축하 이모지",
+      "intro": "선물을 풀어 볼 때 같이 쓰는 반응 이모지. 폭죽, 색종이, 들뜬 얼굴.",
+      "symbols": [
+        {
+          "char": "🎉",
+          "label": "폭죽"
+        },
+        {
+          "char": "🎊",
+          "label": "색종이 공"
+        },
+        {
+          "char": "🎈",
+          "label": "풍선"
+        },
+        {
+          "char": "🥳",
+          "label": "파티 얼굴"
+        },
+        {
+          "char": "✨",
+          "label": "반짝임"
+        },
+        {
+          "char": "🪅",
+          "label": "피냐타"
+        },
+        {
+          "char": "🤩",
+          "label": "반한 얼굴"
+        }
+      ]
+    },
+    {
+      "id": "occasion-neutral",
+      "label": "어떤 날이든",
+      "h2": "어떤 날에도 어울리는 파티 이모지",
+      "intro": "명절과 상관없이 생일, 승진, 선물할 핑계가 되는 모든 날에 맞는 케이크, 건배, 음악 이모지.",
+      "symbols": [
+        {
+          "char": "🎂",
+          "label": "생일 케이크"
+        },
+        {
+          "char": "🧁",
+          "label": "컵케이크"
+        },
+        {
+          "char": "🕯️",
+          "label": "촛불"
+        },
+        {
+          "char": "🥂",
+          "label": "건배"
+        },
+        {
+          "char": "🍾",
+          "label": "샴페인"
+        },
+        {
+          "char": "🪩",
+          "label": "미러볼"
+        },
+        {
+          "char": "🎶",
+          "label": "음표"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "조합",
+    "h2": "선물 이모티콘 조합",
+    "intro": "바로 쓰는 선물 조합. 한 번 눌러 통째로 복사한 뒤 생일 축하 글, 카드, 감사 메시지에 붙여넣으세요."
+  },
+  "collection_container_id": "giftSetsContainer",
+  "collections": [
+    {
+      "name": "생일 선물",
+      "flags": [
+        "🎁",
+        "🎂",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "그냥 주고 싶어서",
+      "flags": [
+        "🎁",
+        "💝",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "깜짝 공개",
+      "flags": [
+        "📦",
+        "🎀",
+        "🎊"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "감사 선물",
+      "flags": [
+        "🎁",
+        "💌",
+        "🙏"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "용돈 선물",
+      "flags": [
+        "🧧",
+        "💸",
+        "🎁"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "포장과 리본",
+      "flags": [
+        "🎀",
+        "📦",
+        "🎁"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/christmas-giho/",
+      "title": "크리스마스 특수문자",
+      "desc": "명절용 선물 이모지와 산타, 트리, 성탄 인사 조합."
+    },
+    {
+      "href": "/ko/library/saengil-chukha-imotikon/",
+      "title": "생일 축하 이모티콘",
+      "desc": "선물과 함께 보내는 케이크, 풍선, 폭죽, 건배 이모지."
+    }
+  ],
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/gift-emoji/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/seonmul-imotikon/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-regalo/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/liwu-emoji/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/emodzi-podarok/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/emoji-prezent/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/cadeau-emoji/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/purezento-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-regalo/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/geschenk-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/gift-emoji/"
+    }
+  ]
+}

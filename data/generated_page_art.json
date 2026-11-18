@@ -572,6 +572,32 @@
       ],
       "kicker": "LIB",
       "added": "2026-11-14"
+    },
+    "ko-library-seonmul-imotikon": {
+      "title": "선물 이모티콘",
+      "sub": "🎁 선물 상자, 리본, 깜짝 선물 조합.",
+      "glyphs": [
+        "🎁",
+        "🎀",
+        "💝",
+        "🛍️",
+        "🧧"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-gyeolhon-imotikon": {
+      "title": "결혼 이모티콘",
+      "sub": "반지, 신랑 신부, 결혼기념일 조합.",
+      "glyphs": [
+        "💍",
+        "💎",
+        "💒",
+        "⛪",
+        "💌"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
     }
   }
 }
