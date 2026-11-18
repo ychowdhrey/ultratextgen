@@ -34,7 +34,7 @@
         { "char": "°", "label": "Znak Stopnia" },
         { "char": "℃", "label": "Stopień Celsjusza" },
         { "char": "℉", "label": "Stopień Fahrenheita" },
-        { "char": "K", "label": "Znak Kelwina" }
+        { "char": "\u212a", "label": "Znak Kelwina" }
       ]
     },
     {
@@ -48,7 +48,9 @@
         { "char": "∢", "label": "Kąt przestrzenny" },
         { "char": "∟", "label": "Kąt prosty" },
         { "char": "⊾", "label": "Kąt prosty z łukiem" },
-        { "char": "⊿", "label": "Trójkąt prostokątny" }
+        { "char": "⊿", "label": "Trójkąt prostokątny" },
+        { "char": "⦝", "label": "Zmierzony kąt prosty z kropką" },
+        { "char": "⟂", "label": "Prostopadły (U+27C2)" }
       ]
     },
     {
@@ -60,7 +62,34 @@
         { "char": "′", "label": "Prim (minuta)" },
         { "char": "″", "label": "Podwójny prim (sekunda)" },
         { "char": "‴", "label": "Potrójny prim" },
-        { "char": "⁗", "label": "Poczwórny prim" }
+        { "char": "⁗", "label": "Poczwórny prim" },
+        { "char": "‵", "label": "Prim odwrócony" },
+        { "char": "‶", "label": "Podwójny prim odwrócony" },
+        { "char": "‷", "label": "Potrójny prim odwrócony" }
+      ]
+    },
+    {
+      "id": "geometria-pomiary",
+      "label": "Geometria",
+      "h2": "Geometria i pomiary",
+      "intro": "Znaki okręgu i łuku używane razem z kątami i stopniami.",
+      "symbols": [
+        { "char": "⌀", "label": "Znak Średnicy" },
+        { "char": "⌒", "label": "Łuk" },
+        { "char": "⌓", "label": "Odcinek" },
+        { "char": "⊙", "label": "Okrąg z operatorem kropki" },
+        { "char": "⦿", "label": "Punkt w okręgu" },
+        { "char": "∅", "label": "Zbiór Pusty" }
+      ]
+    },
+    {
+      "id": "similar-looking",
+      "label": "Nie pomyl z",
+      "h2": "Podobnie wyglądające znaki",
+      "symbols": [
+        { "char": "º", "label": "Wskaźnik liczebnika porządkowego (U+00BA)" },
+        { "char": "∘", "label": "Operator złożenia (U+2218)" },
+        { "char": "˚", "label": "Kółko u góry (U+02DA)" }
       ]
     }
   ],
