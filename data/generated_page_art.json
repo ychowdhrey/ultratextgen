@@ -572,6 +572,110 @@
       ],
       "kicker": "LIB",
       "added": "2026-11-14"
+    },
+    "ko-library-merong-imotikon": {
+      "title": "메롱 이모티콘",
+      "sub": "혀 내민 얼굴, 장난 조합, 메롱 얼굴 문자.",
+      "glyphs": [
+        "😛",
+        "😜",
+        "😝",
+        "😋",
+        "🤪"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-roket-imotikon": {
+      "title": "로켓 이모티콘",
+      "sub": "가즈아, 떡상, 출시 축하 조합.",
+      "glyphs": [
+        "🚀",
+        "🛸",
+        "🛰️",
+        "🎯",
+        "⏱️"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-yuryeong-imotikon": {
+      "title": "유령 이모티콘",
+      "sub": "할로윈, 잠수 이별, 유령 얼굴 문자.",
+      "glyphs": [
+        "👻",
+        "👤",
+        "🌫️",
+        "💀",
+        "☠️"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-geunyuk-imotikon": {
+      "title": "근육 이모티콘",
+      "sub": "피부색별 알통, 헬스·화이팅 조합.",
+      "glyphs": [
+        "💪",
+        "💪🏻",
+        "💪🏼",
+        "💪🏽",
+        "💪🏾"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-hakgyo-imotikon": {
+      "title": "학교 이모티콘",
+      "sub": "학용품, 졸업, 공부 조합.",
+      "glyphs": [
+        "📚",
+        "📖",
+        "📓",
+        "📒",
+        "📝"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-yeohaeng-imotikon": {
+      "title": "여행 이모티콘",
+      "sub": "비행기, 바다, 지도, 휴가 조합.",
+      "glyphs": [
+        "✈️",
+        "🛫",
+        "🛬",
+        "🚆",
+        "🚗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-ujeong-imotikon": {
+      "title": "우정 이모티콘",
+      "sub": "포옹, 단짝, 우정 하트 조합.",
+      "glyphs": [
+        "🫂",
+        "🤗",
+        "🫶",
+        "🤝",
+        "🤞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-yeonghwa-imotikon": {
+      "title": "영화 이모티콘",
+      "sub": "팝콘, 클래퍼보드, 집콕 영화 조합.",
+      "glyphs": [
+        "🍿",
+        "🎬",
+        "🎥",
+        "📽️",
+        "🎞️"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
     }
   }
 }
