@@ -116,6 +116,32 @@ def spec_sentences(data):
     return out
 
 
+def page_rel_of(spec):
+    lang = (spec.get("lang") or "en").lower()
+    lane = "symbol" if spec.get("page_type") == "symbol" else "library"
+    prefix = "" if lang == "en" else f"{lang}/"
+    return f"{prefix}{lane}/{spec.get('slug')}/index.html"
+
+
+def page_sentences_at(merge_base, spec):
+    """Normalised sentences of a spec's page as it stood at the merge base (its
+    visible text, tags stripped). Empty when the page did not exist there."""
+    blob = git(["show", f"{merge_base}:{page_rel_of(spec)}"])
+    if blob.returncode != 0:
+        return set()
+    import html as _html
+    # the meta description is page copy too (a spec's meta_description lands there)
+    metas = re.findall(r'<meta (?:name|property)="(?:description|og:description)" content="([^"]*)"', blob.stdout)
+    text = re.sub(r"<script\b[\s\S]*?</script>|<style\b[\s\S]*?</style>", " ", blob.stdout)
+    text += "\n\n" + "\n\n".join(metas)
+    text = _html.unescape(re.sub(r"<[^>]+>", " ", text))
+    out = set()
+    for chunk in re.split(r"\n\s*\n|\s{3,}", text):
+        for s in sentences(re.sub(r"\s+", " ", chunk)):
+            out.add(normalise(s))
+    return out
+
+
 def load_spec(path_or_text, is_text=False):
     try:
         raw = path_or_text if is_text else open(
@@ -213,10 +239,20 @@ def classify(pairs, index, limit=DEFAULT_REUSE_LIMIT):
     not carry it at the merge base. A brand-new spec (before is None) carries
     nothing at the merge base, so every reused sentence in it is introduced —
     which is the point: a new spec pasted from an old one is exactly the defect.
+
+    One exception, added 2026-11-18. A pair may carry a fourth element: the
+    sentences its page already showed at the merge base. It is passed only for a
+    new spec marked `hand_built_page`, i.e. one written down FROM a live page
+    rather than authored to generate one. A sentence that page already carried
+    reaches no reader for the first time, so it is pre-existing (reported, not
+    failed); a sentence the backfill adds that the page did not carry is still
+    introduced.
     """
     introduced, pre_existing = [], []
-    for rel, now, before in pairs:
-        had = set(spec_sentences(before)) if before else set()
+    for pair in pairs:
+        rel, now, before = pair[:3]
+        page_had = pair[3] if len(pair) > 3 and pair[3] else set()
+        had = (set(spec_sentences(before)) if before else set()) | page_had
         for norm, (field, original) in spec_sentences(now).items():
             others = index.get(norm, set()) - {rel}
             if len(others) < limit:
@@ -275,7 +311,10 @@ def run_gate(base, limit):
             if before_blob.returncode == 0
             else None
         )
-        pairs.append((rel, now, before))
+        page_had = set()
+        if before is None and now.get("hand_built_page"):
+            page_had = page_sentences_at(merge_base, now)
+        pairs.append((rel, now, before, page_had))
 
     introduced, pre_existing = classify(pairs, index, limit)
 

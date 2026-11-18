@@ -1,0 +1,181 @@
+{
+  "slug": "tiktok-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "TikTok Symbols — Copy & Paste for Bios & Captions",
+  "meta_description": "Copy and paste TikTok symbols for bios, captions, comments, and usernames — trending characters, dividers, and aesthetic decorations. Click to copy.",
+  "canonical": "https://ultratextgen.com/library/tiktok-symbols/",
+  "breadcrumb": "TikTok Symbols",
+  "hero_h1": "TikTok Symbols",
+  "hero_tagline": "Copy and paste special characters for TikTok bios, captions, and comments. Trending aesthetic characters, dividers, and fire symbols for your TikTok profile. Click any symbol to copy it instantly.",
+  "intro": "TikTok supports Unicode symbols in bios, video captions, and comments. Use these characters to stand out: structure your bio with dividers, add aesthetic sparkles to captions, or punch up your comments with trending symbols. All characters are verified to display on TikTok for both iOS and Android.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/tiktok-symbols/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/tiktok-symbolen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/tiktok-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "tiktok-bio-symbols",
+      "label": "TikTok Bio Symbols",
+      "h2": "TikTok Bio Symbols",
+      "intro": "Characters that look great in TikTok bios for structuring and styling your profile.",
+      "symbols": [
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "💫", "label": "Dizzy Star" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "♡", "label": "White Heart Suit" },
+        { "char": "ꨄ", "label": "Cham Letter Final K" },
+        { "char": "𓂃", "label": "Egyptian Eyebrow Hieroglyph" },
+        { "char": "𓆉", "label": "Egyptian Turtle Hieroglyph" },
+        { "char": "ི", "label": "Tibetan Vowel Sign I" }
+      ]
+    },
+    {
+      "id": "caption-comment-symbols",
+      "label": "Caption & Comment Symbols",
+      "h2": "Caption & Comment Symbols",
+      "intro": "Symbols that add energy and emphasis to TikTok video captions and comments.",
+      "symbols": [
+        { "char": "‼️", "label": "Double Exclamation Mark" },
+        { "char": "⁉️", "label": "Exclamation Question Mark" },
+        { "char": "‼", "label": "Double Exclamation Mark" },
+        { "char": "★", "label": "Black Star" },
+        { "char": "✦", "label": "Four-Pointed Star" },
+        { "char": "→", "label": "Rightwards Arrow" },
+        { "char": "↓", "label": "Downwards Arrow" }
+      ]
+    },
+    {
+      "id": "trending-aesthetic-characters",
+      "label": "Trending Aesthetic Characters",
+      "h2": "Trending Aesthetic Characters",
+      "intro": "Aesthetic Unicode characters trending on TikTok profiles and fyp content.",
+      "symbols": [
+        { "char": "⊹", "label": "Hermitian Conjugate Matrix" },
+        { "char": "₊", "label": "Subscript Plus" },
+        { "char": "˚", "label": "Ring Above" },
+        { "char": "‧₊˚", "label": "Aesthetic Combo" },
+        { "char": "✧", "label": "White Star" },
+        { "char": "꒰ ྀི", "label": "Kawaii Open" },
+        { "char": "ᥫ᭡", "label": "Lisu Aesthetic Symbol" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "⋆", "label": "Star Operator" },
+        { "char": "࿐", "label": "Tibetan Trailing Mark" }
+      ]
+    },
+    {
+      "id": "fire-energy-symbols",
+      "label": "Fire & Energy Symbols",
+      "h2": "Fire & Energy Symbols for TikTok",
+      "intro": "High-energy symbols for hype, motivation, and trending content.",
+      "symbols": [
+        { "char": "🔥", "label": "Fire" },
+        { "char": "⚡", "label": "Lightning" },
+        { "char": "💥", "label": "Explosion" },
+        { "char": "🚀", "label": "Rocket" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "👑", "label": "Crown" }
+      ]
+    },
+    {
+      "id": "separator-divider-characters",
+      "label": "Separator & Divider Characters",
+      "h2": "TikTok Bio Separators & Dividers",
+      "intro": "Characters used to separate sections in TikTok bios and organize captions.",
+      "symbols": [
+        { "char": "│", "label": "Vertical Bar" },
+        { "char": "·", "label": "Middle Dot" },
+        { "char": "✦──✦", "label": "Star Line Combo" },
+        { "char": "•·——·•", "label": "Dot Line Combo" },
+        { "char": "°•◌", "label": "Circle Dot Combo" },
+        { "char": "╌╌╌", "label": "Dashed Line" },
+        { "char": "⤿", "label": "Curving Down Arrow" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "tiktok-collections",
+    "label": "TikTok Collections",
+    "h2": "Ready-Made TikTok Bio & Caption Combos",
+    "intro": "Ready-made TikTok strings you can paste straight into a bio, caption, or comment: copy the whole combo in one click."
+  },
+  "collection_container_id": "tiktokCollectionsContainer",
+  "collections": [
+    {
+      "name": "TikTok Bio Separator",
+      "flags": ["✦──✦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Aesthetic Bio Combo",
+      "flags": ["⊹", "‧₊˚", "✧", "‧₊˚", "⊹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dashed Caption Divider",
+      "flags": ["•·——·•"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fire Hype Combo",
+      "flags": ["🔥", "⚡", "💯", "⚡", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sparkle Bio Accent",
+      "flags": ["✨", "₊", "˚", "⭐", "˚", "₊", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bar Section Spacer",
+      "flags": ["│", "·", "│", "·", "│"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Ready-Made TikTok Bio & Caption Combos",
+      "paragraphs": [
+        "Ready-made TikTok strings you can paste straight into a bio, caption, or comment: copy the whole combo in one click."
+      ]
+    }
+  ],
+  "faq_h2": "TikTok symbols, answered",
+  "faq": [
+    {
+      "q": "How do I add symbols to my TikTok bio?",
+      "a": "Click any symbol on this page to copy it, then open TikTok → Edit profile → Bio and paste it in. The same works for captions and comments. Use dots, stars, and dividers (· ✦ ⊹ ┊) to separate lines or add a decorative accent."
+    },
+    {
+      "q": "Why do some symbols not show up on TikTok?",
+      "a": "If a symbol appears as a blank box, the viewer's device doesn't have a glyph for that character. Common symbols (stars, hearts, arrows, dots) render almost everywhere; very new or rare characters may not. Pick a widely supported alternative if one looks broken."
+    },
+    {
+      "q": "Can I use symbols in TikTok comments and usernames?",
+      "a": "Yes for comments and captions: paste any symbol straight in. The display/nickname field accepts most Unicode symbols too, but the unique @username (handle) is limited to letters, numbers, underscores, and periods, so decorative symbols can't go there."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle & Decorative Symbols",
+      "desc": "Sparkle symbols, glitter characters, and aesthetic decorators for bios and captions."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Stars, sparkles, asterisks, and glitter characters in various Unicode styles."
+    },
+    { "href": "/library/face-emojis/", "title": "Face Emojis", "desc": "Smiley faces, expressions, and emotion emojis for every mood." },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Every heart emoji and Unicode heart character in one reference."
+    }
+  ]
+}

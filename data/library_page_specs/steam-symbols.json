@@ -1,0 +1,153 @@
+{
+  "slug": "steam-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Steam Name Symbols: Copy & Paste ★ ✦ ⚡ Characters",
+  "meta_description": "Steam name symbols ★ ✦ ⚡ that actually save and display, plus the real 32-character limit, the profile-vs-in-game rendering split, and why some names silently revert to blank.",
+  "canonical": "https://ultratextgen.com/library/steam-symbols/",
+  "breadcrumb": "Steam Name Symbols",
+  "hero_h1": "Steam Name Symbols",
+  "hero_tagline": "Characters chosen to fit Steam's real 32-unit limit and survive its profile-vs-in-game rendering split. Click any symbol to copy it instantly.",
+  "intro": "Steam profile names look simple to decorate, but most symbol lists skip the part that actually trips people up: the \"32-character limit\" counts UTF-16 code units, not visible characters, so emoji and styled letters eat into it twice as fast as plain letters. A symbol that displays fine on your profile page can also show up as a blank square inside a specific game (CS:GO and CS2's weapon-inspect nametag are documented cases), and heavily-decorated names have been reported reverting to blank on their own. Every character below is a single-glyph pick chosen to minimize those risks: copy one, test it, then build from there.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/steam-symbols/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/steam-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "steam-friendly-symbols",
+      "label": "Reliable Picks",
+      "h2": "Steam-Friendly Symbols",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✦", "label": "Black Four-Pointed Star" },
+        { "char": "✧", "label": "White Four-Pointed Star" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "•", "label": "Bullet" },
+        { "char": "†", "label": "Dagger" },
+        { "char": "ツ", "label": "Katakana Tsu" },
+        { "char": "彡", "label": "San: Triple Slash" },
+        { "char": "×", "label": "Multiplication Sign" }
+      ]
+    },
+    {
+      "id": "steam-brackets",
+      "label": "Frames & Brackets",
+      "h2": "Name Brackets & Dividers",
+      "intro": "Clean framing marks: each one costs a single unit of your 32, cheaper than most decorative combos.",
+      "symbols": [
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "【", "label": "Left Black Lenticular Bracket" },
+        { "char": "】", "label": "Right Black Lenticular Bracket" },
+        { "char": "|", "label": "Vertical Line" },
+        { "char": "~", "label": "Tilde" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "steam-collections",
+    "label": "Name Combos",
+    "h2": "Ready-Made Steam Name Combos",
+    "intro": "Copy a full layout in one click, then swap in your own name. Remember that emoji and styled letters cost two of your 32 units each, while most symbols cost one."
+  },
+  "collection_container_id": "steamCollectionsContainer",
+  "collections": [
+    {
+      "name": "Star Name Tag",
+      "flags": ["★", "Name", "★"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bracket Divider",
+      "flags": ["「", "Name", "」"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lightning Tag",
+      "flags": ["⚡", "Name"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sweaty Smile Frame",
+      "flags": ["ツ", "Name"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Ready-Made Steam Name Combos",
+      "paragraphs": [
+        "Copy a full layout in one click, then swap in your own name. Remember that emoji and styled letters cost two of your 32 units each, while most symbols cost one."
+      ]
+    },
+    {
+      "h2": "Steam's 32-Character Limit Counts UTF-16 Units, Not Glyphs",
+      "paragraphs": [
+        "Steam's own help text says \"2 to 32 characters,\" and Valve's Steamworks documentation says exactly what a character is: a persona name holds at most 32 UTF-16 characters and at most 128 bytes of UTF-8. The byte ceiling never binds first: a plain letter is 1 byte, an accented letter 2 bytes, a CJK character or a symbol like ★ 3 bytes, and an emoji 4 bytes, so even 32 three-byte characters come to 96. Plain letters, accented letters, Cyrillic, CJK and most symbols such as ★ ✦ ⚡ ♡ cost one unit each, so a name made of them still gets the full 32. Emoji and styled \"math\" letters (𝐁𝐨𝐥𝐝, 𝓢𝓬𝓻𝓲𝓹𝓽) live outside the Basic Multilingual Plane and cost two units each, so a name written entirely in them tops out at 16 visible characters. That is why a styled name that \"should fit\" sometimes gets cut off. Build with single-character accents rather than long runs of styled letters if you want predictable results."
+      ]
+    },
+    {
+      "h2": "Profile Symbols vs. In-Game Rendering",
+      "paragraphs": [
+        "A symbol displaying correctly on your Steam profile or friends list doesn't guarantee it displays in every game. Documented cases: CS:GO and CS2's weapon-inspect nametag renders unsupported characters as an empty square even when the same name shows fine on your profile page; TF2 has separately been reported not rendering Unicode in in-game name tags at all. If you need a symbol to work specifically inside a game's UI, not just on your Steam profile, test it in that game before committing."
+      ]
+    },
+    {
+      "h2": "A Known Linux-Only Rendering Bug",
+      "paragraphs": [
+        "An issue filed against Valve's own <a target=\"_blank\" href=\"https://github.com/ValveSoftware/steam-for-linux/issues/5426\" rel=\"noopener\">steam-for-linux GitHub repository</a> in 2018 (still open as of September 25, 2026) documents symbols that save and display correctly in the profile editor failing to render in the name tab and in-game specifically on the Linux client, while working normally on Windows and macOS. If a symbol looks broken only on Linux, that's this known bug, not a mistake in your name."
+      ]
+    },
+    {
+      "h2": "Why Some Names Revert to Blank",
+      "paragraphs": [
+        "Steam Community discussion threads document names built from heavy block-character or symbol content silently reverting: one reported case had a name built from stacked block characters collapse down to a single leftover punctuation mark after a client sync. Valve hasn't published an official explanation for why this happens, so the exact cause is unconfirmed, but it's a documented, repeated pattern, not an isolated fluke. It's a real reason to lean on the single-character picks above rather than long, dense decorative strings."
+      ]
+    },
+    {
+      "h2": "Names Steam Won't Let You Use",
+      "paragraphs": [
+        "Steam automatically blocks any name containing the word \"Steam\" itself, to make impersonation and phishing harder: this applies regardless of symbols or styling around it. Separately, your custom profile URL (vanity ID) runs on a much stricter rule set than your display name and generally rejects decorative symbols outright even when your display name accepts the exact same character. Treat them as two different fields with two different limits."
+      ]
+    }
+  ],
+  "faq_h2": "Steam name symbols, answered",
+  "faq": [
+    {
+      "q": "What is Steam's actual character limit for a display name?",
+      "a": "Steam states 2 to 32 characters, and Valve's Steamworks documentation defines them as UTF-16 characters. Letters, CJK and most symbols such as ★ cost one each, so they get the full 32. Emoji and styled \"math\" letters cost two each, so a name written entirely in them stops at 16 visible characters."
+    },
+    {
+      "q": "Why does a symbol show on my Steam profile but not in-game?",
+      "a": "Steam's website and profile pages render Unicode broadly, but individual games have their own text rendering: confirmed cases include CS:GO, TF2, and CS2's weapon-inspect nametag showing unsupported characters as empty squares even though the same name displays fine on your Steam profile. Treat \"works on my profile\" and \"works in-game\" as two separate questions, not one."
+    },
+    {
+      "q": "Why did my Steam name change or revert on its own?",
+      "a": "Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented: it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings."
+    },
+    {
+      "q": "Are there characters Steam blocks outright?",
+      "a": "Yes, Steam auto-blocks names containing the word \"Steam\" itself (to make impersonation harder), and your custom profile URL (vanity ID) is far stricter than your display name, generally rejecting symbols entirely even when the display name accepts them. Those are two different fields with two different rule sets."
+    },
+    {
+      "q": "Does this affect Linux Steam users differently?",
+      "a": "Yes, in a documented way: an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name."
+    }
+  ],
+  "related": [
+    { "href": "/library/roblox-symbols/", "title": "Roblox Symbols", "desc": "Username and display-name characters that work in Roblox." },
+    { "href": "/library/pubg-symbols/", "title": "PUBG / BGMI Name Symbols", "desc": "Battle-tested marks that survive PUBG's own font." },
+    { "href": "/library/discord-symbols/", "title": "Discord Symbols", "desc": "Characters for your Discord name, bio, and channels." },
+    { "href": "/library/nickname-symbols/", "title": "Nickname Symbols", "desc": "Decorative characters for gamer tags on any platform." },
+    { "href": "/library/gaming-aesthetic-symbols/", "title": "Gaming Aesthetic Symbols", "desc": "Clan tag frames, HUD bars, and battle icons." },
+    {
+      "href": "/library/invisible-character/",
+      "title": "Invisible Character",
+      "desc": "The blank character that holds a gap without getting trimmed."
+    }
+  ]
+}

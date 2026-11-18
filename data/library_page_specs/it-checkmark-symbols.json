@@ -355,15 +355,15 @@
       "intro": "Righe già pronte da copiare.",
       "symbols": [
         {
-          "char": "☑ Done",
+          "char": "☑ Fatto",
           "label": "Riga «fatto»"
         },
         {
-          "char": "☐ To-do",
+          "char": "☐ Da fare",
           "label": "Riga «da fare»"
         },
         {
-          "char": "✔ Completed · ✘ Pending",
+          "char": "✔ Completato · ✘ In attesa",
           "label": "Coppia completato / in attesa"
         },
         {
@@ -375,7 +375,7 @@
           "label": "Parentesi vuote"
         },
         {
-          "char": "✅ Yes  ❌ No",
+          "char": "✅ Sì  ❌ No",
           "label": "Sì / No"
         }
       ]

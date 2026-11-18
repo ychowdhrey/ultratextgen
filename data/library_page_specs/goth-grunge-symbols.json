@@ -1,0 +1,150 @@
+{
+  "slug": "goth-grunge-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Goth & Grunge Symbols Copy & Paste — Dark Aesthetic Bio Decorations",
+  "meta_description": "Dark aesthetic symbols for goth and grunge bios. Crosses, skulls, spiders, daggers, and alt fashion decorations for usernames and profiles.",
+  "canonical": "https://ultratextgen.com/library/goth-grunge-symbols/",
+  "breadcrumb": "Goth & Grunge Symbols",
+  "hero_h1": "Goth & Grunge Symbols",
+  "hero_tagline": "Dark aesthetic symbols for goth and grunge bios: crosses, skulls, spiders, daggers, and alt fashion decorations. Click any to copy instantly.",
+  "intro": "Goth and grunge aesthetics embrace darkness, edge, and subversion: black roses, gothic crosses, spiders, chains, and skulls. These Unicode characters and emoji translate that energy into bio decorations and captions. Works on Instagram, TikTok, Discord, Tumblr, and anywhere Unicode is supported.",
+  "date_published": "2026-04-26",
+  "date_modified": "2026-04-26",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/goth-grunge-symbols/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-goth-grunge/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-goth-grunge/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-goth-grunge/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/goth-grunge-sembolleri/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-goth-grunge/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-goth-grunge/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-goth-grunge/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/goth-grunge-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "crosses-daggers",
+      "label": "Crosses & Daggers",
+      "h2": "Crosses & Daggers",
+      "symbols": [
+        { "char": "♱", "label": "East Syriac Cross" },
+        { "char": "†", "label": "Dagger" },
+        { "char": "‡", "label": "Double Dagger" },
+        { "char": "✟", "label": "Outlined Latin Cross" },
+        { "char": "🗡", "label": "Dagger Emoji" },
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "🔪", "label": "Hocho Knife" },
+        { "char": "⛧", "label": "Inverted Pentagram" },
+        { "char": "𖤐", "label": "Bamum Letter Ngkeuri (used as \"Black Sun\")" },
+        { "char": "✝", "label": "Latin Cross" },
+        { "char": "☥", "label": "Ankh" },
+        { "char": "✠", "label": "Maltese Cross" },
+        { "char": "☦", "label": "Orthodox Cross" },
+        { "char": "☽", "label": "First Quarter Moon" }
+      ]
+    },
+    {
+      "id": "skulls-death",
+      "label": "Skulls & Death Motifs",
+      "h2": "Skulls & Death Motifs",
+      "symbols": [
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "💀", "label": "Skull Emoji" },
+        { "char": "🩸", "label": "Drop of Blood Emoji" },
+        { "char": "⚰", "label": "Coffin" },
+        { "char": "🪦", "label": "Headstone Emoji" },
+        { "char": "⚱", "label": "Funeral Urn" }
+      ]
+    },
+    {
+      "id": "spiders-bats",
+      "label": "Spiders, Bats & Creatures",
+      "h2": "Spiders, Bats & Creatures",
+      "symbols": [
+        { "char": "🕷", "label": "Spider Emoji" },
+        { "char": "🕸", "label": "Spider Web Emoji" },
+        { "char": "🦇", "label": "Bat Emoji" },
+        { "char": "🐍", "label": "Snake Emoji" },
+        { "char": "🦂", "label": "Scorpion Emoji" }
+      ]
+    },
+    {
+      "id": "dark-florals",
+      "label": "Dark Florals",
+      "h2": "Dark Florals",
+      "symbols": [
+        { "char": "🥀", "label": "Wilted Flower Emoji" },
+        { "char": "⚘", "label": "Flower" },
+        { "char": "🖤", "label": "Black Heart Emoji" },
+        { "char": "❦", "label": "Floral Heart" },
+        { "char": "❧", "label": "Rotated Floral Heart" },
+        { "char": "𓆩♱𓆪", "label": "Egyptian Cross Frame" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "goth-grunge-collections",
+    "label": "Goth & Grunge Collections",
+    "h2": "Dark Aesthetic Bio Sets",
+    "intro": "Ready-made dark-aesthetic strings you can paste straight into a bio, caption, or username: copy the whole combo in one click."
+  },
+  "collection_container_id": "gothGrungeCollectionsContainer",
+  "collections": [
+    {
+      "name": "Goth Cross Divider",
+      "flags": ["†", "˖", "♱", "˖", "†"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Egyptian Cross Frame",
+      "flags": ["𓆩♱𓆪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dagger Border",
+      "flags": ["✟", "·", "†", "‡", "†", "·", "✟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wilted Rose Combo",
+      "flags": ["🥀", "🖤", "🥀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dark Floral Trail",
+      "flags": ["❦", "˖", "🖤", "˖", "❧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pentagram Bio Combo",
+      "flags": ["⛧", "˖", "𖤐", "˖", "⛧"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Dark Aesthetic Bio Sets",
+      "paragraphs": [
+        "Ready-made dark-aesthetic strings you can paste straight into a bio, caption, or username: copy the whole combo in one click."
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "All named-aesthetic symbol collections in one place." },
+    { "href": "/library/witchy-occult-symbols/", "title": "Witchy & Occult Symbols", "desc": "Pentagrams, moon phases, and esoteric symbols." },
+    { "href": "/library/y2k-symbols/", "title": "Y2K Symbols", "desc": "Cyber and dark Y2K aesthetic decorations." },
+    { "href": "/library/religious-symbols/", "title": "Religious & Spiritual Symbols", "desc": "Cross variants and faith symbols." },
+    { "href": "/library/star-symbols/", "title": "Star Symbol Collection", "desc": "Dark stars and decorative star variants." },
+    {
+      "href": "/library/dark-academia-symbols/",
+      "title": "Dark Academia Symbols",
+      "desc": "Vintage books, candlelight, and scholarly ink decorations."
+    },
+    {
+      "href": "/symbol/anarchy-symbol/",
+      "title": "Anarchy Symbol",
+      "desc": "The circled-A (Ⓐ): conceived by Tomás Ibáñez in 1964 and made globally famous by the punk band Crass."
+    }
+  ]
+}

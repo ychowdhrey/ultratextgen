@@ -227,32 +227,48 @@
    "intro": "Ytterligare astrologiska notationssymboler.",
    "symbols": [
     {
-     "char": "☊",
-     "label": "Uppstigande nod"
+      "char": "☊",
+      "label": "Uppstigande nod"
     },
     {
-     "char": "☋",
-     "label": "Nedstigande nod"
+      "char": "☋",
+      "label": "Nedstigande nod"
     },
     {
-     "char": "☌",
-     "label": "Konjunktion"
+      "char": "☌",
+      "label": "Konjunktion"
     },
     {
-     "char": "☍",
-     "label": "Opposition"
+      "char": "☍",
+      "label": "Opposition"
     },
     {
-     "char": "⚹",
-     "label": "Sextil"
+      "char": "⚹",
+      "label": "Sextil"
     },
     {
-     "char": "□",
-     "label": "Kvadratur (kvadrat)"
+      "char": "□",
+      "label": "Kvadratur (kvadrat)"
     },
     {
-     "char": "△",
-     "label": "Trigon"
+      "char": "△",
+      "label": "Trigon"
+    },
+    {
+      "char": "⚺",
+      "label": "Halvsextil (30°)"
+    },
+    {
+      "char": "∠",
+      "label": "Halvkvadrat (45°)"
+    },
+    {
+      "char": "⚼",
+      "label": "Seskvikvadrat (135°)"
+    },
+    {
+      "char": "⚻",
+      "label": "Kvinkunx (150°)"
     }
    ]
   },

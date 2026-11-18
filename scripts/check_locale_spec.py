@@ -31,7 +31,6 @@ Exit code is non-zero if any ERROR was found, so it can gate a batch.
 """
 
 import argparse
-import glob
 import io
 import json
 import os
@@ -41,8 +40,14 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
 from collection_sets import sets_in  # noqa: E402
 import canonical_intents as ci  # noqa: E402
+import git_tree  # noqa: E402
+import spec_drift as sd  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Every read goes through TREE: the checkout normally, the merge base's tree when
+# --base asks which errors already existed there (see main()).
+TREE = git_tree.WorkTree(ROOT)
+SPEC_DIR = "data/library_page_specs"
 SITE = "https://ultratextgen.com"
 
 # hreflang code -> URL path segment, where the two differ. See the canonical
@@ -66,17 +71,46 @@ def live_collection_sets(rel):
 
 
 def rd(path):
-    return io.open(os.path.join(ROOT, path), encoding="utf-8", errors="replace").read()
+    return TREE.read(path)
 
 
 def _registry():
-    # Loaded once; an unreadable registry is UNKNOWN for any spec that needs it.
-    if not hasattr(_registry, "cache"):
+    # Loaded once per tree; an unreadable registry is UNKNOWN for any spec that needs it.
+    # A cache set from outside with no tree (the canonical_intents tests inject a
+    # fixture registry that way) is honoured as is.
+    if hasattr(_registry, "cache") and getattr(_registry, "tree", None) in (None, TREE):
+        return _registry.cache
+    if getattr(_registry, "tree", None) is not TREE:
+        _registry.tree = TREE
         try:
-            _registry.cache = ci.load(ROOT)
+            _registry.cache = ci.load_text(TREE.read(ci.REGISTRY_REL))
+        except FileNotFoundError:
+            _registry.cache = ci.RegistryUnavailable(f"{ci.REGISTRY_REL} does not exist")
         except ci.RegistryUnavailable as e:
             _registry.cache = e
     return _registry.cache
+
+
+def spec_paths():
+    """Every spec in TREE: top level AND the per-locale subfolders. Until 2026-11-18
+    --all-locale globbed only the top level, so 904 of 1,222 locale specs were never
+    checked and CI reported 0 errors over 302."""
+    return [p for p in TREE.files_under(SPEC_DIR, ".json") if not p.endswith(sd.TEMPLATE_NAME)]
+
+
+def pages_with_a_spec():
+    """{page_rel} generated from some spec in TREE (cached per tree)."""
+    if getattr(pages_with_a_spec, "tree", None) is not TREE:
+        out = set()
+        for p in spec_paths():
+            try:
+                page = sd.page_rel_for(json.loads(TREE.read(p)))
+            except ValueError:
+                continue
+            if page:
+                out.add(page)
+        pages_with_a_spec.tree, pages_with_a_spec.cache = TREE, out
+    return pages_with_a_spec.cache
 
 
 def en_parent_of(spec):
@@ -102,22 +136,22 @@ PRERENDERED_RE = re.compile(
 
 
 def live_tile_count(rel):
-    s = PRERENDERED_RE.sub("", rd(rel))
-    return len(re.findall(r'class="[^"]*symbol-tile', s))
+    # One definition of a page's copy tiles (scripts/lib/spec_drift.py): outside the
+    # PRERENDERED blocks above and without the symbol-page hero tile.
+    return sd.live_tile_count(rd(rel))
 
 
 def spec_tile_count(spec):
-    # A section's "combos" render as copy tiles too (generate_library_page_from_spec.py
-    # draws them above the singles), so they count toward parity with the live page.
-    return sum(len(s.get("symbols", [])) + len(s.get("combos", []))
-               for s in spec.get("sections", []))
+    # combos count: the generator renders them as tiles since 2026-11-18. Counting only
+    # `symbols` is what let es/library/emojis-graciosos ship 35 of 75.
+    return sd.spec_tile_count(spec)
 
 
 def check(path, strict=False):
     errs, warns = [], []
-    name = os.path.basename(path)
+    name = os.path.relpath(path, SPEC_DIR) if path.startswith(SPEC_DIR + "/") else os.path.basename(path)
     try:
-        spec = json.load(io.open(path, encoding="utf-8"))
+        spec = json.loads(TREE.read(path))
     except Exception as e:
         return [f"{name}: unparseable JSON — {e}"], []
 
@@ -129,7 +163,10 @@ def check(path, strict=False):
     W = lambda m: warns.append(f"{name}: {m}")
 
     # --- filename convention -------------------------------------------------
-    if not (name.startswith(f"{lang}-") or name.startswith(f"{URL_SEGMENT.get(lang, lang)}-")):
+    base_name = os.path.basename(path)
+    in_lang_dir = name.split("/")[0].lower() == URL_SEGMENT.get(lang, lang).lower() and "/" in name
+    if not in_lang_dir and not (base_name.startswith(f"{lang}-")
+                                or base_name.startswith(f"{URL_SEGMENT.get(lang, lang)}-")):
         W(f'filename should start with "{lang}-" (lang={lang!r})')
 
     # --- canonical -----------------------------------------------------------
@@ -212,9 +249,18 @@ def check(path, strict=False):
 
     # --- reference page exists, and lane is inherited ------------------------
     en_rel = ref_rel
-    if en_rel and not os.path.exists(os.path.join(ROOT, en_rel)):
+    if en_rel and not TREE.exists(en_rel):
         E(f"{ref_label} {en_rel} does not exist on disk")
         return errs, warns
+
+    # --- the reference page has a spec (owner rule 2026-11-18) ---------------
+    # A page needs a spec before it is localized: a locale is translated from the
+    # reference's spec, so a hand-built reference leaves nothing to translate from
+    # and nothing to keep the two in step.
+    if en_rel and en_rel not in pages_with_a_spec():
+        E(f"{ref_label} {en_rel} has no spec — a page needs a spec before it is "
+          f"localized: build that page's spec first (matching the live page), then "
+          f"translate from it")
     if en_rel and ref_folder != folder:
         E(f"lane mismatch: {ref_label} is /{ref_folder}/ but page_type routes to /{folder}/")
 
@@ -263,11 +309,11 @@ def check(path, strict=False):
         m = re.match(r"^/([^/]+)/(library|symbol|usecase)/([^/]+)/$", href)
         root_page = re.match(r"^/([a-z]{2}(?:-[a-z]{2})?)/([^/]+)/$", href)
         if m and m.group(1) == lang:
-            if not os.path.isdir(os.path.join(ROOT, lang, m.group(2), m.group(3))):
+            if not TREE.isdir(f"{lang}/{m.group(2)}/{m.group(3)}"):
                 E(f"related link {href} does not exist on disk")
         elif root_page and root_page.group(1) == lang:
             # a locale-root page such as /es/simbolos-para-free-fire/
-            if not os.path.isdir(os.path.join(ROOT, lang, root_page.group(2))):
+            if not TREE.isdir(f"{lang}/{root_page.group(2)}"):
                 E(f"related link {href} does not exist on disk")
         elif re.match(r"^/(library|symbol|usecase|category|guide|answers)/", href):
             W(f"related link {href} is English — check for a {lang}/ equivalent first")
@@ -275,12 +321,12 @@ def check(path, strict=False):
             W(f"related link {href} has an unexpected shape")
 
     # --- duplicate claimant in this locale -----------------------------------
-    for p in glob.glob(os.path.join(ROOT, lang, folder, "*", "index.html")):
+    for p in TREE.children_with_index(f"{lang}/{folder}"):
         if os.path.basename(os.path.dirname(p)) == slug:
             continue
-        s = io.open(p, encoding="utf-8", errors="replace").read()
+        s = rd(p)
         if re.search(rf'hreflang="[^"]+"\s+href="{re.escape(ref_href)}"', s):
-            E(f"{os.path.relpath(p, ROOT)} already claims the same {ref_label} "
+            E(f"{p} already claims the same {ref_label} "
               f"({ref_href}) — duplicate claimant, resolve before building")
 
     # --- untranslated copy ---------------------------------------------------
@@ -293,33 +339,78 @@ def check(path, strict=False):
     return errs, (errs + warns if False else warns)
 
 
+def _run(paths, strict):
+    E, W = [], []
+    for p in paths:
+        e, w = check(p, strict)
+        E += e
+        W += w
+    return E, W
+
+
+def _key(msg):
+    # The same finding at the base and at HEAD, even when a count inside it moved.
+    return re.sub(r"\d+", "N", msg)
+
+
+def _merge_base(base):
+    import subprocess
+    r = subprocess.run(["git", "merge-base", base, "HEAD"], cwd=ROOT, capture_output=True, text=True)
+    return r.stdout.strip() if r.returncode == 0 else None
+
+
 def main():
+    global TREE
     ap = argparse.ArgumentParser()
     ap.add_argument("specs", nargs="*")
     ap.add_argument("--all-locale", action="store_true",
-                    help="check every data/library_page_specs/<lang>-*.json")
+                    help="check every locale spec: data/library_page_specs/<lang>-*.json AND "
+                         "data/library_page_specs/<lang>/*.json")
     ap.add_argument("--strict", action="store_true", help="warnings fail too")
+    ap.add_argument("--base", help="fail only on errors that are not already present at the merge base "
+                                   "with this ref; pre-existing ones are printed as 'known', never hidden")
     a = ap.parse_args()
 
-    paths = list(a.specs)
-    if a.all_locale or not paths:
-        paths = [p for p in sorted(glob.glob(os.path.join(ROOT, "data/library_page_specs/*.json")))
-                 if re.match(r"^[a-z]{2}(-[a-z]{2})?-", os.path.basename(p))]
+    explicit = [os.path.relpath(os.path.abspath(p), ROOT).replace(os.sep, "/") for p in a.specs]
+    paths = explicit if explicit and not a.all_locale else spec_paths()
 
-    E, W = [], []
-    for p in paths:
-        e, w = check(p, a.strict)
-        E += e
-        W += w
+    E, W = _run(paths, a.strict)
 
-    for m in E:
+    known = set()
+    if a.base:
+        mb = _merge_base(a.base)
+        if not mb:
+            print(f"UNKNOWN: cannot resolve a merge base with {a.base!r} (shallow clone or wrong name). "
+                  f"This is not a pass.")
+            return 2
+        try:
+            TREE = git_tree.GitTree(ROOT, mb)
+        except git_tree.TreeUnavailable as e:
+            print(f"UNKNOWN: {e}. This is not a pass.")
+            return 2
+        try:
+            base_E, _ = _run([p for p in paths if TREE.exists(p)], a.strict)
+        finally:
+            TREE.close()
+            TREE = git_tree.WorkTree(ROOT)
+        known = {_key(m) for m in base_E}
+
+    new = [m for m in E if _key(m) not in known]
+    old = [m for m in E if _key(m) in known]
+    for m in new:
         print(f"  ERROR  {m}")
+    for m in old:
+        print(f"  known  {m}")
     for m in W:
         print(f"  warn   {m}")
-    print(f"\n{len(paths)} locale spec(s) checked · {len(E)} error(s) · {len(W)} warning(s)")
-    if E:
+    loc = sum(1 for p in paths if "/" in os.path.relpath(p, SPEC_DIR)
+              or re.match(r"^[a-z]{2}(-[a-z]{2})?-", os.path.basename(p)))
+    print(f"\n{len(paths)} spec(s) read ({loc} locale) · {len(new)} new error(s)"
+          + (f" · {len(old)} pre-existing at the merge base (reported, not failed)" if a.base else "")
+          + f" · {len(W)} warning(s)")
+    if new:
         print("\nFix the errors before generating — every one of them ships silently otherwise.")
-    return 1 if E or (a.strict and W) else 0
+    return 1 if new or (a.strict and W) else 0
 
 
 if __name__ == "__main__":

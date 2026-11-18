@@ -1,0 +1,76 @@
+{
+  "slug": "heart-ascii-art",
+  "copy_pattern": "art",
+  "hand_built_page": true,
+  "title": "Heart ASCII Art ♥ Copy & Paste",
+  "meta_description": "Copy and paste heart ASCII art — original multi-line heart pictures drawn in plain characters, from a tiny one-line <3 to big solid and outline hearts.",
+  "canonical": "https://ultratextgen.com/library/heart-ascii-art/",
+  "breadcrumb": "Heart ASCII Art",
+  "hero_h1": "Heart ASCII Art",
+  "hero_tagline": "Original heart pictures drawn entirely in plain text: one-line hearts, small hearts, and big multi-line pieces. Click Copy on any card.",
+  "intro": "Heart ASCII art draws a heart shape entirely out of keyboard characters: from the two-keystroke classic <3 to large multi-line hearts built from asterisks, colons, and slashes. One-line hearts paste cleanly anywhere; the bigger multi-line pieces keep their shape only where text renders in a fixed-width (monospace) font, such as Discord code blocks, terminals, and plain-text editors. Every piece below is an original drawing. Click Copy to grab it with its line breaks and spacing intact.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/heart-ascii-art/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/heart-ascii-art/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/serdechko-iz-simvolov/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/heart-ascii-art/" }
+  ],
+  "sections": [
+    {
+      "id": "small-hearts",
+      "label": "Small & One-Line",
+      "h2": "Small Heart ASCII Art",
+      "intro": "Compact hearts for chats, bios, and comments, including one-line pieces that work in any font.",
+      "art": [
+        { "label": "Classic Heart", "art": "<3" },
+        { "label": "Arrow & Heart", "art": ">>>-----> <3" },
+        { "label": "Tiny Heart", "art": " __  __\n/  \\/  \\\n\\      /\n \\    /\n  \\  /\n   \\/" },
+        { "label": "Puffy Heart", "art": ",d88b.d88b,\n88888888888\n`Y8888888Y'\n  `Y888Y'\n    `Y'" }
+      ]
+    },
+    {
+      "id": "classic-hearts",
+      "label": "Classic Pieces",
+      "h2": "Classic Heart Pictures",
+      "intro": "Mid-size hearts with a little more detail: paste them where a monospace font keeps the columns aligned.",
+      "art": [
+        { "label": "Dotted Heart", "art": " .:::.   .:::.\n:::::::.:::::::\n':::::::::::::'\n  ':::::::::'\n    ':::::'\n      ':'" },
+        { "label": "Love Banner", "art": "<3<3<3<3<3<3<3<3\n<3            <3\n<3  LOVE YOU  <3\n<3            <3\n<3<3<3<3<3<3<3<3" }
+      ]
+    },
+    {
+      "id": "big-hearts",
+      "label": "Big Pieces",
+      "h2": "Big Heart ASCII Art",
+      "intro": "Larger, more detailed hearts: best in Discord code blocks, terminals, and anywhere else with a fixed-width font.",
+      "art": [
+        {
+          "label": "Solid Heart",
+          "art": "   ****       ****\n ********   ********\n*********************\n*********************\n *******************\n   ***************\n     ***********\n       *******\n         ***\n          *"
+        },
+        {
+          "label": "Heart Outline",
+          "art": "  .-\"\"-.  .-\"\"-.\n /      \\/      \\\n|                |\n \\              /\n  \\            /\n   \\          /\n    \\        /\n     \\      /\n      \\    /\n       \\  /\n        \\/"
+        }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/text-art/", "title": "Text Art", "desc": "ASCII and Unicode art collections plus drawing blocks." },
+    { "href": "/library/heart-symbols/", "title": "Heart Symbols", "desc": "Single heart characters in every color and style, ready to copy." },
+    { "href": "/ascii-art-generator/", "title": "ASCII Art Generator", "desc": "Type a word and turn it into big block-letter ASCII art." },
+    { "href": "/library/cat-ascii-art/", "title": "Cat ASCII Art", "desc": "Multi-line ASCII cats: loafs, long cats, and cat faces." },
+    {
+      "href": "/events/valentines-day/",
+      "title": "Valentine's Day Text & Symbol Generator",
+      "desc": "Style a Valentine's Day greeting live, then copy matching fonts, emoji, kaomoji, and ready-made phrases."
+    },
+    {
+      "href": "/library/heart-kaomoji/",
+      "title": "Heart Kaomoji",
+      "desc": "Copy and paste heart kaomoji: cute Japanese text faces carrying hearts and heart eyes."
+    }
+  ]
+}

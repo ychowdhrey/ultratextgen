@@ -1,0 +1,203 @@
+{
+  "slug": "line-divider-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Line Dividers & Separators: Copy & Paste Border Characters",
+  "meta_description": "Copy line divider characters: horizontal lines, decorative and ornamental separators, dashes, box-drawing characters and ready-made divider combos.",
+  "canonical": "https://ultratextgen.com/library/line-divider-symbols/",
+  "breadcrumb": "Line Dividers & Separators",
+  "hero_h1": "Line Dividers & Separators",
+  "hero_tagline": "Copy and paste line divider characters for emails, LinkedIn posts, bios, and documents. Horizontal lines, decorative dividers, and pre-built separator combos. Click any symbol to copy it instantly.",
+  "intro": "Line dividers and separator characters make plain text look structured and professional. Use them to separate sections in emails, LinkedIn posts, bios, and social media captions. These Unicode characters paste reliably across all platforms, no formatting gets lost.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/line-divider-symbols/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-garis/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/gubunseon-giho/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/separadores-de-texto/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/line-divider-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "horizontal-lines",
+      "label": "Horizontal Lines",
+      "h2": "Horizontal Line Characters",
+      "intro": "Box-drawing line characters for clean, minimal horizontal separators.",
+      "symbols": [
+        { "char": "─", "label": "Box Drawings Light Horizontal" },
+        { "char": "━", "label": "Box Drawings Heavy Horizontal" },
+        { "char": "═", "label": "Box Drawings Double Horizontal" },
+        { "char": "╌", "label": "Light Double Dash Horizontal" },
+        { "char": "┄", "label": "Light Triple Dash Horizontal" },
+        { "char": "┈", "label": "Light Quadruple Dash Horizontal" },
+        { "char": "╍", "label": "Heavy Double Dash Horizontal" },
+        { "char": "┅", "label": "Heavy Triple Dash Horizontal" },
+        { "char": "┉", "label": "Heavy Quadruple Dash Horizontal" },
+        { "char": "⎯", "label": "Horizontal Line Extension" }
+      ]
+    },
+    {
+      "id": "decorative-dividers",
+      "label": "Decorative Dividers",
+      "h2": "Decorative Divider Combos",
+      "intro": "Pre-built decorative divider patterns using Unicode line characters.",
+      "symbols": [
+        { "char": "✦──────✦", "label": "Star Line Star" },
+        { "char": "═══════", "label": "Double Line" },
+        { "char": "━━━━━━━", "label": "Heavy Line" },
+        { "char": "─────────", "label": "Light Line" },
+        { "char": "• • • • •", "label": "Bullet Line" },
+        { "char": "·──────·", "label": "Dot Line Dot" }
+      ]
+    },
+    {
+      "id": "ornamental-separators",
+      "label": "Ornamental Separators",
+      "h2": "Ornamental Separator Combos",
+      "intro": "Elegant ornamental dividers using floral and decorative Unicode characters.",
+      "symbols": [
+        { "char": "❧──❧", "label": "Floral Heart Divider" },
+        { "char": "✿──✿", "label": "Florette Divider" },
+        { "char": "♦──♦", "label": "Diamond Divider" },
+        { "char": "★──★", "label": "Star Divider" },
+        { "char": "❖──❖", "label": "Diamond Minus Divider" },
+        { "char": "•──────•", "label": "Bullet Line Bullet" }
+      ]
+    },
+    {
+      "id": "scene-breaks",
+      "label": "Scene Breaks",
+      "h2": "Scene & Chapter Break Symbols",
+      "intro": "A scene break sits on its own centered line between two scenes or chapters. Three spaced asterisks (* * *, called a dinkus) are what most manuscripts use, and ⁂ (the asterism) or a floral heart such as ❦ gives the typeset look. An e-reader whose fonts lack ⁂, ❦, ❧, ☙ or ⁕ can show an empty box in its place, which is why * * * comes first here: it is plain keyboard text, so no font can drop it.",
+      "symbols": [
+        { "char": "* * *", "label": "Three Spaced Asterisks (Dinkus)" },
+        { "char": "⁂", "label": "Asterism" },
+        { "char": "❦", "label": "Floral Heart" },
+        { "char": "❧", "label": "Rotated Floral Heart Bullet" },
+        { "char": "☙", "label": "Reversed Rotated Floral Heart Bullet" },
+        { "char": "⁕", "label": "Flower Punctuation Mark" },
+        { "char": "• • •", "label": "Three Spaced Bullets" },
+        { "char": "~ ~ ~", "label": "Spaced Tildes" },
+        { "char": "◆ ◆ ◆", "label": "Three Diamonds" }
+      ]
+    },
+    {
+      "id": "dashed-dotted",
+      "label": "Dashed & Dotted",
+      "h2": "Dashed & Dotted Line Characters",
+      "intro": "Dashed and dotted divider characters for informal and soft separators.",
+      "symbols": [
+        { "char": "┄┄┄", "label": "Triple Dash" },
+        { "char": "╌╌╌", "label": "Double Dash" },
+        { "char": "┈┈┈", "label": "Quadruple Dash" },
+        { "char": "- - - -", "label": "Hyphen Dots" },
+        { "char": "· · · ·", "label": "Middle Dots" },
+        { "char": "∙ ∙ ∙ ∙", "label": "Bullet Operator Dots" }
+      ]
+    },
+    {
+      "id": "box-drawing-characters",
+      "label": "Box-Drawing Characters",
+      "h2": "Box-Drawing Border Characters",
+      "intro": "Box-drawing characters for creating borders and frames in plain text.",
+      "symbols": [
+        { "char": "┌", "label": "Box Top-Left Corner" },
+        { "char": "┐", "label": "Box Top-Right Corner" },
+        { "char": "└", "label": "Box Bottom-Left Corner" },
+        { "char": "┘", "label": "Box Bottom-Right Corner" },
+        { "char": "├", "label": "Box Left T" },
+        { "char": "┤", "label": "Box Right T" },
+        { "char": "┬", "label": "Box Top T" },
+        { "char": "┴", "label": "Box Bottom T" },
+        { "char": "╔", "label": "Double Box Top-Left" },
+        { "char": "╗", "label": "Double Box Top-Right" },
+        { "char": "╚", "label": "Double Box Bottom-Left" },
+        { "char": "╝", "label": "Double Box Bottom-Right" }
+      ]
+    },
+    {
+      "id": "underline-text",
+      "label": "Underline Text",
+      "h2": "Underline Text Characters",
+      "intro": "Copy combining underline marks and low-line characters to underline text where no formatting button exists.",
+      "symbols": [
+        { "char": "a̲b̲c̲", "label": "Combining Low Line" },
+        { "char": "a̳b̳c̳", "label": "Double Low Line" },
+        { "char": "_", "label": "Low Line" },
+        { "char": "‗", "label": "Double Low Line Char" },
+        { "char": "﹍", "label": "Dashed Low Line" },
+        { "char": "▁▁▁▁▁", "label": "Lower Block Underline" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "line-divider-collections",
+    "label": "Divider Collections",
+    "h2": "Prebuilt Divider & Separator Sets",
+    "intro": "Ready-made decorative dividers and ornamental separators you can drop between sections: copy the whole line in one click."
+  },
+  "collection_container_id": "lineDividerCollectionsContainer",
+  "collections": [
+    {
+      "name": "Star Centered Divider",
+      "flags": ["✦────────✦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Floral Heart Divider",
+      "flags": ["❧──────❧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Diamond Rule",
+      "flags": ["♦───────♦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dotted Section Break",
+      "flags": ["•──────────•"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dashed Soft Divider",
+      "flags": ["┄┄┄┄┄┄┄┄┄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Floral Diamond Separator",
+      "flags": ["✿──❖──✿"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Prebuilt Divider & Separator Sets",
+      "paragraphs": [
+        "Ready-made decorative dividers and ornamental separators you can drop between sections: copy the whole line in one click."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle & Decorative Symbols",
+      "desc": "Sparkle symbols, glitter characters, and aesthetic decorators for bios and captions."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "All Unicode arrow characters for navigation, direction, and list formatting."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Circles, diamonds, squares, triangles, and decorative shapes for formatting."
+    },
+    {
+      "href": "/library/email-symbols/",
+      "title": "Email Symbols",
+      "desc": "Unicode symbols that display reliably in email clients for professional formatting."
+    }
+  ]
+}

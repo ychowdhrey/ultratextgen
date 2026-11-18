@@ -1,0 +1,73 @@
+{
+  "slug": "cat-ascii-art",
+  "copy_pattern": "art",
+  "hand_built_page": true,
+  "title": "Cat ASCII Art 🐱 Copy & Paste",
+  "meta_description": "Copy and paste cat ASCII art — original multi-line text cats including cat faces, cat loafs, long cats, and sitting cats drawn in plain keyboard characters.",
+  "canonical": "https://ultratextgen.com/library/cat-ascii-art/",
+  "breadcrumb": "Cat ASCII Art",
+  "hero_h1": "Cat ASCII Art",
+  "hero_tagline": "Original multi-line text cats: cat faces, cat loafs, long cats, and sitting cats drawn in plain characters. Click Copy on any card.",
+  "intro": "Cat ASCII art draws a whole cat (ears, whiskers, paws, tail) out of nothing but keyboard characters. These are full multi-line pictures, not single-line faces; if you want compact Japanese-style cat emoticons instead, see the <a href=\"/library/cat-kaomoji/\">cat kaomoji collection</a>. Multi-line cats keep their shape wherever text renders in a fixed-width (monospace) font: Discord code blocks, terminals, README files, and plain-text editors. Every piece below is an original drawing; click Copy to grab it with its spacing and line breaks intact.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/cat-ascii-art/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/kot-iz-simvolov/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/neko-ascii-art/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/goyangi-ascii-art/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/arte-ascii-gato/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/cat-ascii-art/" }
+  ],
+  "sections": [
+    {
+      "id": "small-cats",
+      "label": "Small & One-Line",
+      "h2": "Small Cat ASCII Art",
+      "intro": "Three-line kittens and a one-line whisker face for chats and comments.",
+      "art": [
+        { "label": "One-Line Cat", "art": "=^..^=" },
+        { "label": "Small Cat Face", "art": "  /\\_/\\\n ( o_o )\n  (>x<)" },
+        { "label": "Peeking Cat", "art": " /\\_/\\\n( o o )\n_| ^  |_____" }
+      ]
+    },
+    {
+      "id": "classic-cats",
+      "label": "Classic Pieces",
+      "h2": "Classic Cat Pictures",
+      "intro": "Mid-size cats with more detail: loafs, big faces, and a chunky sitting cat.",
+      "art": [
+        { "label": "Cat Loaf", "art": "   /\\_/\\\n  ( -.- )\n /       \\\n|         |\n \\_______/" },
+        { "label": "Big Cat Face", "art": "   /\\_______/\\\n  /   o   o   \\\n =|     ^     |=\n  |  \\_____/  |\n   \\         /\n    \\_______/" },
+        {
+          "label": "Chunky Sitting Cat",
+          "art": "    /\\_____/\\\n   /  o   o  \\\n  ( ==  ^  == )\n   )         (\n  (           )\n ( (  )   (  ) )\n(__(__)___(__)__)"
+        }
+      ]
+    },
+    {
+      "id": "big-cats",
+      "label": "Big Pieces",
+      "h2": "Big Cat ASCII Art",
+      "intro": "Larger cats: best in Discord code blocks, terminals, and anywhere else with a fixed-width font.",
+      "art": [
+        {
+          "label": "Cat from Behind",
+          "art": "   /\\_/\\\n  (     )    ,\n  (     )    |\\\n  (     )    | |\n (       )   | |\n (       )   | |\n (       )__/ /\n  (__________/"
+        },
+        { "label": "Long Cat", "art": "  /\\_/\\\n ( o.o )\n |     |\n |     |\n |     |\n |     |\n |     |\n (     )\n (_____)" }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/text-art/", "title": "Text Art", "desc": "ASCII and Unicode art collections plus drawing blocks." },
+    { "href": "/library/cat-kaomoji/", "title": "Cat Kaomoji", "desc": "One-line Japanese cat text faces with whiskers and paws." },
+    { "href": "/library/ascii-table/", "title": "ASCII Table & Chart", "desc": "Every printable ASCII character with its decimal and hex code." },
+    { "href": "/library/dog-ascii-art/", "title": "Dog ASCII Art", "desc": "Multi-line ASCII dogs: puppy faces, bones, and sitting dogs." },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal & Creature Emojis",
+      "desc": "A reference collection of animal emojis: pets, wildlife, sea creatures, birds, and mythical beings."
+    }
+  ]
+}

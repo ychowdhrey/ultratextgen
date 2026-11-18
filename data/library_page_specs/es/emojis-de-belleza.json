@@ -125,7 +125,7 @@
           "label": "Persona Cortándose el Cabello"
         },
         {
-          "char": "💇‍♀️",
+          "char": "💇\u200d♀️",
           "label": "Mujer Cortándose el Cabello"
         },
         {
@@ -137,12 +137,16 @@
           "label": "Persona en el Sauna"
         },
         {
-          "char": "🧖‍♀️",
+          "char": "🧖\u200d♀️",
           "label": "Mujer en el Sauna"
         },
         {
           "char": "🛁",
           "label": "Bañera"
+        },
+        {
+          "char": "🛀",
+          "label": "Persona bañándose"
         },
         {
           "char": "🚿",

@@ -225,11 +225,11 @@
         },
         {
           "char": "𝄻",
-          "label": "Pausa di minima"
+          "label": "Pausa di semibreve"
         },
         {
           "char": "𝄼",
-          "label": "Pausa di semiminima"
+          "label": "Pausa di minima"
         }
       ]
     },
@@ -350,6 +350,354 @@
         {
           "char": "꒰♬꒱",
           "label": "Nota tra parentesi"
+        }
+      ]
+    },
+    {
+      "id": "barlines-repeats-segno-coda",
+      "label": "Stanghette e ritornelli",
+      "h2": "Stanghette, ritornelli, segno e coda",
+      "intro": "I segni che dicono dove andare mentre si suona: stanghette tratteggiate e corte, punti di ritornello, segno e coda, D.C. e D.S. e i segni di ripetizione di battuta. Android e Windows includono un font per tutti i simboli di questa sezione e delle tre successive; su iPhone e Mac dipendono dal font di simboli di Apple, che non abbiamo ancora potuto testare, quindi alcuni potrebbero apparire lì come riquadri vuoti.",
+      "symbols": [
+        {
+          "char": "𝄄",
+          "label": "Stanghetta tratteggiata"
+        },
+        {
+          "char": "𝄅",
+          "label": "Stanghetta corta"
+        },
+        {
+          "char": "𝄈",
+          "label": "Punti di ritornello"
+        },
+        {
+          "char": "𝄉",
+          "label": "Dal segno (D.S.)"
+        },
+        {
+          "char": "𝄊",
+          "label": "Da capo (D.C.)"
+        },
+        {
+          "char": "𝄋",
+          "label": "Simbolo del segno"
+        },
+        {
+          "char": "𝄌",
+          "label": "Simbolo della coda"
+        },
+        {
+          "char": "𝄍",
+          "label": "Ripetizione di battuta 1"
+        },
+        {
+          "char": "𝄎",
+          "label": "Ripetizione di battuta 2"
+        },
+        {
+          "char": "𝄏",
+          "label": "Ripetizione di battuta 3"
+        }
+      ]
+    },
+    {
+      "id": "clefs-staff-time-signatures",
+      "label": "Chiavi e tempo",
+      "h2": "Chiavi d’ottava, righi e indicazioni di tempo",
+      "intro": "Chiavi di violino e di basso con il piccolo 8 sopra o sotto per trasportare di un’ottava, chiavi di percussione, righi da una a sei linee, il C del 4/4 e il C tagliato dell’alla breve, più i bemolli e i bequadri con freccia usati per i quarti di tono.",
+      "symbols": [
+        {
+          "char": "𝄖",
+          "label": "Rigo a 1 linea"
+        },
+        {
+          "char": "𝄗",
+          "label": "Rigo a 2 linee"
+        },
+        {
+          "char": "𝄘",
+          "label": "Rigo a 3 linee"
+        },
+        {
+          "char": "𝄙",
+          "label": "Rigo a 4 linee"
+        },
+        {
+          "char": "𝄚",
+          "label": "Pentagramma (5 linee)"
+        },
+        {
+          "char": "𝄛",
+          "label": "Rigo a 6 linee"
+        },
+        {
+          "char": "𝄟",
+          "label": "Chiave di violino 8va (ottava sopra)"
+        },
+        {
+          "char": "𝄠",
+          "label": "Chiave di violino 8vb (ottava sotto)"
+        },
+        {
+          "char": "𝄣",
+          "label": "Chiave di basso 8va (ottava sopra)"
+        },
+        {
+          "char": "𝄤",
+          "label": "Chiave di basso 8vb (ottava sotto)"
+        },
+        {
+          "char": "𝄥",
+          "label": "Chiave di percussione 1"
+        },
+        {
+          "char": "𝄦",
+          "label": "Chiave di percussione 2"
+        },
+        {
+          "char": "𝄴",
+          "label": "Tempo 4/4 (C)"
+        },
+        {
+          "char": "𝄵",
+          "label": "Tempo tagliato (alla breve)"
+        },
+        {
+          "char": "𝄬",
+          "label": "Bemolle con freccia in su"
+        },
+        {
+          "char": "𝄭",
+          "label": "Bemolle con freccia in giù"
+        },
+        {
+          "char": "𝄮",
+          "label": "Bequadro con freccia in su"
+        },
+        {
+          "char": "𝄯",
+          "label": "Bequadro con freccia in giù"
+        },
+        {
+          "char": "𝄳",
+          "label": "Bemolle di quarto di tono"
+        }
+      ]
+    },
+    {
+      "id": "notes-grace-notes-rests",
+      "label": "Figure e pause",
+      "h2": "Figure, abbellimenti e pause",
+      "intro": "Figure in un solo carattere dalla breve alla fusa, l’acciaccatura e l’appoggiatura e le pause che mancano più in alto, comprese le pause di più battute e le pause quadrate della notazione antica.",
+      "symbols": [
+        {
+          "char": "𝅜",
+          "label": "Breve"
+        },
+        {
+          "char": "𝅝",
+          "label": "Semibreve"
+        },
+        {
+          "char": "\ud834\udd5e",
+          "label": "Minima"
+        },
+        {
+          "char": "\ud834\udd5f",
+          "label": "Semiminima"
+        },
+        {
+          "char": "\ud834\udd60",
+          "label": "Croma"
+        },
+        {
+          "char": "\ud834\udd61",
+          "label": "Semicroma"
+        },
+        {
+          "char": "\ud834\udd62",
+          "label": "Biscroma"
+        },
+        {
+          "char": "\ud834\udd63",
+          "label": "Semibiscroma"
+        },
+        {
+          "char": "\ud834\udd64",
+          "label": "Fusa (1/128)"
+        },
+        {
+          "char": "𝆔",
+          "label": "Acciaccatura (con barra)"
+        },
+        {
+          "char": "𝆕",
+          "label": "Appoggiatura (senza barra)"
+        },
+        {
+          "char": "𝄩",
+          "label": "Pausa di più battute 1"
+        },
+        {
+          "char": "𝄺",
+          "label": "Pausa di più battute 2"
+        },
+        {
+          "char": "𝄽",
+          "label": "Pausa di semiminima"
+        },
+        {
+          "char": "𝅀",
+          "label": "Pausa di biscroma"
+        },
+        {
+          "char": "𝅁",
+          "label": "Pausa di semibiscroma"
+        },
+        {
+          "char": "𝅂",
+          "label": "Pausa di fusa"
+        },
+        {
+          "char": "𝇁",
+          "label": "Pausa di longa perfetta"
+        },
+        {
+          "char": "𝇂",
+          "label": "Pausa di longa imperfetta"
+        },
+        {
+          "char": "𝇃",
+          "label": "Pausa di breve"
+        },
+        {
+          "char": "𝇄",
+          "label": "Pausa di semibreve (mensurale)"
+        },
+        {
+          "char": "𝇅",
+          "label": "Pausa di minima (mensurale)"
+        },
+        {
+          "char": "𝇆",
+          "label": "Pausa di semiminima (mensurale)"
+        }
+      ]
+    },
+    {
+      "id": "noteheads-mezzo-pedal",
+      "label": "Teste e pedale",
+      "h2": "Teste di nota, mezzo e pedale del pianoforte",
+      "intro": "Forme di testa di nota per la batteria, le note fantasma e le shape notes, bianche e nere, più la lettera dinamica mezzo e i segni di pedale del pianoforte: abbassa il pedale, rilascia il pedale e mezzo pedale.",
+      "symbols": [
+        {
+          "char": "𝅃",
+          "label": "Testa di nota a X"
+        },
+        {
+          "char": "𝅄",
+          "label": "Testa di nota a croce (+)"
+        },
+        {
+          "char": "𝅅",
+          "label": "Testa di nota a X cerchiata"
+        },
+        {
+          "char": "𝅆",
+          "label": "Testa di nota quadrata, bianca"
+        },
+        {
+          "char": "𝅇",
+          "label": "Testa di nota quadrata, nera"
+        },
+        {
+          "char": "𝅈",
+          "label": "Testa di nota triangolare (verso l’alto), bianca"
+        },
+        {
+          "char": "𝅉",
+          "label": "Testa di nota triangolare (verso l’alto), nera"
+        },
+        {
+          "char": "𝅊",
+          "label": "Testa di nota triangolare (verso sinistra), bianca"
+        },
+        {
+          "char": "𝅋",
+          "label": "Testa di nota triangolare (verso sinistra), nera"
+        },
+        {
+          "char": "𝅌",
+          "label": "Testa di nota triangolare (verso destra), bianca"
+        },
+        {
+          "char": "𝅍",
+          "label": "Testa di nota triangolare (verso destra), nera"
+        },
+        {
+          "char": "𝅎",
+          "label": "Testa di nota triangolare (verso il basso), bianca"
+        },
+        {
+          "char": "𝅏",
+          "label": "Testa di nota triangolare (verso il basso), nera"
+        },
+        {
+          "char": "𝅐",
+          "label": "Testa di nota triangolare (in alto a destra), bianca"
+        },
+        {
+          "char": "𝅑",
+          "label": "Testa di nota triangolare (in alto a destra), nera"
+        },
+        {
+          "char": "𝅒",
+          "label": "Testa di nota a mezzaluna, bianca"
+        },
+        {
+          "char": "𝅓",
+          "label": "Testa di nota a mezzaluna, nera"
+        },
+        {
+          "char": "𝅔",
+          "label": "Testa di nota triangolare arrotondata, bianca"
+        },
+        {
+          "char": "𝅕",
+          "label": "Testa di nota triangolare arrotondata, nera"
+        },
+        {
+          "char": "𝅖",
+          "label": "Testa di nota tra parentesi (nota fantasma)"
+        },
+        {
+          "char": "𝅗",
+          "label": "Testa di nota vuota"
+        },
+        {
+          "char": "𝅘",
+          "label": "Testa di nota piena"
+        },
+        {
+          "char": "𝅙",
+          "label": "Testa di nota nulla (invisibile)"
+        },
+        {
+          "char": "𝆐",
+          "label": "Mezzo (m)"
+        },
+        {
+          "char": "𝆮",
+          "label": "Abbassa il pedale (Ped.)"
+        },
+        {
+          "char": "𝆯",
+          "label": "Rilascia il pedale"
+        },
+        {
+          "char": "𝆰",
+          "label": "Mezzo pedale"
         }
       ]
     }

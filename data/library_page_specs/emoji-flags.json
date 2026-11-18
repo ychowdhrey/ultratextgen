@@ -1,0 +1,266 @@
+{
+  "slug": "emoji-flags",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Flag Emoji Explorer: Copy & Paste Country Flag Emojis",
+  "meta_description": "Browse and copy flag emojis for every country. Click any flag to copy it instantly for posts, bios, and messages.",
+  "canonical": "https://ultratextgen.com/library/emoji-flags/",
+  "breadcrumb": "Flag Emoji Explorer",
+  "hero_h1": "Flag Emoji Explorer",
+  "hero_tagline": "Copy and paste flag emojis instantly.",
+  "intro": "Every country's flag is just one click away. Browse all 195 country flags, filter by region, and copy any flag emoji instantly. Works in posts, bios, captions, and messages across every major platform.",
+  "date_published": "2026-03-04",
+  "date_modified": "2026-03-04",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/emoji-flags/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/emoji-flags/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-flags/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/emoji-flags/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/emoji-flags/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/emoji-flags/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/emoji-flags/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/emoji-flags/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/emoji-drapeaux/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/kokki-emoji/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/emoji-bandiere/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/guoqi-emoji/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/gukgi-imoji/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/emoji-bendera/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/emoji-bayraklar/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/emoji-vlaggen/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/emodzi-flagi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/emoji-flags/" }
+  ],
+  "sections": [
+    {
+      "id": "country-flags",
+      "label": "Country Flags",
+      "h2": "All Country Flags",
+      "symbols": [
+        { "char": "🇺🇸", "label": "United States" },
+        { "char": "🇲🇽", "label": "Mexico" },
+        { "char": "🇮🇳", "label": "India" },
+        { "char": "🇧🇷", "label": "Brazil" },
+        { "char": "🇨🇦", "label": "Canada" },
+        { "char": "🇵🇷", "label": "Puerto Rico" },
+        { "char": "🇬🇧", "label": "United Kingdom" },
+        { "char": "🇮🇪", "label": "Ireland" }
+      ]
+    },
+    {
+      "id": "territory-flags",
+      "label": "Territories",
+      "h2": "Territory and Region Flags",
+      "intro": "Unicode also has flags for places outside the 195-country list: overseas territories, dependencies, special administrative regions and areas with their own code, such as 🇧🇱 Saint Barthélemy (St Barts), 🇭🇰 Hong Kong and 🇽🇰 Kosovo. A few show another country's flag because they have no flag of their own: 🇧🇻 Bouvet Island and 🇸🇯 Svalbard show Norway's, 🇺🇲 U.S. Outlying Islands the U.S. flag, and 🇭🇲 Heard and McDonald Islands Australia's. 🇨🇶 Sark arrived in Emoji 16.0 (2024), so Android phones without that update show the letters CQ in its place, as Windows does for every flag.",
+      "symbols": [
+        { "char": "🇦🇽", "label": "Åland Islands" },
+        { "char": "🇦🇸", "label": "American Samoa" },
+        { "char": "🇦🇮", "label": "Anguilla" },
+        { "char": "🇦🇶", "label": "Antarctica" },
+        { "char": "🇦🇼", "label": "Aruba" },
+        { "char": "🇦🇨", "label": "Ascension Island" },
+        { "char": "🇧🇲", "label": "Bermuda" },
+        { "char": "🇧🇻", "label": "Bouvet Island" },
+        { "char": "🇮🇴", "label": "British Indian Ocean Territory" },
+        { "char": "🇻🇬", "label": "British Virgin Islands" },
+        { "char": "🇮🇨", "label": "Canary Islands" },
+        { "char": "🇧🇶", "label": "Caribbean Netherlands" },
+        { "char": "🇰🇾", "label": "Cayman Islands" },
+        { "char": "🇪🇦", "label": "Ceuta and Melilla" },
+        { "char": "🇨🇽", "label": "Christmas Island" },
+        { "char": "🇨🇵", "label": "Clipperton Island" },
+        { "char": "🇨🇨", "label": "Cocos (Keeling) Islands" },
+        { "char": "🇨🇰", "label": "Cook Islands" },
+        { "char": "🇨🇼", "label": "Curaçao" },
+        { "char": "🇩🇬", "label": "Diego Garcia" },
+        { "char": "🇫🇰", "label": "Falkland Islands" },
+        { "char": "🇫🇴", "label": "Faroe Islands" },
+        { "char": "🇬🇫", "label": "French Guiana" },
+        { "char": "🇵🇫", "label": "French Polynesia" },
+        { "char": "🇹🇫", "label": "French Southern Territories" },
+        { "char": "🇬🇮", "label": "Gibraltar" },
+        { "char": "🇬🇱", "label": "Greenland" },
+        { "char": "🇬🇵", "label": "Guadeloupe" },
+        { "char": "🇬🇺", "label": "Guam" },
+        { "char": "🇬🇬", "label": "Guernsey" },
+        { "char": "🇭🇲", "label": "Heard and McDonald Islands" },
+        { "char": "🇭🇰", "label": "Hong Kong" },
+        { "char": "🇮🇲", "label": "Isle of Man" },
+        { "char": "🇯🇪", "label": "Jersey" },
+        { "char": "🇽🇰", "label": "Kosovo" },
+        { "char": "🇲🇴", "label": "Macau" },
+        { "char": "🇲🇶", "label": "Martinique" },
+        { "char": "🇾🇹", "label": "Mayotte" },
+        { "char": "🇲🇸", "label": "Montserrat" },
+        { "char": "🇳🇨", "label": "New Caledonia" },
+        { "char": "🇳🇺", "label": "Niue" },
+        { "char": "🇳🇫", "label": "Norfolk Island" },
+        { "char": "🇲🇵", "label": "Northern Mariana Islands" },
+        { "char": "🇵🇳", "label": "Pitcairn Islands" },
+        { "char": "🇷🇪", "label": "Réunion" },
+        { "char": "🇧🇱", "label": "Saint Barthélemy (St Barts)" },
+        { "char": "🇸🇭", "label": "Saint Helena" },
+        { "char": "🇲🇫", "label": "Saint Martin" },
+        { "char": "🇵🇲", "label": "Saint Pierre and Miquelon" },
+        { "char": "🇨🇶", "label": "Sark" },
+        { "char": "🇸🇽", "label": "Sint Maarten" },
+        { "char": "🇬🇸", "label": "South Georgia and South Sandwich Islands" },
+        { "char": "🇸🇯", "label": "Svalbard and Jan Mayen" },
+        { "char": "🇹🇼", "label": "Taiwan" },
+        { "char": "🇹🇰", "label": "Tokelau" },
+        { "char": "🇹🇦", "label": "Tristan da Cunha" },
+        { "char": "🇹🇨", "label": "Turks and Caicos Islands" },
+        { "char": "🇺🇲", "label": "U.S. Outlying Islands" },
+        { "char": "🇻🇮", "label": "U.S. Virgin Islands" },
+        { "char": "🇼🇫", "label": "Wallis and Futuna" },
+        { "char": "🇪🇭", "label": "Western Sahara" }
+      ]
+    },
+    {
+      "id": "org-flags",
+      "label": "Organization Flags",
+      "h2": "Organization Flags",
+      "symbols": [
+        { "char": "🇪🇺", "label": "European Union" },
+        { "char": "🇺🇳", "label": "United Nations" }
+      ]
+    },
+    {
+      "id": "regional-flags",
+      "label": "Regional Flags",
+      "h2": "Regional Flags",
+      "symbols": [
+        { "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "label": "England" },
+        { "char": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "label": "Scotland" },
+        { "char": "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "label": "Wales" }
+      ]
+    },
+    {
+      "id": "identity-flags",
+      "label": "Identity Flags",
+      "h2": "Identity Flags",
+      "symbols": [
+        { "char": "🏳️‍🌈", "label": "Rainbow Pride" },
+        { "char": "🏳️‍⚧️", "label": "Transgender Pride" }
+      ]
+    },
+    {
+      "id": "symbolic-flags",
+      "label": "Symbolic Flags",
+      "h2": "Symbolic Flags",
+      "symbols": [
+        { "char": "🏁", "label": "Chequered Flag" },
+        { "char": "🚩", "label": "Triangular Flag" },
+        { "char": "🏳", "label": "White Flag" },
+        { "char": "🏴", "label": "Black Flag" },
+        { "char": "🏴‍☠️", "label": "Pirate Flag" },
+        { "char": "🎌", "label": "Crossed Flags" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "flag-grids",
+    "label": "Flag Collections",
+    "h2": "Regional Flag Grids",
+    "intro": "Copy entire collections of flags for your content."
+  },
+  "collection_container_id": "flagGridContainer",
+  "collections": [
+    {
+      "name": "EU Flag Emojis",
+      "flags": [
+        "🇦🇹",
+        "🇧🇪",
+        "🇧🇬",
+        "🇭🇷",
+        "🇨🇾",
+        "🇨🇿",
+        "🇩🇰",
+        "🇪🇪",
+        "🇫🇮",
+        "🇫🇷",
+        "🇩🇪",
+        "🇬🇷",
+        "🇭🇺",
+        "🇮🇪",
+        "🇮🇹",
+        "🇱🇻",
+        "🇱🇹",
+        "🇱🇺",
+        "🇲🇹",
+        "🇳🇱",
+        "🇵🇱",
+        "🇵🇹",
+        "🇷🇴",
+        "🇸🇰",
+        "🇸🇮",
+        "🇪🇸",
+        "🇸🇪"
+      ]
+    },
+    {
+      "name": "ASEAN Flag Emojis",
+      "flags": ["🇸🇬", "🇲🇾", "🇮🇩", "🇹🇭", "🇵🇭", "🇻🇳", "🇧🇳", "🇰🇭", "🇱🇦", "🇲🇲", "🇹🇱"]
+    },
+    {
+      "name": "Middle East Flag Emojis",
+      "flags": ["🇸🇦", "🇦🇪", "🇶🇦", "🇰🇼", "🇧🇭", "🇴🇲", "🇮🇱", "🇯🇴", "🇱🇧", "🇮🇶", "🇮🇷", "🇾🇪"]
+    },
+    {
+      "name": "G20 Flag Emojis",
+      "flags": [
+        "🇦🇷",
+        "🇦🇺",
+        "🇧🇷",
+        "🇨🇦",
+        "🇨🇳",
+        "🇫🇷",
+        "🇩🇪",
+        "🇮🇳",
+        "🇮🇩",
+        "🇮🇹",
+        "🇯🇵",
+        "🇲🇽",
+        "🇷🇺",
+        "🇸🇦",
+        "🇿🇦",
+        "🇰🇷",
+        "🇹🇷",
+        "🇬🇧",
+        "🇺🇸"
+      ]
+    },
+    {
+      "name": "Nordic Flag Emojis",
+      "flags": ["🇩🇰", "🇫🇮", "🇮🇸", "🇳🇴", "🇸🇪"]
+    },
+    {
+      "name": "South Asia Flag Emojis",
+      "flags": ["🇮🇳", "🇵🇰", "🇧🇩", "🇱🇰", "🇳🇵", "🇧🇹", "🇲🇻", "🇦🇫"]
+    },
+    {
+      "name": "East Asia Flag Emojis",
+      "flags": ["🇨🇳", "🇯🇵", "🇰🇷", "🇹🇼", "🇲🇳", "🇭🇰", "🇲🇴"]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Regional Flag Grids",
+      "paragraphs": ["Copy entire collections of flags for your content."]
+    }
+  ],
+  "related": [
+    { "href": "/library/star-symbols/", "title": "Star Symbols", "desc": "Every star and sparkle character to copy and paste." },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emoji",
+      "desc": "Fireworks, confetti, and celebration emoji for any occasion."
+    },
+    { "href": "/library/", "title": "Symbol Library", "desc": "Browse every symbol, emoji, and kaomoji collection on the site." },
+    {
+      "href": "/events/july-4th/",
+      "title": "4th of July Text & Symbol Generator",
+      "desc": "Style a 4th of July caption live, then copy matching fonts, emoji, kaomoji, and ready-made messages."
+    }
+  ]
+}

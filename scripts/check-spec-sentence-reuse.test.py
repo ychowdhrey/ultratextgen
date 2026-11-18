@@ -203,6 +203,30 @@ def _reports_the_other_owners():
 t("names the other specs already carrying it", _reports_the_other_owners)
 
 
+def _backfilled_spec_records_the_page():
+    """A spec written down from a live hand-built page carries the page's own
+    sentences: they reach no reader for the first time, so they are reported."""
+    now = dict(spec(hero_tagline="Zodiac signs by tradition. " + SHARED), hand_built_page=True)
+    page_had = {M.normalise(SHARED), M.normalise("Zodiac signs by tradition.")}
+    introduced, pre = M.classify([("zodiac.json", now, None, page_had)], IDX4, limit=3)
+    assert introduced == [] and len(pre) == 1, (introduced, pre)
+
+
+t("NO CATCH: a backfilled hand-built spec carrying its own page's sentence",
+  _backfilled_spec_records_the_page)
+
+
+def _backfill_cannot_smuggle_a_new_sentence():
+    now = dict(spec(hero_tagline="Zodiac signs by tradition. " + SHARED), hand_built_page=True)
+    page_had = {M.normalise("Zodiac signs by tradition.")}  # the page never said SHARED
+    introduced, pre = M.classify([("zodiac.json", now, None, page_had)], IDX4, limit=3)
+    assert len(introduced) == 1 and pre == [], (introduced, pre)
+
+
+t("CATCH: a backfilled spec adding a shared sentence its page did not carry",
+  _backfill_cannot_smuggle_a_new_sentence)
+
+
 # ── deliberate NON-catches ─────────────────────────────────────────────────
 
 def _no_catch_untouched_reuse():

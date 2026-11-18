@@ -225,11 +225,11 @@
         },
         {
           "char": "𝄻",
-          "label": "Demi-pause"
+          "label": "Pause"
         },
         {
           "char": "𝄼",
-          "label": "Soupir"
+          "label": "Demi-pause"
         }
       ]
     },
@@ -350,6 +350,354 @@
         {
           "char": "꒰♬꒱",
           "label": "Note entre crochets"
+        }
+      ]
+    },
+    {
+      "id": "barlines-repeats-segno-coda",
+      "label": "Barres et reprises",
+      "h2": "Barres de mesure, reprises, segno et coda",
+      "intro": "Les signes qui indiquent où aller pendant le jeu : barres de mesure pointillées et courtes, points de reprise, signe de renvoi et coda, D.C. et D.S., et les signes de répétition de mesure. Android et Windows incluent une police pour tous les symboles de cette section et des trois suivantes ; sur iPhone et Mac, ils dépendent de la police de symboles d’Apple, que nous n’avons pas encore pu tester, donc certains peuvent s’y afficher comme des carrés vides.",
+      "symbols": [
+        {
+          "char": "𝄄",
+          "label": "Barre de mesure pointillée"
+        },
+        {
+          "char": "𝄅",
+          "label": "Barre de mesure courte"
+        },
+        {
+          "char": "𝄈",
+          "label": "Points de reprise"
+        },
+        {
+          "char": "𝄉",
+          "label": "Dal segno (D.S.)"
+        },
+        {
+          "char": "𝄊",
+          "label": "Da capo (D.C.)"
+        },
+        {
+          "char": "𝄋",
+          "label": "Signe de renvoi (segno)"
+        },
+        {
+          "char": "𝄌",
+          "label": "Signe de coda"
+        },
+        {
+          "char": "𝄍",
+          "label": "Répétition de mesure 1"
+        },
+        {
+          "char": "𝄎",
+          "label": "Répétition de mesure 2"
+        },
+        {
+          "char": "𝄏",
+          "label": "Répétition de mesure 3"
+        }
+      ]
+    },
+    {
+      "id": "clefs-staff-time-signatures",
+      "label": "Clés et mesure",
+      "h2": "Clés d’octave, portées et chiffrages de mesure",
+      "intro": "Clés de sol et de fa avec le petit 8 au-dessus ou en dessous pour transposer d’une octave, clés de percussion, portées d’une à six lignes, le C de la mesure à 4/4 et le C barré de l’alla breve, ainsi que les bémols et bécarres fléchés utilisés pour les quarts de ton.",
+      "symbols": [
+        {
+          "char": "𝄖",
+          "label": "Portée à 1 ligne"
+        },
+        {
+          "char": "𝄗",
+          "label": "Portée à 2 lignes"
+        },
+        {
+          "char": "𝄘",
+          "label": "Portée à 3 lignes"
+        },
+        {
+          "char": "𝄙",
+          "label": "Portée à 4 lignes"
+        },
+        {
+          "char": "𝄚",
+          "label": "Portée à 5 lignes"
+        },
+        {
+          "char": "𝄛",
+          "label": "Portée à 6 lignes"
+        },
+        {
+          "char": "𝄟",
+          "label": "Clé de sol 8va (octave supérieure)"
+        },
+        {
+          "char": "𝄠",
+          "label": "Clé de sol 8vb (octave inférieure)"
+        },
+        {
+          "char": "𝄣",
+          "label": "Clé de fa 8va (octave supérieure)"
+        },
+        {
+          "char": "𝄤",
+          "label": "Clé de fa 8vb (octave inférieure)"
+        },
+        {
+          "char": "𝄥",
+          "label": "Clé de percussion 1"
+        },
+        {
+          "char": "𝄦",
+          "label": "Clé de percussion 2"
+        },
+        {
+          "char": "𝄴",
+          "label": "Mesure à 4/4 (C)"
+        },
+        {
+          "char": "𝄵",
+          "label": "Alla breve (C barré)"
+        },
+        {
+          "char": "𝄬",
+          "label": "Bémol avec flèche vers le haut"
+        },
+        {
+          "char": "𝄭",
+          "label": "Bémol avec flèche vers le bas"
+        },
+        {
+          "char": "𝄮",
+          "label": "Bécarre avec flèche vers le haut"
+        },
+        {
+          "char": "𝄯",
+          "label": "Bécarre avec flèche vers le bas"
+        },
+        {
+          "char": "𝄳",
+          "label": "Quart de ton bémol"
+        }
+      ]
+    },
+    {
+      "id": "notes-grace-notes-rests",
+      "label": "Figures et silences",
+      "h2": "Figures de notes, petites notes et silences",
+      "intro": "Des figures en un seul caractère, de la carrée à la quintuple croche, les deux petites notes d’ornement et les silences absents plus haut, dont les pauses de plusieurs mesures et les silences carrés de la notation ancienne.",
+      "symbols": [
+        {
+          "char": "𝅜",
+          "label": "Carrée (brève)"
+        },
+        {
+          "char": "𝅝",
+          "label": "Ronde"
+        },
+        {
+          "char": "\ud834\udd5e",
+          "label": "Blanche"
+        },
+        {
+          "char": "\ud834\udd5f",
+          "label": "Noire"
+        },
+        {
+          "char": "\ud834\udd60",
+          "label": "Croche"
+        },
+        {
+          "char": "\ud834\udd61",
+          "label": "Double croche"
+        },
+        {
+          "char": "\ud834\udd62",
+          "label": "Triple croche"
+        },
+        {
+          "char": "\ud834\udd63",
+          "label": "Quadruple croche"
+        },
+        {
+          "char": "\ud834\udd64",
+          "label": "Quintuple croche"
+        },
+        {
+          "char": "𝆔",
+          "label": "Petite note barrée (acciaccatura)"
+        },
+        {
+          "char": "𝆕",
+          "label": "Petite note non barrée (appoggiature)"
+        },
+        {
+          "char": "𝄩",
+          "label": "Pause de plusieurs mesures 1"
+        },
+        {
+          "char": "𝄺",
+          "label": "Pause de plusieurs mesures 2"
+        },
+        {
+          "char": "𝄽",
+          "label": "Soupir"
+        },
+        {
+          "char": "𝅀",
+          "label": "Huitième de soupir"
+        },
+        {
+          "char": "𝅁",
+          "label": "Seizième de soupir"
+        },
+        {
+          "char": "𝅂",
+          "label": "Trente-deuxième de soupir"
+        },
+        {
+          "char": "𝇁",
+          "label": "Silence de longue parfaite"
+        },
+        {
+          "char": "𝇂",
+          "label": "Silence de longue imparfaite"
+        },
+        {
+          "char": "𝇃",
+          "label": "Silence de brève"
+        },
+        {
+          "char": "𝇄",
+          "label": "Silence de semi-brève"
+        },
+        {
+          "char": "𝇅",
+          "label": "Silence de minime"
+        },
+        {
+          "char": "𝇆",
+          "label": "Silence de semi-minime"
+        }
+      ]
+    },
+    {
+      "id": "noteheads-mezzo-pedal",
+      "label": "Têtes et pédale",
+      "h2": "Têtes de note, mezzo et pédale de piano",
+      "intro": "Des formes de tête de note pour la batterie, les notes fantômes et les shape notes, en blanc et en noir, ainsi que la lettre de nuance mezzo et les signes de pédale du piano : enfoncer, relâcher et demi-pédale.",
+      "symbols": [
+        {
+          "char": "𝅃",
+          "label": "Tête de note en X"
+        },
+        {
+          "char": "𝅄",
+          "label": "Tête de note en croix (+)"
+        },
+        {
+          "char": "𝅅",
+          "label": "Tête de note en X cerclée"
+        },
+        {
+          "char": "𝅆",
+          "label": "Tête de note carrée, blanche"
+        },
+        {
+          "char": "𝅇",
+          "label": "Tête de note carrée, noire"
+        },
+        {
+          "char": "𝅈",
+          "label": "Tête de note triangulaire (vers le haut), blanche"
+        },
+        {
+          "char": "𝅉",
+          "label": "Tête de note triangulaire (vers le haut), noire"
+        },
+        {
+          "char": "𝅊",
+          "label": "Tête de note triangulaire (vers la gauche), blanche"
+        },
+        {
+          "char": "𝅋",
+          "label": "Tête de note triangulaire (vers la gauche), noire"
+        },
+        {
+          "char": "𝅌",
+          "label": "Tête de note triangulaire (vers la droite), blanche"
+        },
+        {
+          "char": "𝅍",
+          "label": "Tête de note triangulaire (vers la droite), noire"
+        },
+        {
+          "char": "𝅎",
+          "label": "Tête de note triangulaire (vers le bas), blanche"
+        },
+        {
+          "char": "𝅏",
+          "label": "Tête de note triangulaire (vers le bas), noire"
+        },
+        {
+          "char": "𝅐",
+          "label": "Tête de note triangulaire (vers le haut à droite), blanche"
+        },
+        {
+          "char": "𝅑",
+          "label": "Tête de note triangulaire (vers le haut à droite), noire"
+        },
+        {
+          "char": "𝅒",
+          "label": "Tête de note en croissant, blanche"
+        },
+        {
+          "char": "𝅓",
+          "label": "Tête de note en croissant, noire"
+        },
+        {
+          "char": "𝅔",
+          "label": "Tête de note triangulaire arrondie, blanche"
+        },
+        {
+          "char": "𝅕",
+          "label": "Tête de note triangulaire arrondie, noire"
+        },
+        {
+          "char": "𝅖",
+          "label": "Tête de note entre parenthèses (note fantôme)"
+        },
+        {
+          "char": "𝅗",
+          "label": "Tête de note vide"
+        },
+        {
+          "char": "𝅘",
+          "label": "Tête de note pleine"
+        },
+        {
+          "char": "𝅙",
+          "label": "Tête de note nulle (invisible)"
+        },
+        {
+          "char": "𝆐",
+          "label": "Mezzo (m)"
+        },
+        {
+          "char": "𝆮",
+          "label": "Enfoncer la pédale (Ped.)"
+        },
+        {
+          "char": "𝆯",
+          "label": "Relâcher la pédale"
+        },
+        {
+          "char": "𝆰",
+          "label": "Demi-pédale"
         }
       ]
     }

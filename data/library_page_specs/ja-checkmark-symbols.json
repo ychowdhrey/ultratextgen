@@ -355,15 +355,15 @@
       "intro": "そのまま貼れる行。",
       "symbols": [
         {
-          "char": "☑ Done",
+          "char": "☑ 完了",
           "label": "完了の行"
         },
         {
-          "char": "☐ To-do",
+          "char": "☐ 未着手",
           "label": "未着手の行"
         },
         {
-          "char": "✔ Completed · ✘ Pending",
+          "char": "✔ 完了 · ✘ 保留",
           "label": "完了・保留の組"
         },
         {
@@ -375,7 +375,7 @@
           "label": "角かっこの空欄"
         },
         {
-          "char": "✅ Yes  ❌ No",
+          "char": "✅ はい  ❌ いいえ",
           "label": "はい / いいえ"
         }
       ]

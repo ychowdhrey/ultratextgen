@@ -32,6 +32,7 @@ grandfathered.
 | `canonical_intents.json` | the canonical intent of every hreflang cluster with no English member (any cluster may have one): id, origin locale, pinned pages, scope, x-default, locale owners | `scripts/lib/intent-clusters.js` (`check:canonical-intents`, `check-locale-parent-gap.js`, the hreflang and parity gates) |
 | `english_parent_exceptions.json` | **retired 2026-11-14**, read by no script: the history of pages once ratified as needing no EN parent; every entry carries `migratedTo` | — |
 | `translation_parity_exceptions.json` | one discussed EN↔locale pair allowed to diverge | `check-translation-parity.js` |
+| `spec_drift_exceptions.json` | a **localized** page allowed to differ from its library spec because it was further localized; the exact tiles it excuses (never a not-localized page) | `scripts/lib/spec_drift.py` (`check:spec-drift`, `audit:spec-drift`) |
 | `translation_identical_strings.json` | a string whose **correct** translation is byte-identical to English | `check-locale-translation.js` |
 | `numeric_parity_exceptions.json` | one discussed `(page, slot, value)` divergence | `check-numeric-parity.js` |
 | `core_parent_set.json` | which page patterns are mirror-by-default / gated / never | `locale-parent-registry.js` |

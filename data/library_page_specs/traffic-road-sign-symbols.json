@@ -1,0 +1,127 @@
+{
+  "slug": "traffic-road-sign-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Traffic & Road Sign Symbols: Copy & Paste Traffic Sign Emojis",
+  "meta_description": "Browse and copy traffic and road sign symbols — traffic lights, prohibition signs, pedestrian icons, and road facility emojis.",
+  "canonical": "https://ultratextgen.com/library/traffic-road-sign-symbols/",
+  "breadcrumb": "Traffic & Road Sign Symbols",
+  "hero_h1": "Traffic & Road Sign Symbols",
+  "hero_tagline": "Unicode symbols and emojis related to traffic, road signs, and transportation infrastructure. Click any symbol to copy it instantly.",
+  "intro": "Actual road signs are images, not Unicode characters. However, Unicode and emoji include a collection of traffic-related symbols that convey similar meaning: traffic lights, prohibition circles, pedestrian symbols, and more. This library collects the best available traffic and road-sign-adjacent characters.",
+  "date_published": "2026-04-12",
+  "date_modified": "2026-04-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/traffic-road-sign-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-transito/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/traffic-road-sign-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "traffic-signals",
+      "label": "Traffic Signals",
+      "h2": "Traffic Signal Symbols",
+      "symbols": [
+        { "char": "🚦", "label": "Vertical Traffic Light" },
+        { "char": "🚥", "label": "Horizontal Traffic Light" },
+        { "char": "🟢", "label": "Green Circle" },
+        { "char": "🟡", "label": "Yellow Circle" },
+        { "char": "🔴", "label": "Red Circle" },
+        { "char": "⚠", "label": "Warning Sign" },
+        { "char": "⛔", "label": "No Entry" }
+      ]
+    },
+    {
+      "id": "stoplight-sequence",
+      "label": "Stoplight Sequence",
+      "h2": "Stoplight Sequence (🔴 🟡 🟢)",
+      "intro": "The canonical stop–slow–go sequence used worldwide for traffic signaling, alongside the traffic-light glyph itself.",
+      "symbols": [
+        { "char": "🔴", "label": "Red — Stop" },
+        { "char": "🟡", "label": "Yellow — Caution" },
+        { "char": "🟢", "label": "Green — Go" },
+        { "char": "🚦", "label": "Traffic Light" }
+      ]
+    },
+    {
+      "id": "prohibition-signs",
+      "label": "Prohibition Signs",
+      "h2": "Prohibition & Restriction Signs",
+      "symbols": [
+        { "char": "🚫", "label": "Prohibited" },
+        { "char": "🚳", "label": "No Bicycles" },
+        { "char": "🚭", "label": "No Smoking" },
+        { "char": "🚯", "label": "No Littering" },
+        { "char": "🚱", "label": "Non-Potable Water" },
+        { "char": "🚷", "label": "No Pedestrians" },
+        { "char": "📵", "label": "No Mobile Phones" },
+        { "char": "🔞", "label": "No One Under 18" },
+        { "char": "Ø", "label": "Slashed Zero (No)" }
+      ]
+    },
+    {
+      "id": "pedestrian-vehicle",
+      "label": "Pedestrian & Vehicle",
+      "h2": "Pedestrian & Vehicle Symbols",
+      "symbols": [
+        { "char": "🚶", "label": "Person Walking" },
+        { "char": "🏃", "label": "Person Running" },
+        { "char": "🚴", "label": "Person Biking" },
+        { "char": "🚵", "label": "Person Mountain Biking" },
+        { "char": "🚗", "label": "Automobile" },
+        { "char": "🚕", "label": "Taxi" },
+        { "char": "🚌", "label": "Bus" },
+        { "char": "🚚", "label": "Delivery Truck" },
+        { "char": "🚑", "label": "Ambulance" },
+        { "char": "🚒", "label": "Fire Engine" }
+      ]
+    },
+    {
+      "id": "facilities-services",
+      "label": "Facilities & Services",
+      "h2": "Road Facility & Service Symbols",
+      "symbols": [
+        { "char": "🅿", "label": "Parking Button" },
+        { "char": "⛽", "label": "Fuel Pump" },
+        { "char": "🚮", "label": "Litter in Bin Sign" },
+        { "char": "🚰", "label": "Potable Water" },
+        { "char": "🚼", "label": "Baby Symbol" },
+        { "char": "🚧", "label": "Construction Sign" },
+        { "char": "🚨", "label": "Police Car Light" },
+        { "char": "🚩", "label": "Red Flag" },
+        { "char": "🚪", "label": "Door" },
+        { "char": "🏁", "label": "Chequered Flag" }
+      ]
+    },
+    {
+      "id": "warnings",
+      "label": "Warnings",
+      "h2": "Warning & Hazard Symbols",
+      "symbols": [
+        { "char": "⚠", "label": "Warning" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "☢", "label": "Radioactive" },
+        { "char": "☣", "label": "Biohazard" },
+        { "char": "💣", "label": "Bomb" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "⚠️", "label": "Warning" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/transport-symbols/",
+      "title": "Transport & Map Symbols",
+      "desc": "Road, rail, air, and water transport icons plus map symbols."
+    },
+    { "href": "/library/arrow-symbols/", "title": "Arrow Symbols", "desc": "Directional arrows for formatting and navigation." },
+    { "href": "/library/geometric-symbols/", "title": "Geometric Symbols", "desc": "Circles, squares, and triangles including sign shapes." },
+    { "href": "/library/emoji-flags/", "title": "Emoji Flag Explorer", "desc": "All 195 country flag emojis organized by region." },
+    {
+      "href": "/symbol/wheelchair-symbol/",
+      "title": "Wheelchair Symbol",
+      "desc": "The blue-and-white International Symbol of Access (♿), designed in 1968."
+    }
+  ]
+}

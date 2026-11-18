@@ -904,15 +904,28 @@ jobs:
         continue-on-error: true
         run: npm run audit:locale-parent-gap | tee locale-parent-gap-audit.log
 
-      # Validates every locale SPEC against its live EN parent before any HTML
-      # exists — tile parity, hreflang self-reference, related links resolving
-      # on disk, duplicate claimants. Whole-set rather than diff-scoped: the
-      # spec set is small and every check is relative to the EN parent, so it
-      # cannot go permanently red on backlog the way check:images does.
+      # Validates every locale SPEC against its live reference page before any
+      # HTML exists — tile parity, hreflang self-reference, related links
+      # resolving on disk, duplicate claimants, and (since 2026-11-18) that the
+      # reference page itself has a spec. Whole-set, because a reference page
+      # that grows makes an untouched locale spec stale. Until 2026-11-18 it read
+      # only the top-level specs (318 of 1,222) and reported 0 errors over 302;
+      # reading all of them has a backlog (559), so it fails only on errors that
+      # are not present at the merge base and prints the rest as "known".
       - name: Run locale spec check
         id: locale_spec
         continue-on-error: true
-        run: npm run check:locale-spec | tee locale-spec.log
+        run: npm run check:locale-spec -- --base origin/${{ github.base_ref || 'main' }} | tee locale-spec.log
+
+      # A library spec and its live page must not disagree (scripts/lib/spec_drift.py).
+      # A page that is not localized must match its spec; a localized page may
+      # differ only with an entry in data/spec_drift_exceptions.json; a new
+      # locale page needs a spec, and so does its reference page. Delta against
+      # the merge base: pre-existing disagreements are reported, not failed.
+      - name: Run spec drift check
+        id: spec_drift
+        continue-on-error: true
+        run: npm run check:spec-drift -- --base origin/${{ github.base_ref || 'main' }} | tee spec-drift.log
 
       # A locale PAGE must carry its EN parent's combo-set section. That section
       # renders at runtime through buildGrids(), so it leaves no static markup
@@ -1722,7 +1735,12 @@ jobs:
             echo ""
             echo "### Locale spec check — \`${{ steps.locale_spec.outcome }}\`"
             echo '```'
-            cat locale-spec.log
+            grep -v '^  known  ' locale-spec.log
+            echo '```'
+            echo ""
+            echo "### Spec drift check — \`${{ steps.spec_drift.outcome }}\`"
+            echo '```'
+            cat spec-drift.log
             echo '```'
             echo ""
             echo "### Locale combo-set parity — \`${{ steps.locale_collection_parity.outcome }}\`"
@@ -1973,6 +1991,7 @@ jobs:
           steps.locale_translation.outcome == 'failure' ||
           steps.locale_parent_gap.outcome == 'failure' ||
           steps.locale_spec.outcome == 'failure' ||
+          steps.spec_drift.outcome == 'failure' ||
           steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
           steps.jsonld_parse.outcome == 'failure' ||

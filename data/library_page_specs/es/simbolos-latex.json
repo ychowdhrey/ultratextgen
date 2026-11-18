@@ -129,7 +129,8 @@
         { "char": "⌋", "label": "\\rfloor: Piso derecho" },
         { "char": "⋯", "label": "\\cdots: Puntos suspensivos centrados" },
         { "char": "∴", "label": "\\therefore: Por lo tanto" },
-        { "char": "∵", "label": "\\because: Porque" }
+        { "char": "∵", "label": "\\because: Porque" },
+        { "char": "ℒ", "label": "\\mathcal{L}: Transformada de Laplace (L mayúscula manuscrita)" }
       ]
     }
   ],

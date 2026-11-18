@@ -29,7 +29,7 @@
       "symbols": [
         { "char": "x", "label": "Latin Small Letter X (Not a Math Symbol)" },
         { "char": "X", "label": "Latin Capital Letter X" },
-        { "char": "⋅", "label": "Dot Operator — the alternate \"times\" symbol" },
+        { "char": "⋅", "label": "Dot Operator: the alternate \"times\" symbol" },
         { "char": "∙", "label": "Bullet Operator" },
         { "char": "✕", "label": "Multiplication X (Dingbat)" },
         { "char": "✖", "label": "Heavy Multiplication X (Dingbat)" }

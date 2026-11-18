@@ -205,16 +205,21 @@ def validate_spec(spec):
             for j, c in enumerate(combos):
                 if not isinstance(c, dict) or not c.get("char") or not c.get("label"):
                     raise SpecError(f"sections[{i}].combos[{j}] needs 'char' and 'label'")
-            if str(spec.get("lang", "en")).lower() != "en" and not sec.get("mix_intro"):
+            if str(spec.get("lang", "en")).lower() != "en" and sec.get("symbols") \
+                    and not sec.get("mix_intro"):
                 raise SpecError(
                     f"sections[{i}] has combos but no 'mix_intro': a non-English page "
                     "must carry its own line introducing the single emojis, or the "
                     "English default would ship on it")
         items_key = "art" if pattern == "art" else "symbols"
+        # A section may be combos only: a row of ready-made combos and no grid of
+        # singles (the emoji-combos aesthetic sections). It renders no hand-off line.
+        if items_key == "symbols" and "symbols" not in sec and sec.get("combos"):
+            sec["symbols"] = []
         for key in ("id", "h2", items_key):
             if key not in sec:
                 raise SpecError(f"sections[{i}] missing '{key}'")
-        if not isinstance(sec[items_key], list) or not sec[items_key]:
+        if not isinstance(sec[items_key], list) or not (sec[items_key] or sec.get("combos")):
             raise SpecError(f"sections[{i}].{items_key} must be a non-empty list")
         if pattern == "art":
             for j, piece in enumerate(sec["art"]):
@@ -230,7 +235,12 @@ def validate_spec(spec):
 
     # The validator downstream requires at least 3 H2s. Each section is one
     # H2; a collection section adds one more.
-    h2_count = len(sections) + (1 if pattern == "collection" else 0)
+    # Every editorial section and a FAQ with a faq_h2 render their own H2 as well.
+    # (Counting only tile sections refused 24 valid specs backfilled from live
+    # pages that carry one tile section and several prose sections.)
+    h2_count = (len(sections) + (1 if pattern == "collection" else 0)
+                + len(spec.get("editorial_sections") or [])
+                + (1 if spec.get("faq") and spec.get("faq_h2") else 0))
     if h2_count < 3:
         raise SpecError(
             f"need at least 3 H2 sections (have {h2_count}); add more sections"
@@ -553,7 +563,7 @@ def render_symbol_section(sec, copy_label="Copy", copy_aria=None, lang="en"):
     # case error: Polish "Kopiuj Petarda" needs the accusative, "Kopiuj: Petarda"
     # does not. Default keeps every other locale byte-identical.
     rows = []
-    for sym in sec["symbols"]:
+    for sym in sec.get("symbols") or []:
         ch = sym["char"]
         label = sym["label"]
         aria = (copy_aria or "{copy} {label}").format(copy=copy_label, label=label)
@@ -611,7 +621,8 @@ def render_symbol_section(sec, copy_label="Copy", copy_aria=None, lang="en"):
             '  <div class="flag-rows">\n'
             + "\n".join(combo_rows)
             + "\n  </div>\n"
-            f'  <p class="u-secondary-tight">{esc_prose(mix)}</p>\n'
+            # a combos-only section has no singles to hand off to
+            + (f'  <p class="u-secondary-tight">{esc_prose(mix)}</p>\n' if rows else "")
         )
     return (
         f'<section class="mood-explainers" id="{esc_attr(sec["id"])}">\n'
@@ -619,10 +630,8 @@ def render_symbol_section(sec, copy_label="Copy", copy_aria=None, lang="en"):
         f'  <h2>{esc(sec["h2"])}</h2>\n'
         f"{intro_html}"
         f"{combos_html}"
-        '  <div class="flag-rows">\n'
-        + "\n".join(rows)
-        + "\n  </div>\n"
-        f"{more_html}"
+        + ('  <div class="flag-rows">\n' + "\n".join(rows) + "\n  </div>\n" if rows else "")
+        + f"{more_html}"
         "</section>"
     )
 
@@ -1122,6 +1131,8 @@ def main(argv=None):
                         help="validate and print target path without writing")
     parser.add_argument("--force", action="store_true",
                         help="overwrite an existing page")
+    parser.add_argument("--force-hand-built", action="store_true", dest="force_hand_built",
+                        help="replace a page whose spec says hand_built_page with the generated layout")
     parser.add_argument("--force-stale", action="store_true", dest="force_stale",
                         help="write even if the live page carries content this "
                              "generator would delete (prints what it overrides)")
@@ -1153,6 +1164,19 @@ def main(argv=None):
     seg = url_segment(lang)
     out_dir = (REPO / seg / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
     out_path = out_dir / "index.html"
+
+    # A spec backfilled from a hand-built page (hand_built_page: true) is the source
+    # its locales are translated from and the record of its copy tiles; it does not
+    # describe the page's editorial layout, so rendering it over the page would delete
+    # that layout. Edit such a page by hand, with its spec in the same change.
+    if spec.get("hand_built_page") and out_path.exists() and not args.dry_run \
+            and not args.force_hand_built:
+        sys.stderr.write(
+            f"[error] {out_path.relative_to(REPO)} is hand-built (the spec says hand_built_page): "
+            "regenerating it would replace its layout. Edit the page and the spec together; "
+            "pass --force-hand-built only to deliberately replace the page with the generated layout\n"
+        )
+        return 5
 
     if out_path.exists() and not args.force and not args.dry_run:
         sys.stderr.write(

@@ -1,0 +1,316 @@
+{
+  "slug": "special-characters",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Special Characters: Copy & Paste Unique Unicode Symbols",
+  "meta_description": "Browse and copy unique special characters — infinity, peace, OK hand, and meaningful standalone Unicode symbols for bios and text.",
+  "canonical": "https://ultratextgen.com/library/special-characters/",
+  "breadcrumb": "Special Characters",
+  "hero_h1": "Special Characters",
+  "hero_tagline": "A reference collection of unique Unicode symbols: infinity, peace, science, legal marks, aesthetic standalones, and rare curiosities. Click any symbol to copy it instantly.",
+  "intro": "Browse and copy unique special characters organized by meaning: from infinity and eternity symbols to peace signs, scientific notation, legal marks, aesthetic decorators, and rare Unicode curiosities.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-06-08",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/special-characters/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/special-characters/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/symbole-zum-kopieren/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/special-characters/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/teuksu-munja/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/special-characters/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/special-characters/" },
+    { "lang": "cs", "href": "https://ultratextgen.com/cs/specialni-znaky/" },
+    { "lang": "hr", "href": "https://ultratextgen.com/hr/posebni-znakovi/" },
+    { "lang": "hu", "href": "https://ultratextgen.com/hu/kulonleges-karakterek/" },
+    { "lang": "ro", "href": "https://ultratextgen.com/ro/caractere-speciale/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/semboller/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/caracteres-especiales/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/caracteres-speciaux/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/karakter-spesial/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/speciale-tekens/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/znaki-specjalne/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/caracteres-especiais/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/ky-tu-dac-biet-unicode/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/teshu-fuhao/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/caratteri-speciali-simboli/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/special-characters/" }
+  ],
+  "sections": [
+    {
+      "id": "infinity",
+      "label": "Infinity & Eternity",
+      "h2": "Infinity & Eternity Symbols",
+      "intro": "Symbols representing endlessness, loops, and eternal concepts.",
+      "symbols": [
+        { "char": "∞", "label": "Infinity" },
+        { "char": "♾️", "label": "Infinity Emoji" },
+        { "char": "⧜", "label": "Incomplete Infinity" },
+        { "char": "⧝", "label": "Tie over Infinity" },
+        { "char": "⧞", "label": "Infinity Negated with Vertical Bar" },
+        { "char": "🔁", "label": "Repeat Button" },
+        { "char": "🔂", "label": "Repeat Single Button" },
+        { "char": "⟳", "label": "Clockwise Gapped Circle Arrow" }
+      ]
+    },
+    {
+      "id": "not-on-your-keyboard",
+      "label": "Not on your keyboard",
+      "h2": "Symbols that aren't on your keyboard",
+      "symbols": [
+        { "char": "♥", "label": "♥" },
+        { "char": "♡", "label": "♡" },
+        { "char": "★", "label": "★" },
+        { "char": "☆", "label": "☆" },
+        { "char": "✓", "label": "✓" },
+        { "char": "✔", "label": "✔" },
+        { "char": "✗", "label": "✗" },
+        { "char": "✘", "label": "✘" },
+        { "char": "→", "label": "→" },
+        { "char": "←", "label": "←" },
+        { "char": "↑", "label": "↑" },
+        { "char": "↓", "label": "↓" },
+        { "char": "∞", "label": "∞" },
+        { "char": "°", "label": "°" },
+        { "char": "±", "label": "±" },
+        { "char": "÷", "label": "÷" },
+        { "char": "×", "label": "×" },
+        { "char": "≠", "label": "≠" },
+        { "char": "≈", "label": "≈" },
+        { "char": "²", "label": "²" },
+        { "char": "³", "label": "³" },
+        { "char": "€", "label": "€" },
+        { "char": "£", "label": "£" },
+        { "char": "©", "label": "©" }
+      ]
+    },
+    {
+      "id": "peace-harmony",
+      "label": "Peace & Harmony",
+      "h2": "Peace & Harmony Symbols",
+      "intro": "Symbols of peace, unity, and global harmony across cultures.",
+      "symbols": [
+        { "char": "☮", "label": "Peace Symbol" },
+        { "char": "☯", "label": "Yin Yang" },
+        { "char": "✌", "label": "Victory Hand" },
+        { "char": "🕊", "label": "Dove" },
+        { "char": "🤍", "label": "White Heart" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "🌍", "label": "Earth Africa" },
+        { "char": "⚖", "label": "Balance Scale" },
+        { "char": "🕉", "label": "Om" }
+      ]
+    },
+    {
+      "id": "science-knowledge",
+      "label": "Science & Knowledge",
+      "h2": "Science & Knowledge Symbols",
+      "intro": "Scientific, medical, and knowledge-themed symbols for educational content.",
+      "symbols": [
+        { "char": "⚛", "label": "Atom Symbol" },
+        { "char": "⚕", "label": "Medical Symbol" },
+        { "char": "♻", "label": "Recycling Symbol" },
+        { "char": "🔬", "label": "Microscope" },
+        { "char": "🔭", "label": "Telescope" },
+        { "char": "🧪", "label": "Test Tube" },
+        { "char": "⚗", "label": "Alembic" },
+        { "char": "🧬", "label": "DNA" },
+        { "char": "🧫", "label": "Petri Dish" },
+        { "char": "💡", "label": "Light Bulb" },
+        { "char": "⚙", "label": "Gear" }
+      ]
+    },
+    {
+      "id": "legal-office",
+      "label": "Legal & Office",
+      "h2": "Legal & Office Symbols",
+      "intro": "Copyright, trademark, and typographic marks for professional documents.",
+      "symbols": [
+        { "char": "©", "label": "Copyright" },
+        { "char": "®", "label": "Registered" },
+        { "char": "™", "label": "Trade Mark" },
+        { "char": "§", "label": "Section Sign" },
+        { "char": "¶", "label": "Pilcrow (Paragraph)" },
+        { "char": "†", "label": "Dagger" },
+        { "char": "‡", "label": "Double Dagger" },
+        { "char": "№", "label": "Numero Sign" },
+        { "char": "℗", "label": "Sound Recording Copyright" },
+        { "char": "℠", "label": "Service Mark" }
+      ]
+    },
+    {
+      "id": "punctuation-marks",
+      "label": "Punctuation & Typography",
+      "h2": "Punctuation & Typographic Marks",
+      "intro": "The at sign, ampersand, and other everyday typographic marks: plus their fullwidth, small-form, and historical variants.",
+      "symbols": [
+        { "char": "@", "label": "At Sign" },
+        { "char": "＠", "label": "Fullwidth At Sign" },
+        { "char": "﹫", "label": "Small At Sign" },
+        { "char": "&", "label": "Ampersand" },
+        { "char": "＆", "label": "Fullwidth Ampersand" },
+        { "char": "⅋", "label": "Turned Ampersand" },
+        { "char": "⁊", "label": "Tironian Et (and)" },
+        { "char": "※", "label": "Reference Mark" },
+        { "char": "‰", "label": "Per Mille Sign" },
+        { "char": "‱", "label": "Per Ten Thousand Sign" },
+        { "char": "＊", "label": "Fullwidth Asterisk" },
+        { "char": "＃", "label": "Fullwidth Number Sign" },
+        { "char": "#", "label": "Number Sign (Hashtag)" },
+        { "char": "﹟", "label": "Small Number Sign" },
+        { "char": "#️⃣", "label": "Keycap Hashtag" },
+        { "char": "♯", "label": "Music Sharp Sign" }
+      ]
+    },
+    {
+      "id": "aesthetic-standalone",
+      "label": "Aesthetic Standalone",
+      "h2": "Aesthetic Standalone Symbols",
+      "intro": "Aesthetic and decorative Unicode characters popular in bios, usernames, and art text.",
+      "symbols": [
+        { "char": "✿", "label": "Black Florette" },
+        { "char": "❦", "label": "Floral Heart" },
+        { "char": "❧", "label": "Rotated Floral Heart Bullet" },
+        { "char": "♡", "label": "White Heart Suit" },
+        { "char": "☾", "label": "Last Quarter Moon" },
+        { "char": "☽", "label": "First Quarter Moon" },
+        { "char": "⊹", "label": "Hermitian Conjugate Matrix" },
+        { "char": "₊", "label": "Subscript Plus" },
+        { "char": "༄", "label": "Tibetan Ornament" },
+        { "char": "⋆", "label": "Star Operator" },
+        { "char": "✧", "label": "White Four Pointed Star" },
+        { "char": "❂", "label": "Circled Open Centre Eight Pointed Star" },
+        { "char": "˚", "label": "Ring Above" },
+        { "char": "Ɛ", "label": "Backwards 3 (Open E)" },
+        { "char": "Є", "label": "Backwards 3 (Cyrillic Ie)" },
+        { "char": "Я", "label": "Backwards R (Ya)" },
+        { "char": "ↄ", "label": "Backwards C" },
+        { "char": "и", "label": "Backwards N (Cyrillic I)" },
+        { "char": "ƨ", "label": "Backwards S" }
+      ]
+    },
+    {
+      "id": "rare-unicode",
+      "label": "Rare Unicode Curiosities",
+      "h2": "Rare Unicode Curiosity Symbols",
+      "intro": "Unusual and rarely used Unicode characters from technical and symbolic blocks.",
+      "symbols": [
+        { "char": "℞", "label": "Prescription Take" },
+        { "char": "⚜", "label": "Fleur-de-lis" },
+        { "char": "⎈", "label": "Helm Symbol" },
+        { "char": "⌘", "label": "Command Key" },
+        { "char": "⏏", "label": "Eject Symbol" },
+        { "char": "⌥", "label": "Option Key" },
+        { "char": "⇧", "label": "Shift Key" },
+        { "char": "⏎", "label": "Return Symbol" },
+        { "char": "⌫", "label": "Delete Left" },
+        { "char": "⏻", "label": "Power Symbol" },
+        { "char": "☙", "label": "Reversed Rotated Floral Heart Bullet" },
+        { "char": "☤", "label": "Caduceus" },
+        { "char": "⚚", "label": "Staff of Hermes" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "How to type special characters anywhere",
+      "paragraphs": [
+        "There are several ways to insert a special character, but copy and paste is the fastest and the most reliable across devices:",
+        "Because these characters are part of Unicode, they display consistently on iPhone, Android, Windows, and Mac. A handful of the rarer mathematical and decorative glyphs can fall back to a missing-character box on older systems; if that happens, choose a more common alternative from the same category. Boxes on a perfectly good character are a missing-font problem, explained in <a href=\"/guide/why-fonts-show-as-boxes/\">why text shows as boxes</a>."
+      ]
+    },
+    {
+      "h2": "Which Field Actually Accepts Special Characters",
+      "paragraphs": [
+        "The most common reason a special character &ldquo;won&rsquo;t save&rdquo; is that it went into the wrong field. Nearly every platform splits your identity into <strong>two separate names</strong>, and only one of them accepts these characters:",
+        "Platform specifics, each verified separately: <a href=\"/answers/why-wont-instagram-accept-my-fancy-username/\">Instagram</a>, <a href=\"/answers/why-wont-discord-accept-fancy-username/\">Discord</a>, and the <a href=\"/answers/discord-allowed-characters/\">field-by-field breakdown</a> of which Discord surface takes what.",
+        "<strong>Games set their own rules.</strong> Many titles allow Latin characters only and reject the rest outright, and a rename often costs money or a token. Paste your text into the field and let the game validate it before you commit.",
+        "Want a name that looks empty rather than decorated? A plain space gets trimmed and rejected: you need a character that is not classified as whitespace. See <a href=\"/library/invisible-character/\">invisible characters</a>."
+      ]
+    },
+    {
+      "h2": "Special characters frequently asked questions",
+      "paragraphs": [
+        "A special character is any symbol outside the basic letters (A–Z, a–z) and digits (0–9). That includes punctuation like &amp; and @, currency marks like € and £, math signs like ∞ and ±, and decorative glyphs like ★ and ✧. All of them are part of Unicode.",
+        "Just click the symbol you want on this page: it copies to your clipboard instantly, then paste it with <code>Ctrl + V</code> (Windows) or <code>Cmd + V</code> (Mac). You never need to remember a numeric code.",
+        "That happens when the app or device doesn't have a font glyph for that specific character. It's a display issue, not a copy error: the character is still correct underneath. Switching to a more widely supported symbol from the same category usually fixes it.",
+        "Special punctuation (! @ # $ % &amp; *) strengthens passwords and is widely accepted. Rarer Unicode symbols, however, are often rejected by username and password fields, so stick to common ASCII punctuation there and save the decorative glyphs for posts and bios.",
+        "[OBJ] is a placeholder some Android apps and older messaging clients show when they can't render a specific emoji or Unicode character: short for \"object replacement.\" The character itself was copied and sent correctly; the receiving app just doesn't have a glyph for it yet. It's the text-mode version of the missing-character box above, and it typically resolves once the app or OS updates its font and emoji set.",
+        "Anything beyond letters, digits and the punctuation printed on the keys: hearts (♥ ♡), stars (★ ☆), ticks (✓ ✔), arrows (→ ←), infinity (∞), degree (°) and most currency marks. They exist in Unicode, they just have no key, so copying is the fastest way to use them.",
+        "Tap ♥ or ♡ above. Unlike the emoji on a phone keyboard, these are text characters: they take the colour and size of the surrounding text and work in username fields and forms that reject emoji."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Every Unicode math operator, set, and relation: algebra, calculus, logic, and statistics."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Dollar, euro, yen, pound, and every world currency mark in one reference."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Accent Marks & Diacritics",
+      "desc": "Acute, grave, circumflex, umlaut, tilde, and every diacritical mark across scripts."
+    },
+    {
+      "href": "/library/bracket-symbols/",
+      "title": "Bracket Symbols",
+      "desc": "CJK brackets, angle brackets, and decorative bracket pairs for framing text."
+    },
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Dash & Hyphen Symbols",
+      "desc": "Em dash, en dash, hyphens, minus signs, and every long-form dash variant."
+    },
+    {
+      "href": "/library/slash-backslash-symbols/",
+      "title": "Slash & Backslash Symbols",
+      "desc": "Forward slashes, backslashes, fraction slashes, and division glyphs."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Faith symbols from every major world religion in one reference."
+    },
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac & Astrology Symbols",
+      "desc": "All 12 Western zodiac signs plus planets and Chinese zodiac."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle & Decorative Symbols",
+      "desc": "Sparkle symbols, glitter characters, and aesthetic decorators."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Circles, diamonds, squares, triangles, and decorative shapes."
+    },
+    {
+      "href": "/symbol/copyright-symbol/",
+      "title": "Copyright Symbol (©)",
+      "desc": "What © means, whether you still need it, and how to type it: click to copy."
+    },
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol (☮)",
+      "desc": "What ☮ means, its 1958 design story, and how to type it: click to copy."
+    },
+    {
+      "href": "/symbol/trademark-symbol/",
+      "title": "Trademark Symbol (™)",
+      "desc": "What ™ means, how it differs from ®, and how to type it: click to copy."
+    },
+    { "href": "/symbol/yin-yang/", "title": "Yin Yang Symbol (☯)", "desc": "What ☯ means, its ancient roots, and how to type it: click to copy." },
+    {
+      "href": "/symbol/quotation-mark/",
+      "title": "Quotation Mark",
+      "desc": "The straight \" and ' every keyboard types, and the curly, guillemet, and low-quote variants that stand in for them in different software…"
+    }
+  ]
+}

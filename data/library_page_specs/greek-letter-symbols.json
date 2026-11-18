@@ -91,7 +91,11 @@
         { "char": "ϰ", "label": "Greek Kappa Symbol" },
         { "char": "ϴ", "label": "Greek Capital Theta Symbol" },
         { "char": "∇", "label": "Nabla (Del Operator)" },
-        { "char": "∂", "label": "Partial Differential" }
+        { "char": "∂", "label": "Partial Differential" },
+        { "char": "𝜋", "label": "Math Italic Pi" },
+        { "char": "∏", "label": "N-Ary Product" },
+        { "char": "∑", "label": "N-Ary Summation" },
+        { "char": "𝚿", "label": "Bold Psi" }
       ]
     },
     {

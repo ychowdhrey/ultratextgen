@@ -149,6 +149,1250 @@
           "label": "Patrón braille puntos 2356"
         }
       ]
+    },
+    {
+      "id": "braille-alphabet",
+      "label": "Alfabeto",
+      "h2": "Alfabeto braille: letras de la A a la Z y números",
+      "intro": "Las 26 letras del alfabeto braille básico, más las letras propias del español: á, é, í, ó, ú, ü y ñ. Un número es el signo de número ⠼ seguido de una letra de la a a la j, así que al copiar un número se copian las dos celdas. Las mayúsculas llevan delante el signo ⠨.",
+      "symbols": [
+        {
+          "char": "⠁",
+          "label": "A"
+        },
+        {
+          "char": "⠃",
+          "label": "B"
+        },
+        {
+          "char": "⠉",
+          "label": "C"
+        },
+        {
+          "char": "⠙",
+          "label": "D"
+        },
+        {
+          "char": "⠑",
+          "label": "E"
+        },
+        {
+          "char": "⠋",
+          "label": "F"
+        },
+        {
+          "char": "⠛",
+          "label": "G"
+        },
+        {
+          "char": "⠓",
+          "label": "H"
+        },
+        {
+          "char": "⠊",
+          "label": "I"
+        },
+        {
+          "char": "⠚",
+          "label": "J"
+        },
+        {
+          "char": "⠅",
+          "label": "K"
+        },
+        {
+          "char": "⠇",
+          "label": "L"
+        },
+        {
+          "char": "⠍",
+          "label": "M"
+        },
+        {
+          "char": "⠝",
+          "label": "N"
+        },
+        {
+          "char": "⠕",
+          "label": "O"
+        },
+        {
+          "char": "⠏",
+          "label": "P"
+        },
+        {
+          "char": "⠟",
+          "label": "Q"
+        },
+        {
+          "char": "⠗",
+          "label": "R"
+        },
+        {
+          "char": "⠎",
+          "label": "S"
+        },
+        {
+          "char": "⠞",
+          "label": "T"
+        },
+        {
+          "char": "⠥",
+          "label": "U"
+        },
+        {
+          "char": "⠧",
+          "label": "V"
+        },
+        {
+          "char": "⠺",
+          "label": "W"
+        },
+        {
+          "char": "⠭",
+          "label": "X"
+        },
+        {
+          "char": "⠽",
+          "label": "Y"
+        },
+        {
+          "char": "⠵",
+          "label": "Z"
+        },
+        {
+          "char": "⠷",
+          "label": "Á"
+        },
+        {
+          "char": "⠮",
+          "label": "É"
+        },
+        {
+          "char": "⠌",
+          "label": "Í"
+        },
+        {
+          "char": "⠬",
+          "label": "Ó"
+        },
+        {
+          "char": "⠾",
+          "label": "Ú"
+        },
+        {
+          "char": "⠳",
+          "label": "Ü"
+        },
+        {
+          "char": "⠻",
+          "label": "Ñ"
+        },
+        {
+          "char": "⠼",
+          "label": "Signo de número"
+        },
+        {
+          "char": "⠼⠁",
+          "label": "1"
+        },
+        {
+          "char": "⠼⠃",
+          "label": "2"
+        },
+        {
+          "char": "⠼⠉",
+          "label": "3"
+        },
+        {
+          "char": "⠼⠙",
+          "label": "4"
+        },
+        {
+          "char": "⠼⠑",
+          "label": "5"
+        },
+        {
+          "char": "⠼⠋",
+          "label": "6"
+        },
+        {
+          "char": "⠼⠛",
+          "label": "7"
+        },
+        {
+          "char": "⠼⠓",
+          "label": "8"
+        },
+        {
+          "char": "⠼⠊",
+          "label": "9"
+        },
+        {
+          "char": "⠼⠚",
+          "label": "0"
+        },
+        {
+          "char": "⠨",
+          "label": "Signo de mayúscula"
+        }
+      ]
+    },
+    {
+      "id": "braille-six-dot-cells",
+      "label": "Celdas de 6 puntos",
+      "h2": "Las 64 celdas de seis puntos",
+      "intro": "Todas las celdas del braille de seis puntos, de U+2800 a U+283F, en orden de código. Cada etiqueta indica los puntos en relieve: el 1, el 2 y el 3 forman la columna izquierda, y el 4, el 5 y el 6 la derecha.",
+      "symbols": [
+        {
+          "char": "⠀",
+          "label": "Vacía (sin puntos)"
+        },
+        {
+          "char": "⠁",
+          "label": "1"
+        },
+        {
+          "char": "⠂",
+          "label": "2"
+        },
+        {
+          "char": "⠃",
+          "label": "1-2"
+        },
+        {
+          "char": "⠄",
+          "label": "3"
+        },
+        {
+          "char": "⠅",
+          "label": "1-3"
+        },
+        {
+          "char": "⠆",
+          "label": "2-3"
+        },
+        {
+          "char": "⠇",
+          "label": "1-2-3"
+        },
+        {
+          "char": "⠈",
+          "label": "4"
+        },
+        {
+          "char": "⠉",
+          "label": "1-4"
+        },
+        {
+          "char": "⠊",
+          "label": "2-4"
+        },
+        {
+          "char": "⠋",
+          "label": "1-2-4"
+        },
+        {
+          "char": "⠌",
+          "label": "3-4"
+        },
+        {
+          "char": "⠍",
+          "label": "1-3-4"
+        },
+        {
+          "char": "⠎",
+          "label": "2-3-4"
+        },
+        {
+          "char": "⠏",
+          "label": "1-2-3-4"
+        },
+        {
+          "char": "⠐",
+          "label": "5"
+        },
+        {
+          "char": "⠑",
+          "label": "1-5"
+        },
+        {
+          "char": "⠒",
+          "label": "2-5"
+        },
+        {
+          "char": "⠓",
+          "label": "1-2-5"
+        },
+        {
+          "char": "⠔",
+          "label": "3-5"
+        },
+        {
+          "char": "⠕",
+          "label": "1-3-5"
+        },
+        {
+          "char": "⠖",
+          "label": "2-3-5"
+        },
+        {
+          "char": "⠗",
+          "label": "1-2-3-5"
+        },
+        {
+          "char": "⠘",
+          "label": "4-5"
+        },
+        {
+          "char": "⠙",
+          "label": "1-4-5"
+        },
+        {
+          "char": "⠚",
+          "label": "2-4-5"
+        },
+        {
+          "char": "⠛",
+          "label": "1-2-4-5"
+        },
+        {
+          "char": "⠜",
+          "label": "3-4-5"
+        },
+        {
+          "char": "⠝",
+          "label": "1-3-4-5"
+        },
+        {
+          "char": "⠞",
+          "label": "2-3-4-5"
+        },
+        {
+          "char": "⠟",
+          "label": "1-2-3-4-5"
+        },
+        {
+          "char": "⠠",
+          "label": "6"
+        },
+        {
+          "char": "⠡",
+          "label": "1-6"
+        },
+        {
+          "char": "⠢",
+          "label": "2-6"
+        },
+        {
+          "char": "⠣",
+          "label": "1-2-6"
+        },
+        {
+          "char": "⠤",
+          "label": "3-6"
+        },
+        {
+          "char": "⠥",
+          "label": "1-3-6"
+        },
+        {
+          "char": "⠦",
+          "label": "2-3-6"
+        },
+        {
+          "char": "⠧",
+          "label": "1-2-3-6"
+        },
+        {
+          "char": "⠨",
+          "label": "4-6"
+        },
+        {
+          "char": "⠩",
+          "label": "1-4-6"
+        },
+        {
+          "char": "⠪",
+          "label": "2-4-6"
+        },
+        {
+          "char": "⠫",
+          "label": "1-2-4-6"
+        },
+        {
+          "char": "⠬",
+          "label": "3-4-6"
+        },
+        {
+          "char": "⠭",
+          "label": "1-3-4-6"
+        },
+        {
+          "char": "⠮",
+          "label": "2-3-4-6"
+        },
+        {
+          "char": "⠯",
+          "label": "1-2-3-4-6"
+        },
+        {
+          "char": "⠰",
+          "label": "5-6"
+        },
+        {
+          "char": "⠱",
+          "label": "1-5-6"
+        },
+        {
+          "char": "⠲",
+          "label": "2-5-6"
+        },
+        {
+          "char": "⠳",
+          "label": "1-2-5-6"
+        },
+        {
+          "char": "⠴",
+          "label": "3-5-6"
+        },
+        {
+          "char": "⠵",
+          "label": "1-3-5-6"
+        },
+        {
+          "char": "⠶",
+          "label": "2-3-5-6"
+        },
+        {
+          "char": "⠷",
+          "label": "1-2-3-5-6"
+        },
+        {
+          "char": "⠸",
+          "label": "4-5-6"
+        },
+        {
+          "char": "⠹",
+          "label": "1-4-5-6"
+        },
+        {
+          "char": "⠺",
+          "label": "2-4-5-6"
+        },
+        {
+          "char": "⠻",
+          "label": "1-2-4-5-6"
+        },
+        {
+          "char": "⠼",
+          "label": "3-4-5-6"
+        },
+        {
+          "char": "⠽",
+          "label": "1-3-4-5-6"
+        },
+        {
+          "char": "⠾",
+          "label": "2-3-4-5-6"
+        },
+        {
+          "char": "⠿",
+          "label": "1-2-3-4-5-6"
+        }
+      ]
+    },
+    {
+      "id": "braille-dot-7-cells",
+      "label": "Punto 7",
+      "h2": "Celdas de ocho puntos con el punto 7",
+      "intro": "El braille de ocho puntos añade los puntos 7 y 8 debajo de la celda de seis, lo que da una cuadrícula de 2×4. Se usa como braille informático, y el arte braille y los gráficos de terminal usan cada celda como ocho píxeles. Estas 64 celdas (U+2840 a U+287F) llevan el punto 7.",
+      "symbols": [
+        {
+          "char": "⡀",
+          "label": "7"
+        },
+        {
+          "char": "⡁",
+          "label": "1-7"
+        },
+        {
+          "char": "⡂",
+          "label": "2-7"
+        },
+        {
+          "char": "⡃",
+          "label": "1-2-7"
+        },
+        {
+          "char": "⡄",
+          "label": "3-7"
+        },
+        {
+          "char": "⡅",
+          "label": "1-3-7"
+        },
+        {
+          "char": "⡆",
+          "label": "2-3-7"
+        },
+        {
+          "char": "⡇",
+          "label": "1-2-3-7"
+        },
+        {
+          "char": "⡈",
+          "label": "4-7"
+        },
+        {
+          "char": "⡉",
+          "label": "1-4-7"
+        },
+        {
+          "char": "⡊",
+          "label": "2-4-7"
+        },
+        {
+          "char": "⡋",
+          "label": "1-2-4-7"
+        },
+        {
+          "char": "⡌",
+          "label": "3-4-7"
+        },
+        {
+          "char": "⡍",
+          "label": "1-3-4-7"
+        },
+        {
+          "char": "⡎",
+          "label": "2-3-4-7"
+        },
+        {
+          "char": "⡏",
+          "label": "1-2-3-4-7"
+        },
+        {
+          "char": "⡐",
+          "label": "5-7"
+        },
+        {
+          "char": "⡑",
+          "label": "1-5-7"
+        },
+        {
+          "char": "⡒",
+          "label": "2-5-7"
+        },
+        {
+          "char": "⡓",
+          "label": "1-2-5-7"
+        },
+        {
+          "char": "⡔",
+          "label": "3-5-7"
+        },
+        {
+          "char": "⡕",
+          "label": "1-3-5-7"
+        },
+        {
+          "char": "⡖",
+          "label": "2-3-5-7"
+        },
+        {
+          "char": "⡗",
+          "label": "1-2-3-5-7"
+        },
+        {
+          "char": "⡘",
+          "label": "4-5-7"
+        },
+        {
+          "char": "⡙",
+          "label": "1-4-5-7"
+        },
+        {
+          "char": "⡚",
+          "label": "2-4-5-7"
+        },
+        {
+          "char": "⡛",
+          "label": "1-2-4-5-7"
+        },
+        {
+          "char": "⡜",
+          "label": "3-4-5-7"
+        },
+        {
+          "char": "⡝",
+          "label": "1-3-4-5-7"
+        },
+        {
+          "char": "⡞",
+          "label": "2-3-4-5-7"
+        },
+        {
+          "char": "⡟",
+          "label": "1-2-3-4-5-7"
+        },
+        {
+          "char": "⡠",
+          "label": "6-7"
+        },
+        {
+          "char": "⡡",
+          "label": "1-6-7"
+        },
+        {
+          "char": "⡢",
+          "label": "2-6-7"
+        },
+        {
+          "char": "⡣",
+          "label": "1-2-6-7"
+        },
+        {
+          "char": "⡤",
+          "label": "3-6-7"
+        },
+        {
+          "char": "⡥",
+          "label": "1-3-6-7"
+        },
+        {
+          "char": "⡦",
+          "label": "2-3-6-7"
+        },
+        {
+          "char": "⡧",
+          "label": "1-2-3-6-7"
+        },
+        {
+          "char": "⡨",
+          "label": "4-6-7"
+        },
+        {
+          "char": "⡩",
+          "label": "1-4-6-7"
+        },
+        {
+          "char": "⡪",
+          "label": "2-4-6-7"
+        },
+        {
+          "char": "⡫",
+          "label": "1-2-4-6-7"
+        },
+        {
+          "char": "⡬",
+          "label": "3-4-6-7"
+        },
+        {
+          "char": "⡭",
+          "label": "1-3-4-6-7"
+        },
+        {
+          "char": "⡮",
+          "label": "2-3-4-6-7"
+        },
+        {
+          "char": "⡯",
+          "label": "1-2-3-4-6-7"
+        },
+        {
+          "char": "⡰",
+          "label": "5-6-7"
+        },
+        {
+          "char": "⡱",
+          "label": "1-5-6-7"
+        },
+        {
+          "char": "⡲",
+          "label": "2-5-6-7"
+        },
+        {
+          "char": "⡳",
+          "label": "1-2-5-6-7"
+        },
+        {
+          "char": "⡴",
+          "label": "3-5-6-7"
+        },
+        {
+          "char": "⡵",
+          "label": "1-3-5-6-7"
+        },
+        {
+          "char": "⡶",
+          "label": "2-3-5-6-7"
+        },
+        {
+          "char": "⡷",
+          "label": "1-2-3-5-6-7"
+        },
+        {
+          "char": "⡸",
+          "label": "4-5-6-7"
+        },
+        {
+          "char": "⡹",
+          "label": "1-4-5-6-7"
+        },
+        {
+          "char": "⡺",
+          "label": "2-4-5-6-7"
+        },
+        {
+          "char": "⡻",
+          "label": "1-2-4-5-6-7"
+        },
+        {
+          "char": "⡼",
+          "label": "3-4-5-6-7"
+        },
+        {
+          "char": "⡽",
+          "label": "1-3-4-5-6-7"
+        },
+        {
+          "char": "⡾",
+          "label": "2-3-4-5-6-7"
+        },
+        {
+          "char": "⡿",
+          "label": "1-2-3-4-5-6-7"
+        }
+      ]
+    },
+    {
+      "id": "braille-dot-8-cells",
+      "label": "Punto 8",
+      "h2": "Celdas de ocho puntos con el punto 8",
+      "intro": "De U+2880 a U+28BF: los patrones de seis puntos más el punto 8.",
+      "symbols": [
+        {
+          "char": "⢀",
+          "label": "8"
+        },
+        {
+          "char": "⢁",
+          "label": "1-8"
+        },
+        {
+          "char": "⢂",
+          "label": "2-8"
+        },
+        {
+          "char": "⢃",
+          "label": "1-2-8"
+        },
+        {
+          "char": "⢄",
+          "label": "3-8"
+        },
+        {
+          "char": "⢅",
+          "label": "1-3-8"
+        },
+        {
+          "char": "⢆",
+          "label": "2-3-8"
+        },
+        {
+          "char": "⢇",
+          "label": "1-2-3-8"
+        },
+        {
+          "char": "⢈",
+          "label": "4-8"
+        },
+        {
+          "char": "⢉",
+          "label": "1-4-8"
+        },
+        {
+          "char": "⢊",
+          "label": "2-4-8"
+        },
+        {
+          "char": "⢋",
+          "label": "1-2-4-8"
+        },
+        {
+          "char": "⢌",
+          "label": "3-4-8"
+        },
+        {
+          "char": "⢍",
+          "label": "1-3-4-8"
+        },
+        {
+          "char": "⢎",
+          "label": "2-3-4-8"
+        },
+        {
+          "char": "⢏",
+          "label": "1-2-3-4-8"
+        },
+        {
+          "char": "⢐",
+          "label": "5-8"
+        },
+        {
+          "char": "⢑",
+          "label": "1-5-8"
+        },
+        {
+          "char": "⢒",
+          "label": "2-5-8"
+        },
+        {
+          "char": "⢓",
+          "label": "1-2-5-8"
+        },
+        {
+          "char": "⢔",
+          "label": "3-5-8"
+        },
+        {
+          "char": "⢕",
+          "label": "1-3-5-8"
+        },
+        {
+          "char": "⢖",
+          "label": "2-3-5-8"
+        },
+        {
+          "char": "⢗",
+          "label": "1-2-3-5-8"
+        },
+        {
+          "char": "⢘",
+          "label": "4-5-8"
+        },
+        {
+          "char": "⢙",
+          "label": "1-4-5-8"
+        },
+        {
+          "char": "⢚",
+          "label": "2-4-5-8"
+        },
+        {
+          "char": "⢛",
+          "label": "1-2-4-5-8"
+        },
+        {
+          "char": "⢜",
+          "label": "3-4-5-8"
+        },
+        {
+          "char": "⢝",
+          "label": "1-3-4-5-8"
+        },
+        {
+          "char": "⢞",
+          "label": "2-3-4-5-8"
+        },
+        {
+          "char": "⢟",
+          "label": "1-2-3-4-5-8"
+        },
+        {
+          "char": "⢠",
+          "label": "6-8"
+        },
+        {
+          "char": "⢡",
+          "label": "1-6-8"
+        },
+        {
+          "char": "⢢",
+          "label": "2-6-8"
+        },
+        {
+          "char": "⢣",
+          "label": "1-2-6-8"
+        },
+        {
+          "char": "⢤",
+          "label": "3-6-8"
+        },
+        {
+          "char": "⢥",
+          "label": "1-3-6-8"
+        },
+        {
+          "char": "⢦",
+          "label": "2-3-6-8"
+        },
+        {
+          "char": "⢧",
+          "label": "1-2-3-6-8"
+        },
+        {
+          "char": "⢨",
+          "label": "4-6-8"
+        },
+        {
+          "char": "⢩",
+          "label": "1-4-6-8"
+        },
+        {
+          "char": "⢪",
+          "label": "2-4-6-8"
+        },
+        {
+          "char": "⢫",
+          "label": "1-2-4-6-8"
+        },
+        {
+          "char": "⢬",
+          "label": "3-4-6-8"
+        },
+        {
+          "char": "⢭",
+          "label": "1-3-4-6-8"
+        },
+        {
+          "char": "⢮",
+          "label": "2-3-4-6-8"
+        },
+        {
+          "char": "⢯",
+          "label": "1-2-3-4-6-8"
+        },
+        {
+          "char": "⢰",
+          "label": "5-6-8"
+        },
+        {
+          "char": "⢱",
+          "label": "1-5-6-8"
+        },
+        {
+          "char": "⢲",
+          "label": "2-5-6-8"
+        },
+        {
+          "char": "⢳",
+          "label": "1-2-5-6-8"
+        },
+        {
+          "char": "⢴",
+          "label": "3-5-6-8"
+        },
+        {
+          "char": "⢵",
+          "label": "1-3-5-6-8"
+        },
+        {
+          "char": "⢶",
+          "label": "2-3-5-6-8"
+        },
+        {
+          "char": "⢷",
+          "label": "1-2-3-5-6-8"
+        },
+        {
+          "char": "⢸",
+          "label": "4-5-6-8"
+        },
+        {
+          "char": "⢹",
+          "label": "1-4-5-6-8"
+        },
+        {
+          "char": "⢺",
+          "label": "2-4-5-6-8"
+        },
+        {
+          "char": "⢻",
+          "label": "1-2-4-5-6-8"
+        },
+        {
+          "char": "⢼",
+          "label": "3-4-5-6-8"
+        },
+        {
+          "char": "⢽",
+          "label": "1-3-4-5-6-8"
+        },
+        {
+          "char": "⢾",
+          "label": "2-3-4-5-6-8"
+        },
+        {
+          "char": "⢿",
+          "label": "1-2-3-4-5-6-8"
+        }
+      ]
+    },
+    {
+      "id": "braille-dots-7-8-cells",
+      "label": "Puntos 7 y 8",
+      "h2": "Celdas de ocho puntos con los puntos 7 y 8",
+      "intro": "De U+28C0 a U+28FF: los dos puntos inferiores en relieve. ⣿ (los ocho puntos) es la última celda del bloque.",
+      "symbols": [
+        {
+          "char": "⣀",
+          "label": "7-8"
+        },
+        {
+          "char": "⣁",
+          "label": "1-7-8"
+        },
+        {
+          "char": "⣂",
+          "label": "2-7-8"
+        },
+        {
+          "char": "⣃",
+          "label": "1-2-7-8"
+        },
+        {
+          "char": "⣄",
+          "label": "3-7-8"
+        },
+        {
+          "char": "⣅",
+          "label": "1-3-7-8"
+        },
+        {
+          "char": "⣆",
+          "label": "2-3-7-8"
+        },
+        {
+          "char": "⣇",
+          "label": "1-2-3-7-8"
+        },
+        {
+          "char": "⣈",
+          "label": "4-7-8"
+        },
+        {
+          "char": "⣉",
+          "label": "1-4-7-8"
+        },
+        {
+          "char": "⣊",
+          "label": "2-4-7-8"
+        },
+        {
+          "char": "⣋",
+          "label": "1-2-4-7-8"
+        },
+        {
+          "char": "⣌",
+          "label": "3-4-7-8"
+        },
+        {
+          "char": "⣍",
+          "label": "1-3-4-7-8"
+        },
+        {
+          "char": "⣎",
+          "label": "2-3-4-7-8"
+        },
+        {
+          "char": "⣏",
+          "label": "1-2-3-4-7-8"
+        },
+        {
+          "char": "⣐",
+          "label": "5-7-8"
+        },
+        {
+          "char": "⣑",
+          "label": "1-5-7-8"
+        },
+        {
+          "char": "⣒",
+          "label": "2-5-7-8"
+        },
+        {
+          "char": "⣓",
+          "label": "1-2-5-7-8"
+        },
+        {
+          "char": "⣔",
+          "label": "3-5-7-8"
+        },
+        {
+          "char": "⣕",
+          "label": "1-3-5-7-8"
+        },
+        {
+          "char": "⣖",
+          "label": "2-3-5-7-8"
+        },
+        {
+          "char": "⣗",
+          "label": "1-2-3-5-7-8"
+        },
+        {
+          "char": "⣘",
+          "label": "4-5-7-8"
+        },
+        {
+          "char": "⣙",
+          "label": "1-4-5-7-8"
+        },
+        {
+          "char": "⣚",
+          "label": "2-4-5-7-8"
+        },
+        {
+          "char": "⣛",
+          "label": "1-2-4-5-7-8"
+        },
+        {
+          "char": "⣜",
+          "label": "3-4-5-7-8"
+        },
+        {
+          "char": "⣝",
+          "label": "1-3-4-5-7-8"
+        },
+        {
+          "char": "⣞",
+          "label": "2-3-4-5-7-8"
+        },
+        {
+          "char": "⣟",
+          "label": "1-2-3-4-5-7-8"
+        },
+        {
+          "char": "⣠",
+          "label": "6-7-8"
+        },
+        {
+          "char": "⣡",
+          "label": "1-6-7-8"
+        },
+        {
+          "char": "⣢",
+          "label": "2-6-7-8"
+        },
+        {
+          "char": "⣣",
+          "label": "1-2-6-7-8"
+        },
+        {
+          "char": "⣤",
+          "label": "3-6-7-8"
+        },
+        {
+          "char": "⣥",
+          "label": "1-3-6-7-8"
+        },
+        {
+          "char": "⣦",
+          "label": "2-3-6-7-8"
+        },
+        {
+          "char": "⣧",
+          "label": "1-2-3-6-7-8"
+        },
+        {
+          "char": "⣨",
+          "label": "4-6-7-8"
+        },
+        {
+          "char": "⣩",
+          "label": "1-4-6-7-8"
+        },
+        {
+          "char": "⣪",
+          "label": "2-4-6-7-8"
+        },
+        {
+          "char": "⣫",
+          "label": "1-2-4-6-7-8"
+        },
+        {
+          "char": "⣬",
+          "label": "3-4-6-7-8"
+        },
+        {
+          "char": "⣭",
+          "label": "1-3-4-6-7-8"
+        },
+        {
+          "char": "⣮",
+          "label": "2-3-4-6-7-8"
+        },
+        {
+          "char": "⣯",
+          "label": "1-2-3-4-6-7-8"
+        },
+        {
+          "char": "⣰",
+          "label": "5-6-7-8"
+        },
+        {
+          "char": "⣱",
+          "label": "1-5-6-7-8"
+        },
+        {
+          "char": "⣲",
+          "label": "2-5-6-7-8"
+        },
+        {
+          "char": "⣳",
+          "label": "1-2-5-6-7-8"
+        },
+        {
+          "char": "⣴",
+          "label": "3-5-6-7-8"
+        },
+        {
+          "char": "⣵",
+          "label": "1-3-5-6-7-8"
+        },
+        {
+          "char": "⣶",
+          "label": "2-3-5-6-7-8"
+        },
+        {
+          "char": "⣷",
+          "label": "1-2-3-5-6-7-8"
+        },
+        {
+          "char": "⣸",
+          "label": "4-5-6-7-8"
+        },
+        {
+          "char": "⣹",
+          "label": "1-4-5-6-7-8"
+        },
+        {
+          "char": "⣺",
+          "label": "2-4-5-6-7-8"
+        },
+        {
+          "char": "⣻",
+          "label": "1-2-4-5-6-7-8"
+        },
+        {
+          "char": "⣼",
+          "label": "3-4-5-6-7-8"
+        },
+        {
+          "char": "⣽",
+          "label": "1-3-4-5-6-7-8"
+        },
+        {
+          "char": "⣾",
+          "label": "2-3-4-5-6-7-8"
+        },
+        {
+          "char": "⣿",
+          "label": "1-2-3-4-5-6-7-8"
+        }
+      ]
     }
   ],
   "related": [

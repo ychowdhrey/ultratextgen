@@ -185,6 +185,562 @@
           "label": "Dunkle Schattierung"
         }
       ]
+    },
+    {
+      "id": "heavy-double-pieces",
+      "label": "Fett & doppelt",
+      "h2": "Fette & doppelte Rahmenteile",
+      "intro": "Die fetten und doppelten Ecken, Abzweigungen und Kreuzungen, die oben fehlen, damit du einen ganzen Rahmen oder eine Tabelle in einer Linienstärke schließen kannst.",
+      "symbols": [
+        {
+          "char": "┗",
+          "label": "Rahmen fett nach oben und rechts"
+        },
+        {
+          "char": "┛",
+          "label": "Rahmen fett nach oben und links"
+        },
+        {
+          "char": "┣",
+          "label": "Rahmen fett senkrecht und rechts"
+        },
+        {
+          "char": "┫",
+          "label": "Rahmen fett senkrecht und links"
+        },
+        {
+          "char": "┳",
+          "label": "Rahmen fett nach unten und waagerecht"
+        },
+        {
+          "char": "┻",
+          "label": "Rahmen fett nach oben und waagerecht"
+        },
+        {
+          "char": "╋",
+          "label": "Rahmen fett senkrecht und waagerecht"
+        },
+        {
+          "char": "╠",
+          "label": "Rahmen doppelt senkrecht und rechts"
+        },
+        {
+          "char": "╣",
+          "label": "Rahmen doppelt senkrecht und links"
+        },
+        {
+          "char": "╦",
+          "label": "Rahmen doppelt nach unten und waagerecht"
+        },
+        {
+          "char": "╩",
+          "label": "Rahmen doppelt nach oben und waagerecht"
+        }
+      ]
+    },
+    {
+      "id": "rounded-dashed-lines",
+      "label": "Rund & gestrichelt",
+      "h2": "Runde Ecken & gestrichelte Linien",
+      "intro": "Bogenecken passen zu den leichten Linien und ergeben Kästen mit runden Kanten. Gestrichelte Linien gibt es mit zwei, drei und vier Strichen, leicht und fett.",
+      "symbols": [
+        {
+          "char": "╭",
+          "label": "Rahmen Bogen nach unten und rechts"
+        },
+        {
+          "char": "╮",
+          "label": "Rahmen Bogen nach unten und links"
+        },
+        {
+          "char": "╯",
+          "label": "Rahmen Bogen nach oben und links"
+        },
+        {
+          "char": "╰",
+          "label": "Rahmen Bogen nach oben und rechts"
+        },
+        {
+          "char": "┄",
+          "label": "Rahmen leicht dreifach gestrichelt waagerecht"
+        },
+        {
+          "char": "┅",
+          "label": "Rahmen fett dreifach gestrichelt waagerecht"
+        },
+        {
+          "char": "┆",
+          "label": "Rahmen leicht dreifach gestrichelt senkrecht"
+        },
+        {
+          "char": "┇",
+          "label": "Rahmen fett dreifach gestrichelt senkrecht"
+        },
+        {
+          "char": "┈",
+          "label": "Rahmen leicht vierfach gestrichelt waagerecht"
+        },
+        {
+          "char": "┉",
+          "label": "Rahmen fett vierfach gestrichelt waagerecht"
+        },
+        {
+          "char": "┊",
+          "label": "Rahmen leicht vierfach gestrichelt senkrecht"
+        },
+        {
+          "char": "┋",
+          "label": "Rahmen fett vierfach gestrichelt senkrecht"
+        },
+        {
+          "char": "╌",
+          "label": "Rahmen leicht zweifach gestrichelt waagerecht"
+        },
+        {
+          "char": "╍",
+          "label": "Rahmen fett zweifach gestrichelt waagerecht"
+        },
+        {
+          "char": "╎",
+          "label": "Rahmen leicht zweifach gestrichelt senkrecht"
+        },
+        {
+          "char": "╏",
+          "label": "Rahmen fett zweifach gestrichelt senkrecht"
+        }
+      ]
+    },
+    {
+      "id": "half-lines-diagonals",
+      "label": "Halbe Linien & Diagonalen",
+      "h2": "Halbe Linien, Stummel & Diagonalen",
+      "intro": "Halbe Linien, die in der Zellmitte enden, Linien, die auf halber Strecke die Stärke wechseln, und die drei Diagonalen für schräge Formen.",
+      "symbols": [
+        {
+          "char": "╴",
+          "label": "Rahmen leicht links"
+        },
+        {
+          "char": "╵",
+          "label": "Rahmen leicht nach oben"
+        },
+        {
+          "char": "╶",
+          "label": "Rahmen leicht rechts"
+        },
+        {
+          "char": "╷",
+          "label": "Rahmen leicht nach unten"
+        },
+        {
+          "char": "╸",
+          "label": "Rahmen fett links"
+        },
+        {
+          "char": "╹",
+          "label": "Rahmen fett nach oben"
+        },
+        {
+          "char": "╺",
+          "label": "Rahmen fett rechts"
+        },
+        {
+          "char": "╻",
+          "label": "Rahmen fett nach unten"
+        },
+        {
+          "char": "╼",
+          "label": "Rahmen leicht links und fett rechts"
+        },
+        {
+          "char": "╽",
+          "label": "Rahmen leicht nach oben und fett nach unten"
+        },
+        {
+          "char": "╾",
+          "label": "Rahmen fett links und leicht rechts"
+        },
+        {
+          "char": "╿",
+          "label": "Rahmen fett nach oben und leicht nach unten"
+        },
+        {
+          "char": "╱",
+          "label": "Rahmen Diagonale oben rechts nach unten links"
+        },
+        {
+          "char": "╲",
+          "label": "Rahmen Diagonale oben links nach unten rechts"
+        },
+        {
+          "char": "╳",
+          "label": "Rahmen Diagonalkreuz"
+        }
+      ]
+    },
+    {
+      "id": "mixed-light-heavy",
+      "label": "Leicht + fett",
+      "h2": "Gemischte Kreuzungen: leicht & fett",
+      "intro": "Ecken, Abzweigungen und Kreuzungen mit teils leichten, teils fetten Armen, etwa für eine fette Kopfzeile oder einen fetten Außenrahmen in einer leichten Tabelle.",
+      "symbols": [
+        {
+          "char": "┍",
+          "label": "Rahmen nach unten leicht und rechts fett"
+        },
+        {
+          "char": "┎",
+          "label": "Rahmen nach unten fett und rechts leicht"
+        },
+        {
+          "char": "┑",
+          "label": "Rahmen nach unten leicht und links fett"
+        },
+        {
+          "char": "┒",
+          "label": "Rahmen nach unten fett und links leicht"
+        },
+        {
+          "char": "┕",
+          "label": "Rahmen nach oben leicht und rechts fett"
+        },
+        {
+          "char": "┖",
+          "label": "Rahmen nach oben fett und rechts leicht"
+        },
+        {
+          "char": "┙",
+          "label": "Rahmen nach oben leicht und links fett"
+        },
+        {
+          "char": "┚",
+          "label": "Rahmen nach oben fett und links leicht"
+        },
+        {
+          "char": "┝",
+          "label": "Rahmen senkrecht leicht und rechts fett"
+        },
+        {
+          "char": "┞",
+          "label": "Rahmen nach oben fett und rechts nach unten leicht"
+        },
+        {
+          "char": "┟",
+          "label": "Rahmen nach unten fett und rechts nach oben leicht"
+        },
+        {
+          "char": "┠",
+          "label": "Rahmen senkrecht fett und rechts leicht"
+        },
+        {
+          "char": "┡",
+          "label": "Rahmen nach unten leicht und rechts nach oben fett"
+        },
+        {
+          "char": "┢",
+          "label": "Rahmen nach oben leicht und rechts nach unten fett"
+        },
+        {
+          "char": "┥",
+          "label": "Rahmen senkrecht leicht und links fett"
+        },
+        {
+          "char": "┦",
+          "label": "Rahmen nach oben fett und links nach unten leicht"
+        },
+        {
+          "char": "┧",
+          "label": "Rahmen nach unten fett und links nach oben leicht"
+        },
+        {
+          "char": "┨",
+          "label": "Rahmen senkrecht fett und links leicht"
+        },
+        {
+          "char": "┩",
+          "label": "Rahmen nach unten leicht und links nach oben fett"
+        },
+        {
+          "char": "┪",
+          "label": "Rahmen nach oben leicht und links nach unten fett"
+        },
+        {
+          "char": "┭",
+          "label": "Rahmen links fett und rechts nach unten leicht"
+        },
+        {
+          "char": "┮",
+          "label": "Rahmen rechts fett und links nach unten leicht"
+        },
+        {
+          "char": "┯",
+          "label": "Rahmen nach unten leicht und waagerecht fett"
+        },
+        {
+          "char": "┰",
+          "label": "Rahmen nach unten fett und waagerecht leicht"
+        },
+        {
+          "char": "┱",
+          "label": "Rahmen rechts leicht und links nach unten fett"
+        },
+        {
+          "char": "┲",
+          "label": "Rahmen links leicht und rechts nach unten fett"
+        },
+        {
+          "char": "┵",
+          "label": "Rahmen links fett und rechts nach oben leicht"
+        },
+        {
+          "char": "┶",
+          "label": "Rahmen rechts fett und links nach oben leicht"
+        },
+        {
+          "char": "┷",
+          "label": "Rahmen nach oben leicht und waagerecht fett"
+        },
+        {
+          "char": "┸",
+          "label": "Rahmen nach oben fett und waagerecht leicht"
+        },
+        {
+          "char": "┹",
+          "label": "Rahmen rechts leicht und links nach oben fett"
+        },
+        {
+          "char": "┺",
+          "label": "Rahmen links leicht und rechts nach oben fett"
+        },
+        {
+          "char": "┽",
+          "label": "Rahmen links fett und rechts senkrecht leicht"
+        },
+        {
+          "char": "┾",
+          "label": "Rahmen rechts fett und links senkrecht leicht"
+        },
+        {
+          "char": "┿",
+          "label": "Rahmen senkrecht leicht und waagerecht fett"
+        },
+        {
+          "char": "╀",
+          "label": "Rahmen nach oben fett und nach unten waagerecht leicht"
+        },
+        {
+          "char": "╁",
+          "label": "Rahmen nach unten fett und nach oben waagerecht leicht"
+        },
+        {
+          "char": "╂",
+          "label": "Rahmen senkrecht fett und waagerecht leicht"
+        },
+        {
+          "char": "╃",
+          "label": "Rahmen links nach oben fett und rechts nach unten leicht"
+        },
+        {
+          "char": "╄",
+          "label": "Rahmen rechts nach oben fett und links nach unten leicht"
+        },
+        {
+          "char": "╅",
+          "label": "Rahmen links nach unten fett und rechts nach oben leicht"
+        },
+        {
+          "char": "╆",
+          "label": "Rahmen rechts nach unten fett und links nach oben leicht"
+        },
+        {
+          "char": "╇",
+          "label": "Rahmen nach unten leicht und nach oben waagerecht fett"
+        },
+        {
+          "char": "╈",
+          "label": "Rahmen nach oben leicht und nach unten waagerecht fett"
+        },
+        {
+          "char": "╉",
+          "label": "Rahmen rechts leicht und links senkrecht fett"
+        },
+        {
+          "char": "╊",
+          "label": "Rahmen links leicht und rechts senkrecht fett"
+        }
+      ]
+    },
+    {
+      "id": "mixed-single-double",
+      "label": "Einfach + doppelt",
+      "h2": "Gemischte Kreuzungen: einfach & doppelt",
+      "intro": "Übergänge zwischen einfachen und doppelten Linien: die klassischen DOS-Tabellenteile für einen doppelten Außenrahmen mit einfachen Innenlinien.",
+      "symbols": [
+        {
+          "char": "╒",
+          "label": "Rahmen nach unten einfach und rechts doppelt"
+        },
+        {
+          "char": "╓",
+          "label": "Rahmen nach unten doppelt und rechts einfach"
+        },
+        {
+          "char": "╕",
+          "label": "Rahmen nach unten einfach und links doppelt"
+        },
+        {
+          "char": "╖",
+          "label": "Rahmen nach unten doppelt und links einfach"
+        },
+        {
+          "char": "╘",
+          "label": "Rahmen nach oben einfach und rechts doppelt"
+        },
+        {
+          "char": "╙",
+          "label": "Rahmen nach oben doppelt und rechts einfach"
+        },
+        {
+          "char": "╛",
+          "label": "Rahmen nach oben einfach und links doppelt"
+        },
+        {
+          "char": "╜",
+          "label": "Rahmen nach oben doppelt und links einfach"
+        },
+        {
+          "char": "╞",
+          "label": "Rahmen senkrecht einfach und rechts doppelt"
+        },
+        {
+          "char": "╟",
+          "label": "Rahmen senkrecht doppelt und rechts einfach"
+        },
+        {
+          "char": "╡",
+          "label": "Rahmen senkrecht einfach und links doppelt"
+        },
+        {
+          "char": "╢",
+          "label": "Rahmen senkrecht doppelt und links einfach"
+        },
+        {
+          "char": "╤",
+          "label": "Rahmen nach unten einfach und waagerecht doppelt"
+        },
+        {
+          "char": "╥",
+          "label": "Rahmen nach unten doppelt und waagerecht einfach"
+        },
+        {
+          "char": "╧",
+          "label": "Rahmen nach oben einfach und waagerecht doppelt"
+        },
+        {
+          "char": "╨",
+          "label": "Rahmen nach oben doppelt und waagerecht einfach"
+        },
+        {
+          "char": "╪",
+          "label": "Rahmen senkrecht einfach und waagerecht doppelt"
+        },
+        {
+          "char": "╫",
+          "label": "Rahmen senkrecht doppelt und waagerecht einfach"
+        }
+      ]
+    },
+    {
+      "id": "bar-chart-quadrants",
+      "label": "Balken & Quadranten",
+      "h2": "Balkendiagramm-Blöcke & Quadranten",
+      "intro": "Ansteigende Achtelblöcke für Balkendiagramme und Sparklines im Text (▁▂▃▄▅▆▇█), die übrigen Teilblöcke links und rechts und die zehn Quadrantenblöcke für Pixelgrafiken.",
+      "symbols": [
+        {
+          "char": "▁",
+          "label": "Block ein Achtel unten"
+        },
+        {
+          "char": "▂",
+          "label": "Block ein Viertel unten"
+        },
+        {
+          "char": "▃",
+          "label": "Block drei Achtel unten"
+        },
+        {
+          "char": "▅",
+          "label": "Block fünf Achtel unten"
+        },
+        {
+          "char": "▆",
+          "label": "Block drei Viertel unten"
+        },
+        {
+          "char": "▇",
+          "label": "Block sieben Achtel unten"
+        },
+        {
+          "char": "▋",
+          "label": "Block fünf Achtel links"
+        },
+        {
+          "char": "▍",
+          "label": "Block drei Achtel links"
+        },
+        {
+          "char": "▐",
+          "label": "Halbblock rechts"
+        },
+        {
+          "char": "▔",
+          "label": "Block ein Achtel oben"
+        },
+        {
+          "char": "▕",
+          "label": "Block ein Achtel rechts"
+        },
+        {
+          "char": "▖",
+          "label": "Quadrant unten links"
+        },
+        {
+          "char": "▗",
+          "label": "Quadrant unten rechts"
+        },
+        {
+          "char": "▘",
+          "label": "Quadrant oben links"
+        },
+        {
+          "char": "▙",
+          "label": "Quadranten oben links, unten links und unten rechts"
+        },
+        {
+          "char": "▚",
+          "label": "Quadranten oben links und unten rechts"
+        },
+        {
+          "char": "▛",
+          "label": "Quadranten oben links, oben rechts und unten links"
+        },
+        {
+          "char": "▜",
+          "label": "Quadranten oben links, oben rechts und unten rechts"
+        },
+        {
+          "char": "▝",
+          "label": "Quadrant oben rechts"
+        },
+        {
+          "char": "▞",
+          "label": "Quadranten oben rechts und unten links"
+        },
+        {
+          "char": "▟",
+          "label": "Quadranten oben rechts, unten links und unten rechts"
+        }
+      ]
     }
   ],
   "collection_section": {

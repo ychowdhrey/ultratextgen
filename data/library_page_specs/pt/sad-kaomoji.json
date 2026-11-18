@@ -183,6 +183,50 @@
           "label": "Ferido"
         }
       ]
+    },
+    {
+      "id": "sigh-meh",
+      "label": "Suspiros e Tédio",
+      "h2": "Kaomoji de Suspiro e Tédio",
+      "intro": "Uma carinha de suspiro costuma levar ε- ou =3 de um lado: um sopro de ar saindo da boca. A maioria destas mostra cansaço, decepção ou pura indiferença, e a última é o suspiro de alívio que o japonês escreve como ホッ (hotto).",
+      "symbols": [
+        {
+          "char": "ε-(´・｀) ﾌ",
+          "label": "Suspiro de derrota"
+        },
+        {
+          "char": "ε-(ーдー)",
+          "label": "Suspiro pesado"
+        },
+        {
+          "char": "(´-ε-`)",
+          "label": "Bufando"
+        },
+        {
+          "char": "( ´_ゝ`)",
+          "label": "Indiferente"
+        },
+        {
+          "char": "(=_=)",
+          "label": "De saco cheio"
+        },
+        {
+          "char": "(ーー゛)",
+          "label": "Desapontado"
+        },
+        {
+          "char": "┐(￣ヘ￣)┌",
+          "label": "Tanto faz"
+        },
+        {
+          "char": "(´._.`)",
+          "label": "Pequena decepção"
+        },
+        {
+          "char": "ε-(´∀`*)ホッ",
+          "label": "Suspiro de alívio"
+        }
+      ]
     }
   ]
 }

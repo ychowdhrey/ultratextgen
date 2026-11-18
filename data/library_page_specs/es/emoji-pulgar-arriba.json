@@ -100,6 +100,18 @@
         { "char": "❌", "label": "Cruz de error" },
         { "char": "⭕", "label": "Círculo rojo" }
       ]
+    },
+    {
+      "id": "nodding-head-shaking",
+      "label": "Asentir y Negar",
+      "h2": "Emojis para Asentir y Negar con la Cabeza",
+      "intro": "Emoji 15.1 (2023) añadió una cara que asiente para decir que sí y otra que niega con la cabeza para decir que no. Las dos combinan 🙂 con una flecha, así que un teléfono sin esa actualización muestra 🙂↕ o 🙂↔ en dos partes. 🙆 y 🙅 dicen el mismo sí y el mismo no, vienen del primer conjunto de emojis y se ven en cualquier lugar donde se vean emojis.",
+      "symbols": [
+        { "char": "🙂\u200d↕️", "label": "Cabeza asintiendo (sí)" },
+        { "char": "🙂\u200d↔️", "label": "Cabeza negando (no)" },
+        { "char": "🙆", "label": "Persona haciendo el gesto de OK" },
+        { "char": "🙅", "label": "Persona haciendo el gesto de no" }
+      ]
     }
   ],
   "collections": [

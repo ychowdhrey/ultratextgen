@@ -164,6 +164,26 @@
           "label": "Mongolian Vowel Separator: U+180E"
         }
       ]
+    },
+    {
+      "id": "start-here",
+      "label": "Mula Di Sini",
+      "h2": "Aksara Kosong Yang Berfungsi Dalam Kebanyakan Apl",
+      "intro": "Salin Braille Pattern Blank dahulu. Kalau ruangan itu memaparkannya sebagai kotak atau kata nama itu kosong, cuba Hangul Filler, kemudian zero width space.",
+      "symbols": [
+        {
+          "char": "⠀",
+          "label": "Braille Pattern Blank: U+2800"
+        },
+        {
+          "char": "ㅤ",
+          "label": "Hangul Filler: U+3164"
+        },
+        {
+          "char": "\u200b",
+          "label": "Zero Width Space: U+200B"
+        }
+      ]
     }
   ],
   "cta": "Guna UltraTextGen untuk menukar teks biasa kepada tebal, condong, kursif dan 100+ gaya fon Unicode lain — percuma dan serta-merta.",

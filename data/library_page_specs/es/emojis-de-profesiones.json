@@ -62,15 +62,17 @@
       "h2": "Emojis de profesiones de la educación",
       "intro": "Emojis de profesores, estudiantes y personal educativo para contenido académico.",
       "symbols": [
-        { "char": "👨‍🏫", "label": "Profesor" },
-        { "char": "👩‍🏫", "label": "Profesora" },
-        { "char": "🧑‍🎓", "label": "Estudiante" },
+        { "char": "👨\u200d🏫", "label": "Profesor" },
+        { "char": "👩\u200d🏫", "label": "Profesora" },
+        { "char": "🧑\u200d🎓", "label": "Estudiante" },
+        { "char": "👨\u200d🎓", "label": "Estudiante (hombre)" },
+        { "char": "👩\u200d🎓", "label": "Estudiante (mujer)" },
         { "char": "🎓", "label": "Birrete" },
         { "char": "📚", "label": "Libros" },
         { "char": "📖", "label": "Libro abierto" },
         { "char": "✏️", "label": "Lápiz" },
         { "char": "📝", "label": "Nota" },
-        { "char": "🧑‍🏫", "label": "Docente" },
+        { "char": "🧑\u200d🏫", "label": "Docente" },
         { "char": "🍎", "label": "Manzana roja" },
         { "char": "📐", "label": "Escuadra" },
         { "char": "🏫", "label": "Escuela" }
@@ -82,8 +84,9 @@
       "h2": "Emojis de profesiones de negocios y finanzas",
       "intro": "Emojis de oficina, dirección y finanzas para contenido de negocios.",
       "symbols": [
-        { "char": "👨‍💼", "label": "Oficinista (hombre)" },
-        { "char": "👩‍💼", "label": "Oficinista (mujer)" },
+        { "char": "👨\u200d💼", "label": "Oficinista (hombre)" },
+        { "char": "👩\u200d💼", "label": "Oficinista (mujer)" },
+        { "char": "🧑\u200d💼", "label": "Oficinista" },
         { "char": "💼", "label": "Maletín" },
         { "char": "📊", "label": "Gráfico de barras" },
         { "char": "📈", "label": "Gráfico ascendente" },
@@ -98,8 +101,12 @@
       "h2": "Emojis de profesiones creativas y artísticas",
       "intro": "Emojis de artistas, músicos y profesionales creativos para contenido de industrias creativas.",
       "symbols": [
-        { "char": "👨‍🎨", "label": "Artista (hombre)" },
-        { "char": "👩‍🎨", "label": "Artista (mujer)" },
+        { "char": "👨\u200d🎨", "label": "Artista (hombre)" },
+        { "char": "👩\u200d🎨", "label": "Artista (mujer)" },
+        { "char": "🧑\u200d🎨", "label": "Artista" },
+        { "char": "🧑\u200d🎤", "label": "Cantante" },
+        { "char": "👨\u200d🎤", "label": "Cantante (hombre)" },
+        { "char": "👩\u200d🎤", "label": "Cantante (mujer)" },
         { "char": "🎭", "label": "Artes escénicas" },
         { "char": "🎬", "label": "Claqueta" },
         { "char": "🎤", "label": "Micrófono" },
@@ -113,9 +120,12 @@
       "h2": "Emojis de profesiones de ciencia e ingeniería",
       "intro": "Emojis de científicos, ingenieros e investigadores para contenido de ciencia y tecnología.",
       "symbols": [
-        { "char": "👨‍🔬", "label": "Científico" },
-        { "char": "👩‍🔬", "label": "Científica" },
-        { "char": "🧑‍🔧", "label": "Mecánico" },
+        { "char": "👨\u200d🔬", "label": "Científico" },
+        { "char": "👩\u200d🔬", "label": "Científica" },
+        { "char": "🧑\u200d🔬", "label": "Persona científica" },
+        { "char": "🧑\u200d🔧", "label": "Mecánico" },
+        { "char": "👨\u200d🔧", "label": "Mecánico (hombre)" },
+        { "char": "👩\u200d🔧", "label": "Mecánica (mujer)" },
         { "char": "🔬", "label": "Microscopio" },
         { "char": "🔭", "label": "Telescopio" },
         { "char": "🧪", "label": "Tubo de ensayo" },
@@ -217,8 +227,134 @@
         { "char": "🫄", "label": "Persona embarazada" },
         { "char": "🫃", "label": "Hombre embarazado" },
         { "char": "🤱", "label": "Lactancia" },
+        { "char": "🧑\u200d🍼", "label": "Persona alimentando a un bebé" },
+        { "char": "👩\u200d🍼", "label": "Mujer alimentando a un bebé" },
+        { "char": "👨\u200d🍼", "label": "Hombre alimentando a un bebé" },
         { "char": "👶", "label": "Bebé" },
         { "char": "🍼", "label": "Biberón" }
+      ]
+    },
+    {
+      "id": "farm-factory-emoji",
+      "h2": "Emojis de agricultores y obreros de fábrica",
+      "intro": "Emojis de agricultor y de obrero de fábrica como persona, hombre y mujer, para publicaciones sobre el campo, los alimentos y la industria.",
+      "symbols": [
+        { "char": "🧑\u200d🌾", "label": "Persona agricultora" },
+        { "char": "👨\u200d🌾", "label": "Agricultor" },
+        { "char": "👩\u200d🌾", "label": "Agricultora" },
+        { "char": "🧑\u200d🏭", "label": "Persona obrera de fábrica" },
+        { "char": "👨\u200d🏭", "label": "Obrero de fábrica" },
+        { "char": "👩\u200d🏭", "label": "Obrera de fábrica" }
+      ]
+    },
+    {
+      "id": "pilot-astronaut-emoji",
+      "h2": "Emojis de pilotos y astronautas",
+      "intro": "Emojis de piloto y de astronauta como persona, hombre y mujer, para publicaciones sobre viajes, aviación y el espacio.",
+      "symbols": [
+        { "char": "🧑\u200d✈️", "label": "Persona piloto" },
+        { "char": "👨\u200d✈️", "label": "Piloto (hombre)" },
+        { "char": "👩\u200d✈️", "label": "Piloto (mujer)" },
+        { "char": "🧑\u200d🚀", "label": "Persona astronauta" },
+        { "char": "👨\u200d🚀", "label": "Astronauta (hombre)" },
+        { "char": "👩\u200d🚀", "label": "Astronauta (mujer)" }
+      ]
+    },
+    {
+      "id": "detective-guard-emoji",
+      "h2": "Emojis de detectives, guardias y ninjas",
+      "intro": "Emojis de detective y de guardia como persona, hombre y mujer, además del ninja, para publicaciones de misterio, seguridad e historias.",
+      "symbols": [
+        { "char": "🕵️", "label": "Persona detective" },
+        { "char": "🕵️\u200d♂️", "label": "Detective (hombre)" },
+        { "char": "🕵️\u200d♀️", "label": "Detective (mujer)" },
+        { "char": "💂", "label": "Guardia" },
+        { "char": "💂\u200d♂️", "label": "Guardia (hombre)" },
+        { "char": "💂\u200d♀️", "label": "Guardia (mujer)" },
+        { "char": "🥷", "label": "Guerrero ninja" }
+      ]
+    },
+    {
+      "id": "royalty-wedding-emoji",
+      "h2": "Emojis de realeza y bodas",
+      "intro": "Figuras con corona, el príncipe y la princesa, y los emojis de esmoquin y velo en versión persona, hombre y mujer, para bodas, graduaciones y cuentos.",
+      "symbols": [
+        { "char": "🫅", "label": "Persona con corona" },
+        { "char": "🤴", "label": "Príncipe" },
+        { "char": "👸", "label": "Princesa" },
+        { "char": "🤵", "label": "Persona con esmoquin" },
+        { "char": "🤵\u200d♂️", "label": "Hombre con esmoquin" },
+        { "char": "🤵\u200d♀️", "label": "Mujer con esmoquin" },
+        { "char": "👰", "label": "Persona con velo" },
+        { "char": "👰\u200d♂️", "label": "Hombre con velo" },
+        { "char": "👰\u200d♀️", "label": "Mujer con velo" }
+      ]
+    },
+    {
+      "id": "head-covering-emoji",
+      "h2": "Emojis de turbante, gorro y pañuelo en la cabeza",
+      "intro": "Personas con turbante, con gorro o con pañuelo en la cabeza, las prendas para la cabeza que incluye el conjunto de emojis.",
+      "symbols": [
+        { "char": "👳", "label": "Persona con turbante" },
+        { "char": "👳\u200d♂️", "label": "Hombre con turbante" },
+        { "char": "👳\u200d♀️", "label": "Mujer con turbante" },
+        { "char": "👲", "label": "Persona con gorro chino" },
+        { "char": "🧕", "label": "Mujer con pañuelo en la cabeza" }
+      ]
+    },
+    {
+      "id": "couples-emoji",
+      "h2": "Emojis de parejas, besos y manos tomadas",
+      "intro": "Todos los emojis de pareja: personas tomadas de la mano, el beso y la pareja enamorada, cada uno en las versiones mujer y hombre, hombre y hombre, y mujer y mujer.",
+      "symbols": [
+        { "char": "🧑\u200d🤝\u200d🧑", "label": "Personas tomadas de la mano" },
+        { "char": "👭", "label": "Mujeres tomadas de la mano" },
+        { "char": "👫", "label": "Mujer y hombre tomados de la mano" },
+        { "char": "👬", "label": "Hombres tomados de la mano" },
+        { "char": "💏", "label": "Beso" },
+        { "char": "👩\u200d❤️\u200d💋\u200d👨", "label": "Beso: mujer y hombre" },
+        { "char": "👨\u200d❤️\u200d💋\u200d👨", "label": "Beso: hombre y hombre" },
+        { "char": "👩\u200d❤️\u200d💋\u200d👩", "label": "Beso: mujer y mujer" },
+        { "char": "💑", "label": "Pareja enamorada" },
+        { "char": "👩\u200d❤️\u200d👨", "label": "Pareja enamorada: mujer y hombre" },
+        { "char": "👨\u200d❤️\u200d👨", "label": "Pareja enamorada: hombre y hombre" },
+        { "char": "👩\u200d❤️\u200d👩", "label": "Pareja enamorada: mujer y mujer" }
+      ]
+    },
+    {
+      "id": "family-emoji",
+      "h2": "Emojis de familia: todas las combinaciones",
+      "intro": "El símbolo de familia, las familias nuevas de adulto y niño, y cada combinación de padres e hijos con uno o dos padres. Cada uno se copia como un solo emoji de familia donde el dispositivo lo admite; un teléfono antiguo puede mostrar a las personas por separado, una al lado de la otra.",
+      "symbols": [
+        { "char": "👪", "label": "Símbolo de familia" },
+        { "char": "🧑\u200d🧑\u200d🧒", "label": "Familia: adulto, adulto y menor" },
+        { "char": "🧑\u200d🧑\u200d🧒\u200d🧒", "label": "Familia: adulto, adulto, menor y menor" },
+        { "char": "🧑\u200d🧒", "label": "Familia: adulto y menor" },
+        { "char": "🧑\u200d🧒\u200d🧒", "label": "Familia: adulto, menor y menor" },
+        { "char": "👨\u200d👩\u200d👦", "label": "Familia: hombre, mujer y niño" },
+        { "char": "👨\u200d👩\u200d👧", "label": "Familia: hombre, mujer y niña" },
+        { "char": "👨\u200d👩\u200d👦\u200d👦", "label": "Familia: hombre, mujer, niño y niño" },
+        { "char": "👨\u200d👩\u200d👧\u200d👧", "label": "Familia: hombre, mujer, niña y niña" },
+        { "char": "👨\u200d👨\u200d👦", "label": "Familia: hombre, hombre y niño" },
+        { "char": "👨\u200d👨\u200d👧", "label": "Familia: hombre, hombre y niña" },
+        { "char": "👨\u200d👨\u200d👧\u200d👦", "label": "Familia: hombre, hombre, niña y niño" },
+        { "char": "👨\u200d👨\u200d👦\u200d👦", "label": "Familia: hombre, hombre, niño y niño" },
+        { "char": "👨\u200d👨\u200d👧\u200d👧", "label": "Familia: hombre, hombre, niña y niña" },
+        { "char": "👩\u200d👩\u200d👦", "label": "Familia: mujer, mujer y niño" },
+        { "char": "👩\u200d👩\u200d👧", "label": "Familia: mujer, mujer y niña" },
+        { "char": "👩\u200d👩\u200d👧\u200d👦", "label": "Familia: mujer, mujer, niña y niño" },
+        { "char": "👩\u200d👩\u200d👦\u200d👦", "label": "Familia: mujer, mujer, niño y niño" },
+        { "char": "👩\u200d👩\u200d👧\u200d👧", "label": "Familia: mujer, mujer, niña y niña" },
+        { "char": "👨\u200d👦", "label": "Familia: hombre y niño" },
+        { "char": "👨\u200d👦\u200d👦", "label": "Familia: hombre, niño y niño" },
+        { "char": "👨\u200d👧", "label": "Familia: hombre y niña" },
+        { "char": "👨\u200d👧\u200d👦", "label": "Familia: hombre, niña y niño" },
+        { "char": "👨\u200d👧\u200d👧", "label": "Familia: hombre, niña y niña" },
+        { "char": "👩\u200d👦", "label": "Familia: mujer y niño" },
+        { "char": "👩\u200d👦\u200d👦", "label": "Familia: mujer, niño y niño" },
+        { "char": "👩\u200d👧", "label": "Familia: mujer y niña" },
+        { "char": "👩\u200d👧\u200d👦", "label": "Familia: mujer, niña y niño" },
+        { "char": "👩\u200d👧\u200d👧", "label": "Familia: mujer, niña y niña" }
       ]
     }
   ],

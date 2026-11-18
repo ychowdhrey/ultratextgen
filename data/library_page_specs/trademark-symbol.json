@@ -1,0 +1,87 @@
+{
+  "slug": "trademark-symbol",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Trademark Symbol (™): Meaning, History & How to Type It",
+  "meta_description": "The trademark symbol ™ (U+2122) explained: what it legally means, how it differs from ®, and how to type it on Windows/Mac.",
+  "canonical": "https://ultratextgen.com/symbol/trademark-symbol/",
+  "breadcrumb": "Trademark Symbol",
+  "hero_h1": "Trademark Symbol (™)",
+  "hero_tagline": "What ™ means, how it differs from ®, and how to type it: click to copy.",
+  "intro": "The small superscript \"TM\" emerged from common-law trademark practice in the US and UK as a way to publicly claim a brand name, slogan, or logo as your own, without needing to register anything with a government office first. It works on the principle that trademark rights can arise simply through actual use in commerce.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/trademark-symbol/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-tovarnogo-znaka/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-merek-dagang/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znaki-tm-i-copyright/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-marque-deposee/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/markenzeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/ticari-marka-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-marchio/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-marca-registrada/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/handelsmerk-symbool/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-marca-comercial/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-alama-tijariya/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/shouhyou-kigou/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-kanka/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/trademark-symbol/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/sangpyo-giho/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/trademark-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/trademark-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-other-legal-marks",
+      "label": "Don't Confuse It With",
+      "h2": "The Other Legal Marks",
+      "symbols": [
+        {
+          "char": "℠",
+          "label": "Service Mark Sign (U+2120): claims a brand used for services rather than goods; like ™, it does not mean the mark is registered"
+        },
+        { "char": "®", "label": "Registered Trademark Sign (U+00AE): legally restricted to marks actually registered with a trademark office" },
+        { "char": "©", "label": "Copyright Sign (U+00A9): protects creative works, not brand names" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Trademark Symbol Comes From",
+      "paragraphs": [
+        "The small superscript \"TM\" emerged from common-law trademark practice in the US and UK as a way to publicly claim a brand name, slogan, or logo as your own, without needing to register anything with a government office first. It works on the principle that trademark rights can arise simply through actual use in commerce.",
+        "This is exactly what separates ™ from ® (the registered trademark symbol): ® may legally only be used once a mark is officially registered with a national trademark office, the USPTO in the US, and using it without real registration is against the law. ™ carries no such restriction, which is why it's the everyday mark you see on new products and services before (or instead of) going through formal registration."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "What does the ™ symbol mean?",
+      "a": "™ signals that someone is claiming a word, phrase, or logo as a trademark for their goods or services. Unlike ®, it carries no registration requirement: anyone can attach ™ to a mark the moment they start using it commercially, as a common-law claim."
+    },
+    {
+      "q": "Can I use ™ on anything?",
+      "a": "You can attach ™ to any word, phrase, logo, or slogan you're using to identify your goods or services, without needing formal registration. It doesn't guarantee legal protection on its own, but it puts others on notice of your claim, which can matter later."
+    },
+    {
+      "q": "How do you type the ™ symbol?",
+      "a": "On Windows, hold Alt and type 0153 on the numeric keypad (Alt+0153). On Mac, press Option+2. In HTML, use the entity &trade; or &#8482;."
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/copyright-symbol/",
+      "title": "© Copyright Symbol",
+      "desc": "Why it's no longer legally required, and why it still matters."
+    },
+    { "href": "/symbol/section-sign/", "title": "§ Section Sign", "desc": "The mark lawyers use to cite a specific section." },
+    {
+      "href": "/library/special-characters/",
+      "title": "All Special Characters",
+      "desc": "Punctuation, typography, and rare Unicode curiosities."
+    }
+  ]
+}

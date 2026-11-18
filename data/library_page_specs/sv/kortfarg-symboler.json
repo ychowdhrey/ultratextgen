@@ -259,6 +259,350 @@
      "label": "Biljardklot 8"
     }
    ]
+  },
+  {
+    "id": "full-deck-52-cards",
+    "label": "Hela kortleken",
+    "h2": "Alla 52 spelkort",
+    "intro": "Varje kort från ess till kung i spader, hjärter, ruter och klöver, ur Unicode-blocket Playing Cards. De är texttecken, inte emoji, så de får samma färg som texten runt omkring.",
+    "symbols": [
+      {
+        "char": "🂡",
+        "label": "Spader ess"
+      },
+      {
+        "char": "🂢",
+        "label": "Spader två"
+      },
+      {
+        "char": "🂣",
+        "label": "Spader tre"
+      },
+      {
+        "char": "🂤",
+        "label": "Spader fyra"
+      },
+      {
+        "char": "🂥",
+        "label": "Spader fem"
+      },
+      {
+        "char": "🂦",
+        "label": "Spader sex"
+      },
+      {
+        "char": "🂧",
+        "label": "Spader sju"
+      },
+      {
+        "char": "🂨",
+        "label": "Spader åtta"
+      },
+      {
+        "char": "🂩",
+        "label": "Spader nio"
+      },
+      {
+        "char": "🂪",
+        "label": "Spader tio"
+      },
+      {
+        "char": "🂫",
+        "label": "Spader knekt"
+      },
+      {
+        "char": "🂭",
+        "label": "Spader dam"
+      },
+      {
+        "char": "🂮",
+        "label": "Spader kung"
+      },
+      {
+        "char": "🂱",
+        "label": "Hjärter ess"
+      },
+      {
+        "char": "🂲",
+        "label": "Hjärter två"
+      },
+      {
+        "char": "🂳",
+        "label": "Hjärter tre"
+      },
+      {
+        "char": "🂴",
+        "label": "Hjärter fyra"
+      },
+      {
+        "char": "🂵",
+        "label": "Hjärter fem"
+      },
+      {
+        "char": "🂶",
+        "label": "Hjärter sex"
+      },
+      {
+        "char": "🂷",
+        "label": "Hjärter sju"
+      },
+      {
+        "char": "🂸",
+        "label": "Hjärter åtta"
+      },
+      {
+        "char": "🂹",
+        "label": "Hjärter nio"
+      },
+      {
+        "char": "🂺",
+        "label": "Hjärter tio"
+      },
+      {
+        "char": "🂻",
+        "label": "Hjärter knekt"
+      },
+      {
+        "char": "🂽",
+        "label": "Hjärter dam"
+      },
+      {
+        "char": "🂾",
+        "label": "Hjärter kung"
+      },
+      {
+        "char": "🃁",
+        "label": "Ruter ess"
+      },
+      {
+        "char": "🃂",
+        "label": "Ruter två"
+      },
+      {
+        "char": "🃃",
+        "label": "Ruter tre"
+      },
+      {
+        "char": "🃄",
+        "label": "Ruter fyra"
+      },
+      {
+        "char": "🃅",
+        "label": "Ruter fem"
+      },
+      {
+        "char": "🃆",
+        "label": "Ruter sex"
+      },
+      {
+        "char": "🃇",
+        "label": "Ruter sju"
+      },
+      {
+        "char": "🃈",
+        "label": "Ruter åtta"
+      },
+      {
+        "char": "🃉",
+        "label": "Ruter nio"
+      },
+      {
+        "char": "🃊",
+        "label": "Ruter tio"
+      },
+      {
+        "char": "🃋",
+        "label": "Ruter knekt"
+      },
+      {
+        "char": "🃍",
+        "label": "Ruter dam"
+      },
+      {
+        "char": "🃎",
+        "label": "Ruter kung"
+      },
+      {
+        "char": "🃑",
+        "label": "Klöver ess"
+      },
+      {
+        "char": "🃒",
+        "label": "Klöver två"
+      },
+      {
+        "char": "🃓",
+        "label": "Klöver tre"
+      },
+      {
+        "char": "🃔",
+        "label": "Klöver fyra"
+      },
+      {
+        "char": "🃕",
+        "label": "Klöver fem"
+      },
+      {
+        "char": "🃖",
+        "label": "Klöver sex"
+      },
+      {
+        "char": "🃗",
+        "label": "Klöver sju"
+      },
+      {
+        "char": "🃘",
+        "label": "Klöver åtta"
+      },
+      {
+        "char": "🃙",
+        "label": "Klöver nio"
+      },
+      {
+        "char": "🃚",
+        "label": "Klöver tio"
+      },
+      {
+        "char": "🃛",
+        "label": "Klöver knekt"
+      },
+      {
+        "char": "🃝",
+        "label": "Klöver dam"
+      },
+      {
+        "char": "🃞",
+        "label": "Klöver kung"
+      }
+    ]
+  },
+  {
+    "id": "tarot-knights-white-joker",
+    "label": "Riddare och joker",
+    "h2": "Tarotriddare och den vita jokern",
+    "intro": "Tarotlekar har en riddare mellan knekt och dam. Unicode har en riddare per färg plus en vit joker.",
+    "symbols": [
+      {
+        "char": "🂬",
+        "label": "Spader riddare"
+      },
+      {
+        "char": "🂼",
+        "label": "Hjärter riddare"
+      },
+      {
+        "char": "🃌",
+        "label": "Ruter riddare"
+      },
+      {
+        "char": "🃜",
+        "label": "Klöver riddare"
+      },
+      {
+        "char": "🃟",
+        "label": "Vit joker"
+      }
+    ]
+  },
+  {
+    "id": "tarot-trumps-red-joker",
+    "label": "Tarottrumfer",
+    "h2": "Tarottrumfer och den röda jokern",
+    "intro": "De 21 numrerade trumferna och Narren ur den franska tarotleken, plus den röda jokern. Androids inbyggda typsnitt har inga glyfer för de här 23 korten (kontrollerat mot typsnittsfilerna som följer med Android), så de flesta Android-telefoner visar en tom ruta. Tecknet du kopierar är ändå rätt och syns på alla enheter vars typsnitt har det.",
+    "symbols": [
+      {
+        "char": "🃠",
+        "label": "Narren (0)"
+      },
+      {
+        "char": "🃡",
+        "label": "I"
+      },
+      {
+        "char": "🃢",
+        "label": "II"
+      },
+      {
+        "char": "🃣",
+        "label": "III"
+      },
+      {
+        "char": "🃤",
+        "label": "IV"
+      },
+      {
+        "char": "🃥",
+        "label": "V"
+      },
+      {
+        "char": "🃦",
+        "label": "VI"
+      },
+      {
+        "char": "🃧",
+        "label": "VII"
+      },
+      {
+        "char": "🃨",
+        "label": "VIII"
+      },
+      {
+        "char": "🃩",
+        "label": "IX"
+      },
+      {
+        "char": "🃪",
+        "label": "X"
+      },
+      {
+        "char": "🃫",
+        "label": "XI"
+      },
+      {
+        "char": "🃬",
+        "label": "XII"
+      },
+      {
+        "char": "🃭",
+        "label": "XIII"
+      },
+      {
+        "char": "🃮",
+        "label": "XIV"
+      },
+      {
+        "char": "🃯",
+        "label": "XV"
+      },
+      {
+        "char": "🃰",
+        "label": "XVI"
+      },
+      {
+        "char": "🃱",
+        "label": "XVII"
+      },
+      {
+        "char": "🃲",
+        "label": "XVIII"
+      },
+      {
+        "char": "🃳",
+        "label": "XIX"
+      },
+      {
+        "char": "🃴",
+        "label": "XX"
+      },
+      {
+        "char": "🃵",
+        "label": "XXI"
+      },
+      {
+        "char": "🂿",
+        "label": "Röd joker"
+      }
+    ]
   }
- ]
+]
 }

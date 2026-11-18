@@ -1,0 +1,86 @@
+{
+  "slug": "yen-sign",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Yen Sign: Copy & Paste ¥ — Alt Code 0165 & Every Way to Type It",
+  "meta_description": "Click to copy the yen sign ¥ (and full-width ￥) instantly — plus Alt+0165 on Windows, the Mac shortcut, and every other way to type it.",
+  "canonical": "https://ultratextgen.com/symbol/yen-sign/",
+  "breadcrumb": "Yen Sign",
+  "hero_h1": "Yen Sign (¥)",
+  "hero_tagline": "What ¥ means, where it came from, and how to type it: click to copy.",
+  "intro": "¥ follows a pattern common to many currency symbols: take the first letter of the currency's name and cross it with one or two strokes, the same trick that turned S into $ and L into £. Japan introduced the yen in 1871 as part of the Meiji government's sweeping currency reforms, replacing a patchwork of older feudal-era coinage with a single, Western-style decimal currency, and the crossed-Y symbol came into use alongside it.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/yen-sign/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-yen/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-ieny/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-yen/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-yen/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/yen-zeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/yen-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-yen/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-iene/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signo-de-yen/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/en-kigou/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-yen/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/yenteken/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/yen-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-jena/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/yen-giho/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/yen-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/yen-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "similar-symbols",
+      "label": "Don't Confuse It With",
+      "h2": "Similar Symbols",
+      "symbols": [
+        { "char": "￥", "label": "Fullwidth Yen Sign (U+FFE5) — a wider variant used in CJK (Chinese/Japanese/Korean) typesetting" },
+        { "char": "€", "label": "Euro Sign (U+20AC) — a separate, deliberately designed currency symbol" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Yen Sign Comes From",
+      "paragraphs": [
+        "¥ follows a pattern common to many currency symbols: take the first letter of the currency's name and cross it with one or two strokes, the same trick that turned S into $ and L into £. Japan introduced the yen in 1871 as part of the Meiji government's sweeping currency reforms, replacing a patchwork of older feudal-era coinage with a single, Western-style decimal currency, and the crossed-Y symbol came into use alongside it.",
+        "Because China's yuan is built on a parallel Latin-alphabet romanization (both \"yen\" and \"yuan\" trace to the same Chinese character 圓/元 meaning \"round,\" referring to round coins), the two currencies ended up sharing the same plain-text Unicode symbol rather than each getting a dedicated one."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "Is ¥ the yen or the yuan?",
+      "a": "Both. U+00A5 is a shared plain-text symbol used for both the Japanese yen and the Chinese yuan: the two currencies don't have separate standard Unicode symbols, so which one is meant is usually clear from context or an accompanying currency code like JPY or CNY."
+    },
+    {
+      "q": "Where does the ¥ symbol come from?",
+      "a": "It follows the common pattern of crossing a currency's first initial with one or two strokes, similar to how $ derives from S and £ from L. Japan adopted the yen in 1871 as part of Meiji-era currency reforms, and the crossed-Y symbol followed soon after."
+    },
+    {
+      "q": "How do you type the yen sign on Windows or Mac?",
+      "a": "On Windows, hold Alt and type 0165 on the numeric keypad (Alt+0165). On Mac, press Option+Y. In HTML, use the entity &yen; or &#165;."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/dollar-sign/", "title": "$ Dollar Sign", "desc": "The world's most recognized currency symbol, and its disputed origin." },
+    { "href": "/symbol/euro-sign/", "title": "€ Euro Sign", "desc": "A currency symbol deliberately designed in 1996." },
+    { "href": "/symbol/pound-sign/", "title": "£ Pound Sign", "desc": "Over a thousand years old, from the Latin libra." },
+    { "href": "/symbol/rupee-sign/", "title": "₹ Rupee Sign", "desc": "Chosen by a national design competition in 2010." },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "All Currency Symbols",
+      "desc": "Dollar, euro, pound, yen, and other global currency symbols."
+    },
+    {
+      "href": "/symbol/won-sign/",
+      "title": "Won Sign",
+      "desc": "The ₩ currency mark shared by both the South Korean won (KRW) and the North Korean won (KPW)."
+    }
+  ]
+}

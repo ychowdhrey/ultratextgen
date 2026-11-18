@@ -19,39 +19,39 @@
       "symbols": [
         {
           "char": "ツ",
-          "label": "Katakana Tsu (Sweaty Smile)"
+          "label": "Tsu (sonrisa)"
         },
         {
           "char": "シ",
-          "label": "Katakana Si (Tilted Smile)"
+          "label": "Katakana si (cara sonriente)"
         },
         {
           "char": "ッ",
-          "label": "Katakana Small Tu"
+          "label": "Katakana tu pequeña (sonrisa pequeña)"
         },
         {
           "char": "ソ",
-          "label": "Katakana So"
+          "label": "Katakana so"
         },
         {
           "char": "ン",
-          "label": "Katakana N"
+          "label": "Katakana n"
         },
         {
           "char": "乂",
-          "label": "Yi: Crossed Blades Mark"
+          "label": "Yi — hojas cruzadas"
         },
         {
           "char": "亗",
-          "label": "Sui: Stacked Tier Mark"
+          "label": "Sui — marca apilada"
         },
         {
           "char": "々",
-          "label": "Ideographic Iteration Mark"
+          "label": "Signo de repetición ideográfico"
         },
         {
           "char": "彡",
-          "label": "San: Triple Slash"
+          "label": "San — tres trazos"
         }
       ]
     },
@@ -63,43 +63,43 @@
       "symbols": [
         {
           "char": "鬼",
-          "label": "Oni: Demon"
+          "label": "Oni — demonio"
         },
         {
           "char": "龍",
-          "label": "Ryu: Dragon"
+          "label": "Ryu — dragón"
         },
         {
           "char": "神",
-          "label": "Kami: God"
+          "label": "Kami: dios"
         },
         {
           "char": "王",
-          "label": "O: King"
+          "label": "O: rey"
         },
         {
           "char": "影",
-          "label": "Kage: Shadow"
+          "label": "Kage — sombra"
         },
         {
           "char": "刃",
-          "label": "Ha: Blade"
+          "label": "Ha — hoja"
         },
         {
           "char": "雷",
-          "label": "Kaminari: Thunder"
+          "label": "Kaminari — trueno"
         },
         {
           "char": "火",
-          "label": "Hi: Fire"
+          "label": "Hi — fuego"
         },
         {
           "char": "風",
-          "label": "Kaze: Wind"
+          "label": "Kaze — viento"
         },
         {
           "char": "闇",
-          "label": "Yami: Darkness"
+          "label": "Yami — oscuridad"
         }
       ]
     },
@@ -111,43 +111,43 @@
       "symbols": [
         {
           "char": "★",
-          "label": "Black Star"
+          "label": "Estrella negra"
         },
         {
           "char": "☆",
-          "label": "White Star"
+          "label": "Estrella blanca"
         },
         {
           "char": "✰",
-          "label": "Shadowed White Star"
+          "label": "Estrella blanca con sombra"
         },
         {
           "char": "✦",
-          "label": "Black Four-Pointed Star"
+          "label": "Estrella negra de cuatro puntas"
         },
         {
           "char": "✧",
-          "label": "White Four-Pointed Star"
+          "label": "Estrella blanca de cuatro puntas"
         },
         {
           "char": "✯",
-          "label": "Pinwheel Star"
+          "label": "Estrella molinillo"
         },
         {
           "char": "✪",
-          "label": "Circled White Star"
+          "label": "Estrella blanca en círculo"
         },
         {
           "char": "⍟",
-          "label": "APL Circle Star"
+          "label": "Estrella en círculo"
         },
         {
           "char": "⚡",
-          "label": "High Voltage"
+          "label": "Alto voltaje"
         },
         {
           "char": "ϟ",
-          "label": "Greek Small Letter Koppa (Lightning Bolt Style)"
+          "label": "Koppa griega (rayo)"
         }
       ]
     },
@@ -159,43 +159,43 @@
       "symbols": [
         {
           "char": "「",
-          "label": "Left Corner Bracket"
+          "label": "Corchete de esquina izquierdo"
         },
         {
           "char": "」",
-          "label": "Right Corner Bracket"
+          "label": "Corchete de esquina derecho"
         },
         {
           "char": "『",
-          "label": "Left White Corner Bracket"
+          "label": "Corchete de esquina blanco izquierdo"
         },
         {
           "char": "』",
-          "label": "Right White Corner Bracket"
+          "label": "Corchete de esquina blanco derecho"
         },
         {
           "char": "【",
-          "label": "Left Black Lenticular Bracket"
+          "label": "Corchete lenticular negro izquierdo"
         },
         {
           "char": "】",
-          "label": "Right Black Lenticular Bracket"
+          "label": "Corchete lenticular negro derecho"
         },
         {
           "char": "〖",
-          "label": "Left White Lenticular Bracket"
+          "label": "Corchete lenticular blanco izquierdo"
         },
         {
           "char": "〗",
-          "label": "Right White Lenticular Bracket"
+          "label": "Corchete lenticular blanco derecho"
         },
         {
           "char": "《",
-          "label": "Left Double Angle Bracket"
+          "label": "Corchete angular doble izquierdo"
         },
         {
           "char": "》",
-          "label": "Right Double Angle Bracket"
+          "label": "Corchete angular doble derecho"
         }
       ]
     },
@@ -207,35 +207,35 @@
       "symbols": [
         {
           "char": "⌖",
-          "label": "Position Indicator (Crosshair)"
+          "label": "Indicador de posición (mira)"
         },
         {
           "char": "✛",
-          "label": "Open Centre Cross"
+          "label": "Cruz de centro abierto"
         },
         {
           "char": "✜",
-          "label": "Heavy Open Centre Cross"
+          "label": "Cruz de centro abierto gruesa"
         },
         {
           "char": "◎",
-          "label": "Bullseye"
+          "label": "Diana"
         },
         {
           "char": "⊕",
-          "label": "Circled Plus (Scope)"
+          "label": "Signo de más dentro de un círculo"
         },
         {
           "char": "⚔",
-          "label": "Crossed Swords"
+          "label": "Espadas cruzadas"
         },
         {
           "char": "☠",
-          "label": "Skull and Crossbones"
+          "label": "Calavera y huesos cruzados"
         },
         {
           "char": "🎯",
-          "label": "Direct Hit"
+          "label": "Diana de dardos"
         }
       ]
     }

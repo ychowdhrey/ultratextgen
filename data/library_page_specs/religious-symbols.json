@@ -1,0 +1,225 @@
+{
+  "slug": "religious-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Religious Symbols: Copy & Paste Faith & Spiritual Symbols",
+  "meta_description": "Browse and copy religious, spiritual, and faith-related Unicode symbols from major world traditions. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/religious-symbols/",
+  "breadcrumb": "Religious Symbols",
+  "hero_h1": "Religious & Spiritual Symbols",
+  "hero_tagline": "A reference collection of religious, spiritual, and faith-related Unicode symbols from major world traditions. Click any symbol to copy it instantly.",
+  "intro": "This library contains symbols from Christianity, Islam, Judaism, Hinduism, Buddhism, and other world traditions, along with universal spiritual and peace symbols. Organized by faith tradition and category.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/religious-symbols/" },
+    { "lang": "no", "href": "https://ultratextgen.com/no/library/korssymboler/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/religious-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/religioese-symbole/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-religiosos/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-religieux/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-keagamaan/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-religiosi/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/religious-symbols/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/jonggyo-gihou/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/religieuze-symbolen/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-religijne/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-religiosos/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/religioznye-simvoly/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/religious-symbols/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/dini-semboller/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/ky-hieu-ton-giao/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/zongjiao-fuhao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/religious-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "christian",
+      "label": "Christian",
+      "h2": "Cross & Christian Symbols",
+      "intro": "Unicode cross variants and church-related symbols used in Christian traditions.",
+      "symbols": [
+        { "char": "✝", "label": "Latin Cross" },
+        { "char": "☦", "label": "Orthodox Cross" },
+        { "char": "✞", "label": "Shadowed Cross" },
+        { "char": "✟", "label": "Outlined Cross" },
+        { "char": "♰", "label": "West Syriac Cross" },
+        { "char": "♱", "label": "East Syriac Cross" },
+        { "char": "⛪", "label": "Church" },
+        { "char": "✠", "label": "Maltese Cross" }
+      ]
+    },
+    {
+      "id": "highs-and-lows",
+      "label": "Christian",
+      "h2": "God Is Greater Than the Highs and Lows Symbol",
+      "intro": "A modern faith shorthand for tattoos, shirts and bios that reads \"God is greater than the highs and lows\": G for God, > for greater than, then a peak (^ or ∧) for the highs and a valley (v or ∨) for the lows. All three forms say the same thing; G>^v is plain keyboard text, so it shows on every device.",
+      "symbols": [
+        { "char": "G>^v", "label": "Keyboard Form" },
+        { "char": "G>ΛV", "label": "Greek Lambda Form" },
+        { "char": "G>∧∨", "label": "Logic Sign Form" }
+      ]
+    },
+    {
+      "id": "islamic",
+      "label": "Islamic",
+      "h2": "Islamic Symbols",
+      "intro": "Crescent, mosque, and other symbols associated with Islamic tradition.",
+      "symbols": [
+        { "char": "☪", "label": "Star and Crescent" },
+        { "char": "🕌", "label": "Mosque" },
+        { "char": "🕋", "label": "Kaaba" },
+        { "char": "📿", "label": "Prayer Beads" },
+        { "char": "﷽", "label": "Bismillah ar-Rahman ar-Raheem" }
+      ]
+    },
+    {
+      "id": "jewish",
+      "label": "Jewish",
+      "h2": "Jewish Symbols",
+      "intro": "Star of David, menorah, and other symbols from Jewish tradition.",
+      "symbols": [
+        { "char": "✡", "label": "Star of David" },
+        { "char": "🕍", "label": "Synagogue" },
+        { "char": "🕎", "label": "Menorah" }
+      ]
+    },
+    {
+      "id": "dharmic",
+      "label": "Dharmic",
+      "h2": "Dharmic Religion Symbols",
+      "intro": "Symbols from Hinduism, Buddhism, Jainism, and Sikhism traditions.",
+      "symbols": [
+        { "char": "☸", "label": "Wheel of Dharma" },
+        { "char": "🕉", "label": "Om" },
+        { "char": "卍", "label": "Manji" },
+        { "char": "☬", "label": "Adi Shakti" },
+        { "char": "🛕", "label": "Hindu Temple" },
+        { "char": "🪯", "label": "Khanda Emoji" },
+        { "char": "🔱", "label": "Trishul (Trident)" },
+        { "char": "ॐ", "label": "Om (Devanagari)" },
+        { "char": "🦚", "label": "Peacock" },
+        { "char": "🪶", "label": "Peacock Feather" },
+        { "char": "🪈", "label": "Flute" },
+        { "char": "🪷", "label": "Lotus" },
+        { "char": "🪔", "label": "Diya Lamp" },
+        { "char": "🙏", "label": "Folded Hands (Namaste)" },
+        { "char": "🧘", "label": "Person in Lotus Position (Yoga/Meditation)" }
+      ]
+    },
+    {
+      "id": "east-asian",
+      "label": "East Asian",
+      "h2": "East Asian Spiritual Symbols",
+      "intro": "Symbols from Taoism, Shintoism, and East Asian spiritual traditions.",
+      "symbols": [
+        { "char": "☯", "label": "Yin Yang" },
+        { "char": "☰", "label": "Trigram for Heaven" },
+        { "char": "☱", "label": "Trigram for Lake" },
+        { "char": "☲", "label": "Trigram for Fire" },
+        { "char": "☳", "label": "Trigram for Thunder" },
+        { "char": "☴", "label": "Trigram for Wind" },
+        { "char": "☵", "label": "Trigram for Water" },
+        { "char": "☶", "label": "Trigram for Mountain" },
+        { "char": "☷", "label": "Trigram for Earth" },
+        { "char": "⛩", "label": "Shinto Shrine" },
+        { "char": "卐", "label": "Swastika (Auspicious)" }
+      ]
+    },
+    {
+      "id": "yin-yang-lines",
+      "label": "Lines",
+      "h2": "Yin & Yang Lines",
+      "intro": "The monogram and digram line forms that build the I Ching trigrams above.",
+      "symbols": [
+        { "char": "⚊", "label": "Monogram for Yang" },
+        { "char": "⚋", "label": "Monogram for Yin" },
+        { "char": "⚌", "label": "Digram for Greater Yang" },
+        { "char": "⚍", "label": "Digram for Lesser Yin" },
+        { "char": "⚎", "label": "Digram for Lesser Yang" },
+        { "char": "⚏", "label": "Digram for Greater Yin" }
+      ]
+    },
+    {
+      "id": "spiritual",
+      "label": "Universal Spiritual",
+      "h2": "Universal Spiritual Symbols",
+      "intro": "Symbols used across multiple spiritual traditions or universally recognized.",
+      "symbols": [
+        { "char": "☮", "label": "Peace Symbol" },
+        { "char": "⚛", "label": "Atom Symbol" },
+        { "char": "🔯", "label": "Six Pointed Star with Middle Dot" },
+        { "char": "⚕", "label": "Staff of Aesculapius" },
+        { "char": "☥", "label": "Ankh" }
+      ]
+    },
+    {
+      "id": "peace-gestures-goodwill",
+      "label": "Peace & Goodwill",
+      "h2": "Peace, Gestures & Goodwill",
+      "intro": "The gestures, doves, and goodwill symbols that pair with the peace sign above.",
+      "symbols": [
+        { "char": "✌️", "label": "Victory Hand" },
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "🕊️", "label": "Dove" },
+        { "char": "🫒", "label": "Olive" },
+        { "char": "🌿", "label": "Herb (Olive Branch)" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "👐", "label": "Open Hands" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Awareness Ribbon Symbols",
+      "desc": "Ribbon emojis and Unicode symbols for health awareness and causes."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Unicode heart characters and heart emoji variants in one reference."
+    },
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac & Astrology Symbols",
+      "desc": "Unicode zodiac signs and astrological symbols for reference."
+    },
+    {
+      "href": "/symbol/khanda-symbol/",
+      "title": "Khanda Symbol",
+      "desc": "The Sikh Khanda emblem and Ik Onkar: two distinct symbols people often mix up."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "A curated set of Unicode symbols compatible with LinkedIn posts and profiles."
+    },
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol (☮)",
+      "desc": "What ☮ means, its 1958 design story, and how to type it: click to copy."
+    },
+    { "href": "/symbol/yin-yang/", "title": "Yin Yang Symbol (☯)", "desc": "What ☯ means, its ancient roots, and how to type it: click to copy." },
+    { "href": "/symbol/cross-symbol/", "title": "Cross Symbol", "desc": "The Latin cross (✝): the central symbol of Christianity." },
+    { "href": "/symbol/pentagram-symbol/", "title": "Pentagram Symbol", "desc": "The five-pointed star (⛤)." },
+    {
+      "href": "/symbol/star-of-david/",
+      "title": "Star of David",
+      "desc": "The six-pointed Star of David (✡ ✡️), the Magen David, or \"Shield of David\"."
+    },
+    {
+      "href": "/symbol/orthodox-cross/",
+      "title": "Orthodox Cross",
+      "desc": "The three-bar cross (☦) most closely associated with Russian Orthodoxy."
+    },
+    { "href": "/symbol/om-symbol/", "title": "Om Symbol", "desc": "Om, or Aum (ॐ, 🕉️)." },
+    {
+      "href": "/symbol/chi-symbol/",
+      "title": "Chi Symbol",
+      "desc": "The lowercase χ that powers the χ² statistical test, the capital Χ that opens \"Christ\" in Greek and gave us the Chi-Rho monogram and the…"
+    },
+    { "href": "/symbol/crescent-and-star/", "title": "Star and Crescent (☪)", "desc": "The star and crescent (☪ ☪️)." }
+  ]
+}

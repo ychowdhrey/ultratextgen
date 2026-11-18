@@ -70,6 +70,19 @@
         { "char": "orz", "label": "Kaomoji de reverencia de rodillas" },
         { "char": "( ᵕ人ᵕ)", "label": "Kaomoji de manos suplicantes" }
       ]
+    },
+    {
+      "id": "skin-tones",
+      "label": "Tonos de Piel",
+      "h2": "Manos Rezando en Todos los Tonos de Piel",
+      "intro": "🙏 en los cinco tonos de piel que define Unicode, del claro al oscuro. 🙏🏿 (oscuro) y 🙏🏾 (oscuro medio) son los dos que se buscan como manos rezando negras. Cada uno es 🙏 seguido de un modificador de tono, así que una app que no admite tonos muestra 🙏 junto a un pequeño cuadro de color.",
+      "symbols": [
+        { "char": "🙏🏻", "label": "Manos juntas: tono de piel claro" },
+        { "char": "🙏🏼", "label": "Manos juntas: tono de piel claro medio" },
+        { "char": "🙏🏽", "label": "Manos juntas: tono de piel medio" },
+        { "char": "🙏🏾", "label": "Manos juntas: tono de piel oscuro medio" },
+        { "char": "🙏🏿", "label": "Manos juntas: tono de piel oscuro" }
+      ]
     }
   ],
   "collections": [

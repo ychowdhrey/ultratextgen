@@ -93,6 +93,16 @@ the template.
 
 ### 5. Spec, then generate
 
+**The reference page needs a spec first, and it must match that page** (owner rule
+2026-11-18). Find the reference page's spec (`npm run audit:spec-drift` lists every
+page without one and every spec that drifted from its page). No spec: build it first,
+from the live page, and generate-compare it until it reproduces that page's tiles.
+Drifted: write the page back into it first. Then translate **from the spec**, never
+from the page by hand. A spec that lagged its page is how `es/library/emojis-graciosos`
+shipped 35 of 75 tiles. `check:spec-drift` fails a new locale page without a spec and a
+locale spec whose reference has none; `check:locale-spec` fails a locale spec whose
+tile count differs from the reference page.
+
 Copy `data/library_page_specs/_TEMPLATE.example.json` to `<locale-slug>.json`:
 `lang`, the **native** slug, canonical, **full hreflang including the page's
 own self-reference and the cluster's expected `x-default`** (→ EN for an
@@ -154,5 +164,7 @@ shipped page.
   prose, visible `flag-label`s, or `data-symbol` clipboard payloads
   (`npm run check:locale-translation` gates all three).
 - Never edit a `data/*` registry (exceptions, tiers, gap audit, identical
-  strings) to make the batch pass.
+  strings, `spec_drift_exceptions.json`) to make the batch pass. A locale page may
+  differ from its spec only when it was further localized for its language, and that
+  is an owner decision recorded with its reason.
 - Never leave art, hub registration, or mesh for a "later pass".

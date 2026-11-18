@@ -1,0 +1,103 @@
+{
+  "slug": "square-root",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Square Root Symbol (√): Meaning, History & How to Type It",
+  "meta_description": "The square root symbol √ (U+221A) explained — its 1525 origin, what it means, how to type it on Windows/Mac, and where it's safe to use online.",
+  "canonical": "https://ultratextgen.com/symbol/square-root/",
+  "breadcrumb": "Square Root Symbol",
+  "hero_h1": "Square Root Symbol (√)",
+  "hero_tagline": "What √ means, where it came from, and how to type it: click to copy.",
+  "intro": "The radical sign traces back to German algebra manuscripts of the 1400s, where mathematicians used a stylized dot or a shorthand letter \"r\" (short for the Latin <em>radix</em>, meaning root) to mark a root operation. The symbol close to the modern √ first appears in print in Christoff Rudolff's 1525 algebra textbook <em>Coss</em>, one of the earliest printed works on algebra in German.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/square-root/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-akar-kuadrat/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/square-root/" },
+    { "lang": "da", "href": "https://ultratextgen.com/da/symbol/kvadratrodstegn/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/square-root/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/karekok-isareti/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/square-root/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/kvadratnyy-koren/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/raiz-quadrada/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/ruteu-giho/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/square-root/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-radice-quadrata/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-racine-carree/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-raiz-cuadrada/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/quadratwurzelzeichen/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-akar-kuadrat/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/pierwiastek-kwadratowy/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/vierkantswortel/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/square-root/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/square-root/" }
+  ],
+  "sections": [
+    {
+      "id": "similar-looking-symbols",
+      "label": "Don't Confuse It With",
+      "h2": "Similar-Looking Symbols",
+      "symbols": [
+        { "char": "∛", "label": "Cube Root (U+221B) — a different, separate operation" },
+        { "char": "∜", "label": "Fourth Root (U+221C)" },
+        { "char": "✓", "label": "Check Mark (U+2713) — visually similar, unrelated meaning" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Square Root Symbol Comes From",
+      "paragraphs": [
+        "The radical sign traces back to German algebra manuscripts of the 1400s, where mathematicians used a stylized dot or a shorthand letter \"r\" (short for the Latin <em>radix</em>, meaning root) to mark a root operation. The symbol close to the modern √ first appears in print in Christoff Rudolff's 1525 algebra textbook <em>Coss</em>, one of the earliest printed works on algebra in German.",
+        "The horizontal bar that extends over the number or expression being rooted (called the <em>vinculum</em>) was a later refinement, added to make clear exactly what the root applied to, useful once mathematicians started taking roots of entire expressions like √(a + b) rather than single numbers. By the 17th century the combined symbol had become the standard notation across European mathematics, and it hasn't changed meaningfully since."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "How do you type the square root symbol on a keyboard?",
+      "a": "On Windows, hold Alt and type 251 on the numeric keypad (Alt+251). On Mac, press Option+V. In HTML, use the entity √ or √."
+    },
+    {
+      "q": "What does the square root symbol mean?",
+      "a": "√x asks \"what number, multiplied by itself, gives x?\" For example, √9 = 3 because 3 × 3 = 9. The horizontal bar (vinculum) extends over everything being rooted."
+    },
+    {
+      "q": "Is √ the same as a check mark?",
+      "a": "No. They look similar at a glance but are different Unicode characters: √ (U+221A, Square Root) is a math operator, while ✓ (U+2713, Check Mark) is a completion/approval mark."
+    },
+    {
+      "q": "Can I use √ in a username?",
+      "a": "It works in most bios, display names, and chat apps (Instagram, Discord, WhatsApp), but most game platforms (Roblox, PlayStation Network, and Xbox Live) restrict usernames to plain letters, numbers, and a few punctuation marks, so √ will usually be rejected there."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/plus-minus/", "title": "Plus-Minus (±)", "desc": "Two possible values in one expression." },
+    { "href": "/symbol/division-sign/", "title": "Division Sign (÷)", "desc": "The obelus, and why textbooks moved away from it." },
+    { "href": "/symbol/infinity/", "title": "Infinity (∞)", "desc": "Where the lemniscate came from." },
+    { "href": "/library/math-symbols/", "title": "All Math Symbols", "desc": "Operators, Greek letters, set theory, and calculus notation." },
+    {
+      "href": "/symbol/checkmark-symbol/",
+      "title": "Check Mark Symbol",
+      "desc": "The check mark (✓ ✔): the tick that means done, correct, or verified."
+    },
+    {
+      "href": "/symbol/less-than-greater-than/",
+      "title": "Less Than (<) & Greater Than (>) Symbols",
+      "desc": "What they mean, why they can break HTML, and how they differ from angle quotes: click to copy."
+    },
+    {
+      "href": "/symbol/squared-cubed/",
+      "title": "Squared (²) & Cubed (³) Symbols",
+      "desc": "The two superscript digits that predate the rest of the superscript set: for exponents, unit abbreviations, and \"x squared\" notation."
+    },
+    {
+      "href": "/symbol/vertical-line/",
+      "title": "Vertical Line Symbol (|)",
+      "desc": "What | means, its Unix pipe history, and how to type it: click to copy."
+    }
+  ]
+}

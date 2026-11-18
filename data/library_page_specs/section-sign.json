@@ -1,0 +1,102 @@
+{
+  "slug": "section-sign",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Section Sign (§): Meaning, History & How to Type It",
+  "meta_description": "The section sign § (U+00A7) explained: its medieval legal origin, how it's used to cite laws, and how to type it on Windows/Mac.",
+  "canonical": "https://ultratextgen.com/symbol/section-sign/",
+  "breadcrumb": "Section Sign",
+  "hero_h1": "Section Sign (§)",
+  "hero_tagline": "What § means, where it came from, and how to type it: click to copy.",
+  "intro": "The Minecraft behaviour in the edition table follows the Minecraft Wiki's Formatting codes</a> article (read October 28, 2026): the Java chat disconnect, the removal of § from books, the Bedrock fields that display formatting codes, and the Realm-name, player-name and party-chat limits.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/section-sign/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-paragrafa/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-section/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-paragraphe/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/paragraphenzeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/bolum-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-di-sezione/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-secao/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/paragraafteken/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-paragrafu/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signo-de-seccion/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-alqism/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/sekushon-kigou/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-matra/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/section-sign/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/jeol-giho/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/section-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/section-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "similar-looking-symbols",
+      "label": "Don't Confuse It With",
+      "h2": "Similar-Looking Symbols",
+      "symbols": [
+        { "char": "¶", "label": "Pilcrow (U+00B6): marks a paragraph break, not a legal section" },
+        { "char": "$", "label": "Dollar Sign: visually similar double-line-through shape, unrelated meaning" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Section Sign Comes From",
+      "paragraphs": [
+        "The section sign descends from the medieval Latin abbreviation <em>signum sectionis</em> (\"mark of a section\"), commonly shortened by scribes to a doubled letter S. Over centuries of handwriting, the two S shapes were interlocked and stylized into the single glyph we use today.",
+        "Its main job has stayed remarkably consistent: marking the start of a distinct, numbered section within a longer legal, religious, or academic text. It remains the standard way to cite a specific part of a statute: \"§ 230\" is instantly recognizable in US legal writing as a reference to Section 230 of the Communications Decency Act, and the same convention holds across most legal systems that use Latin-alphabet typography."
+      ]
+    },
+    {
+      "h2": "The Section Sign in Minecraft",
+      "paragraphs": [
+        "In Minecraft, § starts a formatting code: § followed by a digit or a letter changes the color or style of the text after it, so <code>§c</code> turns text red, <code>§l</code> makes it bold and <code>§r</code> resets it. Whether the game accepts the § depends on the edition and on the text field you type it into.",
+        "Formatting codes are the older of Minecraft's two systems: Java Edition now styles in-game text through JSON text components, which is why a § that disconnects you in chat still works inside a <code>/tellraw</code> command. To try a code in a Bedrock book or sign, copy the § from the top of this page."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "What does the section sign mean?",
+      "a": "§ marks a specific numbered section within a legal document, statute, or long text: \"Section 230\" is usually written \"§ 230\" in legal citation. It's also used more loosely in academic and technical writing to reference a numbered subdivision."
+    },
+    {
+      "q": "How do you type the section sign on Windows or Mac?",
+      "a": "On Windows, hold Alt and type 0167 on the numeric keypad (Alt+0167). On Mac, press Option+6. In HTML, use the entity &sect; or &#167;."
+    },
+    {
+      "q": "What's the difference between § and ¶?",
+      "a": "§ marks a numbered section, typically in legal or statutory citation. ¶ (the pilcrow) marks a paragraph break, most often seen as a formatting-marks indicator in word processors. They serve different structural roles and aren't interchangeable."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/pilcrow/", "title": "¶ Pilcrow", "desc": "The paragraph mark hiding in your word processor." },
+    { "href": "/symbol/at-symbol/", "title": "@ At Symbol", "desc": "A 500-year-old ledger mark that became email's defining character." },
+    { "href": "/symbol/ampersand/", "title": "& Ampersand", "desc": "A Roman ligature for \"et,\" and where its name comes from." },
+    {
+      "href": "/library/special-characters/",
+      "title": "All Special Characters",
+      "desc": "Punctuation, typography, and rare Unicode curiosities."
+    },
+    {
+      "href": "/symbol/asterisk-symbol/",
+      "title": "Asterisk Symbol (*)",
+      "desc": "The asterisk (*) you use for footnotes, the wildcard * that matches anything in search and code, and the censoring star in f**k."
+    },
+    {
+      "href": "/symbol/copyright-symbol/",
+      "title": "Copyright Symbol (©)",
+      "desc": "What © means, whether you still need it, and how to type it: click to copy."
+    },
+    {
+      "href": "/symbol/trademark-symbol/",
+      "title": "Trademark Symbol (™)",
+      "desc": "What ™ means, how it differs from ®, and how to type it: click to copy."
+    }
+  ]
+}

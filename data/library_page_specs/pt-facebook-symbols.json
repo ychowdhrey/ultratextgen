@@ -20,31 +20,31 @@
       "symbols": [
         {
           "char": "👍",
-          "label": "Coração Preenchido"
+          "label": "Reação Curtir"
         },
         {
           "char": "❤️",
-          "label": "Coração Vazado"
+          "label": "Reação Amei"
         },
         {
           "char": "🥰",
-          "label": "Joinha"
+          "label": "Reação Força"
         },
         {
           "char": "😆",
-          "label": "Rosto Sorridente"
+          "label": "Reação Haha"
         },
         {
           "char": "😮",
-          "label": "Rosto Triste"
+          "label": "Reação Uau"
         },
         {
           "char": "😢",
-          "label": "Estrela"
+          "label": "Reação Triste"
         },
         {
           "char": "😠",
-          "label": "Fogo"
+          "label": "Reação Grr"
         }
       ]
     },
@@ -56,15 +56,15 @@
       "symbols": [
         {
           "char": "♥",
-          "label": "Coração Preto"
+          "label": "Naipe de Copas"
         },
         {
           "char": "♡",
-          "label": "Coração Branco"
+          "label": "Naipe de Copas Branco"
         },
         {
           "char": "❣",
-          "label": "Coração Girado"
+          "label": "Exclamação de Coração"
         },
         {
           "char": "💕",
@@ -72,19 +72,19 @@
         },
         {
           "char": "💙",
-          "label": "Coração com Fita"
+          "label": "Coração Azul"
         },
         {
           "char": "💚",
-          "label": "Coração Decorativo"
+          "label": "Coração Verde"
         },
         {
           "char": "💛",
-          "label": "Coração Pequeno"
+          "label": "Coração Amarelo"
         },
         {
           "char": "🖤",
-          "label": "Coração Cintilante"
+          "label": "Coração Preto"
         }
       ]
     },
@@ -104,23 +104,23 @@
         },
         {
           "char": "✦",
-          "label": "Estrela de Quatro Pontas"
+          "label": "Estrela de Quatro Pontas Cheia"
         },
         {
           "char": "✧",
-          "label": "Estrela Brilhante"
+          "label": "Estrela de Quatro Pontas Vazada"
         },
         {
           "char": "✩",
-          "label": "Estrela de Seis Pontas"
+          "label": "Estrela Contornada"
         },
         {
           "char": "✨",
-          "label": "Faísca"
+          "label": "Brilhos"
         },
         {
           "char": "🌟",
-          "label": "Asterisco Floral"
+          "label": "Estrela Brilhante"
         }
       ]
     },
@@ -132,35 +132,35 @@
       "symbols": [
         {
           "char": "•",
-          "label": "Marcador Redondo"
+          "label": "Marcador"
         },
         {
           "char": "‣",
-          "label": "Marcador Quadrado"
+          "label": "Marcador Triangular"
         },
         {
           "char": "▪",
-          "label": "Seta para a Direita"
+          "label": "Quadrado Preto Pequeno"
         },
         {
           "char": "➤",
-          "label": "Seta Dupla"
+          "label": "Ponta de Seta Preta"
         },
         {
           "char": "→",
-          "label": "Traço Longo"
+          "label": "Seta para a Direita"
         },
         {
           "char": "─",
-          "label": "Linha Divisória"
+          "label": "Traço Horizontal Simples"
         },
         {
           "char": "┈",
-          "label": "Losango"
+          "label": "Linha Pontilhada Horizontal"
         },
         {
           "char": "│",
-          "label": "Triângulo"
+          "label": "Traço Vertical Simples"
         }
       ]
     },
@@ -176,23 +176,23 @@
         },
         {
           "char": "✔",
-          "label": "Verificação Pesada"
+          "label": "Marca de Verificação Pesada"
         },
         {
           "char": "✅",
-          "label": "X de Cancelamento"
+          "label": "Botão de Confirmação"
         },
         {
           "char": "☑",
-          "label": "Círculo Cheio"
+          "label": "Caixa Marcada"
         },
         {
           "char": "✗",
-          "label": "Círculo Vazio"
+          "label": "X de Votação"
         },
         {
           "char": "❌",
-          "label": "Exclamação"
+          "label": "Marca de X"
         }
       ]
     },
@@ -204,35 +204,35 @@
       "symbols": [
         {
           "char": "꒰",
-          "label": "Ponto Médio"
+          "label": "Parêntese Ornamental Esquerdo"
         },
         {
           "char": "꒱",
-          "label": "Barra Vertical"
+          "label": "Parêntese Ornamental Direito"
         },
         {
           "char": "【",
-          "label": "Til"
+          "label": "Colchete Lenticular Preto Esquerdo"
         },
         {
           "char": "】",
-          "label": "Sublinhado"
+          "label": "Colchete Lenticular Preto Direito"
         },
         {
           "char": "「",
-          "label": "Aspas Angulares"
+          "label": "Colchete de Canto Esquerdo"
         },
         {
           "char": "」",
-          "label": "Chave Decorativa"
+          "label": "Colchete de Canto Direito"
         },
         {
           "char": "⋆",
-          "label": "Coroa"
+          "label": "Operador de Estrela"
         },
         {
           "char": "⊹",
-          "label": "Raio"
+          "label": "Cruz ortogonal"
         }
       ]
     }

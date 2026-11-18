@@ -1,0 +1,159 @@
+{
+  "slug": "emoji-meanings-guide",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Emoji Meanings Guide: What Every Popular Emoji Actually Means",
+  "meta_description": "Discover what popular emojis actually mean — face expressions, hand gestures, heart colors, animal symbolism, and double-meaning emojis explained.",
+  "canonical": "https://ultratextgen.com/library/emoji-meanings-guide/",
+  "breadcrumb": "Emoji Meanings Guide",
+  "hero_h1": "Emoji Meanings Guide",
+  "hero_tagline": "What every popular emoji actually means: from face expressions and hand gestures to heart colors, animal symbolism, and double-meaning emojis. Click any emoji to copy it.",
+  "intro": "Emoji meanings aren't always obvious. The same emoji can mean different things depending on context, platform, and generation. This guide explains what the most popular emojis actually mean, including some that have taken on secondary meanings you might not expect. Browse by category and click any emoji to copy it instantly.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/emoji-meanings-guide/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/emoji-anlamlari/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/significado-de-los-emojis/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/emoji-betekenis/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/emoji-bedeutung/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/signification-emoji/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/significato-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/emoji-meanings-guide/" }
+  ],
+  "sections": [
+    {
+      "id": "smiley-face-meanings",
+      "label": "Smiley & Face Meanings",
+      "h2": "Smiley & Face Emoji Meanings",
+      "intro": "What the most common face emojis actually convey in conversation.",
+      "symbols": [
+        { "char": "😊", "label": "Smiling — genuinely happy, wholesome" },
+        { "char": "😂", "label": "Laughing so hard you cry" },
+        { "char": "🥺", "label": "Pleading, puppy eyes, making a request" },
+        { "char": "😏", "label": "Smirk — knowing, flirtatious, smug" },
+        { "char": "🤔", "label": "Thinking, skeptical, questioning" },
+        { "char": "😐", "label": "Neutral face — deadpan, unimpressed" },
+        { "char": "🙄", "label": "Eye-rolling, exasperated, done" },
+        { "char": "😤", "label": "Frustrated, triumphant, determined" }
+      ]
+    },
+    {
+      "id": "hand-gesture-meanings",
+      "label": "Hand & Gesture Meanings",
+      "h2": "Hand & Gesture Emoji Meanings",
+      "intro": "What hand gesture emojis mean in context. Some have evolved beyond their original meanings.",
+      "symbols": [
+        { "char": "👍", "label": "Thumbs up — approval, like, agreement" },
+        { "char": "👎", "label": "Thumbs down — disapproval, dislike" },
+        { "char": "🤝", "label": "Handshake — agreement, partnership" },
+        { "char": "🙏", "label": "Prayer/Thank you — gratitude, please" },
+        { "char": "✌️", "label": "Victory/Peace sign, two" },
+        { "char": "🤞", "label": "Crossed fingers — hoping for luck" },
+        { "char": "🤙", "label": "Call me, hang loose, shaka" },
+        { "char": "👋", "label": "Waving — hello, goodbye" }
+      ]
+    },
+    {
+      "id": "heart-color-meanings",
+      "label": "Heart Color Meanings",
+      "h2": "Heart Color Emoji Meanings",
+      "intro": "Each heart color carries a different emotional nuance: here's what they convey. On Snapchat specifically, heart color also tracks best-friend status. See the <a href=\"/symbol/snapchat-heart-colors/\">full Snapchat heart color breakdown</a> for that system.",
+      "symbols": [
+        { "char": "❤️", "label": "Red — classic love, passion, romance" },
+        { "char": "🧡", "label": "Orange — warmth, care, friendship" },
+        { "char": "💛", "label": "Yellow — happiness, friendship, optimism" },
+        { "char": "💚", "label": "Green — nature, health, jealousy" },
+        { "char": "💙", "label": "Blue — trust, loyalty, calm platonic love" },
+        { "char": "💜", "label": "Purple — compassion, mystery, spiritual" },
+        { "char": "🖤", "label": "Black — dark humor, edgy, sorrow" },
+        { "char": "🤍", "label": "White — purity, peace, clean aesthetic" },
+        { "char": "🤎", "label": "Brown — warmth, comfort, earthy" },
+        { "char": "💗", "label": "Pink — affection, cute, growing love" }
+      ]
+    },
+    {
+      "id": "animal-emoji-meanings",
+      "label": "Animal Emoji Meanings",
+      "h2": "Animal Emoji Symbolism",
+      "intro": "What animal emojis symbolize in popular culture and online communication.",
+      "symbols": [
+        { "char": "🦋", "label": "Butterfly — transformation, freedom" },
+        { "char": "🐍", "label": "Snake — treachery, cunning (Taylor Swift)" },
+        { "char": "🦊", "label": "Fox — clever, sly, cunning" },
+        { "char": "🐸", "label": "Frog — meme culture, that's none of my business" },
+        { "char": "🐝", "label": "Bee — busy, hardworking, Beyoncé" },
+        { "char": "🦄", "label": "Unicorn — rare, magical, unique" }
+      ]
+    },
+    {
+      "id": "double-meaning-emojis",
+      "label": "Double-Meaning Emojis",
+      "h2": "Double-Meaning & Hidden Meaning Emojis",
+      "intro": "Emojis that have taken on secondary meanings beyond their original intent.",
+      "symbols": [
+        { "char": "🍑", "label": "Peach — also used suggestively" },
+        { "char": "🍆", "label": "Eggplant — also used suggestively" },
+        { "char": "🔥", "label": "Fire — hot, fire (Snapchat streak)" },
+        { "char": "💀", "label": "Skull — \"I'm dead\" (laughing hard)" },
+        { "char": "🤡", "label": "Clown — foolish behavior or person" },
+        { "char": "🧢", "label": "Cap — lying, \"no cap\" means no lie" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Why the meaning often differs from the description",
+      "paragraphs": [
+        "The official Unicode name is a technical label, not a user guide. 😤 is called &ldquo;Face with Look of Triumph&rdquo; there. In a chat almost nobody reads triumph in it; they read stubbornness or indignation. 🥺 is named &ldquo;Pleading Face&rdquo; and within months was reinterpreted as a sign of tenderness. That gap between name and use is why a plain list of names helps little in understanding a message. This page therefore gives the lived meaning first and the technical name only where it actually helps."
+      ]
+    },
+    {
+      "h2": "Heart colors: the one group with a side system",
+      "paragraphs": [
+        "Hearts add one wrinkle: Snapchat assigns heart colors automatically by friendship status. A yellow heart there does not mean &ldquo;friendship&rdquo; in the general sense but &ldquo;you are each other&rsquo;s best friend&rdquo;. Carrying Snapchat&rsquo;s logic over to WhatsApp misreads the message, and the other way round. For everything outside Snapchat, the color table above applies."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/usecase/text-to-emoji/",
+      "title": "Text to Emoji Converter",
+      "desc": "Turn any sentence into emoji, spell names in emoji letters, or decode emoji back to text: free and instant."
+    },
+    { "href": "/library/face-emojis/", "title": "Face Emojis", "desc": "Smiley faces, expressions, and emotion emojis for every mood." },
+    {
+      "href": "/library/smiley-face-guide/",
+      "title": "Smiley Face Guide",
+      "desc": "A guide to smiley face emojis, expressions, and when to use them."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols & Gestures",
+      "desc": "Hand gesture emojis and symbols for communication and expression."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Every heart emoji and Unicode heart character in one reference."
+    },
+    { "href": "/library/animal-emojis/", "title": "Animal Emojis", "desc": "Mammals, birds, sea creatures, insects, and mythical animals." },
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "Fruits, meals, sweets, and beverages: the full food emoji set."
+    },
+    { "href": "/library/sports-emojis/", "title": "Sports Emojis", "desc": "Balls, equipment, medals, and activity emojis for sports posts." },
+    {
+      "href": "/library/body-language-emojis/",
+      "title": "Body Language Emojis",
+      "desc": "Posture, gesture, and full-body emojis that express how you feel."
+    },
+    {
+      "href": "/library/people-profession-emojis/",
+      "title": "People & Profession Emojis",
+      "desc": "People, roles, and profession emojis across every occupation."
+    },
+    { "href": "/library/emoji-flags/", "title": "Flag Emojis", "desc": "Country flags, regional flags, and special-purpose flag emojis." }
+  ]
+}

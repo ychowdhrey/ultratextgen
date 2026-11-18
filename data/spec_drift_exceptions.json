@@ -1,0 +1,4 @@
+{
+  "_readme": "Localized pages that deliberately differ from their library spec, one entry per spec. Read by scripts/lib/spec_drift.py (check:spec-drift, audit:spec-drift). Owner rule 2026-11-18: a page that is not localized must match its spec and can never be listed here; a localized page may differ only when it was further localized for its language, and that decision is recorded here. An entry excuses exactly the characters it names (page_only / spec_only) and, with \"labels\": true, the visible labels; any other drift still fails. Every entry is a decision discussed with the owner (reason, decided_by, decided_on). Never add one to make the gate pass. Shape: {\"spec\": \"data/library_page_specs/<lang>/<slug>.json\", \"page_only\": [], \"spec_only\": [], \"labels\": false, \"reason\": \"…\", \"decided_by\": \"…\", \"decided_on\": \"YYYY-MM-DD\"}",
+  "exceptions": []
+}

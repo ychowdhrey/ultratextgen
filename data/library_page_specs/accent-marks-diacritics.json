@@ -1,0 +1,162 @@
+{
+  "slug": "accent-marks-diacritics",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Accent Marks & Diacritics: Copy & Paste Combining Characters",
+  "meta_description": "Browse and copy accent marks and diacritical characters — combining marks, spacing forms, and accented letter quick-copies.",
+  "canonical": "https://ultratextgen.com/library/accent-marks-diacritics/",
+  "breadcrumb": "Accent Marks & Diacritics",
+  "hero_h1": "Accent Marks & Diacritics",
+  "hero_tagline": "Every combining diacritic and accent mark character in Unicode: from acute and grave accents to tildes, cedillas, and beyond. Click any symbol to copy it instantly.",
+  "intro": "Diacritical marks are characters that combine with a preceding letter to modify its sound or meaning. They form the basis of accented letters like é, ñ, ü, and ç. This library includes both combining forms (which attach to the previous character) and standalone spacing forms.",
+  "date_published": "2026-04-12",
+  "date_modified": "2026-04-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/accent-marks-diacritics/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/akzente-diakritische-zeichen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/accent-marks-diacritics/" }
+  ],
+  "sections": [
+    {
+      "id": "accents-above",
+      "label": "Accents Above",
+      "h2": "Combining Marks Above",
+      "symbols": [
+        { "char": "̀", "label": "Combining Grave" },
+        { "char": "́", "label": "Combining Acute" },
+        { "char": "̂", "label": "Combining Circumflex" },
+        { "char": "̃", "label": "Combining Tilde" },
+        { "char": "̄", "label": "Combining Macron" },
+        { "char": "̅", "label": "Combining Overline" },
+        { "char": "̆", "label": "Combining Breve" },
+        { "char": "̇", "label": "Combining Dot Above" },
+        { "char": "̈", "label": "Combining Diaeresis" },
+        { "char": "̉", "label": "Combining Hook Above" },
+        { "char": "̊", "label": "Combining Ring Above" },
+        { "char": "̋", "label": "Combining Double Acute" },
+        { "char": "̌", "label": "Combining Caron" },
+        { "char": "̍", "label": "Combining Vertical Line Above" },
+        { "char": "̎", "label": "Combining Double Vertical Line" },
+        { "char": "̏", "label": "Combining Double Grave" },
+        { "char": "̐", "label": "Combining Candrabindu" },
+        { "char": "̑", "label": "Combining Inverted Breve" },
+        { "char": "̒", "label": "Combining Turned Comma" },
+        { "char": "̓", "label": "Combining Comma Above" },
+        { "char": "̔", "label": "Combining Reversed Comma" }
+      ]
+    },
+    {
+      "id": "marks-below",
+      "label": "Marks Below",
+      "h2": "Combining Marks Below",
+      "symbols": [
+        { "char": "̖", "label": "Combining Grave Below" },
+        { "char": "̗", "label": "Combining Acute Below" },
+        { "char": "̘", "label": "Combining Left Tack Below" },
+        { "char": "̙", "label": "Combining Right Tack Below" },
+        { "char": "̚", "label": "Combining Left Angle Above" },
+        { "char": "̛", "label": "Combining Horn" },
+        { "char": "̜", "label": "Combining Left Half Ring" },
+        { "char": "̝", "label": "Combining Up Tack Below" },
+        { "char": "̞", "label": "Combining Down Tack Below" },
+        { "char": "̟", "label": "Combining Plus Below" },
+        { "char": "̠", "label": "Combining Minus Below" },
+        { "char": "̡", "label": "Combining Palatalized Hook Below" },
+        { "char": "̢", "label": "Combining Retroflex Hook Below" },
+        { "char": "̣", "label": "Combining Dot Below" },
+        { "char": "̤", "label": "Combining Diaeresis Below" },
+        { "char": "̥", "label": "Combining Ring Below" },
+        { "char": "̦", "label": "Combining Comma Below" },
+        { "char": "̧", "label": "Combining Cedilla" },
+        { "char": "̨", "label": "Combining Ogonek" },
+        { "char": "̩", "label": "Combining Vertical Line Below" },
+        { "char": "̪", "label": "Combining Bridge Below" }
+      ]
+    },
+    {
+      "id": "hooks-horns",
+      "label": "Hooks & Horns",
+      "h2": "Hooks, Horns & Special Marks",
+      "symbols": [
+        { "char": "̫", "label": "Combining Inverted Double Arch" },
+        { "char": "̬", "label": "Combining Caron Below" },
+        { "char": "̭", "label": "Combining Circumflex Below" },
+        { "char": "̮", "label": "Combining Breve Below" },
+        { "char": "̯", "label": "Combining Inverted Breve Below" },
+        { "char": "̰", "label": "Combining Tilde Below" },
+        { "char": "̱", "label": "Combining Macron Below" },
+        { "char": "̲", "label": "Combining Low Line" },
+        { "char": "̳", "label": "Combining Double Low Line" },
+        { "char": "̴", "label": "Combining Tilde Overlay" },
+        { "char": "̵", "label": "Combining Short Stroke" },
+        { "char": "̶", "label": "Combining Long Stroke" },
+        { "char": "̷", "label": "Combining Short Solidus" },
+        { "char": "̸", "label": "Combining Long Solidus" },
+        { "char": "̹", "label": "Combining Right Half Ring" },
+        { "char": "̺", "label": "Combining Inverted Bridge" },
+        { "char": "̻", "label": "Combining Square Below" },
+        { "char": "̼", "label": "Combining Seagull Below" },
+        { "char": "̽", "label": "Combining X Above" },
+        { "char": "̾", "label": "Combining Vertical Tilde" },
+        { "char": "̿", "label": "Combining Double Overline" }
+      ]
+    },
+    {
+      "id": "spacing-forms",
+      "label": "Spacing Forms",
+      "h2": "Standalone Spacing Forms",
+      "symbols": [
+        { "char": "`", "label": "Grave Accent" },
+        { "char": "´", "label": "Acute Accent" },
+        { "char": "^", "label": "Circumflex Accent" },
+        { "char": "~", "label": "Tilde" },
+        { "char": "¯", "label": "Macron" },
+        { "char": "˘", "label": "Breve" },
+        { "char": "˙", "label": "Dot Above" },
+        { "char": "¨", "label": "Diaeresis" },
+        { "char": "˚", "label": "Ring Above" },
+        { "char": "˝", "label": "Double Acute Accent" },
+        { "char": "ˇ", "label": "Caron" },
+        { "char": "¸", "label": "Cedilla" },
+        { "char": "˛", "label": "Ogonek" },
+        { "char": "˜", "label": "Small Tilde" },
+        { "char": "ˆ", "label": "Modifier Letter Circumflex" },
+        { "char": "á", "label": "a with Acute" },
+        { "char": "é", "label": "e with Acute" },
+        { "char": "ñ", "label": "n with Tilde" },
+        { "char": "ç", "label": "c with Cedilla" },
+        { "char": "ü", "label": "u with Diaeresis" },
+        { "char": "ø", "label": "o with Stroke" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "How to Use Combining Diacritics",
+      "paragraphs": [
+        "Combining diacritical marks (U+0300&ndash;U+036F) attach to the character that precedes them in the text stream. To create an accented letter, type the base letter first, then the combining mark. For example: <strong>a + &#x0301; = &aacute;</strong>, <strong>n + &#x0303; = &ntilde;</strong>, <strong>u + &#x0308; = &uuml;</strong>.",
+        "On most systems, combining marks display correctly in plain text, but some fonts may render them poorly. The spacing forms (see Standalone Spacing Forms above) are standalone characters that can be used decoratively without attaching to a base letter.",
+        "<strong>Quick copies:</strong> For common accented letters, it is faster to copy the pre-composed character (&eacute;, &agrave;, &uuml;, &ntilde;, &ccedil;) from the character map or keyboard shortcut, rather than combining a base letter with a combining mark."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    },
+    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Mathematical operators including Greek letters with diacritics." },
+    {
+      "href": "/library/aesthetic-symbols/",
+      "title": "Aesthetic Symbols",
+      "desc": "Decorative Unicode symbols including combining marks for aesthetic bios."
+    },
+    { "href": "/library/star-symbols/", "title": "Star Symbol Collection", "desc": "Stars, asterisks, and star variants in Unicode." },
+    {
+      "href": "/symbol/tilde-symbol/",
+      "title": "Tilde Symbol (~)",
+      "desc": "The keyboard tilde (~) that marks your Unix home folder and means ‘roughly,’ the small tilde ˜ and the combining mark that sits over ñ, ã…"
+    }
+  ]
+}

@@ -306,6 +306,1434 @@
           "label": "Partielles Differential"
         }
       ]
+    },
+    {
+      "id": "greek-math-bold",
+      "label": "Fett",
+      "h2": "Fette griechische Buchstaben",
+      "intro": "Griechische Groß- und Kleinbuchstaben und mathematische Varianten in Fett, aus dem Unicode-Block für mathematische alphanumerische Symbole, wie man sie für Vektoren und Tensoren verwendet. Jede Kachel ist ein einzelnes Zeichen, deshalb bleibt das Fett erhalten, wo Formatierung verloren geht; Screenreader lesen es aber womöglich als mathematisches Symbol vor, nutze es also für kurze Texte.",
+      "symbols": [
+        {
+          "char": "𝚨",
+          "label": "Großes Alpha"
+        },
+        {
+          "char": "𝚩",
+          "label": "Großes Beta"
+        },
+        {
+          "char": "𝚪",
+          "label": "Großes Gamma"
+        },
+        {
+          "char": "𝚫",
+          "label": "Großes Delta"
+        },
+        {
+          "char": "𝚬",
+          "label": "Großes Epsilon"
+        },
+        {
+          "char": "𝚭",
+          "label": "Großes Zeta"
+        },
+        {
+          "char": "𝚮",
+          "label": "Großes Eta"
+        },
+        {
+          "char": "𝚯",
+          "label": "Großes Theta"
+        },
+        {
+          "char": "𝚰",
+          "label": "Großes Iota"
+        },
+        {
+          "char": "𝚱",
+          "label": "Großes Kappa"
+        },
+        {
+          "char": "𝚲",
+          "label": "Großes Lambda"
+        },
+        {
+          "char": "𝚳",
+          "label": "Großes My"
+        },
+        {
+          "char": "𝚴",
+          "label": "Großes Ny"
+        },
+        {
+          "char": "𝚵",
+          "label": "Großes Xi"
+        },
+        {
+          "char": "𝚶",
+          "label": "Großes Omikron"
+        },
+        {
+          "char": "𝚷",
+          "label": "Großes Pi"
+        },
+        {
+          "char": "𝚸",
+          "label": "Großes Rho"
+        },
+        {
+          "char": "𝚺",
+          "label": "Großes Sigma"
+        },
+        {
+          "char": "𝚻",
+          "label": "Großes Tau"
+        },
+        {
+          "char": "𝚼",
+          "label": "Großes Ypsilon"
+        },
+        {
+          "char": "𝚽",
+          "label": "Großes Phi"
+        },
+        {
+          "char": "𝚾",
+          "label": "Großes Chi"
+        },
+        {
+          "char": "𝚿",
+          "label": "Großes Psi"
+        },
+        {
+          "char": "𝛀",
+          "label": "Großes Omega"
+        },
+        {
+          "char": "𝛂",
+          "label": "Kleines Alpha"
+        },
+        {
+          "char": "𝛃",
+          "label": "Kleines Beta"
+        },
+        {
+          "char": "𝛄",
+          "label": "Kleines Gamma"
+        },
+        {
+          "char": "𝛅",
+          "label": "Kleines Delta"
+        },
+        {
+          "char": "𝛆",
+          "label": "Kleines Epsilon"
+        },
+        {
+          "char": "𝛇",
+          "label": "Kleines Zeta"
+        },
+        {
+          "char": "𝛈",
+          "label": "Kleines Eta"
+        },
+        {
+          "char": "𝛉",
+          "label": "Kleines Theta"
+        },
+        {
+          "char": "𝛊",
+          "label": "Kleines Iota"
+        },
+        {
+          "char": "𝛋",
+          "label": "Kleines Kappa"
+        },
+        {
+          "char": "𝛌",
+          "label": "Kleines Lambda"
+        },
+        {
+          "char": "𝛍",
+          "label": "Kleines My"
+        },
+        {
+          "char": "𝛎",
+          "label": "Kleines Ny"
+        },
+        {
+          "char": "𝛏",
+          "label": "Kleines Xi"
+        },
+        {
+          "char": "𝛐",
+          "label": "Kleines Omikron"
+        },
+        {
+          "char": "𝛑",
+          "label": "Kleines Pi"
+        },
+        {
+          "char": "𝛒",
+          "label": "Kleines Rho"
+        },
+        {
+          "char": "𝛓",
+          "label": "Schluss-Sigma"
+        },
+        {
+          "char": "𝛔",
+          "label": "Kleines Sigma"
+        },
+        {
+          "char": "𝛕",
+          "label": "Kleines Tau"
+        },
+        {
+          "char": "𝛖",
+          "label": "Kleines Ypsilon"
+        },
+        {
+          "char": "𝛗",
+          "label": "Kleines Phi"
+        },
+        {
+          "char": "𝛘",
+          "label": "Kleines Chi"
+        },
+        {
+          "char": "𝛙",
+          "label": "Kleines Psi"
+        },
+        {
+          "char": "𝛚",
+          "label": "Kleines Omega"
+        },
+        {
+          "char": "𝚹",
+          "label": "Großes Theta-Symbol"
+        },
+        {
+          "char": "𝛁",
+          "label": "Nabla (Del-Operator)"
+        },
+        {
+          "char": "𝛛",
+          "label": "Partielles Differential"
+        },
+        {
+          "char": "𝛜",
+          "label": "Epsilon-Symbol"
+        },
+        {
+          "char": "𝛝",
+          "label": "Theta-Symbol"
+        },
+        {
+          "char": "𝛞",
+          "label": "Kappa-Symbol"
+        },
+        {
+          "char": "𝛟",
+          "label": "Phi-Symbol"
+        },
+        {
+          "char": "𝛠",
+          "label": "Rho-Symbol"
+        },
+        {
+          "char": "𝛡",
+          "label": "Pi-Symbol"
+        },
+        {
+          "char": "𝟊",
+          "label": "Großes Digamma"
+        },
+        {
+          "char": "𝟋",
+          "label": "Kleines Digamma"
+        }
+      ]
+    },
+    {
+      "id": "greek-math-italic",
+      "label": "Kursiv",
+      "h2": "Kursive griechische Buchstaben",
+      "intro": "Kursives Griechisch wie in gesetzten Formeln, etwa 𝜃 für einen Winkel oder 𝜆 für eine Wellenlänge. Füge es dort ein, wo ein Textfeld keinen Kursiv-Knopf hat.",
+      "symbols": [
+        {
+          "char": "𝛢",
+          "label": "Großes Alpha"
+        },
+        {
+          "char": "𝛣",
+          "label": "Großes Beta"
+        },
+        {
+          "char": "𝛤",
+          "label": "Großes Gamma"
+        },
+        {
+          "char": "𝛥",
+          "label": "Großes Delta"
+        },
+        {
+          "char": "𝛦",
+          "label": "Großes Epsilon"
+        },
+        {
+          "char": "𝛧",
+          "label": "Großes Zeta"
+        },
+        {
+          "char": "𝛨",
+          "label": "Großes Eta"
+        },
+        {
+          "char": "𝛩",
+          "label": "Großes Theta"
+        },
+        {
+          "char": "𝛪",
+          "label": "Großes Iota"
+        },
+        {
+          "char": "𝛫",
+          "label": "Großes Kappa"
+        },
+        {
+          "char": "𝛬",
+          "label": "Großes Lambda"
+        },
+        {
+          "char": "𝛭",
+          "label": "Großes My"
+        },
+        {
+          "char": "𝛮",
+          "label": "Großes Ny"
+        },
+        {
+          "char": "𝛯",
+          "label": "Großes Xi"
+        },
+        {
+          "char": "𝛰",
+          "label": "Großes Omikron"
+        },
+        {
+          "char": "𝛱",
+          "label": "Großes Pi"
+        },
+        {
+          "char": "𝛲",
+          "label": "Großes Rho"
+        },
+        {
+          "char": "𝛴",
+          "label": "Großes Sigma"
+        },
+        {
+          "char": "𝛵",
+          "label": "Großes Tau"
+        },
+        {
+          "char": "𝛶",
+          "label": "Großes Ypsilon"
+        },
+        {
+          "char": "𝛷",
+          "label": "Großes Phi"
+        },
+        {
+          "char": "𝛸",
+          "label": "Großes Chi"
+        },
+        {
+          "char": "𝛹",
+          "label": "Großes Psi"
+        },
+        {
+          "char": "𝛺",
+          "label": "Großes Omega"
+        },
+        {
+          "char": "𝛼",
+          "label": "Kleines Alpha"
+        },
+        {
+          "char": "𝛽",
+          "label": "Kleines Beta"
+        },
+        {
+          "char": "𝛾",
+          "label": "Kleines Gamma"
+        },
+        {
+          "char": "𝛿",
+          "label": "Kleines Delta"
+        },
+        {
+          "char": "𝜀",
+          "label": "Kleines Epsilon"
+        },
+        {
+          "char": "𝜁",
+          "label": "Kleines Zeta"
+        },
+        {
+          "char": "𝜂",
+          "label": "Kleines Eta"
+        },
+        {
+          "char": "𝜃",
+          "label": "Kleines Theta"
+        },
+        {
+          "char": "𝜄",
+          "label": "Kleines Iota"
+        },
+        {
+          "char": "𝜅",
+          "label": "Kleines Kappa"
+        },
+        {
+          "char": "𝜆",
+          "label": "Kleines Lambda"
+        },
+        {
+          "char": "𝜇",
+          "label": "Kleines My"
+        },
+        {
+          "char": "𝜈",
+          "label": "Kleines Ny"
+        },
+        {
+          "char": "𝜉",
+          "label": "Kleines Xi"
+        },
+        {
+          "char": "𝜊",
+          "label": "Kleines Omikron"
+        },
+        {
+          "char": "𝜋",
+          "label": "Kleines Pi"
+        },
+        {
+          "char": "𝜌",
+          "label": "Kleines Rho"
+        },
+        {
+          "char": "𝜍",
+          "label": "Schluss-Sigma"
+        },
+        {
+          "char": "𝜎",
+          "label": "Kleines Sigma"
+        },
+        {
+          "char": "𝜏",
+          "label": "Kleines Tau"
+        },
+        {
+          "char": "𝜐",
+          "label": "Kleines Ypsilon"
+        },
+        {
+          "char": "𝜑",
+          "label": "Kleines Phi"
+        },
+        {
+          "char": "𝜒",
+          "label": "Kleines Chi"
+        },
+        {
+          "char": "𝜓",
+          "label": "Kleines Psi"
+        },
+        {
+          "char": "𝜔",
+          "label": "Kleines Omega"
+        },
+        {
+          "char": "𝛳",
+          "label": "Großes Theta-Symbol"
+        },
+        {
+          "char": "𝛻",
+          "label": "Nabla (Del-Operator)"
+        },
+        {
+          "char": "𝜕",
+          "label": "Partielles Differential"
+        },
+        {
+          "char": "𝜖",
+          "label": "Epsilon-Symbol"
+        },
+        {
+          "char": "𝜗",
+          "label": "Theta-Symbol"
+        },
+        {
+          "char": "𝜘",
+          "label": "Kappa-Symbol"
+        },
+        {
+          "char": "𝜙",
+          "label": "Phi-Symbol"
+        },
+        {
+          "char": "𝜚",
+          "label": "Rho-Symbol"
+        },
+        {
+          "char": "𝜛",
+          "label": "Pi-Symbol"
+        }
+      ]
+    },
+    {
+      "id": "greek-math-bold-italic",
+      "label": "Fett kursiv",
+      "h2": "Fett kursive griechische Buchstaben",
+      "intro": "Fett kursives Griechisch, das manche Bücher für kursiv geschriebene vektorielle Größen verwenden.",
+      "symbols": [
+        {
+          "char": "𝜜",
+          "label": "Großes Alpha"
+        },
+        {
+          "char": "𝜝",
+          "label": "Großes Beta"
+        },
+        {
+          "char": "𝜞",
+          "label": "Großes Gamma"
+        },
+        {
+          "char": "𝜟",
+          "label": "Großes Delta"
+        },
+        {
+          "char": "𝜠",
+          "label": "Großes Epsilon"
+        },
+        {
+          "char": "𝜡",
+          "label": "Großes Zeta"
+        },
+        {
+          "char": "𝜢",
+          "label": "Großes Eta"
+        },
+        {
+          "char": "𝜣",
+          "label": "Großes Theta"
+        },
+        {
+          "char": "𝜤",
+          "label": "Großes Iota"
+        },
+        {
+          "char": "𝜥",
+          "label": "Großes Kappa"
+        },
+        {
+          "char": "𝜦",
+          "label": "Großes Lambda"
+        },
+        {
+          "char": "𝜧",
+          "label": "Großes My"
+        },
+        {
+          "char": "𝜨",
+          "label": "Großes Ny"
+        },
+        {
+          "char": "𝜩",
+          "label": "Großes Xi"
+        },
+        {
+          "char": "𝜪",
+          "label": "Großes Omikron"
+        },
+        {
+          "char": "𝜫",
+          "label": "Großes Pi"
+        },
+        {
+          "char": "𝜬",
+          "label": "Großes Rho"
+        },
+        {
+          "char": "𝜮",
+          "label": "Großes Sigma"
+        },
+        {
+          "char": "𝜯",
+          "label": "Großes Tau"
+        },
+        {
+          "char": "𝜰",
+          "label": "Großes Ypsilon"
+        },
+        {
+          "char": "𝜱",
+          "label": "Großes Phi"
+        },
+        {
+          "char": "𝜲",
+          "label": "Großes Chi"
+        },
+        {
+          "char": "𝜳",
+          "label": "Großes Psi"
+        },
+        {
+          "char": "𝜴",
+          "label": "Großes Omega"
+        },
+        {
+          "char": "𝜶",
+          "label": "Kleines Alpha"
+        },
+        {
+          "char": "𝜷",
+          "label": "Kleines Beta"
+        },
+        {
+          "char": "𝜸",
+          "label": "Kleines Gamma"
+        },
+        {
+          "char": "𝜹",
+          "label": "Kleines Delta"
+        },
+        {
+          "char": "𝜺",
+          "label": "Kleines Epsilon"
+        },
+        {
+          "char": "𝜻",
+          "label": "Kleines Zeta"
+        },
+        {
+          "char": "𝜼",
+          "label": "Kleines Eta"
+        },
+        {
+          "char": "𝜽",
+          "label": "Kleines Theta"
+        },
+        {
+          "char": "𝜾",
+          "label": "Kleines Iota"
+        },
+        {
+          "char": "𝜿",
+          "label": "Kleines Kappa"
+        },
+        {
+          "char": "𝝀",
+          "label": "Kleines Lambda"
+        },
+        {
+          "char": "𝝁",
+          "label": "Kleines My"
+        },
+        {
+          "char": "𝝂",
+          "label": "Kleines Ny"
+        },
+        {
+          "char": "𝝃",
+          "label": "Kleines Xi"
+        },
+        {
+          "char": "𝝄",
+          "label": "Kleines Omikron"
+        },
+        {
+          "char": "𝝅",
+          "label": "Kleines Pi"
+        },
+        {
+          "char": "𝝆",
+          "label": "Kleines Rho"
+        },
+        {
+          "char": "𝝇",
+          "label": "Schluss-Sigma"
+        },
+        {
+          "char": "𝝈",
+          "label": "Kleines Sigma"
+        },
+        {
+          "char": "𝝉",
+          "label": "Kleines Tau"
+        },
+        {
+          "char": "𝝊",
+          "label": "Kleines Ypsilon"
+        },
+        {
+          "char": "𝝋",
+          "label": "Kleines Phi"
+        },
+        {
+          "char": "𝝌",
+          "label": "Kleines Chi"
+        },
+        {
+          "char": "𝝍",
+          "label": "Kleines Psi"
+        },
+        {
+          "char": "𝝎",
+          "label": "Kleines Omega"
+        },
+        {
+          "char": "𝜭",
+          "label": "Großes Theta-Symbol"
+        },
+        {
+          "char": "𝜵",
+          "label": "Nabla (Del-Operator)"
+        },
+        {
+          "char": "𝝏",
+          "label": "Partielles Differential"
+        },
+        {
+          "char": "𝝐",
+          "label": "Epsilon-Symbol"
+        },
+        {
+          "char": "𝝑",
+          "label": "Theta-Symbol"
+        },
+        {
+          "char": "𝝒",
+          "label": "Kappa-Symbol"
+        },
+        {
+          "char": "𝝓",
+          "label": "Phi-Symbol"
+        },
+        {
+          "char": "𝝔",
+          "label": "Rho-Symbol"
+        },
+        {
+          "char": "𝝕",
+          "label": "Pi-Symbol"
+        }
+      ]
+    },
+    {
+      "id": "greek-math-sans-bold",
+      "label": "Serifenlos fett",
+      "h2": "Serifenlose fette griechische Buchstaben",
+      "intro": "Serifenloses fettes Griechisch, ein schlichterer Stil, den manche Lehrbücher für Matrizen und Tensoren nutzen, und klar genug für Überschriften.",
+      "symbols": [
+        {
+          "char": "𝝖",
+          "label": "Großes Alpha"
+        },
+        {
+          "char": "𝝗",
+          "label": "Großes Beta"
+        },
+        {
+          "char": "𝝘",
+          "label": "Großes Gamma"
+        },
+        {
+          "char": "𝝙",
+          "label": "Großes Delta"
+        },
+        {
+          "char": "𝝚",
+          "label": "Großes Epsilon"
+        },
+        {
+          "char": "𝝛",
+          "label": "Großes Zeta"
+        },
+        {
+          "char": "𝝜",
+          "label": "Großes Eta"
+        },
+        {
+          "char": "𝝝",
+          "label": "Großes Theta"
+        },
+        {
+          "char": "𝝞",
+          "label": "Großes Iota"
+        },
+        {
+          "char": "𝝟",
+          "label": "Großes Kappa"
+        },
+        {
+          "char": "𝝠",
+          "label": "Großes Lambda"
+        },
+        {
+          "char": "𝝡",
+          "label": "Großes My"
+        },
+        {
+          "char": "𝝢",
+          "label": "Großes Ny"
+        },
+        {
+          "char": "𝝣",
+          "label": "Großes Xi"
+        },
+        {
+          "char": "𝝤",
+          "label": "Großes Omikron"
+        },
+        {
+          "char": "𝝥",
+          "label": "Großes Pi"
+        },
+        {
+          "char": "𝝦",
+          "label": "Großes Rho"
+        },
+        {
+          "char": "𝝨",
+          "label": "Großes Sigma"
+        },
+        {
+          "char": "𝝩",
+          "label": "Großes Tau"
+        },
+        {
+          "char": "𝝪",
+          "label": "Großes Ypsilon"
+        },
+        {
+          "char": "𝝫",
+          "label": "Großes Phi"
+        },
+        {
+          "char": "𝝬",
+          "label": "Großes Chi"
+        },
+        {
+          "char": "𝝭",
+          "label": "Großes Psi"
+        },
+        {
+          "char": "𝝮",
+          "label": "Großes Omega"
+        },
+        {
+          "char": "𝝰",
+          "label": "Kleines Alpha"
+        },
+        {
+          "char": "𝝱",
+          "label": "Kleines Beta"
+        },
+        {
+          "char": "𝝲",
+          "label": "Kleines Gamma"
+        },
+        {
+          "char": "𝝳",
+          "label": "Kleines Delta"
+        },
+        {
+          "char": "𝝴",
+          "label": "Kleines Epsilon"
+        },
+        {
+          "char": "𝝵",
+          "label": "Kleines Zeta"
+        },
+        {
+          "char": "𝝶",
+          "label": "Kleines Eta"
+        },
+        {
+          "char": "𝝷",
+          "label": "Kleines Theta"
+        },
+        {
+          "char": "𝝸",
+          "label": "Kleines Iota"
+        },
+        {
+          "char": "𝝹",
+          "label": "Kleines Kappa"
+        },
+        {
+          "char": "𝝺",
+          "label": "Kleines Lambda"
+        },
+        {
+          "char": "𝝻",
+          "label": "Kleines My"
+        },
+        {
+          "char": "𝝼",
+          "label": "Kleines Ny"
+        },
+        {
+          "char": "𝝽",
+          "label": "Kleines Xi"
+        },
+        {
+          "char": "𝝾",
+          "label": "Kleines Omikron"
+        },
+        {
+          "char": "𝝿",
+          "label": "Kleines Pi"
+        },
+        {
+          "char": "𝞀",
+          "label": "Kleines Rho"
+        },
+        {
+          "char": "𝞁",
+          "label": "Schluss-Sigma"
+        },
+        {
+          "char": "𝞂",
+          "label": "Kleines Sigma"
+        },
+        {
+          "char": "𝞃",
+          "label": "Kleines Tau"
+        },
+        {
+          "char": "𝞄",
+          "label": "Kleines Ypsilon"
+        },
+        {
+          "char": "𝞅",
+          "label": "Kleines Phi"
+        },
+        {
+          "char": "𝞆",
+          "label": "Kleines Chi"
+        },
+        {
+          "char": "𝞇",
+          "label": "Kleines Psi"
+        },
+        {
+          "char": "𝞈",
+          "label": "Kleines Omega"
+        },
+        {
+          "char": "𝝧",
+          "label": "Großes Theta-Symbol"
+        },
+        {
+          "char": "𝝯",
+          "label": "Nabla (Del-Operator)"
+        },
+        {
+          "char": "𝞉",
+          "label": "Partielles Differential"
+        },
+        {
+          "char": "𝞊",
+          "label": "Epsilon-Symbol"
+        },
+        {
+          "char": "𝞋",
+          "label": "Theta-Symbol"
+        },
+        {
+          "char": "𝞌",
+          "label": "Kappa-Symbol"
+        },
+        {
+          "char": "𝞍",
+          "label": "Phi-Symbol"
+        },
+        {
+          "char": "𝞎",
+          "label": "Rho-Symbol"
+        },
+        {
+          "char": "𝞏",
+          "label": "Pi-Symbol"
+        }
+      ]
+    },
+    {
+      "id": "greek-math-sans-bold-italic",
+      "label": "Serifenlos fett kursiv",
+      "h2": "Serifenlose fett kursive griechische Buchstaben",
+      "intro": "Serifenloses fett kursives Griechisch, die schräge Version des Stils darüber.",
+      "symbols": [
+        {
+          "char": "𝞐",
+          "label": "Großes Alpha"
+        },
+        {
+          "char": "𝞑",
+          "label": "Großes Beta"
+        },
+        {
+          "char": "𝞒",
+          "label": "Großes Gamma"
+        },
+        {
+          "char": "𝞓",
+          "label": "Großes Delta"
+        },
+        {
+          "char": "𝞔",
+          "label": "Großes Epsilon"
+        },
+        {
+          "char": "𝞕",
+          "label": "Großes Zeta"
+        },
+        {
+          "char": "𝞖",
+          "label": "Großes Eta"
+        },
+        {
+          "char": "𝞗",
+          "label": "Großes Theta"
+        },
+        {
+          "char": "𝞘",
+          "label": "Großes Iota"
+        },
+        {
+          "char": "𝞙",
+          "label": "Großes Kappa"
+        },
+        {
+          "char": "𝞚",
+          "label": "Großes Lambda"
+        },
+        {
+          "char": "𝞛",
+          "label": "Großes My"
+        },
+        {
+          "char": "𝞜",
+          "label": "Großes Ny"
+        },
+        {
+          "char": "𝞝",
+          "label": "Großes Xi"
+        },
+        {
+          "char": "𝞞",
+          "label": "Großes Omikron"
+        },
+        {
+          "char": "𝞟",
+          "label": "Großes Pi"
+        },
+        {
+          "char": "𝞠",
+          "label": "Großes Rho"
+        },
+        {
+          "char": "𝞢",
+          "label": "Großes Sigma"
+        },
+        {
+          "char": "𝞣",
+          "label": "Großes Tau"
+        },
+        {
+          "char": "𝞤",
+          "label": "Großes Ypsilon"
+        },
+        {
+          "char": "𝞥",
+          "label": "Großes Phi"
+        },
+        {
+          "char": "𝞦",
+          "label": "Großes Chi"
+        },
+        {
+          "char": "𝞧",
+          "label": "Großes Psi"
+        },
+        {
+          "char": "𝞨",
+          "label": "Großes Omega"
+        },
+        {
+          "char": "𝞪",
+          "label": "Kleines Alpha"
+        },
+        {
+          "char": "𝞫",
+          "label": "Kleines Beta"
+        },
+        {
+          "char": "𝞬",
+          "label": "Kleines Gamma"
+        },
+        {
+          "char": "𝞭",
+          "label": "Kleines Delta"
+        },
+        {
+          "char": "𝞮",
+          "label": "Kleines Epsilon"
+        },
+        {
+          "char": "𝞯",
+          "label": "Kleines Zeta"
+        },
+        {
+          "char": "𝞰",
+          "label": "Kleines Eta"
+        },
+        {
+          "char": "𝞱",
+          "label": "Kleines Theta"
+        },
+        {
+          "char": "𝞲",
+          "label": "Kleines Iota"
+        },
+        {
+          "char": "𝞳",
+          "label": "Kleines Kappa"
+        },
+        {
+          "char": "𝞴",
+          "label": "Kleines Lambda"
+        },
+        {
+          "char": "𝞵",
+          "label": "Kleines My"
+        },
+        {
+          "char": "𝞶",
+          "label": "Kleines Ny"
+        },
+        {
+          "char": "𝞷",
+          "label": "Kleines Xi"
+        },
+        {
+          "char": "𝞸",
+          "label": "Kleines Omikron"
+        },
+        {
+          "char": "𝞹",
+          "label": "Kleines Pi"
+        },
+        {
+          "char": "𝞺",
+          "label": "Kleines Rho"
+        },
+        {
+          "char": "𝞻",
+          "label": "Schluss-Sigma"
+        },
+        {
+          "char": "𝞼",
+          "label": "Kleines Sigma"
+        },
+        {
+          "char": "𝞽",
+          "label": "Kleines Tau"
+        },
+        {
+          "char": "𝞾",
+          "label": "Kleines Ypsilon"
+        },
+        {
+          "char": "𝞿",
+          "label": "Kleines Phi"
+        },
+        {
+          "char": "𝟀",
+          "label": "Kleines Chi"
+        },
+        {
+          "char": "𝟁",
+          "label": "Kleines Psi"
+        },
+        {
+          "char": "𝟂",
+          "label": "Kleines Omega"
+        },
+        {
+          "char": "𝞡",
+          "label": "Großes Theta-Symbol"
+        },
+        {
+          "char": "𝞩",
+          "label": "Nabla (Del-Operator)"
+        },
+        {
+          "char": "𝟃",
+          "label": "Partielles Differential"
+        },
+        {
+          "char": "𝟄",
+          "label": "Epsilon-Symbol"
+        },
+        {
+          "char": "𝟅",
+          "label": "Theta-Symbol"
+        },
+        {
+          "char": "𝟆",
+          "label": "Kappa-Symbol"
+        },
+        {
+          "char": "𝟇",
+          "label": "Phi-Symbol"
+        },
+        {
+          "char": "𝟈",
+          "label": "Rho-Symbol"
+        },
+        {
+          "char": "𝟉",
+          "label": "Pi-Symbol"
+        }
+      ]
+    },
+    {
+      "id": "greek-archaic-letters",
+      "label": "Archaische Buchstaben",
+      "h2": "Archaische griechische Buchstaben: Digamma, Koppa, Sampi und mehr",
+      "intro": "Buchstaben, die aus dem klassischen Alphabet verschwunden sind: Digamma, Heta, San, Koppa, Sampi und Sho (für das Baktrische). Stigma, Koppa und Sampi stehen in griechischen Zahlzeichen bis heute für 6, 90 und 900.",
+      "symbols": [
+        {
+          "char": "Ϝ",
+          "label": "Großes Digamma"
+        },
+        {
+          "char": "ϝ",
+          "label": "Kleines Digamma"
+        },
+        {
+          "char": "Ͷ",
+          "label": "Großes Digamma (pamphylisch)"
+        },
+        {
+          "char": "ͷ",
+          "label": "Kleines Digamma (pamphylisch)"
+        },
+        {
+          "char": "Ϛ",
+          "label": "Großes Stigma"
+        },
+        {
+          "char": "ϛ",
+          "label": "Kleines Stigma"
+        },
+        {
+          "char": "Ͱ",
+          "label": "Großes Heta"
+        },
+        {
+          "char": "ͱ",
+          "label": "Kleines Heta"
+        },
+        {
+          "char": "Ϻ",
+          "label": "Großes San"
+        },
+        {
+          "char": "ϻ",
+          "label": "Kleines San"
+        },
+        {
+          "char": "Ϙ",
+          "label": "Großes Koppa (archaisch)"
+        },
+        {
+          "char": "ϙ",
+          "label": "Kleines Koppa (archaisch)"
+        },
+        {
+          "char": "Ϟ",
+          "label": "Großes Koppa"
+        },
+        {
+          "char": "ϟ",
+          "label": "Kleines Koppa"
+        },
+        {
+          "char": "Ϡ",
+          "label": "Großes Sampi"
+        },
+        {
+          "char": "ϡ",
+          "label": "Kleines Sampi"
+        },
+        {
+          "char": "Ͳ",
+          "label": "Großes Sampi (archaisch)"
+        },
+        {
+          "char": "ͳ",
+          "label": "Kleines Sampi (archaisch)"
+        },
+        {
+          "char": "Ϸ",
+          "label": "Großes Sho"
+        },
+        {
+          "char": "ϸ",
+          "label": "Kleines Sho"
+        }
+      ]
+    },
+    {
+      "id": "greek-lunate-sigma",
+      "label": "Lunates Sigma",
+      "h2": "Das lunate Sigma und seine editorischen Formen",
+      "intro": "Das lunate Sigma ϲ ist das C-förmige Sigma der spätgriechischen und byzantinischen Schrift. Die gespiegelten und gepunkteten Formen sind kritische Zeichen aus alten Ausgaben griechischer Texte, und ϶ ist das gespiegelte lunate Epsilon aus der Mathematik.",
+      "symbols": [
+        {
+          "char": "Ϲ",
+          "label": "Großes lunates Sigma"
+        },
+        {
+          "char": "ϲ",
+          "label": "Kleines lunates Sigma"
+        },
+        {
+          "char": "Ͻ",
+          "label": "Großes gespiegeltes lunates Sigma"
+        },
+        {
+          "char": "ͻ",
+          "label": "Kleines gespiegeltes lunates Sigma"
+        },
+        {
+          "char": "Ͼ",
+          "label": "Großes gepunktetes lunates Sigma"
+        },
+        {
+          "char": "ͼ",
+          "label": "Kleines gepunktetes lunates Sigma"
+        },
+        {
+          "char": "Ͽ",
+          "label": "Großes gespiegeltes gepunktetes lunates Sigma"
+        },
+        {
+          "char": "ͽ",
+          "label": "Kleines gespiegeltes gepunktetes lunates Sigma"
+        },
+        {
+          "char": "϶",
+          "label": "Gespiegeltes lunates Epsilon"
+        }
+      ]
+    },
+    {
+      "id": "greek-accented-vowels",
+      "label": "Vokale mit Akzent",
+      "h2": "Griechische Vokale mit Tonos und Trema",
+      "intro": "Das Neugriechische markiert den betonten Vokal mit dem Tonos (ά) und einen getrennt gesprochenen Vokal mit dem Trema (ϊ), wie in Αθήνα. Damit schreibst du griechische Wörter und Namen richtig, auch ohne griechische Tastaturbelegung.",
+      "symbols": [
+        {
+          "char": "Ά",
+          "label": "Großes Alpha mit Tonos"
+        },
+        {
+          "char": "Έ",
+          "label": "Großes Epsilon mit Tonos"
+        },
+        {
+          "char": "Ή",
+          "label": "Großes Eta mit Tonos"
+        },
+        {
+          "char": "Ί",
+          "label": "Großes Iota mit Tonos"
+        },
+        {
+          "char": "Ό",
+          "label": "Großes Omikron mit Tonos"
+        },
+        {
+          "char": "Ύ",
+          "label": "Großes Ypsilon mit Tonos"
+        },
+        {
+          "char": "Ώ",
+          "label": "Großes Omega mit Tonos"
+        },
+        {
+          "char": "ά",
+          "label": "Kleines Alpha mit Tonos"
+        },
+        {
+          "char": "έ",
+          "label": "Kleines Epsilon mit Tonos"
+        },
+        {
+          "char": "ή",
+          "label": "Kleines Eta mit Tonos"
+        },
+        {
+          "char": "ί",
+          "label": "Kleines Iota mit Tonos"
+        },
+        {
+          "char": "ό",
+          "label": "Kleines Omikron mit Tonos"
+        },
+        {
+          "char": "ύ",
+          "label": "Kleines Ypsilon mit Tonos"
+        },
+        {
+          "char": "ώ",
+          "label": "Kleines Omega mit Tonos"
+        },
+        {
+          "char": "Ϊ",
+          "label": "Großes Iota mit Trema"
+        },
+        {
+          "char": "Ϋ",
+          "label": "Großes Ypsilon mit Trema"
+        },
+        {
+          "char": "ϊ",
+          "label": "Kleines Iota mit Trema"
+        },
+        {
+          "char": "ϋ",
+          "label": "Kleines Ypsilon mit Trema"
+        },
+        {
+          "char": "ΐ",
+          "label": "Kleines Iota mit Trema und Tonos"
+        },
+        {
+          "char": "ΰ",
+          "label": "Kleines Ypsilon mit Trema und Tonos"
+        }
+      ]
     }
   ]
 }

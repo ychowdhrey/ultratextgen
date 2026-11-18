@@ -1,0 +1,89 @@
+{
+  "slug": "invisible-character",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Braille Pattern Blank (⠀ U+2800): Code, HTML Entity and Meaning",
+  "meta_description": "U+2800 Braille Pattern Blank (⠀) explained: its code point, HTML entity and CSS value, how to type it, and why name fields that trim spaces let it through.",
+  "canonical": "https://ultratextgen.com/symbol/invisible-character/",
+  "breadcrumb": "Braille Pattern Blank",
+  "hero_h1": "Braille Pattern Blank (⠀)",
+  "hero_tagline": "U+2800, the blank most name fields accept. Its code point, HTML entity, how to type it, and why validators let it through.",
+  "intro": "U+2800 isn't a whitespace character at all: it comes from Unicode's Braille Patterns block, which encodes all 256 possible combinations of an 8-dot Braille cell. One of those 256 combinations is \"no dots raised\": the blank pattern. Because it's classified as an ordinary printable symbol rather than whitespace, it behaves completely differently from characters actually designed to be invisible, like the zero-width space.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-10-07",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/invisible-character/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/nevidimyy-simvol/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/karakter-tak-terlihat/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/unsichtbares-schriftzeichen/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/caractere-invisible/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/gorunmez-yazi-karakteri/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-carattere-invisibile/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-caractere-invisivel/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/caracter-invisible/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-harf-ghayr-marii/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/mienai-moji/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/tua-akson-long-hon/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/pusty-znak-brajla/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/onzichtbaar-teken/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/invisible-character/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/tumyeong-munja-giho/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/invisible-character/" },
+    { "lang": "ms", "href": "https://ultratextgen.com/ms/symbol/aksara-tak-nampak/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/invisible-character/" }
+  ],
+  "sections": [
+    {
+      "id": "other-invisible-characters-and-why-the-choice-matters",
+      "label": "Don't Confuse It With",
+      "h2": "Other \"Invisible\" Characters: and Why the Choice Matters",
+      "symbols": [
+        {
+          "char": "​",
+          "label": "Zero Width Space (U+200B): truly zero-width. Many validators strip it as whitespace, so it often fails where U+2800 succeeds"
+        },
+        { "char": " ", "label": "Non-Breaking Space (U+00A0): a true space character, almost always trimmed or rejected outright" },
+        {
+          "char": "ㅤ",
+          "label": "Hangul Filler (U+3164): another popular blank-name alternative. It works on some platforms where U+2800 doesn't, and the reverse"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Why This Specific Character Became \"The\" Invisible Character",
+      "paragraphs": [
+        "U+2800 isn't a whitespace character at all: it comes from Unicode's Braille Patterns block, which encodes all 256 possible combinations of an 8-dot Braille cell. One of those 256 combinations is \"no dots raised\": the blank pattern. Because it's classified as an ordinary printable symbol rather than whitespace, it behaves completely differently from characters actually designed to be invisible, like the zero-width space.",
+        "That distinction is exactly why it became the go-to trick for blank names on Instagram, Discord, and games: most apps trim leading and trailing whitespace and reject a field that ends up empty afterward: a real space, tab, or zero-width space (U+200B) typically gets caught by that check. U+2800 slips through because validation code sees \"a character,\" not \"empty space,\" even though it renders with no visible marks. The technique spread through social-media tips rather than any formal design intent, but it remains reliable specifically because of this Unicode technicality."
+      ]
+    },
+    {
+      "h2": "Which Apps Accept It",
+      "paragraphs": [
+        "Which apps accept a blank name changes with app updates, so we keep one dated table, platform by platform, on the <a href=\"/library/invisible-character/#platforms\">invisible character page</a>. It sits next to the other blanks to try when this one is refused."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "What is the invisible character used for?",
+      "a": "It's used to set a blank-looking name, bio, or message on apps that don't allow a genuinely empty field: Instagram display names, Discord nicknames, and game usernames are the most common uses. Pasting it into a name field satisfies the \"not empty\" requirement while showing nothing visible."
+    },
+    {
+      "q": "Why does this character work when a normal space doesn't?",
+      "a": "Most apps automatically trim leading/trailing spaces and reject fields left blank after trimming. U+2800 isn't classified as whitespace at all: it's technically the \"blank\" pattern from the Braille Patterns Unicode block, a real printable symbol that simply happens to render with no visible dots. Validation code that strips actual whitespace or true zero-width characters usually leaves it alone."
+    },
+    {
+      "q": "How do you type the invisible character?",
+      "a": "There's no simple keyboard shortcut on Windows or Mac: the easiest way is to copy it directly from a reference page like this one, or use the Alt+X hex method in Word (type 2800, then press Alt+X)."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/vertical-line/", "title": "| Vertical Line", "desc": "From ASCII divider to Unix \"pipe.\"" },
+    { "href": "/symbol/degree-symbol/", "title": "° Degree Symbol", "desc": "Centuries of astronomy, angles, and temperature scales." },
+    { "href": "/library/invisible-character/", "title": "All Invisible Characters", "desc": "Zero-width spaces, fillers, and empty braille." }
+  ]
+}
