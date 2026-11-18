@@ -91,18 +91,17 @@
      sits right after it. Any letter that is not Latin counts, so the test is
      the script of each letter and not a list of languages. */
   var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-  if (lang !== 'en' && lang.indexOf('en-') !== 0) return;
+  // A locale that ships its own sentence (data/accent_notice_copy.json
+  // `otherScript`, baked as a hidden .accent-notice-script span; kk since
+  // 2026-11-18) gets it in its own language. Every other locale is unchanged.
+  var localScript = notice.querySelector('.accent-notice-script');
+  if (lang !== 'en' && lang.indexOf('en-') !== 0 && !localScript) return;
 
   var scriptNotice = document.createElement('div');
   scriptNotice.className = 'accent-notice';
   scriptNotice.id = 'scriptNotice';
   scriptNotice.setAttribute('role', 'note');
   scriptNotice.hidden = true;
-  // A locale whose readers type a non-Latin script supplies this sentence in its
-  // own language (data/accent_notice_copy.json `otherScript`, baked as a hidden
-  // span by build-accent-notice.js); without it the English sentence stands.
-  // Added 2026-11-18 for kk: every Kazakh word would otherwise raise an English notice.
-  var localScript = notice.querySelector('.accent-notice-script');
   var scriptText = localScript ? localScript.innerHTML :
     'These styles are built from the Latin alphabet, so letters from other scripts keep their own shape. Styles that only add spacing, lines or marks still work on them, and any English letters and numbers in the same text are styled.';
   var scriptDismiss = localScript && closeBtn ? closeBtn.getAttribute('aria-label') : 'Dismiss';
