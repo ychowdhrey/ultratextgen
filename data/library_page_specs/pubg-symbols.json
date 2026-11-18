@@ -1,0 +1,175 @@
+{
+  "slug": "pubg-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "PUBG / BGMI Name Symbols: Copy & Paste ★ 彡 乂 Characters",
+  "meta_description": "PUBG Mobile & BGMI name symbols ★ 彡 乂 ꧁꧂ to copy and paste, and which ones survive the game's font before you spend a rename card.",
+  "canonical": "https://ultratextgen.com/library/pubg-symbols/",
+  "breadcrumb": "PUBG / BGMI Name Symbols",
+  "hero_h1": "PUBG / BGMI Name Symbols",
+  "hero_tagline": "Symbols that actually survive PUBG Mobile and BGMI's own in-game font, not just another generic Unicode dump. Click any symbol to copy it instantly.",
+  "intro": "PUBG Mobile and BGMI (Battlegrounds Mobile India: same game, India release) don't render text with your phone's full system font. They ship a small bundled font that covers only a few thousand of Unicode's 150,000+ characters, which is why a symbol that looks fine everywhere else can show up as a blank square, or get flatly rejected, in your in-game name. Every character on this page is a single-character pick from the families players actually report working: katakana and CJK marks, Javanese frame brackets, and simple stars. Names are capped at 14 characters total, so a frame counts against your limit before you've typed a single letter. Copy what you need and build around it.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/pubg-symbols/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/pubg-symbols/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/baegeu-giho/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/pubg-symbols/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-pubg/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-pubg/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/pubg-sembolleri/" }
+  ],
+  "sections": [
+    {
+      "id": "pubg-friendly-symbols",
+      "label": "Battle-Tested",
+      "h2": "PUBG / BGMI-Friendly Symbols",
+      "symbols": [
+        { "char": "ツ", "label": "Katakana Tsu" },
+        { "char": "ッ", "label": "Katakana Small Tu" },
+        { "char": "彡", "label": "San: Triple Slash" },
+        { "char": "乂", "label": "Yi: Crossed Blades Mark" },
+        { "char": "亗", "label": "Sui: Stacked Tier Mark" },
+        { "char": "々", "label": "Ideographic Iteration Mark" },
+        { "char": "ム", "label": "Katakana Mu" },
+        { "char": "王", "label": "O: King" },
+        { "char": "爪", "label": "CJK Radical Claw" },
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✦", "label": "Black Four-Pointed Star" },
+        { "char": "✧", "label": "White Four-Pointed Star" },
+        { "char": "•", "label": "Bullet" },
+        { "char": "×", "label": "Multiplication Sign" }
+      ]
+    },
+    {
+      "id": "pubg-frame-brackets",
+      "label": "Frame & Clan Tag",
+      "h2": "Frame & Clan-Tag Brackets",
+      "intro": "The ꧁ ꧂ Javanese pair is the single most-recognized PUBG/BGMI name frame. Wrap any name in it for the classic look. Remember: a frame already spends 2 of your 14 characters.",
+      "symbols": [
+        { "char": "꧁", "label": "Javanese Left Rerenggan" },
+        { "char": "꧂", "label": "Javanese Right Rerenggan" },
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "【", "label": "Left Black Lenticular Bracket" },
+        { "char": "】", "label": "Right Black Lenticular Bracket" },
+        { "char": "《", "label": "Left Double Angle Bracket" },
+        { "char": "》", "label": "Right Double Angle Bracket" }
+      ]
+    },
+    {
+      "id": "pubg-warrior-symbols",
+      "label": "Warrior & Battle Royale",
+      "h2": "Warrior & Battle Royale Marks",
+      "intro": "Combat-flavored single characters for a clan tag or an aggressive display name.",
+      "symbols": [
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "➤", "label": "Black Rightwards Arrowhead" },
+        { "char": "⌖", "label": "Position Indicator (Crosshair)" },
+        { "char": "†", "label": "Dagger" }
+      ]
+    },
+    {
+      "id": "pubg-status-symbols",
+      "label": "Status Flex",
+      "h2": "Crown & Checkmark Symbols",
+      "symbols": [
+        { "char": "♛", "label": "Black Chess Queen (Crown)" },
+        { "char": "♚", "label": "Black Chess King (Crown)" },
+        { "char": "✓", "label": "Check Mark" },
+        { "char": "☑", "label": "Ballot Box with Check" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "pubg-collections",
+    "label": "Name Combos",
+    "h2": "Ready-Made PUBG / BGMI Name Combos",
+    "intro": "Copy a full layout in one click, then swap in your own name. Remember the 14-character total limit, frame included."
+  },
+  "collection_container_id": "pubgCollectionsContainer",
+  "collections": [
+    {
+      "name": "Classic Frame Tag",
+      "flags": ["꧁", "Name", "꧂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sweaty Smile Frame",
+      "flags": ["ツ", "Name", "ツ"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Crossed Blades Wrap",
+      "flags": ["乂•", "Name", "•乂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Star Bracket Tag",
+      "flags": ["「★」", "Name"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Warrior Skull Tag",
+      "flags": ["☠", "Name", "☠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Crown Flex Tag",
+      "flags": ["♛", "Name"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Ready-Made PUBG / BGMI Name Combos",
+      "paragraphs": [
+        "Copy a full layout in one click, then swap in your own name. Remember the 14-character total limit, frame included."
+      ]
+    },
+    {
+      "h2": "About PUBG & BGMI's Character Filter",
+      "paragraphs": [
+        "PUBG Mobile and BGMI don't use your phone's system font to render display names: they use a font bundled inside the game client, which covers only a fraction of Unicode's 150,000+ characters. A symbol can be completely valid Unicode and still fail here, not because it's \"banned,\" but because the game's own font simply has no glyph drawn for it: it shows up as a blank box, or the game rejects the whole name outright. This is a different failure mode than a content filter, and it's why a symbol that works perfectly on Instagram or Discord can break specifically in PUBG. Single-character picks from the Battle-Tested Symbols section above are chosen because they're inside that smaller, actually-supported set. Multi-symbol combos and rarer Unicode blocks carry more risk."
+      ]
+    }
+  ],
+  "faq_h2": "PUBG & BGMI name symbols, answered",
+  "faq": [
+    {
+      "q": "Which symbols actually work in PUBG Mobile / BGMI names?",
+      "a": "Single-character CJK, katakana, and common decorative marks (ツ, 彡, 乂, 亗, 々, ム, ★, ✦) are the most reliable, because PUBG Mobile and BGMI render text using a limited in-app font, not your device's full system font. Every symbol in the Battle-Tested Symbols section above is chosen from that reliably-rendering set."
+    },
+    {
+      "q": "What's the difference between PUBG Mobile and BGMI names?",
+      "a": "BGMI (Battlegrounds Mobile India) is Krafton's India-market release of PUBG Mobile: same engine, same client font, same name-field behavior. A symbol that works in one works in the other. The names differ by region/publisher, not by rendering rules, so this page serves both without a separate list."
+    },
+    {
+      "q": "Why does PUBG show \"invalid characters\" for a symbol that works elsewhere?",
+      "a": "PUBG Mobile and BGMI bundle their own client font, which covers only a few thousand of Unicode's 150,000+ characters: a symbol can be perfectly valid Unicode and still render as a blank box or get rejected outright if it's outside that set. This is different from an emoji or a font-styling problem; it's specific to which glyphs the game's own font ships with. If a symbol fails, try a simpler single-character pick from the Battle-Tested section above before assuming your name is the problem."
+    },
+    {
+      "q": "How many characters can a PUBG Mobile or BGMI name have?",
+      "a": "14 characters, including any symbols. A frame like ꧁ ꧂ already uses 2 of those 14 before you type a single letter, so heavier decoration eats into how much of your actual name fits. Count your symbols, not just your letters."
+    },
+    {
+      "q": "Can I preview a name before spending a rename card?",
+      "a": "The game itself will reject invalid characters at the confirmation screen before it charges a rename card, so nothing here can get spent on a name that outright fails. What it won't warn you about is a symbol that saves but renders as a blank square for other players on a different device: that's a display-side risk, not a validation error, which is exactly why this page sticks to the smaller set of symbols with the most consistent real-world reports of working."
+    },
+    {
+      "q": "Do PUBG name symbols work the same on Android and iOS?",
+      "a": "Mostly, since both platforms use the game's own bundled font rather than the device's system font, but player reports of edge-case differences (a rarer symbol rendering on one OS and not the other) show up often enough that it's worth treating as a real possibility, not a myth. Single-character picks from the Battle-Tested section are the safest bet across both."
+    }
+  ],
+  "related": [
+    { "href": "/library/free-fire-name-symbols/", "title": "Free Fire Name Symbols", "desc": "Ornate ꧁꧂ frames and FF nick decorations to copy." },
+    { "href": "/library/ml-name-symbols/", "title": "Mobile Legends Name Symbols", "desc": "Symbols and frames for ML nicknames." },
+    { "href": "/library/roblox-symbols/", "title": "Roblox Symbols", "desc": "Username and display-name characters that work in Roblox." },
+    { "href": "/library/fortnite-symbols/", "title": "Fortnite Symbols", "desc": "Sweaty smiles, power kanji, and clan-tag stars." },
+    { "href": "/library/nickname-symbols/", "title": "Nickname Symbols", "desc": "Decorative characters for gamer tags on any platform." },
+    { "href": "/library/gaming-aesthetic-symbols/", "title": "Gaming Aesthetic Symbols", "desc": "Clan tag frames, HUD bars, and battle icons." }
+  ]
+}

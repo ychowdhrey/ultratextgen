@@ -134,7 +134,7 @@ window.addEventListener("load", function () {
 
   /* ---------- 1. the picker mounted, and it is two-tier ---------- */
   const sel = selects();
-  t("picker rendered two selects", sel.length, 2);
+  t("picker rendered platform, field and own-limit unit selects", sel.length, 3);
   const [platformSel, fieldSel] = sel;
   t("platform select is populated", platformSel.options.length > 10, true);
   t("locale `selected` honoured (LinkedIn preselected)", platformSel.value, "linkedin");
@@ -383,10 +383,10 @@ window.addEventListener("load", function () {
   const toggle = () => $("#counterFitGrid .cc-fit-toggle");
   t("collapsed by default", chipsNow().length, 12);
   t("toggle offered", !!toggle(), true);
-  t("toggle is translated and counts the rest", toggle().textContent, "Alle 38 anzeigen");
+  t("toggle is translated and counts the rest", toggle().textContent, "Alle " + window.UltraTextGen.counterRules.LIMITS.length + " anzeigen");
   t("collapsed view leads with what is broken", chipsNow()[0].classList.contains("is-unfit"), true);
   toggle().click();
-  t("expanding shows every rule", chipsNow().length, 38);
+  t("expanding shows every rule", chipsNow().length, window.UltraTextGen.counterRules.LIMITS.length);
   t("toggle flips to collapse", toggle().textContent, "Weniger anzeigen");
   toggle().click();
   t("collapsing again returns to the preview", chipsNow().length, 12);

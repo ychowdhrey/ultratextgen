@@ -301,6 +301,14 @@
           "label": "Persona haciendo una reverencia"
         },
         {
+          "char": "🙇\u200d♂️",
+          "label": "Hombre haciendo una reverencia"
+        },
+        {
+          "char": "🙇\u200d♀️",
+          "label": "Mujer haciendo una reverencia"
+        },
+        {
           "char": "🫡",
           "label": "Cara haciendo el saludo militar"
         },
@@ -309,24 +317,72 @@
           "label": "Persona con la palma hacia arriba"
         },
         {
+          "char": "💁\u200d♂️",
+          "label": "Hombre con la palma hacia arriba"
+        },
+        {
+          "char": "💁\u200d♀️",
+          "label": "Mujer con la palma hacia arriba"
+        },
+        {
           "char": "🤦",
           "label": "Persona con la mano en la cara"
+        },
+        {
+          "char": "🤦\u200d♂️",
+          "label": "Hombre con la mano en la cara"
+        },
+        {
+          "char": "🤦\u200d♀️",
+          "label": "Mujer con la mano en la cara"
         },
         {
           "char": "🤷",
           "label": "Persona encogiéndose de hombros"
         },
         {
+          "char": "🤷\u200d♂️",
+          "label": "Hombre encogiéndose de hombros"
+        },
+        {
+          "char": "🤷\u200d♀️",
+          "label": "Mujer encogiéndose de hombros"
+        },
+        {
           "char": "🙋",
           "label": "Persona levantando la mano"
+        },
+        {
+          "char": "🙋\u200d♂️",
+          "label": "Hombre levantando la mano"
+        },
+        {
+          "char": "🙋\u200d♀️",
+          "label": "Mujer levantando la mano"
         },
         {
           "char": "🙆",
           "label": "Persona haciendo el gesto de OK"
         },
         {
+          "char": "🙆\u200d♂️",
+          "label": "Hombre haciendo el gesto de OK"
+        },
+        {
+          "char": "🙆\u200d♀️",
+          "label": "Mujer haciendo el gesto de OK"
+        },
+        {
           "char": "🙅",
           "label": "Persona haciendo el gesto de no"
+        },
+        {
+          "char": "🙅\u200d♂️",
+          "label": "Hombre haciendo el gesto de no"
+        },
+        {
+          "char": "🙅\u200d♀️",
+          "label": "Mujer haciendo el gesto de no"
         }
       ]
     },
@@ -407,6 +463,10 @@
         {
           "char": "🦻",
           "label": "Oreja con audífono"
+        },
+        {
+          "char": "🫆",
+          "label": "Huella dactilar"
         }
       ]
     },
@@ -483,6 +543,49 @@
         {
           "char": "🐾",
           "label": "Huellas de patas"
+        }
+      ]
+    },
+    {
+      "id": "frowning-pouting-deaf",
+      "h2": "Emojis de persona con el ceño fruncido, haciendo pucheros y persona sorda",
+      "intro": "Personas con el ceño fruncido o haciendo pucheros para la decepción o el enojo, y el emoji de persona sorda, con una mano junto a la oreja. Cada uno viene como persona, hombre y mujer.",
+      "symbols": [
+        {
+          "char": "🙍",
+          "label": "Persona con el ceño fruncido"
+        },
+        {
+          "char": "🙍\u200d♂️",
+          "label": "Hombre con el ceño fruncido"
+        },
+        {
+          "char": "🙍\u200d♀️",
+          "label": "Mujer con el ceño fruncido"
+        },
+        {
+          "char": "🙎",
+          "label": "Persona haciendo pucheros"
+        },
+        {
+          "char": "🙎\u200d♂️",
+          "label": "Hombre haciendo pucheros"
+        },
+        {
+          "char": "🙎\u200d♀️",
+          "label": "Mujer haciendo pucheros"
+        },
+        {
+          "char": "🧏",
+          "label": "Persona sorda"
+        },
+        {
+          "char": "🧏\u200d♂️",
+          "label": "Hombre sordo"
+        },
+        {
+          "char": "🧏\u200d♀️",
+          "label": "Mujer sorda"
         }
       ]
     }

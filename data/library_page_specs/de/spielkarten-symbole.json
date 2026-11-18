@@ -245,6 +245,350 @@
           "label": "Billard-8er-Kugel"
         }
       ]
+    },
+    {
+      "id": "full-deck-52-cards",
+      "label": "Ganzes Blatt",
+      "h2": "Alle 52 Spielkarten",
+      "intro": "Jede Karte vom Ass bis zum König in Pik, Herz, Karo und Kreuz, aus dem Unicode-Block Playing Cards. Es sind Textzeichen, keine Emojis, deshalb übernehmen sie die Farbe des umgebenden Texts.",
+      "symbols": [
+        {
+          "char": "🂡",
+          "label": "Pik-Ass"
+        },
+        {
+          "char": "🂢",
+          "label": "Pik-Zwei"
+        },
+        {
+          "char": "🂣",
+          "label": "Pik-Drei"
+        },
+        {
+          "char": "🂤",
+          "label": "Pik-Vier"
+        },
+        {
+          "char": "🂥",
+          "label": "Pik-Fünf"
+        },
+        {
+          "char": "🂦",
+          "label": "Pik-Sechs"
+        },
+        {
+          "char": "🂧",
+          "label": "Pik-Sieben"
+        },
+        {
+          "char": "🂨",
+          "label": "Pik-Acht"
+        },
+        {
+          "char": "🂩",
+          "label": "Pik-Neun"
+        },
+        {
+          "char": "🂪",
+          "label": "Pik-Zehn"
+        },
+        {
+          "char": "🂫",
+          "label": "Pik-Bube"
+        },
+        {
+          "char": "🂭",
+          "label": "Pik-Dame"
+        },
+        {
+          "char": "🂮",
+          "label": "Pik-König"
+        },
+        {
+          "char": "🂱",
+          "label": "Herz-Ass"
+        },
+        {
+          "char": "🂲",
+          "label": "Herz-Zwei"
+        },
+        {
+          "char": "🂳",
+          "label": "Herz-Drei"
+        },
+        {
+          "char": "🂴",
+          "label": "Herz-Vier"
+        },
+        {
+          "char": "🂵",
+          "label": "Herz-Fünf"
+        },
+        {
+          "char": "🂶",
+          "label": "Herz-Sechs"
+        },
+        {
+          "char": "🂷",
+          "label": "Herz-Sieben"
+        },
+        {
+          "char": "🂸",
+          "label": "Herz-Acht"
+        },
+        {
+          "char": "🂹",
+          "label": "Herz-Neun"
+        },
+        {
+          "char": "🂺",
+          "label": "Herz-Zehn"
+        },
+        {
+          "char": "🂻",
+          "label": "Herz-Bube"
+        },
+        {
+          "char": "🂽",
+          "label": "Herz-Dame"
+        },
+        {
+          "char": "🂾",
+          "label": "Herz-König"
+        },
+        {
+          "char": "🃁",
+          "label": "Karo-Ass"
+        },
+        {
+          "char": "🃂",
+          "label": "Karo-Zwei"
+        },
+        {
+          "char": "🃃",
+          "label": "Karo-Drei"
+        },
+        {
+          "char": "🃄",
+          "label": "Karo-Vier"
+        },
+        {
+          "char": "🃅",
+          "label": "Karo-Fünf"
+        },
+        {
+          "char": "🃆",
+          "label": "Karo-Sechs"
+        },
+        {
+          "char": "🃇",
+          "label": "Karo-Sieben"
+        },
+        {
+          "char": "🃈",
+          "label": "Karo-Acht"
+        },
+        {
+          "char": "🃉",
+          "label": "Karo-Neun"
+        },
+        {
+          "char": "🃊",
+          "label": "Karo-Zehn"
+        },
+        {
+          "char": "🃋",
+          "label": "Karo-Bube"
+        },
+        {
+          "char": "🃍",
+          "label": "Karo-Dame"
+        },
+        {
+          "char": "🃎",
+          "label": "Karo-König"
+        },
+        {
+          "char": "🃑",
+          "label": "Kreuz-Ass"
+        },
+        {
+          "char": "🃒",
+          "label": "Kreuz-Zwei"
+        },
+        {
+          "char": "🃓",
+          "label": "Kreuz-Drei"
+        },
+        {
+          "char": "🃔",
+          "label": "Kreuz-Vier"
+        },
+        {
+          "char": "🃕",
+          "label": "Kreuz-Fünf"
+        },
+        {
+          "char": "🃖",
+          "label": "Kreuz-Sechs"
+        },
+        {
+          "char": "🃗",
+          "label": "Kreuz-Sieben"
+        },
+        {
+          "char": "🃘",
+          "label": "Kreuz-Acht"
+        },
+        {
+          "char": "🃙",
+          "label": "Kreuz-Neun"
+        },
+        {
+          "char": "🃚",
+          "label": "Kreuz-Zehn"
+        },
+        {
+          "char": "🃛",
+          "label": "Kreuz-Bube"
+        },
+        {
+          "char": "🃝",
+          "label": "Kreuz-Dame"
+        },
+        {
+          "char": "🃞",
+          "label": "Kreuz-König"
+        }
+      ]
+    },
+    {
+      "id": "tarot-knights-white-joker",
+      "label": "Ritter & Joker",
+      "h2": "Tarot-Ritter und der weiße Joker",
+      "intro": "Tarotkarten haben zwischen Bube und Dame einen Ritter. Unicode kodiert einen Ritter pro Farbe und dazu einen weißen Joker.",
+      "symbols": [
+        {
+          "char": "🂬",
+          "label": "Pik-Ritter"
+        },
+        {
+          "char": "🂼",
+          "label": "Herz-Ritter"
+        },
+        {
+          "char": "🃌",
+          "label": "Karo-Ritter"
+        },
+        {
+          "char": "🃜",
+          "label": "Kreuz-Ritter"
+        },
+        {
+          "char": "🃟",
+          "label": "Weißer Joker"
+        }
+      ]
+    },
+    {
+      "id": "tarot-trumps-red-joker",
+      "label": "Tarot-Trümpfe",
+      "h2": "Tarot-Trümpfe und der rote Joker",
+      "intro": "Die 21 nummerierten Trümpfe und der Narr aus dem französischen Tarot, dazu der rote Joker. Die eingebauten Schriften von Android haben für diese 23 Karten keine Glyphe (geprüft an den Schriftdateien, die Android mitliefert), deshalb zeigen die meisten Android-Handys ein leeres Kästchen. Das kopierte Zeichen bleibt korrekt und erscheint auf jedem Gerät, dessen Schriften es enthalten.",
+      "symbols": [
+        {
+          "char": "🃠",
+          "label": "Narr (0)"
+        },
+        {
+          "char": "🃡",
+          "label": "I"
+        },
+        {
+          "char": "🃢",
+          "label": "II"
+        },
+        {
+          "char": "🃣",
+          "label": "III"
+        },
+        {
+          "char": "🃤",
+          "label": "IV"
+        },
+        {
+          "char": "🃥",
+          "label": "V"
+        },
+        {
+          "char": "🃦",
+          "label": "VI"
+        },
+        {
+          "char": "🃧",
+          "label": "VII"
+        },
+        {
+          "char": "🃨",
+          "label": "VIII"
+        },
+        {
+          "char": "🃩",
+          "label": "IX"
+        },
+        {
+          "char": "🃪",
+          "label": "X"
+        },
+        {
+          "char": "🃫",
+          "label": "XI"
+        },
+        {
+          "char": "🃬",
+          "label": "XII"
+        },
+        {
+          "char": "🃭",
+          "label": "XIII"
+        },
+        {
+          "char": "🃮",
+          "label": "XIV"
+        },
+        {
+          "char": "🃯",
+          "label": "XV"
+        },
+        {
+          "char": "🃰",
+          "label": "XVI"
+        },
+        {
+          "char": "🃱",
+          "label": "XVII"
+        },
+        {
+          "char": "🃲",
+          "label": "XVIII"
+        },
+        {
+          "char": "🃳",
+          "label": "XIX"
+        },
+        {
+          "char": "🃴",
+          "label": "XX"
+        },
+        {
+          "char": "🃵",
+          "label": "XXI"
+        },
+        {
+          "char": "🂿",
+          "label": "Roter Joker"
+        }
+      ]
     }
   ],
   "related": [

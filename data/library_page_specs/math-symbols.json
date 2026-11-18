@@ -1,0 +1,347 @@
+{
+  "slug": "math-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Math Symbols: Copy & Paste Mathematical Characters",
+  "meta_description": "Browse and copy math symbols including operators, Greek letters, set theory, calculus, and superscript characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/math-symbols/",
+  "breadcrumb": "Math Symbols",
+  "hero_h1": "Math Symbols",
+  "hero_tagline": "Copy and paste mathematical Unicode characters: operators, Greek letters, set theory, calculus, and more. Click any symbol to copy it instantly.",
+  "intro": "Mathematical symbols in Unicode make it easy to write equations, formulas, and scientific notation in plain text, no LaTeX or special software needed. These characters are supported in emails, social media, documents, and messaging apps. Browse by category and click any symbol to copy it.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/math-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/mathe-symbole/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/math-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-matematicos/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-matematika/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-matematicos/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/wiskunde-symbolen/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/suhak-giho/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/matematik-sembolleri/" },
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/matematiska-symboler/" },
+    { "lang": "da", "href": "https://ultratextgen.com/da/library/matematiske-symboler/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/math-symbols/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-matematyczne/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-mathematiques/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-matematici/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/math-symbols/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/matematicheskie-simvoly/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/math-symbols/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/shuxue-fuhao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/math-symbols/" },
+    { "lang": "no", "href": "https://ultratextgen.com/no/library/matematiske-symboler/" }
+  ],
+  "sections": [
+    {
+      "id": "basic-operators",
+      "label": "Basic Operators",
+      "h2": "Basic Mathematical Operators",
+      "intro": "Arithmetic and algebraic operator symbols for equations and expressions.",
+      "symbols": [
+        { "char": "±", "label": "Plus-Minus Sign" },
+        { "char": "×", "label": "Multiplication Sign" },
+        { "char": "÷", "label": "Division Sign" },
+        { "char": "∓", "label": "Minus-or-Plus Sign" },
+        { "char": "∣", "label": "Divides" },
+        { "char": "⁄", "label": "Fraction Slash" },
+        { "char": "∤", "label": "Does Not Divide" },
+        { "char": "+", "label": "Plus Sign" },
+        { "char": "−", "label": "Minus Sign" },
+        { "char": "∕", "label": "Division Slash" }
+      ]
+    },
+    {
+      "id": "comparison-equality",
+      "label": "Comparison & Equality",
+      "h2": "Comparison & Equality Symbols",
+      "intro": "Symbols for comparing values and expressing relationships between quantities.",
+      "symbols": [
+        { "char": "≠", "label": "Not Equal To" },
+        { "char": "≈", "label": "Almost Equal To" },
+        { "char": "≡", "label": "Identical To" },
+        { "char": "≤", "label": "Less-Than or Equal To" },
+        { "char": "≥", "label": "Greater-Than or Equal To" },
+        { "char": "≪", "label": "Much Less-Than" },
+        { "char": "≫", "label": "Much Greater-Than" },
+        { "char": "≃", "label": "Asymptotically Equal To" },
+        { "char": "≅", "label": "Approximately Equal To" },
+        { "char": "≊", "label": "Almost Equal or Equal To" },
+        { "char": "∼", "label": "Tilde Operator" },
+        { "char": "≜", "label": "Delta Equal To" }
+      ]
+    },
+    {
+      "id": "set-theory-logic",
+      "label": "Set Theory & Logic",
+      "h2": "Set Theory & Logic Symbols",
+      "intro": "Symbols for set membership, subsets, unions, intersections, and logical operations.",
+      "symbols": [
+        { "char": "∈", "label": "Element Of" },
+        { "char": "∉", "label": "Not an Element Of" },
+        { "char": "∋", "label": "Contains as Member" },
+        { "char": "∌", "label": "Does Not Contain as Member" },
+        { "char": "⊂", "label": "Subset Of" },
+        { "char": "⊃", "label": "Superset Of" },
+        { "char": "⊄", "label": "Not a Subset Of" },
+        { "char": "⊅", "label": "Not a Superset Of" },
+        { "char": "∪", "label": "Union" },
+        { "char": "∩", "label": "Intersection" },
+        { "char": "∅", "label": "Empty Set" }
+      ]
+    },
+    {
+      "id": "greek-letters",
+      "label": "Greek Letters (lowercase)",
+      "h2": "Greek Letter Symbols (lowercase α–ω)",
+      "intro": "Lowercase Greek letters used in mathematics, physics, and science.",
+      "symbols": [
+        { "char": "α", "label": "Alpha" },
+        { "char": "β", "label": "Beta" },
+        { "char": "γ", "label": "Gamma" },
+        { "char": "δ", "label": "Delta" },
+        { "char": "ε", "label": "Epsilon" },
+        { "char": "ζ", "label": "Zeta" },
+        { "char": "η", "label": "Eta" },
+        { "char": "θ", "label": "Theta" },
+        { "char": "λ", "label": "Lambda" },
+        { "char": "μ", "label": "Mu" },
+        { "char": "π", "label": "Pi" },
+        { "char": "σ", "label": "Sigma" },
+        { "char": "τ", "label": "Tau" },
+        { "char": "φ", "label": "Phi" },
+        { "char": "ψ", "label": "Psi" },
+        { "char": "ω", "label": "Omega" }
+      ]
+    },
+    {
+      "id": "greek-letters-uppercase",
+      "label": "Greek Letters (uppercase)",
+      "h2": "Greek Letter Symbols (uppercase Α–Ω)",
+      "intro": "Uppercase Greek letters used as identifiers in mathematics, statistics, and engineering: e.g., Σ for summation, Δ for change, Ω for ohms.",
+      "symbols": [
+        { "char": "Α", "label": "Alpha" },
+        { "char": "Β", "label": "Beta" },
+        { "char": "Γ", "label": "Gamma" },
+        { "char": "Δ", "label": "Delta" },
+        { "char": "Ε", "label": "Epsilon" },
+        { "char": "Ζ", "label": "Zeta" },
+        { "char": "Η", "label": "Eta" },
+        { "char": "Θ", "label": "Theta" },
+        { "char": "Ι", "label": "Iota" },
+        { "char": "Κ", "label": "Kappa" },
+        { "char": "Λ", "label": "Lambda" },
+        { "char": "Μ", "label": "Mu" },
+        { "char": "Ν", "label": "Nu" },
+        { "char": "Ξ", "label": "Xi" },
+        { "char": "Ο", "label": "Omicron" },
+        { "char": "Π", "label": "Pi" },
+        { "char": "Ρ", "label": "Rho" },
+        { "char": "Σ", "label": "Sigma" },
+        { "char": "Τ", "label": "Tau" },
+        { "char": "Υ", "label": "Upsilon" },
+        { "char": "Φ", "label": "Phi" },
+        { "char": "Χ", "label": "Chi" },
+        { "char": "Ψ", "label": "Psi" },
+        { "char": "Ω", "label": "Omega" }
+      ]
+    },
+    {
+      "id": "calculus-analysis",
+      "label": "Calculus & Analysis",
+      "h2": "Calculus & Analysis Symbols",
+      "intro": "Integral, derivative, summation, and limit symbols for calculus notation. A copied ∫ is one line of plain text, so it fits notes, chats and quick answers; an integral with limits stacked above and below needs an equation editor or LaTeX (\\int).",
+      "symbols": [
+        { "char": "∫", "label": "Integral" },
+        { "char": "∬", "label": "Double Integral" },
+        { "char": "∭", "label": "Triple Integral" },
+        { "char": "∮", "label": "Contour Integral" },
+        { "char": "∂", "label": "Partial Differential" },
+        { "char": "∇", "label": "Nabla" },
+        { "char": "∆", "label": "Increment" },
+        { "char": "∞", "label": "Infinity" },
+        { "char": "∑", "label": "N-ary Summation" },
+        { "char": "∏", "label": "N-ary Product" }
+      ]
+    },
+    {
+      "id": "superscripts-subscripts",
+      "label": "Superscripts & Subscripts",
+      "h2": "Superscript & Subscript Numbers",
+      "intro": "Superscript and subscript digit characters for exponents and chemical formulas. For additional numeric styles, see the dedicated <a href=\"/library/number-symbols/\">number symbols page</a>.",
+      "symbols": [
+        { "char": "⁰", "label": "Superscript Zero" },
+        { "char": "¹", "label": "Superscript One" },
+        { "char": "²", "label": "Superscript Two" },
+        { "char": "³", "label": "Superscript Three" },
+        { "char": "⁴", "label": "Superscript Four" },
+        { "char": "⁵", "label": "Superscript Five" },
+        { "char": "₀", "label": "Subscript Zero" },
+        { "char": "₁", "label": "Subscript One" },
+        { "char": "₂", "label": "Subscript Two" },
+        { "char": "₃", "label": "Subscript Three" }
+      ]
+    },
+    {
+      "id": "roots-radicals",
+      "label": "Roots & Radicals",
+      "h2": "Square Root & Radical Signs",
+      "intro": "The precomposed radical signs in Unicode: square root, cube root, and fourth root. For exponents, see the superscript numbers above.",
+      "symbols": [
+        { "char": "√", "label": "Square Root" },
+        { "char": "∛", "label": "Cube Root" },
+        { "char": "∜", "label": "Fourth Root" }
+      ]
+    },
+    {
+      "id": "infinity-variants",
+      "label": "Infinity",
+      "h2": "Infinity Symbol & Variants",
+      "intro": "The infinity sign and its Unicode variations: proportional, eternal, and the mathematical infinity forms. ∝ (U+221D) sits here because it looks like an open ∞, but it means \"is proportional to\" and is neither ∞ nor the Greek letter α.",
+      "symbols": [
+        { "char": "∞", "label": "Infinity" },
+        { "char": "♾", "label": "Eternal (Permanent Paper)" },
+        { "char": "∝", "label": "Proportional To" },
+        { "char": "⧜", "label": "Incomplete Infinity" },
+        { "char": "⧝", "label": "Tie Over Infinity" },
+        { "char": "⧞", "label": "Infinity Negated" }
+      ]
+    },
+    {
+      "id": "inequalities",
+      "label": "Inequalities",
+      "h2": "Inequality & Negated Comparison Signs",
+      "symbols": [
+        { "char": "≤", "label": "Less or Equal" },
+        { "char": "≥", "label": "Greater or Equal" },
+        { "char": "≦", "label": "Less Over Equal" },
+        { "char": "≧", "label": "Greater Over Equal" },
+        { "char": "≮", "label": "Not Less-Than" },
+        { "char": "≯", "label": "Not Greater-Than" },
+        { "char": "≰", "label": "Not Less or Equal" },
+        { "char": "≱", "label": "Not Greater or Equal" },
+        { "char": "≶", "label": "Less or Greater" },
+        { "char": "≷", "label": "Greater or Less" },
+        { "char": "≲", "label": "Less or Equivalent" },
+        { "char": "≳", "label": "Greater or Equivalent" },
+        { "char": "⋜", "label": "Equal or Less" },
+        { "char": "⋝", "label": "Equal or Greater" },
+        { "char": "≨", "label": "Less, Not Equal" },
+        { "char": "≩", "label": "Greater, Not Equal" }
+      ]
+    },
+    {
+      "id": "geometry-symbols",
+      "label": "Geometry",
+      "h2": "Geometry Symbols: Angle, Perpendicular & Parallel",
+      "intro": "Angle, right-angle, perpendicular and parallel signs for writing geometry in plain text, such as ∠ABC = 90° or AB ⊥ CD. Unicode has two perpendicular signs that look alike: ⊥ (UP TACK) is the one most text uses, and ⟂ (PERPENDICULAR) is the dedicated relation sign. The degree sign ° is not the ordinal indicator º, and the <a href=\"/symbol/diameter-symbol/\">diameter sign ⌀</a> is not the empty set ∅ or the letter Ø. Congruent (≅) and similar (∼) are in the comparison section above.",
+      "symbols": [
+        { "char": "∠", "label": "Angle Symbol" },
+        { "char": "∡", "label": "Measured Angle" },
+        { "char": "∢", "label": "Spherical Angle" },
+        { "char": "∟", "label": "Right Angle" },
+        { "char": "⊥", "label": "Up Tack (Perpendicular)" },
+        { "char": "⟂", "label": "Perpendicular Sign" },
+        { "char": "∥", "label": "Parallel To" },
+        { "char": "∦", "label": "Not Parallel To" },
+        { "char": "△", "label": "Triangle Symbol" },
+        { "char": "□", "label": "Square Symbol" },
+        { "char": "°", "label": "Degree Sign" },
+        { "char": "⌀", "label": "Diameter Sign" }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/currency-symbols/", "title": "Currency Symbols", "desc": "Dollar, euro, pound, yen, and other global currency symbols." },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Punctuation, typography, and special Unicode characters for writing."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Circles, diamonds, squares, triangles, and decorative shapes for formatting."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "All Unicode arrow characters for navigation, direction, and list formatting."
+    },
+    {
+      "href": "/symbol/diameter-symbol/",
+      "title": "Diameter Symbol",
+      "desc": "The engineering diameter sign (⌀) and the symbols people mistake it for."
+    },
+    {
+      "href": "/symbol/autism-symbol/",
+      "title": "Autism Symbol",
+      "desc": "The infinity symbol for autism and neurodiversity, and why it replaced the puzzle piece."
+    },
+    { "href": "/symbol/micro-sign/", "title": "Micro Sign (µ)", "desc": "The micro sign (µ) used for microns, micrograms, and microseconds." },
+    {
+      "href": "/symbol/sigma-symbol/",
+      "title": "Sigma Symbol",
+      "desc": "The Greek letter Σ σ, the 🗿 moai emoji people actually paste for the \"sigma male\" meme, and sigma's real math meaning, all in one place."
+    },
+    {
+      "href": "/symbol/multiplication-sign/",
+      "title": "Multiplication Sign",
+      "desc": "William Oughtred's 1631 × mark, and why it's often typed as a letter x instead."
+    },
+    {
+      "href": "/symbol/squared-cubed/",
+      "title": "Squared & Cubed Symbols",
+      "desc": "The two superscript digits old enough to predate the rest of the set."
+    },
+    { "href": "/symbol/not-equal-sign/", "title": "Not Equal Sign", "desc": "The equals sign with a slash through it (≠)." },
+    {
+      "href": "/symbol/congruent-symbol/",
+      "title": "Congruent Symbol",
+      "desc": "The ≅ that every geometry class uses for congruent shapes: same shape, same size."
+    },
+    {
+      "href": "/symbol/delta-symbol/",
+      "title": "Delta Symbol",
+      "desc": "The capital Δ that means ‘change in’ across math, physics, and engineering, and the lowercase δ used for infinitesimals and the partial…"
+    },
+    {
+      "href": "/symbol/pi-symbol/",
+      "title": "Pi Symbol",
+      "desc": "The lowercase π everyone means by ‘the pi symbol,’ the capital Π that means ‘product’ in math, and the dedicated ∏ product operator."
+    },
+    {
+      "href": "/symbol/chi-symbol/",
+      "title": "Chi Symbol",
+      "desc": "The lowercase χ that powers the χ² statistical test, the capital Χ that opens \"Christ\" in Greek and gave us the Chi-Rho monogram and the…"
+    },
+    {
+      "href": "/symbol/lambda-symbol/",
+      "title": "Lambda Symbol",
+      "desc": "The lowercase λ that graphic designer Tom Doerr turned into a gay-liberation emblem in 1970, the same letter behind Alonzo Church's lambda…"
+    },
+    {
+      "href": "/symbol/phi-symbol/",
+      "title": "Phi Symbol",
+      "desc": "The lowercase φ that stands for the golden ratio (≈1.618), the capital Φ physicists use for magnetic flux, and the closed math variant ϕ."
+    },
+    { "href": "/symbol/psi-symbol/", "title": "Psi Symbol", "desc": "The lowercase ψ and capital Ψ." },
+    {
+      "href": "/symbol/theta-symbol/",
+      "title": "Theta Symbol",
+      "desc": "The lowercase θ that marks an angle in trigonometry, the capital Θ of Big-Theta complexity notation, and the open-loop math variant ϑ."
+    },
+    {
+      "href": "/symbol/tilde-symbol/",
+      "title": "Tilde Symbol (~)",
+      "desc": "The keyboard tilde (~) that marks your Unix home folder and means ‘roughly,’ the small tilde ˜ and the combining mark that sits over ñ, ã…"
+    },
+    {
+      "href": "/symbol/less-than-or-equal-to-symbol/",
+      "title": "Less Than or Equal To Symbol (≤)",
+      "desc": "The ≤ you reach for when a value can be smaller than another value or exactly equal to it."
+    }
+  ]
+}

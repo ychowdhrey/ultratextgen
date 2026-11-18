@@ -38,7 +38,7 @@
       "intro": "Đơn vị điện trở. U+2126 là dấu ohm riêng biệt, dù trong thực tế hầu hết mọi người chỉ gõ chữ Hy Lạp hoa omega, trông giống hệt. Chữ omega thường (ω) đi cùng nó trong toán học dòng điện xoay chiều, nơi nó biểu thị tần số góc, ω = 2πf.",
       "symbols": [
         {
-          "char": "Ω",
+          "char": "\u2126",
           "label": "Dấu Ohm (U+2126): Điện Trở"
         },
         {
@@ -54,7 +54,7 @@
       "intro": "Hai ô này là hai ký tự Unicode khác nhau — U+2126, dấu ohm, và U+03A9, omega Hy Lạp hoa — trông giống hệt nhau trong hầu hết mọi phông chữ. Cơ sở dữ liệu Unicode nói rằng dấu ohm nên chuẩn hóa về omega thông thường, và hầu hết bàn phím cùng công cụ tạo ra omega, không phải dấu ohm. Sự lệch pha này đã gây ra những lỗi chuyển đổi tài liệu có thật. Để sao chép dán thì cả hai đều dùng được như nhau; để biết cách phân biệt đầy đủ, bao gồm lỗi Pandoc đã được ghi nhận, xem trang ký hiệu omega.",
       "symbols": [
         {
-          "char": "Ω",
+          "char": "\u2126",
           "label": "Dấu Ohm (U+2126): Mã Điểm Cũ"
         },
         {

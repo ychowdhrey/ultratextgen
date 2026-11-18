@@ -121,6 +121,18 @@ only; the gate measures convergence toward the untouched sibling and reports suc
 pairs rather than failing them. When the gate flags a pair, sync it — do not reach
 for the ledger.
 
+## 4a. A page needs a spec before it is localized, and the spec matches the page
+
+*Owner rule 2026-11-18.* A library/symbol locale page is translated from its reference
+page's spec (`data/library_page_specs/`), so the reference must have one, and that spec
+must reproduce the reference page's copy tiles. A page that is **not localized** has no
+reason to differ from its spec. A **localized** page may differ only when it was further
+localized for its language, recorded in `data/spec_drift_exceptions.json` (owner
+decision, never to make a gate pass). `check:spec-drift` (delta) and `check:locale-spec`
+gate this; `npm run audit:spec-drift` is the whole-site view. Edit the spec and the page
+together; the generator refuses a regenerate that would delete tiles. Mechanism and
+measurements: `docs/architecture/spec-drift.md`.
+
 ## 5. Structure is not language
 
 A page can pass every structural, schema, asset and mesh gate and still be in the

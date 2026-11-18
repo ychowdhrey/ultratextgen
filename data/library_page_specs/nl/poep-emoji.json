@@ -146,6 +146,30 @@
           "label": "Zwaailicht"
         }
       ]
+    },
+    {
+      "id": "chocolate-poop",
+      "label": "Chocoladepoep",
+      "h2": "Combo's met poep en chocolade",
+      "intro": "Een aparte chocoladeversie van 💩 bestaat niet: de grote emojisets tekenen hem al bruin, dus de grap zit in wat ernaast staat. Deze combo's zetten 💩 naast 🍫 of naast de krul van het softijsje 🍦 voor de klassieke grap: chocolade of poep?",
+      "symbols": [
+        {
+          "char": "💩🍫",
+          "label": "Drol en chocoladereep"
+        },
+        {
+          "char": "🍫💩",
+          "label": "Chocoladereep en drol"
+        },
+        {
+          "char": "🍫🤔💩",
+          "label": "Chocolade of poep?"
+        },
+        {
+          "char": "💩🍦",
+          "label": "Drol en softijs"
+        }
+      ]
     }
   ],
   "collection_section": {

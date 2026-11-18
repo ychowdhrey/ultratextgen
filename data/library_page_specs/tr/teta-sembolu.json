@@ -21,19 +21,19 @@
       "symbols": [
         {
           "char": "θ",
-          "label": "Greek Small Letter Theta (U+03B8): Açı Sembolü"
+          "label": "Yunan Küçük Teta Harfi (U+03B8) — Açı Sembolü"
         },
         {
           "char": "Θ",
-          "label": "Greek Capital Letter Theta (U+0398): Büyük-Teta Gösterimi"
+          "label": "Yunan Büyük Teta Harfi (U+0398) — Büyük-Teta Gösterimi"
         },
         {
           "char": "ϑ",
-          "label": "Greek Theta Symbol (U+03D1): Açık Halkalı Matematik Varyantı"
+          "label": "Yunan Teta Sembolü (U+03D1) — Açık Halkalı Matematik Varyantı"
         },
         {
           "char": "ϴ",
-          "label": "Greek Capital Theta Symbol (U+03F4): Çizgili Varyant"
+          "label": "Yunan Büyük Teta Sembolü (U+03F4) — Çizgili Varyant"
         }
       ]
     },
@@ -45,11 +45,11 @@
       "symbols": [
         {
           "char": "θ",
-          "label": "Small Theta (U+03B8): Trigonometri ve Geometride Açı"
+          "label": "Küçük Teta (U+03B8) — Trigonometri ve Geometride Açı"
         },
         {
           "char": "Θ",
-          "label": "Capital Theta (U+0398): Büyük-Teta, Sıkı Sınır"
+          "label": "Büyük Teta (U+0398) — Büyük-Teta, Sıkı Sınır"
         },
         {
           "char": "Ω",
@@ -57,7 +57,7 @@
         },
         {
           "char": "ϑ",
-          "label": "Theta Symbol (U+03D1): Fizik Dizgisi Varyantı"
+          "label": "Teta Sembolü (U+03D1) — Fizik Dizgisi Varyantı"
         }
       ]
     },
@@ -69,19 +69,19 @@
       "symbols": [
         {
           "char": "Ω",
-          "label": "Greek Capital Letter Omega"
+          "label": "Yunan Büyük Omega Harfi"
         },
         {
           "char": "Δ",
-          "label": "Greek Capital Letter Delta"
+          "label": "Yunan Büyük Delta Harfi"
         },
         {
           "char": "π",
-          "label": "Greek Small Letter Pi"
+          "label": "Yunan Küçük Pi Harfi"
         },
         {
           "char": "α",
-          "label": "Greek Small Letter Alpha"
+          "label": "Yunan Küçük Alfa Harfi"
         }
       ]
     }

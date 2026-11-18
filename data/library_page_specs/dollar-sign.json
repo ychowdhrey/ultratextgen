@@ -1,0 +1,137 @@
+{
+  "slug": "dollar-sign",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Dollar Sign ($): Disputed Origin, History & How to Type It",
+  "meta_description": "The dollar sign ($, U+0024) explained — its disputed 1770s peso-abbreviation origin, the debunked \"U.S. monogram\" myth, and how to type or escape it.",
+  "canonical": "https://ultratextgen.com/symbol/dollar-sign/",
+  "breadcrumb": "Dollar Sign",
+  "hero_h1": "Dollar Sign ($)",
+  "hero_tagline": "The most recognized currency symbol on Earth, and historians still can't fully agree where it came from. Click to copy instantly.",
+  "intro": "$ is the one major currency symbol that's already sitting on every standard keyboard: Shift+4 on a US layout, no Alt code or Option key required. That's also what makes it an outlier on this site: every other currency spoke here (€, £, ¥, ₹, ¢) exists partly to explain how to type a character your keyboard doesn't have. Dollar's story is different, and arguably stranger. Despite being typed billions of times a day, exactly how the glyph itself came to look the way it does is still, per Britannica, \"a matter of debate.\"",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/dollar-sign/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-dollara/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/doru-kigou/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-dolar/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-dolar/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-dollar/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/dollar-zeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/dolar-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-dollaro/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-dolar/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signo-de-dolar/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-dolar/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/dalleo-giho/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-dollar/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/dollarteken/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/dollar-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-dolara/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dollar-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "confusable-neighbors",
+      "label": "Don't Confuse It With",
+      "h2": "Symbols Near the Dollar Sign",
+      "intro": "Distinct Unicode characters that look related to $ or share its currency context, each is its own code point, not a stylistic variant.",
+      "symbols": [
+        { "char": "¢", "label": "Cent Sign (U+00A2) — one-hundredth of a dollar" },
+        { "char": "¤", "label": "Generic Currency Sign (U+00A4) — a placeholder, not any specific currency" },
+        { "char": "₱", "label": "Philippine Peso Sign (U+20B1) — the modern currency descended from the same \"peso\" that gave $ its name" },
+        { "char": "＄", "label": "Fullwidth Dollar Sign (U+FF04) — the wide form used in Japanese/Chinese/Korean typesetting" },
+        { "char": "﹩", "label": "Small Dollar Sign (U+FE69) — a compact form used in vertical CJK text layout" },
+        { "char": "💲", "label": "Heavy Dollar Sign emoji (U+1F4B2) — a colorful emoji, not the plain-text $ character" }
+      ]
+    },
+    {
+      "id": "related-currency",
+      "label": "Related Currency Symbols",
+      "h2": "Other Major Currency Symbols",
+      "intro": "World currency symbols that pair with $ in pricing and finance content.",
+      "symbols": [
+        { "char": "€", "label": "Euro Sign" },
+        { "char": "£", "label": "Pound Sign" },
+        { "char": "¥", "label": "Yen Sign" },
+        { "char": "₹", "label": "Indian Rupee Sign" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Dollar Sign Really Comes From",
+      "paragraphs": [
+        "Start with the myth you've probably heard: that $ is a \"U\" laid over an \"S,\" short for \"United States.\" It's a good story, Ayn Rand even wrote it into <em>Atlas Shrugged</em> in 1957, but it isn't history. Mathematical historian Florian Cajori dismantled it in 1929 in <em>A History of Mathematical Notations</em>, after combing through 18th-century manuscripts and finding the $ symbol already in regular use years before the United States existed. A country can't be the source of a symbol that predates it.",
+        "The leading alternative, and the one endorsed by the U.S. Bureau of Engraving and Printing, traces $ to \"Ps\", the handwritten abbreviation traders used for the Spanish peso (the \"piece of eight\" that dominated 18th-century American and Caribbean commerce). Clerks wrote a capital P with a small S floating above it; write that quickly enough, over and over, and the loop of the P collapses down onto the S, leaving one or two vertical strokes struck through the letter. The earliest confirmed manuscript use dates to the 1770s, in the ledgers of English-American merchants trading with Spanish America. One especially clean specimen: a New York diarist's 1776 journal, examined by Cajori, spells out \"dollar\" in full every day from June 10 through August 20, then switches to the $ symbol on August 21, 1776, and never looks back.",
+        "A second, weaker theory ties $ to the two Pillars of Hercules stamped on Spanish \"pillar dollar\" coins, each pillar wrapped in an S-shaped banner reading <em>Plus Ultra</em>. It's a real, historian-acknowledged theory, but Britannica is blunt that \"there is little evidence\" it's actually where the symbol came from, beyond a passing visual resemblance. Treat it as a plausible influence on the coin imagery of the era, not a rival explanation to the Ps theory.",
+        "The written symbol reached print surprisingly late relative to its manuscript use: the earliest known printed dollar sign dates to 1797, cast in type by Philadelphia typefounder Archibald Binny, and the character didn't become common in print until after 1800."
+      ]
+    },
+    {
+      "h2": "The Cifrão: a Real Variant, Not a Different Character",
+      "paragraphs": [
+        "Look closely at old currency documents and you'll find two forms: a single vertical stroke through the S, and a double stroke. Both are original: that same 1776 diary Cajori examined shows 11 single-stroke dollar signs alongside 3 double-stroke ones, written by the same hand in the same year. The double-stroke form eventually acquired its own name and second life: it's called the <strong>cifrão</strong> in Portuguese, and was used as a thousands separator in the Brazilian real and a decimal separator in the Portuguese escudo (until the euro replaced it in 2002); it still marks the Cape Verdean escudo today.",
+        "Here's the part worth getting right if you're typing either one: <strong>Unicode does not give the cifrão its own code point.</strong> Both the one- and two-stroke forms share <code>U+0024</code>, which one renders is purely a matter of the font you're using, not a different character you can select. A 2019 proposal to encode a distinct \"escudo sign\" was submitted to the Unicode Technical Committee and was not adopted, so as of the current standard, this stays a typeface choice, not a separate symbol."
+      ]
+    },
+    {
+      "h2": "Alt Codes, Shortcuts & the One Place It Needs Escaping",
+      "paragraphs": [
+        "Unlike every other currency symbol on this site, $ needs no special input method on a US keyboard: it's plain ASCII, sitting on the Shift+4 key. The methods below matter for non-US layouts, markup languages, and, in one specific case, a language where your keyboard's dollar key actively gets in the way."
+      ]
+    },
+    {
+      "h2": "Why $ Shows Up Outside Pricing",
+      "paragraphs": [
+        "$ is one of the most overloaded characters in computing, entirely because it's plain ASCII: PHP and Bash both use it to prefix every variable (<code>$name</code>, <code>$HOME</code>), regular expressions use it as the end-of-line anchor, and jQuery famously claimed <code>$</code> as its global function alias. None of that is currency: it's just a distinctive, easy-to-type symbol that language designers kept reaching for.",
+        "The same instinct shows up in branding: stylizing a name with $ in place of S is a deliberate, recognizable move: Ke$ha, A$AP Rocky, and Ty Dolla $ign all adopted it as a stage-name signature, using the currency association on purpose rather than by accident."
+      ]
+    }
+  ],
+  "faq_h2": "Dollar Sign Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "Does the dollar sign really come from a U over an S, for \"United States\"?",
+      "a": "No, that's a popular myth, not history. It was popularized by Ayn Rand's 1957 novel Atlas Shrugged, but mathematical historian Florian Cajori debunked it in 1929 after examining 18th-century manuscripts: the $ symbol was already in documented use in the 1770s, years before the United States existed as a country, which rules out a \"U.S.\" origin entirely."
+    },
+    {
+      "q": "So where does the $ symbol actually come from?",
+      "a": "The leading, best-documented theory, endorsed by the U.S. Bureau of Engraving and Printing, is that it evolved from \"Ps,\" a handwritten abbreviation for the Spanish peso used in 18th-century trade between English- and Spanish-American merchants. Clerks wrote a capital P with a small S above it; in fast handwriting the loop of the P collapsed onto the S, leaving one or two vertical strokes through it. It's the strongest available explanation, but historians still call the origin \"a matter of debate\" rather than settled fact."
+    },
+    {
+      "q": "What's the difference between the one-stroke and two-stroke dollar sign?",
+      "a": "Both forms have been used since the symbol's earliest days: a single 1776 diary shows 11 single-stroke and 3 double-stroke examples side by side. The two-stroke form is called the cifrão and has its own history in Portuguese and Brazilian currency, but Unicode treats both as the same character: there is no separate code point for the two-stroke version, only U+0024. Which one you see is purely a font's stylistic choice."
+    },
+    {
+      "q": "Why do I have to type \\$ instead of $ in LaTeX?",
+      "a": "Because LaTeX already reserves the plain $ character as its math-mode delimiter (text between two $ signs is rendered as an equation). To print a literal dollar sign, you have to escape it as \\$, or use \\textdollar. It's one of the few places where the character on your keyboard's dollar key doesn't paste in as-is."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/euro-sign/", "title": "Euro Sign (€)", "desc": "A currency symbol deliberately designed in 1996." },
+    { "href": "/symbol/pound-sign/", "title": "Pound Sign (£)", "desc": "Over a thousand years old, from the Latin libra." },
+    { "href": "/symbol/cent-sign/", "title": "Cent Sign (¢)", "desc": "The one common currency symbol with no dedicated keyboard key." },
+    { "href": "/library/currency-symbols/", "title": "All Currency Symbols", "desc": "Every world currency symbol, organized by region." },
+    {
+      "href": "/symbol/dirham-sign/",
+      "title": "Dirham Sign",
+      "desc": "The UAE Central Bank's new currency symbol, assigned U+20C3 and final in Unicode 18.0 since September 16, 2026."
+    },
+    { "href": "/symbol/peso-sign/", "title": "Peso Sign (₱)", "desc": "The ₱ that belongs to the Philippine peso." },
+    { "href": "/symbol/ruble-sign/", "title": "Ruble Sign", "desc": "The ₽ ruble sign." },
+    {
+      "href": "/symbol/rupee-sign/",
+      "title": "Indian Rupee Sign (₹)",
+      "desc": "What ₹ means, its 2010 design story, and how to type it: click to copy."
+    },
+    {
+      "href": "/symbol/won-sign/",
+      "title": "Won Sign",
+      "desc": "The ₩ currency mark shared by both the South Korean won (KRW) and the North Korean won (KPW)."
+    },
+    { "href": "/symbol/yen-sign/", "title": "Yen Sign (¥)", "desc": "What ¥ means, where it came from, and how to type it: click to copy." }
+  ]
+}

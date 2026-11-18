@@ -1,0 +1,340 @@
+{
+  "slug": "witchy-occult-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Witchy & Occult Symbols: Copy & Paste All Occult Characters",
+  "meta_description": "Browse and copy witchy and occult symbols — pentagrams, moon phases, planetary signs, alchemical symbols, and other esoteric characters. Click any to copy.",
+  "canonical": "https://ultratextgen.com/library/witchy-occult-symbols/",
+  "breadcrumb": "Witchy & Occult Symbols",
+  "hero_h1": "Witchy & Occult Symbols",
+  "hero_tagline": "A curated collection of pentagrams, moon phases, planetary symbols, alchemical signs, and other esoteric Unicode characters. Click any symbol to copy it instantly.",
+  "intro": "This library collects Unicode symbols associated with witchcraft, occultism, alchemy, and esoteric traditions. All are standard Unicode characters: usable in text, bios, and creative writing. The alchemical symbols section covers the dedicated Alchemical Symbols Unicode block (U+1F700–U+1F773).",
+  "date_published": "2026-04-12",
+  "date_modified": "2026-04-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/witchy-occult-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-witchy-occult/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-witchy-occult/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-witchy-occult/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-witchy-occult/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-witchy-occult/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-witchy-occult/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/witchy-occult-sembolleri/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/magicheskie-simvoly/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/okkulte-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/witchy-occult-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "pentagrams-stars",
+      "label": "Pentagrams & Stars",
+      "h2": "Pentagrams & Five-Pointed Stars",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "⚹", "label": "Sextile" },
+        { "char": "✡", "label": "Star of David" },
+        { "char": "⚜", "label": "Fleur-de-Lis" },
+        { "char": "⛤", "label": "Pentagram" },
+        { "char": "⛥", "label": "Right-Pointing Pentagram" },
+        { "char": "⛦", "label": "Left-Pointing Pentagram" },
+        { "char": "⛧", "label": "Inverted Pentagram" },
+        { "char": "✴", "label": "Eight Pointed Star" },
+        { "char": "✪", "label": "Circled White Star" },
+        { "char": "✶", "label": "Six Pointed Star" },
+        { "char": "✦", "label": "Sparkle Star" },
+        { "char": "◯", "label": "Large Circle" }
+      ]
+    },
+    {
+      "id": "classical-7-planets",
+      "label": "Classical 7 Planets",
+      "h2": "Classical Seven Planets (Sun → Saturn)",
+      "intro": "The seven classical planets of traditional astrology, listed from the Sun to Saturn: the visible-sky bodies known to ancient astronomers.",
+      "symbols": [
+        { "char": "☉", "label": "Sun" },
+        { "char": "☽", "label": "Moon" },
+        { "char": "☿", "label": "Mercury" },
+        { "char": "♀", "label": "Venus" },
+        { "char": "♂", "label": "Mars" },
+        { "char": "♃", "label": "Jupiter" },
+        { "char": "♄", "label": "Saturn" }
+      ]
+    },
+    {
+      "id": "planetary-zodiac",
+      "label": "Planetary & Zodiac-Adjacent",
+      "h2": "Planetary & Astrological Symbols",
+      "symbols": [
+        { "char": "☉", "label": "Sun" },
+        { "char": "☽", "label": "Moon" },
+        { "char": "☿", "label": "Mercury" },
+        { "char": "♀", "label": "Venus" },
+        { "char": "♁", "label": "Earth" },
+        { "char": "♂", "label": "Mars" },
+        { "char": "♃", "label": "Jupiter" },
+        { "char": "♄", "label": "Saturn" },
+        { "char": "♅", "label": "Uranus" },
+        { "char": "♆", "label": "Neptune" },
+        { "char": "♇", "label": "Pluto" },
+        { "char": "⚸", "label": "Black Moon Lilith" },
+        { "char": "⚳", "label": "Ceres" },
+        { "char": "⚴", "label": "Pallas" },
+        { "char": "⚵", "label": "Juno" },
+        { "char": "⚶", "label": "Vesta" }
+      ]
+    },
+    {
+      "id": "alchemical",
+      "label": "Alchemical",
+      "h2": "Alchemical Symbols (U+1F700–U+1F73F)",
+      "symbols": [
+        { "char": "🜀", "label": "Quintessence" },
+        { "char": "🜁", "label": "Air" },
+        { "char": "🜂", "label": "Fire" },
+        { "char": "🜃", "label": "Earth" },
+        { "char": "🜄", "label": "Water" },
+        { "char": "🜅", "label": "Aquafortis" },
+        { "char": "🜆", "label": "Aqua Regia" },
+        { "char": "🜇", "label": "Aqua Regia II" },
+        { "char": "🜈", "label": "Aqua Vitae" },
+        { "char": "🜉", "label": "Aqua Vitae II" },
+        { "char": "🜊", "label": "Vinegar" },
+        { "char": "🜋", "label": "Vinegar II" },
+        { "char": "🜌", "label": "Vinegar III" },
+        { "char": "🜍", "label": "Sulfur" },
+        { "char": "🜎", "label": "Philosophers’ Sulfur" },
+        { "char": "🜏", "label": "Black Sulfur" },
+        { "char": "🜐", "label": "Mercury Sublimate" },
+        { "char": "🜑", "label": "Mercury Sublimate II" },
+        { "char": "🜒", "label": "Mercury Sublimate III" },
+        { "char": "🜓", "label": "Cinnabar" },
+        { "char": "🜔", "label": "Salt" },
+        { "char": "🜕", "label": "Nitre" },
+        { "char": "🜖", "label": "Vitriol" },
+        { "char": "🜗", "label": "Vitriol II" },
+        { "char": "🜘", "label": "Rock Salt" },
+        { "char": "🜙", "label": "Rock Salt II" },
+        { "char": "🜚", "label": "Gold" },
+        { "char": "🜛", "label": "Silver" },
+        { "char": "🜜", "label": "Iron Ore" },
+        { "char": "🜝", "label": "Iron Ore II" },
+        { "char": "🜞", "label": "Crocus of Iron" },
+        { "char": "🜟", "label": "Regulus of Iron" },
+        { "char": "🜠", "label": "Copper Ore" },
+        { "char": "🜡", "label": "Iron-Copper Ore" },
+        { "char": "🜢", "label": "Sublimate of Copper" },
+        { "char": "🜣", "label": "Crocus of Copper" },
+        { "char": "🜤", "label": "Crocus of Copper II" },
+        { "char": "🜥", "label": "Copper Antimoniate" },
+        { "char": "🜦", "label": "Salt of Copper Antimoniate" },
+        { "char": "🜧", "label": "Sublimate of Salt of Copper" },
+        { "char": "🜨", "label": "Verdigris" },
+        { "char": "🜩", "label": "Tin Ore" },
+        { "char": "🜪", "label": "Lead Ore" },
+        { "char": "🜫", "label": "Antimony Ore" },
+        { "char": "🜬", "label": "Sublimate of Antimony" },
+        { "char": "🜭", "label": "Salt of Antimony" },
+        { "char": "🜮", "label": "Sublimate of Salt of Antimony" },
+        { "char": "🜯", "label": "Vinegar of Antimony" },
+        { "char": "🜰", "label": "Regulus of Antimony" },
+        { "char": "🜱", "label": "Regulus of Antimony II" },
+        { "char": "🜲", "label": "Regulus" },
+        { "char": "🜳", "label": "Regulus II" },
+        { "char": "🜴", "label": "Regulus III" },
+        { "char": "🜵", "label": "Regulus IV" },
+        { "char": "🜶", "label": "Alkali" },
+        { "char": "🜷", "label": "Alkali II" },
+        { "char": "🜸", "label": "Marcasite" },
+        { "char": "🜹", "label": "Sal Ammoniac" },
+        { "char": "🜺", "label": "Arsenic" },
+        { "char": "🜻", "label": "Realgar" },
+        { "char": "🜼", "label": "Realgar II" },
+        { "char": "🜽", "label": "Auripigment" },
+        { "char": "🜾", "label": "Bismuth Ore" },
+        { "char": "🜿", "label": "Tartar" }
+      ]
+    },
+    {
+      "id": "alchemical-substances",
+      "label": "Substances",
+      "h2": "Alchemical Substances & Materials",
+      "intro": "The second half of the Unicode Alchemical Symbols block, U+1F740 to U+1F75B: salts, oils, earths and the everyday materials of the laboratory, from borax and alum to ashes, brick and amalgam. A label ending in II or III is another form of the sign for the same substance.",
+      "symbols": [
+        { "char": "🝀", "label": "Tartar II" },
+        { "char": "🝁", "label": "Quicklime" },
+        { "char": "🝂", "label": "Borax" },
+        { "char": "🝃", "label": "Borax II" },
+        { "char": "🝄", "label": "Borax III" },
+        { "char": "🝅", "label": "Alum" },
+        { "char": "🝆", "label": "Oil" },
+        { "char": "🝇", "label": "Spirit" },
+        { "char": "🝈", "label": "Tincture" },
+        { "char": "🝉", "label": "Gum" },
+        { "char": "🝊", "label": "Wax" },
+        { "char": "🝋", "label": "Powder" },
+        { "char": "🝌", "label": "Calx" },
+        { "char": "🝍", "label": "Tutty" },
+        { "char": "🝎", "label": "Caput Mortuum" },
+        { "char": "🝏", "label": "Scepter of Jove" },
+        { "char": "🝐", "label": "Caduceus" },
+        { "char": "🝑", "label": "Trident" },
+        { "char": "🝒", "label": "Starred Trident" },
+        { "char": "🝓", "label": "Lodestone" },
+        { "char": "🝔", "label": "Soap" },
+        { "char": "🝕", "label": "Urine" },
+        { "char": "🝖", "label": "Horse Dung" },
+        { "char": "🝗", "label": "Ashes" },
+        { "char": "🝘", "label": "Pot Ashes" },
+        { "char": "🝙", "label": "Brick" },
+        { "char": "🝚", "label": "Powdered Brick" },
+        { "char": "🝛", "label": "Amalgam" }
+      ]
+    },
+    {
+      "id": "alchemical-processes-apparatus",
+      "label": "Processes",
+      "h2": "Alchemical Processes & Apparatus",
+      "intro": "Signs for the operations of the work, such as distilling, dissolving, sublimation and putrefaction, and for the vessels it used: crucibles, the alembic, the retort and the water bath (bath of Mary).",
+      "symbols": [
+        { "char": "🝜", "label": "Stratum Super Stratum" },
+        { "char": "🝝", "label": "Stratum Super Stratum II" },
+        { "char": "🝞", "label": "Sublimation" },
+        { "char": "🝟", "label": "Precipitate" },
+        { "char": "🝠", "label": "Distill" },
+        { "char": "🝡", "label": "Dissolve" },
+        { "char": "🝢", "label": "Dissolve II" },
+        { "char": "🝣", "label": "Purify" },
+        { "char": "🝤", "label": "Putrefaction" },
+        { "char": "🝥", "label": "Crucible" },
+        { "char": "🝦", "label": "Crucible II" },
+        { "char": "🝧", "label": "Crucible III" },
+        { "char": "🝨", "label": "Crucible IV" },
+        { "char": "🝩", "label": "Crucible V" },
+        { "char": "🝪", "label": "Alembic" },
+        { "char": "🝫", "label": "Bath of Mary" },
+        { "char": "🝬", "label": "Bath of Vapours" },
+        { "char": "🝭", "label": "Retort" }
+      ]
+    },
+    {
+      "id": "alchemical-time-measures",
+      "label": "Time & Weights",
+      "h2": "Alchemical Signs for Time & Weights",
+      "intro": "Recipe notation for how long and how much: the hour, night, day and night, the month, half a dram and half an ounce. With the sections above, the page carries all 116 characters Unicode names as alchemical symbols.",
+      "symbols": [
+        { "char": "🝮", "label": "Hour" },
+        { "char": "🝯", "label": "Night" },
+        { "char": "🝰", "label": "Day-Night" },
+        { "char": "🝱", "label": "Month" },
+        { "char": "🝲", "label": "Half Dram" },
+        { "char": "🝳", "label": "Half Ounce" }
+      ]
+    },
+    {
+      "id": "esoteric",
+      "label": "Other Esoteric",
+      "h2": "Other Esoteric Symbols",
+      "symbols": [
+        { "char": "☥", "label": "Ankh" },
+        { "char": "☯", "label": "Yin Yang" },
+        { "char": "☘", "label": "Shamrock" },
+        { "char": "⚷", "label": "Chiron" },
+        { "char": "⚰", "label": "Coffin" },
+        { "char": "⚱", "label": "Funeral Urn" },
+        { "char": "⚗", "label": "Alembic" },
+        { "char": "❤", "label": "Heart" },
+        { "char": "⚛", "label": "Atom Symbol" },
+        { "char": "⚡", "label": "Lightning Bolt" },
+        { "char": "♲", "label": "Recycling" },
+        { "char": "☼", "label": "White Sun with Rays" },
+        { "char": "☦", "label": "Orthodox Cross" },
+        { "char": "☢", "label": "Radioactive" },
+        { "char": "☣", "label": "Biohazard" },
+        { "char": "🔮", "label": "Crystal Ball" },
+        { "char": "🧿", "label": "Nazar Amulet" },
+        { "char": "🃏", "label": "Tarot Card" },
+        { "char": "🕯️", "label": "Candle" },
+        { "char": "🐍", "label": "Snake" },
+        { "char": "∞", "label": "Infinity" },
+        { "char": "⟳", "label": "Cyclical Arrow" },
+        { "char": "↻", "label": "Open Circle Arrow" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "witchy-collections",
+    "label": "Witchy Collections",
+    "h2": "Witchy Bio & Border Sets",
+    "intro": "Ready-made witchy strings you can paste straight into a bio, caption, or username: copy the whole combo in one click."
+  },
+  "collection_container_id": "witchyCollectionsContainer",
+  "collections": [
+    {
+      "name": "Pentagram Bio Border",
+      "flags": ["⛧", "˖", "⛤", "˖", "⛧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Moon & Sun Combo",
+      "flags": ["☽", "˚", "✴", "˚", "☉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Witchy Star Trail",
+      "flags": ["✶", "·", "✴", "·", "✶"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Crescent Moon Border",
+      "flags": ["☽⋆ﾟ｡⋆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Planetary Bio Combo",
+      "flags": ["☽", "☿", "♀", "♂", "♃", "♄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ankh Spell Divider",
+      "flags": ["☥", "˖", "⛤", "˖", "☥"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Witchy Bio & Border Sets",
+      "paragraphs": [
+        "Ready-made witchy strings you can paste straight into a bio, caption, or username: copy the whole combo in one click."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/moon-celestial-symbols/#celestial-collections",
+      "title": "See: Moon Phases on Moon & Celestial Symbols →",
+      "desc": "The eight Unicode moon phases (🌑 🌒 🌓 🌔 🌕 🌖 🌗 🌘) plus crescent and dark/light moon variants, ready to copy as a sequence."
+    },
+    {
+      "href": "/symbol/biohazard-symbol/",
+      "title": "Biohazard Symbol",
+      "desc": "The trefoil-and-circles sign (☣) engineered in a 1966 Dow Chemical lab to be instantly memorable and completely meaningless on its own."
+    },
+    { "href": "/symbol/pentagram-symbol/", "title": "Pentagram Symbol", "desc": "The five-pointed star (⛤)." },
+    {
+      "href": "/events/halloween/",
+      "title": "Halloween Text & Symbol Generator",
+      "desc": "Style a Halloween greeting live, then copy matching fonts, emoji, kaomoji, and ready-made phrases."
+    },
+    { "href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "All named-aesthetic symbol collections in one place." },
+    { "href": "/library/goth-grunge-symbols/", "title": "Goth & Grunge Symbols", "desc": "Dark crosses, skulls, and goth aesthetic decorations." },
+    { "href": "/library/cottagecore-symbols/", "title": "Cottagecore Symbols", "desc": "Mushrooms, wildflowers, and earthy cottage-life motifs." },
+    { "href": "/library/zodiac-symbols/", "title": "Zodiac Symbols", "desc": "All 12 Western zodiac signs plus planets and Chinese zodiac." },
+    { "href": "/library/religious-symbols/", "title": "Religious & Spiritual Symbols", "desc": "Faith symbols from every major world religion." },
+    {
+      "href": "/library/dark-academia-symbols/",
+      "title": "Dark Academia Symbols",
+      "desc": "Vintage books, candlelight, and scholarly ink decorations."
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "slug": "iphone-emojis",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "iPhone Emojis: Copy & Paste Apple Emojis",
+  "meta_description": "Copy popular iPhone (Apple) emojis and learn how iOS emojis really work — they share the same Unicode as Android, only the artwork differs.",
+  "canonical": "https://ultratextgen.com/library/iphone-emojis/",
+  "breadcrumb": "iPhone Emojis",
+  "hero_h1": "iPhone Emojis",
+  "hero_tagline": "Copy popular Apple (iOS) emojis and understand how they actually work. The short version: iPhone emojis are the same Unicode characters as Android emojis. Only the artwork is different. Click any emoji to copy it instantly.",
+  "intro": "People search for “iPhone emojis” for two reasons: to copy the familiar Apple-style emojis, and to figure out why an emoji looks one way on their iPhone and another way on a friend’s Android. This page does both. Below you can copy the most-used iOS emojis grouped by category, and the explainers clear up the single most misunderstood thing about emoji: <strong>iPhone and Android emojis are the same characters</strong>. There is no separate “Apple emoji” code and “Android emoji” code. Every emoji is one Unicode code point, shared by every platform. Apple, Google, Samsung, Microsoft, WhatsApp and Twitter each draw their own picture for that code point, which is why the same 😂 can look subtly (or wildly) different depending on the device showing it.",
+  "date_published": "2026-06-30",
+  "date_modified": "2026-06-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/iphone-emojis/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/emoji-iphone/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/iphone-emojileri/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/iphone-emoji/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/emoji-iphone/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/emodzi-ayfon/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/emojis-iphone/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/emoji-iphone/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/iphone-emoji/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/iphone-emoji/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/emoji-iphone/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/emoji-iphone/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-iphone/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/iphone-emojis/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/iphone-emojis/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/aipon-imoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/iphone-emojis/" }
+  ],
+  "sections": [
+    {
+      "id": "smileys-and-faces",
+      "label": "Smileys & Faces",
+      "h2": "Popular iPhone Smiley & Face Emojis",
+      "intro": "The most-used face emojis on iOS. Click any to copy.",
+      "symbols": [
+        { "char": "😂", "label": "Face with Tears of Joy" },
+        { "char": "🥹", "label": "Face Holding Back Tears" },
+        { "char": "🥲", "label": "Smiling Face with Tear" },
+        { "char": "😊", "label": "Smiling Face with Smiling Eyes" },
+        { "char": "🥰", "label": "Smiling Face with Hearts" },
+        { "char": "😍", "label": "Smiling Face with Heart-Eyes" },
+        { "char": "😎", "label": "Smiling Face with Sunglasses" },
+        { "char": "🤔", "label": "Thinking Face" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "😭", "label": "Loudly Crying Face" },
+        { "char": "🥺", "label": "Pleading Face" },
+        { "char": "😅", "label": "Grinning Face with Sweat" },
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😴", "label": "Sleeping Face" },
+        { "char": "🤩", "label": "Star-Struck" },
+        { "char": "🤯", "label": "Exploding Head" },
+        { "char": "😡", "label": "Enraged Face" },
+        { "char": "🫠", "label": "Melting Face" }
+      ]
+    },
+    {
+      "id": "hearts-and-love",
+      "label": "Hearts & Love",
+      "h2": "iPhone Heart Emojis",
+      "intro": "Colored hearts and love symbols rendered in Apple’s style on iOS.",
+      "symbols": [
+        { "char": "❤️", "label": "Red Heart" },
+        { "char": "🩷", "label": "Pink Heart" },
+        { "char": "🧡", "label": "Orange Heart" },
+        { "char": "💛", "label": "Yellow Heart" },
+        { "char": "💚", "label": "Green Heart" },
+        { "char": "💙", "label": "Blue Heart" },
+        { "char": "🩵", "label": "Light Blue Heart" },
+        { "char": "💜", "label": "Purple Heart" },
+        { "char": "🖤", "label": "Black Heart" },
+        { "char": "🩶", "label": "Grey Heart" },
+        { "char": "🤍", "label": "White Heart" },
+        { "char": "🤎", "label": "Brown Heart" },
+        { "char": "💕", "label": "Two Hearts" },
+        { "char": "💖", "label": "Sparkling Heart" },
+        { "char": "💔", "label": "Broken Heart" },
+        { "char": "❤️‍🔥", "label": "Heart on Fire" }
+      ]
+    },
+    {
+      "id": "hands-and-gestures",
+      "label": "Hands & Gestures",
+      "h2": "iPhone Hand & Gesture Emojis",
+      "intro": "Common hand emojis. Apple’s 3D-style hands are some of the most recognisable iOS designs.",
+      "symbols": [
+        { "char": "👍", "label": "Thumbs Up" },
+        { "char": "👎", "label": "Thumbs Down" },
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "👌", "label": "OK Hand" },
+        { "char": "🤌", "label": "Pinched Fingers" },
+        { "char": "🤞", "label": "Crossed Fingers" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "🤙", "label": "Call Me Hand" },
+        { "char": "✌️", "label": "Victory Hand" },
+        { "char": "🤟", "label": "Love-You Gesture" },
+        { "char": "👋", "label": "Waving Hand" },
+        { "char": "🫰", "label": "Finger Heart" },
+        { "char": "💪", "label": "Flexed Biceps" }
+      ]
+    },
+    {
+      "id": "distinctive-ios-emojis",
+      "label": "Distinctive on iOS",
+      "h2": "Emojis That Look Most “iPhone”",
+      "intro": "These render with an unmistakably Apple look, but remember, they’re the same Unicode characters everywhere; only the artwork is Apple’s.",
+      "symbols": [
+        { "char": "🍑", "label": "Peach" },
+        { "char": "💩", "label": "Pile of Poo" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "🗿", "label": "Moai" },
+        { "char": "🦋", "label": "Butterfly" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "👀", "label": "Eyes" },
+        { "char": "🫶🏼", "label": "Heart Hands (Tone)" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "iPhone vs Android emojis: same characters, different artwork",
+      "paragraphs": [
+        "Think of an emoji like a letter of the alphabet. The letter &ldquo;A&rdquo; is the same letter whether it is set in Helvetica or Times New Roman: only the font changes how it looks. Emoji work exactly the same way. The emoji &ldquo;Face with Tears of Joy&rdquo; is the single Unicode code point <code>U+1F602</code> on every device on earth. When you type it on an iPhone, your phone sends that code point, not the Apple picture. The receiving device then looks up <code>U+1F602</code> in <em>its own</em> emoji font and draws its own version.",
+        "That is why your messages are never garbled across platforms: the text is identical. What you are seeing is two designers&rsquo; interpretations of the same idea:",
+        "So when you copy an emoji from this page, you are copying the <em>character</em>, not Apple&rsquo;s picture. Paste it into an iPhone and you&rsquo;ll see the Apple design; paste it into an Android phone and you&rsquo;ll see Google&rsquo;s design. The meaning carries; the look depends on the reader&rsquo;s device."
+      ]
+    },
+    {
+      "h2": "How to get the latest iPhone emojis",
+      "paragraphs": [
+        "New emojis are not a download you grab on their own: they arrive bundled inside an <strong>iOS update</strong>. Each year the Unicode Consortium approves a new batch of emoji, and Apple has shipped each year&rsquo;s set in a spring point update in recent years (iOS 16.4, 17.4 and 18.4 each carried one). To make sure you have the newest characters and the freshest artwork, open <em>Settings → General → Software Update</em> and install the latest iOS.",
+        "This also explains the dreaded blank box. If you send a brand-new emoji to someone on an older OS, their device may not have artwork for that code point yet, so it renders as a featureless box (▯) or a question mark. The character is perfectly valid: their phone just needs an update to draw it. Updating iOS (or Android) fills in the missing pictures. For the wider picture, see <a href=\"/guide/why-fonts-show-as-boxes/\">why a character turns into a box</a>."
+      ]
+    },
+    {
+      "h2": "Skin tones are part of the character too",
+      "paragraphs": [
+        "When you pick a skin tone for a hand or person emoji on iPhone, you are not choosing a setting: you are appending a second Unicode character (a <em>skin-tone modifier</em>, <code>U+1F3FB</code> through <code>U+1F3FF</code>) to the base emoji. Because it is just more text, that tone travels with the emoji to Android and everywhere else. The 👋🏽 you send keeps its medium tone on the other device; only the drawing style changes. This is the same principle as the rest of the page: it&rsquo;s all standard Unicode, shared across platforms."
+      ]
+    }
+  ],
+  "faq_h2": "iPhone emojis, answered",
+  "faq": [
+    {
+      "q": "Are iPhone emojis different from Android emojis?",
+      "a": "Not as characters. Every emoji is a single Unicode code point (or sequence) that is identical on iPhone, Android, Windows, and the web. What differs is the artwork: Apple draws its own emoji font, Google draws another for Android, and Samsung and Microsoft have their own. So 😂 is the exact same character everywhere, it just looks slightly different depending on which device renders it."
+    },
+    {
+      "q": "Why do my emojis look different on Android than on iPhone?",
+      "a": "Because each platform ships its own emoji font (the set of pictures). When you send an emoji from an iPhone, you send the Unicode code point, not the Apple picture. The receiving Android phone looks up that same code point in Google’s emoji font and draws its own version. Nothing is lost or mistranslated: you are seeing two artists’ interpretations of the same character."
+    },
+    {
+      "q": "How do I get the newest iPhone emojis?",
+      "a": "New emojis arrive with iOS updates, not from a separate download. Apple has shipped each year’s approved Unicode emoji set in a spring iOS point update in recent years (iOS 16.4, 17.4 and 18.4). Go to Settings → General → Software Update and install the latest iOS to get the newest emoji artwork and any brand-new characters."
+    },
+    {
+      "q": "Can I copy iPhone emojis on a computer or Android phone?",
+      "a": "Yes. Because emojis are plain Unicode text, you can copy any emoji on this page from any device and paste it anywhere: Windows, Mac, Android, or the web. The character will travel correctly; it will simply be drawn in whatever emoji font the destination device uses, which may not be Apple’s."
+    },
+    {
+      "q": "Why does an emoji show up as a blank box or question mark?",
+      "a": "A blank box (▯) or question mark means the device’s emoji font does not yet include that character, usually because the operating system is older than the emoji. The character itself is valid Unicode. Updating the OS (for example, installing the latest iOS) adds the missing artwork and the box becomes a proper emoji."
+    },
+    {
+      "q": "Is there an “Apple font” that makes Android show iPhone emojis?",
+      "a": "Not officially. Apple’s emoji font (Apple Color Emoji) is licensed for Apple devices, so Android does not legally ship it. Some third-party keyboards or rooted-device font swaps imitate the look, but the reliable, cross-platform fact is that the underlying characters are already identical: only the rendering differs."
+    }
+  ],
+  "related": [
+    {
+      "href": "/usecase/text-to-emoji/",
+      "title": "Text to Emoji Converter",
+      "desc": "Turn any sentence into emoji, spell names in emoji letters, or decode emoji back to text: free and instant."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face & Emotion Emojis",
+      "desc": "Smileys, angry faces, shrug, confused, and expressive Unicode characters."
+    },
+    { "href": "/library/heart-symbols/", "title": "Heart Symbols", "desc": "Every colored heart emoji plus Unicode heart symbols to copy." },
+    { "href": "/library/hand-symbols/", "title": "Hand Symbols & Gestures", "desc": "Thumbs up, waving, folded hands, and other gesture emojis." },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What popular emojis actually mean and how their use has evolved."
+    }
+  ]
+}

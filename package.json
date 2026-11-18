@@ -147,6 +147,8 @@
     "test:parity-exception-policy": "node scripts/lib/parity-exceptions.test.js",
     "test:intent-clusters": "node scripts/lib/intent-clusters.test.js && python3 scripts/lib/canonical_intents.test.py",
     "check:locale-spec": "python3 scripts/check_locale_spec.py --all-locale",
+    "check:spec-drift": "python3 scripts/check-spec-drift.py",
+    "audit:spec-drift": "python3 scripts/audit-spec-drift.py",
     "audit:locale-collection-parity": "python3 scripts/check-locale-collection-parity.py --all",
     "check:locale-collection-parity": "python3 scripts/check-locale-collection-parity.py",
     "check:workflows": "python3 scripts/check-workflows.py",

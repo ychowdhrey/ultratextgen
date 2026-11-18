@@ -1,0 +1,207 @@
+{
+  "slug": "checkmark-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Checkmark Symbols: Copy & Paste Check Marks & Status Icons",
+  "meta_description": "Browse and copy checkmark symbols, cross marks, and status indicators for lists, comparisons, and professional formatting.",
+  "canonical": "https://ultratextgen.com/library/checkmark-symbols/",
+  "breadcrumb": "Checkmark Symbols",
+  "hero_h1": "Checkmark Symbols",
+  "hero_tagline": "A reference collection of checkmark symbols, cross marks, and status indicators for lists, comparisons, and professional formatting. Click any symbol to copy it instantly.",
+  "intro": "Browse and copy check marks, cross marks, status circles, approval badges, warning icons, and numbered progress indicators, all organized for quick access and practical use.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/bock-symboler/" },
+    { "lang": "da", "href": "https://ultratextgen.com/da/library/flueben-symboler/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/simvol-galochki/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbol-ptaszka/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/chekeu-giho/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/checkmark-kigou/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simbolo-spunta/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symbole-coche/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/alamat-sah/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/checkmark-symbols/" },
+    { "lang": "en", "href": "https://ultratextgen.com/library/checkmark-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/haekchen-symbole/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-verificacion/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-centang/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-confirmacao/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/vinkje/" },
+    { "lang": "no", "href": "https://ultratextgen.com/no/library/hakesymboler/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/onay-isaretleri/" }
+  ],
+  "sections": [
+    {
+      "id": "classic-checks",
+      "label": "Classic Checkmarks",
+      "h2": "Classic Checkmark Symbols",
+      "intro": "Standard check mark characters from Unicode and emoji sets.",
+      "symbols": [
+        { "char": "✓", "label": "Check Mark" },
+        { "char": "✔", "label": "Heavy Check Mark" },
+        { "char": "☑", "label": "Ballot Box with Check" },
+        { "char": "✅", "label": "White Heavy Check Mark" },
+        { "char": "☐", "label": "Ballot Box" },
+        { "char": "▣", "label": "White Square Containing Black Small Square" },
+        { "char": "✔️", "label": "Heavy Check Mark" }
+      ]
+    },
+    {
+      "id": "crosses",
+      "label": "Crosses & Rejections",
+      "h2": "Cross & Rejection Symbols",
+      "intro": "Cross marks and rejection symbols for no, cancel, and false values.",
+      "symbols": [
+        { "char": "✗", "label": "Ballot X" },
+        { "char": "✘", "label": "Heavy Ballot X" },
+        { "char": "❌", "label": "Cross Mark" },
+        { "char": "☒", "label": "Ballot Box with X" },
+        { "char": "✕", "label": "Multiplication X" },
+        { "char": "❎", "label": "Cross Mark Button" },
+        { "char": "✖", "label": "Heavy Multiplication X" }
+      ]
+    },
+    {
+      "id": "status-circles",
+      "label": "Status Circles",
+      "h2": "Status Circle Symbols",
+      "intro": "Color-coded circles for status systems, dashboards, and progress indicators.",
+      "symbols": [
+        { "char": "🟢", "label": "Green Circle (Active)" },
+        { "char": "🔴", "label": "Red Circle (Error)" },
+        { "char": "🟡", "label": "Yellow Circle (Warning)" },
+        { "char": "⚪", "label": "White Circle (Inactive)" },
+        { "char": "⚫", "label": "Black Circle (Offline)" },
+        { "char": "⬤", "label": "Large Circle" },
+        { "char": "○", "label": "Outline Circle" },
+        { "char": "●", "label": "Solid Circle" },
+        { "char": "🔵", "label": "Blue Circle (Info)" },
+        { "char": "🟠", "label": "Orange Circle (Caution)" },
+        { "char": "🟣", "label": "Purple Circle" }
+      ]
+    },
+    {
+      "id": "approval",
+      "label": "Approval & Verification",
+      "h2": "Approval & Verification Symbols",
+      "intro": "Symbols for verified, approved, certified, and complete status.",
+      "symbols": [
+        { "char": "👍", "label": "Thumbs Up" },
+        { "char": "👎", "label": "Thumbs Down" },
+        { "char": "👌", "label": "OK Hand" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "🔰", "label": "Japanese Symbol for Beginner" },
+        { "char": "🛡️", "label": "Shield" },
+        { "char": "🏅", "label": "Sports Medal" }
+      ]
+    },
+    {
+      "id": "warning-info",
+      "label": "Warning & Info",
+      "h2": "Warning & Info Symbols",
+      "intro": "Alert, information, and notification symbols for important messages.",
+      "symbols": [
+        { "char": "⚠", "label": "Warning Sign" },
+        { "char": "⚠️", "label": "Warning Emoji" },
+        { "char": "ℹ️", "label": "Information" },
+        { "char": "🔔", "label": "Bell" },
+        { "char": "📢", "label": "Loudspeaker" },
+        { "char": "📣", "label": "Megaphone" },
+        { "char": "🚨", "label": "Police Siren" },
+        { "char": "⛔", "label": "No Entry" },
+        { "char": "🚫", "label": "Prohibited" },
+        { "char": "🔺", "label": "Red Triangle Pointed Up" },
+        { "char": "🔻", "label": "Red Triangle Pointed Down" },
+        { "char": "‼", "label": "Double Exclamation Mark" },
+        { "char": "❗", "label": "Exclamation Mark" }
+      ]
+    },
+    {
+      "id": "progress",
+      "label": "Progress Indicators",
+      "h2": "Progress Indicator Symbols",
+      "intro": "Numbered and circled characters for steps, rankings, and ordered lists.",
+      "symbols": [
+        { "char": "⏳", "label": "Hourglass Not Done" },
+        { "char": "⌛", "label": "Hourglass Done" },
+        { "char": "🔄", "label": "Counterclockwise Arrows" },
+        { "char": "⏺", "label": "Record Button" },
+        { "char": "⏸", "label": "Pause Button" },
+        { "char": "⏹", "label": "Stop Button" },
+        { "char": "①", "label": "Step 1" },
+        { "char": "②", "label": "Step 2" },
+        { "char": "③", "label": "Step 3" },
+        { "char": "④", "label": "Step 4" },
+        { "char": "⑤", "label": "Step 5" },
+        { "char": "⑥", "label": "Step 6" },
+        { "char": "⑦", "label": "Step 7" },
+        { "char": "⑧", "label": "Step 8" },
+        { "char": "⑨", "label": "Step 9" },
+        { "char": "⑩", "label": "Step 10" }
+      ]
+    },
+    {
+      "id": "ballot-boxes",
+      "label": "Ballot Boxes",
+      "h2": "Ballot Box & Checkbox Symbols",
+      "symbols": [
+        { "char": "☐", "label": "Empty Box" },
+        { "char": "☑", "label": "Checked Box" },
+        { "char": "☒", "label": "Crossed Box" },
+        { "char": "🗹", "label": "Bold Check Box" },
+        { "char": "🗸", "label": "Light Check" },
+        { "char": "🗴", "label": "Script X" },
+        { "char": "▢", "label": "Rounded Box" },
+        { "char": "⊠", "label": "Squared X" },
+        { "char": "☑️", "label": "Check Box with Check" }
+      ]
+    },
+    {
+      "id": "checklist-templates",
+      "label": "Checklist",
+      "h2": "Checklist & To-Do Templates",
+      "symbols": [
+        { "char": "☑ Done", "label": "Done Line" },
+        { "char": "☐ To-do", "label": "To-do Line" },
+        { "char": "✔ Completed · ✘ Pending", "label": "Status Pair" },
+        { "char": "[✓]", "label": "Bracket Check" },
+        { "char": "[ ]", "label": "Bracket Empty" },
+        { "char": "✅ Yes  ❌ No", "label": "Yes / No" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Circles, diamonds, squares, triangles, and decorative shapes."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "Straight, curved, double, triangle, and emoji arrows for formatting."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Professional Unicode symbols tested and curated for LinkedIn."
+    },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "LinkedIn Comment Styling",
+      "desc": "Techniques and templates for professional LinkedIn comments."
+    },
+    {
+      "href": "/symbol/checkmark-symbol/",
+      "title": "Check Mark Symbol",
+      "desc": "The check mark (✓ ✔): the tick that means done, correct, or verified."
+    },
+    {
+      "href": "/library/check-mark-emoji/",
+      "title": "Check Mark Emoji & Kaomoji",
+      "desc": "The colorful ✅ check mark emoji family, cross marks, and task-done combos."
+    }
+  ]
+}

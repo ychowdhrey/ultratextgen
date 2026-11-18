@@ -25,9 +25,14 @@ def load(root):
     path = os.path.join(root, REGISTRY_REL)
     if not os.path.exists(path):
         raise RegistryUnavailable(f"{REGISTRY_REL} does not exist")
+    with open(path, encoding="utf-8") as fh:
+        return load_text(fh.read())
+
+
+def load_text(text):
+    """The registry from its JSON text (a checkout or a commit's blob)."""
     try:
-        with open(path, encoding="utf-8") as fh:
-            data = json.load(fh)
+        data = json.loads(text)
     except ValueError as e:
         raise RegistryUnavailable(f"{REGISTRY_REL} is not valid JSON: {e}")
     data.setdefault("intents", [])

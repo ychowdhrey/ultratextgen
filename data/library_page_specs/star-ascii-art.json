@@ -1,0 +1,74 @@
+{
+  "slug": "star-ascii-art",
+  "copy_pattern": "art",
+  "hand_built_page": true,
+  "title": "Star ASCII Art ★ Copy & Paste",
+  "meta_description": "Copy and paste star ASCII art — original multi-line star pictures in plain characters, from tiny sparkles and shooting stars to a giant five-point star.",
+  "canonical": "https://ultratextgen.com/library/star-ascii-art/",
+  "breadcrumb": "Star ASCII Art",
+  "hero_h1": "Star ASCII Art",
+  "hero_tagline": "Original star pictures drawn entirely in plain text: sparkles, shooting stars, and a giant five-point star. Click Copy on any card.",
+  "intro": "Star ASCII art builds star shapes out of ordinary keyboard characters: asterisks, slashes, dashes, and underscores. The small one-line pieces paste cleanly into any bio or chat, while the bigger multi-line stars keep their points sharp only where text renders in a fixed-width (monospace) font, such as Discord code blocks, terminals, and plain-text files. Every piece below is an original drawing. Click Copy to grab it with its spacing and line breaks intact. For single star characters like ★ and ✦, see the <a href=\"/library/star-symbols/\">star symbol collection</a>.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/star-ascii-art/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/star-ascii-art/" }
+  ],
+  "sections": [
+    {
+      "id": "small-stars",
+      "label": "Small & One-Line",
+      "h2": "Small Star ASCII Art",
+      "intro": "Twinkles, dividers, and compact stars that fit anywhere.",
+      "art": [
+        { "label": "Twinkle Line", "art": ". * . + . * ." },
+        { "label": "Star Divider", "art": "*--*--*--*--*--*--*" },
+        { "label": "Tiny Sparkle", "art": " \\ /\n--*--\n / \\" },
+        { "label": "Shooting Star", "art": "              __/\\__\n    ~ ~ ~ ~ ~ \\    /\n  ~ ~ ~ ~ ~ ~ /_  _\\\n                \\/" }
+      ]
+    },
+    {
+      "id": "classic-stars",
+      "label": "Classic Pieces",
+      "h2": "Classic Star Pictures",
+      "intro": "Mid-size stars and bursts: paste them where a monospace font keeps the points aligned.",
+      "art": [
+        { "label": "Twin Stars", "art": "  __/\\__\n  \\    /   __/\\__\n  /_  _\\   \\    /\n    \\/     /_  _\\\n             \\/" },
+        { "label": "Classic Star", "art": "     *\n    ***\n***********\n  *******\n   *****\n  *** ***\n **     **" },
+        {
+          "label": "Sparkle Burst",
+          "art": "          |\n      \\   |   /\n        \\ | /\n   ------ * ------\n        / | \\\n      /   |   \\\n          |"
+        }
+      ]
+    },
+    {
+      "id": "big-stars",
+      "label": "Big Pieces",
+      "h2": "Big Star ASCII Art",
+      "intro": "A large filled five-point star: best in Discord code blocks, terminals, and anywhere else with a fixed-width font.",
+      "art": [
+        {
+          "label": "Giant Star",
+          "art": "        *\n       ***\n      *****\n*****************\n ***************\n   ***********\n    *********\n   ***********\n  *****   *****\n ****       ****\n***           ***"
+        }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/text-art/", "title": "Text Art", "desc": "ASCII and Unicode art collections plus drawing blocks." },
+    { "href": "/library/star-symbols/", "title": "Star Symbol Collection", "desc": "Single star characters, ★ ☆ ✦ ✧, ready to copy." },
+    { "href": "/ascii-art-generator/", "title": "ASCII Art Generator", "desc": "Type a word and turn it into big block-letter ASCII art." },
+    { "href": "/library/heart-ascii-art/", "title": "Heart ASCII Art", "desc": "Multi-line ASCII hearts, from a tiny <3 to big solid hearts." },
+    {
+      "href": "/library/star-kaomoji/",
+      "title": "Star Kaomoji",
+      "desc": "Copy and paste star kaomoji: starry-eyed and dazzled Japanese text faces."
+    },
+    {
+      "href": "/library/star-emoji/",
+      "title": "Star Emoji",
+      "desc": "Rating stars, glowing stars, shooting stars and sparkles: the full picture-emoji star set."
+    }
+  ]
+}

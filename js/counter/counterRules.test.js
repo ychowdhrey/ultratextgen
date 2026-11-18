@@ -368,5 +368,50 @@ t("emoji removal: a single regional indicator is not a flag", stripE("a\u{1F1FA}
   t("every rule is sourced (https source + past ISO date) or says why not, never both", bad.join(", "), "");
 }
 
+// X counts every emoji as 2, however many code points build it.
+{
+  t("x: a plain emoji is 2", C.xWeightedLength("\u{1F600}"), 2);
+  t("x: a family emoji (4 people, 3 joiners) is 2, not 11", C.xWeightedLength("\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}"), 2);
+  t("x: a flag is 2, not 4", C.xWeightedLength("\u{1F1E9}\u{1F1EA}"), 2);
+  t("x: a skin-toned emoji is 2, not 4", C.xWeightedLength("\u{1F44D}\u{1F3FD}"), 2);
+  t("x: a keycap is 2, not 5", C.xWeightedLength("1\uFE0F\u20E3"), 2);
+  t("x: a heart with the emoji selector is 2, not 4", C.xWeightedLength("\u2764\uFE0F"), 2);
+  t("x: two emoji and a word", C.xWeightedLength("hi \u{1F600}\u{1F1E9}\u{1F1EA}"), 7);
+  t("x: a bare copyright sign is still 1", C.xWeightedLength("\u00A9"), 1);
+  t("x: a CJK character is still 2", C.xWeightedLength("\u5B57\u6578"), 4);
+  t("x: a styled letter is still 2", C.xWeightedLength("\u{1D400}"), 2);
+  t("x: an accented Latin letter in two code points is still 2 light units", C.xWeightedLength("e\u0301"), 2);
+  t("x: a URL is still 23", C.xWeightedLength("https://example.com/a/very/long/path?x=1"), 23);
+  t("x: 140 flags fit a 280 post", R.analyze("\u{1F1E9}\u{1F1EA}".repeat(140), "x-post").fits, true);
+}
+
+// The visitor's own limit: an application box, a job form, a database column.
+// It is a rule like any other to the engine, and it is NOT a row of LIMITS,
+// because the pages count LIMITS and cite it as published platform claims.
+{
+  t("own limit: not a row of the published table", R.LIMITS.some((r) => r.id === R.CUSTOM_ID), false);
+  t("own limit: 4000 with spaces is accepted", R.setCustomLimit(4000, "codepoint").limit, 4000);
+  t("own limit: fits exactly at the limit", R.analyze("a".repeat(4000), "custom").fits, true);
+  t("own limit: one over does not fit", R.analyze("a".repeat(4001), "custom").remaining, -1);
+  t("own limit: an emoji is one character, not two units", R.measure("ab\u{1F600}", "custom"), 3);
+  R.setCustomLimit(10, "nospace");
+  t("own limit: spaces, tabs and line breaks are not counted in that unit", R.measure("ab cd\tef\ngh", "custom"), 8);
+  t("own limit: full-width space is not counted either", R.measure("\u5B57\u3000\u6578", "custom"), 2);
+  R.setCustomLimit(6, "utf8");
+  t("own limit: bytes unit counts a Chinese character as 3", R.measure("\u5B57\u6578", "custom"), 6);
+  t("own limit: bytes unit, 6 bytes fit in 6", R.analyze("\u5B57\u6578", "custom").fits, true);
+  t("own limit: zero is refused", R.setCustomLimit(0, "codepoint"), null);
+  t("own limit: text is refused", R.setCustomLimit("abc", "codepoint"), null);
+  t("own limit: a refused value leaves the last good limit", R.ruleById("custom").limit, 6);
+  t("own limit: an unknown unit keeps the current one", R.setCustomLimit(50, "words").countMode, "utf8");
+  R.setCustomLimit(12, "codepoint");
+  t("own limit: trim to fit cuts at a word boundary inside it", D.trimToFit("one two three four", "custom"), "one two");
+  R.setCustomLimit(7, "nospace");
+  t("own limit: trim to fit measures in the chosen unit", D.trimToFit("ab cd ef gh", "custom"), "ab cd ef");
+  t("own limit: has no fold", R.foldInfo("x".repeat(500), "custom"), null);
+  t("own limit: fit grid still lists only published rows", R.fitsAll("x").length, R.LIMITS.length);
+  t("an unknown id still falls back to the first rule", R.ruleById("nope").id, R.LIMITS[0].id);
+}
+
 console.log(fail ? "\n" + fail + " FAILURES" : "\nall green");
 process.exit(fail ? 1 : 0);

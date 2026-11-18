@@ -1,0 +1,85 @@
+{
+  "slug": "pilcrow",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Pilcrow Symbol (¶): Meaning, History & How to Type It",
+  "meta_description": "The pilcrow ¶ (U+00B6) explained — the medieval paragraph mark behind Word's Show/Hide button, and how to type it on Windows/Mac.",
+  "canonical": "https://ultratextgen.com/symbol/pilcrow/",
+  "breadcrumb": "Pilcrow Symbol",
+  "hero_h1": "Pilcrow Symbol (¶)",
+  "hero_tagline": "What ¶ means, where the word comes from, and how to type it: click to copy.",
+  "intro": "Medieval manuscripts were often written as one continuous, unbroken block of text, no line breaks or indentation the way modern paragraphs use. Scribes marked where a new line of argument began by inserting a special sign, often in red ink, which evolved into the ¶ shape.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pilcrow/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-abzatsa/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/tanda-paragraf/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-pied-de-mouche/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/absatzzeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/paragraf-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-di-paragrafo/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-paragrafo/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/alinea-teken/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-akapitu/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/calderon/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/tanda-paragraf/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-alfaqra/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/danraku-kigou/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-yo-na/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/pilcrow/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/danrak-giho/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pilcrow/" }
+  ],
+  "sections": [
+    {
+      "id": "similar-looking-symbols",
+      "label": "Don't Confuse It With",
+      "h2": "Similar-Looking Symbols",
+      "symbols": [
+        { "char": "§", "label": "Section Sign (U+00A7) — a legal citation mark, not a paragraph break" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Pilcrow Comes From",
+      "paragraphs": [
+        "Medieval manuscripts were often written as one continuous, unbroken block of text, no line breaks or indentation the way modern paragraphs use. Scribes marked where a new line of argument began by inserting a special sign, often in red ink, which evolved into the ¶ shape.",
+        "The word \"pilcrow\" itself is a corruption of the Old French <em>paragraphe</em>, mangled through repeated English mispronunciation over the medieval period until it settled into its current, unrelated-sounding form. The symbol survives today mainly as the \"formatting marks\" indicator in word processors: Microsoft Word's Show/Hide ¶ button reveals exactly where each paragraph ends, a non-printing marker invisible until you ask to see it."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "What is the pilcrow symbol used for?",
+      "a": "The pilcrow (¶) marks the start of a new paragraph. Today it's best known as the \"formatting marks\" symbol in word processors like Microsoft Word, where toggling Show/Hide reveals a ¶ at the end of every paragraph, a hidden, non-printing marker of where paragraph breaks fall."
+    },
+    {
+      "q": "Where does the word \"pilcrow\" come from?",
+      "a": "It comes from the Old French word paragraphe, which was gradually mispronounced and respelled in English over the medieval period until it settled as \"pilcrow\", a word that now refers only to the mark itself, not the paragraph it indicates."
+    },
+    {
+      "q": "How do you type the pilcrow symbol?",
+      "a": "On Windows, hold Alt and type 0182 on the numeric keypad (Alt+0182). On Mac, press Option+7. In HTML, use the entity &para; or &#182;."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/section-sign/", "title": "§ Section Sign", "desc": "The mark lawyers use to cite a specific section." },
+    { "href": "/symbol/at-symbol/", "title": "@ At Symbol", "desc": "A 500-year-old ledger mark that became email's defining character." },
+    { "href": "/symbol/ampersand/", "title": "& Ampersand", "desc": "A Roman ligature for \"et,\" and where its name comes from." },
+    {
+      "href": "/library/special-characters/",
+      "title": "All Special Characters",
+      "desc": "Punctuation, typography, and rare Unicode curiosities."
+    },
+    { "href": "/symbol/em-dash/", "title": "Em Dash (—)", "desc": "The em dash (—) that marks a break, an interruption, or an aside." },
+    {
+      "href": "/symbol/interrobang/",
+      "title": "Interrobang (‽)",
+      "desc": "The interrobang (‽) that fuses '?' and '!' into one mark for an astonished question."
+    }
+  ]
+}

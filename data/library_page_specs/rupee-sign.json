@@ -1,0 +1,88 @@
+{
+  "slug": "rupee-sign",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Indian Rupee Sign (₹): Meaning, History & How to Type It",
+  "meta_description": "The Indian rupee sign ₹ (U+20B9) explained — the 2010 public design competition behind it, and how to type it on Windows/Mac.",
+  "canonical": "https://ultratextgen.com/symbol/rupee-sign/",
+  "breadcrumb": "Indian Rupee Sign",
+  "hero_h1": "Indian Rupee Sign (₹)",
+  "hero_tagline": "What ₹ means, its 2010 design story, and how to type it: click to copy.",
+  "intro": "Unlike currency symbols that evolved gradually through centuries of handwriting, ₹ has an unusually well-documented, deliberate origin. The Indian government ran an open public design competition in 2009–2010 specifically to give the rupee its own dedicated symbol, distinct from the plain \"Rs.\" abbreviation used until then. D. Udaya Kumar, a postgraduate from IIT Guwahati, won the contest, and the design was officially adopted by the Indian government in 2010.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/rupee-sign/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-rubiya-hindiya/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-rupii/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-rupee-india/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-roupie/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/rupien-zeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/rupi-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-rupia/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-rupia/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signo-de-rupia-india/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-rupee-india/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/rupii-kigou/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-rupee-india/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/roepieteken/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/rupee-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-rupii/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/rupi-giho/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/rupee-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "other-currency-symbols",
+      "label": "Don't Confuse It With",
+      "h2": "Other Currency Symbols",
+      "symbols": [
+        { "char": "€", "label": "Euro Sign (U+20AC) — another deliberately designed modern currency symbol" },
+        { "char": "£", "label": "Pound Sign (U+00A3) — over 1,000 years old, from Latin libra" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Where the Rupee Sign Comes From",
+      "paragraphs": [
+        "Unlike currency symbols that evolved gradually through centuries of handwriting, ₹ has an unusually well-documented, deliberate origin. The Indian government ran an open public design competition in 2009–2010 specifically to give the rupee its own dedicated symbol, distinct from the plain \"Rs.\" abbreviation used until then. D. Udaya Kumar, a postgraduate from IIT Guwahati, won the contest, and the design was officially adopted by the Indian government in 2010.",
+        "The winning design fuses the Devanagari letter \"र\" (<em>ra</em>, the first sound of \"rupee\") with the Latin capital letter R, topped by two parallel horizontal lines. Those lines are widely read as a nod to the Indian national flag and, following a common currency-symbol convention, as an echo of the equals sign, meant to suggest economic equality and balance."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "Who designed the ₹ symbol?",
+      "a": "D. Udaya Kumar, a postgraduate from IIT Guwahati, won an open public design competition run by the Indian government in 2009–2010. The symbol was officially adopted in 2010, making it one of the few major currency symbols created through a public contest rather than evolving organically."
+    },
+    {
+      "q": "What does the ₹ design represent?",
+      "a": "It blends the Devanagari letter \"र\" (ra, for rupee) with the Latin capital R, topped by two parallel horizontal lines. The lines are meant to evoke the Indian national flag and echo the equals sign, symbolizing economic equality."
+    },
+    {
+      "q": "How do you type the ₹ symbol?",
+      "a": "It falls outside the simple four-digit Windows Alt-code range, so the easiest options are the Alt+X hex method in Word (type 20B9 then press Alt+X) or copying it directly from a reference page. In HTML, use &#8377;. There's no short named entity like &euro;."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/dollar-sign/", "title": "$ Dollar Sign", "desc": "The world's most recognized currency symbol, and its disputed origin." },
+    { "href": "/symbol/euro-sign/", "title": "€ Euro Sign", "desc": "A currency symbol deliberately designed in 1996." },
+    { "href": "/symbol/pound-sign/", "title": "£ Pound Sign", "desc": "Over a thousand years old, from the Latin libra." },
+    { "href": "/symbol/yen-sign/", "title": "¥ Yen Sign", "desc": "Shared between the Japanese yen and Chinese yuan." },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "All Currency Symbols",
+      "desc": "Dollar, euro, pound, yen, and other global currency symbols."
+    },
+    {
+      "href": "/symbol/bitcoin-symbol/",
+      "title": "Bitcoin Symbol",
+      "desc": "The currency sign for Bitcoin (₿), added to Unicode in 2017 after real demand, not to be confused with the Thai baht ฿ or the BTC ticker."
+    },
+    { "href": "/symbol/peso-sign/", "title": "Peso Sign (₱)", "desc": "The ₱ that belongs to the Philippine peso." },
+    { "href": "/symbol/ruble-sign/", "title": "Ruble Sign", "desc": "The ₽ ruble sign." }
+  ]
+}

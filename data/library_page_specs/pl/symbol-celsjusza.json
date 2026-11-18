@@ -40,7 +40,7 @@
       "symbols": [
         { "char": "°", "label": "Znak Stopnia (U+00B0): Samodzielny" },
         { "char": "℉", "label": "Stopień Fahrenheita (U+2109)" },
-        { "char": "K", "label": "Znak Kelwina (U+212A): Normalizuje się do Zwykłego K" },
+        { "char": "\u212a", "label": "Znak Kelwina (U+212A): Normalizuje się do Zwykłego K" },
         { "char": "C", "label": "Zwykła Litera C" }
       ]
     },
@@ -54,7 +54,7 @@
         { "char": "″", "label": "Bis (Sekundy / Cale)" },
         { "char": "‰", "label": "Znak Promila" },
         { "char": "µ", "label": "Znak Mikro (U+00B5)" },
-        { "char": "Ω", "label": "Znak Oma (U+2126)" }
+        { "char": "\u2126", "label": "Znak Oma (U+2126)" }
       ]
     }
   ],

@@ -18,7 +18,7 @@
       "intro": "The flag, the ball, and the national colours.",
       "symbols": [
         {
-          "char": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+          "char": "🏴\udb40\udc67\udb40\udc62\udb40\udc77\udb40\udc6c\udb40\udc73\udb40\udc7f",
           "label": "Wales Flag"
         },
         {
@@ -36,10 +36,6 @@
         {
           "char": "🐉",
           "label": "Dragon"
-        },
-        {
-          "char": "🟢",
-          "label": "Green Circle"
         },
         {
           "char": "🏆",
@@ -70,20 +66,12 @@
           "label": "Dragon"
         },
         {
-          "char": "🟢",
-          "label": "Green Circle"
-        },
-        {
           "char": "🔥",
           "label": "Fire"
         },
         {
           "char": "🏆",
           "label": "Trophy"
-        },
-        {
-          "char": "🔥",
-          "label": "Fire"
         }
       ]
     }

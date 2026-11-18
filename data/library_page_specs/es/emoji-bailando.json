@@ -49,6 +49,18 @@
           "label": "Mujer bailando: tono de piel claro"
         },
         {
+          "char": "💃🏼",
+          "label": "Mujer bailando: tono de piel medio-claro"
+        },
+        {
+          "char": "💃🏽",
+          "label": "Mujer bailando: tono de piel medio"
+        },
+        {
+          "char": "💃🏾",
+          "label": "Mujer bailando: tono de piel medio-oscuro"
+        },
+        {
           "char": "💃🏿",
           "label": "Mujer bailando: tono de piel oscuro"
         },
@@ -57,15 +69,27 @@
           "label": "Hombre bailando: tono de piel claro"
         },
         {
+          "char": "🕺🏼",
+          "label": "Hombre bailando: tono de piel medio-claro"
+        },
+        {
+          "char": "🕺🏽",
+          "label": "Hombre bailando: tono de piel medio"
+        },
+        {
+          "char": "🕺🏾",
+          "label": "Hombre bailando: tono de piel medio-oscuro"
+        },
+        {
           "char": "🕺🏿",
           "label": "Hombre bailando: tono de piel oscuro"
         },
         {
-          "char": "👯‍♀️",
+          "char": "👯\u200d♀️",
           "label": "Mujeres con orejas de conejo"
         },
         {
-          "char": "👯‍♂️",
+          "char": "👯\u200d♂️",
           "label": "Hombres con orejas de conejo"
         },
         {

@@ -18,7 +18,7 @@
       "intro": "Dedicated single-character signs for resistance, conductance, and atomic-scale measurement.",
       "symbols": [
         {
-          "char": "Ω",
+          "char": "\u2126",
           "label": "Ohm Sign"
         },
         {
@@ -308,6 +308,54 @@
         {
           "char": "‱",
           "label": "Per Ten Thousand Sign"
+        }
+      ]
+    },
+    {
+      "id": "angle-prime-marks",
+      "label": "Angles",
+      "h2": "Angle & Extended Prime Marks",
+      "intro": "Angle signs commonly written alongside degree measurements, plus the triple, quadruple, and reversed prime forms used in coordinate notation.",
+      "symbols": [
+        {
+          "char": "∠",
+          "label": "Angle"
+        },
+        {
+          "char": "∡",
+          "label": "Measured Angle"
+        },
+        {
+          "char": "∢",
+          "label": "Spherical Angle"
+        },
+        {
+          "char": "∟",
+          "label": "Right Angle"
+        },
+        {
+          "char": "⊾",
+          "label": "Right Angle With Arc"
+        },
+        {
+          "char": "⟂",
+          "label": "Perpendicular"
+        },
+        {
+          "char": "‴",
+          "label": "Triple Prime"
+        },
+        {
+          "char": "⁗",
+          "label": "Quadruple Prime"
+        },
+        {
+          "char": "‵",
+          "label": "Reversed Prime"
+        },
+        {
+          "char": "‶",
+          "label": "Reversed Double Prime"
         }
       ]
     }

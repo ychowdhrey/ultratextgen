@@ -1,0 +1,157 @@
+{
+  "slug": "aesthetic-borders-frames",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Aesthetic Borders & Frames Copy & Paste — Pretty Decorative Dividers",
+  "meta_description": "Decorative borders, frames, and aesthetic dividers for bios and captions. Pretty multi-symbol patterns including flower, star, and heart frames.",
+  "canonical": "https://ultratextgen.com/library/aesthetic-borders-frames/",
+  "breadcrumb": "Aesthetic Borders & Frames",
+  "hero_h1": "Aesthetic Borders & Frames",
+  "hero_tagline": "Decorative borders, frames, and dividers for aesthetic bios and captions. Click any pattern to copy the full border instantly.",
+  "intro": "Aesthetic borders and frames are multi-character patterns that wrap text or create visual breaks in bios, captions, and posts. From simple floral dividers and star frames to elaborate name-wrapping patterns, these combos are copy-paste ready. Use them on Instagram, TikTok, Discord, and Tumblr to add visual structure and personality to any text.",
+  "date_published": "2026-04-26",
+  "date_modified": "2026-04-26",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/aesthetic-borders-frames/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/bordes-aesthetic/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/krasivye-ramki/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/yeppeun-teduri/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/aesthetic-borders-frames/" }
+  ],
+  "sections": [
+    {
+      "id": "floral-borders",
+      "label": "Floral Borders",
+      "h2": "Floral Borders",
+      "symbols": [
+        { "char": "❀━━━━━❀", "label": "Florette Dash Frame" },
+        { "char": "✿━━━━━━━━━✿", "label": "Florette Wide Frame" },
+        { "char": "❁ ━━━━━━━━━ ❁", "label": "Petal Dash Frame" },
+        { "char": "༻❁༺", "label": "Tibetan Petal Frame" },
+        { "char": "*＊✿❀ ❀✿＊*", "label": "Star Flower Border" }
+      ]
+    },
+    {
+      "id": "star-borders",
+      "label": "Star Borders",
+      "h2": "Star Borders",
+      "symbols": [
+        { "char": ".⭒☆━━━✰━━━☆⭒.", "label": "Star Dash Border" },
+        { "char": "✧･ﾟ: *✧･ﾟ:*", "label": "Star Dot Pattern" },
+        { "char": "⋆⋆☆⋆⋆⋆⋆☆⋆⋆", "label": "Star Chain" },
+        { "char": "╔════▣◎▣════╗", "label": "Box Star Header" }
+      ]
+    },
+    {
+      "id": "heart-borders",
+      "label": "Heart Borders",
+      "h2": "Heart Borders",
+      "symbols": [
+        { "char": "♡━━━━━━━♡", "label": "Heart Dash Frame" },
+        { "char": "꘎♡━━━━━♡꘎", "label": "Decorated Heart Frame" },
+        { "char": "*ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚", "label": "Star Temple Border" }
+      ]
+    },
+    {
+      "id": "soft-corner-frames",
+      "label": "Soft & Corner Frames",
+      "h2": "Soft & Corner Frames",
+      "symbols": [
+        { "char": "╭┈ • ┈ ୨୧ ┈ • ┈╮", "label": "Rounded Corner Frame" },
+        { "char": "╭━━━━━━ ⋆⋅☆⋅⋆ ━━━━━━╮", "label": "Star Corner Frame" },
+        { "char": "┊┊┊┊ ➶ ❁ ｡˚ ✧", "label": "Vertical Lines Star" }
+      ]
+    },
+    {
+      "id": "minimalist-dividers",
+      "label": "Minimalist Dividers",
+      "h2": "Minimalist Dividers",
+      "symbols": [
+        { "char": "─── ⋆⋅☆⋅⋆ ───", "label": "Classic Star Divider" },
+        { "char": "─── ❀ ───", "label": "Flower Divider" },
+        { "char": "── ✦ ──", "label": "Star Divider" },
+        { "char": "・・・", "label": "Katakana Dot Divider" },
+        { "char": "»»——⍟——««", "label": "Arrow Star Divider" }
+      ]
+    },
+    {
+      "id": "box-drawing-borders",
+      "label": "Box-Drawing Borders",
+      "h2": "Box-Drawing Border Presets",
+      "intro": "Core box-drawing glyphs from the Unicode Box Drawing block (light corners, lines, and double-line variants) the building blocks for hand-made text borders and frames.",
+      "symbols": [
+        { "char": "┌", "label": "Light Top-Left" },
+        { "char": "┐", "label": "Light Top-Right" },
+        { "char": "└", "label": "Light Bottom-Left" },
+        { "char": "┘", "label": "Light Bottom-Right" },
+        { "char": "─", "label": "Light Horizontal" },
+        { "char": "│", "label": "Light Vertical" },
+        { "char": "╔", "label": "Double Top-Left" },
+        { "char": "╗", "label": "Double Top-Right" },
+        { "char": "╚", "label": "Double Bottom-Left" },
+        { "char": "╝", "label": "Double Bottom-Right" },
+        { "char": "═", "label": "Double Horizontal" },
+        { "char": "║", "label": "Double Vertical" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "aesthetic-borders-frames-collections",
+    "label": "Borders & Frames Collections",
+    "h2": "Ready-to-Paste Borders & Frames",
+    "intro": "Full decorative borders and corner frames you can paste straight around a bio or caption. Copy the whole pattern in one click."
+  },
+  "collection_container_id": "bordersFramesCollectionsContainer",
+  "collections": [
+    {
+      "name": "Floral Dash Frame",
+      "flags": ["❀━━━━━━━❀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Petal Bio Border",
+      "flags": ["✿ ━━━━━━ ✿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Star Corner Frame",
+      "flags": ["╭━━━ ⋆⭒☆⭒⋆ ━━━╮"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Soft Rounded Frame",
+      "flags": ["╭┈ ୨୧ ┈╮"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heart Wrap Border",
+      "flags": ["♡━━━━━━━♡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dotted Star Divider",
+      "flags": ["── ✦ ──"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Ready-to-Paste Borders & Frames",
+      "paragraphs": [
+        "Full decorative borders and corner frames you can paste straight around a bio or caption. Copy the whole pattern in one click."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/tumblr-symbols/",
+      "title": "Tumblr Symbols",
+      "desc": "Symbol sets for Tumblr blog titles, descriptions and post dividers."
+    },
+    { "href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "Curated aesthetic Unicode characters for bios." },
+    { "href": "/library/line-divider-symbols/", "title": "Line Divider Symbols", "desc": "Horizontal dividers and separators." },
+    { "href": "/library/heart-symbols/", "title": "Heart Symbols", "desc": "Every heart emoji and Unicode heart character." },
+    { "href": "/library/sparkle-symbols/", "title": "Sparkle Symbols", "desc": "Stars, sparkles, and glowing decoration characters." },
+    { "href": "/library/flower-symbols/", "title": "Flower Symbols", "desc": "Flowers, leaves, and decorative nature symbols." }
+  ]
+}

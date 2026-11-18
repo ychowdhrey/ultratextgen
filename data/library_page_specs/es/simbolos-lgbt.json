@@ -54,16 +54,24 @@
    "intro": "Signos Unicode fundamentales para género y orientación. El set completo, con las marcas de matrimonio y pareja, está en Símbolos de género.",
    "symbols": [
     {
-     "char": "⚧",
-     "label": "Símbolo transgénero"
+      "char": "⚧",
+      "label": "Símbolo transgénero"
     },
     {
-     "char": "⚢",
-     "label": "Doble signo femenino: Orgullo sáfico o lésbico"
+      "char": "⚥",
+      "label": "Signo masculino y femenino"
     },
     {
-     "char": "⚣",
-     "label": "Doble signo masculino: Orgullo gay"
+      "char": "⚦",
+      "label": "Signo masculino con trazo"
+    },
+    {
+      "char": "⚢",
+      "label": "Doble signo femenino: Orgullo sáfico o lésbico"
+    },
+    {
+      "char": "⚣",
+      "label": "Doble signo masculino: Orgullo gay"
     }
    ]
   },

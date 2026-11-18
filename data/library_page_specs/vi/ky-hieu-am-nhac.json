@@ -229,11 +229,11 @@
         },
         {
           "char": "𝄻",
-          "label": "Lặng trắng"
+          "label": "Lặng tròn"
         },
         {
           "char": "𝄼",
-          "label": "Lặng đen"
+          "label": "Lặng trắng"
         }
       ]
     },
@@ -354,6 +354,354 @@
         {
           "char": "꒰♬꒱",
           "label": "Nốt nhạc trong ngoặc"
+        }
+      ]
+    },
+    {
+      "id": "barlines-repeats-segno-coda",
+      "label": "Vạch nhịp và nhắc lại",
+      "h2": "Vạch Nhịp, Dấu Nhắc Lại, Segno và Coda",
+      "intro": "Các dấu cho người chơi biết phải đi tiếp đến đâu: vạch nhịp nét đứt và vạch ngắn, dấu chấm nhắc lại, segno và coda, D.C. và D.S., cùng các dấu lặp ô nhịp. Android và Windows có sẵn phông chữ cho mọi ký hiệu trong mục này và ba mục tiếp theo; trên iPhone và Mac, chúng phụ thuộc vào phông ký hiệu của Apple mà chúng tôi chưa thể kiểm tra, nên một số có thể hiện thành ô trống ở đó.",
+      "symbols": [
+        {
+          "char": "𝄄",
+          "label": "Vạch nhịp nét đứt"
+        },
+        {
+          "char": "𝄅",
+          "label": "Vạch nhịp ngắn"
+        },
+        {
+          "char": "𝄈",
+          "label": "Dấu chấm nhắc lại"
+        },
+        {
+          "char": "𝄉",
+          "label": "Dal segno (D.S.)"
+        },
+        {
+          "char": "𝄊",
+          "label": "Da capo (D.C.)"
+        },
+        {
+          "char": "𝄋",
+          "label": "Dấu segno"
+        },
+        {
+          "char": "𝄌",
+          "label": "Dấu coda"
+        },
+        {
+          "char": "𝄍",
+          "label": "Dấu lặp ô nhịp 1"
+        },
+        {
+          "char": "𝄎",
+          "label": "Dấu lặp ô nhịp 2"
+        },
+        {
+          "char": "𝄏",
+          "label": "Dấu lặp ô nhịp 3"
+        }
+      ]
+    },
+    {
+      "id": "clefs-staff-time-signatures",
+      "label": "Khóa và nhịp",
+      "h2": "Khóa Quãng Tám, Khuông Nhạc và Số Chỉ Nhịp",
+      "intro": "Khóa Sol và khóa Fa có số 8 nhỏ ở trên hoặc dưới để dịch một quãng tám, khóa bộ gõ, khuông từ một đến sáu dòng, chữ C của nhịp 4/4 và chữ C gạch của alla breve, cùng các dấu giáng và dấu bình có mũi tên dùng cho phần tư cung.",
+      "symbols": [
+        {
+          "char": "𝄖",
+          "label": "Khuông 1 dòng"
+        },
+        {
+          "char": "𝄗",
+          "label": "Khuông 2 dòng"
+        },
+        {
+          "char": "𝄘",
+          "label": "Khuông 3 dòng"
+        },
+        {
+          "char": "𝄙",
+          "label": "Khuông 4 dòng"
+        },
+        {
+          "char": "𝄚",
+          "label": "Khuông nhạc 5 dòng"
+        },
+        {
+          "char": "𝄛",
+          "label": "Khuông 6 dòng"
+        },
+        {
+          "char": "𝄟",
+          "label": "Khóa Sol 8va (cao một quãng tám)"
+        },
+        {
+          "char": "𝄠",
+          "label": "Khóa Sol 8vb (thấp một quãng tám)"
+        },
+        {
+          "char": "𝄣",
+          "label": "Khóa Fa 8va (cao một quãng tám)"
+        },
+        {
+          "char": "𝄤",
+          "label": "Khóa Fa 8vb (thấp một quãng tám)"
+        },
+        {
+          "char": "𝄥",
+          "label": "Khóa bộ gõ 1"
+        },
+        {
+          "char": "𝄦",
+          "label": "Khóa bộ gõ 2"
+        },
+        {
+          "char": "𝄴",
+          "label": "Nhịp 4/4 (C)"
+        },
+        {
+          "char": "𝄵",
+          "label": "Nhịp alla breve (C gạch)"
+        },
+        {
+          "char": "𝄬",
+          "label": "Dấu giáng có mũi tên lên"
+        },
+        {
+          "char": "𝄭",
+          "label": "Dấu giáng có mũi tên xuống"
+        },
+        {
+          "char": "𝄮",
+          "label": "Dấu bình có mũi tên lên"
+        },
+        {
+          "char": "𝄯",
+          "label": "Dấu bình có mũi tên xuống"
+        },
+        {
+          "char": "𝄳",
+          "label": "Giáng một phần tư cung"
+        }
+      ]
+    },
+    {
+      "id": "notes-grace-notes-rests",
+      "label": "Nốt và dấu lặng",
+      "h2": "Trường Độ Nốt, Nốt Dựa và Dấu Lặng",
+      "intro": "Các nốt dạng một ký tự từ nốt tròn kép đến nốt móc năm, hai loại nốt dựa và những dấu lặng chưa có ở phía trên, gồm dấu lặng nhiều ô nhịp và các dấu lặng vuông của ký âm cổ.",
+      "symbols": [
+        {
+          "char": "𝅜",
+          "label": "Nốt tròn kép (breve)"
+        },
+        {
+          "char": "𝅝",
+          "label": "Nốt tròn"
+        },
+        {
+          "char": "\ud834\udd5e",
+          "label": "Nốt trắng"
+        },
+        {
+          "char": "\ud834\udd5f",
+          "label": "Nốt đen"
+        },
+        {
+          "char": "\ud834\udd60",
+          "label": "Nốt móc đơn"
+        },
+        {
+          "char": "\ud834\udd61",
+          "label": "Nốt móc kép"
+        },
+        {
+          "char": "\ud834\udd62",
+          "label": "Nốt móc ba"
+        },
+        {
+          "char": "\ud834\udd63",
+          "label": "Nốt móc bốn"
+        },
+        {
+          "char": "\ud834\udd64",
+          "label": "Nốt móc năm"
+        },
+        {
+          "char": "𝆔",
+          "label": "Nốt dựa ngắn (có gạch)"
+        },
+        {
+          "char": "𝆕",
+          "label": "Nốt dựa dài (không gạch)"
+        },
+        {
+          "char": "𝄩",
+          "label": "Dấu lặng nhiều ô nhịp 1"
+        },
+        {
+          "char": "𝄺",
+          "label": "Dấu lặng nhiều ô nhịp 2"
+        },
+        {
+          "char": "𝄽",
+          "label": "Lặng đen"
+        },
+        {
+          "char": "𝅀",
+          "label": "Lặng móc ba"
+        },
+        {
+          "char": "𝅁",
+          "label": "Lặng móc bốn"
+        },
+        {
+          "char": "𝅂",
+          "label": "Lặng móc năm"
+        },
+        {
+          "char": "𝇁",
+          "label": "Dấu lặng longa hoàn hảo"
+        },
+        {
+          "char": "𝇂",
+          "label": "Dấu lặng longa không hoàn hảo"
+        },
+        {
+          "char": "𝇃",
+          "label": "Dấu lặng brevis"
+        },
+        {
+          "char": "𝇄",
+          "label": "Dấu lặng semibrevis"
+        },
+        {
+          "char": "𝇅",
+          "label": "Dấu lặng minima"
+        },
+        {
+          "char": "𝇆",
+          "label": "Dấu lặng semiminima"
+        }
+      ]
+    },
+    {
+      "id": "noteheads-mezzo-pedal",
+      "label": "Đầu nốt và pedal",
+      "h2": "Đầu Nốt, Mezzo và Pedal Piano",
+      "intro": "Các hình đầu nốt dùng cho bộ gõ, nốt ma và hệ ký âm hình dạng (shape note), loại trắng và đen, cùng chữ cường độ mezzo và các dấu pedal piano: đạp pedal, nhả pedal và nửa pedal.",
+      "symbols": [
+        {
+          "char": "𝅃",
+          "label": "Đầu nốt hình X"
+        },
+        {
+          "char": "𝅄",
+          "label": "Đầu nốt hình dấu cộng"
+        },
+        {
+          "char": "𝅅",
+          "label": "Đầu nốt X trong vòng tròn"
+        },
+        {
+          "char": "𝅆",
+          "label": "Đầu nốt hình vuông, trắng"
+        },
+        {
+          "char": "𝅇",
+          "label": "Đầu nốt hình vuông, đen"
+        },
+        {
+          "char": "𝅈",
+          "label": "Đầu nốt tam giác (hướng lên), trắng"
+        },
+        {
+          "char": "𝅉",
+          "label": "Đầu nốt tam giác (hướng lên), đen"
+        },
+        {
+          "char": "𝅊",
+          "label": "Đầu nốt tam giác (hướng trái), trắng"
+        },
+        {
+          "char": "𝅋",
+          "label": "Đầu nốt tam giác (hướng trái), đen"
+        },
+        {
+          "char": "𝅌",
+          "label": "Đầu nốt tam giác (hướng phải), trắng"
+        },
+        {
+          "char": "𝅍",
+          "label": "Đầu nốt tam giác (hướng phải), đen"
+        },
+        {
+          "char": "𝅎",
+          "label": "Đầu nốt tam giác (hướng xuống), trắng"
+        },
+        {
+          "char": "𝅏",
+          "label": "Đầu nốt tam giác (hướng xuống), đen"
+        },
+        {
+          "char": "𝅐",
+          "label": "Đầu nốt tam giác (hướng lên phải), trắng"
+        },
+        {
+          "char": "𝅑",
+          "label": "Đầu nốt tam giác (hướng lên phải), đen"
+        },
+        {
+          "char": "𝅒",
+          "label": "Đầu nốt hình trăng khuyết, trắng"
+        },
+        {
+          "char": "𝅓",
+          "label": "Đầu nốt hình trăng khuyết, đen"
+        },
+        {
+          "char": "𝅔",
+          "label": "Đầu nốt tam giác bo tròn, trắng"
+        },
+        {
+          "char": "𝅕",
+          "label": "Đầu nốt tam giác bo tròn, đen"
+        },
+        {
+          "char": "𝅖",
+          "label": "Đầu nốt trong ngoặc (nốt ma)"
+        },
+        {
+          "char": "𝅗",
+          "label": "Đầu nốt rỗng"
+        },
+        {
+          "char": "𝅘",
+          "label": "Đầu nốt đặc"
+        },
+        {
+          "char": "𝅙",
+          "label": "Đầu nốt ẩn"
+        },
+        {
+          "char": "𝆐",
+          "label": "Mezzo (m)"
+        },
+        {
+          "char": "𝆮",
+          "label": "Đạp pedal (Ped.)"
+        },
+        {
+          "char": "𝆯",
+          "label": "Nhả pedal"
+        },
+        {
+          "char": "𝆰",
+          "label": "Nửa pedal"
         }
       ]
     }

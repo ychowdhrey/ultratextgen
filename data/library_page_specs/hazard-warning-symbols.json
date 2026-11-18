@@ -61,6 +61,21 @@
         { "char": "💥", "label": "Explosion (Explosive)" },
         { "char": "🧪", "label": "Test Tube (Chemical)" }
       ]
+    },
+    {
+      "id": "no-sign",
+      "label": "No Sign & Prohibition",
+      "h2": "Prohibition & No-Entry Signs",
+      "intro": "Copy the no sign (prohibited) symbol and related prohibition and no-entry markers for warnings and notices.",
+      "symbols": [
+        { "char": "🚫", "label": "No Entry Sign (Prohibited)" },
+        { "char": "∅", "label": "Empty Set" },
+        { "char": "Ø", "label": "Slashed O" },
+        { "char": "🚭", "label": "No Smoking" },
+        { "char": "🚷", "label": "No Pedestrians" },
+        { "char": "📵", "label": "No Mobile Phones" },
+        { "char": "🔞", "label": "No One Under 18" }
+      ]
     }
   ],
   "related": [

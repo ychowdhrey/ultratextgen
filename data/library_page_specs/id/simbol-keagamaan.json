@@ -392,6 +392,26 @@
           "label": "Tangan terbuka"
         }
       ]
+    },
+    {
+      "id": "highs-and-lows",
+      "label": "Kristen",
+      "h2": "Simbol \"Tuhan Lebih Besar dari Naik Turunnya Hidup\"",
+      "intro": "Semboyan iman modern dari bahasa Inggris yang sering dipakai untuk tato, kaus, dan bio: G untuk God (Tuhan), > berarti \"lebih besar dari\", lalu puncak (^ atau ∧) untuk masa naik dan lembah (v atau ∨) untuk masa turun. Ketiga bentuk artinya sama; G>^v hanya teks keyboard biasa, jadi tampil di semua perangkat.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Bentuk keyboard"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Dengan lambda Yunani"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Dengan tanda logika"
+        }
+      ]
     }
   ],
   "cta": "Gunakan UltraTextGen untuk mengubah teks biasa menjadi tebal, miring, sambung, dan 100+ gaya font Unicode lainnya — gratis dan seketika.",

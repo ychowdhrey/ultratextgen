@@ -107,12 +107,14 @@
         { "char": "ᛨ", "label": "Yr islandesa" },
         { "char": "ᛩ", "label": "Q" },
         { "char": "ᛪ", "label": "X" },
-        { "char": "᛫", "label": "Puntuación rúnica simple" },
-        { "char": "᛬", "label": "Puntuación rúnica múltiple" },
-        { "char": "᛭", "label": "Puntuación rúnica en cruz" },
-        { "char": "ᛮ", "label": "Símbolo Arlaug" },
-        { "char": "ᛯ", "label": "Símbolo Tvimadur" },
-        { "char": "ᛰ", "label": "Símbolo Belgthor" }
+        { "char": "ᛱ", "label": "Letra rúnica K" },
+        { "char": "ᛲ", "label": "Letra rúnica Sh" },
+        { "char": "ᛳ", "label": "Letra rúnica Oo" },
+        { "char": "ᛴ", "label": "Letra rúnica Os del cofre de los francos" },
+        { "char": "ᛵ", "label": "Letra rúnica Is del cofre de los francos" },
+        { "char": "ᛶ", "label": "Letra rúnica Eh del cofre de los francos" },
+        { "char": "ᛷ", "label": "Letra rúnica Ac del cofre de los francos" },
+        { "char": "ᛸ", "label": "Letra rúnica Aesc del cofre de los francos" }
       ]
     },
     {
@@ -124,14 +126,9 @@
         { "char": "᛫", "label": "Puntuación simple" },
         { "char": "᛬", "label": "Puntuación múltiple" },
         { "char": "᛭", "label": "Puntuación en cruz" },
-        { "char": "ᛱ", "label": "Letra rúnica K" },
-        { "char": "ᛲ", "label": "Letra rúnica Sh" },
-        { "char": "ᛳ", "label": "Letra rúnica Oo" },
-        { "char": "ᛴ", "label": "Letra rúnica Os del cofre de los francos" },
-        { "char": "ᛵ", "label": "Letra rúnica Is del cofre de los francos" },
-        { "char": "ᛶ", "label": "Letra rúnica Eh del cofre de los francos" },
-        { "char": "ᛷ", "label": "Letra rúnica Ac del cofre de los francos" },
-        { "char": "ᛸ", "label": "Letra rúnica Aesc del cofre de los francos" }
+        { "char": "ᛮ", "label": "Arlaug (número áureo)" },
+        { "char": "ᛯ", "label": "Tvimadur (número áureo)" },
+        { "char": "ᛰ", "label": "Belgthor (número áureo)" }
       ]
     },
     {

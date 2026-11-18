@@ -1,0 +1,251 @@
+{
+  "slug": "card-suit-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Card Suit Symbols ♠♥♦♣ — Playing Card Suits Copy & Paste",
+  "meta_description": "Browse and copy playing card suit symbols, dice, dominoes, and game-related Unicode characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/card-suit-symbols/",
+  "breadcrumb": "Card Suit Symbols",
+  "hero_h1": "Card Suit Symbols ♠ ♥ ♦ ♣",
+  "hero_tagline": "A reference collection of playing card suit symbols, dice, domino pieces, and game-related Unicode characters. Click any symbol to copy it instantly.",
+  "intro": "This library contains Unicode symbols for playing card suits (hearts, diamonds, clubs, spades), individual card characters, dice faces, and other game-related marks. Symbols are grouped by game type and category.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/card-suit-symbols/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/naipes-de-baralho/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/spielkarten-symbole/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-kart/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/trump-kigou/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/teureompeu-kadeu-giho/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-cartas/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/iskambil-sembolleri/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-carte-da-gioco/" },
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/kortfarg-symboler/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/card-suit-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "standard-suits",
+      "label": "Standard Suits",
+      "h2": "Standard Card Suits",
+      "symbols": [
+        { "char": "♠", "label": "Spade" },
+        { "char": "♥", "label": "Heart" },
+        { "char": "♦", "label": "Diamond" },
+        { "char": "♣", "label": "Club" }
+      ]
+    },
+    {
+      "id": "outlined-suits",
+      "label": "Outlined Suits",
+      "h2": "Outlined Card Suits",
+      "symbols": [
+        { "char": "♤", "label": "White Spade" },
+        { "char": "♡", "label": "White Heart" },
+        { "char": "♢", "label": "White Diamond" },
+        { "char": "♧", "label": "White Club" }
+      ]
+    },
+    {
+      "id": "card-suits-combined",
+      "label": "Card Suits: filled & outlined",
+      "h2": "Card Suits: Filled & Outlined (8)",
+      "intro": "All eight Unicode card-suit glyphs together, filled (♠ ♥ ♦ ♣) and outlined (♤ ♡ ♢ ♧), the canonical \"named set\" for playing-card decoration.",
+      "symbols": [
+        { "char": "♠", "label": "Spade" },
+        { "char": "♥", "label": "Heart" },
+        { "char": "♦", "label": "Diamond" },
+        { "char": "♣", "label": "Club" },
+        { "char": "♤", "label": "White Spade" },
+        { "char": "♡", "label": "White Heart" },
+        { "char": "♢", "label": "White Diamond" },
+        { "char": "♧", "label": "White Club" }
+      ]
+    },
+    {
+      "id": "dice",
+      "label": "Dice",
+      "h2": "Dice Faces",
+      "symbols": [
+        { "char": "⚀", "label": "Die Face 1" },
+        { "char": "⚁", "label": "Die Face 2" },
+        { "char": "⚂", "label": "Die Face 3" },
+        { "char": "⚃", "label": "Die Face 4" },
+        { "char": "⚄", "label": "Die Face 5" },
+        { "char": "⚅", "label": "Die Face 6" }
+      ]
+    },
+    {
+      "id": "playing-card-emojis",
+      "label": "Playing Card Emojis",
+      "h2": "Playing Card Emojis",
+      "symbols": [
+        { "char": "🃏", "label": "Joker" },
+        { "char": "🎴", "label": "Flower Playing Cards" },
+        { "char": "🀄", "label": "Mahjong Red Dragon" }
+      ]
+    },
+    {
+      "id": "trump-and-special-cards",
+      "label": "Trump & Special Cards",
+      "h2": "Trump and Special Card Symbols",
+      "symbols": [
+        { "char": "🂠", "label": "Playing Card Back" },
+        { "char": "🂡", "label": "Ace of Spades" },
+        { "char": "🂢", "label": "Two of Spades" },
+        { "char": "🂮", "label": "King of Spades" },
+        { "char": "🂱", "label": "Ace of Hearts" },
+        { "char": "🂾", "label": "King of Hearts" },
+        { "char": "🃁", "label": "Ace of Diamonds" },
+        { "char": "🃎", "label": "King of Diamonds" },
+        { "char": "🃑", "label": "Ace of Clubs" },
+        { "char": "🃞", "label": "King of Clubs" }
+      ]
+    },
+    {
+      "id": "full-deck-52-cards",
+      "label": "Full Deck",
+      "h2": "All 52 Playing Cards",
+      "intro": "Every card from ace to king in spades, hearts, diamonds and clubs, from the Unicode Playing Cards block. They are text characters rather than emoji, so they take the colour of the surrounding text.",
+      "symbols": [
+        { "char": "🂡", "label": "Ace of Spades" },
+        { "char": "🂢", "label": "Two of Spades" },
+        { "char": "🂣", "label": "Three of Spades" },
+        { "char": "🂤", "label": "Four of Spades" },
+        { "char": "🂥", "label": "Five of Spades" },
+        { "char": "🂦", "label": "Six of Spades" },
+        { "char": "🂧", "label": "Seven of Spades" },
+        { "char": "🂨", "label": "Eight of Spades" },
+        { "char": "🂩", "label": "Nine of Spades" },
+        { "char": "🂪", "label": "Ten of Spades" },
+        { "char": "🂫", "label": "Jack of Spades" },
+        { "char": "🂭", "label": "Queen of Spades" },
+        { "char": "🂮", "label": "King of Spades" },
+        { "char": "🂱", "label": "Ace of Hearts" },
+        { "char": "🂲", "label": "Two of Hearts" },
+        { "char": "🂳", "label": "Three of Hearts" },
+        { "char": "🂴", "label": "Four of Hearts" },
+        { "char": "🂵", "label": "Five of Hearts" },
+        { "char": "🂶", "label": "Six of Hearts" },
+        { "char": "🂷", "label": "Seven of Hearts" },
+        { "char": "🂸", "label": "Eight of Hearts" },
+        { "char": "🂹", "label": "Nine of Hearts" },
+        { "char": "🂺", "label": "Ten of Hearts" },
+        { "char": "🂻", "label": "Jack of Hearts" },
+        { "char": "🂽", "label": "Queen of Hearts" },
+        { "char": "🂾", "label": "King of Hearts" },
+        { "char": "🃁", "label": "Ace of Diamonds" },
+        { "char": "🃂", "label": "Two of Diamonds" },
+        { "char": "🃃", "label": "Three of Diamonds" },
+        { "char": "🃄", "label": "Four of Diamonds" },
+        { "char": "🃅", "label": "Five of Diamonds" },
+        { "char": "🃆", "label": "Six of Diamonds" },
+        { "char": "🃇", "label": "Seven of Diamonds" },
+        { "char": "🃈", "label": "Eight of Diamonds" },
+        { "char": "🃉", "label": "Nine of Diamonds" },
+        { "char": "🃊", "label": "Ten of Diamonds" },
+        { "char": "🃋", "label": "Jack of Diamonds" },
+        { "char": "🃍", "label": "Queen of Diamonds" },
+        { "char": "🃎", "label": "King of Diamonds" },
+        { "char": "🃑", "label": "Ace of Clubs" },
+        { "char": "🃒", "label": "Two of Clubs" },
+        { "char": "🃓", "label": "Three of Clubs" },
+        { "char": "🃔", "label": "Four of Clubs" },
+        { "char": "🃕", "label": "Five of Clubs" },
+        { "char": "🃖", "label": "Six of Clubs" },
+        { "char": "🃗", "label": "Seven of Clubs" },
+        { "char": "🃘", "label": "Eight of Clubs" },
+        { "char": "🃙", "label": "Nine of Clubs" },
+        { "char": "🃚", "label": "Ten of Clubs" },
+        { "char": "🃛", "label": "Jack of Clubs" },
+        { "char": "🃝", "label": "Queen of Clubs" },
+        { "char": "🃞", "label": "King of Clubs" }
+      ]
+    },
+    {
+      "id": "tarot-knights-white-joker",
+      "label": "Knights & Joker",
+      "h2": "Tarot Knights and the White Joker",
+      "intro": "Tarot decks add a knight between the jack and the queen. Unicode encodes one knight per suit, plus a white joker.",
+      "symbols": [
+        { "char": "🂬", "label": "Knight of Spades" },
+        { "char": "🂼", "label": "Knight of Hearts" },
+        { "char": "🃌", "label": "Knight of Diamonds" },
+        { "char": "🃜", "label": "Knight of Clubs" },
+        { "char": "🃟", "label": "White Joker" }
+      ]
+    },
+    {
+      "id": "tarot-trumps-red-joker",
+      "label": "Tarot Trumps",
+      "h2": "Tarot Trumps and the Red Joker",
+      "intro": "The 21 numbered trumps and the Fool from the French tarot deck, plus the red joker. Android’s built-in fonts have no glyph for these 23 cards (checked against the font files Android ships), so most Android phones show an empty box. The character you copy is still correct, and it shows on any device whose fonts include it.",
+      "symbols": [
+        { "char": "🃠", "label": "Fool (0)" },
+        { "char": "🃡", "label": "I" },
+        { "char": "🃢", "label": "II" },
+        { "char": "🃣", "label": "III" },
+        { "char": "🃤", "label": "IV" },
+        { "char": "🃥", "label": "V" },
+        { "char": "🃦", "label": "VI" },
+        { "char": "🃧", "label": "VII" },
+        { "char": "🃨", "label": "VIII" },
+        { "char": "🃩", "label": "IX" },
+        { "char": "🃪", "label": "X" },
+        { "char": "🃫", "label": "XI" },
+        { "char": "🃬", "label": "XII" },
+        { "char": "🃭", "label": "XIII" },
+        { "char": "🃮", "label": "XIV" },
+        { "char": "🃯", "label": "XV" },
+        { "char": "🃰", "label": "XVI" },
+        { "char": "🃱", "label": "XVII" },
+        { "char": "🃲", "label": "XVIII" },
+        { "char": "🃳", "label": "XIX" },
+        { "char": "🃴", "label": "XX" },
+        { "char": "🃵", "label": "XXI" },
+        { "char": "🂿", "label": "Red Joker" }
+      ]
+    },
+    {
+      "id": "game-symbols",
+      "label": "Gaming",
+      "h2": "Game Symbols",
+      "symbols": [
+        { "char": "🎰", "label": "Slot Machine" },
+        { "char": "🎲", "label": "Game Die" },
+        { "char": "🎯", "label": "Bullseye" },
+        { "char": "🎱", "label": "Pool 8 Ball" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/chess-symbols/",
+      "title": "Chess Symbols",
+      "desc": "Unicode chess pieces: white and black kings, queens, rooks, bishops, knights, and pawns."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "A collection of heart-shaped Unicode symbols and emoji, including the classic card suit heart."
+    },
+    { "href": "/library/star-symbols/", "title": "Star Symbol Collection", "desc": "Star, asterisk, and sparkle symbols available in Unicode." },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "LinkedIn Comment Styling",
+      "desc": "Techniques for adding bold, italic, and symbol formatting to LinkedIn comments."
+    },
+    {
+      "href": "/symbol/heart-symbol/",
+      "title": "Heart Symbol",
+      "desc": "The heart symbol (♥ ❤), a card-suit glyph that became the universal sign for love, plus its emoji versions and the <3 text heart."
+    },
+    { "href": "/symbol/pawn-symbol/", "title": "Pawn Symbol (♟ ♙)", "desc": "The black ♟ and white ♙ chess pawn." },
+    {
+      "href": "/symbol/spade-symbol/",
+      "title": "Spade Symbol",
+      "desc": "The spade suit in both Unicode forms: solid ♠ (U+2660) and hollow ♤ (U+2664)."
+    }
+  ]
+}

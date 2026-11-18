@@ -355,15 +355,15 @@
       "intro": "Gotowe wiersze do skopiowania w całości.",
       "symbols": [
         {
-          "char": "☑ Done",
+          "char": "☑ Zrobione",
           "label": "Wiersz „zrobione”"
         },
         {
-          "char": "☐ To-do",
+          "char": "☐ Do zrobienia",
           "label": "Wiersz „do zrobienia”"
         },
         {
-          "char": "✔ Completed · ✘ Pending",
+          "char": "✔ Ukończone · ✘ Oczekuje",
           "label": "Para ukończone / oczekuje"
         },
         {
@@ -375,7 +375,7 @@
           "label": "Puste nawiasy"
         },
         {
-          "char": "✅ Yes  ❌ No",
+          "char": "✅ Tak  ❌ Nie",
           "label": "Tak / Nie"
         }
       ]

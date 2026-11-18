@@ -27,23 +27,23 @@
         },
         {
           "char": "🥳",
-          "label": "Balon"
-        },
-        {
-          "char": "🪅",
           "label": "Parti Yüzü"
         },
         {
+          "char": "🪅",
+          "label": "Pinyata"
+        },
+        {
           "char": "🎈",
-          "label": "Hediye"
+          "label": "Balon"
         },
         {
           "char": "🎁",
-          "label": "Parti Şapkası"
+          "label": "Hediye Paketi"
         },
         {
           "char": "🎀",
-          "label": "Pinyata"
+          "label": "Kurdele"
         }
       ]
     },
@@ -63,7 +63,7 @@
         },
         {
           "char": "🍰",
-          "label": "Cupcake"
+          "label": "Yaş Pasta"
         },
         {
           "char": "🕯",
@@ -75,7 +75,7 @@
         },
         {
           "char": "🍭",
-          "label": "Çikolata"
+          "label": "Lolipop"
         }
       ]
     },
@@ -99,11 +99,11 @@
         },
         {
           "char": "🍹",
-          "label": "Kokteyl"
+          "label": "Tropikal İçecek"
         },
         {
           "char": "🍸",
-          "label": "Tropikal İçecek"
+          "label": "Kokteyl Kadehi"
         }
       ]
     },
@@ -131,7 +131,7 @@
         },
         {
           "char": "🎵",
-          "label": "Hoparlör"
+          "label": "Nota"
         },
         {
           "char": "🎤",
@@ -139,11 +139,11 @@
         },
         {
           "char": "🔊",
-          "label": "Kulaklık"
+          "label": "Yüksek Sesli Hoparlör"
         },
         {
           "char": "👯",
-          "label": "Saksafon"
+          "label": "Tavşan Kulaklı İkili"
         }
       ]
     },
@@ -175,7 +175,7 @@
         },
         {
           "char": "💫",
-          "label": "Çakan Şimşek"
+          "label": "Dönen Yıldızlar"
         }
       ]
     },
@@ -195,7 +195,7 @@
         },
         {
           "char": "🎓",
-          "label": "Madalya"
+          "label": "Mezuniyet Kepi"
         },
         {
           "char": "💐",

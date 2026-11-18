@@ -1,0 +1,181 @@
+{
+  "slug": "moon-celestial-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Moon & Celestial Symbols Copy & Paste — Moon Phases, Stars & Suns",
+  "meta_description": "Moon, sun, and celestial symbols for dreamy and cosmic aesthetic bios. Copy & paste moon phases, star symbols, and night-sky decorations.",
+  "canonical": "https://ultratextgen.com/library/moon-celestial-symbols/",
+  "breadcrumb": "Moon & Celestial Symbols",
+  "hero_h1": "Moon & Celestial Symbols",
+  "hero_tagline": "Moon phases, crescent moons, suns, stars, and cosmic symbols for dreamy aesthetic bios. Click any symbol to copy instantly.",
+  "intro": "The night sky has inspired human creativity for millennia, and celestial symbols remain among the most popular Unicode decorations. From full moon phase sequences to crescent moons, suns, and cosmic sparkles, these characters create a dreamy, stargazing aesthetic. Use them in bios, captions, and usernames on any platform that supports Unicode text.",
+  "date_published": "2026-04-26",
+  "date_modified": "2026-04-26",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/moon-celestial-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-luna/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/ay-sembolleri/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/simvoly-luny/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/tsuki-kigou/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-luna/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/dal-giho/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/mond-symbole/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/emoji-soleil-et-lune/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/moon-celestial-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "moon-phases",
+      "label": "Moon Phases",
+      "h2": "Moon Phase Emojis",
+      "symbols": [
+        { "char": "🌑", "label": "New Moon" },
+        { "char": "🌒", "label": "Waxing Crescent Moon" },
+        { "char": "🌓", "label": "First Quarter Moon" },
+        { "char": "🌔", "label": "Waxing Gibbous Moon" },
+        { "char": "🌕", "label": "Full Moon" },
+        { "char": "🌖", "label": "Waning Gibbous Moon" },
+        { "char": "🌗", "label": "Last Quarter Moon" },
+        { "char": "🌘", "label": "Waning Crescent Moon" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🌚", "label": "New Moon Face" },
+        { "char": "🌛", "label": "First Quarter Moon Face" },
+        { "char": "🌜", "label": "Last Quarter Moon Face" }
+      ]
+    },
+    {
+      "id": "crescent-moons",
+      "label": "Moon & Crescent Symbols",
+      "h2": "Moon & Crescent Symbols",
+      "symbols": [
+        { "char": "☽", "label": "First Quarter Moon" },
+        { "char": "☾", "label": "Last Quarter Moon" },
+        { "char": "☪", "label": "Star and Crescent" },
+        { "char": "ⵉ", "label": "Tifinagh Yi (used as a star accent)" }
+      ]
+    },
+    {
+      "id": "sun-symbols",
+      "label": "Sun Symbols",
+      "h2": "Sun Symbols",
+      "symbols": [
+        { "char": "☼", "label": "White Sun With Rays" },
+        { "char": "☉", "label": "Sun" },
+        { "char": "🌞", "label": "Sun with Face" },
+        { "char": "🌝", "label": "Full Moon with Face" },
+        { "char": "☀", "label": "Black Sun with Rays" },
+        { "char": "𖤓", "label": "Six-Pointed Black Star" }
+      ]
+    },
+    {
+      "id": "stars-sparkles-celestial",
+      "label": "Stars & Sparkles",
+      "h2": "Stars & Sparkles",
+      "symbols": [
+        { "char": "⋆", "label": "Six-Pointed Star Operator" },
+        { "char": "✦", "label": "Black Four-Pointed Star" },
+        { "char": "✧", "label": "White Four-Pointed Star" },
+        { "char": "✩", "label": "Stress Outlined Star" },
+        { "char": "✪", "label": "Circled White Star" },
+        { "char": "𖤐", "label": "Bamum Letter Ngkeuri (used as \"Black Sun\")" },
+        { "char": "⭒", "label": "Outlined Star" }
+      ]
+    },
+    {
+      "id": "sun-progression",
+      "label": "Sun Progression",
+      "h2": "Sun Progression Sequence",
+      "intro": "The four-emoji day-cycle sequence (sunrise, midday sun, sunset, and night sky) in astronomical order.",
+      "symbols": [
+        { "char": "🌅", "label": "Sunrise" },
+        { "char": "🌞", "label": "Midday Sun" },
+        { "char": "🌇", "label": "Sunset" },
+        { "char": "🌃", "label": "Night with Stars" }
+      ]
+    },
+    {
+      "id": "cosmic-space",
+      "label": "Cosmic & Space",
+      "h2": "Cosmic & Space Symbols",
+      "symbols": [
+        { "char": "☄", "label": "Comet" },
+        { "char": "🪐", "label": "Ringed Planet" },
+        { "char": "🌌", "label": "Milky Way Emoji" },
+        { "char": "✨", "label": "Sparkles Emoji" },
+        { "char": "🛸", "label": "Flying Saucer Emoji" }
+      ]
+    },
+    {
+      "id": "sun-moon-pairs",
+      "label": "Sun & Moon",
+      "h2": "Sun & Moon Pairs & Night-Sky Sets",
+      "symbols": [
+        { "char": "☀☾", "label": "Sun & Moon" },
+        { "char": "☼☽", "label": "Day & Night" },
+        { "char": "🌞🌚", "label": "Faces Pair" },
+        { "char": "☀️ ⋆ 🌙", "label": "Sun · Moon" },
+        { "char": "⋆｡˚☾˚｡⋆", "label": "Framed Moon" },
+        { "char": "˚₊‧꒰ა ☾ ໒꒱ ‧₊˚", "label": "Moon Wings" },
+        { "char": "✦ ˚ ☾ ˚ ✦", "label": "Starry Moon" },
+        { "char": "🌙✨⭐", "label": "Night Sky" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "celestial-collections",
+    "label": "Celestial Collections",
+    "h2": "Celestial Sequences",
+    "intro": "Copy a complete celestial sequence in one click: the eight moon phases in astronomical order, plus the Sun Progression cycle from sunrise to night."
+  },
+  "collection_container_id": "celestialCollectionsContainer",
+  "collections": [
+    {
+      "name": "Moon Phases (astronomical order)",
+      "flags": ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sun Progression (day cycle)",
+      "flags": ["🌅", "🌞", "🌇", "🌃"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Current Moon Phase Emoji",
+      "paragraphs": [
+        "This readout works out the Moon&#39;s phase for your own date, in your browser: it counts the time since a known new moon and divides it by the average lunar cycle of 29.53 days. The real Moon runs up to about 18 hours ahead of or behind that average, so the phase shown is within a day of the exact one.",
+        "Moon emoji are drawn the way the Moon looks from the Northern Hemisphere. South of the equator the lit side is reversed, so a waxing crescent looks like 🌘 there. Choose Southern and the readout switches to the emoji that matches your sky. It starts on Southern when your device&#39;s time zone is south of the equator."
+      ]
+    },
+    {
+      "h2": "Celestial Sequences",
+      "paragraphs": [
+        "Copy a complete celestial sequence in one click: the eight moon phases in astronomical order, plus the Sun Progression cycle from sunrise to night."
+      ]
+    },
+    {
+      "h2": "Two systems, two purposes",
+      "paragraphs": [
+        "Unicode&rsquo;s moon signs come from two separate worlds. &#9789; and &#9790; belong to the astronomical symbol set, where they sit beside the planet signs: technical notation, single-colour, in use for centuries in almanacs and ephemerides. The moon-phase emoji &#127761; to &#127768; arrived only with the emoji set and show the moon as a picture. In practice, for an astrology or astronomy text the single-colour signs are right, and for a bio or a message the emoji are. Both mean the same thing, but they speak in different registers."
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/zodiac-symbols/", "title": "Zodiac Symbols", "desc": "Western zodiac signs and planetary symbols." },
+    { "href": "/library/witchy-occult-symbols/", "title": "Witchy & Occult Symbols", "desc": "Esoteric and occult Unicode symbols." },
+    { "href": "/library/star-symbols/", "title": "Star Symbol Collection", "desc": "Stars, sparkles, and asterisks." },
+    { "href": "/library/sparkle-symbols/", "title": "Sparkle Symbols", "desc": "Glitter and sparkle decoration characters." },
+    { "href": "/library/weather-symbols/", "title": "Weather Symbols", "desc": "Sun, moon, cloud, and weather icons." },
+    {
+      "href": "/events/eid-mubarak/",
+      "title": "Eid Mubarak Text & Symbol Generator",
+      "desc": "Style a Eid Mubarak greeting live, then copy matching fonts, emoji, kaomoji, and ready-made phrases."
+    },
+    {
+      "href": "/events/ramadan/",
+      "title": "Ramadan Text & Symbol Generator",
+      "desc": "Style a Ramadan greeting live, then copy matching fonts, symbols, kaomoji, and ready-made messages."
+    }
+  ]
+}

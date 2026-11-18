@@ -355,15 +355,15 @@
       "intro": "Des lignes prêtes à copier telles quelles.",
       "symbols": [
         {
-          "char": "☑ Done",
+          "char": "☑ Fait",
           "label": "Ligne « fait »"
         },
         {
-          "char": "☐ To-do",
+          "char": "☐ À faire",
           "label": "Ligne « à faire »"
         },
         {
-          "char": "✔ Completed · ✘ Pending",
+          "char": "✔ Terminé · ✘ En attente",
           "label": "Paire terminé / en attente"
         },
         {
@@ -375,7 +375,7 @@
           "label": "Crochets vides"
         },
         {
-          "char": "✅ Yes  ❌ No",
+          "char": "✅ Oui  ❌ Non",
           "label": "Oui / Non"
         }
       ]

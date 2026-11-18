@@ -241,8 +241,352 @@
      "label": "Bola 8 de Billar"
     }
    ]
+  },
+  {
+    "id": "full-deck-52-cards",
+    "label": "Baraja completa",
+    "h2": "Las 52 cartas de la baraja",
+    "intro": "Todas las cartas, del as al rey, en picas, corazones, diamantes y tréboles, del bloque Unicode Playing Cards. Son caracteres de texto, no emojis, así que toman el color del texto que los rodea.",
+    "symbols": [
+      {
+        "char": "🂡",
+        "label": "As de Picas"
+      },
+      {
+        "char": "🂢",
+        "label": "Dos de Picas"
+      },
+      {
+        "char": "🂣",
+        "label": "Tres de Picas"
+      },
+      {
+        "char": "🂤",
+        "label": "Cuatro de Picas"
+      },
+      {
+        "char": "🂥",
+        "label": "Cinco de Picas"
+      },
+      {
+        "char": "🂦",
+        "label": "Seis de Picas"
+      },
+      {
+        "char": "🂧",
+        "label": "Siete de Picas"
+      },
+      {
+        "char": "🂨",
+        "label": "Ocho de Picas"
+      },
+      {
+        "char": "🂩",
+        "label": "Nueve de Picas"
+      },
+      {
+        "char": "🂪",
+        "label": "Diez de Picas"
+      },
+      {
+        "char": "🂫",
+        "label": "Jota de Picas"
+      },
+      {
+        "char": "🂭",
+        "label": "Reina de Picas"
+      },
+      {
+        "char": "🂮",
+        "label": "Rey de Picas"
+      },
+      {
+        "char": "🂱",
+        "label": "As de Corazones"
+      },
+      {
+        "char": "🂲",
+        "label": "Dos de Corazones"
+      },
+      {
+        "char": "🂳",
+        "label": "Tres de Corazones"
+      },
+      {
+        "char": "🂴",
+        "label": "Cuatro de Corazones"
+      },
+      {
+        "char": "🂵",
+        "label": "Cinco de Corazones"
+      },
+      {
+        "char": "🂶",
+        "label": "Seis de Corazones"
+      },
+      {
+        "char": "🂷",
+        "label": "Siete de Corazones"
+      },
+      {
+        "char": "🂸",
+        "label": "Ocho de Corazones"
+      },
+      {
+        "char": "🂹",
+        "label": "Nueve de Corazones"
+      },
+      {
+        "char": "🂺",
+        "label": "Diez de Corazones"
+      },
+      {
+        "char": "🂻",
+        "label": "Jota de Corazones"
+      },
+      {
+        "char": "🂽",
+        "label": "Reina de Corazones"
+      },
+      {
+        "char": "🂾",
+        "label": "Rey de Corazones"
+      },
+      {
+        "char": "🃁",
+        "label": "As de Diamantes"
+      },
+      {
+        "char": "🃂",
+        "label": "Dos de Diamantes"
+      },
+      {
+        "char": "🃃",
+        "label": "Tres de Diamantes"
+      },
+      {
+        "char": "🃄",
+        "label": "Cuatro de Diamantes"
+      },
+      {
+        "char": "🃅",
+        "label": "Cinco de Diamantes"
+      },
+      {
+        "char": "🃆",
+        "label": "Seis de Diamantes"
+      },
+      {
+        "char": "🃇",
+        "label": "Siete de Diamantes"
+      },
+      {
+        "char": "🃈",
+        "label": "Ocho de Diamantes"
+      },
+      {
+        "char": "🃉",
+        "label": "Nueve de Diamantes"
+      },
+      {
+        "char": "🃊",
+        "label": "Diez de Diamantes"
+      },
+      {
+        "char": "🃋",
+        "label": "Jota de Diamantes"
+      },
+      {
+        "char": "🃍",
+        "label": "Reina de Diamantes"
+      },
+      {
+        "char": "🃎",
+        "label": "Rey de Diamantes"
+      },
+      {
+        "char": "🃑",
+        "label": "As de Tréboles"
+      },
+      {
+        "char": "🃒",
+        "label": "Dos de Tréboles"
+      },
+      {
+        "char": "🃓",
+        "label": "Tres de Tréboles"
+      },
+      {
+        "char": "🃔",
+        "label": "Cuatro de Tréboles"
+      },
+      {
+        "char": "🃕",
+        "label": "Cinco de Tréboles"
+      },
+      {
+        "char": "🃖",
+        "label": "Seis de Tréboles"
+      },
+      {
+        "char": "🃗",
+        "label": "Siete de Tréboles"
+      },
+      {
+        "char": "🃘",
+        "label": "Ocho de Tréboles"
+      },
+      {
+        "char": "🃙",
+        "label": "Nueve de Tréboles"
+      },
+      {
+        "char": "🃚",
+        "label": "Diez de Tréboles"
+      },
+      {
+        "char": "🃛",
+        "label": "Jota de Tréboles"
+      },
+      {
+        "char": "🃝",
+        "label": "Reina de Tréboles"
+      },
+      {
+        "char": "🃞",
+        "label": "Rey de Tréboles"
+      }
+    ]
+  },
+  {
+    "id": "tarot-knights-white-joker",
+    "label": "Caballeros y comodín",
+    "h2": "Caballeros del tarot y el comodín blanco",
+    "intro": "Las barajas de tarot llevan un caballero entre la jota y la reina. Unicode incluye un caballero por palo, además de un comodín blanco.",
+    "symbols": [
+      {
+        "char": "🂬",
+        "label": "Caballero de Picas"
+      },
+      {
+        "char": "🂼",
+        "label": "Caballero de Corazones"
+      },
+      {
+        "char": "🃌",
+        "label": "Caballero de Diamantes"
+      },
+      {
+        "char": "🃜",
+        "label": "Caballero de Tréboles"
+      },
+      {
+        "char": "🃟",
+        "label": "Comodín Blanco"
+      }
+    ]
+  },
+  {
+    "id": "tarot-trumps-red-joker",
+    "label": "Triunfos del tarot",
+    "h2": "Triunfos del tarot y el comodín rojo",
+    "intro": "Los 21 triunfos numerados y el Loco del tarot francés, más el comodín rojo. Las fuentes integradas de Android no tienen dibujo para estas 23 cartas (comprobado en los archivos de fuentes que trae Android), así que la mayoría de los teléfonos Android muestran un recuadro vacío. El carácter que copias sigue siendo el correcto y se ve en cualquier dispositivo cuyas fuentes lo incluyan.",
+    "symbols": [
+      {
+        "char": "🃠",
+        "label": "Loco (0)"
+      },
+      {
+        "char": "🃡",
+        "label": "I"
+      },
+      {
+        "char": "🃢",
+        "label": "II"
+      },
+      {
+        "char": "🃣",
+        "label": "III"
+      },
+      {
+        "char": "🃤",
+        "label": "IV"
+      },
+      {
+        "char": "🃥",
+        "label": "V"
+      },
+      {
+        "char": "🃦",
+        "label": "VI"
+      },
+      {
+        "char": "🃧",
+        "label": "VII"
+      },
+      {
+        "char": "🃨",
+        "label": "VIII"
+      },
+      {
+        "char": "🃩",
+        "label": "IX"
+      },
+      {
+        "char": "🃪",
+        "label": "X"
+      },
+      {
+        "char": "🃫",
+        "label": "XI"
+      },
+      {
+        "char": "🃬",
+        "label": "XII"
+      },
+      {
+        "char": "🃭",
+        "label": "XIII"
+      },
+      {
+        "char": "🃮",
+        "label": "XIV"
+      },
+      {
+        "char": "🃯",
+        "label": "XV"
+      },
+      {
+        "char": "🃰",
+        "label": "XVI"
+      },
+      {
+        "char": "🃱",
+        "label": "XVII"
+      },
+      {
+        "char": "🃲",
+        "label": "XVIII"
+      },
+      {
+        "char": "🃳",
+        "label": "XIX"
+      },
+      {
+        "char": "🃴",
+        "label": "XX"
+      },
+      {
+        "char": "🃵",
+        "label": "XXI"
+      },
+      {
+        "char": "🂿",
+        "label": "Comodín Rojo"
+      }
+    ]
   }
- ],
+],
  "related": [
   {
    "href": "/es/library/simbolos-de-ajedrez/",

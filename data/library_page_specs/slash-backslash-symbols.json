@@ -1,0 +1,107 @@
+{
+  "slug": "slash-backslash-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Slash & Backslash Symbols: Copy & Paste All Slash Characters",
+  "meta_description": "Browse and copy every slash and backslash character — forward slashes, backslash variants, fraction slashes, and division symbols. Click any to copy.",
+  "canonical": "https://ultratextgen.com/library/slash-backslash-symbols/",
+  "breadcrumb": "Slash & Backslash Symbols",
+  "hero_h1": "Slash & Backslash Symbols",
+  "hero_tagline": "Every slash and backslash Unicode character: from the standard solidus to fraction slashes, division symbols, and decorative variants. Click any symbol to copy it instantly.",
+  "intro": "This library covers forward slashes, backslashes, and related separator characters in Unicode. The humble slash has more variants than most people realize, from math-specific division slashes to typographic fraction slashes and fullwidth forms.",
+  "date_published": "2026-04-12",
+  "date_modified": "2026-04-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/slash-backslash-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/backslash-zeichen/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolo-slash/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/slash-backslash-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "forward-slashes",
+      "label": "Forward Slashes",
+      "h2": "Forward Slash Variants",
+      "symbols": [
+        { "char": "/", "label": "Solidus (Forward Slash)" },
+        { "char": "⁄", "label": "Fraction Slash" },
+        { "char": "∕", "label": "Division Slash" },
+        { "char": "⧸", "label": "Big Solidus" },
+        { "char": "／", "label": "Fullwidth Solidus" },
+        { "char": "╱", "label": "Box Drawing Diagonal" },
+        { "char": "⟋", "label": "Mathematical Rising Diagonal" }
+      ]
+    },
+    {
+      "id": "backslashes",
+      "label": "Backslashes",
+      "h2": "Backslash Variants",
+      "symbols": [
+        { "char": "\\", "label": "Reverse Solidus (Backslash)" },
+        { "char": "∖", "label": "Set Minus" },
+        { "char": "⧵", "label": "Reverse Solidus Operator" },
+        { "char": "＼", "label": "Fullwidth Reverse Solidus" },
+        { "char": "╲", "label": "Box Drawing Reverse Diagonal" },
+        { "char": "⟍", "label": "Mathematical Falling Diagonal" },
+        { "char": "﹨", "label": "Small Reverse Solidus" }
+      ]
+    },
+    {
+      "id": "division-math-slashes",
+      "label": "Division & Math",
+      "h2": "Division & Math Slashes",
+      "symbols": [
+        { "char": "÷", "label": "Division Sign" },
+        { "char": "∶", "label": "Ratio" },
+        { "char": "∷", "label": "Proportion" },
+        { "char": "⧶", "label": "Solidus With Overbar" },
+        { "char": "⫽", "label": "Double Solidus Operator" },
+        { "char": "⧷", "label": "Reverse Solidus With Stroke" },
+        { "char": "⧹", "label": "Big Reverse Solidus" }
+      ]
+    },
+    {
+      "id": "decorative-slashes",
+      "label": "Decorative Slashes",
+      "h2": "Decorative & Special Slashes",
+      "symbols": [
+        { "char": "╳", "label": "Light Diagonal Cross" },
+        { "char": "∥", "label": "Parallel To" },
+        { "char": "⫴", "label": "Triple Vertical Bar" },
+        { "char": "⫾", "label": "White Vertical Bar" },
+        { "char": "|", "label": "Vertical Line" },
+        { "char": "‖", "label": "Double Vertical Line" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Slash vs Backslash vs Division Slash",
+      "paragraphs": [
+        "<strong>Forward slash (/)</strong>: Used in URLs, file paths (Unix/Mac), fractions (3/4), and dates (12/25). The standard solidus U+002F.",
+        "<strong>Fraction slash (&frasl;)</strong>: U+2044 &mdash; typographically distinct from the solidus, used to build proper fractions like &frac34; when combined with numerators/denominators.",
+        "<strong>Division slash (&divide;)</strong>: U+2215 &mdash; the mathematical division operator, visually similar to / but semantically distinct for math contexts.",
+        "<strong>Backslash (\\)</strong>: Used in Windows file paths and as an escape character in programming. The reverse solidus U+005C. Not interchangeable with forward slash.",
+        "<strong>URL note</strong>: URLs always use forward slash (/). Using a backslash in a URL is incorrect, though some browsers auto-correct it."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators and symbols for equations and scientific notation."
+    },
+    { "href": "/library/bracket-symbols/", "title": "Bracket Symbols", "desc": "All bracket, parenthesis, and enclosure characters." },
+    {
+      "href": "/library/line-divider-symbols/",
+      "title": "Line Divider Symbols",
+      "desc": "Horizontal dividers and separators for posts and formatting."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}

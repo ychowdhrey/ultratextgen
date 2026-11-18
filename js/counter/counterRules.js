@@ -126,6 +126,20 @@
     return 2;
   }
 
+  /* X counts one emoji as 2 however it is built: "All emojis count as 2
+     characters, regardless of complexity" (docs.x.com/fundamentals/counting-characters,
+     read 2026-11-18; twitter-text v3 sets emojiParsingEnabled). Until
+     2026-11-18 this summed code points, so a family emoji cost 11, a flag 4
+     and a keycap 5, and a post X would accept read as over the limit.
+     An emoji here is one grapheme cluster that shows as a picture: it holds a
+     character with emoji presentation, or a pictograph with the emoji
+     selector, or it is a flag pair or a keycap. A bare text symbol such as
+     the copyright sign keeps its code-point weight. */
+  let X_EMOJI_RE = null;
+  try {
+    X_EMOJI_RE = new RegExp("\\p{Emoji_Presentation}|\\p{Extended_Pictographic}\\uFE0F|^[\\u{1F1E6}-\\u{1F1FF}]{2}$|\\u20E3$", "u");
+  } catch (e) { /* no Unicode property escapes: the code-point sum stands */ }
+
   function xWeightedLength(str) {
     if (!str) return 0;
     let total = 0;
@@ -133,6 +147,14 @@
       total += X_URL_WEIGHT;
       return "";
     });
+    if (graphemeSegmenter && X_EMOJI_RE) {
+      for (const part of graphemeSegmenter.segment(withoutUrls)) {
+        const g = part.segment;
+        if (X_EMOJI_RE.test(g)) { total += 2; continue; }
+        for (const ch of g) total += xWeight(ch.codePointAt(0));
+      }
+      return total;
+    }
     for (const ch of withoutUrls) total += xWeight(ch.codePointAt(0));
     return total;
   }
@@ -201,11 +223,17 @@
 
   const LIMITS = [
     /* X / Twitter — the only mainstream platform that counts by weight */
-    { id: "x-post", platform: "x", field: "Post", label: "X / Twitter post", limit: 280, group: "posts", countMode: "x-weighted", unsourced: "GSM 03.38 segment sizes (160 GSM-7 / 70 UCS-2), a telecom standard rather than a platform page" },
+    /* 280 weighted, URLs 23, emoji and CJK 2: docs.x.com/fundamentals/counting-characters
+       and twitter-text config v3 (maxWeightedTweetLength 280, transformedURLLength 23),
+       verified 2026-11-18. Until then this row carried the SMS row's reason by mistake. */
+    { id: "x-post", platform: "x", field: "Post", label: "X / Twitter post", limit: 280, group: "posts", countMode: "x-weighted", source: "https://docs.x.com/fundamentals/counting-characters", verified: "2026-11-18" },
     { id: "x-bio", platform: "x", field: "Bio", label: "X / Twitter bio", limit: 160, group: "bios", unsourced: "no platform page cited yet" },
     { id: "x-name", platform: "x", field: "Display name", label: "X / Twitter display name", limit: 50, group: "usernames", unsourced: "no platform page cited yet" },
 
-    { id: "ig-caption", platform: "instagram", field: "Caption", label: "Instagram caption", limit: 2200, group: "posts", visibleAt: 125, unsourced: "no platform page cited yet" },
+    /* 2,200: Instagram's publishing API reference states "Maximum 2200 characters,
+       30 hashtags, and 20 @ tags" for a caption, verified 2026-11-18. The 125 fold
+       is an observed display cut, not a documented one. */
+    { id: "ig-caption", platform: "instagram", field: "Caption", label: "Instagram caption", limit: 2200, group: "posts", visibleAt: 125, source: "https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/media", verified: "2026-11-18" },
     /* 150: help.instagram.com/728994388226960, verified 2026-09-25. */
     { id: "ig-bio", platform: "instagram", field: "Bio", label: "Instagram bio", limit: 150, group: "bios", source: "https://help.instagram.com/728994388226960", verified: "2026-09-25" },
     { id: "ig-username", platform: "instagram", field: "Username", label: "Instagram username", limit: 30, group: "usernames", unsourced: "Instagram's help pages state no username length (read 2026-11-17); 30 is the figure the app enforces" },
@@ -302,7 +330,7 @@
 
     { id: "zalo-post", platform: "zalo", field: "Post/status", label: "Zalo post/status", limit: 2000, group: "posts", unsourced: "no platform page cited yet" },
 
-    { id: "sms", platform: "sms", field: "Text message", label: "SMS text message", limit: 160, group: "titles", countMode: "gsm", unsourced: "no platform page cited yet" },
+    { id: "sms", platform: "sms", field: "Text message", label: "SMS text message", limit: 160, group: "titles", countMode: "gsm", unsourced: "GSM 03.38 segment sizes (160 GSM-7 / 70 UCS-2; 153 / 67 per part of a longer message), a telecom standard rather than a platform page" },
 
     { id: "meta-title", platform: "seo", field: "Page title", label: "SEO meta title", limit: 60, group: "titles", unsourced: "a display guideline, not a hard limit: Google cuts titles by pixel width" },
     { id: "meta-description", platform: "seo", field: "Meta description", label: "SEO meta description", limit: 155, group: "titles", unsourced: "a display guideline, not a hard limit: Google cuts snippets by pixel width" }
@@ -318,7 +346,28 @@
   /* ============================================================
      analyze / measure
      ============================================================ */
+  /* A limit the visitor states: an application box, a job form, a client's
+     brief, a database column. No table can list those, and the forms that
+     hold them rarely say how they count, so the visitor also picks the unit.
+     Kept OUT of LIMITS on purpose: LIMITS is the table of published platform
+     claims that the pages count and cite, and this is not one of them. */
+  const CUSTOM_ID = "custom";
+  const CUSTOM_MODES = ["codepoint", "nospace", "utf8"];
+  const CUSTOM_MAX = 10000000;
+  const customRule = { id: CUSTOM_ID, platform: CUSTOM_ID, field: "Your own limit", label: "Your own limit",
+    limit: 1000, group: "titles", countMode: "codepoint", custom: true };
+
+  /** Sets the visitor's own limit. Returns the rule, or null when `limit` is not a whole number from 1 up. */
+  function setCustomLimit(limit, mode) {
+    const n = Math.floor(Number(limit));
+    if (!Number.isFinite(n) || n < 1 || n > CUSTOM_MAX) return null;
+    customRule.limit = n;
+    if (CUSTOM_MODES.indexOf(mode) !== -1) customRule.countMode = mode;
+    return customRule;
+  }
+
   function ruleById(limitId) {
+    if (limitId === CUSTOM_ID) return customRule;
     return LIMITS.find((r) => r.id === limitId) || LIMITS[0];
   }
 
@@ -330,6 +379,8 @@
     if (mode === "x-weighted") return xWeightedLength(str || "");
     if (mode === "graphemes") return graphemes(str || "");
     if (mode === "utf16") return utf16Units(str || "");
+    if (mode === "utf8") return utf8Bytes(str || "");
+    if (mode === "nospace") return codePoints((str || "").replace(/\s/g, ""));
     return codePoints(str || "");
   }
 
@@ -459,7 +510,11 @@
     const labels = cfg.labels || {};
     const fieldLabels = cfg.fields || {};
     const platformLabels = cfg.platforms || {};
-    const start = cfg.selected && LIMITS.some((r) => r.id === cfg.selected) ? cfg.selected : LIMITS[0].id;
+    /* The own-limit option appears only where the page supplies its strings
+       (`custom`), so a translated page never shows it in English. */
+    const customText = cfg.custom && cfg.custom.name ? cfg.custom : null;
+    const known = (id) => LIMITS.some((r) => r.id === id) || (id === CUSTOM_ID && !!customText);
+    const start = cfg.selected && known(cfg.selected) ? cfg.selected : LIMITS[0].id;
     const state = { limitId: start };
 
     mount.innerHTML = "";
@@ -487,6 +542,47 @@
     row.appendChild(platformSelect);
     row.appendChild(fieldSelect);
     mount.appendChild(row);
+
+    /* The own-limit controls: a number and the unit it is counted in. */
+    let customRow = null;
+    let customInput = null;
+    let customMode = null;
+    if (customText) {
+      const opt = document.createElement("option");
+      opt.value = CUSTOM_ID;
+      opt.textContent = customText.name;
+      platformSelect.appendChild(opt);
+
+      customRow = el("div", "cc-selects cc-custom");
+      customRow.hidden = true;
+      customInput = document.createElement("input");
+      customInput.type = "number";
+      customInput.className = "cc-select cc-custom-limit";
+      customInput.min = "1";
+      customInput.step = "1";
+      customInput.inputMode = "numeric";
+      customInput.setAttribute("aria-label", customText.limitLabel || customText.name);
+      customMode = document.createElement("select");
+      customMode.className = "cc-select";
+      customMode.setAttribute("aria-label", customText.modeLabel || customText.name);
+      CUSTOM_MODES.forEach((m) => {
+        const o = document.createElement("option");
+        o.value = m;
+        o.textContent = (customText.modes && customText.modes[m]) || m;
+        customMode.appendChild(o);
+      });
+      /* The limit is remembered on this device only. It is a number and a
+         unit, never the visitor's text. */
+      try {
+        const saved = JSON.parse(window.localStorage.getItem("utg.counter.ownLimit") || "null");
+        if (saved) setCustomLimit(saved.limit, saved.mode);
+      } catch (e) { /* storage blocked: the default stands */ }
+      customInput.value = String(customRule.limit);
+      customMode.value = customRule.countMode;
+      customRow.appendChild(customInput);
+      customRow.appendChild(customMode);
+      mount.appendChild(customRow);
+    }
 
     const meta = el("div", "cc-meta");
     const badge = el("span", "cc-badge");
@@ -517,6 +613,13 @@
     }
 
     function paintFields(platformId, preferId) {
+      if (customRow) customRow.hidden = platformId !== CUSTOM_ID;
+      if (platformId === CUSTOM_ID) {
+        fieldSelect.innerHTML = "";
+        fieldSelect.hidden = true;
+        state.limitId = CUSTOM_ID;
+        return;
+      }
       fieldSelect.innerHTML = "";
       const fields = fieldsFor(platformId);
       fields.forEach((r) => {
@@ -611,6 +714,19 @@
       render();
       emitChange();
     });
+    if (customInput) {
+      const applyCustom = function () {
+        if (!setCustomLimit(customInput.value, customMode.value)) return;
+        try {
+          window.localStorage.setItem("utg.counter.ownLimit",
+            JSON.stringify({ limit: customRule.limit, mode: customRule.countMode }));
+        } catch (e) { /* storage blocked: the limit still applies to this visit */ }
+        render();
+        emitChange();
+      };
+      customInput.addEventListener("input", applyCustom);
+      customMode.addEventListener("change", applyCustom);
+    }
     if (input) input.addEventListener("input", render);
 
     const startRule = ruleById(state.limitId);
@@ -623,7 +739,7 @@
       getLimitId: () => state.limitId,
       getRule: () => ruleById(state.limitId),
       setLimitId(id) {
-        if (!LIMITS.some((r) => r.id === id)) return;
+        if (!known(id)) return;
         const r = ruleById(id);
         platformSelect.value = r.platform;
         paintFields(r.platform, id);
@@ -639,6 +755,7 @@
   };
   ns.counterRules = {
     LIMITS, PLATFORMS, DEFAULT_GROUPS,
-    analyze, measure, fitsAll, foldInfo, foldsAll, ruleById, initChecker, countLabel, fillRatio
+    analyze, measure, fitsAll, foldInfo, foldsAll, ruleById, initChecker, countLabel, fillRatio,
+    CUSTOM_ID, CUSTOM_MODES, setCustomLimit
   };
 })();

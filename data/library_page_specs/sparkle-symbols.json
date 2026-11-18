@@ -1,0 +1,214 @@
+{
+  "slug": "sparkle-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Sparkle Symbols & Emoji ✨ — Sparkles Copy & Paste",
+  "meta_description": "Browse and copy sparkle symbols, glitter characters, and aesthetic decorators for bios, captions, and text styling. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/sparkle-symbols/",
+  "breadcrumb": "Sparkle & Decorative Symbols",
+  "hero_h1": "Sparkle Symbols & Emoji",
+  "hero_tagline": "A reference collection of sparkle symbols, glitter characters, and aesthetic decorators for bios, captions, and text styling. Click any symbol to copy it instantly.",
+  "intro": "Browse and copy sparkle symbols and decorative characters organized by style: from glittering emoji stars to Unicode ornaments, aesthetic florets, and elegant dividers.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/sparkle-symbols/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/sparkle-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-brillo/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/banjjagi-giho/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/glitzer-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/sparkle-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "sparkle-emojis",
+      "label": "Sparkle Emojis",
+      "h2": "Sparkle & Glitter Emojis",
+      "intro": "Shining and glittering emoji characters for posts, bios, and captions.",
+      "symbols": [
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💫", "label": "Dizzy Star" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "🔆", "label": "High Brightness" },
+        { "char": "💎", "label": "Gem Stone" },
+        { "char": "🔮", "label": "Crystal Ball" },
+        { "char": "🪩", "label": "Mirror Ball" },
+        { "char": "💥", "label": "Collision" }
+      ]
+    },
+    {
+      "id": "unicode-sparkles",
+      "label": "Unicode Sparkles",
+      "h2": "Unicode Sparkle Characters",
+      "intro": "Classic Unicode sparkle and asterisk ornaments for text decoration.",
+      "symbols": [
+        { "char": "✦", "label": "Black Four-Pointed Star" },
+        { "char": "✧", "label": "White Four-Pointed Star" },
+        { "char": "⁂", "label": "Asterism" },
+        { "char": "✱", "label": "Heavy Asterisk" },
+        { "char": "❇", "label": "Sparkle" },
+        { "char": "✺", "label": "Sixteen Pointed Asterisk" },
+        { "char": "✻", "label": "Teardrop Asterisk" },
+        { "char": "✼", "label": "Open Centre Asterisk" },
+        { "char": "✽", "label": "Heavy Teardrop Asterisk" },
+        { "char": "❈", "label": "Heavy Sparkle" },
+        { "char": "✵", "label": "Eight Pointed Pinwheel Star" },
+        { "char": "✹", "label": "Twelve Pointed Black Star" }
+      ]
+    },
+    {
+      "id": "aesthetic-decorators",
+      "label": "Aesthetic Decorators",
+      "h2": "Aesthetic Decorator Symbols",
+      "intro": "Soft and aesthetic symbols popular in bios, usernames, and kawaii text styles.",
+      "symbols": [
+        { "char": "⊹", "label": "Hermitian Conjugate Matrix" },
+        { "char": "₊", "label": "Subscript Plus" },
+        { "char": "˖", "label": "Modifier Plus" },
+        { "char": "°", "label": "Degree Sign" },
+        { "char": "✿", "label": "Black Florette" },
+        { "char": "❀", "label": "White Florette" },
+        { "char": "❁", "label": "Eight Petalled Flower" },
+        { "char": "❃", "label": "Heavy Florette" },
+        { "char": "⚘", "label": "Flower" },
+        { "char": "❋", "label": "Heavy Eight Petalled Florette" },
+        { "char": "•", "label": "Bullet" },
+        { "char": "※", "label": "Reference Mark" },
+        { "char": "꙳", "label": "Slavonic Asterisk" },
+        { "char": "˚", "label": "Ring Above Glint" },
+        { "char": "࿐", "label": "Tibetan Trailing Sparkle" }
+      ]
+    },
+    {
+      "id": "stars-points",
+      "label": "Stars & Points",
+      "h2": "Star & Point Symbols",
+      "intro": "Solid and outlined star characters for ratings, decorations, and emphasis.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✩", "label": "Stress Outlined Star" },
+        { "char": "✪", "label": "Circled White Star" },
+        { "char": "✫", "label": "Open Centre Black Star" },
+        { "char": "✬", "label": "Black Centre White Star" },
+        { "char": "✭", "label": "Outlined Black Star" },
+        { "char": "✮", "label": "Heavy Outlined Black Star" },
+        { "char": "✯", "label": "Pinwheel Star" },
+        { "char": "✰", "label": "Shadowed White Star" }
+      ]
+    },
+    {
+      "id": "dingbat-ornaments",
+      "label": "Dingbat Ornaments",
+      "h2": "Dingbat Ornament Symbols",
+      "intro": "Classic typographic ornaments and fleurons for decorative text styling.",
+      "symbols": [
+        { "char": "❖", "label": "Black Diamond Minus" },
+        { "char": "❧", "label": "Rotated Floral Heart" },
+        { "char": "❦", "label": "Floral Heart" },
+        { "char": "❥", "label": "Rotated Heart Bullet" },
+        { "char": "☙", "label": "Reversed Floral Heart" },
+        { "char": "✤", "label": "Heavy Four Balloon-Spoked" },
+        { "char": "✥", "label": "Four Club-Spoked" },
+        { "char": "❊", "label": "Eight Teardrop-Spoked Propeller Asterisk" },
+        { "char": "❉", "label": "Balloon-Spoked Asterisk" },
+        { "char": "✾", "label": "Six Petalled Florette" }
+      ]
+    },
+    {
+      "id": "dividers-borders",
+      "label": "Dividers & Borders",
+      "h2": "Divider & Border Characters",
+      "intro": "Line and border characters for structuring and separating content.",
+      "symbols": [
+        { "char": "─", "label": "Box Drawings Light Horizontal" },
+        { "char": "═", "label": "Box Drawings Double Horizontal" },
+        { "char": "━", "label": "Box Drawings Heavy Horizontal" },
+        { "char": "┄", "label": "Light Triple Dash Horizontal" },
+        { "char": "╌", "label": "Light Double Dash Horizontal" },
+        { "char": "┈", "label": "Light Quadruple Dash Horizontal" },
+        { "char": "╍", "label": "Heavy Double Dash Horizontal" },
+        { "char": "┅", "label": "Heavy Triple Dash Horizontal" },
+        { "char": "┉", "label": "Heavy Quadruple Dash Horizontal" },
+        { "char": "⎯", "label": "Horizontal Line Extension" },
+        { "char": "⋆", "label": "Star Operator" },
+        { "char": "·", "label": "Middle Dot" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "sparkle-collections",
+    "label": "Sparkle Collections",
+    "h2": "Sparkle Bio & Divider Sets",
+    "intro": "Ready-made sparkle strings you can paste straight into a bio, caption, or username: copy the whole combo in one click."
+  },
+  "collection_container_id": "sparkleCollectionsContainer",
+  "collections": [
+    {
+      "name": "Sparkle Bio Divider",
+      "flags": ["✦", "₊", "˖", "⊹", "˖", "₊", "✦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Twinkle Caption Accent",
+      "flags": ["✨", "˖", "°", "💫", "°", "˖", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Soft Sparkle Border",
+      "flags": ["⊹", "₊", "˖", "✿", "˖", "₊", "⊹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glitter Dash Divider",
+      "flags": ["┈", "┈", "✧", "┈", "┈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Starry Username Combo",
+      "flags": ["₊", "°", "✦", "⋆", "✩"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Sparkle Bio & Divider Sets",
+      "paragraphs": [
+        "Ready-made sparkle strings you can paste straight into a bio, caption, or username: copy the whole combo in one click."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Stars, sparkles, asterisks, and glitter characters in various Unicode styles."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Every heart emoji and Unicode heart character in one reference."
+    },
+    {
+      "href": "/library/flower-symbols/",
+      "title": "Flower & Nature Symbols",
+      "desc": "Flower emojis, plant symbols, and nature-themed Unicode characters."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Circles, diamonds, squares, triangles, and decorative shapes for formatting."
+    },
+    {
+      "href": "/events/eid-mubarak/",
+      "title": "Eid Mubarak Text & Symbol Generator",
+      "desc": "Style a Eid Mubarak greeting live, then copy matching fonts, emoji, kaomoji, and ready-made phrases."
+    },
+    {
+      "href": "/events/new-year/",
+      "title": "New Year's Eve & New Year's Day Text & Symbol Generator",
+      "desc": "Style a New Year's Eve & New Year's Day greeting live, then copy matching fonts, emoji, kaomoji, and ready-made phrases."
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "slug": "music-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Music Note Symbols: Copy & Paste Musical Notes & Signs",
+  "meta_description": "Browse and copy music notation symbols, instrument emojis, and audio-related Unicode characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/music-symbols/",
+  "breadcrumb": "Music Note Symbols",
+  "hero_h1": "Music Note Symbols",
+  "hero_tagline": "A reference collection of musical notation symbols, instrument emojis, and audio-related Unicode characters. Click any symbol to copy it instantly.",
+  "intro": "This library contains musical note and notation symbols, instrument emojis, and audio-related Unicode characters. Symbols are organized by category: notation marks, instrument types, and playback controls.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/music-symbols/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/music-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-musica/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-musik/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/eumak-giho/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-musicais/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/musik-symbole/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-musicaux/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-musicali/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/music-symbols/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/muzieksymbolen/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/music-symbols/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/ky-hieu-am-nhac/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/yinyue-fuhao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/music-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Notes",
+      "h2": "Musical Notes",
+      "intro": "Standard Unicode note symbols and emoji representations of musical notes.",
+      "symbols": [
+        { "char": "♩", "label": "Quarter Note" },
+        { "char": "♪", "label": "Eighth Note" },
+        { "char": "♫", "label": "Beamed Notes" },
+        { "char": "♬", "label": "Sixteenth Notes" },
+        { "char": "🎵", "label": "Musical Note" },
+        { "char": "🎶", "label": "Musical Notes" }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "Clef Symbols",
+      "h2": "Clef Symbols",
+      "intro": "Musical clef symbols used in sheet music notation.",
+      "symbols": [
+        { "char": "𝄞", "label": "Treble Clef" },
+        { "char": "𝄡", "label": "C Clef" },
+        { "char": "𝄢", "label": "Bass Clef" }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "Accidentals",
+      "h2": "Accidentals",
+      "intro": "Sharp, flat, natural, and double-accidental symbols used to modify pitch in musical notation.",
+      "symbols": [
+        { "char": "♯", "label": "Sharp" },
+        { "char": "♭", "label": "Flat" },
+        { "char": "♮", "label": "Natural" },
+        { "char": "𝄪", "label": "Double Sharp" },
+        { "char": "𝄫", "label": "Double Flat" }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "Dynamics & Notation",
+      "h2": "Dynamics & Notation",
+      "intro": "Volume dynamics and musical notation marks.",
+      "symbols": [
+        { "char": "𝆏", "label": "Piano (Soft)" },
+        { "char": "𝆑", "label": "Forte (Loud)" },
+        { "char": "𝄀", "label": "Single Barline" },
+        { "char": "𝄁", "label": "Double Barline" },
+        { "char": "𝄂", "label": "Final Barline" },
+        { "char": "𝄃", "label": "Reverse Final Barline" },
+        { "char": "𝄆", "label": "Left Repeat Sign" },
+        { "char": "𝄇", "label": "Right Repeat Sign" },
+        { "char": "𝄐", "label": "Fermata" },
+        { "char": "𝄑", "label": "Fermata Below" }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "Rests",
+      "h2": "Rest Symbols",
+      "intro": "Musical rest notation for indicating silence.",
+      "symbols": [
+        { "char": "𝄾", "label": "Eighth Rest" },
+        { "char": "𝄿", "label": "Sixteenth Rest" },
+        { "char": "𝄻", "label": "Whole Rest" },
+        { "char": "𝄼", "label": "Half Rest" }
+      ]
+    },
+    {
+      "id": "barlines-repeats-segno-coda",
+      "label": "Barlines & Repeats",
+      "h2": "Barlines, Repeats, Segno & Coda",
+      "intro": "The navigation marks that tell a player where to go next: dashed and short barlines, repeat dots, the segno and coda signs, D.C. and D.S., and the measure repeat signs. Android phones and Windows include a font for every symbol in this section and the three that follow; on iPhone and Mac they rely on Apple's symbol font, which we have not been able to test yet, so some may show as empty boxes there.",
+      "symbols": [
+        { "char": "𝄄", "label": "Dashed barline" },
+        { "char": "𝄅", "label": "Short barline" },
+        { "char": "𝄈", "label": "Repeat dots" },
+        { "char": "𝄉", "label": "Dal segno mark (D.S.)" },
+        { "char": "𝄊", "label": "Da capo mark (D.C.)" },
+        { "char": "𝄋", "label": "Segno" },
+        { "char": "𝄌", "label": "Coda" },
+        { "char": "𝄍", "label": "Measure repeat 1" },
+        { "char": "𝄎", "label": "Measure repeat 2" },
+        { "char": "𝄏", "label": "Measure repeat 3" }
+      ]
+    },
+    {
+      "id": "clefs-staff-time-signatures",
+      "label": "Clefs & Time",
+      "h2": "Octave Clefs, Staff Lines & Time Signatures",
+      "intro": "Treble and bass clefs with the small 8 above or below for octave transposition, percussion clefs, staves from one to six lines, the common time and cut time signs, and the arrowed flats and naturals used for quarter tones.",
+      "symbols": [
+        { "char": "𝄖", "label": "One-line staff" },
+        { "char": "𝄗", "label": "Two-line staff" },
+        { "char": "𝄘", "label": "Three-line staff" },
+        { "char": "𝄙", "label": "Four-line staff" },
+        { "char": "𝄚", "label": "Five-line staff" },
+        { "char": "𝄛", "label": "Six-line staff" },
+        { "char": "𝄟", "label": "Treble clef 8va (octave up)" },
+        { "char": "𝄠", "label": "Treble clef 8vb (octave down)" },
+        { "char": "𝄣", "label": "Bass clef 8va (octave up)" },
+        { "char": "𝄤", "label": "Bass clef 8vb (octave down)" },
+        { "char": "𝄥", "label": "Percussion clef 1" },
+        { "char": "𝄦", "label": "Percussion clef 2" },
+        { "char": "𝄴", "label": "Common time (4/4)" },
+        { "char": "𝄵", "label": "Cut time (alla breve)" },
+        { "char": "𝄬", "label": "Flat with up arrow" },
+        { "char": "𝄭", "label": "Flat with down arrow" },
+        { "char": "𝄮", "label": "Natural with up arrow" },
+        { "char": "𝄯", "label": "Natural with down arrow" },
+        { "char": "𝄳", "label": "Quarter-tone flat" }
+      ]
+    },
+    {
+      "id": "notes-grace-notes-rests",
+      "label": "Notes & Rests",
+      "h2": "Note Values, Grace Notes & Rests",
+      "intro": "Notes as single characters from the breve down to the 128th note, the two grace notes, and the rests not shown above, including the multimeasure rests and the square rests of early music notation.",
+      "symbols": [
+        { "char": "𝅜", "label": "Breve (double whole note)" },
+        { "char": "𝅝", "label": "Whole note" },
+        { "char": "𝅗𝅥", "label": "Half note" },
+        { "char": "𝅘𝅥", "label": "Quarter note" },
+        { "char": "𝅘𝅥𝅮", "label": "Eighth note" },
+        { "char": "𝅘𝅥𝅯", "label": "Sixteenth note" },
+        { "char": "𝅘𝅥𝅰", "label": "Thirty-second note" },
+        { "char": "𝅘𝅥𝅱", "label": "Sixty-fourth note" },
+        { "char": "𝅘𝅥𝅲", "label": "128th note" },
+        { "char": "𝆔", "label": "Grace note with slash (acciaccatura)" },
+        { "char": "𝆕", "label": "Grace note without slash (appoggiatura)" },
+        { "char": "𝄩", "label": "Multimeasure rest 1" },
+        { "char": "𝄺", "label": "Multimeasure rest 2" },
+        { "char": "𝄽", "label": "Quarter rest" },
+        { "char": "𝅀", "label": "Thirty-second rest" },
+        { "char": "𝅁", "label": "Sixty-fourth rest" },
+        { "char": "𝅂", "label": "128th rest" },
+        { "char": "𝇁", "label": "Longa perfecta rest" },
+        { "char": "𝇂", "label": "Longa imperfecta rest" },
+        { "char": "𝇃", "label": "Brevis rest" },
+        { "char": "𝇄", "label": "Semibrevis rest" },
+        { "char": "𝇅", "label": "Minima rest" },
+        { "char": "𝇆", "label": "Semiminima rest" }
+      ]
+    },
+    {
+      "id": "noteheads-mezzo-pedal",
+      "label": "Noteheads & Pedal",
+      "h2": "Noteheads, Mezzo & Piano Pedal Marks",
+      "intro": "Notehead shapes for drum parts, ghost notes and shape-note hymnals, in white and black, plus the mezzo dynamic letter and the piano pedal marks: pedal down, pedal up and half pedal.",
+      "symbols": [
+        { "char": "𝅃", "label": "X notehead" },
+        { "char": "𝅄", "label": "Plus notehead" },
+        { "char": "𝅅", "label": "Circled X notehead" },
+        { "char": "𝅆", "label": "White square notehead" },
+        { "char": "𝅇", "label": "Black square notehead" },
+        { "char": "𝅈", "label": "White triangle notehead (up)" },
+        { "char": "𝅉", "label": "Black triangle notehead (up)" },
+        { "char": "𝅊", "label": "White triangle notehead (left)" },
+        { "char": "𝅋", "label": "Black triangle notehead (left)" },
+        { "char": "𝅌", "label": "White triangle notehead (right)" },
+        { "char": "𝅍", "label": "Black triangle notehead (right)" },
+        { "char": "𝅎", "label": "White triangle notehead (down)" },
+        { "char": "𝅏", "label": "Black triangle notehead (down)" },
+        { "char": "𝅐", "label": "White triangle notehead (up-right)" },
+        { "char": "𝅑", "label": "Black triangle notehead (up-right)" },
+        { "char": "𝅒", "label": "White moon notehead" },
+        { "char": "𝅓", "label": "Black moon notehead" },
+        { "char": "𝅔", "label": "White rounded triangle notehead" },
+        { "char": "𝅕", "label": "Black rounded triangle notehead" },
+        { "char": "𝅖", "label": "Notehead in parentheses (ghost note)" },
+        { "char": "𝅗", "label": "Open notehead" },
+        { "char": "𝅘", "label": "Filled notehead" },
+        { "char": "𝅙", "label": "Null notehead (invisible)" },
+        { "char": "𝆐", "label": "Mezzo (m, half)" },
+        { "char": "𝆮", "label": "Pedal down (Ped.)" },
+        { "char": "𝆯", "label": "Pedal up (release)" },
+        { "char": "𝆰", "label": "Half pedal" }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "Musical Instruments",
+      "h2": "Musical Instrument Emojis",
+      "intro": "Emoji representations of musical instruments.",
+      "symbols": [
+        { "char": "🎸", "label": "Guitar" },
+        { "char": "🎹", "label": "Piano" },
+        { "char": "🎺", "label": "Trumpet" },
+        { "char": "🎻", "label": "Violin" },
+        { "char": "🎷", "label": "Saxophone" },
+        { "char": "🥁", "label": "Drum" },
+        { "char": "🪕", "label": "Banjo" },
+        { "char": "🪗", "label": "Accordion" },
+        { "char": "🪘", "label": "Long Drum" },
+        { "char": "🪇", "label": "Maracas" }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "Audio & Playback",
+      "h2": "Audio & Playback",
+      "intro": "Symbols related to sound, speakers, and audio controls.",
+      "symbols": [
+        { "char": "🎤", "label": "Microphone" },
+        { "char": "🎧", "label": "Headphone" },
+        { "char": "📻", "label": "Radio" },
+        { "char": "🔊", "label": "Speaker High Volume" },
+        { "char": "🔇", "label": "Muted Speaker" },
+        { "char": "🎼", "label": "Musical Score" }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Bio Decorations",
+      "h2": "Music Note Bio Decorations",
+      "symbols": [
+        { "char": "♪┊♫┊♪", "label": "Note Divider" },
+        { "char": "˚₊‧♫‧₊˚", "label": "Framed Note" },
+        { "char": "♬•*¨*•.¸¸♪", "label": "Note Trail" },
+        { "char": "⋆｡♪｡⋆", "label": "Soft Note" },
+        { "char": "˚✧♬✧˚", "label": "Sparkle Note" },
+        { "char": "♩‿♩", "label": "Paired Notes" },
+        { "char": ".｡.:*♡♬", "label": "Heart Note" },
+        { "char": "꒰♬꒱", "label": "Bracket Note" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "music-collections",
+    "label": "Music Collections",
+    "h2": "Music Note Bio & Trail Sets",
+    "intro": "Ready-made music-note strings you can paste straight into a bio, caption, or playlist name: copy the whole combo in one click."
+  },
+  "collection_container_id": "musicCollectionsContainer",
+  "collections": [
+    {
+      "name": "Note Bio Trail",
+      "flags": ["♪", "˚", "♫", "˚", "♪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Soft Melody Border",
+      "flags": ["⋆｡˚♬˚｡⋆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Beamed Note Combo",
+      "flags": ["♩", "♪", "♫", "♬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sparkle Note Divider",
+      "flags": ["₊", "˚", "♪", "⋆", "♫", "˚", "₊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Now Playing Caption",
+      "flags": ["🎶", "˚", "♪", "˚", "🎶"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Minimal Note Accent",
+      "flags": ["·", "♪", "·", "♬", "·"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Music Note Bio & Trail Sets",
+      "paragraphs": [
+        "Ready-made music-note strings you can paste straight into a bio, caption, or playlist name: copy the whole combo in one click."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Sparkle and star Unicode characters for ratings, decorations, and text emphasis."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Heart emojis and Unicode heart symbols in various styles and colors."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbol Collection",
+      "desc": "Gesture emojis including pointing, waving, clapping, and sign language symbols."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Unicode symbols and special characters commonly used in professional and business contexts."
+    },
+    {
+      "href": "/symbol/microphone-emoji/",
+      "title": "Microphone Emoji (🎤)",
+      "desc": "The handheld mic you reach for to talk about singing, karaoke, MC-ing, interviews, and mic-drop moments."
+    },
+    {
+      "href": "/symbol/trombone-emoji/",
+      "title": "Trombone Emoji",
+      "desc": "The slide trombone 🪊 with its codepoint, its input routes, the brass and woodwind it sits beside, and the one comic cue it gets typed for…"
+    },
+    {
+      "href": "/library/music-kaomoji/",
+      "title": "Music Kaomoji",
+      "desc": "Copy and paste music kaomoji: singing and dancing Japanese text faces trailing musical notes."
+    }
+  ]
+}

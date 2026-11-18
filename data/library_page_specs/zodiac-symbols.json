@@ -1,0 +1,234 @@
+{
+  "slug": "zodiac-symbols",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Zodiac Symbols: Copy & Paste Astrology Signs",
+  "meta_description": "Browse and copy zodiac symbols, planetary signs, Chinese zodiac animals, and astronomical Unicode characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/zodiac-symbols/",
+  "breadcrumb": "Zodiac Symbols",
+  "hero_h1": "Zodiac & Astrology Symbols",
+  "hero_tagline": "A reference collection of Western zodiac signs, planetary symbols, Chinese zodiac animals, and astronomical characters. Click any symbol to copy it instantly.",
+  "intro": "This library contains the 12 Western zodiac sign symbols, planetary and celestial body symbols used in astrology and astronomy, Chinese zodiac animal emojis, and related astronomical characters. Symbols are grouped by tradition and category.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-03-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/zodiac-symbols/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-zodiak/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-zodiaco/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/xingzuo-fuhao/" },
+    { "lang": "fi", "href": "https://ultratextgen.com/fi/library/horoskooppimerkit/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/zodyak-sembolleri/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/sternzeichen-symbole/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/znaki-zodiaka/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/ky-hieu-cung-hoang-dao/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/seiza-kigou/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-znakow-zodiaku/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-astrologiques/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/byeoljari-giho/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/zodiac-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-del-zodiaco/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/sanyalak-rasi/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/sterrenbeeld-symbolen/" },
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/stjarntecken/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/zodiac-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "western-zodiac",
+      "label": "Western Zodiac",
+      "h2": "Western Zodiac Signs",
+      "intro": "The twelve signs of the Western astrological zodiac, with their date ranges.",
+      "symbols": [
+        { "char": "♈", "label": "Aries (Mar 21 – Apr 19)" },
+        { "char": "♉", "label": "Taurus (Apr 20 – May 20)" },
+        { "char": "♊", "label": "Gemini (May 21 – Jun 20)" },
+        { "char": "♋", "label": "Cancer (Jun 21 – Jul 22)" },
+        { "char": "♌", "label": "Leo (Jul 23 – Aug 22)" },
+        { "char": "♍", "label": "Virgo (Aug 23 – Sep 22)" },
+        { "char": "♎", "label": "Libra (Sep 23 – Oct 22)" },
+        { "char": "♏", "label": "Scorpio (Oct 23 – Nov 21)" },
+        { "char": "♐", "label": "Sagittarius (Nov 22 – Dec 21)" },
+        { "char": "♑", "label": "Capricorn (Dec 22 – Jan 19)" },
+        { "char": "♒", "label": "Aquarius (Jan 20 – Feb 18)" },
+        { "char": "♓", "label": "Pisces (Feb 19 – Mar 20)" },
+        { "char": "⛎", "label": "Ophiuchus (Nov 30 – Dec 17, unofficial 13th sign)" }
+      ]
+    },
+    {
+      "id": "planetary-symbols",
+      "label": "Planetary Symbols",
+      "h2": "Planetary & Celestial Body Symbols",
+      "intro": "Astronomical and astrological symbols for planets and celestial bodies.",
+      "symbols": [
+        { "char": "☉", "label": "Sun" },
+        { "char": "☽", "label": "First Quarter Moon" },
+        { "char": "☾", "label": "Last Quarter Moon" },
+        { "char": "☿", "label": "Mercury" },
+        { "char": "♀", "label": "Venus" },
+        { "char": "♁", "label": "Earth" },
+        { "char": "♂", "label": "Mars" },
+        { "char": "♃", "label": "Jupiter" },
+        { "char": "♄", "label": "Saturn" },
+        { "char": "♅", "label": "Uranus" },
+        { "char": "♆", "label": "Neptune" },
+        { "char": "♇", "label": "Pluto" }
+      ]
+    },
+    {
+      "id": "chinese-zodiac",
+      "label": "Chinese Zodiac",
+      "h2": "Chinese Zodiac Animals",
+      "intro": "Chinese zodiac animals representing the 12-year lunar cycle.",
+      "symbols": [
+        { "char": "🐀", "label": "Rat" },
+        { "char": "🐂", "label": "Ox" },
+        { "char": "🐅", "label": "Tiger" },
+        { "char": "🐇", "label": "Rabbit" },
+        { "char": "🐉", "label": "Dragon" },
+        { "char": "🐍", "label": "Snake" },
+        { "char": "🐎", "label": "Horse" },
+        { "char": "🐐", "label": "Goat" },
+        { "char": "🐒", "label": "Monkey" },
+        { "char": "🐓", "label": "Rooster" },
+        { "char": "🐕", "label": "Dog" },
+        { "char": "🐖", "label": "Pig" }
+      ]
+    },
+    {
+      "id": "astrological-symbols",
+      "label": "Astrological Symbols",
+      "h2": "Astrological Notation Symbols",
+      "intro": "The lunar nodes, then the aspect glyphs that mark the angle between two planets on a birth chart: five major aspects and four minor ones. Unicode has no semisquare character, so charts write the 45° aspect with the ∠ angle sign.",
+      "symbols": [
+        { "char": "☊", "label": "Ascending Node" },
+        { "char": "☋", "label": "Descending Node" },
+        { "char": "☌", "label": "Conjunction" },
+        { "char": "☍", "label": "Opposition" },
+        { "char": "⚹", "label": "Sextile" },
+        { "char": "□", "label": "Square (Quartile)" },
+        { "char": "△", "label": "Trine" },
+        { "char": "⚺", "label": "Semisextile (30°)" },
+        { "char": "∠", "label": "Semisquare (45°)" },
+        { "char": "⚼", "label": "Sesquiquadrate (135°)" },
+        { "char": "⚻", "label": "Quincunx (150°)" }
+      ]
+    },
+    {
+      "id": "classical-elements",
+      "label": "Elements",
+      "h2": "Classical Element & Alchemical Symbols",
+      "symbols": [
+        { "char": "🜂", "label": "Fire (Alchemical)" },
+        { "char": "🜄", "label": "Water (Alchemical)" },
+        { "char": "🜁", "label": "Air (Alchemical)" },
+        { "char": "🜃", "label": "Earth (Alchemical)" },
+        { "char": "△", "label": "Fire Triangle" },
+        { "char": "▽", "label": "Water Triangle" },
+        { "char": "🜍", "label": "Sulfur" },
+        { "char": "☿", "label": "Mercury" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "zodiac-collections",
+    "label": "Zodiac Collections",
+    "h2": "Zodiac & Astrology Sets",
+    "intro": "Copy the full zodiac wheels and the modern ten astrology planets in canonical order."
+  },
+  "collection_container_id": "zodiacCollectionsContainer",
+  "collections": [
+    {
+      "name": "Western Zodiac (Aries → Pisces)",
+      "flags": ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chinese Zodiac (Rat → Pig)",
+      "flags": ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Modern 10 Astrology Planets",
+      "flags": ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Zodiac Signs: Dates, Elements & Key Traits",
+      "paragraphs": [
+        "Every Western zodiac sign's symbol, birth-date range, classical element (fire, earth, air, or water), and the trait most people associate with it, in one table."
+      ]
+    },
+    {
+      "h2": "Zodiac Symbols as Tattoos: What Reads Cleanly in Ink",
+      "paragraphs": [
+        "The twelve zodiac symbols are already single-line, minimalist glyphs that carry meaning without any accompanying text, which is exactly why they're such a popular tattoo choice.",
+        "Symbols with simple linework (Aries ♈, Leo ♌, Aquarius ♒, Capricorn ♑) stay legible even tattooed small, in low-key spots like the wrist, collarbone, or behind the ear. More detailed symbols (Scorpio ♏, Sagittarius ♐, Pisces ♓) read better with a little extra space, or slightly thicker linework from the artist, since fine detail is the first thing to blur as a tattoo ages: the same tradeoff that comes up with fine script tattoo fonts.",
+        "Planning to pair a symbol with a name or phrase, or want to compare script and blackletter styles first? Preview them in the <a href=\"/usecase/tattoo-fonts/\">tattoo font generator</a> and screenshot the result for your artist."
+      ]
+    },
+    {
+      "h2": "Zodiac & Astrology Sets",
+      "paragraphs": ["Copy the full zodiac wheels and the modern ten astrology planets in canonical order."]
+    }
+  ],
+  "faq_h2": "Zodiac Symbol FAQ",
+  "faq": [
+    {
+      "q": "Are zodiac symbols good tattoo choices?",
+      "a": "Yes. The Western zodiac symbols are single-line, minimalist glyphs that don't need any accompanying text to read clearly, which is exactly why they're a popular tattoo choice. Simple symbols (Aries ♈, Leo ♌, Aquarius ♒, Capricorn ♑) stay legible even tattooed small, on a wrist, collarbone, or behind the ear. More detailed ones (Scorpio ♏, Sagittarius ♐, Pisces ♓) read better with a bit more space or slightly thicker linework, since fine detail is the first thing to blur as a tattoo ages."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Star characters from basic filled and outlined stars to multi-pointed decorative variants."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Faith and spiritual symbols including crosses, crescents, stars, and peace signs from major world traditions."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Weather condition symbols, moon phases, and atmospheric characters from Unicode."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Emoji Flag Explorer",
+      "desc": "Browse 195 country flags by region, plus regional sets and special flags like 🏴‍☠️ and 🏳️‍🌈."
+    },
+    { "href": "/symbol/aquarius-symbol/", "title": "Aquarius Symbol", "desc": "Aquarius's glyph (♒) is two wavy lines for flowing water." },
+    { "href": "/symbol/gemini-symbol/", "title": "Gemini Symbol", "desc": "Gemini's glyph (♊) is a simple double-bar shape for ‘the twins’." },
+    {
+      "href": "/symbol/leo-symbol/",
+      "title": "Leo Symbol",
+      "desc": "Leo's glyph (♌) traces back to the Nemean Lion, the invulnerable beast Heracles strangled bare-handed in his first labor."
+    },
+    { "href": "/symbol/libra-symbol/", "title": "Libra Symbol", "desc": "Libra's glyph (♎) is a literal balance scale." },
+    { "href": "/symbol/sagittarius-symbol/", "title": "Sagittarius Symbol", "desc": "Sagittarius's glyph (♐) is an arrow drawn across a bow." },
+    { "href": "/symbol/taurus-symbol/", "title": "Taurus Symbol", "desc": "Taurus's glyph (♉) is a bull's head and horns." },
+    { "href": "/symbol/aries-symbol/", "title": "Aries Symbol", "desc": "Aries's glyph (♈) is a pair of curved ram's horns." },
+    { "href": "/symbol/cancer-symbol/", "title": "Cancer Symbol", "desc": "Cancer's glyph (♋) is a pair of curled crab claws." },
+    { "href": "/symbol/capricorn-symbol/", "title": "Capricorn Symbol", "desc": "Capricorn's glyph (♑) is a monogram of the sea-goat." },
+    { "href": "/symbol/pisces-symbol/", "title": "Pisces Symbol", "desc": "Pisces's glyph (♓) is two crescents joined by a bar." },
+    {
+      "href": "/symbol/scorpio-symbol/",
+      "title": "Scorpio Symbol",
+      "desc": "Scorpio's glyph (♏) is a scorpion's body ending in a raised, stinging tail."
+    },
+    {
+      "href": "/symbol/virgo-symbol/",
+      "title": "Virgo Symbol",
+      "desc": "Virgo's glyph (♍) is a looped ‘M’ read as a maiden holding a sheaf of wheat."
+    },
+    {
+      "href": "/symbol/black-moon-lilith/",
+      "title": "Black Moon Lilith Symbol",
+      "desc": "⚸ U+26B8: the astrological glyph for a mathematical point in the Moon's orbit, not a planet, moon, or asteroid."
+    }
+  ]
+}

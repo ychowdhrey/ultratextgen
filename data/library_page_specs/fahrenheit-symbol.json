@@ -30,7 +30,7 @@
       "symbols": [
         { "char": "°", "label": "Degree Sign (U+00B0)" },
         { "char": "℃", "label": "Degree Celsius (U+2103)" },
-        { "char": "K", "label": "Kelvin Sign (U+212A)" },
+        { "char": "\u212a", "label": "Kelvin Sign (U+212A)" },
         { "char": "F", "label": "Latin Capital F" }
       ]
     },
@@ -44,7 +44,7 @@
         { "char": "″", "label": "Double Prime (Seconds / Inches)" },
         { "char": "‰", "label": "Per Mille Sign" },
         { "char": "µ", "label": "Micro Sign (U+00B5)" },
-        { "char": "Ω", "label": "Ohm Sign (U+2126)" }
+        { "char": "\u2126", "label": "Ohm Sign (U+2126)" }
       ]
     }
   ],

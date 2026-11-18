@@ -1,0 +1,453 @@
+{
+  "slug": "text-faces-kaomoji",
+  "copy_pattern": "collection",
+  "hand_built_page": true,
+  "title": "Kaomoji: Copy & Paste Cute Japanese Text Faces (◕‿◕)",
+  "meta_description": "Copy and paste kaomoji with one click. Cute Japanese text faces for every mood: happy, sad, love, cat, sparkle and shrug ¯\\_(ツ)_/¯. Also spelled kamoji.",
+  "canonical": "https://ultratextgen.com/library/text-faces-kaomoji/",
+  "breadcrumb": "Text Faces & Kaomoji",
+  "hero_h1": "Text Faces & Kaomoji",
+  "hero_tagline": "Copy and paste kaomoji: Japanese-style text emoticons built from Unicode characters. Happy faces, sad faces, shrugs, animals, and action expressions. Click any face to copy it instantly.",
+  "intro": "Kaomoji (顔文字) are emoticons that originated in Japan, built from standard keyboard characters and Unicode symbols. Unlike emoji, kaomoji are read horizontally and often capture nuanced expressions that emoji can't fully convey. They paste into any text field that accepts Unicode text and add personality to messages, bios, and captions.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-06-30",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/text-faces-kaomoji/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/kaomoji/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/kaomoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/kaomoji/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/kaomoji/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/imotikon/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/kaomoji/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/kaomoji/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/kaomoji/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/kaomoji/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/kaomoji/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/kaomoji/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/kaomoji/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/kaomoji/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/tekstgezichten-kaomoji/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/kaomoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/text-faces-kaomoji/" }
+  ],
+  "sections": [
+    {
+      "id": "happy-positive",
+      "label": "Happy & Positive",
+      "h2": "Happy & Positive Kaomoji",
+      "intro": "Joyful and positive text face expressions for upbeat messages.",
+      "symbols": [
+        { "char": "◕‿◕", "label": "Happy Face" },
+        { "char": "(◠‿◠)", "label": "Smiling Face" },
+        { "char": "╰(▔∀▔)╯", "label": "Excited Dance" },
+        { "char": "(✿◠‿◠)", "label": "Flower Happy" },
+        { "char": "ヽ(•‿•)ノ", "label": "Arms Up Happy" },
+        { "char": "(^▽^)", "label": "Big Grin" },
+        { "char": "(≧◡≦)", "label": "Very Happy" },
+        { "char": "٩(◕‿◕)۶", "label": "Celebrating" }
+      ]
+    },
+    {
+      "id": "sad-upset",
+      "label": "Sad & Upset",
+      "h2": "Sad & Upset Kaomoji",
+      "intro": "Sad, crying, and upset text face expressions.",
+      "symbols": [
+        { "char": "╥﹏╥", "label": "Crying Face" },
+        { "char": "(╯︵╰,)", "label": "Crying Upset" },
+        { "char": "ಥ_ಥ", "label": "Teary Eyes" },
+        { "char": "(;﹏;)", "label": "Sobbing" },
+        { "char": "(T_T)", "label": "Crying" },
+        { "char": "(｡•́︿•̀｡)", "label": "Sad Pout" }
+      ]
+    },
+    {
+      "id": "shrug-confusion",
+      "label": "Shrug & Confusion",
+      "h2": "Shrug & Confusion Kaomoji",
+      "intro": "Shrugging, confused, and deadpan text face expressions.",
+      "symbols": [
+        { "char": "¯\\_(ツ)_/¯", "label": "Shrug" },
+        { "char": "ಠ_ಠ", "label": "Look of Disapproval" },
+        { "char": "(⊙_⊙)", "label": "Wide Eyes" },
+        { "char": "(°ロ°)!", "label": "Shocked" },
+        { "char": "(￣_￣|||)", "label": "Awkward Sweat" },
+        { "char": "(¬_¬)", "label": "Side Eye" }
+      ]
+    },
+    {
+      "id": "love-affection",
+      "label": "Love & Affection",
+      "h2": "Love & Affection Kaomoji",
+      "intro": "Loving and affectionate text face expressions.",
+      "symbols": [
+        { "char": "(♥ω♥)", "label": "Love Eyes" },
+        { "char": "(◍•ᴗ•◍)❤", "label": "Love Face" },
+        { "char": "(≧◡≦)", "label": "Super Happy" },
+        { "char": "(✿ ♥‿♥)", "label": "Love Flower" },
+        { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "label": "Blushing" },
+        { "char": "♡(˃͈ દ ˂͈ ༶ )", "label": "Heart Eyes Shy" }
+      ]
+    },
+    {
+      "id": "animals-creatures",
+      "label": "Animals & Creatures",
+      "h2": "Animal & Creature Kaomoji",
+      "intro": "Cute animal text faces for messages and social media.",
+      "symbols": [
+        { "char": "ʕ•ᴥ•ʔ", "label": "Bear" },
+        { "char": "(=^・ω・^=)", "label": "Cat" },
+        { "char": "(◕ᴗ◕✿)", "label": "Cute Creature" },
+        { "char": "(U ᵕ U❁)", "label": "Bunny" },
+        { "char": "∩｡• ᵕ •｡∩", "label": "Puppy" },
+        { "char": "(^•ω•^)", "label": "Happy Pet" }
+      ]
+    },
+    {
+      "id": "birds",
+      "label": "Birds",
+      "h2": "Bird Kaomoji",
+      "intro": "Most bird kaomoji use the Greek letter theta (Θ or θ) as a beak, so the faces below share one middle character. ⊝ makes a rounder beak that reads as a penguin, and ▼ makes a pointed one.",
+      "symbols": [
+        { "char": "(・Θ・)", "label": "Chick" },
+        { "char": "(･θ･)", "label": "Little Bird" },
+        { "char": "(◉Θ◉)", "label": "Wide-Eyed Bird" },
+        { "char": "＼( ˋ Θ ´ )／", "label": "Flapping Wings" },
+        { "char": "(￣Θ￣)", "label": "Unimpressed Bird" },
+        { "char": "（・⊝・）", "label": "Penguin" },
+        { "char": "◎▼◎", "label": "Owl" },
+        { "char": "(`･Θ･´)", "label": "Grumpy Chick" }
+      ]
+    },
+    {
+      "id": "action-expression",
+      "label": "Action & Expression",
+      "h2": "Action & Expression Kaomoji",
+      "intro": "Action kaomoji expressing movement, frustration, and dramatic reactions.",
+      "symbols": [
+        { "char": "ᕕ(ᐛ)ᕗ", "label": "Running Happy" },
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Flip Table (Rage)" },
+        { "char": "┬─┬ノ(º_ºノ)", "label": "Put Table Back" },
+        { "char": "(ノ°▽°)ノ", "label": "Throwing Arms Up" },
+        { "char": "(づ｡◕‿‿◕｡)づ", "label": "Offering Hug" },
+        { "char": "(ˆ_ˆ)/", "label": "Waving Hello" }
+      ]
+    },
+    {
+      "id": "lenny-faces",
+      "label": "Lenny & Mischief",
+      "h2": "Lenny Faces",
+      "intro": "The classic Lenny face and its smirking, winking, and arm-raised variants. Each one copies as a complete face.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Classic Lenny" },
+        { "char": "( ͠° ͟ʖ ͡°)", "label": "Intense Lenny" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Winking Lenny" },
+        { "char": "( ͡ʘ ͜ʖ ͡ʘ)", "label": "Surprised Lenny" },
+        { "char": "( ͡◉ ͜ʖ ͡◉)", "label": "Big Eyes Lenny" },
+        { "char": "( ͡⊙ ͜ʖ ͡⊙)", "label": "Wide Lenny" },
+        { "char": "¯\\_( ͡° ͜ʖ ͡°)_/¯", "label": "Lenny Shrug" },
+        { "char": "( ͡° ͜ʖ ͡°)╭∩╮", "label": "Rude Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)つ──☆*:・ﾟ", "label": "Magic Lenny" }
+      ]
+    },
+    {
+      "id": "laughing-crying",
+      "label": "Laughing & Crying-Laughing",
+      "h2": "Laughing & Crying-Laughing Kaomoji",
+      "intro": "Hard-laughing and laughing-until-you-cry text faces: the kaomoji answer to the crying-laughing emoji.",
+      "symbols": [
+        { "char": "(≧▽≦)", "label": "Laughing" },
+        { "char": "(＾▽＾)", "label": "Big Laugh" },
+        { "char": "( ´∀｀)", "label": "Hearty Laugh" },
+        { "char": "(*≧艸≦)", "label": "Giggling" },
+        { "char": "ｗｗｗ", "label": "Japanese LOL" },
+        { "char": "(笑)", "label": "Laugh Tag" },
+        { "char": "＼(^o^)／", "label": "Rejoicing" },
+        { "char": "(T▽T)", "label": "Tears of Joy" },
+        { "char": "(;´∀｀)", "label": "Sweat Laugh" }
+      ]
+    },
+    {
+      "id": "hug-emoticon",
+      "label": "Hug Emoticon",
+      "h2": "Hug Emoticon Kaomoji",
+      "intro": "Copy hug kaomoji with their reaching-arms and cuddle variants: the text-face way to send a virtual hug.",
+      "symbols": [
+        { "char": "(っ´▽｀)っ", "label": "Reaching Hug" },
+        { "char": "⊂((・▽・))⊃", "label": "Big Hug" },
+        { "char": "(っ◕‿◕)っ", "label": "Cute Hug" },
+        { "char": "⸜(｡˃ ᵕ ˂ )⸝♡", "label": "Happy Hug" },
+        { "char": "(つ≧▽≦)つ", "label": "Excited Hug" }
+      ]
+    },
+    {
+      "id": "cat-eyes-kaomoji",
+      "label": "Cat Eyes Kaomoji",
+      "h2": "Cat Eyes & Cute Eyes Kaomoji",
+      "intro": "Copy kaomoji built around big sparkly eyes: cat faces and wide cute-eyed expressions.",
+      "symbols": [
+        { "char": "(=^‥^=)", "label": "Cat Eyes" },
+        { "char": "(=｀ω´=)", "label": "Smug Cat" },
+        { "char": "(✿◕‿◕)", "label": "Cute Big Eyes" },
+        { "char": "(◕ᴥ◕)", "label": "Round Eyes" },
+        { "char": "(ↀᴥↀ)", "label": "Wide Cat Eyes" }
+      ]
+    },
+    {
+      "id": "angry-rage",
+      "label": "Angry & Rage",
+      "h2": "Angry & Rage Kaomoji",
+      "intro": "Copy kaomoji for frustration, fury, and disapproval, from a raised eyebrow to a full table flip.",
+      "symbols": [
+        { "char": "(╬ Ò﹏Ó)", "label": "Furious" },
+        { "char": "ಠ_ಠ", "label": "Disapproval Stare" },
+        { "char": "(# ゚Д゚)", "label": "Annoyed" },
+        { "char": "ヽ(`Д´)ﾉ", "label": "Yelling in Anger" },
+        { "char": "눈_눈", "label": "Side-Eye Glare" },
+        { "char": "(¬_¬)", "label": "Unimpressed" }
+      ]
+    },
+    {
+      "id": "sleepy-sleeping",
+      "label": "Sleepy & Sleeping",
+      "h2": "Sleepy & Sleeping Kaomoji",
+      "intro": "Copy kaomoji for drowsy eyes, dozing off, and deep sleep: good night texts and tired reactions.",
+      "symbols": [
+        { "char": "(-_-) zzZ", "label": "Sleeping" },
+        { "char": "(ᴗ˳ᴗ)", "label": "Sleepy Eyes" },
+        { "char": "(∪。∪)。。。zzz", "label": "Deep Sleep" },
+        { "char": "(︶.︶✽)", "label": "Dozing Off" },
+        { "char": "( ˘ω˘ )", "label": "Drowsy" }
+      ]
+    },
+    {
+      "id": "music-singing",
+      "label": "Music & Singing",
+      "h2": "Music & Singing Kaomoji",
+      "intro": "Copy kaomoji for humming, singing along, and dancing to a beat.",
+      "symbols": [
+        { "char": "♪(´▽｀)", "label": "Singing Along" },
+        { "char": "(っ˘ω˘)♪", "label": "Humming a Tune" },
+        { "char": "ヽ(´▽`)/♪", "label": "Cheerful Singing" },
+        { "char": "(๑✧∀✧๑)♪", "label": "Excited for Music" },
+        { "char": "♪~(´ε` )", "label": "Whistling" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "kaomoji-collections",
+    "label": "Kaomoji Collections",
+    "h2": "Themed Kaomoji Sets",
+    "intro": "Ready-made kaomoji sets grouped by mood: copy a whole set of related faces in one click for chats, captions, and comments."
+  },
+  "collection_container_id": "kaomojiCollectionsContainer",
+  "collections": [
+    {
+      "name": "Happy Kaomoji Set",
+      "flags": ["(◠‿◠)", "(^▽^)", "(≧◡≦)", "ヽ(•‿•)ノ"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cute Animal Kaomoji",
+      "flags": ["ʕ•ᴥ•ʔ", "(=^・ω・^=)", "(◕ᴗ◕✿)", "(U ᵕ U❁)"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sad & Crying Set",
+      "flags": ["(T_T)", "╥﹏╥", "(;﹏;)", "(｡•́︿•̀｡)"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Shrug & Table-Flip Set",
+      "flags": ["¯\\_(ツ)_/¯", "(╯°□°）╯︵ ┻━┻", "┬─┬ノ(º_ºノ)"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Love & Affection Set",
+      "flags": ["(♥ω♥)", "(◍•ᴗ•◍)❤", "(✿ ♥‿♥)", "(づ｡◕‿‿◕｡)づ"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lenny Face Set",
+      "flags": ["( ͡° ͜ʖ ͡°)", "( ͡~ ͜ʖ ͡°)", "( ͡◉ ͜ʖ ͡◉)"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Themed Kaomoji Sets",
+      "paragraphs": [
+        "Ready-made kaomoji sets grouped by mood: copy a whole set of related faces in one click for chats, captions, and comments.",
+        "<a href=\"/library/sparkle-kaomoji/\">See all sparkle &amp; star kaomoji →</a>"
+      ]
+    }
+  ],
+  "faq_h2": "Kamoji & Kaomoji FAQ",
+  "faq": [
+    {
+      "q": "What is a kamoji?",
+      "a": "A kamoji is a Japanese-style text emoticon: a little face built from standard keyboard and Unicode characters, like (◕‿◕), ¯\\_(ツ)_/¯, or (｡•́︿•̀｡). Unlike emoji, kamoji are read upright rather than sideways, so the eyes, mouth, and arms are easy to recognise at a glance. Every kamoji on this page is plain text you can copy and paste into a bio, caption, or comment."
+    },
+    {
+      "q": "Is kamoji the same as kaomoji?",
+      "a": "Yes. Kamoji is simply a common shortened spelling of kaomoji (顔文字), the Japanese term for text-based emoticons. The two words refer to exactly the same thing, text faces such as (^▽^) and (T_T), so searching for kamoji or kaomoji brings up the same kind of faces."
+    },
+    {
+      "q": "How do I copy and paste a kamoji?",
+      "a": "Click any kamoji on this page to copy it instantly, then paste it into an Instagram or TikTok bio, a Discord or WhatsApp message, or a YouTube comment. Because each kamoji is pure Unicode text rather than an image, it pastes as text. Discord reads underscores as italics, so a face that contains them, such as the shrug, can arrive changed; wrapping the face in backticks keeps every character."
+    },
+    {
+      "q": "What is the difference between a kamoji and an emoji?",
+      "a": "An emoji is a single coloured picture character rendered by the device's emoji font (😀), while a kamoji is a face assembled from ordinary text characters that you read upright, like (≧◡≦). Kamoji are more flexible and expressive for nuanced moods, and because they are built from standard Unicode text, no app swaps in its own picture."
+    }
+  ],
+  "related": [
+    { "href": "/library/fish-kaomoji/", "title": "Fish Kaomoji", "desc": "Text fish like ><(((º> and <><, fish bones and swimming scenes." },
+    { "href": "/library/angel-kaomoji/", "title": "Angel Kaomoji", "desc": "Winged and haloed text faces, from ଘ(੭ˊᵕˋ)੭ to wand-waving angels." },
+    {
+      "href": "/answers/how-to-type-kaomoji/",
+      "title": "How to Type Kaomoji",
+      "desc": "Text Replacement, pinned clips and the Windows emoji panel, with each maker's own steps."
+    },
+    { "href": "/kaomoji-generator/", "title": "Kaomoji Generator", "desc": "Build your own text face: mix eyes, mouths, and arms, then copy it." },
+    { "href": "/library/face-emojis/", "title": "Face Emojis", "desc": "Smiley faces, expressions, and emotion emojis for every mood." },
+    {
+      "href": "/library/smiley-face-guide/",
+      "title": "Smiley Face Guide",
+      "desc": "A guide to smiley face emojis, expressions, and when to use them."
+    },
+    {
+      "href": "/library/body-language-emojis/",
+      "title": "Body Language Emojis",
+      "desc": "Body language and activity emojis expressing movement and emotion."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols & Gestures",
+      "desc": "Hand gesture emojis and symbols for communication and expression."
+    },
+    { "href": "/library/laughing-kaomoji/", "title": "Laughing Kaomoji", "desc": "Happy laughing text faces like (≧▽≦)." },
+    { "href": "/library/sad-kaomoji/", "title": "Sad Kaomoji", "desc": "Crying and downcast kaomoji like (；ω；)." },
+    { "href": "/library/wave-kaomoji/", "title": "Wave Kaomoji", "desc": "Waving, greeting kaomoji like ( ˆ▿ˆ)ノ." },
+    { "href": "/library/shocked-kaomoji/", "title": "Shocked Kaomoji", "desc": "Surprised, wide-eyed kaomoji like (⊙_⊙)." },
+    { "href": "/library/bear-kaomoji/", "title": "Bear Kaomoji", "desc": "Bear text faces like ʕ•ᴥ•ʔ." },
+    { "href": "/library/music-kaomoji/", "title": "Music Kaomoji", "desc": "Musical, singing kaomoji like ♪(´▽｀)." },
+    { "href": "/library/thumbs-up-kaomoji/", "title": "Thumbs-Up Kaomoji", "desc": "Approving thumbs-up kaomoji like (๑•̀ㅂ•́)ﻭ." },
+    { "href": "/library/star-kaomoji/", "title": "Star Kaomoji", "desc": "Starstruck, star-eyed kaomoji like (★ω★)." },
+    { "href": "/library/wink-kaomoji/", "title": "Wink Kaomoji", "desc": "Playful winking kaomoji like (^_-)-☆." },
+    { "href": "/library/blushing-kaomoji/", "title": "Blushing Kaomoji", "desc": "Shy, flustered kaomoji like ( 〃▽〃)." },
+    {
+      "href": "/library/angry-kaomoji/",
+      "title": "Angry Kaomoji",
+      "desc": "Copy and paste angry kaomoji: mad, annoyed, and table-flipping Japanese text faces."
+    },
+    {
+      "href": "/library/shrug-kaomoji/",
+      "title": "Shrug Kaomoji",
+      "desc": "Copy and paste the shrug kaomoji ¯\\_(ツ)_/¯ and its variants, the classic \"I don't know\" text face."
+    },
+    {
+      "href": "/library/hug-kaomoji/",
+      "title": "Hug Kaomoji",
+      "desc": "Copy and paste hug kaomoji: warm, open-armed Japanese text faces ready to hug."
+    },
+    {
+      "href": "/library/sleepy-kaomoji/",
+      "title": "Sleepy Kaomoji",
+      "desc": "Copy and paste sleepy kaomoji: drowsy, dozing, and fast-asleep Japanese text faces."
+    },
+    {
+      "href": "/library/excited-kaomoji/",
+      "title": "Excited Kaomoji",
+      "desc": "Copy and paste excited kaomoji: hyped, arms-up Japanese text faces bursting with energy."
+    },
+    {
+      "href": "/library/kiss-kaomoji/",
+      "title": "Kiss Kaomoji",
+      "desc": "Copy and paste kiss kaomoji: puckering, kiss-blowing Japanese text faces."
+    },
+    {
+      "href": "/library/heart-kaomoji/",
+      "title": "Heart Kaomoji",
+      "desc": "Copy and paste heart kaomoji: cute Japanese text faces carrying hearts and heart eyes."
+    },
+    {
+      "href": "/library/lenny-face/",
+      "title": "Lenny Face",
+      "desc": "Copy and paste the Lenny face ( ͡° ͜ʖ ͡°) and its many variants, the classic smirking meme text face."
+    },
+    {
+      "href": "/library/flower-kaomoji/",
+      "title": "Flower Kaomoji",
+      "desc": "Copy and paste flower kaomoji: cute Japanese text faces framed with blossoms."
+    },
+    {
+      "href": "/library/bunny-kaomoji/",
+      "title": "Bunny Kaomoji",
+      "desc": "Copy and paste bunny kaomoji: cute Japanese rabbit text faces with long ears."
+    },
+    {
+      "href": "/library/dog-kaomoji/",
+      "title": "Dog Kaomoji",
+      "desc": "Copy and paste dog kaomoji: cute Japanese puppy text faces with floppy ears and paws."
+    },
+    {
+      "href": "/library/football-kaomoji/",
+      "title": "Football Kaomoji",
+      "desc": "Cute football text faces: kicking, celebrating, and reacting with a soccer ball."
+    },
+    {
+      "href": "/library/divider-kaomoji/",
+      "title": "Kaomoji Dividers",
+      "desc": "Copy and paste kaomoji dividers: cute text dividers, spacers, and borders to break up bios, captions, and posts."
+    },
+    { "href": "/library/nervous-kaomoji/", "title": "Nervous Kaomoji", "desc": "Sweat-drop, worried and awkward text faces." },
+    { "href": "/library/scared-kaomoji/", "title": "Scared Kaomoji", "desc": "Trembling, hiding and frightened text faces." },
+    { "href": "/library/confused-kaomoji/", "title": "Confused Kaomoji", "desc": "Puzzled, head-tilting and question-mark text faces." },
+    { "href": "/library/thinking-kaomoji/", "title": "Thinking Kaomoji", "desc": "Pondering, chin-on-hand and hmm text faces." },
+    { "href": "/library/pout-kaomoji/", "title": "Pout Kaomoji", "desc": "Sulky, pouting and grumpy text faces with puffed cheeks." },
+    { "href": "/library/smug-kaomoji/", "title": "Smug Kaomoji", "desc": "Smug, smirking and scheming text faces." },
+    { "href": "/library/evil-kaomoji/", "title": "Evil Kaomoji", "desc": "Evil grins, villain laughs and devil-horned text faces." },
+    { "href": "/library/drool-kaomoji/", "title": "Drool Kaomoji", "desc": "Drooling text faces for food, crushes and naps." },
+    { "href": "/library/dizzy-kaomoji/", "title": "Dizzy Kaomoji", "desc": "Spiral-eyed, dazed and seeing-stars text faces." },
+    { "href": "/library/cool-kaomoji/", "title": "Cool Kaomoji", "desc": "Sunglasses and chill text faces, from (⌐■_■) to finger guns." },
+    { "href": "/library/teeth-kaomoji/", "title": "Teeth Kaomoji", "desc": "Fanged, sharp-toothed and toothy-grin text faces." },
+    { "href": "/library/strong-kaomoji/", "title": "Strong Kaomoji", "desc": "Flexing, determined and proud text faces like ᕦ(ò_óˇ)ᕤ." },
+    { "href": "/library/dancing-kaomoji/", "title": "Dancing Kaomoji", "desc": "Dancing text faces with moving arms, legs and music notes." },
+    { "href": "/library/salute-kaomoji/", "title": "Salute Kaomoji", "desc": "Saluting text faces, from (￣^￣)ゞ to o7." },
+    { "href": "/library/nod-kaomoji/", "title": "Nod Kaomoji", "desc": "Nodding yes, agreeing and head-shaking no text faces." },
+    {
+      "href": "/library/bowing-kaomoji/",
+      "title": "Bowing Kaomoji",
+      "desc": "Bowing faces for apologies, thanks and respect, from m(_ _)m to orz."
+    },
+    { "href": "/library/fight-kaomoji/", "title": "Fight Kaomoji", "desc": "Punching, sword and pew-pew text faces for banter and games." },
+    { "href": "/library/food-kaomoji/", "title": "Food Kaomoji", "desc": "Text faces eating noodles, sipping tea and waiting for dinner." },
+    { "href": "/library/sheep-kaomoji/", "title": "Sheep Kaomoji", "desc": "Sheep, rams and lambs typed in text." },
+    { "href": "/library/mouse-kaomoji/", "title": "Mouse Kaomoji", "desc": "Mice and hamsters drawn in text, tails and whiskers included." },
+    {
+      "href": "/library/butterfly-kaomoji/",
+      "title": "Butterfly Kaomoji",
+      "desc": "Butterflies made of text, wing frames and fluttering trails."
+    },
+    { "href": "/library/seal-kaomoji/", "title": "Seal Kaomoji", "desc": "Seals and sea lions drawn in text." },
+    { "href": "/library/bird-kaomoji/", "title": "Bird Kaomoji", "desc": "Birds, chicks, ducks, penguins and owls drawn in text." },
+    { "href": "/library/fox-kaomoji/", "title": "Fox Kaomoji", "desc": "Fox text faces with pointed ears and a fluffy tail." },
+    { "href": "/library/deer-kaomoji/", "title": "Deer Kaomoji", "desc": "Deer, fawns and reindeer drawn in text, antlers included." },
+    { "href": "/library/halloween-kaomoji/", "title": "Halloween Kaomoji", "desc": "Ghosts, bats, vampires, zombies and pumpkins in text." },
+    { "href": "/library/christmas-kaomoji/", "title": "Christmas Kaomoji", "desc": "Santa, snowmen, reindeer and snowy faces for the holidays." },
+    {
+      "href": "/library/birthday-kaomoji/",
+      "title": "Birthday Kaomoji",
+      "desc": "Birthday text faces with cake, candles, gifts and party poppers."
+    },
+    { "href": "/library/moon-kaomoji/", "title": "Moon Kaomoji", "desc": "Sleepy moon faces, suns, stars and space text faces." },
+    {
+      "href": "/library/aesthetic-kaomoji/",
+      "title": "Aesthetic Kaomoji",
+      "desc": "Framed, sparkly kaomoji for bios: cutecore, coquette and soft-girl lines."
+    },
+    { "href": "/library/goth-kaomoji/", "title": "Goth Kaomoji", "desc": "Gothic text faces framed with crosses, pentagrams, bats and skulls." }
+  ]
+}

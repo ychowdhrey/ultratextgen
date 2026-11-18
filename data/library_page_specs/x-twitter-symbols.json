@@ -1,0 +1,157 @@
+{
+  "slug": "x-twitter-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "X (Twitter) Symbols — Copy & Paste for Posts & Bio",
+  "meta_description": "Copy and paste X (Twitter) symbols — the 𝕏 mark, checkmarks, arrows, thread bullets, and bio decorations for posts, display names, and threads. Click to copy.",
+  "canonical": "https://ultratextgen.com/library/x-twitter-symbols/",
+  "breadcrumb": "X (Twitter) Symbols",
+  "hero_h1": "X (Twitter) Symbols",
+  "hero_tagline": "Copy and paste special characters for X (formerly Twitter): thread formatting symbols, hashtag enhancers, checkmarks, engagement emoji, and bio decorators. Click any symbol to copy it instantly.",
+  "intro": "X (Twitter) fully supports Unicode symbols in posts, threads, replies, and bios. Use these characters to add structure to long threads, make hashtags stand out, decorate your bio, or add personality to individual posts. These are common, widely supported characters, but a very new or rare one can show as a box on an older device.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/x-twitter-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-para-twitter/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-para-twitter/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/x-twitter-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "x-mark-symbols",
+      "label": "X Mark & Logo",
+      "h2": "X Symbol & Cross Mark Characters",
+      "intro": "Text characters for the X mark itself: the stylised 𝕏 used for the rebranded logo, plus cross and multiplication marks. Click any to copy.",
+      "symbols": [
+        { "char": "𝕏", "label": "Double-Struck X (logo style)" },
+        { "char": "✕", "label": "Multiplication X" },
+        { "char": "✖", "label": "Heavy Multiplication X" },
+        { "char": "✗", "label": "Ballot X" },
+        { "char": "✘", "label": "Heavy Ballot X" },
+        { "char": "╳", "label": "Box Drawings X" },
+        { "char": "⨯", "label": "Vector Cross Product" },
+        { "char": "×", "label": "Multiplication Sign" },
+        { "char": "☓", "label": "Saltire (St Andrew's Cross)" },
+        { "char": "ⓧ", "label": "Circled Small X" }
+      ]
+    },
+    {
+      "id": "thread-formatting-symbols",
+      "label": "Thread Formatting Symbols",
+      "h2": "Thread Formatting Symbols",
+      "intro": "Symbols that help structure and organize X threads for readability.",
+      "symbols": [
+        { "char": "🧵", "label": "Thread (needle and thread)" },
+        { "char": "①", "label": "Circled 1" },
+        { "char": "②", "label": "Circled 2" },
+        { "char": "③", "label": "Circled 3" },
+        { "char": "▸", "label": "Right-Pointing Pointer" },
+        { "char": "→", "label": "Rightwards Arrow" },
+        { "char": "•", "label": "Bullet" },
+        { "char": "──────────", "label": "Thread Separator" }
+      ]
+    },
+    {
+      "id": "quote-reply-markers",
+      "label": "Quote & Reply Markers",
+      "h2": "Quote & Reply Marker Characters",
+      "intro": "Symbols used to visually mark quoted text and reply references in posts.",
+      "symbols": [
+        { "char": "❝", "label": "Heavy Open Quotation Mark" },
+        { "char": "❞", "label": "Heavy Close Quotation Mark" },
+        { "char": "«", "label": "Left Guillemet" },
+        { "char": "»", "label": "Right Guillemet" },
+        { "char": "↩", "label": "Leftwards Arrow with Hook" },
+        { "char": "↪", "label": "Rightwards Arrow with Hook" }
+      ]
+    },
+    {
+      "id": "hashtag-enhancement-symbols",
+      "label": "Hashtag Enhancement",
+      "h2": "Hashtag Enhancement Symbols",
+      "intro": "Symbols placed around hashtags to make them stand out in posts.",
+      "symbols": [
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "⚡", "label": "Lightning" },
+        { "char": "★", "label": "Black Star" },
+        { "char": "▶", "label": "Black Right-Pointing Triangle" },
+        { "char": "◆", "label": "Black Diamond" }
+      ]
+    },
+    {
+      "id": "checkmarks-verification",
+      "label": "Checkmarks & Verification",
+      "h2": "Checkmark & Verification Characters",
+      "intro": "Check mark symbols and verification-style characters for posts and lists.",
+      "symbols": [
+        { "char": "✓", "label": "Check Mark" },
+        { "char": "✔", "label": "Heavy Check Mark" },
+        { "char": "✅", "label": "White Heavy Check Mark" },
+        { "char": "☑", "label": "Ballot Box with Check" },
+        { "char": "✗", "label": "Ballot X" },
+        { "char": "✘", "label": "Heavy Ballot X" }
+      ]
+    },
+    {
+      "id": "bio-profile-decoration",
+      "label": "Bio & Profile Decoration",
+      "h2": "X Bio & Profile Decoration Symbols",
+      "intro": "Symbols that add style and personality to X bios and profiles.",
+      "symbols": [
+        { "char": "♡", "label": "White Heart Suit" },
+        { "char": "✦", "label": "Four-Pointed Star" },
+        { "char": "·", "label": "Middle Dot" },
+        { "char": "│", "label": "Vertical Bar" },
+        { "char": "⊹", "label": "Hermitian Conjugate Matrix" },
+        { "char": "📌", "label": "Pushpin (pinned tweet marker)" },
+        { "char": "🔗", "label": "Link" },
+        { "char": "📍", "label": "Location Pin" },
+        { "char": "✧", "label": "White Four-Pointed Star" },
+        { "char": "✰", "label": "Shadowed White Star" },
+        { "char": "❥", "label": "Rotated Heavy Heart" },
+        { "char": "❀", "label": "White Florette" },
+        { "char": "✿", "label": "Black Florette" },
+        { "char": "➤", "label": "Black Arrowhead" }
+      ]
+    }
+  ],
+  "faq_h2": "X (Twitter) symbols, answered",
+  "faq": [
+    {
+      "q": "What is the X (Twitter) symbol to copy and paste?",
+      "a": "People most often want the stylised X used for the rebranded Twitter logo. The closest copy-paste text characters are 𝕏 (mathematical double-struck capital X) and the cross marks ✕ ✗ ✘ ╳. X isn't an official font, so these Unicode characters are the standard way to represent the X mark in plain text."
+    },
+    {
+      "q": "How do I add symbols to my X (Twitter) bio?",
+      "a": "Tap any symbol on this page to copy it, then paste it into your X bio, display name, or a post. X fully supports Unicode in bios, display names, posts, and replies: use dots, bars, and stars (· │ ✦ ⊹) to separate sections or add personality."
+    },
+    {
+      "q": "Why do some symbols show as boxes on X?",
+      "a": "A blank box or question mark means the viewer's device doesn't have a glyph for that character. Well-supported characters (arrows, stars, checkmarks, basic punctuation) render everywhere; very new or rare symbols may not. If a symbol looks broken, pick a more common alternative."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Stars, sparkles, asterisks, and glitter characters in various Unicode styles."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Checkmark Symbols",
+      "desc": "Check marks, tick marks, and ballot box characters for lists and forms."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "All Unicode arrow characters for navigation, direction, and list formatting."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Every heart emoji and Unicode heart character in one reference."
+    }
+  ]
+}

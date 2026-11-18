@@ -1,0 +1,148 @@
+{
+  "slug": "achievement-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Trophy, Medal & Award Emojis 🏆 — Achievement Symbols Copy & Paste",
+  "meta_description": "Browse and copy achievement symbols — crowns, trophies, medals, celebration emojis, and status symbols for bios, posts, and profiles.",
+  "canonical": "https://ultratextgen.com/library/achievement-symbols/",
+  "breadcrumb": "Achievement Symbols",
+  "hero_h1": "Trophy, Medal & Achievement Symbols",
+  "hero_tagline": "A reference collection of crowns, trophies, medals, celebration emojis, and status symbols for bios, posts, and profiles. Click any symbol to copy it instantly.",
+  "intro": "Browse and copy achievement symbols organized by category: from royal crowns and victory trophies to celebration emojis, fire and energy symbols, verification badges, and gaming ranks.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-04-01",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/achievement-symbols/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/achievement-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "crowns",
+      "label": "Crown Symbols",
+      "h2": "Crown Symbols",
+      "intro": "Royal and status crown emojis and Unicode chess crown characters.",
+      "symbols": [
+        { "char": "👑", "label": "Crown" },
+        { "char": "♕", "label": "White Chess Queen" },
+        { "char": "♔", "label": "White Chess King" },
+        { "char": "♛", "label": "Black Chess Queen" },
+        { "char": "♚", "label": "Black Chess King" },
+        { "char": "🫅", "label": "Person with Crown" },
+        { "char": "🤴", "label": "Prince" },
+        { "char": "👸", "label": "Princess" },
+        { "char": "💎", "label": "Gem Stone" }
+      ]
+    },
+    {
+      "id": "trophies",
+      "label": "Trophy & Medal",
+      "h2": "Trophy & Medal Symbols",
+      "intro": "Victory trophies, podium medals, and sports recognition symbols.",
+      "symbols": [
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🥇", "label": "Gold Medal" },
+        { "char": "🥈", "label": "Silver Medal" },
+        { "char": "🥉", "label": "Bronze Medal" },
+        { "char": "🏅", "label": "Sports Medal" },
+        { "char": "🎖️", "label": "Military Medal" },
+        { "char": "🏵", "label": "Rosette" }
+      ]
+    },
+    {
+      "id": "celebration",
+      "label": "Celebration",
+      "h2": "Celebration Emojis",
+      "intro": "Party and festive emojis for marking milestones, wins, and special moments.",
+      "symbols": [
+        { "char": "🎉", "label": "Party Popper" },
+        { "char": "🎊", "label": "Confetti Ball" },
+        { "char": "🥳", "label": "Partying Face" },
+        { "char": "🎆", "label": "Fireworks" },
+        { "char": "🎇", "label": "Sparkler" },
+        { "char": "🪅", "label": "Piñata" },
+        { "char": "🎈", "label": "Balloon" },
+        { "char": "🎁", "label": "Wrapped Gift" },
+        { "char": "🎀", "label": "Ribbon" },
+        { "char": "🥂", "label": "Clinking Glasses" },
+        { "char": "⭐", "label": "Star" }
+      ]
+    },
+    {
+      "id": "fire-energy",
+      "label": "Fire & Energy",
+      "h2": "Fire & Energy Symbols",
+      "intro": "Power, intensity, and excitement symbols for high-energy content.",
+      "symbols": [
+        { "char": "🔥", "label": "Fire" },
+        { "char": "⚡", "label": "Lightning Bolt" },
+        { "char": "💥", "label": "Explosion" },
+        { "char": "💪", "label": "Flexed Bicep" },
+        { "char": "✊", "label": "Raised Fist" },
+        { "char": "💣", "label": "Bomb" },
+        { "char": "🧨", "label": "Firecracker" },
+        { "char": "🚀", "label": "Rocket" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌟", "label": "Glowing Star" }
+      ]
+    },
+    {
+      "id": "verification",
+      "label": "Verification & Status",
+      "h2": "Verification & Status Symbols",
+      "intro": "Symbols for verified accounts, certified status, and premium markers.",
+      "symbols": [
+        { "char": "✅", "label": "White Heavy Check Mark" },
+        { "char": "🔰", "label": "Japanese Symbol for Beginner" },
+        { "char": "🏷️", "label": "Label" },
+        { "char": "📛", "label": "Name Badge" },
+        { "char": "🔱", "label": "Trident Emblem" },
+        { "char": "⚜", "label": "Fleur-de-lis" },
+        { "char": "☑", "label": "Ballot Box with Check" },
+        { "char": "✔", "label": "Heavy Check Mark" },
+        { "char": "🔒", "label": "Locked" },
+        { "char": "🛡️", "label": "Shield" },
+        { "char": "👌", "label": "OK Hand" },
+        { "char": "🆗", "label": "OK Button" }
+      ]
+    },
+    {
+      "id": "rank-gaming",
+      "label": "Rank & Gaming",
+      "h2": "Rank & Gaming Symbols",
+      "intro": "Gaming, combat, and competitive achievement symbols.",
+      "symbols": [
+        { "char": "⚔️", "label": "Crossed Swords" },
+        { "char": "🗡️", "label": "Dagger" },
+        { "char": "🎮", "label": "Video Game" },
+        { "char": "🕹️", "label": "Joystick" },
+        { "char": "🏹", "label": "Bow and Arrow" },
+        { "char": "🎯", "label": "Bullseye" },
+        { "char": "🏁", "label": "Chequered Flag" },
+        { "char": "🎲", "label": "Game Die" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Stars, sparkles, asterisks, and glitter characters in various Unicode styles."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbol Collection",
+      "desc": "Hand gesture emojis and Unicode hand symbols for every type of message."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle & Decorative Symbols",
+      "desc": "Sparkle symbols, glitter characters, and aesthetic decorators."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face & Emotion Emojis",
+      "desc": "Smileys, angry faces, shrug, confused, and expressive Unicode characters."
+    }
+  ]
+}

@@ -304,6 +304,10 @@
         {
           "char": "∵",
           "label": "\\because: Omdat"
+        },
+        {
+          "char": "ℒ",
+          "label": "\\mathcal{L}: Laplacetransformatie (cursieve hoofdletter L)"
         }
       ]
     }

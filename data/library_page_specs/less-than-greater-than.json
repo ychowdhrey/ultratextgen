@@ -1,0 +1,93 @@
+{
+  "slug": "less-than-greater-than",
+  "page_type": "symbol",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Less Than & Greater Than Symbols (< >): Meaning & Typing",
+  "meta_description": "The < and > symbols explained — comparison meaning, why they break HTML unescaped, how to type them, and how they differ from « » and ⟨ ⟩.",
+  "canonical": "https://ultratextgen.com/symbol/less-than-greater-than/",
+  "breadcrumb": "Less Than & Greater Than Symbols",
+  "hero_h1": "Less Than (<) & Greater Than (>) Symbols",
+  "hero_tagline": "What they mean, why they can break HTML, and how they differ from angle quotes: click to copy.",
+  "intro": "< and > are inequality operators: a < b means a is smaller than b, and a > b means a is larger than b. They've been part of standard mathematical notation since the 1600s and were carried directly into the original ASCII character set, which is why they sit in the Basic Latin block rather than the dedicated Mathematical Operators block used by symbols like ≠ or ∞ that arrived with Unicode.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-greater-than/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znaki-menshe-i-bolshe/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-lebih-dari/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-inferieur-superieur/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/kleiner-und-groesser-zeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/kucuktur-buyuktur-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simboli-minore-maggiore/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sinais-de-menor-e-maior/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signos-de-menor-y-mayor/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-lebih-dari/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-asghar-akbar/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/shounari-dainari-kigou/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-noikwa-makkwa/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/kleiner-dan-groter-dan-teken/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/mniejsze-i-wieksze/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/less-than-greater-than/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/budeungho-giho/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-greater-than/" }
+  ],
+  "sections": [
+    {
+      "id": "similar-looking-symbols",
+      "label": "Don't Confuse Them With",
+      "h2": "Similar-Looking Symbols",
+      "symbols": [
+        { "char": "‹", "label": "Single Left Guillemet (U+2039) — a quotation mark, not a comparison" },
+        { "char": "«", "label": "Double Left Guillemet (U+00AB) — French/German quotation marks" },
+        { "char": "⟨", "label": "Left Angle Bracket (U+27E8) — used in bra-ket notation and vectors, not comparisons" },
+        { "char": "≤", "label": "Less-Than or Equal To (U+2264) — the \"or-equal\" cousin, on the math symbols library" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "What < and > Mean",
+      "paragraphs": [
+        "&lt; and &gt; are inequality operators: a &lt; b means a is smaller than b, and a &gt; b means a is larger than b. They've been part of standard mathematical notation since the 1600s and were carried directly into the original ASCII character set, which is why they sit in the Basic Latin block rather than the dedicated Mathematical Operators block used by symbols like ≠ or ∞ that arrived with Unicode.",
+        "That ASCII-era placement is also why &lt; and &gt; do a second job almost every keyboard user runs into: in HTML and XML, &lt; is the character that opens every tag. A stray &lt; typed as plain text can make a browser start parsing a tag that was never meant to exist, which is why HTML requires escaping them as <code>&amp;lt;</code> and <code>&amp;gt;</code> anywhere they appear as literal text rather than markup."
+      ]
+    }
+  ],
+  "faq_h2": "Frequently Asked Questions",
+  "faq": [
+    {
+      "q": "Why does < break my HTML?",
+      "a": "HTML uses < to start every tag, so a browser reading a raw < in your text tries to parse a tag and the rest of your content can vanish or render wrong. Escape it as &lt; (and > as &gt;) whenever you're writing < or > inside HTML, not just inside a tag."
+    },
+    {
+      "q": "How do you type < and > on a keyboard?",
+      "a": "They're standard keys on every keyboard: Shift+comma for < and Shift+period for > on a US layout. No Alt code or special input is needed."
+    },
+    {
+      "q": "What's the difference between < and ‹ or «?",
+      "a": "< (U+003C) is the plain ASCII comparison operator used in math and code. ‹ › (U+2039/U+203A) are single guillemets and « » (U+00AB/U+00BB) are double guillemets: both are quotation marks used in French, German, and other European typography, not comparison symbols, even though they look similar."
+    },
+    {
+      "q": "What do ≤ and ≥ mean vs < and >?",
+      "a": "< and > are strict comparisons (excludes equal values); ≤ and ≥ include the possibility of equality. 3 < 3 is false, but 3 ≤ 3 is true. Both ≤ and ≥ are their own precomposed Unicode characters, covered on the math symbols library."
+    }
+  ],
+  "related": [
+    { "href": "/symbol/plus-minus/", "title": "Plus-Minus (±)", "desc": "Two possible values in one expression." },
+    { "href": "/symbol/division-sign/", "title": "Division Sign (÷)", "desc": "The obelus, and why textbooks moved away from it." },
+    { "href": "/symbol/square-root/", "title": "Square Root (√)", "desc": "A 1525 origin and the vinculum bar's job." },
+    { "href": "/library/math-symbols/", "title": "All Math Symbols", "desc": "Operators, Greek letters, set theory, and calculus notation." },
+    {
+      "href": "/symbol/less-than-or-equal-to-symbol/",
+      "title": "Less Than or Equal To Symbol (≤)",
+      "desc": "The ≤ you reach for when a value can be smaller than another value or exactly equal to it."
+    },
+    { "href": "/symbol/not-equal-sign/", "title": "Not Equal Sign", "desc": "The equals sign with a slash through it (≠)." },
+    {
+      "href": "/symbol/quotation-mark/",
+      "title": "Quotation Mark",
+      "desc": "The straight \" and ' every keyboard types, and the curly, guillemet, and low-quote variants that stand in for them in different software…"
+    }
+  ]
+}

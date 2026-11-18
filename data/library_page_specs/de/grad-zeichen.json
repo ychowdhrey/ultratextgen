@@ -67,7 +67,7 @@
           "label": "Grad Fahrenheit"
         },
         {
-          "char": "K",
+          "char": "\u212a",
           "label": "Kelvin-Zeichen"
         }
       ]
@@ -164,7 +164,7 @@
         },
         {
           "char": "⌓",
-          "label": "Segment"
+          "label": "Kreissegment"
         },
         {
           "char": "⊙",
@@ -177,6 +177,25 @@
         {
           "char": "∅",
           "label": "Leere Menge"
+        }
+      ]
+    },
+    {
+      "id": "similar-looking",
+      "label": "Nicht verwechseln",
+      "h2": "Ähnlich aussehende Zeichen",
+      "symbols": [
+        {
+          "char": "º",
+          "label": "Maskuliner Ordinalindikator (U+00BA)"
+        },
+        {
+          "char": "∘",
+          "label": "Ringoperator (U+2218)"
+        },
+        {
+          "char": "˚",
+          "label": "Ring oben (U+02DA)"
         }
       ]
     }

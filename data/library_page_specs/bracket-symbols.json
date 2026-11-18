@@ -1,0 +1,149 @@
+{
+  "slug": "bracket-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Brackets, Braces & Parentheses: All Unicode Bracket Types",
+  "meta_description": "Browse and copy every Unicode bracket type: standard, CJK, mathematical, decorative, quotation marks and full-width. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/library/bracket-symbols/",
+  "breadcrumb": "Bracket Symbols",
+  "hero_h1": "Brackets, Braces & Parentheses",
+  "hero_tagline": "A complete reference of Unicode bracket types: from standard and mathematical brackets to CJK, decorative, and full-width variants. Click any symbol to copy it instantly.",
+  "intro": "Unicode contains dozens of bracket variants beyond the standard keyboard characters. CJK brackets are popular for aesthetic bios and usernames, mathematical brackets appear in formal notation, and decorative brackets add visual flair to styled text. This collection organizes all bracket types for quick browsing and copying.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-03-31",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/bracket-symbols/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/bracket-symbols/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-parentesi/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/gwalho-giho/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/klammer-symbole/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-kurung/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/parentesis-corchetes-y-llaves/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/skobki-simvoly/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/bracket-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "standard-brackets",
+      "label": "Standard Brackets",
+      "h2": "Standard Bracket Characters",
+      "intro": "Common bracket types including parentheses, square brackets, curly braces, and angle brackets.",
+      "symbols": [
+        { "char": "(", "label": "Left Parenthesis" },
+        { "char": ")", "label": "Right Parenthesis" },
+        { "char": "[", "label": "Left Square Bracket" },
+        { "char": "]", "label": "Right Square Bracket" },
+        { "char": "{", "label": "Left Curly Bracket" },
+        { "char": "}", "label": "Right Curly Bracket" },
+        { "char": "⟨", "label": "Mathematical Left Angle Bracket" },
+        { "char": "⟩", "label": "Mathematical Right Angle Bracket" }
+      ]
+    },
+    {
+      "id": "cjk-brackets",
+      "label": "CJK Brackets",
+      "h2": "CJK & Japanese Bracket Characters",
+      "intro": "Chinese, Japanese, and Korean bracket characters popular in aesthetic text and usernames.",
+      "symbols": [
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "『", "label": "Left White Corner Bracket" },
+        { "char": "』", "label": "Right White Corner Bracket" },
+        { "char": "【", "label": "Left Black Lenticular Bracket" },
+        { "char": "】", "label": "Right Black Lenticular Bracket" },
+        { "char": "〔", "label": "Left Tortoise Shell Bracket" },
+        { "char": "〕", "label": "Right Tortoise Shell Bracket" },
+        { "char": "〈", "label": "Left Angle Bracket" },
+        { "char": "〉", "label": "Right Angle Bracket" },
+        { "char": "《", "label": "Left Double Angle Bracket" },
+        { "char": "》", "label": "Right Double Angle Bracket" }
+      ]
+    },
+    {
+      "id": "mathematical-brackets",
+      "label": "Mathematical Brackets",
+      "h2": "Mathematical Bracket Characters",
+      "intro": "Ceiling, floor, double square, and mathematical notation brackets.",
+      "symbols": [
+        { "char": "⌈", "label": "Left Ceiling" },
+        { "char": "⌉", "label": "Right Ceiling" },
+        { "char": "⌊", "label": "Left Floor" },
+        { "char": "⌋", "label": "Right Floor" },
+        { "char": "⟦", "label": "Mathematical Left White Square Bracket" },
+        { "char": "⟧", "label": "Mathematical Right White Square Bracket" },
+        { "char": "⟪", "label": "Mathematical Left Double Angle Bracket" },
+        { "char": "⟫", "label": "Mathematical Right Double Angle Bracket" }
+      ]
+    },
+    {
+      "id": "decorative-brackets",
+      "label": "Decorative Brackets",
+      "h2": "Decorative Bracket Characters",
+      "intro": "Ornamental and decorative bracket characters for styled text.",
+      "symbols": [
+        { "char": "❪", "label": "Flattened Left Parenthesis" },
+        { "char": "❫", "label": "Flattened Right Parenthesis" },
+        { "char": "❬", "label": "Medium Left-Pointing Angle Bracket" },
+        { "char": "❭", "label": "Medium Right-Pointing Angle Bracket" },
+        { "char": "❮", "label": "Heavy Left-Pointing Angle Quotation Mark Ornament" },
+        { "char": "❯", "label": "Heavy Right-Pointing Angle Quotation Mark Ornament" },
+        { "char": "❰", "label": "Heavy Left-Pointing Angle Bracket Ornament" },
+        { "char": "❱", "label": "Heavy Right-Pointing Angle Bracket Ornament" },
+        { "char": "❲", "label": "Light Left Tortoise Shell" },
+        { "char": "❳", "label": "Light Right Tortoise Shell" }
+      ]
+    },
+    {
+      "id": "quotation-corner",
+      "label": "Quotation & Corner",
+      "h2": "Quotation & Typographic Brackets",
+      "intro": "Typographic quotation marks and guillemets for formal and decorative text.",
+      "symbols": [
+        { "char": "‹", "label": "Single Left-Pointing Angle Quotation" },
+        { "char": "›", "label": "Single Right-Pointing Angle Quotation" },
+        { "char": "«", "label": "Left-Pointing Double Angle Quotation" },
+        { "char": "»", "label": "Right-Pointing Double Angle Quotation" },
+        { "char": "❝", "label": "Heavy Double Turned Comma Quotation" },
+        { "char": "❞", "label": "Heavy Double Comma Quotation" },
+        { "char": "❛", "label": "Heavy Single Turned Comma Quotation" },
+        { "char": "❜", "label": "Heavy Single Comma Quotation" }
+      ]
+    },
+    {
+      "id": "full-width-brackets",
+      "label": "Full-Width Brackets",
+      "h2": "Full-Width Bracket Characters",
+      "intro": "Full-width bracket variants used in CJK typography and aesthetic text styling.",
+      "symbols": [
+        { "char": "（", "label": "Fullwidth Left Parenthesis" },
+        { "char": "）", "label": "Fullwidth Right Parenthesis" },
+        { "char": "［", "label": "Fullwidth Left Square Bracket" },
+        { "char": "］", "label": "Fullwidth Right Square Bracket" },
+        { "char": "｛", "label": "Fullwidth Left Curly Bracket" },
+        { "char": "｝", "label": "Fullwidth Right Curly Bracket" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Punctuation, typography, and special Unicode characters for writing."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Circles, diamonds, squares, triangles, and decorative shapes for formatting."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "All Unicode arrow characters for navigation, direction, and list formatting."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical Unicode characters including operators, Greek letters, and calculus symbols."
+    }
+  ]
+}

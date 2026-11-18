@@ -71,8 +71,12 @@ the missing element, and the pass that owns it.
 legitimate. It prints what it is overriding rather than passing quietly.
 """
 
+import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import spec_drift  # noqa: E402  (the one definition of a page's copy tiles)
 
 # Each check: (label, owning pass, extractor). The extractor returns a SET of
 # strings found in a page; a live page having members the generated page lacks
@@ -104,6 +108,15 @@ CHECKS = [
         "canonical",
         "(hand-set in the generator template)",
         lambda h: set(re.findall(r'<link rel="canonical" href="([^"]+)"', h)),
+    ),
+    (
+        # Added 2026-11-18: 146 of 1,616 library specs had drifted from their
+        # pages (tiles added, de-duplicated or corrected by hand), and a
+        # regenerate deleted those tiles in silence. The fix is the spec, not
+        # the page: write the page's tiles back into it.
+        "copy tiles",
+        "the spec: npm run audit:spec-drift names what it lacks",
+        lambda h: {c for c, _ in spec_drift.live_tiles(h)},
     ),
 ]
 

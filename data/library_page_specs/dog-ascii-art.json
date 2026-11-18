@@ -1,0 +1,74 @@
+{
+  "slug": "dog-ascii-art",
+  "copy_pattern": "art",
+  "hand_built_page": true,
+  "title": "Dog ASCII Art 🐶 Copy & Paste",
+  "meta_description": "Copy and paste dog ASCII art — original multi-line text dogs including puppy faces, floppy ears, sitting dogs, and dog bones drawn in plain characters.",
+  "canonical": "https://ultratextgen.com/library/dog-ascii-art/",
+  "breadcrumb": "Dog ASCII Art",
+  "hero_h1": "Dog ASCII Art",
+  "hero_tagline": "Original multi-line text dogs: puppy faces, floppy ears, sitting dogs, and bones drawn in plain characters. Click Copy on any card.",
+  "intro": "Dog ASCII art draws a whole pup (ears, snout, paws, wagging tail) out of nothing but keyboard characters. These are full multi-line pictures; for compact one-line Japanese-style dog faces, see the <a href=\"/library/dog-kaomoji/\">dog kaomoji collection</a> instead. Multi-line dogs hold their shape wherever text renders in a fixed-width (monospace) font: Discord code blocks, terminals, README files, and plain-text editors. Every piece below is an original drawing; click Copy to grab it with its spacing and line breaks intact.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/dog-ascii-art/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/arte-ascii-perro/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/dog-ascii-art/" }
+  ],
+  "sections": [
+    {
+      "id": "small-dogs",
+      "label": "Small & One-Line",
+      "h2": "Small Dog ASCII Art",
+      "intro": "Three-line puppies and bones for chats and comments.",
+      "art": [
+        { "label": "One-Line Bone", "art": "(o)=======(o)" },
+        { "label": "Puppy Face", "art": " /^ ^\\\n( o o )\n \\_o_/" },
+        { "label": "Peeking Puppy", "art": "  /\\ ___ /\\\n (  o   o  )\n_(_)_____(_)_" },
+        { "label": "Dog Bone", "art": " __          __\n(  \\________/  )\n(__/        \\__)" }
+      ]
+    },
+    {
+      "id": "classic-dogs",
+      "label": "Classic Pieces",
+      "h2": "Classic Dog Pictures",
+      "intro": "Mid-size dogs with more detail: happy puppies and big dog faces.",
+      "art": [
+        { "label": "Happy Puppy", "art": "   __      __\n  ( _\\    /_ )\n   \\ \\.--./ /\n    ( o  o )\n     ) __ (\n    (_/  \\_)" },
+        { "label": "Big Dog Face", "art": "    ______\n   /      \\\n  | (o)(o) |\n /|   __   |\\\n( |  (__)  | )\n \\|        |/\n   \\______/" },
+        {
+          "label": "Floppy-Ear Dog",
+          "art": "  ___         ___\n /   \\_______/   \\\n|    /  o o  \\    |\n|   |    ..   |   |\n \\  |  \\___/  |  /\n  \\_|         |_/\n    \\_________/"
+        }
+      ]
+    },
+    {
+      "id": "big-dogs",
+      "label": "Big Pieces",
+      "h2": "Big Dog ASCII Art",
+      "intro": "Full-body dogs: best in Discord code blocks, terminals, and anywhere else with a fixed-width font.",
+      "art": [
+        {
+          "label": "Sitting Dog",
+          "art": "     __\n    /  \\______\n   ( o        \\  /\n    \\   ______ \\/\n     | |      | |\n     | |      | |\n    _| |_    _| |_"
+        },
+        {
+          "label": "Begging Dog",
+          "art": "      /\\____/\\\n     /  o  o  \\\n     |   ..   |\n      \\ \\__/ /\n      /      \\\n     / |    | \\\n    (  |    |  )\n     \\ |    | /\n      \\|    |/\n      (______)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/text-art/", "title": "Text Art", "desc": "ASCII and Unicode art collections plus drawing blocks." },
+    { "href": "/library/dog-kaomoji/", "title": "Dog Kaomoji", "desc": "One-line Japanese puppy text faces with floppy ears." },
+    { "href": "/ascii-art-generator/", "title": "ASCII Art Generator", "desc": "Type a word and turn it into big block-letter ASCII art." },
+    { "href": "/library/cat-ascii-art/", "title": "Cat ASCII Art", "desc": "Multi-line ASCII cats: loafs, long cats, and cat faces." },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal & Creature Emojis",
+      "desc": "A reference collection of animal emojis: pets, wildlife, sea creatures, birds, and mythical beings."
+    }
+  ]
+}

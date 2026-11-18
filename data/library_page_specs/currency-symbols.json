@@ -1,0 +1,232 @@
+{
+  "slug": "currency-symbols",
+  "copy_pattern": "single",
+  "hand_built_page": true,
+  "title": "Currency Symbols: Copy & Paste Money Signs & Symbols",
+  "meta_description": "Browse and copy currency symbols, monetary signs, and financial Unicode characters from world currencies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/currency-symbols/",
+  "breadcrumb": "Currency Symbols",
+  "hero_h1": "Currency Symbols",
+  "hero_tagline": "A reference collection of currency signs, monetary symbols, and financial Unicode characters. Click any symbol to copy it instantly.",
+  "intro": "This library contains currency symbols from major world currencies, regional monetary signs, historical currency marks, and related financial Unicode characters. Symbols are organized by geographic region and usage.",
+  "date_published": "2026-03-29",
+  "date_modified": "2026-09-25",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/currency-symbols/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/currency-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-moneda/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-euro/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/hwapye-giho/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/euroteken/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/para-birimi-sembolleri/" },
+    { "lang": "sv", "href": "https://ultratextgen.com/sv/library/valuta-symboler/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/waehrungssymbole/" },
+    { "lang": "da", "href": "https://ultratextgen.com/da/library/valuta-symboler/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/library/symboles-monetaires/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/library/currency-symbols/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/library/simvoly-valyut/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-moeda/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/symbole-walut/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/currency-symbols/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-mata-uang/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/library/ky-hieu-tien-te/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/library/huobi-fuhao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/currency-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "major-currencies",
+      "label": "Major Currencies",
+      "h2": "Major World Currencies",
+      "intro": "Symbols representing the most widely traded and recognized currencies worldwide.",
+      "symbols": [
+        { "char": "$", "label": "Dollar" },
+        { "char": "€", "label": "Euro" },
+        { "char": "£", "label": "Pound" },
+        { "char": "¥", "label": "Yen / Yuan" },
+        { "char": "₹", "label": "Indian Rupee" },
+        { "char": "₽", "label": "Ruble" },
+        { "char": "₩", "label": "Won" },
+        { "char": "₿", "label": "Bitcoin" }
+      ]
+    },
+    {
+      "id": "european-currencies",
+      "label": "European",
+      "h2": "European Currency Symbols",
+      "intro": "Currency signs used in European countries, including current and historical monetary units.",
+      "symbols": [
+        { "char": "€", "label": "Euro" },
+        { "char": "£", "label": "Pound" },
+        { "char": "₴", "label": "Hryvnia" },
+        { "char": "₾", "label": "Lari" },
+        { "char": "₺", "label": "Turkish Lira" },
+        { "char": "ƒ", "label": "Florin" },
+        { "char": "₣", "label": "French Franc" },
+        { "char": "₤", "label": "Lira" },
+        { "char": "₯", "label": "Drachma" },
+        { "char": "₼", "label": "Manat" }
+      ]
+    },
+    {
+      "id": "african-currencies",
+      "label": "African",
+      "h2": "African Currency Symbols",
+      "intro": "Currency signs representing monetary units used across African nations.",
+      "symbols": [
+        { "char": "₦", "label": "Naira" },
+        { "char": "₵", "label": "Cedi" }
+      ]
+    },
+    {
+      "id": "asian-currencies",
+      "label": "Asian",
+      "h2": "Asian Currency Symbols",
+      "intro": "Currency signs from East Asian, South Asian, Central Asian, and Middle Eastern monetary systems.",
+      "symbols": [
+        { "char": "¥", "label": "Yen" },
+        { "char": "₹", "label": "Rupee" },
+        { "char": "₩", "label": "Won" },
+        { "char": "₭", "label": "Kip" },
+        { "char": "₮", "label": "Tugrik" },
+        { "char": "₸", "label": "Tenge" },
+        { "char": "₪", "label": "Shekel" },
+        { "char": "﷼", "label": "Rial" },
+        { "char": "₨", "label": "Rupee Sign" },
+        { "char": "₫", "label": "Dong" },
+        { "char": "৳", "label": "Taka" },
+        { "char": "௹", "label": "Tamil Rupee" },
+        { "char": "฿", "label": "Thai Baht" }
+      ]
+    },
+    {
+      "id": "americas-currencies",
+      "label": "Americas",
+      "h2": "Americas Currency Symbols",
+      "intro": "Currency signs from North, Central, and South American monetary systems.",
+      "symbols": [
+        { "char": "$", "label": "Dollar" },
+        { "char": "¢", "label": "Cent" },
+        { "char": "₡", "label": "Colón" },
+        { "char": "₲", "label": "Guaraní" },
+        { "char": "₱", "label": "Peso" }
+      ]
+    },
+    {
+      "id": "historic-currencies",
+      "label": "Historic",
+      "h2": "Historic Currency Symbols",
+      "intro": "Currency symbols no longer in common use or of historical significance.",
+      "symbols": [
+        { "char": "₧", "label": "Peseta" },
+        { "char": "₰", "label": "German Penny" },
+        { "char": "₳", "label": "Austral" },
+        { "char": "₶", "label": "Livre Tournois" },
+        { "char": "₷", "label": "Spesmilo" }
+      ]
+    },
+    {
+      "id": "financial-symbols",
+      "label": "Financial",
+      "h2": "Financial & Miscellaneous Symbols",
+      "intro": "General-purpose financial symbols, percentage marks, and cryptocurrency signs.",
+      "symbols": [
+        { "char": "¤", "label": "Currency Sign" },
+        { "char": "‰", "label": "Per Mille" },
+        { "char": "‱", "label": "Per Ten Thousand" },
+        { "char": "Ξ", "label": "Ethereum" },
+        { "char": "₠", "label": "Euro-Currency" }
+      ]
+    },
+    {
+      "id": "additional-currency-symbols",
+      "label": "Complete Block Coverage",
+      "h2": "More from the Unicode Currency Symbols Block",
+      "intro": "Remaining assigned codepoints from the Unicode Currency Symbols block (U+20A0–U+20CF) not listed in the curated sections above.",
+      "symbols": [
+        { "char": "₢", "label": "Cruzeiro Sign" },
+        { "char": "₥", "label": "Mill Sign" },
+        { "char": "₻", "label": "Nordic Mark Sign" },
+        { "char": "⃀", "label": "Som Sign" }
+      ]
+    },
+    {
+      "id": "cryptocurrency",
+      "label": "Cryptocurrency",
+      "h2": "Cryptocurrency & Digital Money Symbols",
+      "symbols": [
+        { "char": "₿", "label": "Bitcoin" },
+        { "char": "Ξ", "label": "Ethereum (Ξ)" },
+        { "char": "Ł", "label": "Litecoin (Ł)" },
+        { "char": "Ð", "label": "Dogecoin (Ð)" },
+        { "char": "Ɱ", "label": "Monero (Ɱ)" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Currencies With No Unicode Symbol",
+      "paragraphs": [
+        "Every sign on this page is a real Unicode codepoint, but most of the world's circulating currencies have none. Unicode does not invent currency signs: a central bank designs one and formally adopts it first, and most never have. That leaves three tiers.",
+        "Three currencies moved up a tier recently: the <a href=\"/symbol/saudi-riyal-sign/\">Saudi riyal sign</a> (⃁ U+20C1) was finalized in Unicode 17.0, while the <a href=\"/symbol/dirham-sign/\">dirham sign</a> (⃃ U+20C3) and <a href=\"/symbol/omani-rial-sign/\">Omani rial sign</a> (⃄ U+20C4) became final in Unicode 18.0 on September 16, 2026. For the region's full tier-by-tier breakdown, see the <a href=\"/updates/middle-east-currency-symbols-scorecard/\">Middle East currency symbol scorecard</a>."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Unicode symbols for professional and business documents, including arrows, checkmarks, and bullets."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Emoji Flag Explorer",
+      "desc": "Country and regional flag emojis organized by continent and territory."
+    },
+    {
+      "href": "/library/transport-symbols/",
+      "title": "Transport & Map Symbols",
+      "desc": "Unicode characters for vehicles, directional signs, and map-related symbols."
+    },
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac & Astrology Symbols",
+      "desc": "Astrological signs, celestial symbols, and related Unicode characters."
+    },
+    {
+      "href": "/symbol/bitcoin-symbol/",
+      "title": "Bitcoin Symbol",
+      "desc": "The currency sign for Bitcoin (₿), added to Unicode in 2017 after real demand, not to be confused with the Thai baht ฿ or the BTC ticker."
+    },
+    { "href": "/symbol/cent-sign/", "title": "Cent Sign", "desc": "Why ¢ has no dedicated keyboard key, and how to type it anyway." },
+    {
+      "href": "/symbol/dollar-sign/",
+      "title": "Dollar Sign ($)",
+      "desc": "The most recognized currency symbol on Earth, and historians still can't fully agree where it came from."
+    },
+    {
+      "href": "/symbol/won-sign/",
+      "title": "Won Sign",
+      "desc": "The ₩ currency mark shared by both the South Korean won (KRW) and the North Korean won (KPW)."
+    },
+    { "href": "/symbol/peso-sign/", "title": "Peso Sign (₱)", "desc": "The ₱ that belongs to the Philippine peso." },
+    { "href": "/symbol/ruble-sign/", "title": "Ruble Sign", "desc": "The ₽ ruble sign." },
+    {
+      "href": "/symbol/dirham-sign/",
+      "title": "Dirham Sign",
+      "desc": "The UAE Central Bank's new currency symbol, assigned U+20C3 and published in Unicode 18.0 on September 16, 2026."
+    },
+    {
+      "href": "/symbol/omani-rial-sign/",
+      "title": "Omani Rial Sign",
+      "desc": "Oman's official currency symbol, unveiled on National Day 2025 and published in Unicode 18.0 on September 16, 2026."
+    },
+    {
+      "href": "/symbol/saudi-riyal-sign/",
+      "title": "Saudi Riyal Sign",
+      "desc": "Saudi Arabia's official currency symbol, approved by royal directive and encoded in Unicode 17.0."
+    },
+    { "href": "/symbol/rufiyaa-sign/", "title": "Rufiyaa Sign", "desc": "The Maldives' own currency symbol, built from the Thaana letter ރ." },
+    { "href": "/symbol/belarusian-ruble-sign/", "title": "Belarusian Ruble Sign", "desc": "Belarus's official currency symbol." }
+  ]
+}
