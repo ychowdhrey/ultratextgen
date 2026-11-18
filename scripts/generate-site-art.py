@@ -3988,6 +3988,42 @@ PAGES.update({
         P(m_specimen, lines=["˙˚ʚ(´◡`)ɞ˚˙", "˚ʚ♡ɞ˚", "ʚ₍ᐢ. .ᐢ₎ɞ"]), K_LIB),
 })
 
+
+# Korean kaomoji library pages: a specimen card of the page's own faces,
+# as the English kaomoji pages use (the hub-glyph motif clips long kaomoji).
+PAGES.update({
+    "ko-library-mureumpyo-imotikon": ("물음표 이모티콘", "갸우뚱, 어리둥절한 얼굴 문자.",
+        P(m_specimen, lines=["(・・?)", "(。ヘ°)", "┐(￣ヘ￣)┌"]), K_LIB),
+    "ko-library-chumchuneun-imotikon": ("춤추는 이모티콘", "팔 흔들기, 몸 흔들기, 음표 댄스.",
+        P(m_specimen, lines=["┏(・o・)┛", "(~˘▾˘)~", "♪┏(・o･)┛♪"]), K_LIB),
+    "ko-library-akma-imotikon": ("악마 이모티콘", "삼지창 악마, 음흉한 미소, 악당 웃음.",
+        P(m_specimen, lines=["ψ(｀∇´)ψ", "(¬‿¬)", "(ʘ‿ʘ)"]), K_LIB),
+    "ko-library-yeou-imotikon": ("여우 이모티콘", "볼털 여우 얼굴, 발바닥, 누운 여우.",
+        P(m_specimen, lines=["εᐟᐠ•ﻌ•ᐟᐠз", "εᐟᐠ˘ﻌ˘ᐟᐠз", "εᐟᐠ•ﻌ•ᐟᐠз ♡"]), K_LIB),
+    "ko-library-mulgogi-imotikon": ("물고기 이모티콘", "텍스트 물고기, 생선 뼈, 상형문자 물고기.",
+        P(m_specimen, lines=["><>", ">゜))))彡", "(°)#))<<"]), K_LIB),
+    "ko-library-gyeongnye-imotikon": ("경례 이모티콘", "충성 경례, o7, 감사 경례.",
+        P(m_specimen, lines=["(￣^￣)ゞ", "(´∀｀)ゞ", "(｡･ω･｡)ゞ"]), K_LIB),
+    "ko-library-ppijin-imotikon": ("삐진 이모티콘", "입 내민 얼굴, 볼 부풀린 얼굴.",
+        P(m_specimen, lines=["(｀ε´)", "(=｀ω´=)", "(｀_´)ゞ"]), K_LIB),
+    "ko-library-nabi-imotikon": ("나비 이모티콘", "나비 특수문자와 날개 달린 얼굴.",
+        P(m_specimen, lines=["ʚїɞ", "ʚ♡ɞ", "ʚ(˘ᵕ˘)ɞ"]), K_LIB),
+    "ko-library-danghwang-imotikon": ("당황 이모티콘", "식은땀, 진땀, 어색한 얼굴 문자.",
+        P(m_specimen, lines=["(^_^;)", "(⊙_⊙;)", "(-_-;)"]), K_LIB),
+    "ko-library-chim-heullineun-imotikon": ("침 흘리는 이모티콘", "배고픈 얼굴, 반한 얼굴, 졸린 얼굴.",
+        P(m_specimen, lines=["(￣﹃￣)", "(￣﹃￣)♨", "(*♡∀♡)"]), K_LIB),
+    "ko-library-christmas-imotikon": ("크리스마스 이모티콘", "산타, 루돌프, 눈사람, 선물 얼굴 문자.",
+        P(m_specimen, lines=["*<|:-)", "Ψ(˘ᴥ˘)Ψ", "(((>_<)))"]), K_LIB),
+    "ko-library-dal-imotikon": ("달 이모티콘", "잘 자 인사, 해, 로켓, 우주.",
+        P(m_specimen, lines=["(´-ω-`)☾", "✩₊˚.⋆☾⋆⁺₊✧", "☀(◕ᴗ◕✿)"]), K_LIB),
+    "ko-library-sae-imotikon": ("새 이모티콘", "짹짹 작은 새, 병아리, 오리.",
+        P(m_specimen, lines=["(・Θ・)", "＼Σ^)／", "<o)__ __(o>"]), K_LIB),
+    "ko-library-jwi-imotikon": ("쥐 이모티콘", "생쥐, 꼬리 달린 쥐, 햄스터.",
+        P(m_specimen, lines=["ᘛ⁐ᕐᐷ", "<:3 )~~~", "₍ᐢ•ﻌ•ᐢ₎"]), K_LIB),
+    "ko-library-yang-imotikon": ("양 이모티콘", "복슬복슬 양, 숫양, 아기 양.",
+        P(m_specimen, lines=["Ꮚ˘ꈊ˘Ꮚ", "Ꮚ`ꈊ´Ꮚ", "ᏊꈍꈊꈍᏊ♡"]), K_LIB),
+})
+
 # The 2026-10-08 kaomoji spokes. Same treatment as fish and angel above: three
 # faces from the page itself, chosen from characters the art machine covers, since
 # the default radial motif scatters a long face into fragments around the chip.
