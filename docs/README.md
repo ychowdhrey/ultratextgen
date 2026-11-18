@@ -249,6 +249,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:sitemap-images`
 - `test:skin-tone`
 - `test:spaced-native-runs`
+- `test:spec-combos`
 - `test:spec-sentence-reuse`
 - `test:spelling`
 - `test:stencil`

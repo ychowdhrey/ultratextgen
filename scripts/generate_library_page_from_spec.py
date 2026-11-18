@@ -197,9 +197,23 @@ def validate_spec(spec):
             )
 
     for i, sec in enumerate(sections):
+        combos = sec.get("combos") if isinstance(sec, dict) else None
+        if combos is not None:
+            if pattern == "art" or not isinstance(combos, list) or not combos:
+                raise SpecError(f"sections[{i}].combos must be a non-empty list on a "
+                                "single or collection page")
+            for j, c in enumerate(combos):
+                if not isinstance(c, dict) or not c.get("char") or not c.get("label"):
+                    raise SpecError(f"sections[{i}].combos[{j}] needs 'char' and 'label'")
+            if str(spec.get("lang", "en")).lower() != "en" and sec.get("symbols") \
+                    and not sec.get("mix_intro"):
+                raise SpecError(
+                    f"sections[{i}] has combos but no 'mix_intro': a non-English page "
+                    "must carry its own line introducing the single emojis, or the "
+                    "English default would ship on it")
         items_key = "art" if pattern == "art" else "symbols"
-        # A section may be combos only (a row of ready-made combos and no
-        # single-emoji grid), as the emoji-combos aesthetic sections are.
+        # A section may be combos only: a row of ready-made combos and no grid of
+        # singles (the emoji-combos aesthetic sections). It renders no hand-off line.
         if items_key == "symbols" and "symbols" not in sec and sec.get("combos"):
             sec["symbols"] = []
         for key in ("id", "h2", items_key):
@@ -218,16 +232,12 @@ def validate_spec(spec):
                 raise SpecError(f"sections[{i}].symbols[{j}] missing 'char'")
             if "label" not in sym or sym["label"] in (None, ""):
                 raise SpecError(f"sections[{i}].symbols[{j}] missing 'label'")
-        for j, combo in enumerate(sec.get("combos") or []):
-            for key in ("char", "label"):
-                if not combo.get(key):
-                    raise SpecError(f"sections[{i}].combos[{j}] missing '{key}'")
 
     # The validator downstream requires at least 3 H2s. Each section is one
-    # H2; a collection section adds one more, and so does every editorial
-    # section and a FAQ with a faq_h2, which the page renders with its own H2. (Counting
-    # only tile sections refused 24 valid specs backfilled from live pages
-    # that carry one tile section and several prose sections.)
+    # H2; a collection section adds one more.
+    # Every editorial section and a FAQ with a faq_h2 render their own H2 as well.
+    # (Counting only tile sections refused 24 valid specs backfilled from live
+    # pages that carry one tile section and several prose sections.)
     h2_count = (len(sections) + (1 if pattern == "collection" else 0)
                 + len(spec.get("editorial_sections") or [])
                 + (1 if spec.get("faq") and spec.get("faq_h2") else 0))
@@ -548,7 +558,7 @@ def render_editorial_sections(sections):
 RTL_LANGS = {"ar", "fa", "ur", "he"}
 
 
-def render_symbol_section(sec, copy_label="Copy", copy_aria=None, combo_aria=None):
+def render_symbol_section(sec, copy_label="Copy", copy_aria=None, lang="en"):
     # copy_aria lets a locale whose labels are nominative avoid a verb + noun
     # case error: Polish "Kopiuj Petarda" needs the accusative, "Kopiuj: Petarda"
     # does not. Default keeps every other locale byte-identical.
@@ -584,33 +594,36 @@ def render_symbol_section(sec, copy_label="Copy", copy_aria=None, combo_aria=Non
         if more
         else ""
     )
-    # Optional ready-made combos above the single-emoji grid (the emoji-combo
-    # pages). Until 2026-11-18 this field was read by nothing: three English
-    # specs carried 144 combos the generator never emitted, the live pages
-    # were hand-written with them, and the Spanish pages built from those specs
-    # shipped without half their tiles. `symbols_intro` is the line between
-    # the combos and the single-emoji grid.
+    # Optional ready-made combos ("combos": [{char, label}]): a row of
+    # multi-emoji sets ABOVE the single-emoji grid, then a one-line hand-off
+    # ("mix your own") into the singles. Matches the live combo pages
+    # (library/funny-, seasonal-, color-emoji-combos), whose specs carried the
+    # key before this renderer read it. English wording and aria are the live
+    # pages' own; any other language must supply "mix_intro" (validate_spec
+    # enforces it) and gets the locale's plain copy aria.
     combos_html = ""
     if sec.get("combos"):
+        combo_aria = (copy_aria or "{copy} {label}") + (" emoji combo" if lang == "en" else "")
         combo_rows = []
         for combo in sec["combos"]:
-            aria = (combo_aria or "{copy} {label} emoji combo").format(
-                copy=copy_label, label=combo["label"])
+            aria = combo_aria.format(copy=copy_label, label=combo["label"])
             combo_rows.append(
                 '    <div class="flag-row">\n'
                 f'      <button class="flag-emoji symbol-tile" '
                 f'data-symbol="{esc_attr(combo["char"])}" '
                 f'aria-label="{esc_attr(aria)}">{esc(combo["char"])}</button>\n'
-                f'      <span class="flag-label">{esc(combo["label"])}</span>\n'
+                f'      <span class="flag-label">{esc_attr(combo["label"])}</span>\n'
                 '    </div>'
             )
+        mix = sec.get("mix_intro") or (
+            f'Or mix your own from the individual {sec.get("label", "").lower()} emojis:')
         combos_html = (
-            '  <div class="flag-rows flag-rows--text">\n'
+            '  <div class="flag-rows">\n'
             + "\n".join(combo_rows)
             + "\n  </div>\n"
+            # a combos-only section has no singles to hand off to
+            + (f'  <p class="u-secondary-tight">{esc_prose(mix)}</p>\n' if rows else "")
         )
-    if sec.get("symbols_intro"):
-        combos_html += f'  <p class="u-secondary-tight">{esc_prose(sec["symbols_intro"])}</p>\n'
     return (
         f'<section class="mood-explainers" id="{esc_attr(sec["id"])}">\n'
         f"{label_html}"
@@ -979,10 +992,8 @@ def render_page(spec):
                           for s in spec["sections"]]
     else:
         symbol_aria = spec.get("copy_aria_template") or ui.get("copyAria")
-        # `combo_aria_template` labels a section's ready-made combos; the
-        # default is the English "{copy} {label} emoji combo".
-        combo_aria = spec.get("combo_aria_template")
-        section_blocks = [render_symbol_section(s, copy_label, symbol_aria, combo_aria)
+        section_blocks = [render_symbol_section(s, copy_label, symbol_aria,
+                                                str(spec.get("lang", "en")).lower())
                           for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
         section_blocks.append(render_collection_section(spec))

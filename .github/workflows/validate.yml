@@ -1219,6 +1219,17 @@ jobs:
         continue-on-error: true
         run: npm run test:generator-parity | tee generator-parity-tests.log
 
+      # Gating, zero backlog: unit tests over fixtures and the three live combo
+      # pages. The library spec generator ignored a section's "combos" key that
+      # three English specs carried, so every translation built from them shipped
+      # without the combo rows (es emojis-graciosos: 35 of 75 copy tiles). Pins the
+      # renderer to the live English markup and keeps the English hand-off line
+      # off a non-English page.
+      - name: Run spec combos tests
+        id: spec_combos_tests
+        continue-on-error: true
+        run: npm run test:spec-combos | tee spec-combos-tests.log
+
       # Gating, zero backlog: unit tests over fixtures for the check above. The
       # first specification of that check compared whole FIELDS, and the corpus
       # has zero duplicate hero_tagline/meta_description/title/intro values — it
@@ -1821,6 +1832,8 @@ jobs:
             echo '```'
             echo ""
             echo "### Generator parity tests — \`${{ steps.generator_parity_tests.outcome }}\`"
+
+            echo "### Spec combos tests — \`${{ steps.spec_combos_tests.outcome }}\`"
             echo '```'
             cat generator-parity-tests.log
             echo '```'
@@ -2033,6 +2046,7 @@ jobs:
           steps.efr_tests.outcome == 'failure' ||
           steps.content_significance_tests.outcome == 'failure' ||
           steps.generator_parity_tests.outcome == 'failure' ||
+          steps.spec_combos_tests.outcome == 'failure' ||
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||

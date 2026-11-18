@@ -3,13 +3,12 @@
   "slug": "emojis-graciosos",
   "page_type": "library",
   "copy_pattern": "collection",
-  "combo_aria_template": "{copy} combo: {label}",
   "canonical": "https://ultratextgen.com/es/library/emojis-graciosos/",
   "home_url": "https://ultratextgen.com/es/",
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-11-18",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/library/funny-emoji-combos/" },
     { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-graciosos/" },
@@ -28,16 +27,16 @@
       "h2": "Combos de Risa y Carcajadas",
       "intro": "Sets de llorar de risa para cuando un mensaje es demasiado gracioso como para contestar.",
       "combos": [
-        { "char": "😂🤣💀", "label": "Me morí" },
+        { "char": "😂🤣💀", "label": "Me muero" },
         { "char": "🤣👉🤡", "label": "Señalando y riendo" },
         { "char": "😹😹😹", "label": "Gato carcajeándose" },
         { "char": "😆🫵😂", "label": "¿Que hiciste qué?" },
         { "char": "😂🙏😭", "label": "Llorando de risa" },
-        { "char": "🤣📸😂", "label": "Momento captura" },
+        { "char": "🤣📸😂", "label": "Momento captura de pantalla" },
         { "char": "😝🤪😜", "label": "Caos total" },
-        { "char": "😂🍿👀", "label": "Viendo el chisme" }
+        { "char": "😂🍿👀", "label": "Viendo el drama" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de risa sueltos:",
+      "mix_intro": "O arma tu propia combinación con los emojis de risa sueltos:",
       "symbols": [
         { "char": "😂", "label": "Cara llorando de risa" },
         { "char": "🤣", "label": "Revolcándose de risa" },
@@ -59,11 +58,11 @@
         { "char": "🙃😬🫢", "label": "Silencio incómodo" },
         { "char": "🤭😛🤪", "label": "Dando lata" },
         { "char": "🥴🎉😵", "label": "Después de la fiesta" },
-        { "char": "🫠🔥🙂", "label": "Todo bien, todo tranqui" },
-        { "char": "🤡🪞😐", "label": "Darme cuenta de que soy yo" },
-        { "char": "😜🎈🎉", "label": "Bobo total" }
+        { "char": "🫠🔥🙂", "label": "Todo está bien" },
+        { "char": "🤡🪞😐", "label": "Resulta que el payaso soy yo" },
+        { "char": "😜🎈🎉", "label": "Tontería total" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de payasadas sueltos:",
+      "mix_intro": "O arma la tuya con los emojis de payasadas sueltos:",
       "symbols": [
         { "char": "🤡", "label": "Cara de payaso" },
         { "char": "🥴", "label": "Cara mareada" },
@@ -86,10 +85,10 @@
         { "char": "🐸☕👀", "label": "No es asunto mío" },
         { "char": "👻💀🕯️", "label": "Me dejaron en visto" },
         { "char": "🥸🕵️🔍", "label": "De incógnito" },
-        { "char": "💩🚽😭", "label": "Una porquería" },
+        { "char": "💩🚽😭", "label": "Basura total" },
         { "char": "🦆🎩🕶️", "label": "Pato con sombrero" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de memes sueltos:",
+      "mix_intro": "O combina tú mismo los emojis de memes sueltos:",
       "symbols": [
         { "char": "💀", "label": "Calavera" },
         { "char": "🗿", "label": "Moái" },
@@ -108,15 +107,15 @@
       "intro": "Sets de 'yo no vi nada' para el momento en que dijiste en voz alta lo que debía quedarse callado.",
       "combos": [
         { "char": "🙈🙉🙊", "label": "No veo nada" },
-        { "char": "😬😅🫠", "label": "¡Ay, no!" },
+        { "char": "😬😅🫠", "label": "Uf" },
         { "char": "🫢😳🙊", "label": "Hablé de más" },
         { "char": "🤐🔒🤫", "label": "Boca cerrada" },
-        { "char": "🙈💀😂", "label": "No puedo ver" },
+        { "char": "🙈💀😂", "label": "No puedo mirar" },
         { "char": "😬📉😅", "label": "Salió fatal" },
         { "char": "🫣👀😳", "label": "Espiando" },
         { "char": "🙊🤭😆", "label": "Uy, lo conté" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de 'uy' sueltos:",
+      "mix_intro": "O arma tu combinación con estos emojis de metidas de pata:",
       "symbols": [
         { "char": "🙈", "label": "Mono que no ve" },
         { "char": "🙉", "label": "Mono que no oye" },
@@ -132,16 +131,16 @@
       "h2": "Combos de Utilería y Remate",
       "intro": "Sets de té, circo y megáfono para rematar el chiste.",
       "combos": [
-        { "char": "☕🐸👀", "label": "El té de la rana" },
-        { "char": "🎪🤹🤡", "label": "Todo un circo" },
-        { "char": "🚨🤡🚨", "label": "Alerta de payaso" },
+        { "char": "☕🐸👀", "label": "El té de la rana René" },
+        { "char": "🎪🤹🤡", "label": "El circo completo" },
+        { "char": "🚨🤡🚨", "label": "Alerta payaso" },
         { "char": "📢😂📢", "label": "Anuncio" },
         { "char": "🧠🕸️😶", "label": "Cerebro vacío" },
         { "char": "🍌📞🤨", "label": "Teléfono banana" },
-        { "char": "🥁😐🎤", "label": "Tu-dum-tss" },
-        { "char": "🎬😂🍿", "label": "Comedia pura" }
+        { "char": "🥁😐🎤", "label": "Ba dum tss" },
+        { "char": "🎬😂🍿", "label": "Comedia de oro" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de utilería sueltos:",
+      "mix_intro": "O crea tu propio remate con los emojis de utilería sueltos:",
       "symbols": [
         { "char": "☕", "label": "Bebida caliente" },
         { "char": "🎪", "label": "Carpa de circo" },

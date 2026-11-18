@@ -3,13 +3,12 @@
   "slug": "emojis-de-estaciones",
   "page_type": "library",
   "copy_pattern": "collection",
-  "combo_aria_template": "{copy} combo: {label}",
   "canonical": "https://ultratextgen.com/es/library/emojis-de-estaciones/",
   "home_url": "https://ultratextgen.com/es/",
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-11-18",
   "hreflang": [
     {
       "lang": "en",
@@ -39,14 +38,14 @@
       "combos": [
         { "char": "☀️🌊🏖️", "label": "Día de playa" },
         { "char": "🍉🍦😎", "label": "Antojos de verano" },
-        { "char": "🌴🍹⛱️", "label": "Paraíso tropical" },
+        { "char": "🌴🍹⛱️", "label": "Toque tropical" },
         { "char": "🌅🧡🌊", "label": "Atardecer de verano" },
-        { "char": "🐚🌊🫧", "label": "Concha de mar" },
+        { "char": "🐚🌊🫧", "label": "Concha marina" },
         { "char": "🍦☀️🩴", "label": "Por un helado" },
         { "char": "😎🏄🌊", "label": "Día de surf" },
-        { "char": "🌺🌴💛", "label": "Vibra de isla" }
+        { "char": "🌺🌴💛", "label": "Ambiente de isla" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de verano sueltos:",
+      "mix_intro": "O arma tu combinación con los emojis de verano sueltos:",
       "symbols": [
         {
           "char": "☀️",
@@ -103,9 +102,9 @@
         { "char": "🌰🦔🍄", "label": "Suelo del bosque" },
         { "char": "🍁🧡🕯️", "label": "Otoño acogedor" },
         { "char": "☕🍂🎧", "label": "Paseo de otoño" },
-        { "char": "🎃🍂🌽", "label": "Campo de calabazas" }
+        { "char": "🎃🍂🌽", "label": "Huerto de calabazas" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de otoño sueltos:",
+      "mix_intro": "O arma la tuya con los emojis de otoño sueltos:",
       "symbols": [
         {
           "char": "🍂",
@@ -157,14 +156,14 @@
       "combos": [
         { "char": "❄️☃️🧤", "label": "Día de nieve" },
         { "char": "🧣🍵🕯️", "label": "Invierno acogedor" },
-        { "char": "⛷️🛷🏔️", "label": "Deportes de invierno" },
+        { "char": "⛷️🛷🏔️", "label": "Deporte de invierno" },
         { "char": "🌨️🧦☕", "label": "Quedarse en casa" },
         { "char": "❄️💙🧊", "label": "Invierno azul hielo" },
-        { "char": "☃️🎄✨", "label": "Invierno de fiestas" },
+        { "char": "☃️🎄✨", "label": "Invierno festivo" },
         { "char": "🔥🧣📖", "label": "Junto al fuego" },
         { "char": "🧤❄️🌲", "label": "Paseo helado" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de invierno sueltos:",
+      "mix_intro": "O combina tú mismo los emojis de invierno sueltos:",
       "symbols": [
         {
           "char": "❄️",
@@ -214,7 +213,7 @@
       "h2": "Combos de emojis de primavera",
       "intro": "Sets de flores, arcoíris y campo para publicaciones y biografías de primavera.",
       "combos": [
-        { "char": "🌸🌷🐝", "label": "Primavera en flor" },
+        { "char": "🌸🌷🐝", "label": "Flores de primavera" },
         { "char": "☔🌈🌱", "label": "Lluvias de abril" },
         { "char": "🦋🌼🌿", "label": "Pradera" },
         { "char": "🐣🪺🌸", "label": "Nueva vida" },
@@ -223,7 +222,7 @@
         { "char": "🌸🐝🍯", "label": "Abejas entre flores" },
         { "char": "🌈🌷🦋", "label": "Primavera pastel" }
       ],
-      "symbols_intro": "O arma el tuyo con los emojis de primavera sueltos:",
+      "mix_intro": "O crea tu combinación con los emojis de primavera sueltos:",
       "symbols": [
         {
           "char": "🌸",

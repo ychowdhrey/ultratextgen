@@ -573,6 +573,409 @@
       "kicker": "LIB",
       "added": "2026-11-14"
     },
+    "ko-library-seonmul-imotikon": {
+      "title": "선물 이모티콘",
+      "sub": "🎁 선물 상자, 리본, 깜짝 선물 조합.",
+      "glyphs": [
+        "🎁",
+        "🎀",
+        "💝",
+        "🛍️",
+        "🧧"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-gyeolhon-imotikon": {
+      "title": "결혼 이모티콘",
+      "sub": "반지, 신랑 신부, 결혼기념일 조합.",
+      "glyphs": [
+        "💍",
+        "💎",
+        "💒",
+        "⛪",
+        "💌"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-baek-seullaesi-giho": {
+      "title": "백 슬래시",
+      "sub": "슬래시, 역슬래시, 분수·나눗셈 사선 모음.",
+      "glyphs": [
+        "/",
+        "⁄",
+        "∕",
+        "⧸",
+        "／"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-aksenteu-giho": {
+      "title": "악센트 기호",
+      "sub": "발음 구별 기호, 결합 문자.",
+      "glyphs": [
+        "̀",
+        "́",
+        "̂",
+        "̃",
+        "̄"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-mureumpyo-imotikon": {
+      "title": "물음표 이모티콘",
+      "sub": "갸우뚱, 어리둥절한 얼굴 문자.",
+      "glyphs": [
+        "(・・?)",
+        "(・_・?)",
+        "( ˘・з・)?",
+        "(￣ー￣?)",
+        "(°ー°〃)"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-chumchuneun-imotikon": {
+      "title": "춤추는 이모티콘",
+      "sub": "팔 흔들기, 몸 흔들기, 음표 댄스.",
+      "glyphs": [
+        "┏(・o・)┛",
+        "┗(・o・)┓",
+        "┏( ^o^)┛",
+        "┗(＾0＾)┓",
+        "┏(＾▽＾)┛┗(＾▽＾)┓"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-akma-imotikon": {
+      "title": "악마 이모티콘",
+      "sub": "삼지창 악마, 음흉한 미소, 악당 웃음.",
+      "glyphs": [
+        "ψ(｀∇´)ψ",
+        "Ψ(｀▽´)Ψ",
+        "(｀∀´)Ψ",
+        "ψ(•̀ᴗ•́)ψ",
+        "ψ(▼へ▼メ)～→"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-yeou-imotikon": {
+      "title": "여우 이모티콘",
+      "sub": "볼털 여우 얼굴, 발바닥, 누운 여우.",
+      "glyphs": [
+        "εᐟᐠ•ﻌ•ᐟᐠз",
+        "εᐟᐠ>ﻌ<ᐟᐠз",
+        "εᐟᐠ-ﻌ-ᐟᐠз",
+        "εᐟᐠ◞ ﻌ ◟ᐟᐠз",
+        "εᐟᐠ•ﻌ<ᐟᐠз"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-mulgogi-imotikon": {
+      "title": "물고기 이모티콘",
+      "sub": "텍스트 물고기, 생선 뼈, 상형문자 물고기.",
+      "glyphs": [
+        "><>",
+        "<><",
+        "><(((º>",
+        "<º))))><",
+        "><((((●ﾟ<"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-gyeongnye-imotikon": {
+      "title": "경례 이모티콘",
+      "sub": "충성 경례, o7, 감사 경례.",
+      "glyphs": [
+        "(￣^￣)ゞ",
+        "( ´ ▽ ` )ゞ",
+        "(｀・ω・´)ゞ",
+        "(￣ー￣)ゞ",
+        "( ・`ω・´)ゞ"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-ppijin-imotikon": {
+      "title": "삐진 이모티콘",
+      "sub": "입 내민 얼굴, 볼 부풀린 얼굴.",
+      "glyphs": [
+        "(｀ε´)",
+        "(`3´)",
+        "(＞ε＜)",
+        "(・ε・)",
+        "(๑•̀ε•́๑)"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-nabi-imotikon": {
+      "title": "나비 이모티콘",
+      "sub": "나비 특수문자와 날개 달린 얼굴.",
+      "glyphs": [
+        "Ƹ̵̡Ӝ̵̨̄Ʒ",
+        "ʚїɞ",
+        "ʚĭɞ",
+        "ʚϊɞ",
+        "ʚïɞ"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-danghwang-imotikon": {
+      "title": "당황 이모티콘",
+      "sub": "식은땀, 진땀, 어색한 얼굴 문자.",
+      "glyphs": [
+        "(^_^;)",
+        "(^^;)",
+        "(；^ω^)",
+        "(゜▽゜;)",
+        "(・_・;)"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-chim-heullineun-imotikon": {
+      "title": "침 흘리는 이모티콘",
+      "sub": "배고픈 얼굴, 반한 얼굴, 졸린 얼굴.",
+      "glyphs": [
+        "(￣﹃￣)",
+        "(´﹃｀)",
+        "(*﹃*)",
+        "( ˘﹃˘ )",
+        "(¯﹃¯)"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-christmas-imotikon": {
+      "title": "크리스마스 이모티콘",
+      "sub": "산타, 루돌프, 눈사람, 선물 얼굴 문자.",
+      "glyphs": [
+        "*<|:-)",
+        "*<|:-D",
+        "🎅 ヽ(^o^)ﾉ",
+        "(ﾉ´ヮ`)ﾉ*: ･ﾟ🎅",
+        "호호호 ヽ(*⌒∇⌒*)ﾉ"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-dal-imotikon": {
+      "title": "달 이모티콘",
+      "sub": "잘 자 인사, 해, 로켓, 우주.",
+      "glyphs": [
+        "(´-ω-`)☾",
+        "(-.-)Zzz...☾",
+        "☾(ᴗ_ᴗ)",
+        "( ᴗ˳ᴗ)ᶻᶻ ☽",
+        "( ˘ ³˘)☾ 굿밤"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-sae-imotikon": {
+      "title": "새 이모티콘",
+      "sub": "짹짹 작은 새, 병아리, 오리.",
+      "glyphs": [
+        "(・Θ・)",
+        "(･θ･)",
+        "(◉Θ◉)",
+        "(￣Θ￣)",
+        "(`･Θ･´)"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-jwi-imotikon": {
+      "title": "쥐 이모티콘",
+      "sub": "생쥐, 꼬리 달린 쥐, 햄스터.",
+      "glyphs": [
+        "ᘛ⁐̤ᕐᐷ",
+        "ᘛ⁐ᕐᐷ",
+        "ᘛ⁐̤ᕐᐷ ◅",
+        "ᘛ⁐̤ᕐᐷ ᘛ⁐̤ᕐᐷ ᘛ⁐̤ᕐᐷ",
+        "ᓚᘏᗢ ᘛ⁐̤ᕐᐷ"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-yang-imotikon": {
+      "title": "양 이모티콘",
+      "sub": "복슬복슬 양, 숫양, 아기 양.",
+      "glyphs": [
+        "Ꮚ˘ꈊ˘Ꮚ",
+        "ᏊˊꈊˋᏊ",
+        "ᏊᵕꈊᵕᏊ",
+        "ᏊᵒꈊᵒᏊ",
+        "✩ᏊꈍꈊꈍᏊ"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-cheonsa-imotikon": {
+      "title": "천사 이모티콘",
+      "sub": "아기 천사, 수호천사, 추모 이모지.",
+      "glyphs": [
+        "👼",
+        "🪽",
+        "☁️",
+        "🌈",
+        "🌠"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-pigon-imotikon": {
+      "title": "피곤 이모티콘",
+      "sub": "지친 얼굴, 하품, 방전 조합.",
+      "glyphs": [
+        "😴",
+        "🥱",
+        "😪",
+        "😫",
+        "😩"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-hansum-imotikon": {
+      "title": "한숨 이모티콘",
+      "sub": "안도, 체념, 휴 얼굴 문자 조합.",
+      "glyphs": [
+        "😮‍💨",
+        "😌",
+        "😥",
+        "😅",
+        "😓"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-haipeun-giho": {
+      "title": "하이픈 기호",
+      "sub": "대시, 엔 대시, 엠 대시, 마이너스 모음.",
+      "glyphs": [
+        "-",
+        "‐",
+        "‑",
+        "‧",
+        "﹣"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-twitter-giho": {
+      "title": "트위터 특수 문자",
+      "sub": "X 로고, 스레드, 체크 표시.",
+      "glyphs": [
+        "𝕏",
+        "✕",
+        "✖",
+        "✗",
+        "✘"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-sseokso-imotikon": {
+      "title": "썩소 이모티콘",
+      "sub": "능글맞은 얼굴, 의기양양 이모지, :> 조합.",
+      "glyphs": [
+        "😏",
+        "😌",
+        "🙂",
+        "🙃",
+        "😎"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-ipsul-imotikon": {
+      "title": "입술 이모티콘",
+      "sub": "입술 깨무는 이모지와 플러팅 조합.",
+      "glyphs": [
+        "🫦",
+        "😏",
+        "😉",
+        "😜",
+        "🤭"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-butak-imotikon": {
+      "title": "부탁 이모티콘",
+      "sub": "제발 눈빛, 애원 얼굴 문자, 조르기 조합.",
+      "glyphs": [
+        "🥺",
+        "🥹",
+        "😢",
+        "😭",
+        "🙏"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-gaji-imotikon": {
+      "title": "가지 이모티콘",
+      "sub": "가지 이모지 뜻과 채소·요리 조합.",
+      "glyphs": [
+        "🍆",
+        "🫑",
+        "🌶️",
+        "🥔",
+        "🧅"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-aksu-imotikon": {
+      "title": "악수 이모티콘",
+      "sub": "인사와 계약 성사 손짓 조합.",
+      "glyphs": [
+        "🤝",
+        "🫱",
+        "🫲",
+        "🤲",
+        "👐"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-jjaeryeo-boneun-imotikon": {
+      "title": "째려 보는 이모티콘",
+      "sub": "곁눈질 얼굴, 의심 표정, ಠ_ಠ 조합.",
+      "glyphs": [
+        "👀",
+        "😒",
+        "🤨",
+        "🙄",
+        "😏"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-apeun-imotikon": {
+      "title": "아픈 이모티콘",
+      "sub": "열나는 얼굴, 메스꺼운 표정.",
+      "glyphs": [
+        "🤤",
+        "🥴",
+        "😵",
+        "😵‍💫",
+        "🫠"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
     "ko-library-merong-imotikon": {
       "title": "메롱 이모티콘",
       "sub": "혀 내민 얼굴, 장난 조합, 메롱 얼굴 문자.",
@@ -673,6 +1076,19 @@
         "🎥",
         "📽️",
         "🎞️"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-utgin-imotikon": {
+      "title": "웃긴 이모티콘",
+      "sub": "밈 이모지와 빵 터지는 조합.",
+      "glyphs": [
+        "😂",
+        "🤣",
+        "😹",
+        "😆",
+        "😝"
       ],
       "kicker": "LIB",
       "added": "2026-11-18"

@@ -165,6 +165,7 @@
     "test:efr": "node scripts/lib/efr-gate.test.js",
     "audit:em-dash": "node scripts/audit-em-dash.js",
     "test:generator-parity": "python3 scripts/lib/generator_parity.test.py",
+    "test:spec-combos": "python3 scripts/library-spec-combos.test.py",
     "test:spec-sentence-reuse": "python3 scripts/check-spec-sentence-reuse.test.py",
     "test:header-analytics": "node header.test.js",
     "test:case-converter": "node renderer.case.test.js",
