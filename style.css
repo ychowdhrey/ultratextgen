@@ -15213,6 +15213,7 @@ body.dark-mode .lb-tool .bubble-btn-primary { color: var(--lb-paper-ink); }
 .bb-counts:empty { display: none; }
 .bb-warn { margin: 0.3rem 0 0; font-size: 0.8rem; color: var(--ts-risk); }
 .bb-warn:empty { display: none; }
+.bb-trim { color: var(--text-primary); border-left: 3px solid var(--ts-risk); padding-left: 0.6rem; }
 @media (max-width: 900px) {
   .bb-tool .pt-studio-controls { order: 1; }
   .bb-tool .pt-studio-preview { order: 2; position: static; }

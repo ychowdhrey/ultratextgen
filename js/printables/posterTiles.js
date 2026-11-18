@@ -28,7 +28,11 @@
  * about a third short.
  *
  * Mount points (all optional except #bb-preview):
- *   #bb-text     the letter, number or word (12 characters at most)
+ *   #bb-text     the letter, number or word (12 characters at most; the field
+ *                has no maxlength, so a longer entry reaches the notice below
+ *                instead of being cut by the browser without a word)
+ *   #bb-trim     says which characters the 12-character limit left off
+ *                (role="status")
  *   #bb-style    .pt-choice-row  block | bubble | stencil
  *   #bb-fill     .pt-choice-row  outline | filled
  *   #bb-height   number input; #bb-unit select in | cm
@@ -155,8 +159,43 @@
     return state.unit === "cm" ? h / 2.54 : h;
   }
 
-  function cleanText() {
-    return Array.from(String(state.text || "").replace(/\s+/g, " ").trim()).slice(0, MAX_CHARS).join("");
+  /* A character here is what the visitor sees as one: a grapheme. The text is
+     put in NFC first, so a name typed with a separate accent (ị as i + a dot
+     below) counts and prints the same as one typed with the accented letter,
+     and is then counted, capped and split by grapheme, so the limit never
+     cuts an accent off its letter or an emoji sequence in half.
+     Intl.Segmenter is the only native way to find graphemes. Where it is
+     missing, this falls back to Array.from on the NFC string, which splits by
+     code point: a decomposed accent that NFC cannot compose, or an emoji
+     sequence, can then still be cut at the limit. */
+  const SEGMENTER = typeof Intl !== "undefined" && typeof Intl.Segmenter === "function"
+    ? new Intl.Segmenter("en", { granularity: "grapheme" }) : null;
+  function graphemes(str) {
+    const s = String(str);
+    if (!SEGMENTER) return Array.from(s);
+    const out = [];
+    for (const part of SEGMENTER.segment(s)) out.push(part.segment);
+    return out;
+  }
+
+  /* What the field holds, cut at the limit: the characters that print and the
+     ones that do not. */
+  function splitText() {
+    const all = graphemes(String(state.text || "").normalize("NFC").replace(/\s+/g, " ").trim());
+    return { kept: all.slice(0, MAX_CHARS), dropped: all.slice(MAX_CHARS) };
+  }
+
+  function cleanText() { return splitText().kept.join(""); }
+
+  /* The sentence under the field when the limit left characters off, or "". */
+  const NAMED_MAX = 20;
+  function limitNotice() {
+    const sp = splitText();
+    if (!sp.dropped.length) return "";
+    const named = sp.dropped.slice(0, NAMED_MAX).join("").trim();
+    const more = sp.dropped.length - NAMED_MAX;
+    return "Only the first " + MAX_CHARS + " characters print. Left off: \u201c" + named + "\u201d" +
+      (more > 0 ? " and " + more + " more" : "") + ". The sheets spell \u201c" + sp.kept.join("").trim() + "\u201d.";
   }
 
   /* Outline weight in inches: heavy enough to cut along at arm's length,
@@ -176,9 +215,10 @@
     const st = STYLES[state.style] || STYLES.block;
     const Hin = heightIn();
     if (!text) return null;
-    const pieces = (state.layout === "word" || Array.from(text).length === 1
+    const chars = graphemes(text);
+    const pieces = (state.layout === "word" || chars.length === 1
       ? [text]
-      : Array.from(text).filter((c) => c !== " ")).filter((p) => inkBox(p, st));
+      : chars.filter((c) => c !== " ")).filter((p) => inkBox(p, st));
     if (!pieces.length) return null;
     // Every letter shares one scale: the set's tallest top to its lowest bottom is the height.
     const boxes = pieces.map((p) => inkBox(p, st));
@@ -549,6 +589,8 @@
     if (!(h >= lim[0] && h <= lim[1])) problem = "Choose a height from " + lim[0] + " to " + lim[1] + " " + state.unit + ".";
     else if (P && P.total > MAX_PAGES) problem = "That is " + P.total + " sheets. Up to " + MAX_PAGES + " fit in one file: choose a smaller height or fewer letters.";
     say(warn, problem);
+    const trim = $("bb-trim"), trimmed = limitNotice();
+    if (trim && trim.textContent !== trimmed) trim.textContent = trimmed;   // unchanged text is not announced again
     const ok = !!P && !problem;
     if (pdf) pdf.disabled = !ok;
     if (png) png.disabled = !ok;
@@ -587,7 +629,7 @@
       summarize(P);
       paintPreview(P);
       const lay = $("bb-layout-field");
-      if (lay) lay.hidden = Array.from(cleanText().replace(/ /g, "")).length < 2;
+      if (lay) lay.hidden = graphemes(cleanText().replace(/ /g, "")).length < 2;
     });
   }
 
@@ -946,7 +988,7 @@
   }
 
   // Exposed for the geometry check and the scenario harness; not a public API.
-  UTG.posterTiles = { state: state, plan: plan, drawTile: drawTile, pagesOf: pagesOf, MARGIN: MARGIN, PAD: PAD, PAPER: PAPER, refresh: refresh, last: () => lastPlan };
+  UTG.posterTiles = { state: state, plan: plan, makePdf: makePdf, splitText: splitText, limitNotice: limitNotice, MAX_CHARS: MAX_CHARS, drawTile: drawTile, pagesOf: pagesOf, MARGIN: MARGIN, PAD: PAD, PAPER: PAPER, refresh: refresh, last: () => lastPlan };
 
   if (document.readyState === "complete") init();
   else window.addEventListener("DOMContentLoaded", init);
