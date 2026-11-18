@@ -572,6 +572,32 @@
       ],
       "kicker": "LIB",
       "added": "2026-11-14"
+    },
+    "ko-library-baek-seullaesi-giho": {
+      "title": "백 슬래시",
+      "sub": "슬래시, 역슬래시, 분수·나눗셈 사선 모음.",
+      "glyphs": [
+        "/",
+        "⁄",
+        "∕",
+        "⧸",
+        "／"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
+    },
+    "ko-library-aksenteu-giho": {
+      "title": "악센트 기호",
+      "sub": "발음 구별 기호, 결합 문자.",
+      "glyphs": [
+        "̀",
+        "́",
+        "̂",
+        "̃",
+        "̄"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
     }
   }
 }
