@@ -1,0 +1,214 @@
+{
+  "slug": "baek-seullaesi-giho",
+  "title": "백 슬래시 \\ 복사: 슬래시, 역슬래시, 분수·나눗셈 사선 모음 | UltraTextGen",
+  "meta_description": "백 슬래시(\\)와 슬래시(/), 분수 사선 ⁄, 나눗셈 사선 ∕, 전각 ／ ＼, 수학용 대각선과 세로선까지 모았습니다. 필요한 기호를 눌러서 복사하세요.",
+  "canonical": "https://ultratextgen.com/ko/library/baek-seullaesi-giho/",
+  "breadcrumb": "백 슬래시",
+  "hero_h1": "백 슬래시",
+  "hero_tagline": "보통 슬래시부터 분수 사선, 나눗셈 기호, 장식용 사선까지 유니코드의 슬래시와 백 슬래시를 한곳에 모았습니다. 기호를 누르면 바로 복사됩니다.",
+  "intro": "이 페이지에는 유니코드의 슬래시(/)와 백 슬래시(\\), 그리고 비슷한 구분 문자를 모았습니다. 백 슬래시는 역슬래시라고도 부릅니다. 키보드의 사선 하나가 전부인 것 같지만, 수학에서 쓰는 나눗셈 사선, 분수를 만드는 분수 사선, 전각 문자까지 변형이 생각보다 많습니다.",
+  "date_published": "2026-11-18",
+  "date_modified": "2026-11-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "forward-slashes",
+      "label": "슬래시",
+      "h2": "슬래시 변형 문자",
+      "intro": "기본 슬래시인 솔리더스(/)와 인쇄·수학용 변형입니다.",
+      "symbols": [
+        {
+          "char": "/",
+          "label": "슬래시(솔리더스)"
+        },
+        {
+          "char": "⁄",
+          "label": "분수 사선"
+        },
+        {
+          "char": "∕",
+          "label": "나눗셈 사선"
+        },
+        {
+          "char": "⧸",
+          "label": "큰 솔리더스"
+        },
+        {
+          "char": "／",
+          "label": "전각 슬래시"
+        },
+        {
+          "char": "╱",
+          "label": "괘선 대각선"
+        },
+        {
+          "char": "⟋",
+          "label": "수학용 오르막 대각선"
+        }
+      ]
+    },
+    {
+      "id": "backslashes",
+      "label": "역슬래시",
+      "h2": "역슬래시 변형 문자",
+      "intro": "거꾸로 기운 사선인 역솔리더스와 그 유니코드 변형입니다.",
+      "symbols": [
+        {
+          "char": "\\",
+          "label": "백 슬래시(역솔리더스)"
+        },
+        {
+          "char": "∖",
+          "label": "차집합 기호"
+        },
+        {
+          "char": "⧵",
+          "label": "역솔리더스 연산자"
+        },
+        {
+          "char": "＼",
+          "label": "전각 백 슬래시"
+        },
+        {
+          "char": "╲",
+          "label": "괘선 역대각선"
+        },
+        {
+          "char": "⟍",
+          "label": "수학용 내리막 대각선"
+        },
+        {
+          "char": "﹨",
+          "label": "작은 백 슬래시"
+        }
+      ]
+    },
+    {
+      "id": "division-math-slashes",
+      "label": "나눗셈·수학",
+      "h2": "나눗셈과 수학용 사선",
+      "intro": "사선 표기를 쓰거나 나눗셈과 관련된 수학 기호입니다.",
+      "symbols": [
+        {
+          "char": "÷",
+          "label": "나눗셈 기호"
+        },
+        {
+          "char": "∶",
+          "label": "비율 기호"
+        },
+        {
+          "char": "∷",
+          "label": "비례 기호"
+        },
+        {
+          "char": "⧶",
+          "label": "윗줄 있는 솔리더스"
+        },
+        {
+          "char": "⫽",
+          "label": "이중 솔리더스 연산자"
+        },
+        {
+          "char": "⧷",
+          "label": "획 그은 역솔리더스"
+        },
+        {
+          "char": "⧹",
+          "label": "큰 역솔리더스"
+        }
+      ]
+    },
+    {
+      "id": "decorative-slashes",
+      "label": "장식 사선",
+      "h2": "장식용·특수 사선",
+      "intro": "서식, 표기, 꾸밈에 쓰는 특수한 사선과 막대 문자입니다.",
+      "symbols": [
+        {
+          "char": "╳",
+          "label": "가는 대각 교차"
+        },
+        {
+          "char": "∥",
+          "label": "평행 기호"
+        },
+        {
+          "char": "⫴",
+          "label": "세 줄 세로 막대"
+        },
+        {
+          "char": "⫾",
+          "label": "흰 세로 막대"
+        },
+        {
+          "char": "|",
+          "label": "세로선"
+        },
+        {
+          "char": "‖",
+          "label": "이중 세로선"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "label": "사용법",
+      "h2": "슬래시, 백 슬래시, 나눗셈 사선은 어떻게 다를까",
+      "paragraphs": [
+        "<strong>슬래시(/)</strong>: 웹 주소, 유닉스와 맥의 파일 경로, 3/4 같은 분수, 12/25 같은 날짜에 씁니다. 표준 솔리더스로 코드 포인트는 U+002F입니다.",
+        "<strong>분수 사선(⁄)</strong>: U+2044. 인쇄에서는 솔리더스와 다른 문자로 취급하며, 앞뒤 숫자와 함께 ¾ 같은 제대로 된 분수를 짤 때 씁니다.",
+        "<strong>나눗셈 사선(∕)</strong>: U+2215. 수학의 나눗셈 연산자입니다. 생김새는 /와 거의 같지만 수식 안에서 쓰라고 따로 둔 문자입니다.",
+        "<strong>백 슬래시(\\)</strong>: 윈도우 파일 경로와 프로그래밍의 이스케이프 문자에 씁니다. 역솔리더스 U+005C이며 슬래시 대신 쓸 수 없습니다. 한국어 윈도우에서는 같은 U+005C가 글꼴에 따라 ₩ 모양으로 보이기도 해서, C:₩Users처럼 보이는 경로도 실제로는 백 슬래시입니다.",
+        "<strong>웹 주소 주의</strong>: 웹 주소에는 언제나 슬래시(/)를 씁니다. 주소에 백 슬래시를 넣는 것은 틀린 표기이고, 일부 브라우저가 알아서 고쳐 줄 뿐입니다."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/suhak-giho/",
+      "title": "수학 기호 모음",
+      "desc": "방정식과 과학 표기에 쓰는 연산자와 수학 기호."
+    },
+    {
+      "href": "/ko/library/gwalho-giho/",
+      "title": "괄호 기호 모음",
+      "desc": "소괄호, 대괄호, 중괄호를 비롯한 모든 괄호와 묶음 문자."
+    },
+    {
+      "href": "/ko/library/gubunseon-giho/",
+      "title": "구분선 기호 모음",
+      "desc": "게시물과 서식을 나누는 가로 구분선과 분리 기호."
+    },
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "기호 하나만으로도 뜻과 개성이 드러나는 유니코드 특수문자."
+    }
+  ],
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/slash-backslash-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/baek-seullaesi-giho/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/backslash-zeichen/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolo-slash/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/slash-backslash-symbols/"
+    }
+  ]
+}

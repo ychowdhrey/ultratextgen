@@ -1,0 +1,441 @@
+{
+  "slug": "aksenteu-giho",
+  "title": "악센트 기호 é 복사: 발음 구별 기호, 결합 문자, 악센트 붙은 글자 | UltraTextGen",
+  "meta_description": "악센트 기호와 발음 구별 기호 84개. 글자 위아래에 붙는 결합 문자, 혼자 쓰는 공백형 악센트, á é ñ ç ü 같은 글자까지 눌러서 복사하세요.",
+  "canonical": "https://ultratextgen.com/ko/library/aksenteu-giho/",
+  "breadcrumb": "악센트 기호",
+  "hero_h1": "악센트 기호",
+  "hero_tagline": "어큐트와 그레이브부터 틸드, 세디유까지 유니코드의 결합 발음 구별 기호와 악센트 문자를 모두 담았습니다. 원하는 기호를 한 번 누르면 복사가 끝납니다.",
+  "intro": "발음 구별 기호는 바로 앞 글자에 붙어 그 소리나 뜻을 바꾸는 문자로, 흔히 악센트 기호라고 부릅니다. é, ñ, ü, ç 같은 글자가 모두 이 기호에서 나옵니다. 이 페이지에는 앞 글자에 달라붙는 결합형과 따로 서는 공백형을 함께 실었습니다.",
+  "date_published": "2026-11-18",
+  "date_modified": "2026-11-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "accents-above",
+      "label": "위에 붙는 기호",
+      "h2": "글자 위에 붙는 결합 기호",
+      "intro": "기본 글자 위쪽에 나타나는 결합 발음 구별 기호입니다. 아무 글자 뒤에 넣으면 그 글자 위에 악센트가 얹힙니다.",
+      "symbols": [
+        {
+          "char": "̀",
+          "label": "결합 그레이브"
+        },
+        {
+          "char": "́",
+          "label": "결합 어큐트"
+        },
+        {
+          "char": "̂",
+          "label": "결합 서컴플렉스"
+        },
+        {
+          "char": "̃",
+          "label": "결합 틸드"
+        },
+        {
+          "char": "̄",
+          "label": "결합 매크론"
+        },
+        {
+          "char": "̅",
+          "label": "결합 윗줄"
+        },
+        {
+          "char": "̆",
+          "label": "결합 브레브"
+        },
+        {
+          "char": "̇",
+          "label": "결합 윗점"
+        },
+        {
+          "char": "̈",
+          "label": "결합 다이어리시스(움라우트)"
+        },
+        {
+          "char": "̉",
+          "label": "결합 위 갈고리"
+        },
+        {
+          "char": "̊",
+          "label": "결합 위 고리"
+        },
+        {
+          "char": "̋",
+          "label": "결합 이중 어큐트"
+        },
+        {
+          "char": "̌",
+          "label": "결합 캐런(하체크)"
+        },
+        {
+          "char": "̍",
+          "label": "결합 위 세로선"
+        },
+        {
+          "char": "̎",
+          "label": "결합 이중 세로선"
+        },
+        {
+          "char": "̏",
+          "label": "결합 이중 그레이브"
+        },
+        {
+          "char": "̐",
+          "label": "결합 찬드라빈두"
+        },
+        {
+          "char": "̑",
+          "label": "결합 거꾸로 브레브"
+        },
+        {
+          "char": "̒",
+          "label": "결합 뒤집힌 쉼표"
+        },
+        {
+          "char": "̓",
+          "label": "결합 위 쉼표"
+        },
+        {
+          "char": "̔",
+          "label": "결합 반전 쉼표"
+        }
+      ]
+    },
+    {
+      "id": "marks-below",
+      "label": "아래 붙는 기호",
+      "h2": "글자 아래에 붙는 결합 기호",
+      "intro": "기본 글자 아래쪽에 나타나는 결합 발음 구별 기호입니다.",
+      "symbols": [
+        {
+          "char": "̖",
+          "label": "결합 아래 그레이브"
+        },
+        {
+          "char": "̗",
+          "label": "결합 아래 어큐트"
+        },
+        {
+          "char": "̘",
+          "label": "결합 아래 ⊣ 압정"
+        },
+        {
+          "char": "̙",
+          "label": "결합 아래 ⊢ 압정"
+        },
+        {
+          "char": "̚",
+          "label": "결합 위 왼쪽 꺾쇠"
+        },
+        {
+          "char": "̛",
+          "label": "결합 뿔(혼)"
+        },
+        {
+          "char": "̜",
+          "label": "결합 왼쪽 반고리"
+        },
+        {
+          "char": "̝",
+          "label": "결합 아래 ⊥ 압정"
+        },
+        {
+          "char": "̞",
+          "label": "결합 아래 ⊤ 압정"
+        },
+        {
+          "char": "̟",
+          "label": "결합 아래 플러스"
+        },
+        {
+          "char": "̠",
+          "label": "결합 아래 마이너스"
+        },
+        {
+          "char": "̡",
+          "label": "결합 아래 구개음 갈고리"
+        },
+        {
+          "char": "̢",
+          "label": "결합 아래 권설음 갈고리"
+        },
+        {
+          "char": "̣",
+          "label": "결합 아랫점"
+        },
+        {
+          "char": "̤",
+          "label": "결합 아래 다이어리시스"
+        },
+        {
+          "char": "̥",
+          "label": "결합 아래 고리"
+        },
+        {
+          "char": "̦",
+          "label": "결합 아래 쉼표"
+        },
+        {
+          "char": "̧",
+          "label": "결합 세디유"
+        },
+        {
+          "char": "̨",
+          "label": "결합 오고넥"
+        },
+        {
+          "char": "̩",
+          "label": "결합 아래 세로선"
+        },
+        {
+          "char": "̪",
+          "label": "결합 아래 다리"
+        }
+      ]
+    },
+    {
+      "id": "hooks-horns",
+      "label": "갈고리·뿔",
+      "h2": "갈고리, 뿔, 특수 결합 기호",
+      "intro": "음성학과 언어학의 전문 표기에 쓰는 결합 문자입니다.",
+      "symbols": [
+        {
+          "char": "̫",
+          "label": "결합 거꾸로 이중 아치"
+        },
+        {
+          "char": "̬",
+          "label": "결합 아래 캐런"
+        },
+        {
+          "char": "̭",
+          "label": "결합 아래 서컴플렉스"
+        },
+        {
+          "char": "̮",
+          "label": "결합 아래 브레브"
+        },
+        {
+          "char": "̯",
+          "label": "결합 아래 거꾸로 브레브"
+        },
+        {
+          "char": "̰",
+          "label": "결합 아래 틸드"
+        },
+        {
+          "char": "̱",
+          "label": "결합 아래 매크론"
+        },
+        {
+          "char": "̲",
+          "label": "결합 밑줄"
+        },
+        {
+          "char": "̳",
+          "label": "결합 이중 밑줄"
+        },
+        {
+          "char": "̴",
+          "label": "결합 가로지르는 틸드"
+        },
+        {
+          "char": "̵",
+          "label": "결합 짧은 가로획"
+        },
+        {
+          "char": "̶",
+          "label": "결합 긴 가로획"
+        },
+        {
+          "char": "̷",
+          "label": "결합 짧은 사선"
+        },
+        {
+          "char": "̸",
+          "label": "결합 긴 사선"
+        },
+        {
+          "char": "̹",
+          "label": "결합 오른쪽 반고리"
+        },
+        {
+          "char": "̺",
+          "label": "결합 거꾸로 다리"
+        },
+        {
+          "char": "̻",
+          "label": "결합 아래 네모"
+        },
+        {
+          "char": "̼",
+          "label": "결합 아래 갈매기"
+        },
+        {
+          "char": "̽",
+          "label": "결합 위 엑스"
+        },
+        {
+          "char": "̾",
+          "label": "결합 세로 틸드"
+        },
+        {
+          "char": "̿",
+          "label": "결합 이중 윗줄"
+        }
+      ]
+    },
+    {
+      "id": "spacing-forms",
+      "label": "공백형",
+      "h2": "혼자 쓰는 공백형 악센트",
+      "intro": "공백형 악센트 문자는 제 폭을 차지하므로 단독으로 입력하거나 장식처럼 쓸 수 있습니다. 결합 기호와 달리 앞 글자에 달라붙지 않습니다.",
+      "symbols": [
+        {
+          "char": "`",
+          "label": "그레이브 악센트"
+        },
+        {
+          "char": "´",
+          "label": "어큐트 악센트"
+        },
+        {
+          "char": "^",
+          "label": "서컴플렉스 악센트(캐럿)"
+        },
+        {
+          "char": "~",
+          "label": "틸드(물결표)"
+        },
+        {
+          "char": "¯",
+          "label": "매크론"
+        },
+        {
+          "char": "˘",
+          "label": "브레브"
+        },
+        {
+          "char": "˙",
+          "label": "윗점"
+        },
+        {
+          "char": "¨",
+          "label": "다이어리시스"
+        },
+        {
+          "char": "˚",
+          "label": "위 고리"
+        },
+        {
+          "char": "˝",
+          "label": "이중 어큐트 악센트"
+        },
+        {
+          "char": "ˇ",
+          "label": "캐런"
+        },
+        {
+          "char": "¸",
+          "label": "세디유"
+        },
+        {
+          "char": "˛",
+          "label": "오고넥"
+        },
+        {
+          "char": "˜",
+          "label": "작은 틸드"
+        },
+        {
+          "char": "ˆ",
+          "label": "수정자 서컴플렉스"
+        },
+        {
+          "char": "á",
+          "label": "어큐트 붙은 a"
+        },
+        {
+          "char": "é",
+          "label": "어큐트 붙은 e"
+        },
+        {
+          "char": "ñ",
+          "label": "틸드 붙은 n"
+        },
+        {
+          "char": "ç",
+          "label": "세디유 붙은 c"
+        },
+        {
+          "char": "ü",
+          "label": "움라우트 붙은 u"
+        },
+        {
+          "char": "ø",
+          "label": "사선 그은 o"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "label": "사용법",
+      "h2": "결합 발음 구별 기호 쓰는 법",
+      "paragraphs": [
+        "결합 발음 구별 기호(U+0300–U+036F)는 텍스트 흐름에서 바로 앞에 놓인 글자에 붙습니다. 악센트 붙은 글자를 만들려면 기본 글자를 먼저 입력하고 결합 기호를 그 뒤에 넣습니다. 예: <strong>a + ́ = á</strong>, <strong>n + ̃ = ñ</strong>, <strong>u + ̈ = ü</strong>.",
+        "결합 기호는 대부분의 환경에서 일반 텍스트로도 제대로 보이지만, 글꼴에 따라 어색하게 그려지기도 합니다. 위의 공백형 악센트는 기본 글자에 붙지 않는 독립 문자라서 장식용으로 써도 됩니다.",
+        "<strong>더 빠른 방법:</strong> 자주 쓰는 악센트 글자라면 기본 글자에 결합 기호를 조합하기보다 문자표나 키보드 단축키로 é, à, ü, ñ, ç 같은 완성형 글자를 바로 넣는 편이 빠릅니다."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "저마다 뜻이 있어 하나만 써도 눈에 띄는 유니코드 특수문자."
+    },
+    {
+      "href": "/ko/library/suhak-giho/",
+      "title": "수학 기호 모음",
+      "desc": "발음 구별 기호가 붙은 그리스 문자까지 포함한 수학 연산 기호."
+    },
+    {
+      "href": "/ko/library/gamseong-giho/",
+      "title": "감성 특수문자",
+      "desc": "결합 문자로 꾸미는 감성 프로필용 장식 기호."
+    },
+    {
+      "href": "/ko/library/byeol-giho/",
+      "title": "별 기호 모음",
+      "desc": "별, 별표, 별 모양 변형을 담은 유니코드 문자."
+    },
+    {
+      "href": "/ko/symbol/tildeu-giho/",
+      "title": "틸드 기호 (~)",
+      "desc": "유닉스 홈 폴더와 '약'이라는 뜻에 쓰는 키보드 틸드(~), 작은 틸드 ˜, ñ 위에 얹히는 결합 틸드."
+    }
+  ],
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/accent-marks-diacritics/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/aksenteu-giho/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/akzente-diakritische-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/accent-marks-diacritics/"
+    }
+  ]
+}
