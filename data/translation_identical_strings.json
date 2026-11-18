@@ -6583,6 +6583,12 @@
     ],
     "ko": [
       {
+        "string": "(￣ρ￣)..zzZZ",
+        "reason": "a kaomoji's clipboard payload, not English: the drool face followed by snore letters, copied byte-identical to the English tile so the one-click copy pastes the same figure; translating the letters would break the figure. Owner-approved 2026-11-18 with the Korean kaomoji batch.",
+        "found_on": "ko/library/chim-heullineun-imotikon/",
+        "added": "2026-11-18"
+      },
+      {
         "string": "Caught in 4K",
         "reason": "an English meme phrase quoted as the phrase itself — translating it would stop it being the meme",
         "found_on": "ko/library/moai-imoji/",
