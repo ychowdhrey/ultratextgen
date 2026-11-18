@@ -98,10 +98,18 @@
   scriptNotice.id = 'scriptNotice';
   scriptNotice.setAttribute('role', 'note');
   scriptNotice.hidden = true;
+  // A locale whose readers type a non-Latin script supplies this sentence in its
+  // own language (data/accent_notice_copy.json `otherScript`, baked as a hidden
+  // span by build-accent-notice.js); without it the English sentence stands.
+  // Added 2026-11-18 for kk: every Kazakh word would otherwise raise an English notice.
+  var localScript = notice.querySelector('.accent-notice-script');
+  var scriptText = localScript ? localScript.innerHTML :
+    'These styles are built from the Latin alphabet, so letters from other scripts keep their own shape. Styles that only add spacing, lines or marks still work on them, and any English letters and numbers in the same text are styled.';
+  var scriptDismiss = localScript && closeBtn ? closeBtn.getAttribute('aria-label') : 'Dismiss';
   scriptNotice.innerHTML =
     '<span class="accent-notice-icon" aria-hidden="true">Aa</span>' +
-    '<span class="accent-notice-text">These styles are built from the Latin alphabet, so letters from other scripts keep their own shape. Styles that only add spacing, lines or marks still work on them, and any English letters and numbers in the same text are styled.</span>' +
-    '<button type="button" class="accent-notice-close" id="scriptNoticeClose" aria-label="Dismiss">\u2715</button>';
+    '<span class="accent-notice-text">' + scriptText + '</span>' +
+    '<button type="button" class="accent-notice-close" id="scriptNoticeClose" aria-label="' + scriptDismiss + '">\u2715</button>';
   notice.parentNode.insertBefore(scriptNotice, notice.nextSibling);
 
   var scriptDismissed = false;

@@ -229,6 +229,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <span class="char-count"><span id="charCount">0</span>/100</span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Мәтініңізде белгісі бар латын әріптері бар. Жуан, жазба, готика және басқа стильдердің көбі <b>ä</b>, <b>ğ</b>, <b>ö</b> және <b>ü</b> әріптерін белгісімен сақтайды. Бірнешеуі (төңкерілген мәтін және <b>ı</b> сияқты белгілі нұсқасы жоқ әріптер) қарапайым әріпке айналады. <a href="/guide/fancy-fonts-and-accents/">Қай стильдер белгілерді сақтайды →</a></span>
+          <span class="accent-notice-script" hidden>Бұл стильдер латын әліпбиінен жасалған, сондықтан қазақ әріптері өз пішінін сақтайды. Сызу, асты сызу, үсті сызу және жақтау стильдері қазақ әріптерінде де жұмыс істейді, ал мәтіндегі латын әріптері мен сандар безендіріледі.</span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Жабу">✕</button>
+        </div>
+
         <!-- Inline name check -->
         <div class="decoration-section namecheck-inline" id="name-check">
           <div class="decoration-label">Лақап атты тексеру сіз жазған сайын жаңарады</div>
@@ -322,7 +330,33 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <a class="lang-option" href="/uk/henerator-nikiv/" hreflang="uk">UK</a>
       <a class="lang-option active" href="/kk/laqap-at-generatory/" hreflang="kk">KK</a>
     </div>
+  <section class="deco-showcase" aria-labelledby="deco-showcase-title">
+    <h2 class="deco-showcase-title" id="deco-showcase-title">Лақап атқа арналған танымал әшекейлер</h2>
+    <p class="deco-showcase-intro">Көшіріп қоюға дайын әшекейлер: ойын жақтаулары, қылыштар мен жұлдыздар. Қазақ әріптері жақтаудың ішінде өзгеріссіз қалады.</p>
+    <ul class="deco-showcase-grid">
+      <li class="deco-chip" data-copy="꧁ Қыран ꧂"><span class="deco-chip-ex">꧁ Қыран ꧂</span><span class="deco-chip-label">Ойын жақтауы</span></li>
+      <li class="deco-chip" data-copy="【 Қыран 】"><span class="deco-chip-ex">【 Қыран 】</span><span class="deco-chip-label">Қалың жақша</span></li>
+      <li class="deco-chip" data-copy="⟬ Қыран ⟭"><span class="deco-chip-ex">⟬ Қыран ⟭</span><span class="deco-chip-label">Бұрыш жақша</span></li>
+      <li class="deco-chip" data-copy="◥ Қыран ◤"><span class="deco-chip-ex">◥ Қыран ◤</span><span class="deco-chip-label">Жүзді жақтау</span></li>
+      <li class="deco-chip" data-copy="⚔ Қыран ⚔"><span class="deco-chip-ex">⚔ Қыран ⚔</span><span class="deco-chip-label">Қылыштар</span></li>
+      <li class="deco-chip" data-copy="⚡ Қыран ⚡"><span class="deco-chip-ex">⚡ Қыран ⚡</span><span class="deco-chip-label">Найзағай</span></li>
+      <li class="deco-chip" data-copy="✦ Қыран ✦"><span class="deco-chip-ex">✦ Қыран ✦</span><span class="deco-chip-label">Жұлдыз</span></li>
+      <li class="deco-chip" data-copy="☾ Қыран ☽"><span class="deco-chip-ex">☾ Қыран ☽</span><span class="deco-chip-label">Ай</span></li>
+      <li class="deco-chip" data-copy="≫ Қыран ≪"><span class="deco-chip-ex">≫ Қыран ≪</span><span class="deco-chip-label">Шеврондар</span></li>
+      <li class="deco-chip" data-copy="♛ Қыран ♛"><span class="deco-chip-ex">♛ Қыран ♛</span><span class="deco-chip-label">Тәж</span></li>
+    </ul>
+  </section>
 </main>
+
+<div class="section-divider"></div>
+
+<!-- READY-MADE WRAPPERS -->
+<section class="mood-explainers" id="nick-wrappers">
+  <span class="article-section-label">Дайын жақтаулар</span>
+  <h2>Бір басумен лақап ат жақтаулары</h2>
+  <p class="u-secondary-block">Әр жақтау жоғарыда жазған атыңызды қолданады. Атты өзгертсеңіз, бұлар бірден жаңарады. Көшіру үшін басыңыз.</p>
+  <div id="nickWrappersContainer" class="uname-grid"></div>
+</section>
 
 <!-- INTRO -->
 <section class="editorial-section">
@@ -387,6 +421,26 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="section-divider"></div>
 
 <!-- GAMES -->
+<section class="editorial-section" id="nickname-ideas">
+  <span class="article-section-label">Сіздің атыңызбен</span>
+  <h2>Атыңыз дайын стильдерде (көшіру үшін басыңыз)</h2>
+  <p class="u-secondary-block">Бұл жинақтар жоғарыда жазған атыңызды қайта безендіреді. Қаріп стильдері латын әріптерін өзгертеді, ал қазақ әріптері жақтаудың ішінде сол күйінде қалады.</p>
+
+  <h3>Әдемі лақап аттар</h3>
+  <p class="uname-note">Кез келген профильге арналған таза, көзге түсетін стильдер.</p>
+  <div class="uname-grid" id="ideaStylish"></div>
+
+  <h3>Сүйкімді лақап аттар</h3>
+  <p class="uname-note">TikTok пен Instagram үшін жұмсақ, эстетикалық аттар.</p>
+  <div class="uname-grid" id="ideaCute"></div>
+
+  <h3>Ойыншы тегтері</h3>
+  <p class="uname-note">Атыс және battle royale ойындарына арналған өткір тегтер.</p>
+  <div class="uname-grid" id="ideaGamer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section" id="niky-dlia-ihor">
   <h2>Standoff 2, PUBG Mobile және Brawl Stars үшін лақап аттар</h2>
   <p>Көп танымал ойындарда лақап ат шамамен 3-тен 20 таңбаға дейінгі еркін көрсетілетін ат болып табылады, ал ꧁꧂ мен ★彡 сияқты жақтаулар онда әдетте өтеді. Әр ойынның нақты шегі өзінше және кейде жаңартулармен өзгереді, сондықтан Standoff 2, PUBG Mobile, Free Fire, Roblox және Discord үшін <a href="#name-check">жоғарыдағы лақап атты тексеруді</a> пайдаланыңыз, ал басқа ойындарда алдымен лақап атты ат өзгерту өрісіне қойып, ойынның оны қабылдайтынын көріңіз.</p>
@@ -435,15 +489,72 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </script>
 
   <!-- Generator scripts -->
+  <script>window.UTG_DECORATOR_PROFILE = "nickname";</script>
+  <script src="/decorators.js"></script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/js/share/share-core.js" defer></script>
   <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/i18n.js" defer></script>
 
   <!-- Symbol explorer + name checker -->
   <script src="/symbol-explorer.js" defer></script>
+  <script src="/js/tag-studio.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    "use strict";
+    var ns = window.UltraTextGen;
+    if (!ns || !ns.tagStudio || !ns.tagStudio.liveChips) return;
+    var placeholder = { placeholder: "Жоғарыға ат жазыңыз…", copyLabel: "Лақап атты көшіру" };
+    ns.tagStudio.liveChips({
+      inputId: "mainInput", mount: "nickWrappersContainer", text: placeholder,
+      items: [
+        { fontKey: "Ultra Bold Italic", l: "꧁༒", r: "༒꧂" },
+        { fontKey: "Ultra Script Bold", l: "༺", r: "༻" },
+        { fontKey: "Ultra Cute Script", l: "꒰ꔫ", r: "ꔫ꒱" },
+        { fontKey: "Ultra Cute Script", l: "⋆˚✿", r: "✿˚⋆" },
+        { fontKey: "Ultra Cute Script", l: "♡", r: "♡" },
+        { fontKey: "Ultra Bold", l: "★彡", r: "彡★" }
+      ]
+    });
+    ns.tagStudio.liveChips({
+      inputId: "mainInput", mount: "ideaStylish", text: placeholder,
+      items: [
+        { fontKey: "Ultra Bold Italic", l: "꧁༒", r: "༒꧂" },
+        { fontKey: "Ultra Script Bold", l: "༺", r: "༻" },
+        { fontKey: "Ultra Gothic", l: "", r: "™" },
+        { fontKey: "Ultra Bold", l: "彡", r: "彡" },
+        { fontKey: "Ultra Small Caps", l: "", r: "•ᵒᵍ" },
+        { fontKey: "Ultra Gothic", l: "꧁", r: "꧂" }
+      ]
+    });
+    ns.tagStudio.liveChips({
+      inputId: "mainInput", mount: "ideaCute", text: placeholder,
+      items: [
+        { fontKey: "Ultra Cute Script", l: "꒰ꔫ", r: "ꔫ꒱" },
+        { fontKey: "Ultra Cute Script", l: "⋆˚✿", r: "✿˚⋆" },
+        { fontKey: "Ultra Cute Script", l: "♡", r: "♡" },
+        { fontKey: "Ultra Cute Script", l: "✧˖°", r: "°˖✧" },
+        { fontKey: "Ultra Cute Script", l: "ʚ", r: "ɞ" },
+        { fontKey: "Ultra Cute Script", l: "₊˚⊹", r: "⊹˚₊" }
+      ]
+    });
+    ns.tagStudio.liveChips({
+      inputId: "mainInput", mount: "ideaGamer", text: placeholder,
+      items: [
+        { fontKey: "Ultra Bold", l: "メ", r: "彡" },
+        { fontKey: "Ultra Small Caps", l: "꧁☬", r: "☬꧂" },
+        { fontKey: "Ultra Small Caps", l: "★彡[", r: "]彡★" },
+        { fontKey: "Ultra Small Caps", l: "࿐", r: "࿐" },
+        { fontKey: "Ultra Small Caps", l: "xX_", r: "_Xx" },
+        { fontKey: "Ultra Small Caps", l: "⚔", r: "⚔" }
+      ]
+    });
+    if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+  });
+  </script>
   <script src="/js/gamename/game-rules.js" defer></script>
   <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -479,5 +590,6 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 
 
+  <script src="/decorations-showcase.js"></script>
   <script src="/footer.js" defer></script>
 </body></html>

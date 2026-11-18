@@ -193,12 +193,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Мәтініңізді осында жазыңыз..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Мәтініңізде белгісі бар латын әріптері бар. Жуан, жазба, готика және басқа стильдердің көбі <b>ä</b>, <b>ğ</b>, <b>ö</b> және <b>ü</b> әріптерін белгісімен сақтайды. Бірнешеуі (төңкерілген мәтін және <b>ı</b> сияқты белгілі нұсқасы жоқ әріптер) қарапайым әріпке айналады. <a href="/guide/fancy-fonts-and-accents/">Қай стильдер белгілерді сақтайды →</a></span>
+        <span class="accent-notice-script" hidden>Бұл стильдер латын әліпбиінен жасалған, сондықтан қазақ әріптері өз пішінін сақтайды. Сызу, асты сызу, үсті сызу және жақтау стильдері қазақ әріптерінде де жұмыс істейді, ал мәтіндегі латын әріптері мен сандар безендіріледі.</span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Жабу">✕</button>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Нәтижеге безендіру қосу</div>
         <div class="decoration-tabs">
-          <button class="decoration-tab active" data-deco-tab="symbols">Белгілер</button>
-          <button class="decoration-tab" data-deco-tab="frames">Жақтаулар</button>
-          <button class="decoration-tab" data-deco-tab="minimal">Қарапайым</button>
+          <button class="decoration-tab active" data-deco-tab="done">Орындалды</button>
+          <button class="decoration-tab" data-deco-tab="sale">Жеңілдік</button>
+          <button class="decoration-tab" data-deco-tab="cross">Сызып тастау</button>
+          <button class="decoration-tab" data-deco-tab="redacted">Жасырылған</button>
+          <button class="decoration-tab" data-deco-tab="sass">Әзіл</button>
         </div>
         <div class="decoration-grid" id="decorationGrid"></div>
       </div>
@@ -315,12 +325,69 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </div>
   </footer>
 
-<script>window.UTG_FAMILY = "strikethrough-text";</script>
+<script>
+    window.UTG_FAMILY = "strikethrough-text";
+    // JTBD-matched decorations, same sets as the English page; the chip label says мәтін.
+    window.UTG_DEFAULT_DECO_TAB = "done";
+    window.UTG_DECORATIONS = {
+      done: [
+        { text: "✔ мәтін ✔", prefix: "✔ ", suffix: " ✔" },
+        { text: "✅ мәтін ✅", prefix: "✅ ", suffix: " ✅" },
+        { text: "☑ мәтін ☑", prefix: "☑ ", suffix: " ☑" },
+        { text: "✓ мәтін ✓", prefix: "✓ ", suffix: " ✓" },
+        { text: "🗹 мәтін 🗹", prefix: "🗹 ", suffix: " 🗹" },
+        { text: "👍 мәтін 👍", prefix: "👍 ", suffix: " 👍" },
+        { text: "🎉 мәтін 🎉", prefix: "🎉 ", suffix: " 🎉" },
+        { text: "🏁 мәтін 🏁", prefix: "🏁 ", suffix: " 🏁" }
+      ],
+      sale: [
+        { text: "🏷 мәтін 🏷", prefix: "🏷 ", suffix: " 🏷" },
+        { text: "🔥 мәтін 🔥", prefix: "🔥 ", suffix: " 🔥" },
+        { text: "💸 мәтін 💸", prefix: "💸 ", suffix: " 💸" },
+        { text: "💥 мәтін 💥", prefix: "💥 ", suffix: " 💥" },
+        { text: "⬇ мәтін ⬇", prefix: "⬇ ", suffix: " ⬇" },
+        { text: "‼ мәтін ‼", prefix: "‼ ", suffix: " ‼" },
+        { text: "★ мәтін ★", prefix: "★ ", suffix: " ★" },
+        { text: "❗ мәтін ❗", prefix: "❗ ", suffix: " ❗" }
+      ],
+      cross: [
+        { text: "✗ мәтін ✗", prefix: "✗ ", suffix: " ✗" },
+        { text: "✘ мәтін ✘", prefix: "✘ ", suffix: " ✘" },
+        { text: "✖ мәтін ✖", prefix: "✖ ", suffix: " ✖" },
+        { text: "❌ мәтін ❌", prefix: "❌ ", suffix: " ❌" },
+        { text: "⊘ мәтін ⊘", prefix: "⊘ ", suffix: " ⊘" },
+        { text: "⨯ мәтін ⨯", prefix: "⨯ ", suffix: " ⨯" },
+        { text: "╳ мәтін ╳", prefix: "╳ ", suffix: " ╳" },
+        { text: "☓ мәтін ☓", prefix: "☓ ", suffix: " ☓" }
+      ],
+      redacted: [
+        { text: "█ мәтін █", prefix: "█ ", suffix: " █" },
+        { text: "▓ мәтін ▓", prefix: "▓ ", suffix: " ▓" },
+        { text: "▒ мәтін ▒", prefix: "▒ ", suffix: " ▒" },
+        { text: "░ мәтін ░", prefix: "░ ", suffix: " ░" },
+        { text: "▬ мәтін ▬", prefix: "▬ ", suffix: " ▬" },
+        { text: "■ мәтін ■", prefix: "■ ", suffix: " ■" },
+        { text: "▮ мәтін ▮", prefix: "▮ ", suffix: " ▮" },
+        { text: "▪ мәтін ▪", prefix: "▪ ", suffix: " ▪" }
+      ],
+      sass: [
+        { text: "😏 мәтін 😏", prefix: "😏 ", suffix: " 😏" },
+        { text: "💀 мәтін 💀", prefix: "💀 ", suffix: " 💀" },
+        { text: "🙄 мәтін 🙄", prefix: "🙄 ", suffix: " 🙄" },
+        { text: "🤡 мәтін 🤡", prefix: "🤡 ", suffix: " 🤡" },
+        { text: "😂 мәтін 😂", prefix: "😂 ", suffix: " 😂" },
+        { text: "🤷 мәтін 🤷", prefix: "🤷 ", suffix: " 🤷" },
+        { text: "* мәтін *", prefix: "* ", suffix: " *" },
+        { text: "~ мәтін ~", prefix: "~ ", suffix: " ~" }
+      ]
+    };
+  </script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/js/share/share-core.js" defer></script>
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/i18n.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

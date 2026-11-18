@@ -412,11 +412,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <p class="u-secondary-tight">Ерекше кең бос таңбалар, соның ішінде қытай, жапон және корей типографиясындағы толық енді иероглифтік бос орын. Үлкен, көзге түсетін шегіністерге ыңғайлы.</p>
   <div class="flag-rows">
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol=" " aria-label="En Quad: U+2000 таңбасын көшіру"> </button>
+      <button class="flag-emoji symbol-tile" data-symbol="&#x2000;" aria-label="En Quad: U+2000 таңбасын көшіру">&#x2000;</button>
       <span class="flag-label">En Quad: U+2000</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol=" " aria-label="Em Quad: U+2001 таңбасын көшіру"> </button>
+      <button class="flag-emoji symbol-tile" data-symbol="&#x2001;" aria-label="Em Quad: U+2001 таңбасын көшіру">&#x2001;</button>
       <span class="flag-label">Em Quad: U+2001</span>
     </div>
     <div class="flag-row">
@@ -505,7 +505,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
   <div class="editorial-block">
     <p>Free Fire ойынында лақап атты өзгерту үшін ат өзгерту картасы керек. Таңбаның өткені туралы хабар болмаса, алдымен оны чатқа қойып, шынымен бос екеніне көз жеткізіңіз. Әр көрінбейтін таңба ат шегіне кіреді: мәтінде қанша таңба барын <a href="/kk/soz-sanau/">таңба және сөз санау</a> бетінде есептей аласыз.</p>
+    <p>Free Fire үшін ойыншылар әр байқап көрген атпен ойынның не істегенін тіркейді: қабылдады ма, әлде қабылдамады ма. Төмендегі тақта сол хабарламаларды көрсетеді.</p>
   </div>
+  <div id="invisibleFfReports"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -598,6 +600,40 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/js/invisible/blankGenerator.js" defer></script>
+<script src="/js/gamename/name-reports.js" defer></script>
+<script>
+window.addEventListener("load", function () {
+  const ns = window.UltraTextGen;
+  if (!ns || !ns.nameReports) return;
+  ns.nameReports.mountBoard({
+    mount: "invisibleFfReports",
+    game: "ff",
+    text: {
+      label: "Ойыншылар хабарламалары",
+      heading: "Free Fire: ойыншылар байқаған аттар",
+      intro: "Әр жазба: ойыншы Free Fire ойынына қойған ат және ойынның оған не істегені. Бос таңбалар код нүктесімен көрсетіледі. Сізде де солай болса, «Менде де солай» батырмасын басыңыз.",
+      empty: "Әзірге хабарлама жоқ.",
+      tallyLabel: "Ойыншылар байқаған аттардағы таңбалар:",
+      tallyRefused: "қабылданбады",
+      tallyAccepted: "өтті",
+      tallyBoxes: "шаршы болып көрінді",
+      accepted: "Өтті",
+      refused: "Қабылданбады",
+      boxes: "Шаршы болып көрінеді",
+      reasons: { too_long: "тым ұзын", invalid: "жарамсыз таңбалар", sensitive: "орынсыз ат", taken: "ат бос емес", other: "басқа" },
+      same: "Менде де солай",
+      flag: "Спам",
+      flagged: "Рақмет, қарап шығамыз",
+      today: "бүгін",
+      yesterday: "кеше",
+      daysAgo: "{n} күн бұрын",
+      blank: "(бос)",
+      copy: "Көшіру",
+      copied: "Көшірілді"
+    }
+  });
+});
+</script>
 <script src="/footer.js" defer></script>
 </body>
 </html>
