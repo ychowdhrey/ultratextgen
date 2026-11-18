@@ -676,6 +676,19 @@
       ],
       "kicker": "LIB",
       "added": "2026-11-18"
+    },
+    "ko-library-utgin-imotikon": {
+      "title": "웃긴 이모티콘",
+      "sub": "밈 이모지와 빵 터지는 조합.",
+      "glyphs": [
+        "😂",
+        "🤣",
+        "😹",
+        "😆",
+        "😝"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-18"
     }
   }
 }
