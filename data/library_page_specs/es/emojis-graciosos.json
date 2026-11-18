@@ -3,6 +3,7 @@
   "slug": "emojis-graciosos",
   "page_type": "library",
   "copy_pattern": "collection",
+  "combo_aria_template": "{copy} combo: {label}",
   "canonical": "https://ultratextgen.com/es/library/emojis-graciosos/",
   "home_url": "https://ultratextgen.com/es/",
   "crumb_home": "Inicio",
@@ -26,6 +27,17 @@
       "label": "Risa",
       "h2": "Combos de Risa y Carcajadas",
       "intro": "Sets de llorar de risa para cuando un mensaje es demasiado gracioso como para contestar.",
+      "combos": [
+        { "char": "😂🤣💀", "label": "Me morí" },
+        { "char": "🤣👉🤡", "label": "Señalando y riendo" },
+        { "char": "😹😹😹", "label": "Gato carcajeándose" },
+        { "char": "😆🫵😂", "label": "¿Que hiciste qué?" },
+        { "char": "😂🙏😭", "label": "Llorando de risa" },
+        { "char": "🤣📸😂", "label": "Momento captura" },
+        { "char": "😝🤪😜", "label": "Caos total" },
+        { "char": "😂🍿👀", "label": "Viendo el chisme" }
+      ],
+      "symbols_intro": "O arma el tuyo con los emojis de risa sueltos:",
       "symbols": [
         { "char": "😂", "label": "Cara llorando de risa" },
         { "char": "🤣", "label": "Revolcándose de risa" },
@@ -41,6 +53,17 @@
       "label": "Payasadas",
       "h2": "Combos Tontos y de Payasada",
       "intro": "Sets de payaso, derretimiento y cabeza al revés para el caos de burlarse de uno mismo.",
+      "combos": [
+        { "char": "🤡🎪🤹", "label": "Momento payaso" },
+        { "char": "🫠🥴😵‍💫", "label": "Derritiéndome" },
+        { "char": "🙃😬🫢", "label": "Silencio incómodo" },
+        { "char": "🤭😛🤪", "label": "Dando lata" },
+        { "char": "🥴🎉😵", "label": "Después de la fiesta" },
+        { "char": "🫠🔥🙂", "label": "Todo bien, todo tranqui" },
+        { "char": "🤡🪞😐", "label": "Darme cuenta de que soy yo" },
+        { "char": "😜🎈🎉", "label": "Bobo total" }
+      ],
+      "symbols_intro": "O arma el tuyo con los emojis de payasadas sueltos:",
       "symbols": [
         { "char": "🤡", "label": "Cara de payaso" },
         { "char": "🥴", "label": "Cara mareada" },
@@ -56,6 +79,17 @@
       "label": "Memes",
       "h2": "Combos de Memes Favoritos",
       "intro": "La calavera, el moái y la rana — los emojis que cargan un chiste por sí solos.",
+      "combos": [
+        { "char": "💀💀💀", "label": "Fallecido" },
+        { "char": "🗿🍷😐", "label": "Frío como piedra" },
+        { "char": "🤓☝️🧠", "label": "Pues en realidad" },
+        { "char": "🐸☕👀", "label": "No es asunto mío" },
+        { "char": "👻💀🕯️", "label": "Me dejaron en visto" },
+        { "char": "🥸🕵️🔍", "label": "De incógnito" },
+        { "char": "💩🚽😭", "label": "Una porquería" },
+        { "char": "🦆🎩🕶️", "label": "Pato con sombrero" }
+      ],
+      "symbols_intro": "O arma el tuyo con los emojis de memes sueltos:",
       "symbols": [
         { "char": "💀", "label": "Calavera" },
         { "char": "🗿", "label": "Moái" },
@@ -72,6 +106,17 @@
       "label": "Uy",
       "h2": "Combos de Monitos, Muecas y 'Uy'",
       "intro": "Sets de 'yo no vi nada' para el momento en que dijiste en voz alta lo que debía quedarse callado.",
+      "combos": [
+        { "char": "🙈🙉🙊", "label": "No veo nada" },
+        { "char": "😬😅🫠", "label": "Yikes" },
+        { "char": "🫢😳🙊", "label": "Hablé de más" },
+        { "char": "🤐🔒🤫", "label": "Boca cerrada" },
+        { "char": "🙈💀😂", "label": "No puedo ver" },
+        { "char": "😬📉😅", "label": "Salió fatal" },
+        { "char": "🫣👀😳", "label": "Espiando" },
+        { "char": "🙊🤭😆", "label": "Uy, lo conté" }
+      ],
+      "symbols_intro": "O arma el tuyo con los emojis de 'uy' sueltos:",
       "symbols": [
         { "char": "🙈", "label": "Mono que no ve" },
         { "char": "🙉", "label": "Mono que no oye" },
@@ -86,6 +131,17 @@
       "label": "Utilería",
       "h2": "Combos de Utilería y Remate",
       "intro": "Sets de té, circo y megáfono para rematar el chiste.",
+      "combos": [
+        { "char": "☕🐸👀", "label": "El té de la rana" },
+        { "char": "🎪🤹🤡", "label": "Todo un circo" },
+        { "char": "🚨🤡🚨", "label": "Alerta de payaso" },
+        { "char": "📢😂📢", "label": "Anuncio" },
+        { "char": "🧠🕸️😶", "label": "Cerebro vacío" },
+        { "char": "🍌📞🤨", "label": "Teléfono banana" },
+        { "char": "🥁😐🎤", "label": "Tu-dum-tss" },
+        { "char": "🎬😂🍿", "label": "Comedia pura" }
+      ],
+      "symbols_intro": "O arma el tuyo con los emojis de utilería sueltos:",
       "symbols": [
         { "char": "☕", "label": "Bebida caliente" },
         { "char": "🎪", "label": "Carpa de circo" },

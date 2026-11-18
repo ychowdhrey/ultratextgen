@@ -130,7 +130,7 @@
         },
         {
           "char": "🫰",
-          "label": "Chasquido / suerte"
+          "label": "Mano con índice y pulgar cruzados (corazón con los dedos)"
         },
         {
           "char": "🫱",
@@ -147,6 +147,14 @@
         {
           "char": "🫴",
           "label": "Palma hacia arriba"
+        },
+        {
+          "char": "🫷",
+          "label": "Mano empujando hacia la izquierda"
+        },
+        {
+          "char": "🫸",
+          "label": "Mano empujando hacia la derecha"
         },
         {
           "char": "👐",
@@ -229,6 +237,10 @@
           "label": "Mano escribiendo"
         },
         {
+          "char": "🤳",
+          "label": "Selfi"
+        },
+        {
           "char": "🤚",
           "label": "Dorso de la mano levantado"
         },
@@ -259,10 +271,6 @@
         {
           "char": "👋",
           "label": "Saludando con la mano"
-        },
-        {
-          "char": "🖕",
-          "label": "Dedo del medio"
         }
       ]
     }

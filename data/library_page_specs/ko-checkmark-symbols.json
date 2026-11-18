@@ -355,15 +355,15 @@
       "intro": "그대로 복사해 쓰는 줄.",
       "symbols": [
         {
-          "char": "☑ Done",
+          "char": "☑ 완료",
           "label": "완료 줄"
         },
         {
-          "char": "☐ To-do",
+          "char": "☐ 할 일",
           "label": "할 일 줄"
         },
         {
-          "char": "✔ Completed · ✘ Pending",
+          "char": "✔ 완료 · ✘ 대기",
           "label": "완료 · 대기 한 쌍"
         },
         {
@@ -375,7 +375,7 @@
           "label": "대괄호 빈칸"
         },
         {
-          "char": "✅ Yes  ❌ No",
+          "char": "✅ 예  ❌ 아니오",
           "label": "예 / 아니오"
         }
       ]

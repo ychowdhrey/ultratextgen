@@ -62,7 +62,7 @@
           "label": "Độ Celsius (U+2103)"
         },
         {
-          "char": "K",
+          "char": "\u212a",
           "label": "Dấu Kelvin (U+212A)"
         },
         {
@@ -94,7 +94,7 @@
           "label": "Ký Hiệu Micro (U+00B5)"
         },
         {
-          "char": "Ω",
+          "char": "\u2126",
           "label": "Ký Hiệu Ohm (U+2126)"
         }
       ]

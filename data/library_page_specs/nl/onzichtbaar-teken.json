@@ -50,11 +50,11 @@
       "intro": "Deze worden ook gebruikt voor lege namen, maar gedragen zich anders: sommige werken juist beter op platforms waar U+2800 faalt, en andersom.",
       "symbols": [
         {
-          "char": "​",
+          "char": "\u200b",
           "label": "Zero Width Space (U+200B): echt nulbreed; veel validators strippen het als witruimte, dus faalt het vaak waar U+2800 slaagt"
         },
         {
-          "char": " ",
+          "char": "\u00a0",
           "label": "Onderbrekingsvrije Spatie (U+00A0): een echt spatieteken; wordt bijna altijd getrimd of ronduit geweigerd"
         },
         {

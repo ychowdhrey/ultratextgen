@@ -12,6 +12,1006 @@
   "copy_pattern": "collection",
   "sections": [
     {
+      "id": "combo-soft-girl",
+      "label": "Soft Girl",
+      "h2": "Soft Girl & Coquette Combos",
+      "intro": "Bows, blush pinks, and dainty hearts for a soft, feminine bio.",
+      "combos": [
+        {
+          "char": "🎀🌸✨",
+          "label": "Bow & blossom"
+        },
+        {
+          "char": "🩰🤍🦢",
+          "label": "Ballet white"
+        },
+        {
+          "char": "🌷💗🎀",
+          "label": "Tulip crush"
+        },
+        {
+          "char": "🍓🥛🤍",
+          "label": "Strawberry milk"
+        },
+        {
+          "char": "🎀💋🪞",
+          "label": "Vanity bow"
+        },
+        {
+          "char": "🌸🦋🤍",
+          "label": "Soft butterfly"
+        },
+        {
+          "char": "💗🪞🎀",
+          "label": "Mirror pink"
+        },
+        {
+          "char": "🍰🩷🫧",
+          "label": "Sweet bubbles"
+        }
+      ]
+    },
+    {
+      "id": "combo-cottagecore",
+      "label": "Cottagecore",
+      "h2": "Cottagecore Combos",
+      "intro": "Mushrooms, honey, and meadow critters for a cozy, rural mood.",
+      "combos": [
+        {
+          "char": "🍄🌿🧺",
+          "label": "Forest basket"
+        },
+        {
+          "char": "🌷🐝🍯",
+          "label": "Honey garden"
+        },
+        {
+          "char": "🍃🐚🤎",
+          "label": "Earthy walk"
+        },
+        {
+          "char": "🧺🍓🌼",
+          "label": "Berry picking"
+        },
+        {
+          "char": "🍄🐌🌧️",
+          "label": "Rainy woods"
+        },
+        {
+          "char": "🌾🐑☁️",
+          "label": "Meadow day"
+        },
+        {
+          "char": "🕯️📖🍂",
+          "label": "Quiet evening"
+        },
+        {
+          "char": "🌻🐝🌾",
+          "label": "Sunny field"
+        }
+      ]
+    },
+    {
+      "id": "combo-night-sky",
+      "label": "Night Sky",
+      "h2": "Night Sky & Celestial Combos",
+      "intro": "Moons, stars, and clouds for a dreamy, celestial theme.",
+      "combos": [
+        {
+          "char": "🌙⭐☁️",
+          "label": "Dreamy night"
+        },
+        {
+          "char": "✦⋆｡˚🌙",
+          "label": "Starlit"
+        },
+        {
+          "char": "🌌🔭✨",
+          "label": "Stargazing"
+        },
+        {
+          "char": "🌙🤍🌠",
+          "label": "Wish upon"
+        },
+        {
+          "char": "⭐🪐💫",
+          "label": "Cosmic"
+        },
+        {
+          "char": "🌃🌙⭐",
+          "label": "City night"
+        },
+        {
+          "char": "☾⋆⁺₊✧",
+          "label": "Crescent glow"
+        },
+        {
+          "char": "🌙🦉🕯️",
+          "label": "Night owl"
+        }
+      ]
+    },
+    {
+      "id": "combo-y2k",
+      "label": "Y2K",
+      "h2": "Y2K Combos",
+      "intro": "Discs, butterflies, and disco shine for an early-2000s cyber vibe. Looking for the monochrome text version? See <a href=\"/library/y2k-symbols/\">Y2K symbols</a>.",
+      "combos": [
+        {
+          "char": "💿🦋⚡",
+          "label": "Cyber disc"
+        },
+        {
+          "char": "🪩💖💿",
+          "label": "Disco pop"
+        },
+        {
+          "char": "✨💗🦋",
+          "label": "Glitter wing"
+        },
+        {
+          "char": "⭐🌐💜",
+          "label": "Web star"
+        },
+        {
+          "char": "💋💅✨",
+          "label": "Glam"
+        },
+        {
+          "char": "🦋🫧💿",
+          "label": "Bubble disc"
+        },
+        {
+          "char": "⚡🛹🤍",
+          "label": "Skater"
+        },
+        {
+          "char": "🌈🪩💫",
+          "label": "Rave"
+        }
+      ]
+    },
+    {
+      "id": "combo-grunge",
+      "label": "Grunge",
+      "h2": "Grunge & Dark Combos",
+      "intro": "Chains, wilted roses, and smoke for an alt, moody aesthetic.",
+      "combos": [
+        {
+          "char": "🖤⛓️🌑",
+          "label": "Dark chain"
+        },
+        {
+          "char": "🥀🖤🕸️",
+          "label": "Wilted"
+        },
+        {
+          "char": "⛓️🦇🌫️",
+          "label": "Smoke bat"
+        },
+        {
+          "char": "🕷️🖤🥀",
+          "label": "Spider rose"
+        },
+        {
+          "char": "🌧️🖤⚡",
+          "label": "Storm"
+        },
+        {
+          "char": "🥀⛓️🤍",
+          "label": "Faded"
+        },
+        {
+          "char": "🔪🖤💀",
+          "label": "Edge"
+        },
+        {
+          "char": "🌑🐍🖤",
+          "label": "Venom"
+        }
+      ]
+    },
+    {
+      "id": "combo-kawaii",
+      "label": "Kawaii",
+      "h2": "Kawaii Combos",
+      "intro": "Round, pastel, and adorable picks for a cute Japanese-inspired bio.",
+      "combos": [
+        {
+          "char": "🍡🌸🐰",
+          "label": "Dango bunny"
+        },
+        {
+          "char": "🧸🍓💕",
+          "label": "Teddy berry"
+        },
+        {
+          "char": "🐰🎀🍙",
+          "label": "Bunny snack"
+        },
+        {
+          "char": "🍓🐻🤍",
+          "label": "Berry bear"
+        },
+        {
+          "char": "🌸🍡🐣",
+          "label": "Spring chick"
+        },
+        {
+          "char": "🧁🐰💗",
+          "label": "Cupcake"
+        },
+        {
+          "char": "🍮🐱🌸",
+          "label": "Pudding cat"
+        },
+        {
+          "char": "🐥🌼🤍",
+          "label": "Soft chick"
+        }
+      ]
+    },
+    {
+      "id": "combo-fairycore",
+      "label": "Fairycore",
+      "h2": "Fairycore Combos",
+      "intro": "Fairies, toadstools, and ladybugs for a whimsical woodland look.",
+      "combos": [
+        {
+          "char": "🧚🍄🌿",
+          "label": "Fairy ring"
+        },
+        {
+          "char": "🦋🌸🍃",
+          "label": "Flutter"
+        },
+        {
+          "char": "🧚\u200d♀️✨🌷",
+          "label": "Pixie dust"
+        },
+        {
+          "char": "🍃🐞🌼",
+          "label": "Ladybug"
+        },
+        {
+          "char": "🌙🧚🍄",
+          "label": "Night fairy"
+        },
+        {
+          "char": "🦋🌿💫",
+          "label": "Forest magic"
+        },
+        {
+          "char": "🐌🍄🌧️",
+          "label": "Tiny world"
+        },
+        {
+          "char": "🌸🧚🤍",
+          "label": "Blossom fae"
+        }
+      ]
+    },
+    {
+      "id": "combo-dark-academia",
+      "label": "Dark Academia",
+      "h2": "Dark Academia Combos",
+      "intro": "Books, candles, and ink for a scholarly, vintage mood.",
+      "combos": [
+        {
+          "char": "📚🕯️🖋️",
+          "label": "Study night"
+        },
+        {
+          "char": "🖤📖☕",
+          "label": "Late reading"
+        },
+        {
+          "char": "🕯️📜🪶",
+          "label": "Old letter"
+        },
+        {
+          "char": "🏛️📚🤎",
+          "label": "Library"
+        },
+        {
+          "char": "☕📖🍂",
+          "label": "Autumn read"
+        },
+        {
+          "char": "🖋️📜🕯️",
+          "label": "Manuscript"
+        },
+        {
+          "char": "🦉📚🌙",
+          "label": "Night scholar"
+        },
+        {
+          "char": "🤎📖🕰️",
+          "label": "Timeless"
+        }
+      ]
+    },
+    {
+      "id": "combo-angelcore",
+      "label": "Angelcore",
+      "h2": "Angelcore & Ethereal Combos",
+      "intro": "Wings, clouds, and soft white light for a heavenly aesthetic.",
+      "combos": [
+        {
+          "char": "👼🤍🕊️",
+          "label": "Cherub"
+        },
+        {
+          "char": "🕊️☁️✨",
+          "label": "Dove cloud"
+        },
+        {
+          "char": "🤍🪽😇",
+          "label": "Halo"
+        },
+        {
+          "char": "☁️👼💫",
+          "label": "Sky angel"
+        },
+        {
+          "char": "🕯️🤍🕊️",
+          "label": "Soft light"
+        },
+        {
+          "char": "😇☁️🌙",
+          "label": "Dreaming"
+        },
+        {
+          "char": "🪽✨🤍",
+          "label": "Feathered"
+        },
+        {
+          "char": "🤍🕊️🌥️",
+          "label": "Heaven"
+        }
+      ]
+    },
+    {
+      "id": "combo-ocean",
+      "label": "Ocean",
+      "h2": "Ocean & Beach Combos",
+      "intro": "Waves, shells, and dolphins for a fresh coastal vibe.",
+      "combos": [
+        {
+          "char": "🌊🐚🤍",
+          "label": "Seashore"
+        },
+        {
+          "char": "🐬🌊💙",
+          "label": "Dolphin"
+        },
+        {
+          "char": "🏝️🌴☀️",
+          "label": "Island day"
+        },
+        {
+          "char": "🐚🧜\u200d♀️💦",
+          "label": "Mermaid"
+        },
+        {
+          "char": "🌊⛱️🩵",
+          "label": "Beach blue"
+        },
+        {
+          "char": "🐠🪸🌊",
+          "label": "Reef"
+        },
+        {
+          "char": "🦀🏖️🐚",
+          "label": "Tide pool"
+        },
+        {
+          "char": "🌅🌊🤍",
+          "label": "Morning surf"
+        }
+      ]
+    },
+    {
+      "id": "combo-sunset",
+      "label": "Sunset",
+      "h2": "Sunset & Warm Combos",
+      "intro": "Golden hour oranges and warm browns for a cozy, glowing theme.",
+      "combos": [
+        {
+          "char": "🌅🍊🧡",
+          "label": "Golden hour"
+        },
+        {
+          "char": "🌇🌺🤎",
+          "label": "Dusk bloom"
+        },
+        {
+          "char": "🍂🍁🤎",
+          "label": "Fallen leaves"
+        },
+        {
+          "char": "🌻☀️🧡",
+          "label": "Sunflower sun"
+        },
+        {
+          "char": "🌄🔥🧡",
+          "label": "Warm ridge"
+        },
+        {
+          "char": "🍊🌅💛",
+          "label": "Citrus dawn"
+        },
+        {
+          "char": "🌆🌴🧡",
+          "label": "City sunset"
+        },
+        {
+          "char": "☀️🌾🧡",
+          "label": "Harvest"
+        }
+      ]
+    },
+    {
+      "id": "combo-love",
+      "label": "Love",
+      "h2": "Love & Heart Combos",
+      "intro": "Pinks, ribbons, and hearts for couples, crushes, and soft bios.",
+      "combos": [
+        {
+          "char": "💗💕💞",
+          "label": "Heartbeat"
+        },
+        {
+          "char": "🤍🫶🎀",
+          "label": "Hands & bow"
+        },
+        {
+          "char": "💌💋💗",
+          "label": "Love note"
+        },
+        {
+          "char": "🩷💕🌷",
+          "label": "Sweetheart"
+        },
+        {
+          "char": "❤️\u200d🔥💋🌹",
+          "label": "Passion"
+        },
+        {
+          "char": "💝💗🦢",
+          "label": "Gift swan"
+        },
+        {
+          "char": "𓆩♡𓆪",
+          "label": "Caged heart"
+        },
+        {
+          "char": "🌹💞💌",
+          "label": "Romance"
+        }
+      ]
+    },
+    {
+      "id": "combo-cosmic",
+      "label": "Cosmic",
+      "h2": "Cosmic & Space Combos",
+      "intro": "Planets, rockets, and comets for a galactic, sci-fi look.",
+      "combos": [
+        {
+          "char": "🪐🌌💫",
+          "label": "Galaxy"
+        },
+        {
+          "char": "🚀⭐🌙",
+          "label": "Liftoff"
+        },
+        {
+          "char": "👽🛸🌠",
+          "label": "UFO"
+        },
+        {
+          "char": "🌠💜🪐",
+          "label": "Comet"
+        },
+        {
+          "char": "☄️✨🌌",
+          "label": "Meteor"
+        },
+        {
+          "char": "🌑🌒🌓",
+          "label": "Moon phases"
+        },
+        {
+          "char": "🔭⭐🪐",
+          "label": "Observatory"
+        },
+        {
+          "char": "🌟🌌💫",
+          "label": "Stardust"
+        }
+      ]
+    },
+    {
+      "id": "combo-green",
+      "label": "Green",
+      "h2": "Plant & Green Combos",
+      "intro": "Leaves, succulents, and tiny critters for a calm, botanical bio.",
+      "combos": [
+        {
+          "char": "🌿🪴🌱",
+          "label": "Houseplant"
+        },
+        {
+          "char": "🍀🐸🌿",
+          "label": "Lucky frog"
+        },
+        {
+          "char": "🪴🌵☀️",
+          "label": "Desert pot"
+        },
+        {
+          "char": "🌱🐌🍃",
+          "label": "New growth"
+        },
+        {
+          "char": "🌿🦋🤍",
+          "label": "Garden wing"
+        },
+        {
+          "char": "🍃🌾🤎",
+          "label": "Wild grass"
+        },
+        {
+          "char": "🪴🌸🌿",
+          "label": "Bloom pot"
+        },
+        {
+          "char": "🌵🏜️🌞",
+          "label": "Cactus sun"
+        }
+      ]
+    },
+    {
+      "id": "combo-baddie",
+      "label": "Baddie",
+      "h2": "Baddie Combos",
+      "intro": "Fierce, glam, and unbothered: chains, cherries, and boss energy for a confident bio or username.",
+      "combos": [
+        {
+          "char": "💅😈🔥",
+          "label": "Bad energy"
+        },
+        {
+          "char": "🖤⛓️💋",
+          "label": "Chain kiss"
+        },
+        {
+          "char": "💸👑🥂",
+          "label": "Boss"
+        },
+        {
+          "char": "🌹🥊💯",
+          "label": "Knockout"
+        },
+        {
+          "char": "😎🍒🖤",
+          "label": "Cool cherry"
+        },
+        {
+          "char": "💄🛍️✨",
+          "label": "Glam haul"
+        },
+        {
+          "char": "🦋💅🏽💿",
+          "label": "Y2K baddie"
+        },
+        {
+          "char": "🔥💋🎯",
+          "label": "On target"
+        }
+      ]
+    },
+    {
+      "id": "combo-emo",
+      "label": "Emo",
+      "h2": "Emo Combos",
+      "intro": "Black hearts, wilted roses, and chains: 2000s emo mood for edgy bios and playlists.",
+      "combos": [
+        {
+          "char": "🖤🥀🎧",
+          "label": "Heartbreak"
+        },
+        {
+          "char": "⛓️🖤😔",
+          "label": "Chained"
+        },
+        {
+          "char": "🩹🖤⛓️",
+          "label": "Patched up"
+        },
+        {
+          "char": "💔🖤🥀",
+          "label": "Broken"
+        },
+        {
+          "char": "🖤🎸⛓️",
+          "label": "Band tee"
+        },
+        {
+          "char": "🦇🖤🕯️",
+          "label": "Nightfall"
+        },
+        {
+          "char": "😭🖤🥀",
+          "label": "Tears"
+        },
+        {
+          "char": "⛓️🩸🖤",
+          "label": "Bleeding"
+        }
+      ]
+    },
+    {
+      "id": "combo-scene",
+      "label": "Scene",
+      "h2": "Scene Combos",
+      "intro": "Loud rainbow-on-black with leopard, unicorns, and bows: myspace-era scene kid energy.",
+      "combos": [
+        {
+          "char": "🌈💀🎀",
+          "label": "Rawr"
+        },
+        {
+          "char": "🦄⚡🖤",
+          "label": "Neon unicorn"
+        },
+        {
+          "char": "🐆🌈💚",
+          "label": "Wild print"
+        },
+        {
+          "char": "🎀💚🦴",
+          "label": "Bones"
+        },
+        {
+          "char": "⭐🖤🌈",
+          "label": "Star scene"
+        },
+        {
+          "char": "🦓🌈💀",
+          "label": "Zebra"
+        },
+        {
+          "char": "💚🖤🎧",
+          "label": "Coontails"
+        },
+        {
+          "char": "🌈🦋⚡",
+          "label": "Electric"
+        }
+      ]
+    },
+    {
+      "id": "combo-weirdcore",
+      "label": "Weirdcore",
+      "h2": "Weirdcore Combos",
+      "intro": "Eyes, spirals, and liminal clouds: the unsettling dream-logic look of weirdcore.",
+      "combos": [
+        {
+          "char": "👁️🌀🍄",
+          "label": "Eye spiral"
+        },
+        {
+          "char": "☁️🚪👁️",
+          "label": "Liminal door"
+        },
+        {
+          "char": "🌈👁️😵",
+          "label": "Dizzy"
+        },
+        {
+          "char": "🍄🌀⭐",
+          "label": "Mushroom swirl"
+        },
+        {
+          "char": "👁️💿🌫️",
+          "label": "Static"
+        },
+        {
+          "char": "🚪🌈👁️",
+          "label": "Exit"
+        },
+        {
+          "char": "😵\u200d💫🌀🍭",
+          "label": "Sugar daze"
+        },
+        {
+          "char": "⭐👁️☁️",
+          "label": "Dream eye"
+        }
+      ]
+    },
+    {
+      "id": "combo-dreamcore",
+      "label": "Dreamcore",
+      "h2": "Dreamcore Combos",
+      "intro": "Carousels, soft clouds, and moons: the nostalgic, hazy calm of dreamcore.",
+      "combos": [
+        {
+          "char": "☁️🌙🎠",
+          "label": "Carousel"
+        },
+        {
+          "char": "🌈☁️🚪",
+          "label": "Soft exit"
+        },
+        {
+          "char": "🎠☁️💫",
+          "label": "Merry-go"
+        },
+        {
+          "char": "🌙☁️🫧",
+          "label": "Bubble moon"
+        },
+        {
+          "char": "🕰️☁️🌀",
+          "label": "Timeless"
+        },
+        {
+          "char": "💤☁️🌙",
+          "label": "Sleepy"
+        },
+        {
+          "char": "🎡☁️✨",
+          "label": "Ferris"
+        },
+        {
+          "char": "🌫️🌙🎠",
+          "label": "Foggy fair"
+        }
+      ]
+    },
+    {
+      "id": "combo-cybercore",
+      "label": "Cybercore",
+      "h2": "Cybercore Combos",
+      "intro": "Robots, matrix green, and neon screens: a tech-forward cyber aesthetic.",
+      "combos": [
+        {
+          "char": "💿🛸🤖",
+          "label": "Cyber disc"
+        },
+        {
+          "char": "⚡🌐💾",
+          "label": "Datastream"
+        },
+        {
+          "char": "🖥️💜⚡",
+          "label": "Neon screen"
+        },
+        {
+          "char": "🤖💿🔩",
+          "label": "Android"
+        },
+        {
+          "char": "🌐👾💚",
+          "label": "Matrix"
+        },
+        {
+          "char": "⚙️💿🛸",
+          "label": "Machine"
+        },
+        {
+          "char": "📡⚡🖤",
+          "label": "Signal"
+        },
+        {
+          "char": "👾🌐💜",
+          "label": "Glitch"
+        }
+      ]
+    },
+    {
+      "id": "combo-mermaidcore",
+      "label": "Mermaidcore",
+      "h2": "Mermaidcore Combos",
+      "intro": "Shells, pearls, and jellyfish: oceanic fantasy for a dreamy sea-witch vibe.",
+      "combos": [
+        {
+          "char": "🐚🌊🧜\u200d♀️",
+          "label": "Mermaid"
+        },
+        {
+          "char": "🪼🐚✨",
+          "label": "Jelly shine"
+        },
+        {
+          "char": "🌊🐠🫧",
+          "label": "Reef"
+        },
+        {
+          "char": "🧜\u200d♀️🐚💎",
+          "label": "Pearl"
+        },
+        {
+          "char": "🪸🌊🐚",
+          "label": "Coral"
+        },
+        {
+          "char": "✨🐚🌙",
+          "label": "Moon tide"
+        },
+        {
+          "char": "🫧🪼🌊",
+          "label": "Bubbles"
+        },
+        {
+          "char": "🐚💙🌊",
+          "label": "Seafoam"
+        }
+      ]
+    },
+    {
+      "id": "combo-kidcore",
+      "label": "Kidcore",
+      "h2": "Kidcore Combos",
+      "intro": "Crayons, toys, and primary-color fun: bright, nostalgic 90s-kid energy.",
+      "combos": [
+        {
+          "char": "🌈🖍️⭐",
+          "label": "Crayon"
+        },
+        {
+          "char": "🍭🎈🌈",
+          "label": "Candy fun"
+        },
+        {
+          "char": "⭐🧸🍄",
+          "label": "Toybox"
+        },
+        {
+          "char": "🎨🌈🖍️",
+          "label": "Art class"
+        },
+        {
+          "char": "🍬🎈⚽",
+          "label": "Playground"
+        },
+        {
+          "char": "🌈🧩🌟",
+          "label": "Puzzle"
+        },
+        {
+          "char": "🐛🌈🍭",
+          "label": "Bug day"
+        },
+        {
+          "char": "🎠🎈🌈",
+          "label": "Fairground"
+        }
+      ]
+    },
+    {
+      "id": "combo-clowncore",
+      "label": "Clowncore",
+      "h2": "Clowncore Combos",
+      "intro": "Big-top color, balloons, and confetti: playful circus maximalism.",
+      "combos": [
+        {
+          "char": "🤡🎪🎈",
+          "label": "Big top"
+        },
+        {
+          "char": "🎪🍭🤡",
+          "label": "Sweet circus"
+        },
+        {
+          "char": "🎈🌈🤹",
+          "label": "Juggle"
+        },
+        {
+          "char": "🤡🎠🎪",
+          "label": "Carnival"
+        },
+        {
+          "char": "🎪🎭🎈",
+          "label": "Show"
+        },
+        {
+          "char": "🍭🤡🎡",
+          "label": "Funfair"
+        },
+        {
+          "char": "🎈🤹🌈",
+          "label": "Balloons"
+        },
+        {
+          "char": "🎪✨🤡",
+          "label": "Spotlight"
+        }
+      ]
+    },
+    {
+      "id": "combo-goblincore",
+      "label": "Goblincore",
+      "h2": "Goblincore Combos",
+      "intro": "Mushrooms, frogs, snails, and moss: cozy, earthy forest-floor charm.",
+      "combos": [
+        {
+          "char": "🍄🐸🌿",
+          "label": "Toadstool"
+        },
+        {
+          "char": "🐌🍄🍂",
+          "label": "Forest floor"
+        },
+        {
+          "char": "🌿🐸🪨",
+          "label": "Mossy"
+        },
+        {
+          "char": "🍄🌰🐛",
+          "label": "Acorn"
+        },
+        {
+          "char": "🐸🍄🕯️",
+          "label": "Swamp cottage"
+        },
+        {
+          "char": "🪵🍄🌿",
+          "label": "Log"
+        },
+        {
+          "char": "🐌🌿🍄",
+          "label": "Snail trail"
+        },
+        {
+          "char": "🍂🐸🍄",
+          "label": "Autumn"
+        }
+      ]
+    },
+    {
+      "id": "combo-lovecore",
+      "label": "Lovecore",
+      "h2": "Lovecore Combos",
+      "intro": "Cupids, love letters, and ribboned hearts: retro-valentine romance.",
+      "combos": [
+        {
+          "char": "❤️💌🎀",
+          "label": "Love note"
+        },
+        {
+          "char": "💘💝🕯️",
+          "label": "Cupid"
+        },
+        {
+          "char": "❤️🏹💌",
+          "label": "Arrow"
+        },
+        {
+          "char": "💗🎀💘",
+          "label": "Sweetheart"
+        },
+        {
+          "char": "💌❤️🌹",
+          "label": "Valentine"
+        },
+        {
+          "char": "💝😇❤️",
+          "label": "Cherub"
+        },
+        {
+          "char": "❤️💋💌",
+          "label": "Kiss letter"
+        },
+        {
+          "char": "🏹💗❤️",
+          "label": "Struck"
+        }
+      ]
+    },
+    {
       "id": "aesthetic-staples",
       "label": "Staples",
       "h2": "Aesthetic Emoji Staples",
