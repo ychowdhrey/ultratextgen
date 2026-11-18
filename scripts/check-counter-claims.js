@@ -78,6 +78,10 @@ function figuresFor(src) {
     if (r.visibleAt) set.add(r.visibleAt);
     if (r.foldDesktop) set.add(r.foldDesktop);
   });
+  /* A page may inject rules of its own (the Russian counter adds two VK
+     fields). The number of fields it may truthfully state is the size of the
+     table it actually runs with, so that is recorded per page. */
+  set.fieldCount = rules.LIMITS.length;
   return set;
 }
 
@@ -89,8 +93,21 @@ const AGGREGATE_WORDS = [
   "plattform", "plattformen", "alusta", "alustan", "nền tảng", "пл供", "платформ",
   "платформы", "платформам", "プラットフォーム", "플랫폼", "平台",
   "field", "fields", "campo", "campos", "champ", "champs", "campi", "kenttä",
-  "alan", "alanı", "поле", "полей", "項目", "필드", "欄位"
+  "alan", "alanı", "поле", "поля", "полей", "項目", "필드", "欄位",
+  /* Added 2026-11-18. Nine locale counters stated "38 fields" (and one "26
+     services") for weeks while this check printed "0 stale", because none
+     of these words was listed. */
+  "felder", "feldern", "kolom", "velden", "pól", "pola", "ช่อง", "trường",
+  "حقلاً", "حقل", "منصة", "個欄位", "個平台", "kentälle", "kentän", "kenttää",
+  "palvelun", "palvelussa", "palvelulle", "แพลตฟอร์ม"
 ];
+
+/* The end of a platform/field word. `\b` only sees a boundary next to an
+   ASCII word character, so it never matched after a word that ends in Thai,
+   Arabic, Han or an accented letter ("38 ช่องใน", "38 個欄位的", "38 pól na"):
+   those claims were read and silently skipped. This asks only that the word
+   is not continued by a Latin or Cyrillic letter. */
+const WORD_END = "(?![A-Za-z\u00C0-\u024F\u0400-\u04FF])";
 
 function walkCounterPages() {
   const out = [];
@@ -175,7 +192,7 @@ function aggregateClaims(text) {
   /* The joint may be a hyphen ("a 26-platform limit checker"), not only a
      space: that compound form sat on /embed/ unmatched, because the
      pattern allowed whitespace alone. */
-  const re = new RegExp("(\\d{1,3})\\s*(?:\\+)?\\s*[-\\u2010\\u2011]?\\s*(?:" + words + ")\\b", "gi");
+  const re = new RegExp("(\\d{1,3})\\s*(?:\\+)?\\s*[-\\u2010\\u2011]?\\s*(?:" + words + ")" + WORD_END, "gi");
   let m;
   while ((m = re.exec(text))) claims.push({ n: Number(m[1]), text: m[0].trim() });
   // e.g. Japanese/Chinese put the number after the noun
@@ -217,8 +234,9 @@ const pages = walkCounterPages();
 const problems = [];
 
 for (const { rel, src } of pages) {
+  const pageFigures = figuresFor(src);
   for (const c of textRuns(src).flatMap(aggregateClaims)) {
-    if (c.n !== FIELD_COUNT && c.n !== PLATFORM_COUNT) {
+    if (c.n !== FIELD_COUNT && c.n !== PLATFORM_COUNT && c.n !== pageFigures.fieldCount) {
       problems.push({
         rel,
         kind: "aggregate",
@@ -227,7 +245,7 @@ for (const { rel, src } of pages) {
     }
   }
 
-  const validFigures = figuresFor(src);
+  const validFigures = pageFigures;
   for (const f of tableFigures(src)) {
     if (!validFigures.has(f.n)) {
       problems.push({

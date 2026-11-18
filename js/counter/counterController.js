@@ -122,8 +122,20 @@
     hiddenKinds: { space: "odd space", invisible: "invisible", direction: "direction mark" },
     hiddenMore: "+{n} more",
     hiddenClean: "Clean them in the box",
-    hiddenCopyClean: "Copy cleaned text"
+    hiddenCopyClean: "Copy cleaned text",
+    /* The own-limit option. Null on purpose: a locale page shows it only once
+       it carries these strings, and the English pages get EN_CUSTOM below. */
+    custom: null
   }, window.UTG_COUNTER_I18N || {});
+
+  const EN_CUSTOM = {
+    name: "Your own limit",
+    limitLabel: "Your limit",
+    modeLabel: "What the limit counts",
+    modes: { codepoint: "Characters, spaces included", nospace: "Characters, spaces not counted", utf8: "Bytes (UTF-8)" }
+  };
+  const PAGE_IS_ENGLISH = typeof document === "undefined" ||
+    /^en\b/i.test(document.documentElement.lang || "en");
 
   // One copy_text row per successful copy, through the site's one writer
   // (header.js trackCopy). "counter" is not a catalogue method, so the row
@@ -566,7 +578,8 @@
         labels: I18N.labels || undefined,
         fields: I18N.fields || undefined,
         platforms: I18N.platforms || undefined,
-        groups: I18N.groups || undefined
+        groups: I18N.groups || undefined,
+        custom: I18N.custom || (PAGE_IS_ENGLISH ? EN_CUSTOM : undefined)
       });
       document.addEventListener("utg:counterlimitchange", renderAll);
     }
