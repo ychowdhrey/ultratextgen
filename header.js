@@ -400,6 +400,18 @@
       events: { label: "Події", href: "/events/" },
       search: "Шукати шрифти, символи…",
       darkMode: "Темна тема"
+    },
+    kk: {
+      home: "/kk/",
+      guide: { label: "Нұсқаулықтар", href: "/guide/" },
+      answers: { label: "Жауаптар", href: "/answers/" },
+      category: { label: "Санаттар", href: "/category/" },
+      usecase: { label: "Қолдану", href: "/usecase/" },
+      library: { label: "Кітапхана", href: "/library/" },
+      printables: { label: "Басып шығаруға", href: "/printables/" },
+      events: { label: "Оқиғалар", href: "/events/" },
+      search: "Қаріптер мен белгілерді іздеу…",
+      darkMode: "Қараңғы режим"
     }
   };
 

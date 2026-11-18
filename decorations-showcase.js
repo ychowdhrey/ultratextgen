@@ -139,6 +139,10 @@
     zh: {
       copied: "✓ 已複製",
       failed: "✗ 失敗"
+    },
+    kk: {
+      copied: "✓ Көшірілді",
+      failed: "✗ Қате"
     }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();

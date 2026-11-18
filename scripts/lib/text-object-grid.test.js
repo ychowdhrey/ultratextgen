@@ -62,5 +62,17 @@ eq('stale class removed', fixed.html.includes('class="flag-rows flag-rows--text"
 eq('idempotent', lib.applyClasses(fixed.html).changed, 0);
 eq('only class attributes change', fixed.html.replace(/ flag-rows--text/g, ''), page.replace(/ flag-rows--text/g, ''));
 
+// --stdin is how generate_library_page_from_spec.py marks a page before writing
+// it. A page over 64 KiB was once cut off at exactly 65,536 bytes with exit 0,
+// because the script exited before the piped write drained (2026-11-18).
+{
+  const { spawnSync } = require('child_process');
+  const big = '<!DOCTYPE html><html lang="kk"><body><p>' + 'Жүрек белгілері ♡ '.repeat(6000) + '</p></body></html>\n';
+  const r = spawnSync(process.execPath, [require('path').join(__dirname, '..', 'check-text-object-grids.js'), '--stdin'],
+    { input: big, encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
+  eq('--stdin exits 0 on a large page', r.status, 0);
+  eq('--stdin returns a page over 64 KiB whole', Buffer.byteLength(r.stdout), Buffer.byteLength(big));
+}
+
 if (failed) { console.log(`\n${failed} failure(s)`); process.exit(1); }
 console.log('text-object-grid: all cases pass ✓');

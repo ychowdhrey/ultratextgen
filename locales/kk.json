@@ -1,0 +1,144 @@
+{
+  "_readme": "UI-only runtime translations for a prerendered locale, same shape as uk.json / ms.json / fi.json. The /kk/ pages ship fully translated HTML and carry no data-i18n attributes, so this file exists solely to populate window.UTG_I18N for the controls script.js injects at runtime (Copy/Save/Share, scope, safe mode, safety badges, saved styles, text stats). It deliberately omits ui.placeholder and ui.advertisement: those are already translated in the page HTML, and defining them here would overwrite that copy. It also omits faq, which is the HOMEPAGE's FAQ and must never be applied to a subpage (see i18n.js's updateFAQSchema guard). Written in Kazakh (Cyrillic) for the 2026-11-18 launch, not converted from ru.json: Kazakh UI vocabulary differs (Көшіру not Копировать, Сақтау not Сохранить, Бөлісу not Поделиться). Style names match the vocabulary on the /kk/ pages (жуан, курсив, жазба, готика, көпіршік, сызылған, асты сызылған). NOT yet reviewed by a native speaker; a native pass is worth doing before treating this as final.",
+  "ui": {
+    "copyButtons": {
+      "copy": "Көшіру",
+      "copied": "✓ Көшірілді",
+      "failed": "✗ Қате",
+      "copyTitle": "Алмасу буферіне көшіру",
+      "save": "Сақтау",
+      "saved": "Сақталды",
+      "saveTitle": "Осы стильді сақтау",
+      "unsaveTitle": "Сақталған стильдерден алып тастау",
+      "empty": "Жоғарыдағы өріске бірдеңе жазыңыз...",
+      "noStyles": "Стиль табылмады. Басқа сүзгіні немесе сөзді қолданып көріңіз."
+    },
+    "categoryTabs": {
+      "popular": "Танымал",
+      "bold-fonts": "Жуан",
+      "italic-fonts": "Курсив",
+      "bubble-fonts": "Көпіршік",
+      "cursive-fonts": "Жазба",
+      "gothic-fonts": "Готика",
+      "strikethrough-text": "Сызылған",
+      "underline-text": "Асты сызылған",
+      "small-text": "Кішкентай мәтін",
+      "cute-fonts": "Сүйкімді қаріптер",
+      "aesthetic-fonts": "Эстетикалық",
+      "upside-down-text": "Төңкерілген",
+      "text-decorator": "Мәтін әшекейлері",
+      "classified": "Боялған мәтін",
+      "fullwidth-fonts": "Кең",
+      "faux-fonts": "Басқа әліпбилерге ұқсас",
+      "ancient-fonts": "Көне жазулар мен руналар",
+      "emoji-letter-fonts": "Эмодзи әріптер",
+      "novelty-fonts": "Әртүрлі"
+    },
+    "scopeControl": {
+      "label": "Стильді қолдану",
+      "ariaLabel": "Мәтіннің қай бөлігін безендіру керегін таңдаңыз",
+      "whole": "Бүкіл мәтін",
+      "wholeTitle": "Мәтіннің әр жолын безендіру.",
+      "firstLine": "Тек бірінші жол",
+      "firstLineTag": "жазбалар үшін",
+      "firstLineTitle": "Тек бірінші жолды (тақырыпты немесе алғашқы сөйлемді) безендіріп, қалғанын оқуға оңай қарапайым мәтін күйінде қалдыру. Әлеуметтік желідегі жазбаларға ыңғайлы."
+    },
+    "shareResult": {
+      "label": "Бөлісу",
+      "title": "Нәтижемен бөлісу. Сілтеме сіздің мәтініңізді осы стильде ашады",
+      "ariaLabel": "{style} нәтижесімен бөлісу",
+      "linkCopied": "Сілтеме көшірілді",
+      "afterCopy": "Осы стильмен бөлісу",
+      "sharedTag": "Бөлісілген стиль",
+      "imageTitle": "Сурет ретінде бөлісу",
+      "imageAriaLabel": "{style} нәтижесімен сурет ретінде бөлісу",
+      "imageSaved": "Сурет дайын"
+    },
+    "safeMode": {
+      "label": "Қауіпсіз қою",
+      "ariaLabel": "Қай стильдер басқа адамдардың құрылғыларында көрінетінін тексеру",
+      "toggleLabel": "Қауіпсіз режим",
+      "hint": "Басқа адамдардың ескі телефондарында шаршы (▯) болып көрінуі мүмкін стильдерді белгілейді."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Кейбір адамдарда шаршы болып көрінуі мүмкін",
+      "boxesWarningTitle": "Бұл стиль сирек Unicode таңбаларын қолданады, олар кейбір телефондар мен ескі құрылғылардың қаріптерінде жоқ. Мәтінді жіберген адамыңызда ол шаршы (▯) болып көрінуі мүмкін. Аудиторияңыз ескі құрылғыларды қолдануы мүмкін болса, қарапайым стильді немесе кең қолдау көрсетілетін стильді таңдаңыз.",
+      "emojiWarning": "⚠ Эмодзи бар, ескі құрылғыларда басқаша көрінуі мүмкін",
+      "emojiWarningTitle": "Бұл стильде эмодзи бар. Қазіргі құрылғылар оларды көрсетеді, бірақ өте ескі телефондарда басқаша көрінуі немесе шаршыға айналуы мүмкін.",
+      "modernDevices": "Қазіргі құрылғыларда көрінеді",
+      "modernDevicesTitle": "Бұл безендірілген Unicode әріптері барлық қазіргі телефондар мен компьютерлерде көрінеді. Өте ескі Android құрылғыларында (шамамен 2016 жылға дейінгі) немесе жүйелік қаріптері аз құрылғыларда кейбір таңбалар әлі де шаршы (▯) болып көрінуі мүмкін. Аудиторияңыз ескі құрылғыларды қолданса, алдымен тексеріп алыңыз.",
+      "rendersEverywhere": "✓ Барлық жерде көрінеді",
+      "rendersEverywhereTitle": "Бұл стиль қарапайым мәтін. Ол барлық жерде көрінеді және ешқайда шаршыға айналмайды.",
+      "deviceWarning": "⚠ Сіздің құрылғыңызда көрінбеуі мүмкін",
+      "deviceWarningTitle": "Құрылғыңыздағы қаріптер бұл стильді көрсете алмайды, сондықтан ол шаршы (□) болып көрінуі мүмкін. Басқа құрылғыларда ол бәрібір жақсы көрінуі мүмкін.",
+      "safeAnywhere": "✓ Барлық жерде қауіпсіз",
+      "safeAnywhereTitle": "Барлық негізгі платформаларда көрінеді. Ескеріңіз: экран оқу бағдарламалары безендірілген әріптерді бір-бірлеп оқуы мүмкін, сондықтан негізгі мәтінді қарапайым күйде қалдырған дұрыс.",
+      "worksBestOn": "⚠ {platforms} ішінде жақсы жұмыс істейді",
+      "worksBestOnTitle": "Ең жақсы жұмыс істейтін жерлер: {platforms}. Басқа платформалар оны алып тастауы немесе бұзуы мүмкін, сондықтан алдымен қойып тексеріңіз."
+    },
+    "savedStyles": {
+      "ariaLabel": "Сақталған стильдеріңіз",
+      "heading": "Сақталған стильдеріңіз",
+      "clearAll": "Барлығын тазалау",
+      "hint": "Осы құрылғыда сақталады. Қайта келгенде осында күтіп тұрады."
+    },
+    "textStats": {
+      "wordSingular": "1 сөз",
+      "wordPlural": "Сөз саны: {n}",
+      "charSingular": "1 таңба",
+      "charPlural": "Таңба саны: {n}"
+    },
+    "decorationsNone": "Әшекейсіз",
+    "categoryTabsToggle": {
+      "more": "Тағы",
+      "less": "Азырақ"
+    },
+    "demoText": "UltraTextGen-ге қош келдіңіз.\nКез келген мәтін жазыңыз. Оны ultra етіңіз.",
+    "formatControl": {
+      "label": "Пішім қосу",
+      "groupAriaLabel": "Әр стильге асты сызу немесе үстінен сызу қосу"
+    },
+    "platformChips": {
+      "all": "Барлық жерде жұмыс істейді"
+    },
+    "categoryLoad": {
+      "failed": "Санаттарды жүктеу мүмкін болмады. Барлық қаріптер көрсетілді."
+    },
+    "stylePreview": {
+      "title": "Алдын ала қарау",
+      "titleFor": "Алдын ала қарау: {style}",
+      "dialogAriaLabel": "Платформада қалай көрінетінін қарау",
+      "closeAriaLabel": "Қарауды жабу",
+      "illustrative": "Жалпы көрініс, нақты қолданба емес"
+    },
+    "imageSelection": {
+      "selectImage": "Таңдап, сурет ретінде бөлісу",
+      "viewSelection": "Таңдалғанды көру ({n})",
+      "hint": "Өз суретіңізді жасау үшін кез келген бөлімнен эмодзи немесе белгілер таңдаңыз.",
+      "count": "Таңдалды: {n}",
+      "empty": "Әзірге ештеңе таңдалмады",
+      "shareImage": "Суретпен бөлісу",
+      "downloadImage": "Суретті жүктеп алу",
+      "cancel": "Бас тарту",
+      "preview": "Суретті алдын ала қарау",
+      "close": "Жабу",
+      "remove": "{item} алып тастау",
+      "addAll": "Барлығын қосу ({n})",
+      "removeAll": "Барлығын алып тастау ({n})",
+      "limit": "Ең көбі {max} қосуға болады.",
+      "tooBig": "Бір суретке тым көп. Біразын алып тастаңыз.",
+      "making": "Сурет жасалып жатыр…",
+      "shared": "Суретпен бөлісілді",
+      "downloaded": "Сурет жүктелді",
+      "shareFailed": "Бөлісу мүмкін болмады. Жүктеп алып көріңіз.",
+      "renderFailed": "Сурет жасау мүмкін болмады. Қайта көріңіз.",
+      "trayLabel": "Суретке таңдалғандар",
+      "setUnavailable": "Бұл жинақты әзірге суретке қосу мүмкін емес."
+    },
+    "symbolLook": {
+      "plain": "Қарапайым нұсқасын көшіру",
+      "emoji": "Эмодзи нұсқасын көшіру",
+      "note": "Кейбір қолданбалар оны бәрібір түрлі түсті етіп көрсетеді."
+    }
+  }
+}

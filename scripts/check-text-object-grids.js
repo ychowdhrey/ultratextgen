@@ -40,8 +40,13 @@ const ROOT = path.join(__dirname, '..');
 const args = process.argv.slice(2);
 
 if (args.includes('--stdin')) {
+  // Never process.exit() after a write to stdout: on a pipe the write is
+  // asynchronous, and exiting dropped everything after the first 64 KiB
+  // while still returning 0, so the library generator silently wrote a
+  // truncated page (found 2026-11-18 on a 71,602-byte Kazakh page; 406 pages
+  // on main are over 64 KiB). Let the event loop drain and exit naturally.
   process.stdout.write(lib.applyClasses(fs.readFileSync(0, 'utf8')).html);
-  process.exit(0);
+  return;
 }
 
 const write = args.includes('--write');

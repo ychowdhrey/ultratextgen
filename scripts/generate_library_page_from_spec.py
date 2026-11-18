@@ -303,6 +303,12 @@ LOCALE_UI_STRINGS = {
     # data/em_dash_locale_policy.json bans a NEW em dash on sv and names the
     # tankstreck as the native replacement.
     "sv": {"copy": "Kopiera", "related": "Relaterade sidor", "cta_h3": "Omvandla text med Unicode-typsnitt", "cta_body": "Använd UltraTextGen för att omvandla vanlig text till fet, kursiv, skrivstil och 100+ andra Unicode-typsnitt – gratis och direkt.", "cta_btn": "Öppna UltraTextGen →", "home": "Startsida", "symbols": "Symboler", "library": "Bibliotek"},
+    # kk (Kazakh, Cyrillic). copyAria takes a colon, as pl does, so the verb
+    # never has to agree in case with a nominative tile label
+    # ("Көшіру: Ақ жүрек"). cta_body names Latin letters on purpose: the
+    # renderer's bold/script/gothic styles change only A-Z and 0-9, and
+    # Kazakh Cyrillic letters pass through unchanged.
+    "kk": {"copy": "Көшіру", "copyAria": "{copy}: {label}", "related": "Ұқсас беттер", "cta_h3": "Мәтінді Unicode қаріптерімен өзгертіңіз", "cta_body": "UltraTextGen латын әріптері мен цифрларды жуан, курсив, жазба және 100-ден астам басқа Unicode стиліне айналдырады. Тегін әрі лезде.", "cta_btn": "Мәтін стильдерін ашу →", "home": "Басты бет", "symbols": "Белгілер", "library": "Кітапхана"},
     "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_body": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain. Gratis dan instan.", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
 }
 
@@ -326,6 +332,7 @@ LOCALE_FAQ_LABEL = {
     "th": "คำถามที่พบบ่อย",
     "sv": "Vanliga frågor",
     "id": "Pertanyaan Umum",
+    "kk": "Жиі қойылатын сұрақтар",
 }
 
 # ---------------------------------------------------------------------------

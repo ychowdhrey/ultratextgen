@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://ultratextgen.com/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -7404,7 +7404,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -8814,7 +8814,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/emojis-de-estaciones/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -8924,7 +8924,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/emojis-graciosos/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22495,6 +22495,66 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/kk/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/kk.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/kk/korinbeitin-matin/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/kk-korinbeitin-matin.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/kk/laqap-at-generatory/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/kk-laqap-at-generatory.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/kk/library/zhurek-belgileri/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/kk-library-zhurek-belgileri.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/kk/soz-sanau/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/kk-soz-sanau.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/kk/syzylgan-matin/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/kk-syzylgan-matin.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -22692,7 +22752,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22711,12 +22771,52 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/akma-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-akma-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/aksenteu-giho/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-aksenteu-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/aksu-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-aksu-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/alt-kodeu/</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-alt-kodeu.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/apeun-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-apeun-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -22747,6 +22847,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-baegeu-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/baek-seullaesi-giho/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-baek-seullaesi-giho.png</image:loc>
     </image:image>
   </url>
 
@@ -22811,6 +22921,16 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/butak-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-butak-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/byeol-giho/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -22861,6 +22981,16 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/cheonsa-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-cheonsa-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/chess-gihou/</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -22871,12 +23001,32 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/chim-heullineun-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-chim-heullineun-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/christmas-giho/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-christmas-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/christmas-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-christmas-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -22891,12 +23041,42 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/chumchuneun-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-chumchuneun-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/dal-giho/</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-dal-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/dal-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-dal-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/danghwang-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-danghwang-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -22942,7 +23122,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/dongmul-imoji/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22952,7 +23132,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/eolgul-imoji/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22992,7 +23172,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/eumsik-imoji/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -23021,6 +23201,16 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/gaji-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-gaji-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/gamseong-giho/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -23041,6 +23231,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-gangaji-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/geunyuk-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-geunyuk-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23155,12 +23355,32 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/gyeolhon-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-gyeolhon-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/gyeonggo-giho/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-gyeonggo-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/gyeongnye-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-gyeongnye-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23176,7 +23396,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/gyotong-giho/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -23191,6 +23411,36 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-haegol-imoji.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/haipeun-giho/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-haipeun-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/hakgyo-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-hakgyo-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/hansum-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-hansum-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23290,7 +23540,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/imotikon/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -23315,6 +23565,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-insta-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/ipsul-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-ipsul-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23359,8 +23619,18 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/jjaeryeo-boneun-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-jjaeryeo-boneun-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/jollin-imotikon/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -23375,6 +23645,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-jonggyo-gihou.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/jwi-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-jwi-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23459,6 +23739,16 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/merong-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-merong-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/minecraft-giho/</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -23479,12 +23769,42 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/mulgogi-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-mulgogi-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/munjangbuho-giho/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-munjangbuho-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/mureumpyo-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-mureumpyo-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/nabi-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-nabi-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23529,12 +23849,32 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/pigon-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-pigon-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/poong-imotikon/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-poong-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/ppijin-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-ppijin-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23589,6 +23929,26 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/roket-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-roket-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/sae-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-sae-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/saenggak-imoji/</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -23600,7 +23960,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/saengil-chukha-imotikon/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -23635,6 +23995,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-seongbyeol-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/seonmul-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-seonmul-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23680,11 +24050,21 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/son-giho/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-son-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/sseokso-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-sseokso-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23710,7 +24090,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/teuksu-munja/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -23749,12 +24129,32 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/twitter-giho/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-twitter-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/uiryo-giho/</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-uiryo-giho.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/ujeong-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-ujeong-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23775,6 +24175,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-unneun-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/utgin-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-utgin-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -23819,6 +24229,26 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/yang-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-yang-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/yeohaeng-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-yeohaeng-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/yeongeo-bareum-giho/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -23829,12 +24259,42 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ko/library/yeonghwa-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-yeonghwa-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/yeou-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-yeou-imotikon.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ko/library/yeppeun-teduri/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-library-yeppeun-teduri.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/yuryeong-imotikon/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-library-yuryeong-imotikon.png</image:loc>
     </image:image>
   </url>
 
@@ -24120,7 +24580,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/symbol/em-daesi-giho/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -24130,7 +24590,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/symbol/en-daesi-giho/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>

@@ -1,7 +1,7 @@
 {
  "/": {
-  "hash": "294fff9fd215d2e1",
-  "lastmod": "2026-10-30"
+  "hash": "3987ea5cea48b80a",
+  "lastmod": "2026-11-18"
  },
  "/about/": {
   "hash": "541912a89378fbc5",
@@ -2824,8 +2824,8 @@
   "lastmod": "2026-07-26"
  },
  "/es/library/": {
-  "hash": "5918ed3bad88d3d7",
-  "lastmod": "2026-10-09"
+  "hash": "3986f0fee05f1282",
+  "lastmod": "2026-11-18"
  },
  "/es/library/adivina-el-futbolista-por-emojis/": {
   "hash": "cc635fba5835e117",
@@ -3388,8 +3388,8 @@
   "lastmod": "2026-09-10"
  },
  "/es/library/emojis-de-estaciones/": {
-  "hash": "6efbfb0c2ecaf697",
-  "lastmod": "2026-09-10"
+  "hash": "aa4f9da225370eb9",
+  "lastmod": "2026-11-18"
  },
  "/es/library/emojis-de-fantasia/": {
   "hash": "014363077717a777",
@@ -3432,8 +3432,8 @@
   "lastmod": "2026-10-24"
  },
  "/es/library/emojis-graciosos/": {
-  "hash": "c3afb64e19e281a8",
-  "lastmod": "2026-10-28"
+  "hash": "97b8648ec351ac44",
+  "lastmod": "2026-11-18"
  },
  "/es/library/emojis-iphone/": {
   "hash": "e612bde759d250a1",
@@ -8695,6 +8695,30 @@
   "hash": "d9ce768a5a342056",
   "lastmod": "2026-10-28"
  },
+ "/kk/": {
+  "hash": "d859457de6d926f5",
+  "lastmod": "2026-11-18"
+ },
+ "/kk/korinbeitin-matin/": {
+  "hash": "ab48d882ec066e9c",
+  "lastmod": "2026-11-18"
+ },
+ "/kk/laqap-at-generatory/": {
+  "hash": "aee7ed32dd465912",
+  "lastmod": "2026-11-18"
+ },
+ "/kk/library/zhurek-belgileri/": {
+  "hash": "a81a3089d8102f43",
+  "lastmod": "2026-11-18"
+ },
+ "/kk/soz-sanau/": {
+  "hash": "34461fde3713d7ac",
+  "lastmod": "2026-11-18"
+ },
+ "/kk/syzylgan-matin/": {
+  "hash": "4ddb823b52f94822",
+  "lastmod": "2026-11-18"
+ },
  "/ko/": {
   "hash": "e3ad9452c7d39c74",
   "lastmod": "2026-09-27"
@@ -8768,16 +8792,32 @@
   "lastmod": "2026-08-15"
  },
  "/ko/library/": {
-  "hash": "54f1748f399c9746",
-  "lastmod": "2026-11-14"
+  "hash": "3d94a472115049af",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/aipon-imoji/": {
   "hash": "2f7cf1b3b31903fe",
   "lastmod": "2026-10-08"
  },
+ "/ko/library/akma-imotikon/": {
+  "hash": "fb51c13493d8e039",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/aksenteu-giho/": {
+  "hash": "f5de33d978c6c618",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/aksu-imotikon/": {
+  "hash": "03a2f55361a02e6e",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/alt-kodeu/": {
   "hash": "7f29e91ce0c350e2",
   "lastmod": "2026-10-28"
+ },
+ "/ko/library/apeun-imotikon/": {
+  "hash": "3930430c070ce51c",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/ascii-art/": {
   "hash": "aed408846e4132ff",
@@ -8790,6 +8830,10 @@
  "/ko/library/baegeu-giho/": {
   "hash": "bc65a0dce5cb619c",
   "lastmod": "2026-10-08"
+ },
+ "/ko/library/baek-seullaesi-giho/": {
+  "hash": "fda9e45f037e8b5f",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/baksu-imotikon/": {
   "hash": "069cdcec377244bb",
@@ -8815,6 +8859,10 @@
   "hash": "7a95633290760e5a",
   "lastmod": "2026-08-15"
  },
+ "/ko/library/butak-imotikon/": {
+  "hash": "68b5a4aaa004eaf7",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/byeol-giho/": {
   "hash": "7f79b64bb986d4a5",
   "lastmod": "2026-09-10"
@@ -8835,21 +8883,45 @@
   "hash": "83d138eccaeb3396",
   "lastmod": "2026-10-08"
  },
+ "/ko/library/cheonsa-imotikon/": {
+  "hash": "7eb4037d59a0928a",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/chess-gihou/": {
   "hash": "c652619982752020",
   "lastmod": "2026-10-28"
  },
+ "/ko/library/chim-heullineun-imotikon/": {
+  "hash": "a09f38e2d1eb3eaa",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/christmas-giho/": {
-  "hash": "3772fa38ca6ea2e9",
-  "lastmod": "2026-10-08"
+  "hash": "b12948c926d63b86",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/christmas-imotikon/": {
+  "hash": "ca143d731322a27b",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/chukgu-imotikon/": {
   "hash": "ef1a8e681c4a36b6",
   "lastmod": "2026-10-10"
  },
+ "/ko/library/chumchuneun-imotikon/": {
+  "hash": "a59dbbb1a08485b3",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/dal-giho/": {
   "hash": "20b2be5e81f29a08",
   "lastmod": "2026-10-08"
+ },
+ "/ko/library/dal-imotikon/": {
+  "hash": "a100526e03018981",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/danghwang-imotikon/": {
+  "hash": "afb016403bdc2c84",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/danwi-giho/": {
   "hash": "6ea7105c3f32f930",
@@ -8868,12 +8940,12 @@
   "lastmod": "2026-10-08"
  },
  "/ko/library/dongmul-imoji/": {
-  "hash": "1851aa845f55d65e",
-  "lastmod": "2026-10-09"
+  "hash": "4124318253c8b3ec",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/eolgul-imoji/": {
-  "hash": "ed8a9b4eb43c82a9",
-  "lastmod": "2026-10-24"
+  "hash": "63b1cca80b72ea19",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/eomji-imoji/": {
   "hash": "81bb128dc418f60f",
@@ -8888,8 +8960,8 @@
   "lastmod": "2026-10-10"
  },
  "/ko/library/eumsik-imoji/": {
-  "hash": "7e7c8ac0d5d96c28",
-  "lastmod": "2026-10-24"
+  "hash": "c05f2749b4d298e8",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/eusseuk-imotikon/": {
   "hash": "629e8e2329b0beb1",
@@ -8899,6 +8971,10 @@
   "hash": "88b69beceb87db15",
   "lastmod": "2026-09-10"
  },
+ "/ko/library/gaji-imotikon/": {
+  "hash": "056f09e4d149be19",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/gamseong-giho/": {
   "hash": "6b156633cd377401",
   "lastmod": "2026-10-06"
@@ -8906,6 +8982,10 @@
  "/ko/library/gangaji-imotikon/": {
   "hash": "305266c3aee863d8",
   "lastmod": "2026-10-10"
+ },
+ "/ko/library/geunyuk-imotikon/": {
+  "hash": "d16ae436e60b165c",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/geurisa-munja/": {
   "hash": "4332675714456b95",
@@ -8951,21 +9031,41 @@
   "hash": "92bca31354296f63",
   "lastmod": "2026-10-28"
  },
+ "/ko/library/gyeolhon-imotikon/": {
+  "hash": "e151a23e9d189e44",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/gyeonggo-giho/": {
   "hash": "1b36412a916554d5",
   "lastmod": "2026-10-10"
+ },
+ "/ko/library/gyeongnye-imotikon/": {
+  "hash": "c7f40088520ea9a1",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/gyocha-giho/": {
   "hash": "ab6abbed5f5b00f7",
   "lastmod": "2026-09-02"
  },
  "/ko/library/gyotong-giho/": {
-  "hash": "f7b30fc333f01aed",
-  "lastmod": "2026-10-08"
+  "hash": "203f265356169faf",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/haegol-imoji/": {
   "hash": "ad68ef56eb5887e0",
   "lastmod": "2026-10-08"
+ },
+ "/ko/library/haipeun-giho/": {
+  "hash": "4d07102c36984daa",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/hakgyo-imotikon/": {
+  "hash": "635940e71d0f1499",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/hansum-imotikon/": {
+  "hash": "a58060b1308bec65",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/hateu-giho/": {
   "hash": "ed21760223b45b52",
@@ -9004,8 +9104,8 @@
   "lastmod": "2026-11-17"
  },
  "/ko/library/imotikon/": {
-  "hash": "e8104e7a034ac72e",
-  "lastmod": "2026-11-14"
+  "hash": "f74488a3e65d1278",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/insa-imotikon/": {
   "hash": "fc2d4c7338a0bd91",
@@ -9014,6 +9114,10 @@
  "/ko/library/insta-giho/": {
   "hash": "bfe5641f43c46b75",
   "lastmod": "2026-10-08"
+ },
+ "/ko/library/ipsul-imotikon/": {
+  "hash": "b1578cc680fde821",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/islam-gihou/": {
   "hash": "76a324d72e1c8d78",
@@ -9031,13 +9135,21 @@
   "hash": "dfeeb04a5e2c131f",
   "lastmod": "2026-08-15"
  },
+ "/ko/library/jjaeryeo-boneun-imotikon/": {
+  "hash": "8209a8eb455df518",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/jollin-imotikon/": {
-  "hash": "0c0459837dba83c2",
-  "lastmod": "2026-10-10"
+  "hash": "31174ede948556c2",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/jonggyo-gihou/": {
   "hash": "d1f39a495eefa2d8",
   "lastmod": "2026-10-08"
+ },
+ "/ko/library/jwi-imotikon/": {
+  "hash": "1cd37839360035d5",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/katok-giho/": {
   "hash": "0d1d1509cb2e1140",
@@ -9071,6 +9183,10 @@
   "hash": "70d99c99f5ffce45",
   "lastmod": "2026-10-08"
  },
+ "/ko/library/merong-imotikon/": {
+  "hash": "ed54ef8f8d580b87",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/minecraft-giho/": {
   "hash": "9d8c6265e4542b11",
   "lastmod": "2026-11-10"
@@ -9079,9 +9195,21 @@
   "hash": "10b0b92609384ce8",
   "lastmod": "2026-10-08"
  },
+ "/ko/library/mulgogi-imotikon/": {
+  "hash": "de6a0cca46c78d98",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/munjangbuho-giho/": {
   "hash": "4960651fab7e540a",
   "lastmod": "2026-09-10"
+ },
+ "/ko/library/mureumpyo-imotikon/": {
+  "hash": "c36ef5c33e3cac2f",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/nabi-imotikon/": {
+  "hash": "f2f3ad903b18b814",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/nalssi-giho/": {
   "hash": "38076fde612df996",
@@ -9099,9 +9227,17 @@
   "hash": "e378c7396473841f",
   "lastmod": "2026-10-09"
  },
+ "/ko/library/pigon-imotikon/": {
+  "hash": "201295634868224f",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/poong-imotikon/": {
-  "hash": "a3b36fbf90b5524f",
-  "lastmod": "2026-10-10"
+  "hash": "91b5224a4a7c047d",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/ppijin-imotikon/": {
+  "hash": "c6fb342315a95870",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/ppoppo-imotikon/": {
   "hash": "0d6e3003802ffa71",
@@ -9123,13 +9259,21 @@
   "hash": "cbfcde0c2c478085",
   "lastmod": "2026-10-08"
  },
+ "/ko/library/roket-imotikon/": {
+  "hash": "303bd53f32246261",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/sae-imotikon/": {
+  "hash": "61366163af89fa6a",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/saenggak-imoji/": {
   "hash": "53c17616ce46ac70",
   "lastmod": "2026-10-28"
  },
  "/ko/library/saengil-chukha-imotikon/": {
-  "hash": "13f3421f017a0612",
-  "lastmod": "2026-10-06"
+  "hash": "6419890514c6e1d6",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/samul-imoji/": {
   "hash": "118685f1faa538bb",
@@ -9142,6 +9286,10 @@
  "/ko/library/seongbyeol-giho/": {
   "hash": "f0b346a14ed6b6e5",
   "lastmod": "2026-08-15"
+ },
+ "/ko/library/seonmul-imotikon/": {
+  "hash": "ccd6e27c25b213c3",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/setak-giho/": {
   "hash": "83b3b313640f24de",
@@ -9160,8 +9308,12 @@
   "lastmod": "2026-10-10"
  },
  "/ko/library/son-giho/": {
-  "hash": "ad9cd24b4df7cc39",
-  "lastmod": "2026-11-14"
+  "hash": "09fb6cfae02e4b24",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/sseokso-imotikon/": {
+  "hash": "08ea854ed6728d02",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/suhak-giho/": {
   "hash": "49c7209cd9431047",
@@ -9172,8 +9324,8 @@
   "lastmod": "2026-10-24"
  },
  "/ko/library/teuksu-munja/": {
-  "hash": "b5f8397f018a8fe5",
-  "lastmod": "2026-09-27"
+  "hash": "f57cb69be1d1d354",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/teureompeu-kadeu-giho/": {
   "hash": "c9aaa45758573388",
@@ -9187,9 +9339,17 @@
   "hash": "ab4c0cb4d100a026",
   "lastmod": "2026-10-10"
  },
+ "/ko/library/twitter-giho/": {
+  "hash": "32ddfab030a8df73",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/uiryo-giho/": {
   "hash": "6cc3118e7986e6a3",
   "lastmod": "2026-10-08"
+ },
+ "/ko/library/ujeong-imotikon/": {
+  "hash": "e3c8dc7173880444",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/uneun-imotikon/": {
   "hash": "fd90645495ed478e",
@@ -9198,6 +9358,10 @@
  "/ko/library/unneun-imotikon/": {
   "hash": "adf4c9ffa3a6e291",
   "lastmod": "2026-10-10"
+ },
+ "/ko/library/utgin-imotikon/": {
+  "hash": "6495cab7dc0acb0d",
+  "lastmod": "2026-11-18"
  },
  "/ko/library/wanggwan-giho/": {
   "hash": "d77a619836461f06",
@@ -9215,13 +9379,33 @@
   "hash": "dc685f723d0f77fc",
   "lastmod": "2026-11-17"
  },
+ "/ko/library/yang-imotikon/": {
+  "hash": "4b67bc3b61507006",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/yeohaeng-imotikon/": {
+  "hash": "87d83b6448664ff3",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/yeongeo-bareum-giho/": {
   "hash": "f82b2fc5fd3c2e7f",
   "lastmod": "2026-10-06"
  },
+ "/ko/library/yeonghwa-imotikon/": {
+  "hash": "e8a9a953ba20f61f",
+  "lastmod": "2026-11-18"
+ },
+ "/ko/library/yeou-imotikon/": {
+  "hash": "90a52a34338e44e9",
+  "lastmod": "2026-11-18"
+ },
  "/ko/library/yeppeun-teduri/": {
   "hash": "7d7d045d303cff8d",
   "lastmod": "2026-09-10"
+ },
+ "/ko/library/yuryeong-imotikon/": {
+  "hash": "2bb22a0f6eb1587f",
+  "lastmod": "2026-11-18"
  },
  "/ko/mitjul-tekseuteu/": {
   "hash": "3f58be9402bf5dba",
@@ -9336,12 +9520,12 @@
   "lastmod": "2026-10-07"
  },
  "/ko/symbol/em-daesi-giho/": {
-  "hash": "d80a94acecc64e8f",
-  "lastmod": "2026-10-08"
+  "hash": "764b73aeaafd3246",
+  "lastmod": "2026-11-18"
  },
  "/ko/symbol/en-daesi-giho/": {
-  "hash": "b75790de314ddb01",
-  "lastmod": "2026-10-20"
+  "hash": "e221f661735e603b",
+  "lastmod": "2026-11-18"
  },
  "/ko/symbol/eomji-bangyang-imoji/": {
   "hash": "30e9ca36ac33180d",

@@ -1039,6 +1039,39 @@
       colTitles: { explore: "Розділи", tools: "Популярні інструменти", categories: "Популярні стилі", company: "Компанія" },
       copyright: "© 2026 UltraTextGen. Красивий текст, який працює всюди."
     },
+    kk: {
+      home: { label: "Басты бет", href: "/kk/" },
+      explore: [
+        { label: "Нұсқаулықтар", href: "/guide/" },
+        { label: "Жауаптар", href: "/answers/" },
+        { label: "Қолдану", href: "/usecase/" },
+        { label: "Санаттар", href: "/category/" },
+        { label: "Кітапхана", href: "/library/" },
+        { label: "Басып шығаруға", href: "/printables/" },
+        { label: "Оқиғалар", href: "/events/" }
+      ],
+      tools: [
+        { label: "Лақап ат генераторы", href: "/kk/laqap-at-generatory/" },
+        { label: "Көрінбейтін мәтін", href: "/kk/korinbeitin-matin/" },
+        { label: "Таңба және сөз санау", href: "/kk/soz-sanau/" },
+        { label: "Жүрек белгілері", href: "/kk/library/zhurek-belgileri/" }
+      ],
+      categories: [
+        { label: "Мәтін стильдері", href: "/kk/" },
+        { label: "Сызылған мәтін", href: "/kk/syzylgan-matin/" },
+        { label: "Жуан қаріп", href: "/category/bold-fonts/" },
+        { label: "Курсив", href: "/category/italic-fonts/" },
+        { label: "Готика қаріпі", href: "/category/gothic-fonts/" }
+      ],
+      company: [
+        { label: "Біз туралы", href: "/about/" },
+        { label: "Құпиялылық саясаты", href: "/privacy/" },
+        { label: "Пайдалану шарттары", href: "/terms/" },
+        { label: "Байланыс", href: "/contact/" }
+      ],
+      colTitles: { explore: "Бөлімдер", tools: "Танымал құралдар", categories: "Танымал стильдер", company: "Компания" },
+      copyright: "© 2026 UltraTextGen. Барлық жерде жұмыс істейтін әдемі мәтін."
+    },
     pl: {
       home: { label: "Strona główna", href: "/pl/" },
       explore: [

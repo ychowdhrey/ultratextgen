@@ -262,6 +262,14 @@
    "basis": "new locale 2026-10-07 with no site corpus yet; Ukrainian orthography treats the spaced тире as standard, but no native reader has reviewed this site's uk copy, so a new dash is a warning rather than declared native",
    "adopted": "2026-10-07",
    "nextReview": "2026-11-07"
+  },
+  "kk": {
+   "policy": "review",
+   "nativeMark": " — (сызықша), spaced, is standard Kazakh punctuation (omitted copula, asides)",
+   "replacement": null,
+   "basis": "new locale 2026-11-18 with no site corpus yet; Kazakh orthography uses the spaced dash, but no native reader has reviewed this site's kk copy, so a new dash is a warning rather than declared native. The wave-1 copy was written without em dashes.",
+   "adopted": "2026-11-18",
+   "nextReview": "2026-12-18"
   }
  }
 }

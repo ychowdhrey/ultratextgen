@@ -53,7 +53,7 @@ const CASE_STYLES = ['UPPERCASE', 'lowercase', 'Capitalized Case', 'Title Case',
 // Page languages measured: every <html lang> in the tree, plus "no lang".
 const PAGE_LANGS = ['', 'en', 'es', 'de', 'id', 'ko', 'it', 'tr', 'pt', 'fr', 'pl',
   'ja', 'nl', 'vi', 'ru', 'ar', 'th', 'zh-TW', 'zh-tw', 'sv', 'no', 'ms', 'fi',
-  'da', 'cs', 'ro', 'hu', 'hr', 'sk', 'sr', 'bs', 'hi', 'tl', 'uk'];
+  'da', 'cs', 'ro', 'hu', 'hr', 'sk', 'sr', 'bs', 'hi', 'tl', 'uk', 'kk'];
 
 // Inputs for the legacy snapshot. Broad on purpose: the snapshot is the
 // "nothing changed" proof for pages that do not opt in, so it has to exercise
