@@ -1115,6 +1115,8 @@ def main(argv=None):
                         help="validate and print target path without writing")
     parser.add_argument("--force", action="store_true",
                         help="overwrite an existing page")
+    parser.add_argument("--force-hand-built", action="store_true", dest="force_hand_built",
+                        help="replace a page whose spec says hand_built_page with the generated layout")
     parser.add_argument("--force-stale", action="store_true", dest="force_stale",
                         help="write even if the live page carries content this "
                              "generator would delete (prints what it overrides)")
@@ -1146,6 +1148,19 @@ def main(argv=None):
     seg = url_segment(lang)
     out_dir = (REPO / seg / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
     out_path = out_dir / "index.html"
+
+    # A spec backfilled from a hand-built page (hand_built_page: true) is the source
+    # its locales are translated from and the record of its copy tiles; it does not
+    # describe the page's editorial layout, so rendering it over the page would delete
+    # that layout. Edit such a page by hand, with its spec in the same change.
+    if spec.get("hand_built_page") and out_path.exists() and not args.dry_run \
+            and not args.force_hand_built:
+        sys.stderr.write(
+            f"[error] {out_path.relative_to(REPO)} is hand-built (the spec says hand_built_page): "
+            "regenerating it would replace its layout. Edit the page and the spec together; "
+            "pass --force-hand-built only to deliberately replace the page with the generated layout\n"
+        )
+        return 5
 
     if out_path.exists() and not args.force and not args.dry_run:
         sys.stderr.write(

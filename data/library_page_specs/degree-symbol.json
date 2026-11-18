@@ -11,6 +11,7 @@
   "date_published": "2026-06-07",
   "date_modified": "2026-07-12",
   "copy_pattern": "single",
+  "hand_built_page": true,
   "sections": [
     {
       "id": "degree-temperature",
@@ -141,6 +142,25 @@
         {
           "char": "∅",
           "label": "Empty Set"
+        }
+      ]
+    },
+    {
+      "id": "similar-looking",
+      "label": "Don't Confuse It With",
+      "h2": "Similar-Looking Symbols",
+      "symbols": [
+        {
+          "char": "º",
+          "label": "Masculine Ordinal Indicator (U+00BA) — a different character used in Spanish/Portuguese/Italian ordinals like 1º"
+        },
+        {
+          "char": "∘",
+          "label": "Ring Operator (U+2218) — a math composition symbol, not a unit mark"
+        },
+        {
+          "char": "˚",
+          "label": "Ring Above (U+02DA) — a spacing modifier letter used in diacritics like å"
         }
       ]
     }
