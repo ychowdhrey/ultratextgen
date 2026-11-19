@@ -69,6 +69,7 @@ These run across page types rather than producing a type.
 | **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
 | **Writing pattern analysis** (in-browser, English only, no model) | `js/writing-footprint/patterns.js` (pattern library, data only), `engine.js` (pure analysis, edits, before/after), `controller.js` (DOM), `test-corpus.js`; page `/ai-writing-footprint-checker/` | [`architecture/writing-footprint.md`](./architecture/writing-footprint.md) | `engine.test.js` (`npm run test:writing-footprint`, CI gating) and the browser case in `scripts/smoke-runtime.js` | per feature (evidence-gated) |
 | Collection-copy audit | `the internal opportunity-audit tool` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
+| **Measurement (GA4 evidence)** | `fetch_ga4_reports.py` (network) + `ga4_snapshot.py` (pure) + `test_ga4_snapshot.py`; output: `data/ga4/` | [`measurement-ga4.md`](./measurement-ga4.md) | weekly (CI), read on demand |
 | i18n / localization | `prerender-i18n.js` (+ 30 live locale directories, `locales/`, `README.*.md`) — the classifier that tracks these (`scripts/weekly_pr_digest.py`) matched them one-by-one until 2026-08-01; see Known gaps #4 | ❌ none | as needed |
 | Ads / monetization (Google AdSense) | `scripts/check-ads.js` (CI: `ads-check.yml`, enforces the AdSense loader site-wide + guards `ads.txt` against leftover Journey manager/seller lines), AdSense loader injected site-wide via `header.js` | ❌ none | as needed |
 | ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | scoping note: German, Spanish and French native-query volume for alphabet printables outweighs the English long tail | needs scoping pass |
@@ -123,6 +124,7 @@ These run across page types rather than producing a type.
 | `update-sitemap.yml` | daily 00:00 UTC | regenerate `sitemap.xml` (`[skip ci]`), then announce the changed URLs to IndexNow (`--submit-indexnow`, opt-in flag — see the IndexNow submission row above; a local `npm run prebuild` never announces) |
 | `update_readme.yml` | weekly (Mon 03:00 UTC) | sync README from sitemap (`sync-readme.js`) |
 | `weekly-pr-digest.yml` | weekly (Mon 06:00 UTC) | classify merged PRs by lane → `docs/infra-review/<date>.md` + `latest.md` |
+| `ga4-weekly-snapshot.yml` | weekly (Mon 07:00 UTC) + manual | pull the last complete Mon–Sun week from GA4 → `data/ga4/` (`[skip ci]`). Read-only (`runReport` only). **Fails loudly if `GA4_SERVICE_ACCOUNT_JSON` / `GA4_PROPERTY_ID` are unset** rather than skipping, so an unconfigured ingestion cannot masquerade as a working one. |
 | `tweet-queue.yml` | manual only (`workflow_dispatch`); daily schedule paused 2026-10-09 by user direction | post qualifying commits (`tweet_queue.py`) |
 | `css-audit.yml` | on `pull_request` | `audit-css.js` |
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
@@ -1149,6 +1151,30 @@ here so they aren't lost. Update as they're closed or new ones appear.
     first-parent merge commits (27 since 2026-11-07, titles cross-checked
     against the GitHub closed-PR list) with per-PR files from
     `git diff <merge>^1 <merge>`, fed to `weekly_pr_digest.py` on stdin.
+31. **`unsave_style` reaches the page but never reaches GA4 — a GTM container
+    gap.** `js/saved/saved-items.js` pushes `unsave_style` and
+    `js/saved/savedItems.test.js` asserts it fires, so the client side works and
+    is tested. GA4 has recorded **zero** `unsave_style` events in the property's
+    entire life, against **2,808 `save_style` events since 2026-08**. Thousands
+    of saves with no un-saves is not plausible behaviour, so the event is dropped
+    between `dataLayer` and GA4 — almost certainly no forwarding tag. Until it is
+    fixed, save→return cannot be measured as a round trip. The container is a
+    GTM setting, not a tracked file, so this cannot be closed from the repo. See
+    [`measurement-ga4.md`](./measurement-ga4.md#findings-2026-11-19).
+32. **No lane checks a shipped page against measured demand.** Joining the first
+    GA4 snapshot (2026-11-09→15) to the 836 tracked specs: **293 (35%) took zero
+    views that week**, and all spec-generated pages together are **15.5% of site
+    views**. The lane's measured head is Korean and Russian —
+    `serdechko-iz-simvolov` (ru), `aipon-imoji`, `maljurimpyo-giho`,
+    `christmas-giho`, `dal-giho`, `nickname-giho` (ko) — not the English catalog.
+    `data/ga4/page_performance.csv` now makes this a query rather than a research
+    project; nothing yet *acts* on it. One week is thin for a long-tail catalog:
+    re-run after 4+ snapshots before pruning anything.
+33. **Korean and Russian are top-five locales with no governing doc.** Measured
+    in the same window: `id` 6,390 → `en` 3,850 → **`ko` 2,754** → `es` 1,923 →
+    **`ru` 1,064** views, across 32 locale buckets with traffic. `ko` is the
+    site's #3 locale and carries the library lane's best pages, but neither it
+    nor `ru` appears in the locale tables above.
 
 ---
 

@@ -1,0 +1,107 @@
+name: GA4 weekly snapshot
+
+# Pulls last week's GA4 numbers into data/ga4/ as a dated, append-only snapshot
+# plus the derived CSVs the measurement track reads (docs/measurement-ga4.md).
+#
+# Same split as the weekly PR digest: this job only *records* what GA4 said. It
+# never interprets it, never edits a page, and never touches a score.
+#
+# Requires, both read-only:
+#   secrets.GA4_SERVICE_ACCOUNT_JSON  service-account key JSON (Viewer on the property)
+#   vars.GA4_PROPERTY_ID              the GA4 property id
+#
+# If either is missing the job **fails loudly** rather than skipping. A weekly
+# ingestion that quietly does nothing is indistinguishable from one that is
+# working, which is this repo's most-repeated failure
+# (.claude/rules/tooling-and-gates.md). Until the credential is configured,
+# either set it or disable this schedule — do not let it no-op in silence.
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'   # Mondays 07:00 UTC (after the PR digest at 06:00)
+  workflow_dispatch:
+    inputs:
+      since:
+        description: 'Window start (YYYY-MM-DD). Defaults to last complete Mon-Sun week.'
+        required: false
+      until:
+        description: 'Window end (YYYY-MM-DD). Defaults to last complete Mon-Sun week.'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    # GitHub's default shell is `bash -e {0}` with no pipefail, so a piped
+    # validator's exit status would be the pager's. This job pipes the fetcher
+    # into the normalizer, so pipefail is required for a failed fetch to fail
+    # the step.
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Require GA4 credentials
+        env:
+          KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+          PROPERTY: ${{ vars.GA4_PROPERTY_ID }}
+        run: |
+          missing=""
+          if [ -z "$KEY" ]; then missing="secrets.GA4_SERVICE_ACCOUNT_JSON"; fi
+          if [ -z "$PROPERTY" ]; then missing="$missing vars.GA4_PROPERTY_ID"; fi
+          if [ -n "$missing" ]; then
+            echo "::error::GA4 ingestion cannot run - not configured:$missing"
+            echo "Set them in repo settings (service account needs Viewer only),"
+            echo "or disable this workflow's schedule. See docs/measurement-ga4.md."
+            exit 1
+          fi
+          echo "Credentials present."
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install GA4 client
+        run: pip install --quiet google-analytics-data
+
+      - name: Verify the normalizer passes its tests before writing evidence
+        run: python3 -m unittest discover -s scripts -p 'test_ga4*.py'
+
+      - name: Fetch and normalize
+        env:
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+          SINCE: ${{ inputs.since }}
+          UNTIL: ${{ inputs.until }}
+        run: |
+          # The key is written outside the working tree so it can never be
+          # committed, and removed on any exit path.
+          KEY_FILE="$(mktemp)"
+          trap 'rm -f "$KEY_FILE"' EXIT
+          printf '%s' "$GA4_SERVICE_ACCOUNT_JSON" > "$KEY_FILE"
+          export GOOGLE_APPLICATION_CREDENTIALS="$KEY_FILE"
+
+          args=(--page-limit 5000)
+          if [ -n "$SINCE" ]; then args+=(--since "$SINCE"); fi
+          if [ -n "$UNTIL" ]; then args+=(--until "$UNTIL"); fi
+
+          python3 scripts/fetch_ga4_reports.py "${args[@]}" \
+            | python3 scripts/ga4_snapshot.py --out-dir data/ga4
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ga4/
+          if git diff --cached --quiet; then
+            echo "No snapshot changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: GA4 weekly snapshot $(date -u +%F) [skip ci]"
+          git push
