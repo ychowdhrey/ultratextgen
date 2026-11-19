@@ -20,11 +20,12 @@ gating checks** lives in `docs/README.md` between the `gate-inventory` markers.
 
 > **A check that reports nothing is indistinguishable from a check that passes.**
 
-It has happened at least six times here, each from a different cause: a whole
+It has happened at least seven times here, each from a different cause: a whole
 workflow that could never fail, a workflow that stopped parsing, a validator whose
 answer half was never read, a direction pass that `continue`d past the absence it
-was meant to catch, a locale glob that skipped a five-character locale, and a gate
-whose `main()` fell off the end and exited 0 in silence.
+was meant to catch, a locale glob that skipped a five-character locale, a gate
+whose `main()` fell off the end and exited 0 in silence, and the gating probe
+itself running zero checks and exiting 0 for an `--only` id that matched no step.
 
 The consequences are standing rules:
 
@@ -35,7 +36,10 @@ The consequences are standing rules:
 - **Adding a validator is not the same as gating on it.** Before trusting a new
   check, run it against a **deliberately broken input** and watch it go red — then
   confirm CI *gates* on it (`python3 scripts/run-ci-gates.py --only <id>` returns 1
-  on a broken tree and 0 on a clean one), not merely runs it.
+  on a broken tree and 0 on a clean one), not merely runs it. An id that is not a
+  gating step (not added yet, misspelt, or missing from the "Fail the job"
+  expression) exits 2 and runs nothing, so a 0 always means the step ran.
+  `npm run test:ci-gates` pins that, and gates.
 - **Confirm structure, not syntax.** `ast.parse` is happy with a script whose
   `main()` is never called.
 - **Never assemble the gate list by hand.** Run `npm run check:ci-gates`

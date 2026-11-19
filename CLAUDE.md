@@ -56,7 +56,7 @@ These hold everywhere, in every file, for every task.
    and a look in other lanes, never one exact grep. A pass once planned five pieces of
    work and found four had already shipped.
 8. **A check that reports nothing is indistinguishable from a check that passes.**
-   This is the repo's most-repeated failure, in six recorded forms. Adding a validator
+   This is the repo's most-repeated failure, in seven recorded forms. Adding a validator
    is not the same as gating on it: run a new check against a deliberately broken
    input and watch it go red. And **never read an exit status through a pipe** —
    `$?` after `| head` or `| grep` is the pager's status.

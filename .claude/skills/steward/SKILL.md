@@ -139,7 +139,7 @@ self-reference recurred across 350+ pages. So when you fix something:
    validator script is not the same as gating on it" is a paid-for lesson here (the
    entire workflow was inert for weeks, twice). Remember the repo's recurring trap:
    *a check that reports nothing is indistinguishable from a check that passes* —
-   six recorded forms in `docs/architecture/validation-system.md`.
+   seven recorded forms in `docs/architecture/validation-system.md`.
 
 ## 5. Protect SEO and crawlability
 
