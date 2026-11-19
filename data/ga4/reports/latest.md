@@ -75,11 +75,11 @@ _164 further families omitted from this table; all are in `page_performance.csv`
 
 ## 3. Unserved demand
 
-7 paths took sessions with **no page file in this checkout** (828 sessions in total). This is not proof of a 404 — the site also serves `_redirects` rules and one `functions/` middleware, so some of these resolve. Treat the list as "explain each of these", not "fix each of these".
+7 paths took sessions with **no page file in this checkout** (831 sessions in total). This is not proof of a 404 — the site also serves `_redirects` rules and one `functions/` middleware, so some of these resolve. Treat the list as "explain each of these", not "fix each of these".
 
 | Path | Sessions | Likely |
 |---|---|---|
-| `(not set)` | 822 | malformed URL (bot or bad inbound link) |
+| `(not set)` | 825 | malformed URL (bot or bad inbound link) |
 | `/es/imprimibles/moldes‑de‑letras/` | 1 | removed, redirected, or middleware-served |
 | `/tiktok-symbols/` | 1 | removed or redirected page |
 | `/usecase/free/` | 1 | removed, redirected, or middleware-served |
