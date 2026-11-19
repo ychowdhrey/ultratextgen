@@ -42,6 +42,19 @@ The service account needs **Viewer**; it cannot modify the property.
 A weekly ingestion that quietly does nothing looks exactly like one that works
 (`.claude/rules/tooling-and-gates.md`). Set the secret or disable the schedule.
 
+**Re-running a window that is already recorded is a no-op, not a failure.**
+`ga4_snapshot.py` exits **3** (`ALREADY_RECORDED`) when the dated snapshot is
+already on disk, and the workflow reports that as a notice and commits
+nothing. Any other non-zero status still fails the job. The two are kept
+distinct on purpose: if "already recorded" shared an exit code with a real
+failure, a dead fetch would eventually get waved through as "probably just a
+re-run".
+
+This matters because the default window is the last complete Mon–Sun week, so
+**every manual run inside a week that has already been captured lands on the
+same window**. The Monday schedule moves to a new one by itself; a manual run
+that needs a different window should pass `--since` / `--until`.
+
 ---
 
 ## Files this track owns (`data/ga4/`)
