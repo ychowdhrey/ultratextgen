@@ -230,6 +230,46 @@ function tableFigures(src) {
   return out;
 }
 
+/* ROW FIGURES (added 2026-11-18). The table check above is set membership:
+   a cell passes if its number is ANY real limit. So "Pinterest pin
+   description | 500" passed on 14 locale pages for weeks after the rule
+   became 800, because 500 is a real limit (Threads). A row whose first cell
+   is exactly the page's own label for a rule (its UTG_COUNTER_I18N.labels
+   entry, or the rule's English label) must carry one of THAT rule's figures:
+   its limit or one of its folds. Rows the page does not label are left to
+   the set check, so a table this cannot read is never failed on a guess. */
+function rowLabelsFor(src, rules) {
+  const w = {};
+  const inline = src.match(/<script>([\s\S]*?)<\/script>/g) || [];
+  inline.forEach((block) => {
+    const body = block.replace(/^<script>/, "").replace(/<\/script>$/, "");
+    if (!/UTG_COUNTER_I18N/.test(body)) return;
+    try { new Function("window", body)(w); } catch (e) { /* not our concern */ }
+  });
+  const labels = (w.UTG_COUNTER_I18N && w.UTG_COUNTER_I18N.labels) || {};
+  const norm = (t) => String(t).replace(/\s+/g, " ").trim().toLowerCase();
+  const map = new Map();
+  rules.LIMITS.forEach((r) => {
+    const figs = [r.limit, r.visibleAt, r.foldDesktop].filter((n) => Number.isFinite(n));
+    [labels[r.id], r.label].filter(Boolean).forEach((l) => map.set(norm(l), { id: r.id, figs }));
+  });
+  return { map, norm };
+}
+
+function rowFigures(src) {
+  const out = [];
+  const re = /<tr>\s*<td>([^<]*)<\/td>\s*<td[^>]*class="[^"]*\bnum\b[^"]*"[^>]*>(.*?)<\/td>/gs;
+  let m;
+  while ((m = re.exec(src))) {
+    const cell = stripTags(m[2]);
+    const nums = (cell.match(/\d(?:[\d,.\u00a0\u202f\u2009 ]*\d)?/g) || [])
+      .map((raw) => Number(raw.replace(/[,.\u00a0\u202f\u2009 ]/g, "")))
+      .filter((n) => Number.isFinite(n) && n > 0);
+    out.push({ label: stripTags(m[1]), nums, cell: cell.trim() });
+  }
+  return out;
+}
+
 const pages = walkCounterPages();
 const problems = [];
 
@@ -241,6 +281,27 @@ for (const { rel, src } of pages) {
         rel,
         kind: "aggregate",
         msg: `states "${c.text}" — the rule table has ${FIELD_COUNT} fields across ${PLATFORM_COUNT} platforms`
+      });
+    }
+  }
+
+  const w2 = {};
+  new Function("window", fs.readFileSync(path.join(ROOT, "js/counter/counterRules.js"), "utf8"))(w2);
+  (src.match(/<script>([\s\S]*?)<\/script>/g) || []).forEach((block) => {
+    const body = block.replace(/^<script>/, "").replace(/<\/script>$/, "");
+    if (!/counterRules|LIMITS/.test(body)) return;
+    try { new Function("window", body)(w2); } catch (e) { /* not our concern */ }
+  });
+  const pageRules = (w2.UltraTextGen && w2.UltraTextGen.counterRules) || RULES;
+  const { map: rowMap, norm } = rowLabelsFor(src, pageRules);
+  for (const row of rowFigures(src)) {
+    const rule = rowMap.get(norm(row.label));
+    if (!rule || !row.nums.length) continue;
+    if (!row.nums.some((n) => rule.figs.includes(n))) {
+      problems.push({
+        rel,
+        kind: "row",
+        msg: `row "${row.label}" states ${row.cell}; its rule ${rule.id} is ${rule.figs.join(" / ")}`
       });
     }
   }
