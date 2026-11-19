@@ -27,6 +27,11 @@ Network-free by design, so it is unit-testable with a fixture
 Usage:
     python3 scripts/fetch_ga4_reports.py \
       | python3 scripts/ga4_snapshot.py --out-dir data/ga4
+
+Exit status:
+    0  wrote a snapshot
+    1  bad input, or the bundle could not be read
+    3  that window is already recorded -- a no-op, not a failure
 """
 
 import argparse
@@ -57,6 +62,10 @@ SECTION_DIRS = {
 LOCALE_RE = re.compile(r"^[a-z]{2}(-[a-z]{2,4})?$")
 
 DEFAULT_LOCALE = "en"
+
+# Exit status for "this window is already on disk". Distinct from 1 so a caller
+# can treat a repeat run as a no-op without also swallowing real failures.
+ALREADY_RECORDED = 3
 
 # Dates on which a metric's *definition* changed, so counts either side are not
 # comparable. Trending straight through one of these reads a definition change
@@ -687,12 +696,20 @@ def main(argv=None):
 
     # Historical evidence is append-only: a dated snapshot records what GA4
     # said for that window and is never silently rewritten.
+    #
+    # This exits ALREADY_RECORDED, not 1, because "that window is already on
+    # disk" is not a failure -- it is the correct answer to running the same
+    # window twice, which the weekly job does whenever it is dispatched by hand
+    # inside a week it has already captured. The caller can treat that as a
+    # clean no-op while still failing on every other non-zero status. Keeping
+    # it distinct is what stops a genuine fetch failure from being waved
+    # through as "probably just a re-run".
     if os.path.exists(dated_json) and not args.force:
         sys.stderr.write(
-            "[error] {} already exists; refusing to overwrite history.\n"
-            "        Pass --force only if you intend to restate that window.\n"
+            "[skip] {} already exists; window already recorded, nothing to do.\n"
+            "       Pass --force only if you intend to restate that window.\n"
             .format(dated_json))
-        return 1
+        return ALREADY_RECORDED
 
     with open(dated_json, "w", encoding="utf-8", newline="\n") as handle:
         json.dump(snapshot, handle, indent=1, sort_keys=True)

@@ -465,10 +465,40 @@ class WriteTests(unittest.TestCase):
     def test_existing_snapshot_is_not_overwritten(self):
         with tempfile.TemporaryDirectory() as out_dir:
             self.assertEqual(self.run_main(out_dir), 0)
-            # A second run over the same window must fail rather than rewrite
-            # recorded history.
-            self.assertEqual(self.run_main(out_dir), 1)
+            # A second run over the same window must not rewrite recorded
+            # history -- and must say "already recorded" (3) rather than
+            # "failed" (1), because a repeat run is a no-op, not a fault.
+            self.assertEqual(self.run_main(out_dir), mod.ALREADY_RECORDED)
             self.assertEqual(self.run_main(out_dir, ["--force"]), 0)
+
+    def test_already_recorded_is_distinct_from_failure(self):
+        # The whole point of the separate status: a caller may treat 3 as a
+        # clean no-op, so 3 must never be what a real failure returns. If these
+        # ever collapse to one number, a dead fetch gets waved through as
+        # "probably just a re-run".
+        self.assertEqual(mod.ALREADY_RECORDED, 3)
+        self.assertNotEqual(mod.ALREADY_RECORDED, 0)
+        self.assertNotEqual(mod.ALREADY_RECORDED, 1)
+        with tempfile.TemporaryDirectory() as out_dir:
+            bad = os.path.join(out_dir, "bad.json")
+            with open(bad, "w", encoding="utf-8") as handle:
+                json.dump({"nope": True}, handle)
+            self.assertEqual(
+                mod.main(["--input", bad, "--out-dir", out_dir]), 1)
+            empty = os.path.join(out_dir, "empty.json")
+            open(empty, "w").close()
+            self.assertEqual(
+                mod.main(["--input", empty, "--out-dir", out_dir]), 1)
+
+    def test_already_recorded_leaves_the_recorded_snapshot_byte_identical(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.run_main(out_dir)
+            recorded = os.path.join(out_dir, "snapshots", "2026-11-15.json")
+            with open(recorded, "rb") as handle:
+                before = handle.read()
+            self.assertEqual(self.run_main(out_dir), mod.ALREADY_RECORDED)
+            with open(recorded, "rb") as handle:
+                self.assertEqual(handle.read(), before)
 
     def test_rejects_non_bundle_json(self):
         with tempfile.TemporaryDirectory() as out_dir:
