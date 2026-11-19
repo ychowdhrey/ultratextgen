@@ -10827,6 +10827,9 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   margin-bottom: 0.6rem;
 }
 .cc-selects .cc-select { flex: 1 1 12rem; min-width: 0; }
+/* The own-limit row (.cc-selects.cc-custom) is toggled with the hidden
+   attribute; without this the display:flex above keeps it on screen. */
+.cc-selects[hidden] { display: none; }
 .cc-bar-fill.is-close { background: var(--ts-warn, #d99100); }
 
 /* Live count that lives with the box */
