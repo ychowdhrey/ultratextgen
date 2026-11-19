@@ -32,7 +32,7 @@ fetch artifact) is gitignored.
 
 ## 2. Unit tests (`scripts/test_ga4_snapshot.py`)
 
-`python3 -m unittest discover -s scripts -p 'test_ga4*.py'` → **54 tests, OK,
+`python3 -m unittest discover -s scripts -p 'test_ga4*.py'` → **66 tests, OK,
 exit 0**. Network-free: the suite runs with no GA4 credentials present.
 
 | Group | Asserts |
@@ -40,7 +40,7 @@ exit 0**. Network-free: the suite runs with no GA4 credentials present.
 | `SplitPathTests` (9) | locale prefix, hyphenated locale (`zh-tw`), a locale absent from `locales/*.json` (`ko`), `/x/` not read as a locale, unprefixed page, home, locale home, root-level slug, and an undocumented namespace (`/symbol/`) keeping its real `page_type` and slug |
 | `Ga4WeekTests` (5) | `yearWeek` → date range pinned to values read off the live property; weeks start Sunday; unparseable week reads `unknown` rather than guessing; the three boundary labels; a week containing the deploy day is never labelled clean |
 | `ReturningShareTests` (2) | share arithmetic; no divide-by-zero on an empty window |
-| `SnapshotTests` (8) | totals sum the page rows, returning share, missing-event detection, save rate, locale aggregation + ordering, average-engagement divide-by-zero, truncation flagged and not flagged |
+| `SnapshotTests` (12) | totals sum the page rows, returning share, missing-event detection, save rate, locale aggregation + ordering, average-engagement divide-by-zero, truncation flagged and not flagged, revenue present, revenue absent reads 0 rather than crashing, source ordering, revenue + acquisition reaching the summary |
 | `ComparabilityTests` (2) | both boundaries reach the snapshot and the rendered summary |
 | `WriteTests` (6) | every expected file written, join keys present in `page_performance.csv`, weekly history sorted ascending with its date/label/completeness columns, the partial trailing week flagged `no`, an existing dated snapshot refused then accepted under `--force`, non-bundle JSON rejected |
 
@@ -67,7 +67,7 @@ pipe.
 
 | Probe | Defect injected | Result |
 |---|---|---|
-| baseline | none | exit 0, 62 tests OK |
+| baseline | none | exit 0, 66 tests OK |
 | 1 | boundary label forced to `post` (would hide the definition change) | **exit 1**, 3 caught it |
 | 2 | locale detection disabled | **exit 1**, 8 caught it |
 | 3 | overwrite protection removed (would destroy recorded history) | **exit 1**, 1 caught it |
@@ -79,6 +79,15 @@ pipe.
 | 9 | window filter removed from the daily read | **exit 1**, 1 caught it |
 | 10 | unmapped landing rows dropped instead of kept | **exit 1**, 1 caught it |
 | 11 | revenue column zeroed | **exit 1**, 1 caught it |
+
+A later self-review found the fetcher pulling window `source_medium` and
+`revenue` reports that the normalizer never read — two API calls made and
+discarded on every run. Both are now recorded in the snapshot, with four added
+tests; measured for this window, **$31.18 of ad revenue across 34,229 ad
+impressions**. The acquisition data also corroborates the locale ranking from
+an independent direction (Naver 1,828 sessions, `yandex.ru` 422), which is why
+`ko` and `ru` rank 3rd and 5th — two dimensions agreeing rather than one report
+asserting.
 
 Probes 7 and 10 exist because the **first** run of probe 7 came back green: at
 that point nothing asserted that a path the intent register does not name is
