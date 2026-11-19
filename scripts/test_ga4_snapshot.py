@@ -470,6 +470,61 @@ class WriteTests(unittest.TestCase):
             self.assertEqual(self.run_main(out_dir), 1)
             self.assertEqual(self.run_main(out_dir, ["--force"]), 0)
 
+    def test_if_recorded_skip_keeps_the_window_but_refreshes_history(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.assertEqual(self.run_main(out_dir), 0)
+            snap = os.path.join(out_dir, "snapshots", "2026-11-15.json")
+            page = os.path.join(out_dir, "page_performance.csv")
+            with open(snap, "rb") as handle:
+                snap_before = handle.read()
+            with open(page, "rb") as handle:
+                page_before = handle.read()
+            # Poison the recorded window and a restated-in-full file, and make
+            # the second bundle carry an extra week, so both outcomes are visible.
+            with open(snap, "wb") as handle:
+                handle.write(snap_before + b" ")
+            snap_poisoned = snap_before + b" "
+            os.remove(os.path.join(out_dir, "weekly_totals.csv"))
+            bundle = bundle_fixture()
+            bundle["reports"]["weekly_totals"]["rows"].append(
+                {"d": ["202647"], "m": ["12", "9", "7", "7"]})
+            path = os.path.join(out_dir, "bundle2.json")
+            with open(path, "w", encoding="utf-8") as handle:
+                json.dump(bundle, handle)
+            rc = mod.main(["--input", path, "--out-dir", out_dir,
+                           "--if-recorded", "skip"])
+            self.assertEqual(rc, 0)
+            with open(snap, "rb") as handle:
+                self.assertEqual(handle.read(), snap_poisoned,
+                                 "recorded window must not be rewritten")
+            with open(page, "rb") as handle:
+                self.assertEqual(handle.read(), page_before)
+            with open(os.path.join(out_dir, "weekly_totals.csv"),
+                      encoding="utf-8") as handle:
+                weeks = [r["year_week"] for r in csv.DictReader(handle)]
+            self.assertEqual(weeks, ["202645", "202646", "202647"],
+                             "history must be restated even when skipping")
+
+    def test_if_recorded_skip_still_writes_a_new_window(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.assertEqual(
+                self.run_main(out_dir, ["--if-recorded", "skip"]), 0)
+            self.assertTrue(os.path.exists(
+                os.path.join(out_dir, "snapshots", "2026-11-15.json")))
+            self.assertTrue(os.path.exists(
+                os.path.join(out_dir, "page_performance.csv")))
+
+    def test_if_recorded_skip_does_not_defeat_force(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.assertEqual(self.run_main(out_dir), 0)
+            snap = os.path.join(out_dir, "snapshots", "2026-11-15.json")
+            with open(snap, "w", encoding="utf-8") as handle:
+                handle.write("{}")
+            self.assertEqual(
+                self.run_main(out_dir, ["--if-recorded", "skip", "--force"]), 0)
+            with open(snap, encoding="utf-8") as handle:
+                self.assertIn("totals", json.load(handle))
+
     def test_rejects_non_bundle_json(self):
         with tempfile.TemporaryDirectory() as out_dir:
             path = os.path.join(out_dir, "bad.json")

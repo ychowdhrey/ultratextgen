@@ -654,6 +654,13 @@ def main(argv=None):
     ap.add_argument("--input", help="bundle JSON file (default: stdin)")
     ap.add_argument("--force", action="store_true",
                     help="allow overwriting an existing dated snapshot")
+    ap.add_argument("--if-recorded", choices=("fail", "skip"), default="fail",
+                    help="what to do when this window's dated snapshot already "
+                         "exists. 'fail' (default) refuses and exits 1. 'skip' "
+                         "leaves the recorded window untouched, still refreshes "
+                         "the restated-in-full history and daily files, and "
+                         "exits 0 with a [skip] line. Never rewrites a window; "
+                         "--force is the only way to do that.")
     ap.add_argument("--intents",
                     default=os.path.join("data", "canonical_intents.json"),
                     help="canonical intent register to join landing pages against")
@@ -687,42 +694,59 @@ def main(argv=None):
 
     # Historical evidence is append-only: a dated snapshot records what GA4
     # said for that window and is never silently rewritten.
-    if os.path.exists(dated_json) and not args.force:
+    recorded = os.path.exists(dated_json)
+    if recorded and not args.force and args.if_recorded != "skip":
         sys.stderr.write(
             "[error] {} already exists; refusing to overwrite history.\n"
-            "        Pass --force only if you intend to restate that window.\n"
+            "        Pass --force only if you intend to restate that window,\n"
+            "        or --if-recorded skip to refresh the restated-in-full\n"
+            "        files and leave the recorded window alone.\n"
             .format(dated_json))
         return 1
+    skip_window = recorded and not args.force
 
-    with open(dated_json, "w", encoding="utf-8", newline="\n") as handle:
-        json.dump(snapshot, handle, indent=1, sort_keys=True)
-        handle.write("\n")
-    shutil.copyfile(dated_json, os.path.join(args.out_dir, "latest.json"))
+    if not skip_window:
+        with open(dated_json, "w", encoding="utf-8", newline="\n") as handle:
+            json.dump(snapshot, handle, indent=1, sort_keys=True)
+            handle.write("\n")
+        shutil.copyfile(dated_json, os.path.join(args.out_dir, "latest.json"))
 
-    dated_md = os.path.join(args.out_dir, until + ".md")
-    with open(dated_md, "w", encoding="utf-8", newline="\n") as handle:
-        handle.write(render_markdown(snapshot))
-    shutil.copyfile(dated_md, os.path.join(args.out_dir, "latest.md"))
+        dated_md = os.path.join(args.out_dir, until + ".md")
+        with open(dated_md, "w", encoding="utf-8", newline="\n") as handle:
+            handle.write(render_markdown(snapshot))
+        shutil.copyfile(dated_md, os.path.join(args.out_dir, "latest.md"))
 
+    # These are restated in full from GA4 on every run (they self-heal), so they
+    # refresh even when the window's own snapshot is already recorded.
     write_history_csvs(bundle, args.out_dir, until=until)
 
     intents = load_intents(args.intents)
     partitions = write_daily_partitions(bundle, args.out_dir, intents)
 
-    pages = build_pages(bundle)
-    write_csv(os.path.join(args.out_dir, "page_performance.csv"),
-              ["page_path", "locale", "page_type", "slug", "screen_page_views",
-               "sessions", "active_users", "avg_engagement_seconds"],
-              sorted(pages, key=lambda page: -page["screen_page_views"]))
-    write_csv(os.path.join(args.out_dir, "locale_performance.csv"),
-              ["locale", "pages", "screen_page_views", "sessions", "active_users"],
-              aggregate_locales(pages))
+    if not skip_window:
+        pages = build_pages(bundle)
+        write_csv(os.path.join(args.out_dir, "page_performance.csv"),
+                  ["page_path", "locale", "page_type", "slug",
+                   "screen_page_views", "sessions", "active_users",
+                   "avg_engagement_seconds"],
+                  sorted(pages, key=lambda page: -page["screen_page_views"]))
+        write_csv(os.path.join(args.out_dir, "locale_performance.csv"),
+                  ["locale", "pages", "screen_page_views", "sessions",
+                   "active_users"],
+                  aggregate_locales(pages))
 
-    sys.stderr.write(
-        "[ok] snapshot {}..{}: {:,} views across {:,} pages -> {}\n".format(
-            snapshot["window"]["since"], until,
-            snapshot["totals"]["screen_page_views"],
-            snapshot["page_count"], args.out_dir))
+    if skip_window:
+        sys.stderr.write(
+            "[skip] window {}..{} is already recorded in {}; its snapshot, "
+            "page and locale files were left untouched. History and daily "
+            "files were refreshed.\n".format(
+                snapshot["window"]["since"], until, dated_json))
+    else:
+        sys.stderr.write(
+            "[ok] snapshot {}..{}: {:,} views across {:,} pages -> {}\n".format(
+                snapshot["window"]["since"], until,
+                snapshot["totals"]["screen_page_views"],
+                snapshot["page_count"], args.out_dir))
     sys.stderr.write("[ok] daily detail: {:,} rows across {} file(s)\n".format(
         sum(partitions.values()), len(partitions)))
     if not intents:
