@@ -214,6 +214,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:case-policy`
 - `test:case-policy-browser`
 - `test:centreline`
+- `test:ci-gates`
 - `test:content-significance`
 - `test:counter`
 - `test:cta-routing`

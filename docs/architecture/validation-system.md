@@ -21,7 +21,7 @@ a gate red regardless of what a PR touches is a gate people learn to ignore, so 
 concern with a standing backlog informs or measures a delta, and a concern standing
 at zero gates.
 
-## The one lesson, and its six instances
+## The one lesson, and its seven instances
 
 > **A check that reports nothing is indistinguishable from a check that passes.**
 
@@ -105,6 +105,36 @@ while 30 pages carried no `x-default` at all.
 The first draft of the hub→spoke locale check defined its new function *inside*
 `main()`, so `main()` was never called and **the whole gate exited 0 in silence**.
 `ast.parse` was happy. **Confirm structure, not syntax.**
+
+### 7. The gating probe matched no step (2026-11-18)
+
+`python3 scripts/run-ci-gates.py --only <id>` is how every new gate is proved to
+gate. It filtered the gating steps by the ids given and ran what was left, so an id
+that matched nothing ran **zero** checks and printed `All 0 gating checks pass. ✓`,
+exit 0. Observed while proving a new step: `--only poster_tiles_tests` returned 0
+before the step was in `validate.yml` at all, and 0 again with its module
+deliberately broken. Reproduced against `main` on 2026-11-19: the same 0 for
+`--only definitely_not_a_step` and for `--only images`, a real step that is
+informational. The probe could not tell "gates and passes" from "does not gate" from
+"does not exist", on the one command this repo's rules prescribe for exactly that
+question.
+
+*(2026-11-19)* Every `--only` id is now resolved before anything runs. An id that is
+a step but is not named in the "Fail the job" expression is reported as **not
+gating**; an id that is no step is reported as such, with the step ids it most
+resembles; either stops the run with **exit 2 (UNKNOWN)** and nothing runs, even
+when other ids in the same call are real. `--only` with no id is a usage error rather
+than a run of every gate. `scripts/test-run-ci-gates.py` (`npm run test:ci-gates`,
+gating as `run_ci_gates_tests`) drives the runner over a throwaway workflow with a
+passing gate, a failing gate and an informational step, checks from marker files
+what actually ran, and replays the observed call against the real workflow. Proved
+red three ways, each read directly: the runner as it stood before the repair (14
+assertions fail, and `run-ci-gates.py --only run_ci_gates_tests` returns 1); the
+repair returning 0 instead of 2 (6 fail, the probe returns 1); and the step dropped
+from the "Fail the job" expression (its own wiring assertion fails, and the probe now
+answers 2, "not gating", where the old runner answered 0). Negative control: adding
+an unrelated gating step and an informational step leaves the suite green, and
+`--only` on the new gate returns 0. Clean tree: the probe returns 0.
 
 ## Never assemble the gate list by hand
 

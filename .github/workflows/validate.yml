@@ -991,6 +991,18 @@ jobs:
         id: gate_inventory
         continue-on-error: true
         run: pip install pyyaml >/dev/null && npm run check:gate-inventory | tee gate-inventory.log
+      # Gating, no backlog: tests for run-ci-gates.py itself, the runner behind
+      # `npm run check:ci-gates` and the probe every new gate is proved with
+      # (`--only <id>` must return 1 on a broken tree). Until 2026-11-19 an
+      # --only id that was not a gating step ran zero checks and exited 0, so a
+      # probe for a step not yet added, misspelt, or never made gating read
+      # exactly like a pass. Pins: such an id exits 2 and is named before
+      # anything runs, and a real gating id still runs and still fails. Fast:
+      # it never runs a real gate.
+      - name: Run gate runner tests
+        id: run_ci_gates_tests
+        continue-on-error: true
+        run: pip install pyyaml >/dev/null && npm run test:ci-gates | tee ci-gates-tests.log
       # Gating, and with no backlog to be red against: the accent notice's copy
       # either matches data/accent_notice_copy.json or it doesn't, and
       # `npm run build:accent-notice` closes any gap in one idempotent run. The
@@ -1574,6 +1586,11 @@ jobs:
             cat gate-inventory.log
             echo '```'
             echo ""
+            echo "### Gate runner tests — \`${{ steps.run_ci_gates_tests.outcome }}\`"
+            echo '```'
+            cat ci-gates-tests.log
+            echo '```'
+            echo ""
             echo "### Accent notice check — \`${{ steps.accent_notice.outcome }}\`"
             echo '```'
             cat accent-notice.log
@@ -2031,6 +2048,7 @@ jobs:
           steps.static_footer.outcome == 'failure' ||
           steps.symbol_collection_link.outcome == 'failure' ||
           steps.gate_inventory.outcome == 'failure' ||
+          steps.run_ci_gates_tests.outcome == 'failure' ||
           steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
           steps.kaomoji_generator_static.outcome == 'failure' ||
