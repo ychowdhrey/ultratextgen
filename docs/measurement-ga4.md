@@ -25,13 +25,15 @@ gathers, the judgment half interprets.
 
 | Half | What runs | What it does |
 |---|---|---|
-| **Gather** (automated) | [`ga4-weekly-snapshot.yml`](../.github/workflows/ga4-weekly-snapshot.yml) → `fetch_ga4_reports.py` → `ga4_snapshot.py` | Mondays 07:00 UTC: pull the last complete Mon–Sun week, write `data/ga4/`, commit `[skip ci]`. |
+| **Gather** (automated) | [`ga4-weekly-snapshot.yml`](../.github/workflows/ga4-weekly-snapshot.yml) → `fetch_ga4_reports.py` → `ga4_snapshot.py` → `ga4_weekly_report.py` | Mondays 07:00 UTC: pull the last complete Mon–Sun week, write `data/ga4/`, build the report, commit `[skip ci]`. |
 | **Interpret** (judgment) | whoever is asking a question | Read `data/ga4/`. This track never edits a page, a score or a backlog row. |
 
 `fetch_ga4_reports.py` is the only part that touches the network.
-`ga4_snapshot.py` is pure and unit-tested (`scripts/test_ga4_snapshot.py`,
-32 cases, stdlib `unittest` — no test framework added), so the normalization
-logic can be changed and verified **without GA4 credentials**.
+`ga4_snapshot.py` and `ga4_weekly_report.py` are pure and unit-tested
+(`scripts/test_ga4_snapshot.py` + `scripts/test_ga4_weekly_report.py`, 54 cases
+in stdlib `unittest` — no test framework added, per `CLAUDE.md`), so the
+normalization and reporting logic can be changed and verified **without GA4
+credentials**.
 
 **Read-only by construction:** the fetcher calls `runReport` and nothing else.
 The service account needs **Viewer**; it cannot modify the property.
@@ -54,6 +56,17 @@ A weekly ingestion that quietly does nothing looks exactly like one that works
 | `monthly_events.csv` | **full history**, the copy/save/share action set | |
 | `page_performance.csv` | one window, every page with traffic | Keyed for joining — below. |
 | `locale_performance.csv` | one window, aggregated by URL locale | |
+| `daily_totals.csv` | **full history**, one row per day | Sessions, views, users, engagement, **ad revenue** and publisher ad impressions. |
+| `daily/<YYYY-MM>-landing-pages.csv` | one row per day per landing page | Carries `locale`, `page_type`, `slug`, `intent_id`, `intent_mapped`. |
+| `daily/<YYYY-MM>-country.csv` | one row per day per country | |
+| `daily/<YYYY-MM>-source-medium.csv` | one row per day per source/medium | |
+| `daily/<YYYY-MM>-events.csv` | one row per day per event | Every event, not just the action set. |
+| `reports/<until>.md` | one window | The weekly report — see below. |
+
+**Why the daily files are partitioned by month.** They are restated on every
+run. A single 78k-row landing-page file would rewrite ~6MB of history every
+week; a month partition only churns the month in progress, so a closed month's
+file stops changing and the history stays auditable.
 
 ### Joining measured traffic to a page
 
@@ -73,6 +86,49 @@ with open('data/ga4/page_performance.csv', encoding='utf-8') as fh:
 
 That join is the point of this track: a lane can finally ask whether a shipped
 page earned anything, instead of trusting the volume it was scored on.
+
+### The weekly report
+
+`scripts/ga4_weekly_report.py` reads the files above and writes
+`data/ga4/reports/<until>.md`, answering four questions:
+
+1. **Newly discovered page families** — a `(locale, page_type)` pair taking
+   traffic that the previous snapshot had not seen. The snapshot records its
+   families for exactly this comparison, so "new" means something. The first
+   run says *baseline* rather than pretending 189 families are new.
+2. **Cross-locale performance** — per-locale totals, and which slugs are served
+   in several locales with how the views split.
+3. **Unserved demand** — paths taking sessions with no page file in the
+   checkout. Reported as "explain each of these", not "fix each of these",
+   because `_redirects` and the `functions/` middleware can still resolve a
+   path with no file.
+4. **Candidates for validation** — below.
+
+**The report never promotes anything.** It writes no register and no ledger, and
+it does not read a traffic increase as permission to build. `CLAUDE.md` is
+explicit that volume alone is never justification and that one query gets one
+page, so a candidate is an argument to go *look*. Acting on one still needs the
+lane's own gate.
+
+### Cross-locale candidates are intent-based, not slug-based
+
+The first version of section 4 guessed a translated path — it proposed
+`/ko/library/simbol-love/` for an Indonesian slug, and `/en/…` for English
+pages that live at the root — then asked whether a file existed there. That is
+meaningless: the slug would itself be translated, and a page maps to a
+canonical **intent** that may originate in any language.
+
+So a gap is only reported where `data/canonical_intents.json` can describe one:
+a registered intent with measured views in some locales and no page in a top
+locale. The register is partial by design (it records clusters no English page
+can name), covering 2.55% of landing-page rows, so the report's honest second
+half names **the high-traffic pages the register cannot speak for** — the
+cross-locale question simply cannot be asked for those until someone registers
+an intent, which is a human decision.
+
+Unmapped paths are always **kept with `intent_mapped: no`**, never dropped:
+76,355 of 78,349 landing-page rows are unmapped, and they are where most of the
+traffic is.
 
 ### `page_type` is discovered, not hardcoded
 
@@ -132,6 +188,23 @@ python3 scripts/fetch_ga4_reports.py --since 2026-09-06 --until 2026-09-12 \
 `--page-limit` caps the page tail. When GA4 reports more rows than were kept,
 the snapshot sets `pages_truncated` and the summary says "capped", so a bounded
 snapshot never reads as full coverage.
+
+### What the property can and cannot give
+
+| | |
+|---|---|
+| Property | `522553010`, created **2026-02-02**, Standard tier (not 360) |
+| Earliest data | **2026-02-03** — the maximum backfill, verified by query, not assumed |
+| Daily grain | available for the whole period at landing-page, country, source/medium and event level (78,349 landing-page rows; fetched complete, unsampled) |
+| Revenue | **available** — AdSense is linked, so `totalAdRevenue` and `publisherAdImpressions` come back per day (≈$5/day in November). February returns 0 because ads had not started, not because the metric is missing |
+| Sampling | none observed on any report (`sampled: false` throughout) |
+| Row limits | the fetcher pages at 100k rows and stops only when GA4's own `row_count` is reached, so a large backfill is never silently truncated |
+
+Standard-tier retention settings govern *user- and event-scoped* exploration
+queries, not the aggregated `runReport` surface this track uses, which is why
+daily detail back to February is still available. That is an observation from
+this property, not a guarantee: if an early month ever starts returning empty,
+the already-committed partitions remain the record of what it said.
 
 ### Backfilling
 

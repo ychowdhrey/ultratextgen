@@ -120,6 +120,169 @@ def pageview_definition(year_week, boundary="2026-11-08"):
     return "spans-" + boundary
 
 
+
+def iso_date(compact):
+    """GA4 'date' dimension is YYYYMMDD; return YYYY-MM-DD, or '' if unparseable."""
+    text = str(compact or "")
+    if len(text) != 8 or not text.isdigit():
+        return ""
+    return text[:4] + "-" + text[4:6] + "-" + text[6:]
+
+
+def normalize_path(value):
+    """
+    GA4 reports a landing page with or without its trailing slash and
+    sometimes with a query string. Collapse to '/a/b/' so the same page is one
+    row and joins to a register entry.
+    """
+    text = str(value or "").strip()
+    if not text or text in ("(not set)", "(other)"):
+        return text
+    text = text.split("?", 1)[0].split("#", 1)[0]
+    if not text.startswith("/"):
+        text = "/" + text
+    if not text.endswith("/"):
+        text += "/"
+    return text
+
+
+def load_intents(path):
+    """
+    canonical_intents.json -> {page path: intent id}.
+
+    The register is deliberately partial (it records clusters that no English
+    page can name), so most paths will not be in it. Callers must keep
+    unmatched rows rather than dropping them.
+    """
+    try:
+        with open(path, encoding="utf-8") as handle:
+            data = json.load(handle)
+    except (OSError, ValueError):
+        return {}
+    mapping = {}
+
+    def record(url, intent_id):
+        if not isinstance(url, str) or "ultratextgen.com" not in url:
+            return
+        mapping[normalize_path(url.split("ultratextgen.com", 1)[1])] = intent_id
+
+    for intent in data.get("intents") or []:
+        intent_id = intent.get("id")
+        if not intent_id:
+            continue
+        for url in intent.get("pages") or []:
+            record(url, intent_id)
+        for url in (intent.get("localeOwners") or {}).values():
+            record(url, intent_id)
+        record(intent.get("xDefault"), intent_id)
+    return mapping
+
+
+def write_daily_partitions(bundle, out_dir, intents):
+    """
+    Daily detail, partitioned by month.
+
+    Partitioned because these files are restated on every run: a single
+    78k-row landing-page file would rewrite ~6MB each week, while a month
+    partition only churns the month in progress. Each closed month's file
+    stops changing, which is what makes the history auditable.
+    """
+    daily_dir = os.path.join(out_dir, "daily")
+    os.makedirs(daily_dir, exist_ok=True)
+    written = {}
+
+    def partition(report, fields, build):
+        buckets = {}
+        idx = index_metrics(bundle, report)
+        for row in rows_of(bundle, report):
+            date = iso_date(dim(row, 0))
+            if not date:
+                continue
+            buckets.setdefault(date[:7], []).append(build(row, idx, date))
+        for month, entries in sorted(buckets.items()):
+            name = "{}-{}.csv".format(month, report.replace("daily_", "")
+                                     .replace("_", "-"))
+            write_csv(os.path.join(daily_dir, name), fields,
+                      sorted(entries, key=lambda r: (r["date"],
+                                                     -r.get("sessions", 0))))
+            written[name] = len(entries)
+
+    def landing(row, idx, date):
+        path = normalize_path(dim(row, 1))
+        locale, page_type, slug = split_path(path)
+        intent_id = intents.get(path, "")
+        return {
+            "date": date,
+            "landing_page": path,
+            "locale": locale,
+            "page_type": page_type,
+            "slug": slug,
+            # Empty when the register does not name this path. The register is
+            # partial by design, so "" means unmapped, never "no demand".
+            "intent_id": intent_id,
+            "intent_mapped": "yes" if intent_id else "no",
+            "sessions": pick(row, idx, "sessions"),
+            "screen_page_views": pick(row, idx, "screenPageViews"),
+            "user_engagement_seconds": pick(row, idx, "userEngagementDuration"),
+        }
+
+    partition("daily_landing_pages",
+              ["date", "landing_page", "locale", "page_type", "slug",
+               "intent_id", "intent_mapped", "sessions", "screen_page_views",
+               "user_engagement_seconds"],
+              landing)
+
+    partition("daily_country",
+              ["date", "country", "sessions", "active_users"],
+              lambda row, idx, date: {
+                  "date": date, "country": dim(row, 1),
+                  "sessions": pick(row, idx, "sessions"),
+                  "active_users": pick(row, idx, "activeUsers")})
+
+    partition("daily_source_medium",
+              ["date", "source_medium", "sessions", "active_users"],
+              lambda row, idx, date: {
+                  "date": date, "source_medium": dim(row, 1),
+                  "sessions": pick(row, idx, "sessions"),
+                  "active_users": pick(row, idx, "activeUsers")})
+
+    partition("daily_events",
+              ["date", "event_name", "event_count"],
+              lambda row, idx, date: {
+                  "date": date, "event_name": dim(row, 1),
+                  "event_count": pick(row, idx, "eventCount"),
+                  "sessions": 0})
+
+    # Daily totals stay a single file: one row a day is small, and a continuous
+    # series is easier to read than 10 partitions.
+    totals_idx = index_metrics(bundle, "daily_totals")
+    totals = []
+    for row in rows_of(bundle, "daily_totals"):
+        date = iso_date(dim(row, 0))
+        if not date:
+            continue
+        users = pick(row, totals_idx, "activeUsers")
+        engagement = pick(row, totals_idx, "userEngagementDuration")
+        revenue = pick_float(row, totals_idx, "totalAdRevenue")
+        totals.append({
+            "date": date,
+            "sessions": pick(row, totals_idx, "sessions"),
+            "screen_page_views": pick(row, totals_idx, "screenPageViews"),
+            "active_users": users,
+            "new_users": pick(row, totals_idx, "newUsers"),
+            "avg_engagement_seconds": round(engagement / users, 1) if users else 0.0,
+            "ad_revenue": round(revenue, 4),
+            "publisher_ad_impressions": pick(row, totals_idx,
+                                             "publisherAdImpressions"),
+        })
+    write_csv(os.path.join(out_dir, "daily_totals.csv"),
+              ["date", "sessions", "screen_page_views", "active_users",
+               "new_users", "avg_engagement_seconds", "ad_revenue",
+               "publisher_ad_impressions"],
+              sorted(totals, key=lambda r: r["date"]))
+    written["daily_totals.csv"] = len(totals)
+    return written
+
 def split_path(page_path):
     """
     pagePath -> (locale, page_type, slug).
@@ -165,6 +328,17 @@ def pick(row, idx, metric):
     return as_int(values[i]) if i is not None and i < len(values) else 0
 
 
+def pick_float(row, idx, metric):
+    i = idx.get(metric)
+    values = row.get("m", [])
+    if i is None or i >= len(values):
+        return 0.0
+    try:
+        return float(values[i])
+    except (TypeError, ValueError):
+        return 0.0
+
+
 def dim(row, position):
     values = row.get("d", [])
     return values[position] if position < len(values) else ""
@@ -203,6 +377,20 @@ def aggregate_locales(pages):
         bucket["screen_page_views"] += page["screen_page_views"]
         bucket["sessions"] += page["sessions"]
         bucket["active_users"] += page["active_users"]
+    return sorted(buckets.values(), key=lambda b: -b["screen_page_views"])
+
+
+def aggregate_families(pages):
+    """Every (locale, page_type) pair that took traffic, biggest first."""
+    buckets = {}
+    for page in pages:
+        key = (page["locale"], page["page_type"])
+        bucket = buckets.setdefault(key, {
+            "locale": page["locale"], "page_type": page["page_type"],
+            "pages": 0, "screen_page_views": 0,
+        })
+        bucket["pages"] += 1
+        bucket["screen_page_views"] += page["screen_page_views"]
     return sorted(buckets.values(), key=lambda b: -b["screen_page_views"])
 
 
@@ -279,6 +467,11 @@ def build_snapshot(bundle):
         "pages_available": pages_available,
         "pages_truncated": pages_available > len(pages),
         "comparability_boundaries": METRIC_BOUNDARIES,
+        # Every (locale, page_type) family that took traffic. Recorded so the
+        # next run can tell a genuinely new family from one it has already
+        # seen, which is what makes "newly discovered" in the weekly report
+        # mean anything.
+        "families": aggregate_families(pages),
     }
 
 
@@ -425,6 +618,9 @@ def main(argv=None):
     ap.add_argument("--input", help="bundle JSON file (default: stdin)")
     ap.add_argument("--force", action="store_true",
                     help="allow overwriting an existing dated snapshot")
+    ap.add_argument("--intents",
+                    default=os.path.join("data", "canonical_intents.json"),
+                    help="canonical intent register to join landing pages against")
     args = ap.parse_args(argv)
 
     if args.input:
@@ -474,6 +670,9 @@ def main(argv=None):
 
     write_history_csvs(bundle, args.out_dir, until=until)
 
+    intents = load_intents(args.intents)
+    partitions = write_daily_partitions(bundle, args.out_dir, intents)
+
     pages = build_pages(bundle)
     write_csv(os.path.join(args.out_dir, "page_performance.csv"),
               ["page_path", "locale", "page_type", "slug", "screen_page_views",
@@ -488,6 +687,12 @@ def main(argv=None):
             snapshot["window"]["since"], until,
             snapshot["totals"]["screen_page_views"],
             snapshot["page_count"], args.out_dir))
+    sys.stderr.write("[ok] daily detail: {:,} rows across {} file(s)\n".format(
+        sum(partitions.values()), len(partitions)))
+    if not intents:
+        sys.stderr.write(
+            "[warn] intent register {} unreadable or empty -- landing pages are "
+            "all recorded as unmapped rather than dropped\n".format(args.intents))
     if snapshot["missing_product_events"]:
         sys.stderr.write("[warn] no GA4 data for product events: {}\n".format(
             ", ".join(snapshot["missing_product_events"])))

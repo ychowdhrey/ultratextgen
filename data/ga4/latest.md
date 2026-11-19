@@ -1,6 +1,6 @@
 # GA4 snapshot - 2026-11-09 to 2026-11-15
 
-Property `522553010` - fetched `2026-11-19T07:53:53Z`
+Property `522553010` - fetched `2026-11-19T08:18:15Z`
 
 | Metric | Value |
 |---|---|

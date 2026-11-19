@@ -27,6 +27,9 @@ on:
       until:
         description: 'Window end (YYYY-MM-DD). Defaults to last complete Mon-Sun week.'
         required: false
+      daily_since:
+        description: 'Backfill daily detail from this date (YYYY-MM-DD). Default: 35 days back. Use 2026-02-02 for the full property history.'
+        required: false
 
 permissions:
   contents: write
@@ -79,6 +82,7 @@ jobs:
           GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
           SINCE: ${{ inputs.since }}
           UNTIL: ${{ inputs.until }}
+          DAILY_SINCE: ${{ inputs.daily_since }}
         run: |
           # The key is written outside the working tree so it can never be
           # committed, and removed on any exit path.
@@ -90,9 +94,13 @@ jobs:
           args=(--page-limit 5000)
           if [ -n "$SINCE" ]; then args+=(--since "$SINCE"); fi
           if [ -n "$UNTIL" ]; then args+=(--until "$UNTIL"); fi
+          if [ -n "$DAILY_SINCE" ]; then args+=(--daily-since "$DAILY_SINCE"); fi
 
           python3 scripts/fetch_ga4_reports.py "${args[@]}" \
             | python3 scripts/ga4_snapshot.py --out-dir data/ga4
+
+      - name: Build the weekly report
+        run: python3 scripts/ga4_weekly_report.py --ga4-dir data/ga4 --repo-root .
 
       - name: Commit snapshot
         run: |

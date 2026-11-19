@@ -80,8 +80,51 @@ def bundle_fixture():
                 "rows": [{"d": ["202611", "copy_text"], "m": ["200"]},
                          {"d": ["202611", "save_style"], "m": ["4"]}],
             },
+            "daily_totals": {
+                "dimensions": ["date"],
+                "metrics": ["sessions", "screenPageViews", "activeUsers",
+                            "newUsers", "userEngagementDuration",
+                            "totalAdRevenue", "publisherAdImpressions"],
+                "rows": [{"d": ["20261110"],
+                          "m": ["80", "100", "50", "45", "500", "5.2578", "5496"]}],
+            },
+            "daily_landing_pages": {
+                "dimensions": ["date", "landingPage"],
+                "metrics": ["sessions", "screenPageViews",
+                            "userEngagementDuration"],
+                "rows": [
+                    # In the register (see INTENT_FIXTURE below).
+                    {"d": ["20261110", "/ko/font-byeonhwan"], "m": ["30", "40", "200"]},
+                    # Not in the register -- must survive as unmapped.
+                    {"d": ["20261110", "/id/library/simbol-love/"], "m": ["50", "60", "300"]},
+                ],
+            },
+            "daily_country": {
+                "dimensions": ["date", "country"],
+                "metrics": ["sessions", "activeUsers"],
+                "rows": [{"d": ["20261110", "Indonesia"], "m": ["70", "45"]}],
+            },
+            "daily_source_medium": {
+                "dimensions": ["date", "sessionSourceMedium"],
+                "metrics": ["sessions", "activeUsers"],
+                "rows": [{"d": ["20261110", "google / organic"], "m": ["60", "40"]}],
+            },
+            "daily_events": {
+                "dimensions": ["date", "eventName"],
+                "metrics": ["eventCount"],
+                "rows": [{"d": ["20261110", "copy_text"], "m": ["200"]}],
+            },
         },
     }
+
+
+INTENT_FIXTURE = {
+    "schemaVersion": 1,
+    "intents": [
+        {"id": "style-text/cjk-readers", "scope": "cross-language",
+         "pages": ["https://ultratextgen.com/ko/font-byeonhwan/"]},
+    ],
+}
 
 
 class SplitPathTests(unittest.TestCase):
@@ -235,6 +278,91 @@ class ComparabilityTests(unittest.TestCase):
         markdown = mod.render_markdown(self.snapshot)
         self.assertIn("## Comparability", markdown)
         self.assertIn("2026-11-08", markdown)
+
+
+class DailyPartitionTests(unittest.TestCase):
+    """
+    The daily grain, and the rule that matters most about it: a path the intent
+    register does not name is **kept, marked unmapped** -- never dropped. Most
+    of the site's traffic is on unmapped paths, so dropping them would quietly
+    discard the bulk of the evidence.
+    """
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.out = self.tmp.name
+        self.intents_path = os.path.join(self.out, "intents.json")
+        with open(self.intents_path, "w", encoding="utf-8") as handle:
+            json.dump(INTENT_FIXTURE, handle)
+        self.intents = mod.load_intents(self.intents_path)
+        self.written = mod.write_daily_partitions(
+            bundle_fixture(), self.out, self.intents)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def landing_rows(self):
+        path = os.path.join(self.out, "daily", "2026-11-landing-pages.csv")
+        with open(path, encoding="utf-8") as handle:
+            return {row["landing_page"]: row for row in csv.DictReader(handle)}
+
+    def test_register_is_loaded_with_normalised_paths(self):
+        self.assertEqual(self.intents.get("/ko/font-byeonhwan/"),
+                         "style-text/cjk-readers")
+
+    def test_mapped_path_carries_its_intent(self):
+        row = self.landing_rows()["/ko/font-byeonhwan/"]
+        self.assertEqual(row["intent_id"], "style-text/cjk-readers")
+        self.assertEqual(row["intent_mapped"], "yes")
+
+    def test_unmapped_path_is_kept_and_marked(self):
+        rows = self.landing_rows()
+        self.assertIn("/id/library/simbol-love/", rows)
+        row = rows["/id/library/simbol-love/"]
+        self.assertEqual(row["intent_id"], "")
+        self.assertEqual(row["intent_mapped"], "no")
+        # Enrichment still happened even though the register is silent.
+        self.assertEqual(row["locale"], "id")
+        self.assertEqual(row["page_type"], "library")
+        self.assertEqual(row["slug"], "simbol-love")
+
+    def test_no_landing_row_is_lost(self):
+        self.assertEqual(len(self.landing_rows()), 2)
+
+    def test_partitioned_by_month_with_every_dimension(self):
+        for name in ("2026-11-landing-pages.csv", "2026-11-country.csv",
+                     "2026-11-source-medium.csv", "2026-11-events.csv"):
+            self.assertIn(name, self.written)
+            self.assertTrue(os.path.exists(
+                os.path.join(self.out, "daily", name)), name)
+
+    def test_daily_totals_keep_revenue(self):
+        path = os.path.join(self.out, "daily_totals.csv")
+        with open(path, encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(rows[0]["date"], "2026-11-10")
+        self.assertEqual(rows[0]["ad_revenue"], "5.2578")
+        self.assertEqual(rows[0]["publisher_ad_impressions"], "5496")
+        self.assertEqual(rows[0]["avg_engagement_seconds"], "10.0")
+
+    def test_unreadable_register_leaves_everything_unmapped(self):
+        empty = mod.load_intents(os.path.join(self.out, "nope.json"))
+        self.assertEqual(empty, {})
+        out = os.path.join(self.out, "second")
+        os.makedirs(out)
+        mod.write_daily_partitions(bundle_fixture(), out, empty)
+        with open(os.path.join(out, "daily", "2026-11-landing-pages.csv"),
+                  encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(len(rows), 2)
+        self.assertTrue(all(r["intent_mapped"] == "no" for r in rows))
+
+    def test_iso_date_and_path_normalisation(self):
+        self.assertEqual(mod.iso_date("20261110"), "2026-11-10")
+        self.assertEqual(mod.iso_date("nope"), "")
+        self.assertEqual(mod.normalize_path("/a/b"), "/a/b/")
+        self.assertEqual(mod.normalize_path("/a/b/?x=1"), "/a/b/")
+        self.assertEqual(mod.normalize_path("(not set)"), "(not set)")
 
 
 class WriteTests(unittest.TestCase):
