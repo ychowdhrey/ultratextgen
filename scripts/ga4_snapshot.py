@@ -439,6 +439,31 @@ def build_snapshot(bundle):
         for row in rows_of(bundle, "countries")
     ]
 
+    sources_idx = index_metrics(bundle, "source_medium")
+    sources = [
+        {
+            "source_medium": dim(row, 0),
+            "sessions": pick(row, sources_idx, "sessions"),
+            "active_users": pick(row, sources_idx, "activeUsers"),
+        }
+        for row in rows_of(bundle, "source_medium")
+    ]
+
+    # AdSense, through the GA4 link. Recorded so a revenue-per-view figure can
+    # be computed from one window without leaving the property -- and so the
+    # 2026-11-08 page-view boundary above is visibly relevant to it.
+    revenue_idx = index_metrics(bundle, "revenue")
+    revenue_rows = rows_of(bundle, "revenue")
+    revenue_row = revenue_rows[0] if revenue_rows else {"m": []}
+    revenue = {
+        "ad_revenue": round(pick_float(revenue_row, revenue_idx,
+                                       "totalAdRevenue"), 4),
+        "total_revenue": round(pick_float(revenue_row, revenue_idx,
+                                          "totalRevenue"), 4),
+        "publisher_ad_impressions": pick(revenue_row, revenue_idx,
+                                         "publisherAdImpressions"),
+    }
+
     copies = events.get("copy_text", 0)
     saves = events.get("save_style", 0)
 
@@ -457,8 +482,10 @@ def build_snapshot(bundle):
         # in this window. Surfaced so the docs cannot drift from reality unseen.
         "missing_product_events": missing_events,
         "save_rate_pct_of_copies": round(100.0 * saves / copies, 2) if copies else 0.0,
+        "revenue": revenue,
         "locales": aggregate_locales(pages),
         "countries": countries[:15],
+        "sources": sources[:15],
         "top_pages": sorted(pages, key=lambda p: -p["screen_page_views"])[:25],
         "page_count": len(pages),
         # The fetcher's --page-limit can cut the long tail. Record what GA4 said
@@ -567,6 +594,9 @@ def render_markdown(snapshot):
             retention["returning_users"], known_users),
         "| Save rate (saves / copies) | {}% |".format(
             snapshot["save_rate_pct_of_copies"]),
+        "| Ad revenue | ${:,.2f} across {:,} ad impressions |".format(
+            snapshot["revenue"]["ad_revenue"],
+            snapshot["revenue"]["publisher_ad_impressions"]),
         "| Pages with traffic | {:,}{} |".format(
             snapshot["page_count"],
             " (capped; GA4 reported {:,})".format(snapshot["pages_available"])
@@ -601,6 +631,12 @@ def render_markdown(snapshot):
         lines.append("| `{}` | {:,} | {:,} | {:,} | {:,} |".format(
             bucket["locale"], bucket["pages"], bucket["screen_page_views"],
             bucket["sessions"], bucket["active_users"]))
+    lines += ["", "## Acquisition", "",
+              "| Source / medium | Sessions | Users |", "|---|---|---|"]
+    for source in snapshot.get("sources", [])[:10]:
+        lines.append("| `{}` | {:,} | {:,} |".format(
+            source["source_medium"], source["sessions"],
+            source["active_users"]))
     lines += ["", "## Top pages", "",
               "| Page | Views | Users | Avg engagement (s) |",
               "|---|---|---|---|"]

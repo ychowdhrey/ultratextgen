@@ -80,6 +80,18 @@ def bundle_fixture():
                 "rows": [{"d": ["202611", "copy_text"], "m": ["200"]},
                          {"d": ["202611", "save_style"], "m": ["4"]}],
             },
+            "source_medium": {
+                "dimensions": ["sessionSourceMedium"],
+                "metrics": ["sessions", "activeUsers"],
+                "rows": [{"d": ["google / organic"], "m": ["140", "110"]},
+                         {"d": ["(direct) / (none)"], "m": ["22", "18"]}],
+            },
+            "revenue": {
+                "dimensions": [],
+                "metrics": ["totalAdRevenue", "publisherAdImpressions",
+                            "totalRevenue"],
+                "rows": [{"d": [], "m": ["5.2578", "5496", "5.2578"]}],
+            },
             "daily_totals": {
                 "dimensions": ["date"],
                 "metrics": ["sessions", "screenPageViews", "activeUsers",
@@ -137,8 +149,8 @@ class SplitPathTests(unittest.TestCase):
         self.assertEqual((locale, page_type), ("zh-tw", "usecase"))
 
     def test_locale_added_after_this_script_still_classifies(self):
-        # /ko/ and /ru/ are live but absent from locales/*.json -- shape
-        # matching must handle them without a code change.
+        # Shape matching, not a hardcoded list: a locale added to the site
+        # after this script was written must classify without a code change.
         self.assertEqual(mod.split_path("/ko/library/imotikon/"),
                          ("ko", "library", "imotikon"))
 
@@ -242,6 +254,29 @@ class SnapshotTests(unittest.TestCase):
         self.assertEqual(locales["en"]["screen_page_views"], 110)
         views = [b["screen_page_views"] for b in self.snapshot["locales"]]
         self.assertEqual(views, sorted(views, reverse=True))
+
+    def test_revenue_is_recorded(self):
+        self.assertEqual(self.snapshot["revenue"]["ad_revenue"], 5.2578)
+        self.assertEqual(self.snapshot["revenue"]["publisher_ad_impressions"],
+                         5496)
+
+    def test_revenue_absent_is_zero_not_a_crash(self):
+        bundle = bundle_fixture()
+        bundle["reports"]["revenue"]["rows"] = []
+        snapshot = mod.build_snapshot(bundle)
+        self.assertEqual(snapshot["revenue"]["ad_revenue"], 0.0)
+
+    def test_sources_are_recorded_in_order(self):
+        sources = self.snapshot["sources"]
+        self.assertEqual(sources[0]["source_medium"], "google / organic")
+        self.assertEqual(sources[0]["sessions"], 140)
+
+    def test_revenue_and_sources_reach_the_summary(self):
+        markdown = mod.render_markdown(self.snapshot)
+        self.assertIn("Ad revenue", markdown)
+        self.assertIn("$5.26", markdown)
+        self.assertIn("## Acquisition", markdown)
+        self.assertIn("google / organic", markdown)
 
     def test_untruncated_pages_are_not_flagged(self):
         self.assertFalse(self.snapshot["pages_truncated"])

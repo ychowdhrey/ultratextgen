@@ -1244,7 +1244,7 @@
    "screen_page_views": 1
   }
  ],
- "fetched_at": "2026-11-19T08:18:15Z",
+ "fetched_at": "2026-11-19T08:36:22Z",
  "locales": [
   {
    "active_users": 4189,
@@ -1483,7 +1483,89 @@
   "returning_share_pct": 11.0,
   "returning_users": 1621
  },
+ "revenue": {
+  "ad_revenue": 31.1764,
+  "publisher_ad_impressions": 34229,
+  "total_revenue": 31.1764
+ },
  "save_rate_pct_of_copies": 2.34,
+ "sources": [
+  {
+   "active_users": 3771,
+   "sessions": 4797,
+   "source_medium": "google / organic"
+  },
+  {
+   "active_users": 3555,
+   "sessions": 3755,
+   "source_medium": "(direct) / (none)"
+  },
+  {
+   "active_users": 2285,
+   "sessions": 2761,
+   "source_medium": "bing / organic"
+  },
+  {
+   "active_users": 1098,
+   "sessions": 1221,
+   "source_medium": "m.search.naver.com / referral"
+  },
+  {
+   "active_users": 681,
+   "sessions": 777,
+   "source_medium": "(not set)"
+  },
+  {
+   "active_users": 504,
+   "sessions": 607,
+   "source_medium": "naver / organic"
+  },
+  {
+   "active_users": 405,
+   "sessions": 467,
+   "source_medium": "chatgpt.com / ai-assistant"
+  },
+  {
+   "active_users": 378,
+   "sessions": 422,
+   "source_medium": "yandex.ru / referral"
+  },
+  {
+   "active_users": 178,
+   "sessions": 213,
+   "source_medium": "duckduckgo / organic"
+  },
+  {
+   "active_users": 152,
+   "sessions": 195,
+   "source_medium": "yahoo / organic"
+  },
+  {
+   "active_users": 98,
+   "sessions": 116,
+   "source_medium": "yandex.com.tr / referral"
+  },
+  {
+   "active_users": 80,
+   "sessions": 93,
+   "source_medium": "it.search.yahoo.com / referral"
+  },
+  {
+   "active_users": 83,
+   "sessions": 83,
+   "source_medium": "ya.ru / referral"
+  },
+  {
+   "active_users": 62,
+   "sessions": 80,
+   "source_medium": "id.search.yahoo.com / referral"
+  },
+  {
+   "active_users": 60,
+   "sessions": 75,
+   "source_medium": "search.brave.com / referral"
+  }
+ ],
  "top_pages": [
   {
    "active_users": 1299,

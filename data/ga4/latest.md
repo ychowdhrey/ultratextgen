@@ -1,6 +1,6 @@
 # GA4 snapshot - 2026-11-09 to 2026-11-15
 
-Property `522553010` - fetched `2026-11-19T08:18:15Z`
+Property `522553010` - fetched `2026-11-19T08:36:22Z`
 
 | Metric | Value |
 |---|---|
@@ -9,6 +9,7 @@ Property `522553010` - fetched `2026-11-19T08:18:15Z`
 | Active users | 14,927 |
 | Returning share | 11.0% (1,621 of 14,718) |
 | Save rate (saves / copies) | 2.34% |
+| Ad revenue | $31.18 across 34,229 ad impressions |
 | Pages with traffic | 2,726 |
 
 ## Product events
@@ -58,6 +59,21 @@ Definition changes recorded for this property. Do not compare a figure across on
 | `ar` | 100 | 232 | 227 | 201 |
 | `ja` | 108 | 222 | 228 | 211 |
 | `nl` | 79 | 175 | 168 | 150 |
+
+## Acquisition
+
+| Source / medium | Sessions | Users |
+|---|---|---|
+| `google / organic` | 4,797 | 3,771 |
+| `(direct) / (none)` | 3,755 | 3,555 |
+| `bing / organic` | 2,761 | 2,285 |
+| `m.search.naver.com / referral` | 1,221 | 1,098 |
+| `(not set)` | 777 | 681 |
+| `naver / organic` | 607 | 504 |
+| `chatgpt.com / ai-assistant` | 467 | 405 |
+| `yandex.ru / referral` | 422 | 378 |
+| `duckduckgo / organic` | 213 | 178 |
+| `yahoo / organic` | 195 | 152 |
 
 ## Top pages
 

@@ -262,17 +262,25 @@ First snapshot: window **2026-11-09 → 2026-11-15**, 20,306 page views across
    near-term allocation is with tier-1 `id`. Nothing here says the tiers are
    wrong — tiers weigh more than last week's views — only that this is the
    first time a tier review could be answered with measurement.
-6. **The library/symbol lane's best pages are Korean and Russian.** Joining the
+6. **Acquisition corroborates the locale ranking from a second direction.**
+   In the window: `google / organic` 4,797 sessions, `(direct)` 3,755,
+   **`bing / organic` 2,761**, **Naver 1,828** (1,221 referral + 607 organic),
+   `chatgpt.com / ai-assistant` 467, **`yandex.ru` 422**. Naver and Yandex are
+   the Korean and Russian engines, so the `ko`/`ru` traffic is not an artifact
+   of one report — two independent dimensions agree. Bing at 2,761 sessions and
+   an AI assistant sending 467 are both worth knowing and neither appears
+   anywhere in the repo today.
+7. **The library/symbol lane's best pages are Korean and Russian.** Joining the
    window to the 836 tracked specs: the top shipped pages are
    `serdechko-iz-simvolov` (ru, 137), `roblox-symbols` (128), `aipon-imoji`
    (ko, 97), with `maljurimpyo-giho`, `christmas-giho`, `dal-giho` and
    `nickname-giho` (all ko) in the top ten. The localization work is where this
    lane's measured return is.
-7. **293 of 836 shipped specs (35%) took zero views in the window**, and all
+8. **293 of 836 shipped specs (35%) took zero views in the window**, and all
    spec-generated pages together account for **3,141 of 20,306 views (15.5%)**
    of the site. The lane is a long tail with a short head.
 
-**How much weight finding 7 carries:** one week, on a catalog that is long-tail
+**How much weight finding 8 carries:** one week, on a catalog that is long-tail
 by design, and a page can legitimately take zero views in a week and still be
 worth having. The *distribution* is the signal, not any single zero. The honest
 move is to re-run the join after 4+ weekly snapshots — which is now a query
