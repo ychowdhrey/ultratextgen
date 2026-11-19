@@ -178,6 +178,53 @@ def load_intents(path):
     return mapping
 
 
+def fetched_range(bundle, entries):
+    """
+    The date range this run actually asked GA4 for: [daily_since, until].
+
+    Rows inside it are authoritative (GA4 restates recent days, so they are
+    replaced); rows outside it were recorded by earlier runs and must be kept.
+    Falls back to the span of the fetched rows for a bundle without metadata.
+    """
+    meta = bundle.get("meta", {}) or {}
+    lo = meta.get("daily_since") or ""
+    hi = (meta.get("window", {}) or {}).get("until") or ""
+    dates = [e["date"] for e in entries]
+    if not lo and dates:
+        lo = min(dates)
+    if not hi and dates:
+        hi = max(dates)
+    return lo, hi
+
+
+def merge_dated_csv(path, fieldnames, entries, lo, hi):
+    """
+    Write `entries` into a dated CSV without discarding history.
+
+    An earlier version overwrote the file with only the fetched rows. With the
+    default 35-day daily window that cut the partial month and daily_totals.csv
+    down to the trailing window on the first real CI run (7,922 recorded lines
+    gone in one commit, restored from git). Existing rows dated inside
+    [lo, hi] are replaced by the fresh fetch; all others are kept.
+    """
+    kept = []
+    if os.path.exists(path):
+        with open(path, newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                day = row.get("date", "")
+                if not day or not (lo <= day <= hi):
+                    kept.append(row)
+
+    def order(row):
+        try:
+            sessions = float(row.get("sessions", 0) or 0)
+        except (TypeError, ValueError):
+            sessions = 0.0
+        return (row.get("date", ""), -sessions)
+
+    write_csv(path, fieldnames, sorted(kept + list(entries), key=order))
+
+
 def write_daily_partitions(bundle, out_dir, intents):
     """
     Daily detail, partitioned by month.
@@ -199,12 +246,12 @@ def write_daily_partitions(bundle, out_dir, intents):
             if not date:
                 continue
             buckets.setdefault(date[:7], []).append(build(row, idx, date))
+        lo, hi = fetched_range(bundle, [e for b in buckets.values() for e in b])
         for month, entries in sorted(buckets.items()):
             name = "{}-{}.csv".format(month, report.replace("daily_", "")
                                      .replace("_", "-"))
-            write_csv(os.path.join(daily_dir, name), fields,
-                      sorted(entries, key=lambda r: (r["date"],
-                                                     -r.get("sessions", 0))))
+            merge_dated_csv(os.path.join(daily_dir, name), fields, entries,
+                            lo, hi)
             written[name] = len(entries)
 
     def landing(row, idx, date):
@@ -275,11 +322,12 @@ def write_daily_partitions(bundle, out_dir, intents):
             "publisher_ad_impressions": pick(row, totals_idx,
                                              "publisherAdImpressions"),
         })
-    write_csv(os.path.join(out_dir, "daily_totals.csv"),
-              ["date", "sessions", "screen_page_views", "active_users",
-               "new_users", "avg_engagement_seconds", "ad_revenue",
-               "publisher_ad_impressions"],
-              sorted(totals, key=lambda r: r["date"]))
+    lo, hi = fetched_range(bundle, totals)
+    merge_dated_csv(os.path.join(out_dir, "daily_totals.csv"),
+                    ["date", "sessions", "screen_page_views", "active_users",
+                     "new_users", "avg_engagement_seconds", "ad_revenue",
+                     "publisher_ad_impressions"],
+                    totals, lo, hi)
     written["daily_totals.csv"] = len(totals)
     return written
 

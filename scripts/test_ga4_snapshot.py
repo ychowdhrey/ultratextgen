@@ -470,6 +470,77 @@ class WriteTests(unittest.TestCase):
             self.assertEqual(self.run_main(out_dir), 1)
             self.assertEqual(self.run_main(out_dir, ["--force"]), 0)
 
+    def seed_history(self, out_dir):
+        """Existing files holding days the next fetch does not cover."""
+        daily = os.path.join(out_dir, "daily")
+        os.makedirs(daily)
+        with open(os.path.join(daily, "2026-11-landing-pages.csv"), "w",
+                  encoding="utf-8", newline="\n") as handle:
+            handle.write(
+                "date,landing_page,locale,page_type,slug,intent_id,"
+                "intent_mapped,sessions,screen_page_views,"
+                "user_engagement_seconds\n"
+                "2026-11-02,/old/,en,old,old,,no,7,9,1\n"
+                "2026-11-10,/stale/,en,stale,stale,,no,999,999,999\n")
+        with open(os.path.join(out_dir, "daily_totals.csv"), "w",
+                  encoding="utf-8", newline="\n") as handle:
+            handle.write(
+                "date,sessions,screen_page_views,active_users,new_users,"
+                "avg_engagement_seconds,ad_revenue,publisher_ad_impressions\n"
+                "2026-10-05,11,22,3,2,1.5,0.1,4\n"
+                "2026-11-10,999,999,9,9,9.0,9.0,9\n")
+
+    def read_rows(self, path):
+        with open(path, encoding="utf-8") as handle:
+            return list(csv.DictReader(handle))
+
+    def test_daily_files_keep_history_outside_the_fetched_range(self):
+        # Regression: daily writers used to overwrite with only the fetched
+        # rows, so a 35-day fetch truncated the partial month and
+        # daily_totals.csv on the first real CI run.
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.seed_history(out_dir)
+            self.assertEqual(self.run_main(out_dir), 0)
+            totals = self.read_rows(os.path.join(out_dir, "daily_totals.csv"))
+            self.assertEqual([r["date"] for r in totals],
+                             ["2026-10-05", "2026-11-10"])
+            self.assertEqual(totals[0]["sessions"], "11",
+                             "a day outside the fetch must survive untouched")
+            landing = self.read_rows(os.path.join(
+                out_dir, "daily", "2026-11-landing-pages.csv"))
+            self.assertIn("/old/", [r["landing_page"] for r in landing])
+
+    def test_daily_files_replace_rows_inside_the_fetched_range(self):
+        # GA4 restates recent days, so the fresh fetch wins for dates it covers.
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.seed_history(out_dir)
+            self.run_main(out_dir)
+            totals = {r["date"]: r for r in self.read_rows(
+                os.path.join(out_dir, "daily_totals.csv"))}
+            self.assertEqual(totals["2026-11-10"]["sessions"], "80")
+            landing = self.read_rows(os.path.join(
+                out_dir, "daily", "2026-11-landing-pages.csv"))
+            self.assertNotIn("/stale/", [r["landing_page"] for r in landing])
+            self.assertIn("/id/library/simbol-love/",
+                          [r["landing_page"] for r in landing])
+
+    def test_daily_merge_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.seed_history(out_dir)
+            self.run_main(out_dir)
+            paths = [os.path.join(out_dir, "daily_totals.csv"),
+                     os.path.join(out_dir, "daily",
+                                  "2026-11-landing-pages.csv")]
+            first = []
+            for path in paths:
+                with open(path, "rb") as handle:
+                    first.append(handle.read())
+            self.assertEqual(
+                self.run_main(out_dir, ["--if-recorded", "skip"]), 0)
+            for path, before in zip(paths, first):
+                with open(path, "rb") as handle:
+                    self.assertEqual(handle.read(), before, path)
+
     def test_if_recorded_skip_keeps_the_window_but_refreshes_history(self):
         with tempfile.TemporaryDirectory() as out_dir:
             self.assertEqual(self.run_main(out_dir), 0)

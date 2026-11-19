@@ -75,6 +75,18 @@ A weekly ingestion that quietly does nothing looks exactly like one that works
 | `daily/<YYYY-MM>-events.csv` | one row per day per event | Every event, not just the action set. |
 | `reports/<until>.md` | one window | The weekly report — see below. |
 
+**Correction (2026-11-19): daily files are merged by date, not rewritten.** The
+first CI run of this workflow overwrote each month's file, and `daily_totals.csv`,
+with only the days it fetched. With the default 35-day daily window that cut the
+partial month and the whole series down to the trailing window: 7,922 recorded lines
+gone in one bot commit, recovered from git history and re-fetched with
+`daily_since=2026-02-02`. `scripts/ga4_snapshot.py` now replaces only rows dated
+inside the fetched range (`daily_since`..`until`, so GA4's restatements of recent days
+still win) and keeps every other row. The unit tests seed existing files and assert
+that history outside the range survives, so a fetch can never again shrink the series.
+The weekly history CSVs were never affected: they are fetched from the property's
+first week on every run.
+
 **Why the daily files are partitioned by month.** They are restated on every
 run. A single 78k-row landing-page file would rewrite ~6MB of history every
 week; a month partition only churns the month in progress, so a closed month's
