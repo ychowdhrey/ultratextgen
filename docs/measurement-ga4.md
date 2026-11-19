@@ -38,6 +38,18 @@ credentials**.
 **Read-only by construction:** the fetcher calls `runReport` and nothing else.
 The service account needs **Viewer**; it cannot modify the property.
 
+**Re-running a window that is already recorded (2026-11-19).** The scheduled Monday
+run always lands on a new window, but a manual dispatch before the next week closes
+targets the same default window as the last run. The workflow passes
+`--if-recorded skip` to the normalizer, so that case is no longer a failure: the
+recorded window's snapshot, summary, `page_performance.csv` and
+`locale_performance.csv` are left untouched, the restated-in-full history and daily
+files still refresh (picking up the partial current week, flagged `week_complete=no`),
+and the log says `[skip] window ... is already recorded`. Run by hand without the
+flag, the normalizer still refuses and exits 1, and `--force` remains the only way to
+restate a window. Date inputs to the workflow are validated first: a value that is
+not `YYYY-MM-DD` fails in its own step instead of as a 400 from the GA4 API.
+
 **If the credential is missing the workflow fails loudly rather than skipping.**
 A weekly ingestion that quietly does nothing looks exactly like one that works
 (`.claude/rules/tooling-and-gates.md`). Set the secret or disable the schedule.
