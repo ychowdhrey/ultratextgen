@@ -1170,11 +1170,18 @@ here so they aren't lost. Update as they're closed or new ones appear.
     `data/ga4/page_performance.csv` now makes this a query rather than a research
     project; nothing yet *acts* on it. One week is thin for a long-tail catalog:
     re-run after 4+ snapshots before pruning anything.
-33. **Korean and Russian are top-five locales with no governing doc.** Measured
-    in the same window: `id` 6,390 → `en` 3,850 → **`ko` 2,754** → `es` 1,923 →
-    **`ru` 1,064** views, across 32 locale buckets with traffic. `ko` is the
-    site's #3 locale and carries the library lane's best pages, but neither it
-    nor `ru` appears in the locale tables above.
+33. **The locale tiers have never been checked against measured traffic.**
+    Measured in the window 2026-11-09→15: `id` 6,390 → `en` 3,850 →
+    **`ko` 2,754** → `es` 1,923 → **`ru` 1,064** → `fr` 813 views, across 32
+    locale buckets with traffic. Both `ko` and `ru` are properly registered
+    (`locales/*.json`, and `data/locale_qualification_tiers.json` puts each at
+    **tier 2, `qualify-then-mirror-core`**) — so this is not a documentation
+    gap. It is an **allocation** question: Korean is the site's #3 locale and
+    carries the library/symbol lane's best-performing pages, while the standing
+    60% near-term allocation sits with tier-1 `id`. The tier registry is a
+    decision ledger and is not edited here; `data/ga4/locale_performance.csv`
+    simply makes the next tier review answerable with measurement instead of
+    estimate.
 
 ---
 

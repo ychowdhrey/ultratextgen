@@ -256,7 +256,12 @@ First snapshot: window **2026-11-09 → 2026-11-15**, 20,306 page views across
    knowing before anyone treats a monthly wobble as a trend.
 5. **Measured locale ranking:** `id` 6,390 → `en` 3,850 → **`ko` 2,754** →
    `es` 1,923 → **`ru` 1,064** → `fr` 813 views in the window, across **32
-   locale buckets with traffic**. Korean is the site's #3 locale and Russian #5.
+   locale buckets with traffic** (33 locales are configured, so coverage and
+   traffic line up). Both `ko` and `ru` are registered and sit at **tier 2**
+   in `data/locale_qualification_tiers.json`, while the standing 60%
+   near-term allocation is with tier-1 `id`. Nothing here says the tiers are
+   wrong — tiers weigh more than last week's views — only that this is the
+   first time a tier review could be answered with measurement.
 6. **The library/symbol lane's best pages are Korean and Russian.** Joining the
    window to the 836 tracked specs: the top shipped pages are
    `serdechko-iz-simvolov` (ru, 137), `roblox-symbols` (128), `aipon-imoji`

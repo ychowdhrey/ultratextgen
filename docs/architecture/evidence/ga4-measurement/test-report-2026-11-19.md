@@ -246,3 +246,27 @@ gaps). Revenue-bearing surfaces (ad slots, GTM snippets, `_headers`,
 
 3. **`unsave_style` cannot be fixed from this repo** (§6). The forwarding tag
    lives in the GTM container.
+
+---
+
+## 9. Correction made during review
+
+An earlier draft of gap 33 asserted that "Korean and Russian are top-five
+locales **with no governing doc**". That was wrong, and `CLAUDE.md`'s own rule
+("verify absence before asserting it" — an alias sweep, not one grep) is what
+caught it:
+
+- `locales/ko.json` and `locales/ru.json` both exist; **33 locales are
+  configured**, which lines up with the 32 locale buckets carrying traffic.
+- `data/locale_qualification_tiers.json` puts each at **tier 2**, action
+  `qualify-then-mirror-core`.
+- `docs/locale-parent-governance.md` and
+  `docs/library-locale-translation-workflow.md` govern the lane.
+
+The earlier claim came from reading a **stale branch** (`pr-395`, 2026-07-04)
+where `locales/` held 12 files, before this work was rebased onto current
+`main`. The gap is now framed as what the measurement actually adds — the tiers
+have never been checked against measured traffic, and `ko` outranks several
+tier-1-adjacent locales while the standing 60% allocation sits with `id` — with
+an explicit note that tiers legitimately weigh more than one week of views and
+that the tier registry is a decision ledger this work does not edit.
