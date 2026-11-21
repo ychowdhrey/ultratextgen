@@ -188,6 +188,44 @@
     // letters/digits/underscore set are not in that article.
     // https://help.minecraft.net/hc/en-us/articles/360034636712 (verified 2026-09-25)
     minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ },
+    // Social @usernames, each from the platform's own help or developer page (verified 2026-11-21). Only rules
+    // those pages state are hard rules; a rule the page does not state stays a warning or is left out. Instagram
+    // publishes no username length or character set, and TikTok's help pages returned no text on 2026-11-21, so
+    // neither has an entry here.
+    // Snapchat: "Usernames must be at least 3 characters, but cannot be longer than 15 characters"; "can only
+    // contain Latin letters, numbers, and one of -, _, or . but no special characters"; "must start with a letter";
+    // "must end in a letter or number"; "cannot include or be a phone number". Snapchat does not define a phone
+    // number, so a run of 7+ digits is a warning, not a fail.
+    //   https://help.snapchat.com/hc/en-us/articles/7012349845140
+    snapchatUser: {
+      label: "Snapchat (username)", limit: 15, min: 3, weighted: false, noSpace: true, field: "username",
+      asciiPattern: /^[A-Za-z](?:[A-Za-z0-9._-]*[A-Za-z0-9])?$/, oneSeparator: /[-_.]/g, digitRunWarn: 7,
+      charsetNote: "Snapchat usernames take only Latin letters and numbers, start with a letter and end with a letter or number."
+    },
+    // Telegram public username: "Length: 5-32 characters." "Accepted characters: a-z (case-insensitive), 0-9 and
+    // underscores."
+    //   https://core.telegram.org/method/account.updateUsername  https://telegram.org/faq
+    telegramUser: {
+      label: "Telegram (username)", limit: 32, min: 5, weighted: false, noSpace: true, field: "username",
+      asciiPattern: /^[A-Za-z0-9_]+$/, charsetNote: "Telegram usernames take only a to z, 0 to 9 and underscores."
+    },
+    // WhatsApp username: "Usernames can be between three and 35 characters long"; "You can use latin characters,
+    // numbers, periods and underscores." Blocked key words are given as examples ("such as: bank, government,
+    // police, and verified"), not a full list, so they warn.
+    //   https://www.whatsapp.com/usernames-faq
+    whatsappUser: {
+      label: "WhatsApp (username)", limit: 35, min: 3, weighted: false, noSpace: true, field: "username",
+      asciiPattern: /^[A-Za-z0-9._]+$/, blockedWords: ["bank", "government", "police", "verified"],
+      charsetNote: "WhatsApp usernames take only Latin letters, numbers, periods and underscores."
+    },
+    // Pinterest username: "Needs to be between three and 30 characters"; "made up of just letters or a combination
+    // of letters, numbers and underscores"; "Cannot have spaces, punctuation marks or be made up of just numbers".
+    //   https://help.pinterest.com/en/article/edit-your-profile
+    pinterestUser: {
+      label: "Pinterest (username)", limit: 30, min: 3, weighted: false, noSpace: true, field: "username",
+      asciiPattern: /^[A-Za-z0-9_]+$/, notDigitsOnly: true,
+      charsetNote: "Pinterest usernames take only letters, numbers and underscores."
+    },
     // Stumble Guys' rename screen enforces 4-12 characters, first rename free
     // then 100 gems each (Stumble Guys Help Center,
     // https://stumbleguys.helpshift.com/hc/en/4-stumble-guys/faq/61-is-it-possible-to-change-your-in-game-name/
@@ -617,6 +655,8 @@
       case "too-short": return "Too short for " + game + ": at least " + rule.min + " characters.";
       case "space": return game + " does not accept a plain space in this name.";
       case "underscore": return game + " allows one underscore at most, and not at the start or end.";
+      case "separator": return game + " allows only one of - _ or . in the whole name.";
+      case "digits-only": return game + " does not accept a name made only of numbers.";
       case "charset": return rule.charsetNote || (game + " does not accept one or more of these characters.");
       case "unique-required": return rule.uniqueNote || "";
       default: return "";
@@ -697,6 +737,13 @@
       const u = str.split("_").length - 1;
       if (u > 1 || /^_|_$/.test(str)) issues.push("underscore");
     }
+    if (rule.oneSeparator && glyphs && (str.match(rule.oneSeparator) || []).length > 1) issues.push("separator");
+    if (rule.notDigitsOnly && glyphs && /^[0-9]+$/.test(str)) issues.push("digits-only");
+    if (rule.digitRunWarn && new RegExp("[0-9]{" + rule.digitRunWarn + ",}").test(str || "")) issues.push("phone-like");
+    if (rule.blockedWords && glyphs) {
+      const low = String(str).toLowerCase();
+      if (rule.blockedWords.some(function (w) { return low.indexOf(w) !== -1; })) issues.push("blocked-word");
+    }
     // Fits counting glyphs, would not fit counting UTF-8 bytes. We cannot say
     // which the game does, so we say exactly that rather than picking one.
     if (rule.weightUncertain && rule.limit && effective <= rule.limit && utf8 > rule.limit) {
@@ -715,6 +762,8 @@
       issues.indexOf("over-limit") !== -1 ||
       issues.indexOf("charset") !== -1 ||
       issues.indexOf("underscore") !== -1 ||
+      issues.indexOf("separator") !== -1 ||
+      issues.indexOf("digits-only") !== -1 ||
       issues.indexOf("space") !== -1 ||
       issues.indexOf("too-short") !== -1
     ) level = "fail";
@@ -723,6 +772,8 @@
       issues.indexOf("strict-symbols") !== -1 ||
       issues.indexOf("reported-blocked") !== -1 ||
       issues.indexOf("weight-uncertain") !== -1 ||
+      issues.indexOf("phone-like") !== -1 ||
+      issues.indexOf("blocked-word") !== -1 ||
       issues.indexOf("unique-required") !== -1
     ) level = "warn";
     if (issues.indexOf("empty") !== -1) level = "empty";
