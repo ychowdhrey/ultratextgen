@@ -395,5 +395,12 @@
     "reason": "Main's guide hub links /guide/vertical-text-guide/ (guide/index.html:460) and _redirects:110-112 301 /guide/vertical-text/ there. The branch commit 0ec69abf5e is a one-file upload that deletes 58 files, so it must never be merged.",
     "date": "2026-11-17",
     "issue": 1213
+  },
+  "origin/claude/build-opp-20261108-edg2w": {
+    "disposition": "SUPERSEDED",
+    "tip": "4522c0a00",
+    "reason": "The same bulletin-board fix (NFC, grapheme count, no maxlength, a status line naming what the 12-character cap cut) landed on main in 0a8d21c50 through #1239 (merged 2026-11-19), from another session; the live page serves #bb-trim. This branch's copy was also dropped from #1238 when main was merged into it.",
+    "date": "2026-11-21",
+    "issue": 1242
   }
 }
