@@ -142,6 +142,32 @@ async function main() {
     await ctx.close();
   }
 
+  // 1-coverage. The per-card coverage line (window.UTG_COVERAGE_LINE) names
+  // the typed letters a style left plain, as text inside the card, on the
+  // pages that opt in, and adds nothing to a page that does not.
+  {
+    const { ctx, page, errors } = await open('/category/small-caps/', 'narrow');
+    await page.fill('#mainInput', 'Quick');
+    await page.waitForTimeout(300);
+    const lines = await page.$$eval('#resultsGrid .style-card .style-coverage', (els) => els.map((e) => e.textContent));
+    check('small caps: "Quick" names Q on the card', lines.length === 1 && lines[0] === 'Q stays a regular letter here.', JSON.stringify(lines));
+    await page.fill('#mainInput', 'hello');
+    await page.waitForTimeout(300);
+    const none = await page.$$eval('#resultsGrid .style-coverage', (els) => els.length);
+    check('small caps: "hello" converts fully, so no line', none === 0, String(none));
+    check('no page errors (coverage line)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/', 'narrow');
+    await page.fill('#mainInput', 'Quick');
+    await page.waitForTimeout(300);
+    const n = await page.$$eval('.style-coverage', (els) => els.length);
+    check('homepage (no flag): no coverage line', n === 0, String(n));
+    check('no page errors (homepage, coverage line)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 1a. A paste that overflows maxlength keeps whole graphemes (2026-11-15).
   // Chromium cuts an overflowing paste at a UTF-16 unit: a family emoji
   // pasted after "xy" with five units to spare left "xy" + man + joiner.
