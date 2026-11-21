@@ -1281,6 +1281,32 @@ async function main() {
       await gen.ctx.close();
     }
 
+    // Standalone copy widgets that do not load script.js (2026-11-21): the kana
+    // charts, the Korean romanizer and the persona translators said "Copied"
+    // whether or not the clipboard took the text.
+    const standalone = [
+      { path: '/katakana-chart/', btn: '#kana-chart button', read: '#kana-toast', ok: /^Copied /, fail: /Failed/ },
+      { path: '/ko/hiragana-pyo/', btn: '#kana-chart button', read: '#kana-toast', ok: /복사됨/, fail: /실패/ },
+      { path: '/ko/yeongmun-ireum-byeonhwan/', btn: '.copy-btn', ok: /복사됨/, fail: /실패/ },
+      { path: '/usecase/pirate-translator/', btn: '#persona-copy', ok: /Copied/, fail: /Failed/ },
+    ];
+    for (const fallbackWorks of [true, false]) {
+      const tag = fallbackWorks ? 'API refused' : 'both refused';
+      for (const w of standalone) {
+        const o = await open(w.path, 'desktop', refuse(fallbackWorks));
+        if (w.fill) { await o.page.fill(w.fill[0], w.fill[1]); await o.page.waitForTimeout(300); }
+        const b = o.page.locator(w.btn).first();
+        await b.click();
+        await o.page.waitForTimeout(200);
+        const said = ((await (w.read ? o.page.locator(w.read).first() : b).textContent()) || '').trim();
+        check(`${w.path} copy, ${tag}: ${fallbackWorks ? 'confirms' : 'reports failure'}`,
+          fallbackWorks ? w.ok.test(said) && !w.fail.test(said) : w.fail.test(said) && !w.ok.test(said), said);
+        if (!fallbackWorks) check(`${w.path} copy, ${tag}: no copy_text row`, (await copies(o.page)) === 0, String(await copies(o.page)));
+        check(`no page errors (${w.path}, ${tag})`, !o.errors.length, o.errors.join(' | '));
+        await o.ctx.close();
+      }
+    }
+
     // The real textarea fallback fires a native "copy" event. The manual-copy
     // listener must not record it as a second row, focus must come back to
     // the button, and a real manual copy must still record.
