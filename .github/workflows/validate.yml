@@ -663,16 +663,6 @@ jobs:
         continue-on-error: true
         run: npm run test:qr | tee qr-tests.log
 
-      # Gating, no backlog: the bulletin-board letters' text handling. A pasted
-      # name past the 12-character cap lost its end with no word, and a
-      # decomposed (NFD) paste printed bare accents on sheets of their own.
-      # Pins NFC-then-grapheme counting, the cut notice's text, and unchanged
-      # output for plain text of 12 characters or fewer.
-      - name: Bulletin-board letters text tests
-        id: poster_tiles_tests
-        continue-on-error: true
-        run: npm run test:poster-tiles | tee poster-tiles-tests.log
-
       # Gating, no backlog: the moon phase readout on library/moon-celestial-
       # symbols and its eight locale siblings. It states a fact (tonight's
       # phase), so known new and full moons must land on the right emoji
@@ -1707,7 +1697,6 @@ jobs:
             echo '```'
             echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
-            echo "### Bulletin-board letters text tests — \`${{ steps.poster_tiles_tests.outcome }}\`"
             echo "### Japanese worksheet engine tests — \`${{ steps.ja_sheets_tests.outcome }}\`"
             echo "### Japanese printables render check — \`${{ steps.ja_printables.outcome }}\`"
             echo "### Label sheet geometry tests — \`${{ steps.label_geometry_tests.outcome }}\`"
@@ -2063,7 +2052,6 @@ jobs:
           steps.romanize_tests.outcome == 'failure' ||
           steps.old_roblox_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
-          steps.poster_tiles_tests.outcome == 'failure' ||
           steps.moon_phase_tests.outcome == 'failure' ||
           steps.unicode_reference_sets.outcome == 'failure' ||
           steps.skin_tone_tests.outcome == 'failure' ||

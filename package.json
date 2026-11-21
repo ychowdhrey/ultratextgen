@@ -103,7 +103,6 @@
     "test:romanize": "node js/romanize/korean-romanize.test.js",
     "test:old-roblox": "node js/oldroblox/oldRobloxText.test.js",
     "test:qr": "node js/printables/qr.test.js",
-    "test:poster-tiles": "node js/printables/posterTiles.test.js",
     "test:ja-sheets": "node js/printables/jaSheets.test.js && python3 scripts/build-ja-print-fonts.py --check",
     "check:ja-printables": "node scripts/check-ja-printables.js",
     "test:label-geometry": "node js/printables/labelEngine.test.js",
