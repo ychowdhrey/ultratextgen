@@ -32,7 +32,7 @@
     "username": {
       limit: 15,
       guidance:
-        "Je unieke @handle. <strong>Alleen platte ASCII-tekens — hier wordt geen enkel Unicode-lettertype weergegeven.</strong> Letters, cijfers, streepjes, underscores en punten; 3–15 tekens, moet beginnen met een letter en eindigen op een letter of cijfer.",
+        "Je unieke @handle. <strong>Alleen platte ASCII-tekens — hier wordt geen enkel Unicode-lettertype weergegeven.</strong> Letters, cijfers en één van de tekens streepje, underscore of punt; 3–15 tekens, moet beginnen met een letter en eindigen op een letter of cijfer, en mag geen telefoonnummer zijn of bevatten.",
       previewType: "username",
       presets: [],
       showUsernameNote: true,
@@ -86,7 +86,7 @@
 
   const USERNAME_NOTE =
     '<span class="note-title">@Gebruikersnaam kan niet gestyled worden</span>' +
-    "Het @gebruikersnaam-veld van Snapchat accepteert alleen platte ASCII: letters, cijfers, streepjes ( - ), underscores ( _ ) en punten ( . ). Elk Unicode-lettertype — vet, cursief, gotisch, bubbel — kan hier niet worden opgeslagen. Gebruik deze generator voor <em>ideeën</em> voor je gebruikersnaam, en typ daarna de platte, ongestylede versie in het @gebruikersnaam-veld. Bewaar je gestylede resultaat voor je <strong>weergavenaam</strong>.";
+    "Het @gebruikersnaam-veld van Snapchat accepteert alleen platte ASCII: letters, cijfers en één van de tekens streepje ( - ), underscore ( _ ) of punt ( . ). Elk Unicode-lettertype — vet, cursief, gotisch, bubbel — kan hier niet worden opgeslagen. Gebruik deze generator voor <em>ideeën</em> voor je gebruikersnaam, en typ daarna de platte, ongestylede versie in het @gebruikersnaam-veld. Bewaar je gestylede resultaat voor je <strong>weergavenaam</strong>.";
 
   const PUBLIC_NOTE =
     '<span class="note-title">Vindbaarheid van je Openbaar profiel</span>' +

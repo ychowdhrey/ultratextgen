@@ -32,7 +32,7 @@
     "username": {
       limit: 15,
       guidance:
-        "Handle @ unikmu. <strong>Cuma ASCII polos — font Unicode gak muncul di sini.</strong> Huruf, angka, tanda hubung, dan titik; 3–15 karakter, harus mulai dengan huruf dan berakhir dengan huruf atau angka.",
+        "Handle @ unikmu. <strong>Cuma ASCII polos — font Unicode gak muncul di sini.</strong> Huruf, angka, dan salah satu dari tanda hubung, garis bawah, atau titik; 3–15 karakter, harus mulai dengan huruf, berakhir dengan huruf atau angka, dan gak boleh berupa atau berisi nomor telepon.",
       previewType: "username",
       presets: [],
       showUsernameNote: true,
@@ -86,7 +86,7 @@
 
   const USERNAME_NOTE =
     '<span class="note-title">@Username gak bisa dibikin bergaya</span>' +
-    "Kolom @username Snapchat cuma nerima ASCII polos: huruf, angka, tanda hubung ( - ), garis bawah ( _ ), dan titik ( . ). Font Unicode bergaya apa pun — bold, kursif, gotik, bubble — bakal gagal disimpan di sini. Pakai generator ini buat cari <em>ide</em> username, terus ketik versi polos tanpa gaya ke kolom @username. Simpen hasil bergayamu buat <strong>Nama Tampilan</strong> aja.";
+    "Kolom @username Snapchat cuma nerima ASCII polos: huruf, angka, dan salah satu dari tanda hubung ( - ), garis bawah ( _ ), atau titik ( . ). Font Unicode bergaya apa pun — bold, kursif, gotik, bubble — bakal gagal disimpan di sini. Pakai generator ini buat cari <em>ide</em> username, terus ketik versi polos tanpa gaya ke kolom @username. Simpen hasil bergayamu buat <strong>Nama Tampilan</strong> aja.";
 
   const PUBLIC_NOTE =
     '<span class="note-title">Keterlihatan Profil Publik</span>' +
