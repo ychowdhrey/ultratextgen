@@ -183,6 +183,8 @@ t("snapchat: an accent is refused", su("snapchatUser", "josé"), ["fail", ["char
 t("snapchat: a long digit run warns (phone number rule, undefined by Snapchat)", su("snapchatUser", "a5551234567"), ["warn", ["phone-like"]]);
 t("snapchat: the charset reason names the rule", G.defaultReason("charset", G.RULES.snapchatUser), "Snapchat usernames take only Latin letters and numbers, start with a letter and end with a letter or number.");
 t("snapchat: the separator reason", G.defaultReason("separator", G.RULES.snapchatUser), "Snapchat (username) allows only one of - _ or . in the whole name.");
+t("snapchat: the phone-number warning has an English reason", G.defaultReason("phone-like", G.RULES.snapchatUser), "Snapchat (username) does not allow a phone number in the name, so a long run of digits may be refused.");
+t("whatsapp: the blocked-word warning has an English reason", G.defaultReason("blocked-word", G.RULES.whatsappUser).indexOf("bank, government, police or verified") !== -1, true);
 t("telegram: 5 to 32, a-z 0-9 _", su("telegramUser", "Jose_99"), ["ok", []]);
 t("telegram: 4 are too short", su("telegramUser", "jose")[1], ["too-short"]);
 t("telegram: 33 are too long", su("telegramUser", "a".repeat(33))[1], ["over-limit"]);

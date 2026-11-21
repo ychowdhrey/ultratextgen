@@ -643,6 +643,9 @@
      of its own for a code. Only the codes that fail a name, plus Xbox's
      "unique-required", get one: a failure with no reason is the defect, and
      the warning codes already carry a page string everywhere they can fire.
+     The two username warnings added with sourced rules ("phone-like",
+     "blocked-word") get one as well: no page string exists for them, and each
+     sentence says only what the platform's own page says.
      Username fields only. Their rules come from the platform's own validator
      or help page; a display-name rule such as Free Fire's or PUBG's no-space
      has no published source, and a sentence stating it as fact would be new
@@ -657,6 +660,8 @@
       case "underscore": return game + " allows one underscore at most, and not at the start or end.";
       case "separator": return game + " allows only one of - _ or . in the whole name.";
       case "digits-only": return game + " does not accept a name made only of numbers.";
+      case "phone-like": return game + " does not allow a phone number in the name, so a long run of digits may be refused.";
+      case "blocked-word": return game + " may refuse a name with a word such as bank, government, police or verified.";
       case "charset": return rule.charsetNote || (game + " does not accept one or more of these characters.");
       case "unique-required": return rule.uniqueNote || "";
       default: return "";
