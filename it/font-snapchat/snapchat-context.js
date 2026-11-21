@@ -32,7 +32,7 @@
     "username": {
       limit: 15,
       guidance:
-        "Il tuo @handle unico. <strong>Solo ASCII semplice — qui nessun font Unicode viene visualizzato.</strong> Lettere, numeri, trattini, underscore e punti; 3–15 caratteri, deve iniziare con una lettera e finire con una lettera o un numero.",
+        "Il tuo @handle unico. <strong>Solo ASCII semplice — qui nessun font Unicode viene visualizzato.</strong> Lettere, numeri e uno tra trattino, underscore o punto; 3–15 caratteri, deve iniziare con una lettera, finire con una lettera o un numero e non può essere né contenere un numero di telefono.",
       previewType: "username",
       presets: [],
       showUsernameNote: true,
@@ -86,7 +86,7 @@
 
   const USERNAME_NOTE =
     '<span class="note-title">L\'@Username non può essere stilizzato</span>' +
-    "Il campo @username di Snapchat accetta solo ASCII semplice: lettere, numeri, trattini ( - ), underscore ( _ ) e punti ( . ). Qualsiasi font Unicode stilizzato — grassetto, corsivo, gotico, bolle — non verrà salvato qui. Usa questo generatore per avere <em>idee</em> per lo username, poi scrivi la versione semplice, senza stile, nel campo @username. Tieni il tuo risultato stilizzato per il tuo <strong>Nome Visualizzato</strong>, invece.";
+    "Il campo @username di Snapchat accetta solo ASCII semplice: lettere, numeri e uno tra trattino ( - ), underscore ( _ ) o punto ( . ). Qualsiasi font Unicode stilizzato — grassetto, corsivo, gotico, bolle — non verrà salvato qui. Usa questo generatore per avere <em>idee</em> per lo username, poi scrivi la versione semplice, senza stile, nel campo @username. Tieni il tuo risultato stilizzato per il tuo <strong>Nome Visualizzato</strong>, invece.";
 
   const PUBLIC_NOTE =
     '<span class="note-title">Visibilità del Profilo pubblico</span>' +
