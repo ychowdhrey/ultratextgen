@@ -1056,7 +1056,7 @@
         { label: "Таңба және сөз санау", href: "/kk/soz-sanau/" }
       ],
       categories: [
-        { label: "Мәтін стильдері", href: "/kk/" },
+        { label: "Қаріп генераторы", href: "/kk/" },
         { label: "Сызылған мәтін", href: "/kk/syzylgan-matin/" },
         { label: "Жуан қаріп", href: "/category/bold-fonts/" },
         { label: "Курсив", href: "/category/italic-fonts/" },

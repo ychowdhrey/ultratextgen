@@ -42,3 +42,7 @@ node_modules
 *.woff
 *.woff2
 !assets/fonts/*.woff2
+
+# Local GA4 fetch artifacts (never commit: large, and produced next to credentials)
+ga4-bundle.local.json
+ga4-err.local.txt

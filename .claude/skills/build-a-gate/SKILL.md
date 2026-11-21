@@ -89,6 +89,10 @@ Then confirm **CI gates on it**, not merely runs it:
 python3 scripts/run-ci-gates.py --only <step_id>   # 1 on broken, 0 on clean
 ```
 
+An id that is not a gating step (not added yet, misspelt, or missing from the "Fail
+the job" expression) exits **2** and runs nothing; until 2026-11-19 it exited 0 with
+"All 0 gating checks pass". A 2 means fix the wiring, not the check.
+
 Note `run-ci-gates.py` prefixes `origin/`, so `--base HEAD` silently becomes
 `origin/HEAD`.
 

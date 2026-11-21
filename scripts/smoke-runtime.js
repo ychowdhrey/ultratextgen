@@ -784,6 +784,32 @@ async function main() {
     await ctx.close();
   }
 
+  // 11b1. The counter's own-limit row is toggled with the hidden attribute, and
+  // `.cc-selects { display:flex }` used to override it, so the 1000 box and its
+  // unit menu sat under every platform on all 20 counter pages (2026-11-18).
+  console.log('\n/character-counter/ (own-limit row follows the platform menu)');
+  {
+    const { ctx, page, errors } = await open('/character-counter/', 'desktop');
+    const states = await page.evaluate(() => {
+      const row = document.querySelector('.cc-custom');
+      const sel = document.querySelector('.cc-selects select');
+      if (!row || !sel) return null;
+      const shown = () => getComputedStyle(row).display !== 'none' && row.offsetHeight > 0;
+      const pick = (v) => { sel.value = v; sel.dispatchEvent(new Event('change', { bubbles: true })); };
+      const custom = [...sel.options].find((o) => /custom/.test(o.value));
+      const other = [...sel.options].find((o) => o.value && !/custom/.test(o.value));
+      const out = { onLoad: shown() };
+      if (custom) { pick(custom.value); out.custom = shown(); }
+      if (other) { pick(other.value); out.other = shown(); }
+      return out;
+    });
+    check('own-limit row exists', !!states, JSON.stringify(states));
+    check('own-limit row is hidden for a platform', states && states.onLoad === false && states.other === false, JSON.stringify(states));
+    check('own-limit row shows for "your own limit"', states && states.custom === true, JSON.stringify(states));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 11b. The Share button's confirmation is in the page language. Without a
   // native share sheet it copies the link and says so; that label used to be the
   // English fallback under Korean prose because library pages carry no i18n.js.

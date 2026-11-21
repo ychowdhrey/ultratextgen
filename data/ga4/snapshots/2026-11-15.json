@@ -1,0 +1,1830 @@
+{
+ "comparability_boundaries": [
+  {
+   "date": "2026-11-08",
+   "metrics": [
+    "screenPageViews",
+    "page_view",
+    "pages_per_session"
+   ],
+   "why": "typed text left the address bar; history-rewrite page views are no longer counted"
+  },
+  {
+   "date": "2026-09-13",
+   "metrics": [
+    "share_text"
+   ],
+   "why": "share_text fires on success, not on intent"
+  }
+ ],
+ "countries": [
+  {
+   "active_users": 3788,
+   "country": "Indonesia",
+   "sessions": 4714
+  },
+  {
+   "active_users": 2363,
+   "country": "Singapore",
+   "sessions": 2389
+  },
+  {
+   "active_users": 1846,
+   "country": "South Korea",
+   "sessions": 2163
+  },
+  {
+   "active_users": 557,
+   "country": "United States",
+   "sessions": 655
+  },
+  {
+   "active_users": 601,
+   "country": "China",
+   "sessions": 607
+  },
+  {
+   "active_users": 523,
+   "country": "Russia",
+   "sessions": 574
+  },
+  {
+   "active_users": 390,
+   "country": "France",
+   "sessions": 452
+  },
+  {
+   "active_users": 305,
+   "country": "Italy",
+   "sessions": 404
+  },
+  {
+   "active_users": 283,
+   "country": "Mexico",
+   "sessions": 385
+  },
+  {
+   "active_users": 315,
+   "country": "Brazil",
+   "sessions": 357
+  },
+  {
+   "active_users": 233,
+   "country": "Taiwan",
+   "sessions": 293
+  },
+  {
+   "active_users": 140,
+   "country": "Vietnam",
+   "sessions": 181
+  },
+  {
+   "active_users": 156,
+   "country": "Japan",
+   "sessions": 179
+  },
+  {
+   "active_users": 132,
+   "country": "T\u00fcrkiye",
+   "sessions": 157
+  },
+  {
+   "active_users": 113,
+   "country": "Poland",
+   "sessions": 149
+  }
+ ],
+ "events": {
+  "ad_click": 355,
+  "ad_impression": 34229,
+  "click": 26,
+  "copy_text": 11077,
+  "first_visit": 13033,
+  "page_view": 20306,
+  "save_style": 259,
+  "scroll": 2698,
+  "session_start": 16003,
+  "share_text": 56,
+  "user_engagement": 9596,
+  "view_search_results": 222
+ },
+ "families": [
+  {
+   "locale": "id",
+   "page_type": "library",
+   "pages": 47,
+   "screen_page_views": 2920
+  },
+  {
+   "locale": "id",
+   "page_type": "usecase",
+   "pages": 20,
+   "screen_page_views": 2044
+  },
+  {
+   "locale": "ko",
+   "page_type": "library",
+   "pages": 100,
+   "screen_page_views": 1638
+  },
+  {
+   "locale": "en",
+   "page_type": "library",
+   "pages": 245,
+   "screen_page_views": 1072
+  },
+  {
+   "locale": "id",
+   "page_type": "root",
+   "pages": 31,
+   "screen_page_views": 1014
+  },
+  {
+   "locale": "en",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 579
+  },
+  {
+   "locale": "es",
+   "page_type": "usecase",
+   "pages": 7,
+   "screen_page_views": 574
+  },
+  {
+   "locale": "en",
+   "page_type": "root",
+   "pages": 41,
+   "screen_page_views": 558
+  },
+  {
+   "locale": "en",
+   "page_type": "printables",
+   "pages": 132,
+   "screen_page_views": 553
+  },
+  {
+   "locale": "es",
+   "page_type": "symbol",
+   "pages": 53,
+   "screen_page_views": 473
+  },
+  {
+   "locale": "ru",
+   "page_type": "library",
+   "pages": 44,
+   "screen_page_views": 470
+  },
+  {
+   "locale": "ko",
+   "page_type": "symbol",
+   "pages": 57,
+   "screen_page_views": 437
+  },
+  {
+   "locale": "ru",
+   "page_type": "symbol",
+   "pages": 103,
+   "screen_page_views": 383
+  },
+  {
+   "locale": "ko",
+   "page_type": "root",
+   "pages": 17,
+   "screen_page_views": 350
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "usecase",
+   "pages": 3,
+   "screen_page_views": 342
+  },
+  {
+   "locale": "en",
+   "page_type": "symbol",
+   "pages": 94,
+   "screen_page_views": 338
+  },
+  {
+   "locale": "es",
+   "page_type": "root",
+   "pages": 35,
+   "screen_page_views": 327
+  },
+  {
+   "locale": "en",
+   "page_type": "usecase",
+   "pages": 38,
+   "screen_page_views": 292
+  },
+  {
+   "locale": "es",
+   "page_type": "imprimibles",
+   "pages": 49,
+   "screen_page_views": 285
+  },
+  {
+   "locale": "pt",
+   "page_type": "root",
+   "pages": 26,
+   "screen_page_views": 222
+  },
+  {
+   "locale": "fr",
+   "page_type": "root",
+   "pages": 26,
+   "screen_page_views": 210
+  },
+  {
+   "locale": "fr",
+   "page_type": "symbol",
+   "pages": 48,
+   "screen_page_views": 190
+  },
+  {
+   "locale": "id",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 186
+  },
+  {
+   "locale": "it",
+   "page_type": "root",
+   "pages": 28,
+   "screen_page_views": 183
+  },
+  {
+   "locale": "it",
+   "page_type": "symbol",
+   "pages": 48,
+   "screen_page_views": 179
+  },
+  {
+   "locale": "ru",
+   "page_type": "root",
+   "pages": 17,
+   "screen_page_views": 171
+  },
+  {
+   "locale": "id",
+   "page_type": "symbol",
+   "pages": 63,
+   "screen_page_views": 171
+  },
+  {
+   "locale": "es",
+   "page_type": "library",
+   "pages": 84,
+   "screen_page_views": 170
+  },
+  {
+   "locale": "fr",
+   "page_type": "usecase",
+   "pages": 5,
+   "screen_page_views": 166
+  },
+  {
+   "locale": "vi",
+   "page_type": "root",
+   "pages": 16,
+   "screen_page_views": 165
+  },
+  {
+   "locale": "ko",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 160
+  },
+  {
+   "locale": "ko",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 147
+  },
+  {
+   "locale": "fr",
+   "page_type": "imprimables",
+   "pages": 15,
+   "screen_page_views": 130
+  },
+  {
+   "locale": "pt",
+   "page_type": "symbol",
+   "pages": 49,
+   "screen_page_views": 123
+  },
+  {
+   "locale": "en",
+   "page_type": "answers",
+   "pages": 47,
+   "screen_page_views": 114
+  },
+  {
+   "locale": "pl",
+   "page_type": "symbol",
+   "pages": 73,
+   "screen_page_views": 101
+  },
+  {
+   "locale": "ar",
+   "page_type": "symbol",
+   "pages": 50,
+   "screen_page_views": 100
+  },
+  {
+   "locale": "en",
+   "page_type": "roblox",
+   "pages": 2,
+   "screen_page_views": 99
+  },
+  {
+   "locale": "ja",
+   "page_type": "library",
+   "pages": 35,
+   "screen_page_views": 96
+  },
+  {
+   "locale": "pt",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 91
+  },
+  {
+   "locale": "hi",
+   "page_type": "usecase",
+   "pages": 2,
+   "screen_page_views": 86
+  },
+  {
+   "locale": "en",
+   "page_type": "guide",
+   "pages": 27,
+   "screen_page_views": 85
+  },
+  {
+   "locale": "en",
+   "page_type": "category",
+   "pages": 21,
+   "screen_page_views": 83
+  },
+  {
+   "locale": "es",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 82
+  },
+  {
+   "locale": "ar",
+   "page_type": "library",
+   "pages": 29,
+   "screen_page_views": 78
+  },
+  {
+   "locale": "tr",
+   "page_type": "library",
+   "pages": 30,
+   "screen_page_views": 73
+  },
+  {
+   "locale": "pl",
+   "page_type": "do-druku",
+   "pages": 15,
+   "screen_page_views": 71
+  },
+  {
+   "locale": "fr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 69
+  },
+  {
+   "locale": "tr",
+   "page_type": "root",
+   "pages": 16,
+   "screen_page_views": 67
+  },
+  {
+   "locale": "vi",
+   "page_type": "symbol",
+   "pages": 53,
+   "screen_page_views": 67
+  },
+  {
+   "locale": "tr",
+   "page_type": "symbol",
+   "pages": 43,
+   "screen_page_views": 64
+  },
+  {
+   "locale": "ja",
+   "page_type": "symbol",
+   "pages": 49,
+   "screen_page_views": 62
+  },
+  {
+   "locale": "it",
+   "page_type": "library",
+   "pages": 25,
+   "screen_page_views": 58
+  },
+  {
+   "locale": "nl",
+   "page_type": "symbol",
+   "pages": 36,
+   "screen_page_views": 56
+  },
+  {
+   "locale": "de",
+   "page_type": "zum-ausdrucken",
+   "pages": 15,
+   "screen_page_views": 53
+  },
+  {
+   "locale": "nl",
+   "page_type": "root",
+   "pages": 11,
+   "screen_page_views": 50
+  },
+  {
+   "locale": "it",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 47
+  },
+  {
+   "locale": "fr",
+   "page_type": "library",
+   "pages": 23,
+   "screen_page_views": 46
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "root",
+   "pages": 6,
+   "screen_page_views": 45
+  },
+  {
+   "locale": "pl",
+   "page_type": "root",
+   "pages": 23,
+   "screen_page_views": 43
+  },
+  {
+   "locale": "id",
+   "page_type": "printables",
+   "pages": 16,
+   "screen_page_views": 42
+  },
+  {
+   "locale": "pt",
+   "page_type": "library",
+   "pages": 16,
+   "screen_page_views": 39
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 37
+  },
+  {
+   "locale": "it",
+   "page_type": "da-stampare",
+   "pages": 10,
+   "screen_page_views": 37
+  },
+  {
+   "locale": "pl",
+   "page_type": "library",
+   "pages": 30,
+   "screen_page_views": 37
+  },
+  {
+   "locale": "da",
+   "page_type": "library",
+   "pages": 4,
+   "screen_page_views": 35
+  },
+  {
+   "locale": "nl",
+   "page_type": "library",
+   "pages": 19,
+   "screen_page_views": 35
+  },
+  {
+   "locale": "th",
+   "page_type": "symbol",
+   "pages": 33,
+   "screen_page_views": 35
+  },
+  {
+   "locale": "no",
+   "page_type": "library",
+   "pages": 8,
+   "screen_page_views": 34
+  },
+  {
+   "locale": "pt",
+   "page_type": "usecase",
+   "pages": 10,
+   "screen_page_views": 34
+  },
+  {
+   "locale": "th",
+   "page_type": "library",
+   "pages": 17,
+   "screen_page_views": 33
+  },
+  {
+   "locale": "pl",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 31
+  },
+  {
+   "locale": "de",
+   "page_type": "root",
+   "pages": 22,
+   "screen_page_views": 31
+  },
+  {
+   "locale": "vi",
+   "page_type": "library",
+   "pages": 16,
+   "screen_page_views": 29
+  },
+  {
+   "locale": "nl",
+   "page_type": "om-uit-te-printen",
+   "pages": 10,
+   "screen_page_views": 28
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "symbol",
+   "pages": 12,
+   "screen_page_views": 27
+  },
+  {
+   "locale": "pt",
+   "page_type": "imprimiveis",
+   "pages": 9,
+   "screen_page_views": 26
+  },
+  {
+   "locale": "de",
+   "page_type": "symbol",
+   "pages": 23,
+   "screen_page_views": 26
+  },
+  {
+   "locale": "en",
+   "page_type": "updates",
+   "pages": 10,
+   "screen_page_views": 25
+  },
+  {
+   "locale": "de",
+   "page_type": "library",
+   "pages": 22,
+   "screen_page_views": 24
+  },
+  {
+   "locale": "vi",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 23
+  },
+  {
+   "locale": "ru",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 21
+  },
+  {
+   "locale": "en",
+   "page_type": "events",
+   "pages": 13,
+   "screen_page_views": 21
+  },
+  {
+   "locale": "ja",
+   "page_type": "purinto",
+   "pages": 7,
+   "screen_page_views": 20
+  },
+  {
+   "locale": "ar",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 19
+  },
+  {
+   "locale": "tr",
+   "page_type": "yazdirilabilir",
+   "pages": 2,
+   "screen_page_views": 19
+  },
+  {
+   "locale": "ja",
+   "page_type": "root",
+   "pages": 9,
+   "screen_page_views": 19
+  },
+  {
+   "locale": "ja",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 16
+  },
+  {
+   "locale": "sv",
+   "page_type": "library",
+   "pages": 8,
+   "screen_page_views": 16
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "library",
+   "pages": 10,
+   "screen_page_views": 16
+  },
+  {
+   "locale": "ko",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 15
+  },
+  {
+   "locale": "tr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 14
+  },
+  {
+   "locale": "ar",
+   "page_type": "root",
+   "pages": 5,
+   "screen_page_views": 14
+  },
+  {
+   "locale": "ar",
+   "page_type": "usecase",
+   "pages": 6,
+   "screen_page_views": 12
+  },
+  {
+   "locale": "th",
+   "page_type": "root",
+   "pages": 6,
+   "screen_page_views": 12
+  },
+  {
+   "locale": "ro",
+   "page_type": "root",
+   "pages": 6,
+   "screen_page_views": 12
+  },
+  {
+   "locale": "th",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 10
+  },
+  {
+   "locale": "fi",
+   "page_type": "root",
+   "pages": 2,
+   "screen_page_views": 10
+  },
+  {
+   "locale": "uk",
+   "page_type": "root",
+   "pages": 2,
+   "screen_page_views": 10
+  },
+  {
+   "locale": "ru",
+   "page_type": "guide",
+   "pages": 3,
+   "screen_page_views": 10
+  },
+  {
+   "locale": "en",
+   "page_type": "learn",
+   "pages": 8,
+   "screen_page_views": 9
+  },
+  {
+   "locale": "id",
+   "page_type": "answers",
+   "pages": 3,
+   "screen_page_views": 8
+  },
+  {
+   "locale": "cs",
+   "page_type": "root",
+   "pages": 6,
+   "screen_page_views": 8
+  },
+  {
+   "locale": "en",
+   "page_type": "research",
+   "pages": 5,
+   "screen_page_views": 8
+  },
+  {
+   "locale": "tr",
+   "page_type": "usecase",
+   "pages": 5,
+   "screen_page_views": 8
+  },
+  {
+   "locale": "en",
+   "page_type": "embed",
+   "pages": 4,
+   "screen_page_views": 8
+  },
+  {
+   "locale": "ru",
+   "page_type": "answers",
+   "pages": 5,
+   "screen_page_views": 7
+  },
+  {
+   "locale": "ko",
+   "page_type": "updates",
+   "pages": 5,
+   "screen_page_views": 6
+  },
+  {
+   "locale": "hr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "pt",
+   "page_type": "updates",
+   "pages": 1,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "sr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "da",
+   "page_type": "symbol",
+   "pages": 2,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "it",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "ar",
+   "page_type": "answers",
+   "pages": 5,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "es",
+   "page_type": "answers",
+   "pages": 5,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "cs",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "nl",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "no",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "vi",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "ja",
+   "page_type": "usecase",
+   "pages": 2,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "es",
+   "page_type": "events",
+   "pages": 3,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "hu",
+   "page_type": "root",
+   "pages": 3,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "pl",
+   "page_type": "usecase",
+   "pages": 3,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "en",
+   "page_type": "compare",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "de",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "es",
+   "page_type": "aprender",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "ro",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "sv",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "en",
+   "page_type": "character-counter",
+   "pages": 2,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "id",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "ar",
+   "page_type": "updates",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "da",
+   "page_type": "guide",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "de",
+   "page_type": "updates",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "sk",
+   "page_type": "root",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "tr",
+   "page_type": "answers",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "bs",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "fi",
+   "page_type": "library",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "hi",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "hi",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "id",
+   "page_type": "belajar",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "pt",
+   "page_type": "aprender",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "sk",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "sk",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "th",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "tl",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "uk",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "bs",
+   "page_type": "root",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "da",
+   "page_type": "root",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "de",
+   "page_type": "usecase",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "fi",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "fi",
+   "page_type": "symbol",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "it",
+   "page_type": "answers",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "ja",
+   "page_type": "answers",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "ja",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "pl",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "pt",
+   "page_type": "answers",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "ru",
+   "page_type": "updates",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "sr",
+   "page_type": "root",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "th",
+   "page_type": "answers",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "th",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "ar",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "bs",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "de",
+   "page_type": "lernen",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "fr",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "fr",
+   "page_type": "apprendre",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "hr",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "hr",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "hu",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "it",
+   "page_type": "impara",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ja",
+   "page_type": "updates",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ko",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ms",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ms",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ms",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "nl",
+   "page_type": "leren",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "nl",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "no",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "pl",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "pl",
+   "page_type": "nauka",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "pl",
+   "page_type": "updates",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ro",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "sk",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "sr",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "sv",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "sv",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "th",
+   "page_type": "updates",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "tl",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "vi",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 1
+  }
+ ],
+ "fetched_at": "2026-11-19T08:36:22Z",
+ "locales": [
+  {
+   "active_users": 4189,
+   "locale": "id",
+   "pages": 184,
+   "screen_page_views": 6390,
+   "sessions": 5085
+  },
+  {
+   "active_users": 2985,
+   "locale": "en",
+   "pages": 691,
+   "screen_page_views": 3850,
+   "sessions": 3283
+  },
+  {
+   "active_users": 2206,
+   "locale": "ko",
+   "pages": 187,
+   "screen_page_views": 2754,
+   "sessions": 2540
+  },
+  {
+   "active_users": 1157,
+   "locale": "es",
+   "pages": 238,
+   "screen_page_views": 1923,
+   "sessions": 1314
+  },
+  {
+   "active_users": 892,
+   "locale": "ru",
+   "pages": 175,
+   "screen_page_views": 1064,
+   "sessions": 992
+  },
+  {
+   "active_users": 636,
+   "locale": "fr",
+   "pages": 120,
+   "screen_page_views": 813,
+   "sessions": 739
+  },
+  {
+   "active_users": 432,
+   "locale": "pt",
+   "pages": 115,
+   "screen_page_views": 544,
+   "sessions": 481
+  },
+  {
+   "active_users": 414,
+   "locale": "it",
+   "pages": 119,
+   "screen_page_views": 512,
+   "sessions": 509
+  },
+  {
+   "active_users": 323,
+   "locale": "zh-tw",
+   "pages": 33,
+   "screen_page_views": 468,
+   "sessions": 394
+  },
+  {
+   "active_users": 243,
+   "locale": "pl",
+   "pages": 150,
+   "screen_page_views": 292,
+   "sessions": 276
+  },
+  {
+   "active_users": 228,
+   "locale": "vi",
+   "pages": 88,
+   "screen_page_views": 289,
+   "sessions": 273
+  },
+  {
+   "active_users": 203,
+   "locale": "tr",
+   "pages": 100,
+   "screen_page_views": 248,
+   "sessions": 226
+  },
+  {
+   "active_users": 201,
+   "locale": "ar",
+   "pages": 100,
+   "screen_page_views": 232,
+   "sessions": 227
+  },
+  {
+   "active_users": 211,
+   "locale": "ja",
+   "pages": 108,
+   "screen_page_views": 222,
+   "sessions": 228
+  },
+  {
+   "active_users": 150,
+   "locale": "nl",
+   "pages": 79,
+   "screen_page_views": 175,
+   "sessions": 168
+  },
+  {
+   "active_users": 121,
+   "locale": "de",
+   "pages": 89,
+   "screen_page_views": 143,
+   "sessions": 123
+  },
+  {
+   "active_users": 89,
+   "locale": "th",
+   "pages": 63,
+   "screen_page_views": 97,
+   "sessions": 91
+  },
+  {
+   "active_users": 60,
+   "locale": "hi",
+   "pages": 4,
+   "screen_page_views": 90,
+   "sessions": 65
+  },
+  {
+   "active_users": 43,
+   "locale": "da",
+   "pages": 11,
+   "screen_page_views": 45,
+   "sessions": 47
+  },
+  {
+   "active_users": 34,
+   "locale": "no",
+   "pages": 10,
+   "screen_page_views": 39,
+   "sessions": 47
+  },
+  {
+   "active_users": 20,
+   "locale": "sv",
+   "pages": 11,
+   "screen_page_views": 21,
+   "sessions": 20
+  },
+  {
+   "active_users": 15,
+   "locale": "fi",
+   "pages": 7,
+   "screen_page_views": 16,
+   "sessions": 16
+  },
+  {
+   "active_users": 14,
+   "locale": "ro",
+   "pages": 8,
+   "screen_page_views": 16,
+   "sessions": 14
+  },
+  {
+   "active_users": 10,
+   "locale": "uk",
+   "pages": 3,
+   "screen_page_views": 12,
+   "sessions": 10
+  },
+  {
+   "active_users": 12,
+   "locale": "cs",
+   "pages": 7,
+   "screen_page_views": 12,
+   "sessions": 13
+  },
+  {
+   "active_users": 8,
+   "locale": "sr",
+   "pages": 4,
+   "screen_page_views": 8,
+   "sessions": 8
+  },
+  {
+   "active_users": 8,
+   "locale": "sk",
+   "pages": 6,
+   "screen_page_views": 8,
+   "sessions": 8
+  },
+  {
+   "active_users": 7,
+   "locale": "hr",
+   "pages": 3,
+   "screen_page_views": 7,
+   "sessions": 7
+  },
+  {
+   "active_users": 5,
+   "locale": "bs",
+   "pages": 4,
+   "screen_page_views": 5,
+   "sessions": 5
+  },
+  {
+   "active_users": 5,
+   "locale": "hu",
+   "pages": 4,
+   "screen_page_views": 5,
+   "sessions": 5
+  },
+  {
+   "active_users": 3,
+   "locale": "tl",
+   "pages": 2,
+   "screen_page_views": 3,
+   "sessions": 3
+  },
+  {
+   "active_users": 3,
+   "locale": "ms",
+   "pages": 3,
+   "screen_page_views": 3,
+   "sessions": 3
+  }
+ ],
+ "missing_product_events": [
+  "unsave_style"
+ ],
+ "page_count": 2726,
+ "pages_available": 2726,
+ "pages_truncated": false,
+ "property_id": "522553010",
+ "retention": {
+  "new_users": 13097,
+  "returning_share_pct": 11.0,
+  "returning_users": 1621
+ },
+ "revenue": {
+  "ad_revenue": 31.1764,
+  "publisher_ad_impressions": 34229,
+  "total_revenue": 31.1764
+ },
+ "save_rate_pct_of_copies": 2.34,
+ "sources": [
+  {
+   "active_users": 3771,
+   "sessions": 4797,
+   "source_medium": "google / organic"
+  },
+  {
+   "active_users": 3555,
+   "sessions": 3755,
+   "source_medium": "(direct) / (none)"
+  },
+  {
+   "active_users": 2285,
+   "sessions": 2761,
+   "source_medium": "bing / organic"
+  },
+  {
+   "active_users": 1098,
+   "sessions": 1221,
+   "source_medium": "m.search.naver.com / referral"
+  },
+  {
+   "active_users": 681,
+   "sessions": 777,
+   "source_medium": "(not set)"
+  },
+  {
+   "active_users": 504,
+   "sessions": 607,
+   "source_medium": "naver / organic"
+  },
+  {
+   "active_users": 405,
+   "sessions": 467,
+   "source_medium": "chatgpt.com / ai-assistant"
+  },
+  {
+   "active_users": 378,
+   "sessions": 422,
+   "source_medium": "yandex.ru / referral"
+  },
+  {
+   "active_users": 178,
+   "sessions": 213,
+   "source_medium": "duckduckgo / organic"
+  },
+  {
+   "active_users": 152,
+   "sessions": 195,
+   "source_medium": "yahoo / organic"
+  },
+  {
+   "active_users": 98,
+   "sessions": 116,
+   "source_medium": "yandex.com.tr / referral"
+  },
+  {
+   "active_users": 80,
+   "sessions": 93,
+   "source_medium": "it.search.yahoo.com / referral"
+  },
+  {
+   "active_users": 83,
+   "sessions": 83,
+   "source_medium": "ya.ru / referral"
+  },
+  {
+   "active_users": 62,
+   "sessions": 80,
+   "source_medium": "id.search.yahoo.com / referral"
+  },
+  {
+   "active_users": 60,
+   "sessions": 75,
+   "source_medium": "search.brave.com / referral"
+  }
+ ],
+ "top_pages": [
+  {
+   "active_users": 1299,
+   "avg_engagement_seconds": 17.4,
+   "locale": "id",
+   "page_path": "/id/library/simbol-love/",
+   "page_type": "library",
+   "screen_page_views": 1807,
+   "sessions": 1626,
+   "slug": "simbol-love"
+  },
+  {
+   "active_users": 797,
+   "avg_engagement_seconds": 64.3,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-keren/",
+   "page_type": "usecase",
+   "screen_page_views": 1212,
+   "sessions": 935,
+   "slug": "nama-keren"
+  },
+  {
+   "active_users": 654,
+   "avg_engagement_seconds": 34.5,
+   "locale": "id",
+   "page_path": "/id/library/simbol-ff/",
+   "page_type": "library",
+   "screen_page_views": 920,
+   "sessions": 722,
+   "slug": "simbol-ff"
+  },
+  {
+   "active_users": 309,
+   "avg_engagement_seconds": 55.3,
+   "locale": "en",
+   "page_path": "/",
+   "page_type": "home",
+   "screen_page_views": 579,
+   "sessions": 462,
+   "slug": ""
+  },
+  {
+   "active_users": 5,
+   "avg_engagement_seconds": 368.2,
+   "locale": "es",
+   "page_path": "/es/usecase/zalgo-text/",
+   "page_type": "usecase",
+   "screen_page_views": 500,
+   "sessions": 5,
+   "slug": "zalgo-text"
+  },
+  {
+   "active_users": 118,
+   "avg_engagement_seconds": 96.1,
+   "locale": "id",
+   "page_path": "/id/font-wa/",
+   "page_type": "root",
+   "screen_page_views": 489,
+   "sessions": 209,
+   "slug": "font-wa"
+  },
+  {
+   "active_users": 239,
+   "avg_engagement_seconds": 85.2,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-tiktok-keren/",
+   "page_type": "usecase",
+   "screen_page_views": 378,
+   "sessions": 276,
+   "slug": "nama-tiktok-keren"
+  },
+  {
+   "active_users": 173,
+   "avg_engagement_seconds": 114.8,
+   "locale": "zh-tw",
+   "page_path": "/zh-tw/usecase/youxi-mingzi-fuhao/",
+   "page_type": "usecase",
+   "screen_page_views": 284,
+   "sessions": 211,
+   "slug": "youxi-mingzi-fuhao"
+  },
+  {
+   "active_users": 34,
+   "avg_engagement_seconds": 84.6,
+   "locale": "en",
+   "page_path": "/discord/",
+   "page_type": "root",
+   "screen_page_views": 233,
+   "sessions": 46,
+   "slug": "discord"
+  },
+  {
+   "active_users": 153,
+   "avg_engagement_seconds": 53.8,
+   "locale": "ko",
+   "page_path": "/ko/library/discord-giho/",
+   "page_type": "library",
+   "screen_page_views": 232,
+   "sessions": 210,
+   "slug": "discord-giho"
+  },
+  {
+   "active_users": 138,
+   "avg_engagement_seconds": 68.4,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-ig-aesthetic/",
+   "page_type": "usecase",
+   "screen_page_views": 205,
+   "sessions": 150,
+   "slug": "nama-ig-aesthetic"
+  },
+  {
+   "active_users": 87,
+   "avg_engagement_seconds": 144.0,
+   "locale": "id",
+   "page_path": "/id/font-tiktok/",
+   "page_type": "root",
+   "screen_page_views": 194,
+   "sessions": 148,
+   "slug": "font-tiktok"
+  },
+  {
+   "active_users": 142,
+   "avg_engagement_seconds": 46.9,
+   "locale": "es",
+   "page_path": "/es/letras-en-otros-idiomas/",
+   "page_type": "root",
+   "screen_page_views": 190,
+   "sessions": 155,
+   "slug": "letras-en-otros-idiomas"
+  },
+  {
+   "active_users": 75,
+   "avg_engagement_seconds": 128.7,
+   "locale": "id",
+   "page_path": "/id/",
+   "page_type": "home",
+   "screen_page_views": 186,
+   "sessions": 123,
+   "slug": ""
+  },
+  {
+   "active_users": 85,
+   "avg_engagement_seconds": 20.1,
+   "locale": "ko",
+   "page_path": "/ko/library/imotikon/",
+   "page_type": "library",
+   "screen_page_views": 173,
+   "sessions": 112,
+   "slug": "imotikon"
+  },
+  {
+   "active_users": 145,
+   "avg_engagement_seconds": 43.6,
+   "locale": "es",
+   "page_path": "/es/imprimibles/moldes-de-letras/",
+   "page_type": "imprimibles",
+   "screen_page_views": 171,
+   "sessions": 166,
+   "slug": "moldes-de-letras"
+  },
+  {
+   "active_users": 122,
+   "avg_engagement_seconds": 47.2,
+   "locale": "fr",
+   "page_path": "/fr/usecase/pseudo-fortnite/",
+   "page_type": "usecase",
+   "screen_page_views": 160,
+   "sessions": 129,
+   "slug": "pseudo-fortnite"
+  },
+  {
+   "active_users": 122,
+   "avg_engagement_seconds": 41.5,
+   "locale": "ko",
+   "page_path": "/ko/",
+   "page_type": "home",
+   "screen_page_views": 160,
+   "sessions": 129,
+   "slug": ""
+  },
+  {
+   "active_users": 132,
+   "avg_engagement_seconds": 36.8,
+   "locale": "en",
+   "page_path": "/printables/block-letters/",
+   "page_type": "printables",
+   "screen_page_views": 149,
+   "sessions": 153,
+   "slug": "block-letters"
+  },
+  {
+   "active_users": 114,
+   "avg_engagement_seconds": 18.7,
+   "locale": "ru",
+   "page_path": "/ru/library/serdechko-iz-simvolov/",
+   "page_type": "library",
+   "screen_page_views": 137,
+   "sessions": 135,
+   "slug": "serdechko-iz-simvolov"
+  },
+  {
+   "active_users": 102,
+   "avg_engagement_seconds": 74.9,
+   "locale": "it",
+   "page_path": "/it/lettere-in-corsivo/",
+   "page_type": "root",
+   "screen_page_views": 130,
+   "sessions": 130,
+   "slug": "lettere-in-corsivo"
+  },
+  {
+   "active_users": 98,
+   "avg_engagement_seconds": 17.4,
+   "locale": "ko",
+   "page_path": "/ko/usecase/dantokbang-ireum/",
+   "page_type": "usecase",
+   "screen_page_views": 123,
+   "sessions": 100,
+   "slug": "dantokbang-ireum"
+  },
+  {
+   "active_users": 74,
+   "avg_engagement_seconds": 41.3,
+   "locale": "ru",
+   "page_path": "/ru/library/simvoly-discord/",
+   "page_type": "library",
+   "screen_page_views": 122,
+   "sessions": 105,
+   "slug": "simvoly-discord"
+  },
+  {
+   "active_users": 93,
+   "avg_engagement_seconds": 64.0,
+   "locale": "pt",
+   "page_path": "/pt/letra-cursiva/",
+   "page_type": "root",
+   "screen_page_views": 118,
+   "sessions": 104,
+   "slug": "letra-cursiva"
+  },
+  {
+   "active_users": 21,
+   "avg_engagement_seconds": 74.3,
+   "locale": "en",
+   "page_path": "/usecase/zalgo-text/",
+   "page_type": "usecase",
+   "screen_page_views": 116,
+   "sessions": 28,
+   "slug": "zalgo-text"
+  }
+ ],
+ "totals": {
+  "active_users": 14927,
+  "screen_page_views": 20306,
+  "sessions": 17220
+ },
+ "window": {
+  "since": "2026-11-09",
+  "until": "2026-11-15"
+ }
+}

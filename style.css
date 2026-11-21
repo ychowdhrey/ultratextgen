@@ -10827,6 +10827,9 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   margin-bottom: 0.6rem;
 }
 .cc-selects .cc-select { flex: 1 1 12rem; min-width: 0; }
+/* The own-limit row (.cc-selects.cc-custom) is toggled with the hidden
+   attribute; without this the display:flex above keeps it on screen. */
+.cc-selects[hidden] { display: none; }
 .cc-bar-fill.is-close { background: var(--ts-warn, #d99100); }
 
 /* Live count that lives with the box */
@@ -15213,6 +15216,7 @@ body.dark-mode .lb-tool .bubble-btn-primary { color: var(--lb-paper-ink); }
 .bb-counts:empty { display: none; }
 .bb-warn { margin: 0.3rem 0 0; font-size: 0.8rem; color: var(--ts-risk); }
 .bb-warn:empty { display: none; }
+.bb-trim { color: var(--text-primary); border-left: 3px solid var(--ts-risk); padding-left: 0.6rem; }
 @media (max-width: 900px) {
   .bb-tool .pt-studio-controls { order: 1; }
   .bb-tool .pt-studio-preview { order: 2; position: static; }
