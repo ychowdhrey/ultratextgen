@@ -523,6 +523,39 @@ not style-card copies reads empty from then on instead of the last card's style;
 per-style copy counts before that date include those carried-over rows.
 `header.test.js` asserts the keys.
 
+### The huruf letter variants confirm a copy only when one happened (2026-11-22)
+
+`js/huruf/hurufExplorer.js` (`/id/huruf-keren-a-sampai-z/`) said "Tersalin!"
+whether or not anything reached the clipboard: a refused `writeText` ran the same
+confirmation, and its fallback ignored what `execCommand` returned. It now uses
+`UltraTextGen.writeClipboard` (published by `script.js`, which this page loads),
+with a local function of the same contract for a page without it: resolve only
+when the text is on the clipboard, reject when neither path wrote anything. The
+confirmation and the `copy_text` row run on resolve; on reject the button shows
+`ui.copyButtons.failed` ("✗ Gagal"), harvested into the module by
+`sync:explorer-strings`, and nothing is recorded.
+
+On this page the shared helper matters beyond tidiness. Its fallback fires a
+native `copy` event, and `script.js`'s manual-copy listener skips that event only
+while its own flag is set, so a local fallback here records every fallback copy
+twice (`manual` and `huruf_variant`). `check:runtime-smoke` (case 19b) presses a
+variant twice with both paths refused, with the API refused and the fallback
+working, and with the real fallback. It asserts the label, the number of rows and
+their method, and that the label comes back. On the `main` that preceded this
+change, 3 of its 12 assertions fail; with a local fallback in place of the shared
+helper, the real-fallback row count fails (`manual,huruf_variant` per press).
+
+The local copy exists because the only shared scripts every page without
+`script.js` loads are `header.js` and `footer.js`, and moving the helper into
+either changes a file every page loads. That is the convergence step still open,
+not a decision against it.
+
+**Definition change on the merge date:** a copy made through the textarea fallback
+(the Clipboard API refused, `execCommand` worked) now records its `huruf_variant`
+row. Before, those copies were made but not recorded, so `huruf_variant` counts
+read higher after that date for the same behaviour. A refused copy recorded nothing
+before and records nothing now.
+
 ## Verification
 
 Verified against seven differently-shaped broken inputs — the push moved back before
