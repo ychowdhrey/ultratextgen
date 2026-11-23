@@ -6436,6 +6436,16 @@ body.theme-gothic .style-card .style-name {
   border-color: color-mix(in srgb, var(--accent-purple) 30%, transparent);
 }
 
+/* Per-card coverage line: which typed letters this style left plain or
+   changed the case of (script.js coverageLineHtml, opt-in per page via
+   window.UTG_COVERAGE_LINE). Plain text, read with the card. */
+.style-coverage {
+  margin: 8px 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
 /* ---- Click-to-copy glyph tiles + symbol strip (brand) ---------------- */
 body.theme-gothic .glyph-row { gap: 6px; }
 .glyph-tile,

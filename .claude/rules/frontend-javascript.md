@@ -65,7 +65,7 @@ measurement: `.claude/rules/ads-and-monetization.md`.
 ## Opt-in surfaces
 
 Some surfaces in `script.js` are opt-in per page via a `window.UTG_*` flag
-(`UTG_FORMAT_MARKS`, `UTG_SHOW_PLATFORMS`, `UTG_PRINTABLE`, `UTG_DECORATIONS`,
+(`UTG_FORMAT_MARKS`, `UTG_SHOW_PLATFORMS`, `UTG_COVERAGE_LINE`, `UTG_PRINTABLE`, `UTG_DECORATIONS`,
 `UTG_LIBRARY_HUB`, `data-cascade`, `data-extreme`, `data-case-policy`). **Check the opt-in before
 concluding a string in a shared module is live on a page** — the count that matters
 is the number of pages that declare the flag, not the number that load the module.
@@ -81,12 +81,16 @@ skin-tone picker for that section's tiles. After opting a section in, run
 `npm run build:skin-tone-fixture`; `npm run test:skin-tone` fails on a tile the fixture
 has not seen, and on a locale with no `ui.skinTone` strings.
 
+`UTG_COVERAGE_LINE` also needs `/js/style-coverage.js` loaded before `script.js`:
+the line reads that generated table, and a page with the flag but no table, or a
+locale page whose locale file has no `ui.coverageLine` strings, shows no line.
+
 ## Sliced engines: one owner, never a second copy
 
 Several build-time and test tools **slice a block out of the shipped widget and
 evaluate it** rather than reimplementing it (`scripts/lib/zalgo-engine.js`,
 `scripts/lib/collection-grid-engine.js`, `scripts/lib/inline-script-capture.js`,
-`i18n.test.js`, `header.test.js`, `script.format-marks.test.js`). The loader **throws** when a marker is missing
+`i18n.test.js`, `header.test.js`, `script.format-marks.test.js`, `script.coverage-line.test.js`). The loader **throws** when a marker is missing
 rather than falling back to a local copy. If you move such code, move its markers;
 never duplicate the logic.
 

@@ -194,6 +194,7 @@ Required, blocking checks:
 - `check:spec-drift`
 - `check:spec-sentence-reuse`
 - `check:static-footer`
+- `check:style-coverage`
 - `check:symbol-collection-link`
 - `check:symbol-pages`
 - `check:text-object-grids`
@@ -217,6 +218,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:ci-gates`
 - `test:content-significance`
 - `test:counter`
+- `test:coverage-line`
 - `test:cta-routing`
 - `test:editorial-footprint`
 - `test:efr`
