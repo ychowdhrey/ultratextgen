@@ -240,6 +240,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:llms`
 - `test:moon-phase`
 - `test:name-reports`
+- `test:old-roblox`
 - `test:parity-exception-policy`
 - `test:poster-tiles`
 - `test:practice-row`
