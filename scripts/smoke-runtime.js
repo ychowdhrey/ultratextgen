@@ -1356,6 +1356,58 @@ async function main() {
     await real.ctx.close();
   }
 
+  // 19b. The huruf letter variants confirm a copy only when one happened
+  // (2026-11-22). A refused copy said "Tersalin!", and the fallback ignored
+  // execCommand's answer. Each control is pressed twice, state read after
+  // every press, and the button label must come back. "real fallback" leaves
+  // execCommand alone: this page loads script.js, whose manual-copy listener
+  // must not record the fallback's own copy event as a second row. The list
+  // takes any other tool whose copy runs through the same contract.
+  console.log('\nTool copy honesty (huruf letter variants)');
+  {
+    const stub = (mode) => `Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } });` +
+      (mode === 'real fallback' ? '' : `
+      const orig = document.execCommand.bind(document);
+      document.execCommand = function (c) { if (c === 'copy') return ${mode === 'API refused'}; return orig.apply(null, arguments); };`);
+    const variant = (s) => `.bubble-variant[data-style="${s.style}"]`;
+    const tools = [
+      { name: 'huruf variants', url: '/id/huruf-keren-a-sampai-z/', method: 'huruf_variant', ok: /^Tersalin!$/, fail: /^✗ Gagal$/,
+        modes: ['both refused', 'API refused', 'real fallback'], restores: true,
+        setup: async (p, s) => { s.style = await p.locator('.bubble-variant').first().getAttribute('data-style'); },
+        press: (p, s) => p.locator(variant(s)).click(),
+        label: (p, s) => p.locator(variant(s) + ' .bubble-variant-copy').textContent() }
+    ];
+    for (const tool of tools) {
+      for (const mode of tool.modes) {
+        const copies = mode !== 'both refused';
+        const tag = `${tool.name}, ${mode}`;
+        const { ctx, page, errors } = await open(tool.url, 'desktop', stub(mode));
+        const s = {};
+        if (tool.setup) await tool.setup(page, s);
+        const before = ((await tool.label(page, s)) || '').trim();
+        const seen = [];
+        for (let press = 0; press < 2; press++) {
+          await tool.press(page, s);
+          await page.waitForTimeout(200);
+          seen.push(((await tool.label(page, s)) || '').trim());
+        }
+        check(`${tag}: ${copies ? 'confirms' : 'reports failure'} on both presses`,
+          seen.every((l) => (copies ? tool.ok : tool.fail).test(l)), seen.join(' | '));
+        const rows = (await dl(page)).filter((x) => x.event === 'copy_text');
+        check(`${tag}: ${copies ? 'two' : 'no'} copy_text rows, method ${tool.method} only`,
+          rows.length === (copies ? 2 : 0) && rows.every((r) => r.copy_method === tool.method),
+          rows.map((r) => r.copy_method).join(',') || '0 rows');
+        if (tool.restores) {
+          await page.waitForTimeout(1600);
+          const after = ((await tool.label(page, s)) || '').trim();
+          check(`${tag}: label returns to "${before}"`, after === before, after);
+        }
+        check(`${tag}: no page errors`, !errors.length, errors.join(' | '));
+        await ctx.close();
+      }
+    }
+  }
+
   // 20. Title case on a tracing sheet. \b\w is ASCII-only, so every accented
   // letter counted as a word break and "jürgen größe" printed "JüRgen GrößE".
   console.log('\n/de/zum-ausdrucken/schreibuebungen/ (title case keeps accented words whole)');
