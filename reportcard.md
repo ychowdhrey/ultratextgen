@@ -10,6 +10,60 @@ Newest entries come first. Numbers are only given where we could count them.
 
 ## November 2026
 
+### 19 November 2026
+
+The character counter can now check text against a limit you set yourself, and several of its platform limits were corrected.
+
+Application forms, job boards and client briefs often have their own character limit that no platform list covers. The character counter now offers "Your own limit" as the last choice in the platform list: type the number and choose whether it counts characters with spaces, without spaces, or bytes. The fit check and the Trim to fit button then work to that number, and the counter remembers the limit on the device but never the text. The option is available on the English counter and its translated versions. Three limits were also wrong. The counter said a WhatsApp About could hold 139 characters, when WhatsApp allows 50 plus one emoji, so an About that looked fine here could be refused in the app. That figure is now correct in the counter and on the English and translated bio pages. X counts every emoji as 2 characters, but the counter counted a family emoji as 11 and a flag as 4, so a post X would accept could look too long. Those now count as 2. And 17 translated counter pages still gave a Pinterest pin description 500 characters, where the English page and Pinterest give 800.
+
+### 19 November 2026
+
+The bulletin board letters maker now says which characters will be left off before anything prints.
+
+The bulletin board letters maker prints at most 12 characters, one letter per set of sheets. Before, a longer word or name was cut without any message, so a teacher could print a full set of sheets and only then find letters missing. A name typed with separate accent marks or an emoji could also be cut in the middle, leaving a bare accent on its own sheet. The bulletin board letters maker now shows a line under the box that names the characters left off and the word the sheets will spell, and it keeps accented letters and emoji whole. Text of 12 characters or fewer prints exactly as it did before.
+
+### 18 November 2026
+
+Kazakh speakers can now use five UltraTextGen tools in Kazakh.
+
+The font generator home page, the nickname generator, the word and character counter, invisible text and strikethrough text are now available in Kazakh, and the language switcher on the English home page now links to the Kazakh home page. People writing in Kazakh can style a name or a bio, check a text's length and find nickname ideas without switching to a page in Russian or English. The Kazakh pages say plainly what works: strikethrough, underline and overline styles mark every Kazakh letter, including ә, ғ, қ, ң, ө, ұ, ү, һ and і, while bold, script and bubble styles change only Latin letters and leave Kazakh letters as typed. The nickname generator's decoration tabs and previews are in Kazakh too. The same language switcher now also lists Ukrainian, so the three Ukrainian pages, which could not be reached from the home page before, are now one click away.
+
+### 18 November 2026
+
+Korean speakers can now find 40 more UltraTextGen collections written in Korean.
+
+People chatting in Korean can copy emoticons and symbols from pages written for them instead of English ones. The new collections include 15 kaomoji pages, such as devil, dancing, sulking, saluting and butterfly faces, emoticon pages for themes such as gifts, weddings, school, travel, friendship and films, a page of funny emoji combos, and symbol pages for the hyphen, the backslash, accent marks and Twitter special characters. The funny emoji combos page holds the same 75 copy-ready items as the English page, with Korean names for all 40 combinations.
+
+### 18 November 2026
+
+The Spanish funny emoji and seasonal emoji pages now show their ready-made emoji combinations again.
+
+On an emoji combos page, the ready-made combinations are the main thing people come to copy, but the Spanish versions of two pages had lost them. The Spanish funny emoji page showed 35 copy-ready items where the English page shows 75, and the Spanish seasonal emoji page showed 40 where the English page shows 72. Both Spanish pages now carry the full sets with Spanish names, above the single emoji, so Spanish speakers can copy a finished combination instead of building one by hand.
+
+### 18 November 2026
+
+The game name checker now follows Xbox's and Discord's own rules more closely, so fewer valid names are wrongly rejected.
+
+The game name checker tells players whether a styled name will be accepted before they spend a rename. Before, it rejected every Xbox gamertag longer than 12 characters, including two of the Xbox page's own suggested names, although Xbox accepts up to 15 Latin letters, digits and spaces when the name is unique. The game name checker now accepts those with a note that the name must be unique, and still rejects a long name with non-Latin letters. Discord display names in Korean, Hindi, Chinese or accented Latin, such as 민준 or José, used to get a "may show boxes" warning, although Discord allows any script there. They now pass. Seven ready-made Stumble Guys names on the Spanish and Portuguese pages were longer than the game's 12-character limit and have been shortened to fit. On English pages, a rejected Roblox, PlayStation, Xbox, Minecraft or YouTube handle now says why, and the couple name generator no longer rates an empty frame as a safe name.
+
+### 17 November 2026
+
+Copy buttons across UltraTextGen now say "Copied" only when the text really reached the clipboard.
+
+Before, the symbol chips on most decoration pages showed "Copied!" even when the browser refused the copy, so a visitor could paste and find nothing. The chips now confirm only after the copy succeeds and say it failed otherwise, in the page's own language, and holding down Enter copies once instead of over and over. On the many pages without a pop-up copy message, screen readers now announce when a copy succeeded or failed. Pasting more text than the main text box allows also no longer cuts an emoji in half at the end.
+
+### 17 November 2026
+
+Word searches and crosswords in Arabic and Hebrew now read in the right direction.
+
+Before, the word search maker defined every direction from left to right, so on the easy and medium levels an Arabic or Hebrew word always ran backwards for its reader, which made easy as hard as the hardest level. The crossword maker printed every Across answer of an Arabic or Hebrew list backwards and numbered rows from the left. Now right-to-left words in the word search read forwards on every level, and an all Arabic or Hebrew crossword starts each Across answer at its numbered square on the right. A stretched Arabic stroke (tatweel) typed inside a word no longer becomes empty-looking squares in the word search, word scramble or crossword. Teachers of Arabic and Hebrew can now print puzzles that work the way their pupils read.
+
+### 17 November 2026
+
+The crossword maker can now give each child in a class set a different level of help.
+
+Teachers can add a level after a child's name in the class list, as the word search and word scramble makers already allow. "Noah 1" gets a word bank and the first letter of every answer filled in, "Ava 2" gets the word bank even when the list has clues, and "Liam 3" or a name with no number gets the usual sheet. Every child still gets the same words in the same grid, and each answer key matches that child's level, so one class set can support pupils who need more help and those who need less.
+
 ### 14 November 2026
 
 Korean speakers can now find two new UltraTextGen collections in Korean: bowing emoticons (꾸벅 이모티콘) and clapping emoticons (박수 이모티콘).
