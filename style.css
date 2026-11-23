@@ -5693,6 +5693,16 @@ button.clear-decoration {
   letter-spacing: 0.03em;
 }
 .bubble-variant-copy.is-copied { color: var(--ts-safe); }
+/* A refused copy shows the failed word (2026-11-23). The label never shrinks
+   in its normal states, but some failed words are long: "✗ FEHLGESCHLAGEN"
+   ran 39px past a two-column phone card. Only while it shows may the label
+   give way and wrap, so the Copy and Copied states render as before. */
+.bubble-variant-copy.is-copy-failed {
+  flex-shrink: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--ts-fail);
+}
 
 .bubble-howto { margin-top: 1.5rem; }
 .bubble-howto-steps {

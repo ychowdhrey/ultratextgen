@@ -556,6 +556,32 @@ row. Before, those copies were made but not recorded, so `huruf_variant` counts
 read higher after that date for the same behaviour. A refused copy recorded nothing
 before and records nothing now.
 
+### The printables copy-paste cards confirm a copy only when one happened (2026-11-23)
+
+The variant cards under a printables letter picker (`copyText()` in
+`js/printables/printablesEngine.js`) said "Copied!" whether or not the clipboard took the
+text: `writeText(value).then(done).catch(done)`. They mount only where the page's
+`variantFamily` is not empty, which today is the ten graffiti-letters pages (English and
+nine locales); a page with `variantFamily: ""`, every block-letters page among them, has
+no cards. The cards now use the same contract as the tools above (`UltraTextGen.writeClipboard`
+when the page has it, otherwise a local function that reads `execCommand`'s answer), show
+"Copied!" only on success, and show `ui.copyButtons.failed` otherwise, harvested into the
+engine's `UI_STRINGS` table for the ten languages by `sync:explorer-strings`.
+
+While the failed word shows, the card's label carries `is-copy-failed`, which lets it wrap
+(`style.css`): "✗ FEHLGESCHLAGEN" ran 39px past a two-column card at 390px, and the label
+is `flex-shrink: 0` in its normal states. Those states render exactly as before.
+
+These cards record no `copy_text` row before or after this change, so nothing changes in
+analytics. `check:runtime-smoke` case 19b covers them in three clipboard states, plus the
+German card at 390px; on the `main` that preceded this change 2 of its 29 assertions fail,
+and without the CSS rule the fit check fails.
+
+`sync-explorer-strings.js` now stops reading a `UI_STRINGS` table at its closing brace. It
+used to scan to the end of the file, so in this engine it read the later `OPTIONS_I18N` and
+`AUDIENCE_I18N` entries as part of the table (18 false drifts), and `--write` would have
+patched keys into them.
+
 ## Verification
 
 Verified against seven differently-shaped broken inputs — the push moved back before

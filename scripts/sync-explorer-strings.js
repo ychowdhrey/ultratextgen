@@ -94,7 +94,10 @@ const TARGETS = [
   // Indonesian page, so its table holds en and id and no others: without
   // createMissing, every entry present is still checked against the JSON,
   // and none is added.
-  { file: path.join(ROOT, 'js', 'huruf', 'hurufExplorer.js'), keys: { failed: 'copyButtons.failed' } }
+  { file: path.join(ROOT, 'js', 'huruf', 'hurufExplorer.js'), keys: { failed: 'copyButtons.failed' } },
+  // The printables copy-paste cards (2026-11-23): one entry per language
+  // whose pages mount the grid (en plus nine locales).
+  { file: path.join(ROOT, 'js', 'printables', 'printablesEngine.js'), keys: { failed: 'copyButtons.failed' } }
 ];
 
 /** English is the in-code fallback and ships no copyButtons block, by design
@@ -123,11 +126,21 @@ function localeStrings(lang, keys) {
 function entries(src) {
   const start = src.indexOf('  const UI_STRINGS = {');
   if (start === -1) throw new Error('UI_STRINGS literal not found');
+  // Stop at the literal's own closing brace. Scanning on to the end of the
+  // file read any later `    xx: {` (another module's per-language table)
+  // as a UI_STRINGS entry, and --write would then patch keys into it
+  // (2026-11-23: printablesEngine.js has OPTIONS_I18N and AUDIENCE_I18N
+  // after its table).
+  let end = src.indexOf('{', start);
+  for (let depth = 0; end < src.length; end++) {
+    if (src[end] === '{') depth++;
+    else if (src[end] === '}') { depth--; if (depth === 0) break; }
+  }
   const found = [];
   const re = /\n {4}([a-z]{2}): \{/g;
   re.lastIndex = start;
   let m;
-  while ((m = re.exec(src))) {
+  while ((m = re.exec(src)) && m.index < end) {
     const lang = m[1];
     let i = m.index + m[0].length - 1; // at the opening brace
     let depth = 0;
