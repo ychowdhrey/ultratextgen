@@ -1,33 +1,33 @@
-# GA4 snapshot - 2026-11-09 to 2026-11-15
+# GA4 snapshot - 2026-11-16 to 2026-11-22
 
-Property `522553010` - fetched `2026-11-19T08:36:22Z`
+Property `522553010` - fetched `2026-11-23T07:14:09Z`
 
 | Metric | Value |
 |---|---|
-| Page views | 20,306 |
-| Sessions | 17,220 |
-| Active users | 14,927 |
-| Returning share | 11.0% (1,621 of 14,718) |
-| Save rate (saves / copies) | 2.34% |
-| Ad revenue | $31.18 across 34,229 ad impressions |
-| Pages with traffic | 2,726 |
+| Page views | 17,155 |
+| Sessions | 15,159 |
+| Active users | 12,947 |
+| Returning share | 12.8% (1,632 of 12,738) |
+| Save rate (saves / copies) | 1.96% |
+| Ad revenue | $23.83 across 32,999 ad impressions |
+| Pages with traffic | 1,978 |
 
 ## Product events
 
 | Event | Count |
 |---|---|
-| `ad_impression` | 34,229 |
-| `page_view` | 20,306 |
-| `session_start` | 16,003 |
-| `first_visit` | 13,033 |
-| `copy_text` | 11,077 |
-| `user_engagement` | 9,596 |
-| `scroll` | 2,698 |
-| `ad_click` | 355 |
-| `save_style` | 259 |
-| `view_search_results` | 222 |
-| `share_text` | 56 |
-| `click` | 26 |
+| `ad_impression` | 32,999 |
+| `page_view` | 17,155 |
+| `session_start` | 14,067 |
+| `first_visit` | 11,146 |
+| `copy_text` | 9,558 |
+| `user_engagement` | 8,982 |
+| `scroll` | 2,404 |
+| `ad_click` | 369 |
+| `save_style` | 187 |
+| `view_search_results` | 141 |
+| `click` | 57 |
+| `share_text` | 46 |
 
 **No data received for:** `unsave_style` - either not instrumented or not firing. Fix the code or the doc.
 
@@ -44,63 +44,63 @@ Definition changes recorded for this property. Do not compare a figure across on
 
 | Locale | Pages | Views | Sessions | Users |
 |---|---|---|---|---|
-| `id` | 184 | 6,390 | 5,085 | 4,189 |
-| `en` | 691 | 3,850 | 3,283 | 2,985 |
-| `ko` | 187 | 2,754 | 2,540 | 2,206 |
-| `es` | 238 | 1,923 | 1,314 | 1,157 |
-| `ru` | 175 | 1,064 | 992 | 892 |
-| `fr` | 120 | 813 | 739 | 636 |
-| `pt` | 115 | 544 | 481 | 432 |
-| `it` | 119 | 512 | 509 | 414 |
-| `zh-tw` | 33 | 468 | 394 | 323 |
-| `pl` | 150 | 292 | 276 | 243 |
-| `vi` | 88 | 289 | 273 | 228 |
-| `tr` | 100 | 248 | 226 | 203 |
-| `ar` | 100 | 232 | 227 | 201 |
-| `ja` | 108 | 222 | 228 | 211 |
-| `nl` | 79 | 175 | 168 | 150 |
+| `id` | 137 | 6,178 | 5,149 | 4,285 |
+| `en` | 585 | 2,815 | 2,523 | 2,236 |
+| `ko` | 174 | 2,667 | 2,407 | 2,074 |
+| `es` | 190 | 1,221 | 1,131 | 986 |
+| `ru` | 96 | 914 | 886 | 766 |
+| `fr` | 77 | 582 | 542 | 423 |
+| `pt` | 89 | 435 | 392 | 339 |
+| `it` | 70 | 358 | 353 | 289 |
+| `zh-tw` | 30 | 341 | 272 | 233 |
+| `vi` | 44 | 244 | 228 | 176 |
+| `ar` | 57 | 213 | 180 | 151 |
+| `pl` | 49 | 212 | 207 | 177 |
+| `tr` | 75 | 207 | 192 | 171 |
+| `ja` | 71 | 193 | 180 | 169 |
+| `nl` | 45 | 123 | 118 | 106 |
 
 ## Acquisition
 
 | Source / medium | Sessions | Users |
 |---|---|---|
-| `google / organic` | 4,797 | 3,771 |
-| `(direct) / (none)` | 3,755 | 3,555 |
-| `bing / organic` | 2,761 | 2,285 |
-| `m.search.naver.com / referral` | 1,221 | 1,098 |
-| `(not set)` | 777 | 681 |
-| `naver / organic` | 607 | 504 |
-| `chatgpt.com / ai-assistant` | 467 | 405 |
-| `yandex.ru / referral` | 422 | 378 |
-| `duckduckgo / organic` | 213 | 178 |
-| `yahoo / organic` | 195 | 152 |
+| `google / organic` | 5,063 | 4,114 |
+| `(direct) / (none)` | 2,419 | 2,190 |
+| `bing / organic` | 2,412 | 2,004 |
+| `m.search.naver.com / referral` | 1,305 | 1,149 |
+| `naver / organic` | 602 | 499 |
+| `chatgpt.com / ai-assistant` | 515 | 418 |
+| `yandex.ru / referral` | 407 | 357 |
+| `duckduckgo / organic` | 137 | 119 |
+| `yahoo / organic` | 135 | 103 |
+| `ya.ru / referral` | 124 | 119 |
 
 ## Top pages
 
 | Page | Views | Users | Avg engagement (s) |
 |---|---|---|---|
-| `/id/library/simbol-love/` | 1,807 | 1,299 | 17.4 |
-| `/id/usecase/nama-keren/` | 1,212 | 797 | 64.3 |
-| `/id/library/simbol-ff/` | 920 | 654 | 34.5 |
-| `/` | 579 | 309 | 55.3 |
-| `/es/usecase/zalgo-text/` | 500 | 5 | 368.2 |
-| `/id/font-wa/` | 489 | 118 | 96.1 |
-| `/id/usecase/nama-tiktok-keren/` | 378 | 239 | 85.2 |
-| `/zh-tw/usecase/youxi-mingzi-fuhao/` | 284 | 173 | 114.8 |
-| `/discord/` | 233 | 34 | 84.6 |
-| `/ko/library/discord-giho/` | 232 | 153 | 53.8 |
-| `/id/usecase/nama-ig-aesthetic/` | 205 | 138 | 68.4 |
-| `/id/font-tiktok/` | 194 | 87 | 144.0 |
-| `/es/letras-en-otros-idiomas/` | 190 | 142 | 46.9 |
-| `/id/` | 186 | 75 | 128.7 |
-| `/ko/library/imotikon/` | 173 | 85 | 20.1 |
-| `/es/imprimibles/moldes-de-letras/` | 171 | 145 | 43.6 |
-| `/fr/usecase/pseudo-fortnite/` | 160 | 122 | 47.2 |
-| `/ko/` | 160 | 122 | 41.5 |
-| `/printables/block-letters/` | 149 | 132 | 36.8 |
-| `/ru/library/serdechko-iz-simvolov/` | 137 | 114 | 18.7 |
-| `/it/lettere-in-corsivo/` | 130 | 102 | 74.9 |
-| `/ko/usecase/dantokbang-ireum/` | 123 | 98 | 17.4 |
-| `/ru/library/simvoly-discord/` | 122 | 74 | 41.3 |
-| `/pt/letra-cursiva/` | 118 | 93 | 64.0 |
-| `/usecase/zalgo-text/` | 116 | 21 | 74.3 |
+| `/id/library/simbol-love/` | 1,770 | 1,284 | 16.6 |
+| `/id/usecase/nama-keren/` | 1,069 | 726 | 58.7 |
+| `/id/library/simbol-ff/` | 860 | 626 | 36.5 |
+| `/` | 411 | 226 | 51.2 |
+| `/id/usecase/nama-tiktok-keren/` | 402 | 278 | 91.9 |
+| `/id/usecase/nama-ig-aesthetic/` | 257 | 178 | 79.8 |
+| `/es/letras-en-otros-idiomas/` | 247 | 183 | 38.9 |
+| `/id/usecase/nama-ml-keren/` | 239 | 171 | 93.1 |
+| `/id/font-tiktok/` | 236 | 115 | 119.0 |
+| `/id/font-wa/` | 235 | 140 | 89.3 |
+| `/ko/library/discord-giho/` | 195 | 128 | 50.2 |
+| `/zh-tw/usecase/youxi-mingzi-fuhao/` | 185 | 109 | 89.4 |
+| `/id/` | 183 | 58 | 85.3 |
+| `/es/imprimibles/moldes-de-letras/` | 181 | 147 | 54.0 |
+| `/ko/library/imotikon/` | 172 | 81 | 18.6 |
+| `/ru/library/serdechko-iz-simvolov/` | 151 | 115 | 10.3 |
+| `/ko/` | 127 | 87 | 36.3 |
+| `/id/usecase/nama-ml-keren-girl/` | 126 | 81 | 105.9 |
+| `/library/roblox-symbols/` | 118 | 86 | 33.2 |
+| `/discord/` | 112 | 62 | 44.9 |
+| `/it/lettere-in-corsivo/` | 109 | 87 | 34.3 |
+| `/ko/usecase/dantokbang-ireum/` | 105 | 97 | 9.3 |
+| `/printables/block-letters/` | 98 | 85 | 45.0 |
+| `/es/symbol/arroba/` | 94 | 87 | 9.2 |
+| `/es/symbol/guion-bajo/` | 94 | 83 | 12.0 |

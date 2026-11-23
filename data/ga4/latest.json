@@ -19,713 +19,689 @@
  ],
  "countries": [
   {
-   "active_users": 3788,
+   "active_users": 3910,
    "country": "Indonesia",
-   "sessions": 4714
+   "sessions": 4833
   },
   {
-   "active_users": 2363,
-   "country": "Singapore",
-   "sessions": 2389
-  },
-  {
-   "active_users": 1846,
+   "active_users": 1810,
    "country": "South Korea",
-   "sessions": 2163
+   "sessions": 2135
   },
   {
-   "active_users": 557,
-   "country": "United States",
-   "sessions": 655
+   "active_users": 1064,
+   "country": "Singapore",
+   "sessions": 1074
   },
   {
-   "active_users": 601,
-   "country": "China",
-   "sessions": 607
-  },
-  {
-   "active_users": 523,
+   "active_users": 506,
    "country": "Russia",
-   "sessions": 574
+   "sessions": 570
   },
   {
-   "active_users": 390,
+   "active_users": 444,
+   "country": "United States",
+   "sessions": 518
+  },
+  {
+   "active_users": 504,
+   "country": "China",
+   "sessions": 511
+  },
+  {
+   "active_users": 292,
    "country": "France",
-   "sessions": 452
+   "sessions": 361
   },
   {
-   "active_users": 305,
-   "country": "Italy",
-   "sessions": 404
-  },
-  {
-   "active_users": 283,
-   "country": "Mexico",
-   "sessions": 385
-  },
-  {
-   "active_users": 315,
+   "active_users": 281,
    "country": "Brazil",
-   "sessions": 357
+   "sessions": 341
   },
   {
-   "active_users": 233,
-   "country": "Taiwan",
-   "sessions": 293
+   "active_users": 264,
+   "country": "Mexico",
+   "sessions": 329
   },
   {
-   "active_users": 140,
+   "active_users": 238,
+   "country": "Italy",
+   "sessions": 302
+  },
+  {
+   "active_users": 143,
    "country": "Vietnam",
-   "sessions": 181
+   "sessions": 188
   },
   {
-   "active_users": 156,
-   "country": "Japan",
-   "sessions": 179
+   "active_users": 152,
+   "country": "Taiwan",
+   "sessions": 185
   },
   {
-   "active_users": 132,
-   "country": "T\u00fcrkiye",
-   "sessions": 157
-  },
-  {
-   "active_users": 113,
+   "active_users": 138,
    "country": "Poland",
-   "sessions": 149
+   "sessions": 170
+  },
+  {
+   "active_users": 146,
+   "country": "Japan",
+   "sessions": 160
+  },
+  {
+   "active_users": 136,
+   "country": "T\u00fcrkiye",
+   "sessions": 158
   }
  ],
  "events": {
-  "ad_click": 355,
-  "ad_impression": 34229,
-  "click": 26,
-  "copy_text": 11077,
-  "first_visit": 13033,
-  "page_view": 20306,
-  "save_style": 259,
-  "scroll": 2698,
-  "session_start": 16003,
-  "share_text": 56,
-  "user_engagement": 9596,
-  "view_search_results": 222
+  "ad_click": 369,
+  "ad_impression": 32999,
+  "click": 57,
+  "copy_text": 9558,
+  "first_visit": 11146,
+  "page_view": 17155,
+  "save_style": 187,
+  "scroll": 2404,
+  "session_start": 14067,
+  "share_text": 46,
+  "user_engagement": 8982,
+  "view_search_results": 141
  },
  "families": [
   {
    "locale": "id",
    "page_type": "library",
-   "pages": 47,
-   "screen_page_views": 2920
+   "pages": 35,
+   "screen_page_views": 2798
   },
   {
    "locale": "id",
    "page_type": "usecase",
    "pages": 20,
-   "screen_page_views": 2044
+   "screen_page_views": 2271
   },
   {
    "locale": "ko",
    "page_type": "library",
-   "pages": 100,
-   "screen_page_views": 1638
-  },
-  {
-   "locale": "en",
-   "page_type": "library",
-   "pages": 245,
-   "screen_page_views": 1072
+   "pages": 101,
+   "screen_page_views": 1692
   },
   {
    "locale": "id",
    "page_type": "root",
-   "pages": 31,
-   "screen_page_views": 1014
+   "pages": 30,
+   "screen_page_views": 802
   },
   {
    "locale": "en",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 579
-  },
-  {
-   "locale": "es",
-   "page_type": "usecase",
-   "pages": 7,
-   "screen_page_views": 574
-  },
-  {
-   "locale": "en",
-   "page_type": "root",
-   "pages": 41,
-   "screen_page_views": 558
+   "page_type": "library",
+   "pages": 227,
+   "screen_page_views": 696
   },
   {
    "locale": "en",
    "page_type": "printables",
-   "pages": 132,
-   "screen_page_views": 553
+   "pages": 111,
+   "screen_page_views": 487
   },
   {
-   "locale": "es",
+   "locale": "ko",
    "page_type": "symbol",
-   "pages": 53,
-   "screen_page_views": 473
+   "pages": 51,
+   "screen_page_views": 453
+  },
+  {
+   "locale": "en",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 411
   },
   {
    "locale": "ru",
    "page_type": "library",
-   "pages": 44,
-   "screen_page_views": 470
-  },
-  {
-   "locale": "ko",
-   "page_type": "symbol",
-   "pages": 57,
-   "screen_page_views": 437
-  },
-  {
-   "locale": "ru",
-   "page_type": "symbol",
-   "pages": 103,
-   "screen_page_views": 383
-  },
-  {
-   "locale": "ko",
-   "page_type": "root",
-   "pages": 17,
-   "screen_page_views": 350
-  },
-  {
-   "locale": "zh-tw",
-   "page_type": "usecase",
-   "pages": 3,
-   "screen_page_views": 342
+   "pages": 30,
+   "screen_page_views": 404
   },
   {
    "locale": "en",
+   "page_type": "root",
+   "pages": 32,
+   "screen_page_views": 392
+  },
+  {
+   "locale": "es",
    "page_type": "symbol",
-   "pages": 94,
-   "screen_page_views": 338
+   "pages": 37,
+   "screen_page_views": 367
   },
   {
    "locale": "es",
    "page_type": "root",
-   "pages": 35,
-   "screen_page_views": 327
+   "pages": 30,
+   "screen_page_views": 321
   },
   {
-   "locale": "en",
-   "page_type": "usecase",
-   "pages": 38,
-   "screen_page_views": 292
+   "locale": "ru",
+   "page_type": "symbol",
+   "pages": 42,
+   "screen_page_views": 313
   },
   {
    "locale": "es",
    "page_type": "imprimibles",
-   "pages": 49,
-   "screen_page_views": 285
+   "pages": 30,
+   "screen_page_views": 289
+  },
+  {
+   "locale": "ko",
+   "page_type": "root",
+   "pages": 15,
+   "screen_page_views": 271
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 237
+  },
+  {
+   "locale": "en",
+   "page_type": "symbol",
+   "pages": 73,
+   "screen_page_views": 228
+  },
+  {
+   "locale": "en",
+   "page_type": "usecase",
+   "pages": 29,
+   "screen_page_views": 216
   },
   {
    "locale": "pt",
    "page_type": "root",
-   "pages": 26,
-   "screen_page_views": 222
+   "pages": 23,
+   "screen_page_views": 202
   },
   {
    "locale": "fr",
    "page_type": "root",
-   "pages": 26,
-   "screen_page_views": 210
-  },
-  {
-   "locale": "fr",
-   "page_type": "symbol",
-   "pages": 48,
-   "screen_page_views": 190
+   "pages": 24,
+   "screen_page_views": 193
   },
   {
    "locale": "id",
    "page_type": "home",
    "pages": 1,
-   "screen_page_views": 186
-  },
-  {
-   "locale": "it",
-   "page_type": "root",
-   "pages": 28,
    "screen_page_views": 183
-  },
-  {
-   "locale": "it",
-   "page_type": "symbol",
-   "pages": 48,
-   "screen_page_views": 179
   },
   {
    "locale": "ru",
    "page_type": "root",
-   "pages": 17,
-   "screen_page_views": 171
-  },
-  {
-   "locale": "id",
-   "page_type": "symbol",
-   "pages": 63,
-   "screen_page_views": 171
-  },
-  {
-   "locale": "es",
-   "page_type": "library",
-   "pages": 84,
-   "screen_page_views": 170
-  },
-  {
-   "locale": "fr",
-   "page_type": "usecase",
-   "pages": 5,
-   "screen_page_views": 166
+   "pages": 18,
+   "screen_page_views": 158
   },
   {
    "locale": "vi",
    "page_type": "root",
+   "pages": 24,
+   "screen_page_views": 150
+  },
+  {
+   "locale": "it",
+   "page_type": "symbol",
+   "pages": 21,
+   "screen_page_views": 133
+  },
+  {
+   "locale": "it",
+   "page_type": "root",
    "pages": 16,
-   "screen_page_views": 165
+   "screen_page_views": 130
   },
   {
    "locale": "ko",
    "page_type": "home",
    "pages": 1,
-   "screen_page_views": 160
-  },
-  {
-   "locale": "ko",
-   "page_type": "usecase",
-   "pages": 4,
-   "screen_page_views": 147
-  },
-  {
-   "locale": "fr",
-   "page_type": "imprimables",
-   "pages": 15,
-   "screen_page_views": 130
-  },
-  {
-   "locale": "pt",
-   "page_type": "symbol",
-   "pages": 49,
-   "screen_page_views": 123
-  },
-  {
-   "locale": "en",
-   "page_type": "answers",
-   "pages": 47,
-   "screen_page_views": 114
-  },
-  {
-   "locale": "pl",
-   "page_type": "symbol",
-   "pages": 73,
-   "screen_page_views": 101
-  },
-  {
-   "locale": "ar",
-   "page_type": "symbol",
-   "pages": 50,
-   "screen_page_views": 100
+   "screen_page_views": 127
   },
   {
    "locale": "en",
    "page_type": "roblox",
    "pages": 2,
+   "screen_page_views": 121
+  },
+  {
+   "locale": "es",
+   "page_type": "library",
+   "pages": 81,
+   "screen_page_views": 120
+  },
+  {
+   "locale": "ko",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 119
+  },
+  {
+   "locale": "fr",
+   "page_type": "symbol",
+   "pages": 22,
+   "screen_page_views": 109
+  },
+  {
+   "locale": "id",
+   "page_type": "symbol",
+   "pages": 37,
+   "screen_page_views": 102
+  },
+  {
+   "locale": "fr",
+   "page_type": "usecase",
+   "pages": 4,
    "screen_page_views": 99
   },
   {
-   "locale": "ja",
-   "page_type": "library",
-   "pages": 35,
-   "screen_page_views": 96
+   "locale": "fr",
+   "page_type": "imprimables",
+   "pages": 11,
+   "screen_page_views": 98
+  },
+  {
+   "locale": "pl",
+   "page_type": "do-druku",
+   "pages": 9,
+   "screen_page_views": 95
   },
   {
    "locale": "pt",
    "page_type": "home",
    "pages": 1,
-   "screen_page_views": 91
-  },
-  {
-   "locale": "hi",
-   "page_type": "usecase",
-   "pages": 2,
-   "screen_page_views": 86
-  },
-  {
-   "locale": "en",
-   "page_type": "guide",
-   "pages": 27,
-   "screen_page_views": 85
+   "screen_page_views": 93
   },
   {
    "locale": "en",
    "page_type": "category",
-   "pages": 21,
-   "screen_page_views": 83
+   "pages": 20,
+   "screen_page_views": 81
+  },
+  {
+   "locale": "hi",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 77
   },
   {
    "locale": "es",
    "page_type": "home",
    "pages": 1,
-   "screen_page_views": 82
+   "screen_page_views": 75
+  },
+  {
+   "locale": "pt",
+   "page_type": "symbol",
+   "pages": 33,
+   "screen_page_views": 74
+  },
+  {
+   "locale": "ar",
+   "page_type": "symbol",
+   "pages": 26,
+   "screen_page_views": 74
+  },
+  {
+   "locale": "ja",
+   "page_type": "library",
+   "pages": 20,
+   "screen_page_views": 67
+  },
+  {
+   "locale": "en",
+   "page_type": "answers",
+   "pages": 37,
+   "screen_page_views": 66
+  },
+  {
+   "locale": "tr",
+   "page_type": "root",
+   "pages": 12,
+   "screen_page_views": 65
   },
   {
    "locale": "ar",
    "page_type": "library",
-   "pages": 29,
-   "screen_page_views": 78
+   "pages": 23,
+   "screen_page_views": 64
   },
   {
    "locale": "tr",
-   "page_type": "library",
-   "pages": 30,
-   "screen_page_views": 73
+   "page_type": "symbol",
+   "pages": 28,
+   "screen_page_views": 59
+  },
+  {
+   "locale": "ar",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 57
   },
   {
    "locale": "pl",
-   "page_type": "do-druku",
-   "pages": 15,
-   "screen_page_views": 71
+   "page_type": "root",
+   "pages": 17,
+   "screen_page_views": 57
   },
   {
    "locale": "fr",
    "page_type": "home",
    "pages": 1,
-   "screen_page_views": 69
-  },
-  {
-   "locale": "tr",
-   "page_type": "root",
-   "pages": 16,
-   "screen_page_views": 67
+   "screen_page_views": 51
   },
   {
    "locale": "vi",
-   "page_type": "symbol",
-   "pages": 53,
-   "screen_page_views": 67
-  },
-  {
-   "locale": "tr",
-   "page_type": "symbol",
-   "pages": 43,
-   "screen_page_views": 64
-  },
-  {
-   "locale": "ja",
-   "page_type": "symbol",
-   "pages": 49,
-   "screen_page_views": 62
-  },
-  {
-   "locale": "it",
-   "page_type": "library",
-   "pages": 25,
-   "screen_page_views": 58
-  },
-  {
-   "locale": "nl",
-   "page_type": "symbol",
-   "pages": 36,
-   "screen_page_views": 56
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 45
   },
   {
    "locale": "de",
    "page_type": "zum-ausdrucken",
-   "pages": 15,
-   "screen_page_views": 53
-  },
-  {
-   "locale": "nl",
-   "page_type": "root",
-   "pages": 11,
-   "screen_page_views": 50
-  },
-  {
-   "locale": "it",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 47
-  },
-  {
-   "locale": "fr",
-   "page_type": "library",
-   "pages": 23,
-   "screen_page_views": 46
-  },
-  {
-   "locale": "zh-tw",
-   "page_type": "root",
-   "pages": 6,
+   "pages": 8,
    "screen_page_views": 45
   },
   {
-   "locale": "pl",
-   "page_type": "root",
-   "pages": 23,
+   "locale": "en",
+   "page_type": "guide",
+   "pages": 13,
    "screen_page_views": 43
   },
   {
-   "locale": "id",
-   "page_type": "printables",
-   "pages": 16,
-   "screen_page_views": 42
-  },
-  {
-   "locale": "pt",
+   "locale": "tr",
    "page_type": "library",
-   "pages": 16,
-   "screen_page_views": 39
+   "pages": 25,
+   "screen_page_views": 43
   },
   {
-   "locale": "zh-tw",
-   "page_type": "home",
-   "pages": 1,
+   "locale": "ja",
+   "page_type": "purinto",
+   "pages": 9,
+   "screen_page_views": 41
+  },
+  {
+   "locale": "ja",
+   "page_type": "symbol",
+   "pages": 27,
    "screen_page_views": 37
   },
   {
-   "locale": "it",
-   "page_type": "da-stampare",
-   "pages": 10,
-   "screen_page_views": 37
-  },
-  {
-   "locale": "pl",
-   "page_type": "library",
-   "pages": 30,
-   "screen_page_views": 37
-  },
-  {
-   "locale": "da",
-   "page_type": "library",
+   "locale": "es",
+   "page_type": "usecase",
    "pages": 4,
    "screen_page_views": 35
   },
   {
    "locale": "nl",
-   "page_type": "library",
-   "pages": 19,
-   "screen_page_views": 35
-  },
-  {
-   "locale": "th",
-   "page_type": "symbol",
-   "pages": 33,
-   "screen_page_views": 35
-  },
-  {
-   "locale": "no",
-   "page_type": "library",
+   "page_type": "om-uit-te-printen",
    "pages": 8,
-   "screen_page_views": 34
-  },
-  {
-   "locale": "pt",
-   "page_type": "usecase",
-   "pages": 10,
-   "screen_page_views": 34
-  },
-  {
-   "locale": "th",
-   "page_type": "library",
-   "pages": 17,
-   "screen_page_views": 33
+   "screen_page_views": 35
   },
   {
    "locale": "pl",
+   "page_type": "symbol",
+   "pages": 13,
+   "screen_page_views": 35
+  },
+  {
+   "locale": "nl",
+   "page_type": "symbol",
+   "pages": 16,
+   "screen_page_views": 34
+  },
+  {
+   "locale": "it",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 32
+  },
+  {
+   "locale": "it",
+   "page_type": "da-stampare",
+   "pages": 13,
+   "screen_page_views": 32
+  },
+  {
+   "locale": "fr",
+   "page_type": "library",
+   "pages": 15,
+   "screen_page_views": 32
+  },
+  {
+   "locale": "zh-tw",
    "page_type": "home",
    "pages": 1,
    "screen_page_views": 31
   },
   {
-   "locale": "de",
-   "page_type": "root",
-   "pages": 22,
-   "screen_page_views": 31
+   "locale": "it",
+   "page_type": "library",
+   "pages": 18,
+   "screen_page_views": 30
   },
   {
-   "locale": "vi",
+   "locale": "da",
    "page_type": "library",
-   "pages": 16,
+   "pages": 4,
    "screen_page_views": 29
   },
   {
-   "locale": "nl",
-   "page_type": "om-uit-te-printen",
-   "pages": 10,
+   "locale": "zh-tw",
+   "page_type": "root",
+   "pages": 7,
+   "screen_page_views": 29
+  },
+  {
+   "locale": "sv",
+   "page_type": "library",
+   "pages": 16,
    "screen_page_views": 28
   },
   {
-   "locale": "zh-tw",
-   "page_type": "symbol",
-   "pages": 12,
-   "screen_page_views": 27
+   "locale": "ru",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 26
   },
   {
    "locale": "pt",
-   "page_type": "imprimiveis",
+   "page_type": "usecase",
    "pages": 9,
    "screen_page_views": 26
   },
   {
-   "locale": "de",
+   "locale": "vi",
    "page_type": "symbol",
-   "pages": 23,
+   "pages": 10,
    "screen_page_views": 26
   },
   {
    "locale": "en",
    "page_type": "updates",
-   "pages": 10,
+   "pages": 8,
+   "screen_page_views": 26
+  },
+  {
+   "locale": "no",
+   "page_type": "library",
+   "pages": 4,
    "screen_page_views": 25
   },
   {
-   "locale": "de",
+   "locale": "nl",
+   "page_type": "root",
+   "pages": 8,
+   "screen_page_views": 25
+  },
+  {
+   "locale": "nl",
    "page_type": "library",
-   "pages": 22,
-   "screen_page_views": 24
-  },
-  {
-   "locale": "vi",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 23
-  },
-  {
-   "locale": "ru",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 21
+   "pages": 11,
+   "screen_page_views": 25
   },
   {
    "locale": "en",
    "page_type": "events",
    "pages": 13,
-   "screen_page_views": 21
+   "screen_page_views": 24
   },
   {
-   "locale": "ja",
-   "page_type": "purinto",
+   "locale": "zh-tw",
+   "page_type": "symbol",
    "pages": 7,
-   "screen_page_views": 20
-  },
-  {
-   "locale": "ar",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 19
-  },
-  {
-   "locale": "tr",
-   "page_type": "yazdirilabilir",
-   "pages": 2,
-   "screen_page_views": 19
+   "screen_page_views": 23
   },
   {
    "locale": "ja",
    "page_type": "root",
-   "pages": 9,
-   "screen_page_views": 19
+   "pages": 11,
+   "screen_page_views": 23
   },
   {
-   "locale": "ja",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 16
+   "locale": "tr",
+   "page_type": "yazdirilabilir",
+   "pages": 3,
+   "screen_page_views": 20
   },
   {
-   "locale": "sv",
+   "locale": "pt",
    "page_type": "library",
-   "pages": 8,
-   "screen_page_views": 16
+   "pages": 13,
+   "screen_page_views": 20
   },
   {
    "locale": "zh-tw",
    "page_type": "library",
    "pages": 10,
+   "screen_page_views": 19
+  },
+  {
+   "locale": "th",
+   "page_type": "symbol",
+   "pages": 13,
+   "screen_page_views": 19
+  },
+  {
+   "locale": "fi",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 18
+  },
+  {
+   "locale": "vi",
+   "page_type": "library",
+   "pages": 4,
+   "screen_page_views": 18
+  },
+  {
+   "locale": "pt",
+   "page_type": "imprimiveis",
+   "pages": 8,
+   "screen_page_views": 17
+  },
+  {
+   "locale": "ar",
+   "page_type": "root",
+   "pages": 6,
    "screen_page_views": 16
   },
   {
-   "locale": "ko",
-   "page_type": "guide",
-   "pages": 2,
+   "locale": "ja",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 15
+  },
+  {
+   "locale": "pl",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 15
+  },
+  {
+   "locale": "de",
+   "page_type": "root",
+   "pages": 12,
    "screen_page_views": 15
   },
   {
    "locale": "tr",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 14
-  },
-  {
-   "locale": "ar",
-   "page_type": "root",
+   "page_type": "usecase",
    "pages": 5,
    "screen_page_views": 14
   },
   {
-   "locale": "ar",
-   "page_type": "usecase",
-   "pages": 6,
-   "screen_page_views": 12
+   "locale": "th",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 13
   },
   {
-   "locale": "th",
+   "locale": "fi",
    "page_type": "root",
    "pages": 6,
+   "screen_page_views": 13
+  },
+  {
+   "locale": "de",
+   "page_type": "symbol",
+   "pages": 13,
+   "screen_page_views": 13
+  },
+  {
+   "locale": "id",
+   "page_type": "printables",
+   "pages": 8,
    "screen_page_views": 12
   },
   {
    "locale": "ro",
    "page_type": "root",
-   "pages": 6,
-   "screen_page_views": 12
+   "pages": 5,
+   "screen_page_views": 11
   },
   {
    "locale": "th",
-   "page_type": "home",
-   "pages": 1,
+   "page_type": "library",
+   "pages": 6,
    "screen_page_views": 10
   },
   {
-   "locale": "fi",
-   "page_type": "root",
-   "pages": 2,
-   "screen_page_views": 10
-  },
-  {
-   "locale": "uk",
-   "page_type": "root",
-   "pages": 2,
-   "screen_page_views": 10
-  },
-  {
-   "locale": "ru",
-   "page_type": "guide",
-   "pages": 3,
+   "locale": "de",
+   "page_type": "library",
+   "pages": 8,
    "screen_page_views": 10
   },
   {
    "locale": "en",
    "page_type": "learn",
-   "pages": 8,
+   "pages": 9,
+   "screen_page_views": 10
+  },
+  {
+   "locale": "ru",
+   "page_type": "guide",
+   "pages": 2,
    "screen_page_views": 9
   },
   {
-   "locale": "id",
-   "page_type": "answers",
-   "pages": 3,
-   "screen_page_views": 8
+   "locale": "hu",
+   "page_type": "root",
+   "pages": 7,
+   "screen_page_views": 9
   },
   {
-   "locale": "cs",
-   "page_type": "root",
-   "pages": 6,
-   "screen_page_views": 8
+   "locale": "pl",
+   "page_type": "library",
+   "pages": 8,
+   "screen_page_views": 9
   },
   {
    "locale": "en",
@@ -734,38 +710,44 @@
    "screen_page_views": 8
   },
   {
-   "locale": "tr",
-   "page_type": "usecase",
-   "pages": 5,
+   "locale": "hr",
+   "page_type": "root",
+   "pages": 7,
    "screen_page_views": 8
   },
   {
-   "locale": "en",
-   "page_type": "embed",
-   "pages": 4,
+   "locale": "sr",
+   "page_type": "root",
+   "pages": 6,
    "screen_page_views": 8
   },
   {
-   "locale": "ru",
-   "page_type": "answers",
-   "pages": 5,
-   "screen_page_views": 7
-  },
-  {
-   "locale": "ko",
-   "page_type": "updates",
-   "pages": 5,
+   "locale": "es",
+   "page_type": "events",
+   "pages": 1,
    "screen_page_views": 6
   },
   {
-   "locale": "hr",
+   "locale": "da",
+   "page_type": "symbol",
+   "pages": 2,
+   "screen_page_views": 6
+  },
+  {
+   "locale": "es",
+   "page_type": "answers",
+   "pages": 4,
+   "screen_page_views": 6
+  },
+  {
+   "locale": "hu",
    "page_type": "home",
    "pages": 1,
    "screen_page_views": 5
   },
   {
-   "locale": "pt",
-   "page_type": "updates",
+   "locale": "ja",
+   "page_type": "answers",
    "pages": 1,
    "screen_page_views": 5
   },
@@ -776,374 +758,320 @@
    "screen_page_views": 5
   },
   {
-   "locale": "da",
-   "page_type": "symbol",
+   "locale": "ko",
+   "page_type": "guide",
    "pages": 2,
    "screen_page_views": 5
   },
   {
-   "locale": "it",
-   "page_type": "usecase",
+   "locale": "cs",
+   "page_type": "root",
    "pages": 4,
    "screen_page_views": 5
   },
   {
-   "locale": "ar",
-   "page_type": "answers",
+   "locale": "bs",
+   "page_type": "root",
    "pages": 5,
    "screen_page_views": 5
   },
   {
-   "locale": "es",
-   "page_type": "answers",
+   "locale": "ms",
+   "page_type": "library",
    "pages": 5,
    "screen_page_views": 5
   },
   {
-   "locale": "cs",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 4
+   "locale": "sk",
+   "page_type": "root",
+   "pages": 5,
+   "screen_page_views": 5
   },
   {
-   "locale": "nl",
+   "locale": "hr",
    "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 4
-  },
-  {
-   "locale": "no",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 4
-  },
-  {
-   "locale": "vi",
-   "page_type": "usecase",
    "pages": 1,
    "screen_page_views": 4
   },
   {
    "locale": "ja",
    "page_type": "usecase",
-   "pages": 2,
+   "pages": 1,
    "screen_page_views": 4
   },
   {
-   "locale": "es",
-   "page_type": "events",
+   "locale": "tr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "ru",
+   "page_type": "answers",
    "pages": 3,
    "screen_page_views": 4
+  },
+  {
+   "locale": "de",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "hi",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "id",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "kk",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "nl",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "sk",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "sv",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "uk",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "id",
+   "page_type": "answers",
+   "pages": 2,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "ms",
+   "page_type": "answers",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "sv",
+   "page_type": "updates",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "th",
+   "page_type": "root",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "vi",
+   "page_type": "usecase",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "ar",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "en",
+   "page_type": "character-counter",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "cs",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "id",
+   "page_type": "updates",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "no",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "pt",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "ro",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "th",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "tr",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "uk",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "bs",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "hi",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "hr",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
   },
   {
    "locale": "hu",
-   "page_type": "root",
-   "pages": 3,
-   "screen_page_views": 4
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
   },
   {
-   "locale": "pl",
-   "page_type": "usecase",
-   "pages": 3,
-   "screen_page_views": 4
+   "locale": "ms",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "sv",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
   },
   {
    "locale": "en",
    "page_type": "compare",
    "pages": 1,
-   "screen_page_views": 3
+   "screen_page_views": 1
   },
   {
-   "locale": "de",
-   "page_type": "home",
+   "locale": "en",
+   "page_type": "cursive-e",
    "pages": 1,
-   "screen_page_views": 3
+   "screen_page_views": 1
+  },
+  {
+   "locale": "da",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "en",
+   "page_type": "embed",
+   "pages": 1,
+   "screen_page_views": 1
   },
   {
    "locale": "es",
    "page_type": "aprender",
    "pages": 1,
-   "screen_page_views": 3
+   "screen_page_views": 1
   },
   {
-   "locale": "ro",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "sv",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "en",
-   "page_type": "character-counter",
-   "pages": 2,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "id",
+   "locale": "es",
    "page_type": "guide",
-   "pages": 2,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "ar",
-   "page_type": "updates",
-   "pages": 3,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "da",
-   "page_type": "guide",
-   "pages": 3,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "de",
-   "page_type": "updates",
-   "pages": 3,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "sk",
-   "page_type": "root",
-   "pages": 3,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "tr",
-   "page_type": "answers",
-   "pages": 3,
-   "screen_page_views": 3
-  },
-  {
-   "locale": "bs",
-   "page_type": "home",
    "pages": 1,
-   "screen_page_views": 2
+   "screen_page_views": 1
   },
   {
    "locale": "fi",
-   "page_type": "library",
-   "pages": 1,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "hi",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "hi",
    "page_type": "guide",
    "pages": 1,
-   "screen_page_views": 2
+   "screen_page_views": 1
   },
   {
    "locale": "id",
    "page_type": "belajar",
    "pages": 1,
-   "screen_page_views": 2
+   "screen_page_views": 1
   },
   {
-   "locale": "pt",
-   "page_type": "aprender",
+   "locale": "id",
+   "page_type": "events",
    "pages": 1,
-   "screen_page_views": 2
+   "screen_page_views": 1
   },
   {
-   "locale": "sk",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "sk",
+   "locale": "it",
    "page_type": "usecase",
    "pages": 1,
-   "screen_page_views": 2
+   "screen_page_views": 1
   },
   {
-   "locale": "th",
-   "page_type": "usecase",
-   "pages": 1,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "tl",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "uk",
-   "page_type": "home",
-   "pages": 1,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "bs",
-   "page_type": "root",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "da",
-   "page_type": "root",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "de",
-   "page_type": "usecase",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "fi",
+   "locale": "ja",
    "page_type": "guide",
-   "pages": 2,
-   "screen_page_views": 2
+   "pages": 1,
+   "screen_page_views": 1
   },
   {
-   "locale": "fi",
+   "locale": "kk",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ms",
    "page_type": "symbol",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "it",
-   "page_type": "answers",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "ja",
-   "page_type": "answers",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "ja",
-   "page_type": "guide",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "pl",
-   "page_type": "guide",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "pt",
-   "page_type": "answers",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "ru",
-   "page_type": "updates",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "sr",
-   "page_type": "root",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "th",
-   "page_type": "answers",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "th",
-   "page_type": "guide",
-   "pages": 2,
-   "screen_page_views": 2
-  },
-  {
-   "locale": "ar",
-   "page_type": "guide",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "bs",
-   "page_type": "guide",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "de",
-   "page_type": "lernen",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "fr",
-   "page_type": "answers",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "fr",
-   "page_type": "apprendre",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "hr",
-   "page_type": "root",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "hr",
-   "page_type": "guide",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "hu",
-   "page_type": "guide",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "it",
-   "page_type": "impara",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "ja",
-   "page_type": "updates",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "ko",
-   "page_type": "answers",
    "pages": 1,
    "screen_page_views": 1
   },
   {
    "locale": "ms",
-   "page_type": "answers",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "ms",
-   "page_type": "guide",
+   "page_type": "root",
    "pages": 1,
    "screen_page_views": 1
   },
@@ -1155,43 +1083,25 @@
   },
   {
    "locale": "nl",
-   "page_type": "leren",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "nl",
-   "page_type": "usecase",
+   "page_type": "updates",
    "pages": 1,
    "screen_page_views": 1
   },
   {
    "locale": "no",
-   "page_type": "root",
+   "page_type": "symbol",
    "pages": 1,
    "screen_page_views": 1
   },
   {
    "locale": "pl",
-   "page_type": "answers",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "pl",
-   "page_type": "nauka",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "pl",
-   "page_type": "updates",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "ro",
    "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "pt",
+   "page_type": "updates",
    "pages": 1,
    "screen_page_views": 1
   },
@@ -1202,32 +1112,26 @@
    "screen_page_views": 1
   },
   {
+   "locale": "sk",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
    "locale": "sr",
    "page_type": "guide",
    "pages": 1,
    "screen_page_views": 1
   },
   {
-   "locale": "sv",
-   "page_type": "guide",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "sv",
-   "page_type": "root",
-   "pages": 1,
-   "screen_page_views": 1
-  },
-  {
-   "locale": "th",
-   "page_type": "updates",
+   "locale": "tl",
+   "page_type": "home",
    "pages": 1,
    "screen_page_views": 1
   },
   {
    "locale": "tl",
-   "page_type": "usecase",
+   "page_type": "guide",
    "pages": 1,
    "screen_page_views": 1
   },
@@ -1238,593 +1142,606 @@
    "screen_page_views": 1
   },
   {
-   "locale": "zh-tw",
-   "page_type": "answers",
+   "locale": "vi",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "en",
+   "page_type": "youtube",
    "pages": 1,
    "screen_page_views": 1
   }
  ],
- "fetched_at": "2026-11-19T08:36:22Z",
+ "fetched_at": "2026-11-23T07:14:09Z",
  "locales": [
   {
-   "active_users": 4189,
+   "active_users": 4285,
    "locale": "id",
-   "pages": 184,
-   "screen_page_views": 6390,
-   "sessions": 5085
+   "pages": 137,
+   "screen_page_views": 6178,
+   "sessions": 5149
   },
   {
-   "active_users": 2985,
+   "active_users": 2236,
    "locale": "en",
-   "pages": 691,
-   "screen_page_views": 3850,
-   "sessions": 3283
+   "pages": 585,
+   "screen_page_views": 2815,
+   "sessions": 2523
   },
   {
-   "active_users": 2206,
+   "active_users": 2074,
    "locale": "ko",
-   "pages": 187,
-   "screen_page_views": 2754,
-   "sessions": 2540
+   "pages": 174,
+   "screen_page_views": 2667,
+   "sessions": 2407
   },
   {
-   "active_users": 1157,
+   "active_users": 986,
    "locale": "es",
-   "pages": 238,
-   "screen_page_views": 1923,
-   "sessions": 1314
+   "pages": 190,
+   "screen_page_views": 1221,
+   "sessions": 1131
   },
   {
-   "active_users": 892,
+   "active_users": 766,
    "locale": "ru",
-   "pages": 175,
-   "screen_page_views": 1064,
-   "sessions": 992
+   "pages": 96,
+   "screen_page_views": 914,
+   "sessions": 886
   },
   {
-   "active_users": 636,
+   "active_users": 423,
    "locale": "fr",
-   "pages": 120,
-   "screen_page_views": 813,
-   "sessions": 739
+   "pages": 77,
+   "screen_page_views": 582,
+   "sessions": 542
   },
   {
-   "active_users": 432,
+   "active_users": 339,
    "locale": "pt",
-   "pages": 115,
-   "screen_page_views": 544,
-   "sessions": 481
+   "pages": 89,
+   "screen_page_views": 435,
+   "sessions": 392
   },
   {
-   "active_users": 414,
+   "active_users": 289,
    "locale": "it",
-   "pages": 119,
-   "screen_page_views": 512,
-   "sessions": 509
+   "pages": 70,
+   "screen_page_views": 358,
+   "sessions": 353
   },
   {
-   "active_users": 323,
+   "active_users": 233,
    "locale": "zh-tw",
-   "pages": 33,
-   "screen_page_views": 468,
-   "sessions": 394
+   "pages": 30,
+   "screen_page_views": 341,
+   "sessions": 272
   },
   {
-   "active_users": 243,
-   "locale": "pl",
-   "pages": 150,
-   "screen_page_views": 292,
-   "sessions": 276
-  },
-  {
-   "active_users": 228,
+   "active_users": 176,
    "locale": "vi",
-   "pages": 88,
-   "screen_page_views": 289,
-   "sessions": 273
-  },
-  {
-   "active_users": 203,
-   "locale": "tr",
-   "pages": 100,
-   "screen_page_views": 248,
-   "sessions": 226
-  },
-  {
-   "active_users": 201,
-   "locale": "ar",
-   "pages": 100,
-   "screen_page_views": 232,
-   "sessions": 227
-  },
-  {
-   "active_users": 211,
-   "locale": "ja",
-   "pages": 108,
-   "screen_page_views": 222,
+   "pages": 44,
+   "screen_page_views": 244,
    "sessions": 228
   },
   {
-   "active_users": 150,
+   "active_users": 151,
+   "locale": "ar",
+   "pages": 57,
+   "screen_page_views": 213,
+   "sessions": 180
+  },
+  {
+   "active_users": 177,
+   "locale": "pl",
+   "pages": 49,
+   "screen_page_views": 212,
+   "sessions": 207
+  },
+  {
+   "active_users": 171,
+   "locale": "tr",
+   "pages": 75,
+   "screen_page_views": 207,
+   "sessions": 192
+  },
+  {
+   "active_users": 169,
+   "locale": "ja",
+   "pages": 71,
+   "screen_page_views": 193,
+   "sessions": 180
+  },
+  {
+   "active_users": 106,
    "locale": "nl",
-   "pages": 79,
-   "screen_page_views": 175,
-   "sessions": 168
+   "pages": 45,
+   "screen_page_views": 123,
+   "sessions": 118
   },
   {
-   "active_users": 121,
+   "active_users": 70,
    "locale": "de",
-   "pages": 89,
-   "screen_page_views": 143,
-   "sessions": 123
+   "pages": 42,
+   "screen_page_views": 86,
+   "sessions": 72
   },
   {
-   "active_users": 89,
-   "locale": "th",
-   "pages": 63,
-   "screen_page_views": 97,
-   "sessions": 91
-  },
-  {
-   "active_users": 60,
+   "active_users": 50,
    "locale": "hi",
-   "pages": 4,
-   "screen_page_views": 90,
-   "sessions": 65
+   "pages": 7,
+   "screen_page_views": 82,
+   "sessions": 54
   },
   {
-   "active_users": 43,
+   "active_users": 41,
+   "locale": "th",
+   "pages": 24,
+   "screen_page_views": 47,
+   "sessions": 45
+  },
+  {
+   "active_users": 31,
    "locale": "da",
-   "pages": 11,
-   "screen_page_views": 45,
-   "sessions": 47
+   "pages": 7,
+   "screen_page_views": 36,
+   "sessions": 39
   },
   {
    "active_users": 34,
-   "locale": "no",
-   "pages": 10,
-   "screen_page_views": 39,
-   "sessions": 47
-  },
-  {
-   "active_users": 20,
    "locale": "sv",
-   "pages": 11,
-   "screen_page_views": 21,
-   "sessions": 20
+   "pages": 22,
+   "screen_page_views": 36,
+   "sessions": 37
   },
   {
-   "active_users": 15,
+   "active_users": 16,
    "locale": "fi",
-   "pages": 7,
-   "screen_page_views": 16,
-   "sessions": 16
+   "pages": 8,
+   "screen_page_views": 32,
+   "sessions": 19
+  },
+  {
+   "active_users": 23,
+   "locale": "no",
+   "pages": 6,
+   "screen_page_views": 28,
+   "sessions": 30
   },
   {
    "active_users": 14,
-   "locale": "ro",
-   "pages": 8,
+   "locale": "hu",
+   "pages": 10,
    "screen_page_views": 16,
+   "sessions": 15
+  },
+  {
+   "active_users": 14,
+   "locale": "sr",
+   "pages": 8,
+   "screen_page_views": 14,
    "sessions": 14
   },
   {
-   "active_users": 10,
-   "locale": "uk",
-   "pages": 3,
-   "screen_page_views": 12,
-   "sessions": 10
-  },
-  {
-   "active_users": 12,
-   "locale": "cs",
-   "pages": 7,
-   "screen_page_views": 12,
+   "active_users": 13,
+   "locale": "hr",
+   "pages": 10,
+   "screen_page_views": 14,
    "sessions": 13
   },
   {
-   "active_users": 8,
-   "locale": "sr",
-   "pages": 4,
-   "screen_page_views": 8,
-   "sessions": 8
+   "active_users": 12,
+   "locale": "ro",
+   "pages": 6,
+   "screen_page_views": 13,
+   "sessions": 12
   },
   {
-   "active_users": 8,
+   "active_users": 13,
+   "locale": "ms",
+   "pages": 13,
+   "screen_page_views": 13,
+   "sessions": 13
+  },
+  {
+   "active_users": 10,
    "locale": "sk",
-   "pages": 6,
-   "screen_page_views": 8,
-   "sessions": 8
+   "pages": 8,
+   "screen_page_views": 10,
+   "sessions": 10
   },
   {
    "active_users": 7,
-   "locale": "hr",
-   "pages": 3,
+   "locale": "cs",
+   "pages": 5,
+   "screen_page_views": 7,
+   "sessions": 7
+  },
+  {
+   "active_users": 7,
+   "locale": "bs",
+   "pages": 7,
    "screen_page_views": 7,
    "sessions": 7
   },
   {
    "active_users": 5,
-   "locale": "bs",
-   "pages": 4,
+   "locale": "uk",
+   "pages": 2,
    "screen_page_views": 5,
-   "sessions": 5
+   "sessions": 6
   },
   {
-   "active_users": 5,
-   "locale": "hu",
-   "pages": 4,
-   "screen_page_views": 5,
-   "sessions": 5
+   "active_users": 4,
+   "locale": "kk",
+   "pages": 2,
+   "screen_page_views": 4,
+   "sessions": 4
   },
   {
-   "active_users": 3,
+   "active_users": 2,
    "locale": "tl",
    "pages": 2,
-   "screen_page_views": 3,
-   "sessions": 3
-  },
-  {
-   "active_users": 3,
-   "locale": "ms",
-   "pages": 3,
-   "screen_page_views": 3,
-   "sessions": 3
+   "screen_page_views": 2,
+   "sessions": 2
   }
  ],
  "missing_product_events": [
   "unsave_style"
  ],
- "page_count": 2726,
- "pages_available": 2726,
+ "page_count": 1978,
+ "pages_available": 1978,
  "pages_truncated": false,
  "property_id": "522553010",
  "retention": {
-  "new_users": 13097,
-  "returning_share_pct": 11.0,
-  "returning_users": 1621
+  "new_users": 11106,
+  "returning_share_pct": 12.8,
+  "returning_users": 1632
  },
  "revenue": {
-  "ad_revenue": 31.1764,
-  "publisher_ad_impressions": 34229,
-  "total_revenue": 31.1764
+  "ad_revenue": 23.8346,
+  "publisher_ad_impressions": 32999,
+  "total_revenue": 23.8346
  },
- "save_rate_pct_of_copies": 2.34,
+ "save_rate_pct_of_copies": 1.96,
  "sources": [
   {
-   "active_users": 3771,
-   "sessions": 4797,
+   "active_users": 4114,
+   "sessions": 5063,
    "source_medium": "google / organic"
   },
   {
-   "active_users": 3555,
-   "sessions": 3755,
+   "active_users": 2190,
+   "sessions": 2419,
    "source_medium": "(direct) / (none)"
   },
   {
-   "active_users": 2285,
-   "sessions": 2761,
+   "active_users": 2004,
+   "sessions": 2412,
    "source_medium": "bing / organic"
   },
   {
-   "active_users": 1098,
-   "sessions": 1221,
+   "active_users": 1149,
+   "sessions": 1305,
    "source_medium": "m.search.naver.com / referral"
   },
   {
-   "active_users": 681,
-   "sessions": 777,
-   "source_medium": "(not set)"
-  },
-  {
-   "active_users": 504,
-   "sessions": 607,
+   "active_users": 499,
+   "sessions": 602,
    "source_medium": "naver / organic"
   },
   {
-   "active_users": 405,
-   "sessions": 467,
+   "active_users": 418,
+   "sessions": 515,
    "source_medium": "chatgpt.com / ai-assistant"
   },
   {
-   "active_users": 378,
-   "sessions": 422,
+   "active_users": 357,
+   "sessions": 407,
    "source_medium": "yandex.ru / referral"
   },
   {
-   "active_users": 178,
-   "sessions": 213,
+   "active_users": 119,
+   "sessions": 137,
    "source_medium": "duckduckgo / organic"
   },
   {
-   "active_users": 152,
-   "sessions": 195,
+   "active_users": 103,
+   "sessions": 135,
    "source_medium": "yahoo / organic"
   },
   {
-   "active_users": 98,
-   "sessions": 116,
-   "source_medium": "yandex.com.tr / referral"
-  },
-  {
-   "active_users": 80,
-   "sessions": 93,
-   "source_medium": "it.search.yahoo.com / referral"
-  },
-  {
-   "active_users": 83,
-   "sessions": 83,
+   "active_users": 119,
+   "sessions": 124,
    "source_medium": "ya.ru / referral"
   },
   {
-   "active_users": 62,
-   "sessions": 80,
+   "active_users": 97,
+   "sessions": 108,
+   "source_medium": "yandex.com.tr / referral"
+  },
+  {
+   "active_users": 75,
+   "sessions": 90,
+   "source_medium": "it.search.yahoo.com / referral"
+  },
+  {
+   "active_users": 53,
+   "sessions": 78,
    "source_medium": "id.search.yahoo.com / referral"
   },
   {
-   "active_users": 60,
-   "sessions": 75,
+   "active_users": 57,
+   "sessions": 76,
+   "source_medium": "yandex.kz / referral"
+  },
+  {
+   "active_users": 61,
+   "sessions": 72,
    "source_medium": "search.brave.com / referral"
   }
  ],
  "top_pages": [
   {
-   "active_users": 1299,
-   "avg_engagement_seconds": 17.4,
+   "active_users": 1284,
+   "avg_engagement_seconds": 16.6,
    "locale": "id",
    "page_path": "/id/library/simbol-love/",
    "page_type": "library",
-   "screen_page_views": 1807,
-   "sessions": 1626,
+   "screen_page_views": 1770,
+   "sessions": 1618,
    "slug": "simbol-love"
   },
   {
-   "active_users": 797,
-   "avg_engagement_seconds": 64.3,
+   "active_users": 726,
+   "avg_engagement_seconds": 58.7,
    "locale": "id",
    "page_path": "/id/usecase/nama-keren/",
    "page_type": "usecase",
-   "screen_page_views": 1212,
-   "sessions": 935,
+   "screen_page_views": 1069,
+   "sessions": 848,
    "slug": "nama-keren"
   },
   {
-   "active_users": 654,
-   "avg_engagement_seconds": 34.5,
+   "active_users": 626,
+   "avg_engagement_seconds": 36.5,
    "locale": "id",
    "page_path": "/id/library/simbol-ff/",
    "page_type": "library",
-   "screen_page_views": 920,
-   "sessions": 722,
+   "screen_page_views": 860,
+   "sessions": 679,
    "slug": "simbol-ff"
   },
   {
-   "active_users": 309,
-   "avg_engagement_seconds": 55.3,
+   "active_users": 226,
+   "avg_engagement_seconds": 51.2,
    "locale": "en",
    "page_path": "/",
    "page_type": "home",
-   "screen_page_views": 579,
-   "sessions": 462,
+   "screen_page_views": 411,
+   "sessions": 355,
    "slug": ""
   },
   {
-   "active_users": 5,
-   "avg_engagement_seconds": 368.2,
-   "locale": "es",
-   "page_path": "/es/usecase/zalgo-text/",
-   "page_type": "usecase",
-   "screen_page_views": 500,
-   "sessions": 5,
-   "slug": "zalgo-text"
-  },
-  {
-   "active_users": 118,
-   "avg_engagement_seconds": 96.1,
-   "locale": "id",
-   "page_path": "/id/font-wa/",
-   "page_type": "root",
-   "screen_page_views": 489,
-   "sessions": 209,
-   "slug": "font-wa"
-  },
-  {
-   "active_users": 239,
-   "avg_engagement_seconds": 85.2,
+   "active_users": 278,
+   "avg_engagement_seconds": 91.9,
    "locale": "id",
    "page_path": "/id/usecase/nama-tiktok-keren/",
    "page_type": "usecase",
-   "screen_page_views": 378,
-   "sessions": 276,
+   "screen_page_views": 402,
+   "sessions": 313,
    "slug": "nama-tiktok-keren"
   },
   {
-   "active_users": 173,
-   "avg_engagement_seconds": 114.8,
-   "locale": "zh-tw",
-   "page_path": "/zh-tw/usecase/youxi-mingzi-fuhao/",
-   "page_type": "usecase",
-   "screen_page_views": 284,
-   "sessions": 211,
-   "slug": "youxi-mingzi-fuhao"
-  },
-  {
-   "active_users": 34,
-   "avg_engagement_seconds": 84.6,
-   "locale": "en",
-   "page_path": "/discord/",
-   "page_type": "root",
-   "screen_page_views": 233,
-   "sessions": 46,
-   "slug": "discord"
-  },
-  {
-   "active_users": 153,
-   "avg_engagement_seconds": 53.8,
-   "locale": "ko",
-   "page_path": "/ko/library/discord-giho/",
-   "page_type": "library",
-   "screen_page_views": 232,
-   "sessions": 210,
-   "slug": "discord-giho"
-  },
-  {
-   "active_users": 138,
-   "avg_engagement_seconds": 68.4,
+   "active_users": 178,
+   "avg_engagement_seconds": 79.8,
    "locale": "id",
    "page_path": "/id/usecase/nama-ig-aesthetic/",
    "page_type": "usecase",
-   "screen_page_views": 205,
-   "sessions": 150,
+   "screen_page_views": 257,
+   "sessions": 195,
    "slug": "nama-ig-aesthetic"
   },
   {
-   "active_users": 87,
-   "avg_engagement_seconds": 144.0,
-   "locale": "id",
-   "page_path": "/id/font-tiktok/",
-   "page_type": "root",
-   "screen_page_views": 194,
-   "sessions": 148,
-   "slug": "font-tiktok"
-  },
-  {
-   "active_users": 142,
-   "avg_engagement_seconds": 46.9,
+   "active_users": 183,
+   "avg_engagement_seconds": 38.9,
    "locale": "es",
    "page_path": "/es/letras-en-otros-idiomas/",
    "page_type": "root",
-   "screen_page_views": 190,
-   "sessions": 155,
+   "screen_page_views": 247,
+   "sessions": 198,
    "slug": "letras-en-otros-idiomas"
   },
   {
-   "active_users": 75,
-   "avg_engagement_seconds": 128.7,
+   "active_users": 171,
+   "avg_engagement_seconds": 93.1,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-ml-keren/",
+   "page_type": "usecase",
+   "screen_page_views": 239,
+   "sessions": 183,
+   "slug": "nama-ml-keren"
+  },
+  {
+   "active_users": 115,
+   "avg_engagement_seconds": 119.0,
+   "locale": "id",
+   "page_path": "/id/font-tiktok/",
+   "page_type": "root",
+   "screen_page_views": 236,
+   "sessions": 189,
+   "slug": "font-tiktok"
+  },
+  {
+   "active_users": 140,
+   "avg_engagement_seconds": 89.3,
+   "locale": "id",
+   "page_path": "/id/font-wa/",
+   "page_type": "root",
+   "screen_page_views": 235,
+   "sessions": 206,
+   "slug": "font-wa"
+  },
+  {
+   "active_users": 128,
+   "avg_engagement_seconds": 50.2,
+   "locale": "ko",
+   "page_path": "/ko/library/discord-giho/",
+   "page_type": "library",
+   "screen_page_views": 195,
+   "sessions": 172,
+   "slug": "discord-giho"
+  },
+  {
+   "active_users": 109,
+   "avg_engagement_seconds": 89.4,
+   "locale": "zh-tw",
+   "page_path": "/zh-tw/usecase/youxi-mingzi-fuhao/",
+   "page_type": "usecase",
+   "screen_page_views": 185,
+   "sessions": 132,
+   "slug": "youxi-mingzi-fuhao"
+  },
+  {
+   "active_users": 58,
+   "avg_engagement_seconds": 85.3,
    "locale": "id",
    "page_path": "/id/",
    "page_type": "home",
-   "screen_page_views": 186,
-   "sessions": 123,
+   "screen_page_views": 183,
+   "sessions": 112,
    "slug": ""
   },
   {
-   "active_users": 85,
-   "avg_engagement_seconds": 20.1,
-   "locale": "ko",
-   "page_path": "/ko/library/imotikon/",
-   "page_type": "library",
-   "screen_page_views": 173,
-   "sessions": 112,
-   "slug": "imotikon"
-  },
-  {
-   "active_users": 145,
-   "avg_engagement_seconds": 43.6,
+   "active_users": 147,
+   "avg_engagement_seconds": 54.0,
    "locale": "es",
    "page_path": "/es/imprimibles/moldes-de-letras/",
    "page_type": "imprimibles",
-   "screen_page_views": 171,
-   "sessions": 166,
+   "screen_page_views": 181,
+   "sessions": 167,
    "slug": "moldes-de-letras"
   },
   {
-   "active_users": 122,
-   "avg_engagement_seconds": 47.2,
-   "locale": "fr",
-   "page_path": "/fr/usecase/pseudo-fortnite/",
-   "page_type": "usecase",
-   "screen_page_views": 160,
-   "sessions": 129,
-   "slug": "pseudo-fortnite"
-  },
-  {
-   "active_users": 122,
-   "avg_engagement_seconds": 41.5,
+   "active_users": 81,
+   "avg_engagement_seconds": 18.6,
    "locale": "ko",
-   "page_path": "/ko/",
-   "page_type": "home",
-   "screen_page_views": 160,
-   "sessions": 129,
-   "slug": ""
+   "page_path": "/ko/library/imotikon/",
+   "page_type": "library",
+   "screen_page_views": 172,
+   "sessions": 103,
+   "slug": "imotikon"
   },
   {
-   "active_users": 132,
-   "avg_engagement_seconds": 36.8,
-   "locale": "en",
-   "page_path": "/printables/block-letters/",
-   "page_type": "printables",
-   "screen_page_views": 149,
-   "sessions": 153,
-   "slug": "block-letters"
-  },
-  {
-   "active_users": 114,
-   "avg_engagement_seconds": 18.7,
+   "active_users": 115,
+   "avg_engagement_seconds": 10.3,
    "locale": "ru",
    "page_path": "/ru/library/serdechko-iz-simvolov/",
    "page_type": "library",
-   "screen_page_views": 137,
-   "sessions": 135,
+   "screen_page_views": 151,
+   "sessions": 137,
    "slug": "serdechko-iz-simvolov"
   },
   {
-   "active_users": 102,
-   "avg_engagement_seconds": 74.9,
+   "active_users": 87,
+   "avg_engagement_seconds": 36.3,
+   "locale": "ko",
+   "page_path": "/ko/",
+   "page_type": "home",
+   "screen_page_views": 127,
+   "sessions": 98,
+   "slug": ""
+  },
+  {
+   "active_users": 81,
+   "avg_engagement_seconds": 105.9,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-ml-keren-girl/",
+   "page_type": "usecase",
+   "screen_page_views": 126,
+   "sessions": 89,
+   "slug": "nama-ml-keren-girl"
+  },
+  {
+   "active_users": 86,
+   "avg_engagement_seconds": 33.2,
+   "locale": "en",
+   "page_path": "/library/roblox-symbols/",
+   "page_type": "library",
+   "screen_page_views": 118,
+   "sessions": 106,
+   "slug": "roblox-symbols"
+  },
+  {
+   "active_users": 62,
+   "avg_engagement_seconds": 44.9,
+   "locale": "en",
+   "page_path": "/discord/",
+   "page_type": "root",
+   "screen_page_views": 112,
+   "sessions": 74,
+   "slug": "discord"
+  },
+  {
+   "active_users": 87,
+   "avg_engagement_seconds": 34.3,
    "locale": "it",
    "page_path": "/it/lettere-in-corsivo/",
    "page_type": "root",
-   "screen_page_views": 130,
-   "sessions": 130,
+   "screen_page_views": 109,
+   "sessions": 101,
    "slug": "lettere-in-corsivo"
   },
   {
-   "active_users": 98,
-   "avg_engagement_seconds": 17.4,
+   "active_users": 97,
+   "avg_engagement_seconds": 9.3,
    "locale": "ko",
    "page_path": "/ko/usecase/dantokbang-ireum/",
    "page_type": "usecase",
-   "screen_page_views": 123,
-   "sessions": 100,
+   "screen_page_views": 105,
+   "sessions": 103,
    "slug": "dantokbang-ireum"
   },
   {
-   "active_users": 74,
-   "avg_engagement_seconds": 41.3,
-   "locale": "ru",
-   "page_path": "/ru/library/simvoly-discord/",
-   "page_type": "library",
-   "screen_page_views": 122,
-   "sessions": 105,
-   "slug": "simvoly-discord"
-  },
-  {
-   "active_users": 93,
-   "avg_engagement_seconds": 64.0,
-   "locale": "pt",
-   "page_path": "/pt/letra-cursiva/",
-   "page_type": "root",
-   "screen_page_views": 118,
-   "sessions": 104,
-   "slug": "letra-cursiva"
-  },
-  {
-   "active_users": 21,
-   "avg_engagement_seconds": 74.3,
+   "active_users": 85,
+   "avg_engagement_seconds": 45.0,
    "locale": "en",
-   "page_path": "/usecase/zalgo-text/",
-   "page_type": "usecase",
-   "screen_page_views": 116,
-   "sessions": 28,
-   "slug": "zalgo-text"
+   "page_path": "/printables/block-letters/",
+   "page_type": "printables",
+   "screen_page_views": 98,
+   "sessions": 93,
+   "slug": "block-letters"
+  },
+  {
+   "active_users": 87,
+   "avg_engagement_seconds": 9.2,
+   "locale": "es",
+   "page_path": "/es/symbol/arroba/",
+   "page_type": "symbol",
+   "screen_page_views": 94,
+   "sessions": 95,
+   "slug": "arroba"
+  },
+  {
+   "active_users": 83,
+   "avg_engagement_seconds": 12.0,
+   "locale": "es",
+   "page_path": "/es/symbol/guion-bajo/",
+   "page_type": "symbol",
+   "screen_page_views": 94,
+   "sessions": 100,
+   "slug": "guion-bajo"
   }
  ],
  "totals": {
-  "active_users": 14927,
-  "screen_page_views": 20306,
-  "sessions": 17220
+  "active_users": 12947,
+  "screen_page_views": 17155,
+  "sessions": 15159
  },
  "window": {
-  "since": "2026-11-09",
-  "until": "2026-11-15"
+  "since": "2026-11-16",
+  "until": "2026-11-22"
  }
 }
