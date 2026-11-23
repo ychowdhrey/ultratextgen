@@ -32,7 +32,7 @@
     "username": {
       limit: 15,
       guidance:
-        "Your unique @handle. <strong>Plain ASCII only — no Unicode fonts render here.</strong> Letters, numbers, hyphens, underscores, and periods; 3–15 characters, must start with a letter and end with a letter or number.",
+        "Your unique @handle. <strong>Plain ASCII only — no Unicode fonts render here.</strong> Letters, numbers, and one of a hyphen, underscore, or period; 3–15 characters, must start with a letter, end with a letter or number, and cannot be or include a phone number.",
       previewType: "username",
       presets: [],
       showUsernameNote: true,
@@ -86,7 +86,7 @@
 
   const USERNAME_NOTE =
     '<span class="note-title">@Username can\'t be styled</span>' +
-    "Snapchat's @username field only accepts plain ASCII: letters, numbers, hyphens ( - ), underscores ( _ ), and periods ( . ). Any Unicode styled font — bold, cursive, gothic, bubble — will fail to save here. Use this generator for username <em>ideas</em>, then type the plain, unstyled version into the @username field. Save your styled result for your <strong>Display Name</strong> instead.";
+    "Snapchat's @username field only accepts plain ASCII: letters, numbers, and one of a hyphen ( - ), underscore ( _ ), or period ( . ). Any Unicode styled font — bold, cursive, gothic, bubble — will fail to save here. Use this generator for username <em>ideas</em>, then type the plain, unstyled version into the @username field. Save your styled result for your <strong>Display Name</strong> instead.";
 
   const PUBLIC_NOTE =
     '<span class="note-title">Public Profile discoverability</span>' +

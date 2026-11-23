@@ -34,7 +34,7 @@
     "username": {
       limit: 15,
       guidance:
-        "Twój unikalny uchwyt @. <strong>Tylko zwykłe ASCII — żadne czcionki Unicode się tu nie wyświetlą.</strong> Litery, cyfry, myślniki, podkreślenia i kropki; 3–15 znaków, musi zaczynać się literą i kończyć literą lub cyfrą.",
+        "Twój unikalny uchwyt @. <strong>Tylko zwykłe ASCII — żadne czcionki Unicode się tu nie wyświetlą.</strong> Litery, cyfry i jeden ze znaków: myślnik, podkreślenie lub kropka; 3–15 znaków, musi zaczynać się literą, kończyć literą lub cyfrą i nie może być numerem telefonu ani go zawierać.",
       previewType: "username",
       presets: [],
       showUsernameNote: true,
@@ -88,7 +88,7 @@
 
   const USERNAME_NOTE =
     '<span class="note-title">@Nazwy użytkownika nie da się ostylować</span>' +
-    "Pole @nazwy użytkownika na Snapchacie przyjmuje wyłącznie zwykłe znaki ASCII: litery, cyfry, myślniki ( - ), podkreślenia ( _ ) i kropki ( . ). Każda ostylowana czcionka Unicode — pogrubiona, kaligrafia, gotycka, bąbelkowa — nie zapisze się w tym polu. Użyj tego generatora, żeby wymyślić <em>pomysł</em> na nazwę użytkownika, a potem wpisz jej zwykłą, nieostylowaną wersję w pole @nazwy użytkownika. Ostylowany wynik zachowaj na swoją <strong>nazwę wyświetlaną</strong>.";
+    "Pole @nazwy użytkownika na Snapchacie przyjmuje wyłącznie zwykłe znaki ASCII: litery, cyfry i jeden ze znaków myślnik ( - ), podkreślenie ( _ ) lub kropkę ( . ). Każda ostylowana czcionka Unicode — pogrubiona, kaligrafia, gotycka, bąbelkowa — nie zapisze się w tym polu. Użyj tego generatora, żeby wymyślić <em>pomysł</em> na nazwę użytkownika, a potem wpisz jej zwykłą, nieostylowaną wersję w pole @nazwy użytkownika. Ostylowany wynik zachowaj na swoją <strong>nazwę wyświetlaną</strong>.";
 
   const PUBLIC_NOTE =
     '<span class="note-title">Widoczność Profilu Publicznego</span>' +
