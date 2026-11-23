@@ -70,7 +70,7 @@ These run across page types rather than producing a type.
 | **Writing pattern analysis** (in-browser, English only, no model) | `js/writing-footprint/patterns.js` (pattern library, data only), `engine.js` (pure analysis, edits, before/after), `controller.js` (DOM), `test-corpus.js`; page `/ai-writing-footprint-checker/` | [`architecture/writing-footprint.md`](./architecture/writing-footprint.md) | `engine.test.js` (`npm run test:writing-footprint`, CI gating) and the browser case in `scripts/smoke-runtime.js` | per feature (evidence-gated) |
 | Collection-copy audit | `the internal opportunity-audit tool` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | **Measurement (GA4 evidence)** | `fetch_ga4_reports.py` (network) + `ga4_snapshot.py` (pure) + `test_ga4_snapshot.py`; output: `data/ga4/` | [`measurement-ga4.md`](./measurement-ga4.md) | weekly (CI), read on demand |
-| i18n / localization | `prerender-i18n.js` (+ 30 live locale directories, `locales/`, `README.*.md`) — the classifier that tracks these (`scripts/weekly_pr_digest.py`) matched them one-by-one until 2026-08-01; see Known gaps #4 | ❌ none | as needed |
+| i18n / localization | `prerender-i18n.js` (+ 32 live locale directories as of 2026-11-21, including `kk` from PR #1236, `locales/`, `README.*.md`) — the classifier that tracks these (`scripts/weekly_pr_digest.py`) matched them one-by-one until 2026-08-01; see Known gaps #4 | ❌ none | as needed |
 | Ads / monetization (Google AdSense) | `scripts/check-ads.js` (CI: `ads-check.yml`, enforces the AdSense loader site-wide + guards `ads.txt` against leftover Journey manager/seller lines), AdSense loader injected site-wide via `header.js` | ❌ none | as needed |
 | ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | scoping note: German, Spanish and French native-query volume for alphabet printables outweighs the English long tail | needs scoping pass |
 | Consent management (Google Funding Choices) | `check-funding-choices.js`, `inject-funding-choices-tag.js` — tag deployed to every HTML page (PR #660, 2026-07-25) | ❌ none | CI (`validate.yml`, gating — wired 2026-08-06). Unlike the other whole-site checks it has no backlog to be permanently red against (the tag either is or isn't in a page's `<head>`), so it gates rather than informs. Was unwired for over a week first, which is how 37 pages across three unrelated PRs shipped without it before anyone noticed — see Known gaps #9 and #16 |
@@ -113,7 +113,10 @@ These run across page types rather than producing a type.
 | Accessibility (this repo's first pass at whether a page can actually be used, not just whether it's structured/translated/schema-correct) | `audit-accessibility.js` (whole-site, informational) + `check-accessibility.js` (diff-scoped, gating **state** check — 11 blocking classes all measured at zero site-wide, so no backlog to be red against; heading-level skips are advisory only, an owner-decided design-system trade-off) + shared `scripts/lib/accessibility-audit.js` | `.claude/rules/accessibility.md` | CI (`validate.yml`, gating) — new this week (PR #873, 2026-09-06); found and fixed a live bug (duplicated `<main>` on `ko/index.html` silently orphaned the Korean homepage's real tab strip and results grid) |
 | Link health / link rot (does a cited external source in a Sources block still load — a separate question from whether the *fact* is still true, which the Updates verification-date row above owns) | `audit-link-rot.js` (whole-site, informational, network-dependent — classifies by cause: `ok`/`redirect`/`blocked`/`gone`/`unreachable`/`server`; only reports rot after 3 consecutive failing runs in `data/source_link_health.json`, so one bot-blocked fetch is never mistaken for a dead link) + `scripts/lib/link-health.test.js` (`npm run test:link-health` — gating unit tests on the pure classification logic only, no network call) | `.claude/rules/source-attribution.md`, "Link rot is a separate instrument" (`docs/source-attribution.md` §10) | `.github/workflows/link-rot.yml` (`workflow_dispatch` only, deliberately never scheduled or gating — see Automated workflows below) + CI (`validate.yml`, gating unit test only) — new this week (PR #869, 2026-09-10) |
 | Redirects config validity (`_redirects` compiles into two Cloudflare Pages buckets — STATIC, cap 2,000, and DYNAMIC, cap 100 — and a rule is dynamic if it OR any rule above it contains a splat, so one `/cdn-cgi/*` mid-file silently pushed 108 rules below it into the small bucket; 8 retired-page redirects 404'd in production for a month past the cap while their correct 301s sat unreachable in the file) | `check-redirects.js` (`npm run check:redirects`, gating, whole-file — not diff-scoped, because the damage a splat does is to rules *elsewhere* in the file that the PR adding it never touches) + `scripts/lib/redirects-parse.js` (models Cloudflare's own compiler; calibrated against `npx wrangler pages dev` directly, not the docs — the model and the real parser agree exactly on both the broken and the repaired file) | `.claude/rules/discovery-and-routing.md` (no dedicated `docs/` file) | CI (`validate.yml`, gating, whole-site) — new this week (PR #887, 2026-09-15) |
-| IndexNow submission (announces only the URLs whose `<lastmod>` genuinely advanced — via `update-sitemap.js`'s own significance hash — to Bing/Naver/Seznam/Yandex/Yep; replaces Cloudflare Crawler Hints, which fired on cache state rather than content and had been announcing ~1,398 URLs/day on a 4,679-URL site, the whole site every 3.3 days, against a real change rate of zero on a typical day) | `scripts/lib/indexnow.js` (a 40% mass-bump ceiling refuses to announce a template/mesh pass — sits between the largest genuine content day on record, 21.4%, and the smallest false mass bump, 55% — and reports the refusal loudly rather than skipping silently; `--indexnow-force` overrides it for a genuine large change) + `scripts/update-sitemap.js --submit-indexnow` (opt-in flag, CI-only — a local `npm run prebuild` never announces) + `npm run test:indexnow` | ❌ none (no dedicated `docs/` file, no `CLAUDE.md` section — the design reasoning currently lives only in the module's own header comment and the PR body) | daily (`update-sitemap.yml`, after the sitemap and its cache are written, so an unreachable engine can never cost the cache) + CI (`validate.yml`, gating unit test) — new this week (PR #885, 2026-09-15) |
+| IndexNow submission (announces only the URLs whose `<lastmod>` genuinely advanced — via `update-sitemap.js`'s own significance hash — to Bing/Naver/Seznam/Yandex/Yep; replaces Cloudflare Crawler Hints, which fired on cache state rather than content and had been announcing ~1,398 URLs/day on a 4,679-URL site, the whole site every 3.3 days, against a real change rate of zero on a typical day) | `scripts/lib/indexnow.js` (a 40% mass-bump ceiling refuses to announce a template/mesh pass — sits between the largest genuine content day on record, 21.4%, and the smallest false mass bump, 55% — and reports the refusal loudly rather than skipping silently; `--indexnow-force` overrides it for a genuine large change) + `scripts/update-sitemap.js --submit-indexnow` (opt-in flag, CI-only — a local `npm run prebuild` never announces) + `npm run test:indexnow` | ❌ none (no dedicated `docs/` file, no `CLAUDE.md` section — the design reasoning currently lives only in the module's own header comment and the PR body) | daily (`update-sitemap.yml`, after the sitemap and its cache are written, so an unreachable engine can never cost the cache) + CI (`validate.yml`, gating unit test) — new this week (PR #885, 2026-09-15). **Silent six-week outage (2026-10-05 → 2026-11-17), closed by PR #1221:** key discovery took any key-shaped root `.txt` as a candidate, so the Seznam verification token made every run refuse while the job stayed green; discovery now accepts only the 32-char hex key, unannounced pages queue in `data/indexnow-pending.json` (drained at most 1,000 per run), and the workflow's last step fails the run when IndexNow could not announce |
+| Canonical intents (language-neutral origin: every page maps to an intent that may originate in any qualified locale; English is no longer a mandatory parent, adopted 2026-11-14) | `check-canonical-intents.js` (`check:canonical-intents`, gating) over `data/canonical_intents.json`; `data/english_parent_exceptions.json` retired as an approval mechanism and preserved | [`architecture/language-neutral-intents.md`](./architecture/language-neutral-intents.md) + `.claude/rules/localization.md` | CI (`validate.yml`, gating) — PR #1203; row added by the 2026-11-21 review |
+| Functional parity (does a locale sibling do the same job as its cluster's reference page: same tools, not just same structure) | `scripts/lib/functional-fingerprint.js` + `audit-functional-parity.js` (whole-site, informational) + `check-functional-parity.js` (delta, gating) + `check-parity-exception-policy.js` (gating); deliberate divergence is `suppress.functional` in `data/translation_parity_exceptions.json` | [`architecture/translation-parity.md`](./architecture/translation-parity.md) §12 | CI (`validate.yml`, gating) — PR #1216; row added by the 2026-11-21 review |
+| Spec drift (a `data/library_page_specs/` file must match the page it renders, and a page needs a spec before it is localized) | `scripts/lib/spec_drift.py` + `check-spec-drift.py` (gating) + `audit-spec-drift.py` (dashboard); excused drift in `data/spec_drift_exceptions.json` (ships empty) | [`architecture/spec-drift.md`](./architecture/spec-drift.md) + `.claude/rules/localization.md` §4a | CI (`validate.yml`, gating) — PR #1235 (121 specs written back, 91 backfilled); row added by the 2026-11-21 review |
 
 ---
 
@@ -194,6 +197,7 @@ Required, blocking checks:
 - `check:spec-drift`
 - `check:spec-sentence-reuse`
 - `check:static-footer`
+- `check:style-coverage`
 - `check:symbol-collection-link`
 - `check:symbol-pages`
 - `check:text-object-grids`
@@ -217,6 +221,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:ci-gates`
 - `test:content-significance`
 - `test:counter`
+- `test:coverage-line`
 - `test:cta-routing`
 - `test:editorial-footprint`
 - `test:efr`
@@ -238,6 +243,7 @@ Gating unit-test steps (no backlog to be red against):
 - `test:llms`
 - `test:moon-phase`
 - `test:name-reports`
+- `test:old-roblox`
 - `test:parity-exception-policy`
 - `test:poster-tiles`
 - `test:practice-row`
@@ -1184,6 +1190,43 @@ here so they aren't lost. Update as they're closed or new ones appear.
     decision ledger and is not edited here; `data/ga4/locale_performance.csv`
     simply makes the next tier review answerable with measurement instead of
     estimate.
+34. **Review of 2026-11-21 (PRs #1201-#1247, 31 merged since 11-14): no new
+    lane; three new gating tracks had no operational-tracks row, and IndexNow
+    had been silently announcing nothing for six weeks.**
+    - **Rows added above** for canonical intents (#1203), functional parity
+      (#1216) and spec drift (#1235). All three were already in the generated
+      gate inventory; none was placed in the tracks table.
+    - **IndexNow outage** (#1221): no submission between 2026-10-05 and
+      2026-11-17 while `update-sitemap.yml` stayed green, because a
+      verification token (gap #22's family of root stubs) made key discovery
+      ambiguous. Another instance of hard line 8. The run now fails loudly and
+      the backlog drains through `data/indexnow-pending.json`; the row above
+      carries the detail. The queue read empty at review time.
+    - **New locale:** Kazakh (`kk`, #1236, 5 pages, owner-approved), plus
+      `/uk/` made reachable from `/` (#1237). The i18n row's directory count
+      is corrected to 32.
+    - **Redirects** (#1220): the `/404` rewrite that looped was removed and
+      the shape is gated by `check:redirects`; the existing Redirects row
+      covers it. **`run-ci-gates --only`** now refuses a non-gating id (#1240).
+    - **Measurement:** GA4 ingestion gained a daily backfill, intent join and
+      weekly report, and re-runs on a recorded window (#1243, #1245, #1247).
+      `ga4-weekly-snapshot.yml` remains weekly; its row does not mention the
+      daily files under `data/ga4/daily/`.
+    - **Placed, no map change:** eight Korean library PRs (#1202, #1227-#1233),
+      stranded-work recovery and policy (#1219, #1224, #1225), copy and
+      counter repairs (#1217, #1223, #1226, #1234, #1237), the bulletin-board
+      printable fix (#1239) and docs-only PRs (#1201, #1214, #1215, #1222).
+    - **Classifier gaps, unchanged, eighth review running:** 18 of 31 PRs
+      carry an unclassified path, every one already named: root `llms.txt`
+      (gap #24; 9 PRs this week), `.claude/` rules and skills plus
+      `reportcard.md` (gap #25), root `*.test.js` and
+      `decorations-showcase.js` (gap #26). The decision review #30 asked for
+      (land the `LANE_RULES` lines, or widen the routine prompt to
+      `scripts/weekly_pr_digest.py`) is still open.
+    Input note: `gh` is unavailable for PR listing; the PR set came from the
+    GitHub search API (31 merged since 2026-11-14), with per-PR files from
+    `git diff <merge>^1 <merge>` on `origin/main`, fed to
+    `weekly_pr_digest.py` on stdin.
 
 ---
 

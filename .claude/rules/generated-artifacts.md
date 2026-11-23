@@ -9,6 +9,7 @@ paths:
   - "assets/{og,hero,specimen,printables-previews}/**"
   - "js/printables/cursiveRouteData.js"
   - "js/search/index/**"
+  - "js/style-coverage.js"
 ---
 
 # Generated artifacts have a generator, not an editor
@@ -46,6 +47,7 @@ is a second source of truth. When you find one of these, find its generator.
 | the gate inventory in `docs/README.md` | `npm run build:gate-inventory` | `check:gate-inventory` |
 | `README.md` page lists | `npm run sync-readme` | the weekly workflow |
 | the "Occasions" word-list chips on the word scramble and spelling makers (between `occasion word lists` markers) | `node scripts/build-occasion-wordlists.js --write`, from the word-search hand-off words in `data/event_page_specs/` | `test:spelling` (each chip must equal its spec's list) |
+| `js/style-coverage.js` (what each style does to every plain letter and digit, read by the per-card coverage line) | `npm run build:style-coverage` — runs each character through `renderAny`; re-run after any `styles.js` or `renderer.js` change | `check:style-coverage`, `test:coverage-line` |
 | `_root.html` | `npm run build` (a copy of `index.html`) | — |
 
 ## Two traps

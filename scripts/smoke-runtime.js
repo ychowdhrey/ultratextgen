@@ -142,6 +142,32 @@ async function main() {
     await ctx.close();
   }
 
+  // 1-coverage. The per-card coverage line (window.UTG_COVERAGE_LINE) names
+  // the typed letters a style left plain, as text inside the card, on the
+  // pages that opt in, and adds nothing to a page that does not.
+  {
+    const { ctx, page, errors } = await open('/category/small-caps/', 'narrow');
+    await page.fill('#mainInput', 'Quick');
+    await page.waitForTimeout(300);
+    const lines = await page.$$eval('#resultsGrid .style-card .style-coverage', (els) => els.map((e) => e.textContent));
+    check('small caps: "Quick" names Q on the card', lines.length === 1 && lines[0] === 'Q stays a regular letter here.', JSON.stringify(lines));
+    await page.fill('#mainInput', 'hello');
+    await page.waitForTimeout(300);
+    const none = await page.$$eval('#resultsGrid .style-coverage', (els) => els.length);
+    check('small caps: "hello" converts fully, so no line', none === 0, String(none));
+    check('no page errors (coverage line)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/', 'narrow');
+    await page.fill('#mainInput', 'Quick');
+    await page.waitForTimeout(300);
+    const n = await page.$$eval('.style-coverage', (els) => els.length);
+    check('homepage (no flag): no coverage line', n === 0, String(n));
+    check('no page errors (homepage, coverage line)', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 1a. A paste that overflows maxlength keeps whole graphemes (2026-11-15).
   // Chromium cuts an overflowing paste at a UTF-16 unit: a family emoji
   // pasted after "xy" with five units to spare left "xy" + man + joiner.
@@ -1281,6 +1307,32 @@ async function main() {
       await gen.ctx.close();
     }
 
+    // Standalone copy widgets that do not load script.js (2026-11-21): the kana
+    // charts, the Korean romanizer and the persona translators said "Copied"
+    // whether or not the clipboard took the text.
+    const standalone = [
+      { path: '/katakana-chart/', btn: '#kana-chart button', read: '#kana-toast', ok: /^Copied /, fail: /Failed/ },
+      { path: '/ko/hiragana-pyo/', btn: '#kana-chart button', read: '#kana-toast', ok: /복사됨/, fail: /실패/ },
+      { path: '/ko/yeongmun-ireum-byeonhwan/', btn: '.copy-btn', ok: /복사됨/, fail: /실패/ },
+      { path: '/usecase/pirate-translator/', btn: '#persona-copy', ok: /Copied/, fail: /Failed/ },
+    ];
+    for (const fallbackWorks of [true, false]) {
+      const tag = fallbackWorks ? 'API refused' : 'both refused';
+      for (const w of standalone) {
+        const o = await open(w.path, 'desktop', refuse(fallbackWorks));
+        if (w.fill) { await o.page.fill(w.fill[0], w.fill[1]); await o.page.waitForTimeout(300); }
+        const b = o.page.locator(w.btn).first();
+        await b.click();
+        await o.page.waitForTimeout(200);
+        const said = ((await (w.read ? o.page.locator(w.read).first() : b).textContent()) || '').trim();
+        check(`${w.path} copy, ${tag}: ${fallbackWorks ? 'confirms' : 'reports failure'}`,
+          fallbackWorks ? w.ok.test(said) && !w.fail.test(said) : w.fail.test(said) && !w.ok.test(said), said);
+        if (!fallbackWorks) check(`${w.path} copy, ${tag}: no copy_text row`, (await copies(o.page)) === 0, String(await copies(o.page)));
+        check(`no page errors (${w.path}, ${tag})`, !o.errors.length, o.errors.join(' | '));
+        await o.ctx.close();
+      }
+    }
+
     // The real textarea fallback fires a native "copy" event. The manual-copy
     // listener must not record it as a second row, focus must come back to
     // the button, and a real manual copy must still record.
@@ -1302,6 +1354,58 @@ async function main() {
     check('a manual selection copy still records "manual"', after.length === 2 && after[1] === 'manual', after.join(','));
     check('no page errors', !real.errors.length, real.errors.join(' | '));
     await real.ctx.close();
+  }
+
+  // 19b. The huruf letter variants confirm a copy only when one happened
+  // (2026-11-22). A refused copy said "Tersalin!", and the fallback ignored
+  // execCommand's answer. Each control is pressed twice, state read after
+  // every press, and the button label must come back. "real fallback" leaves
+  // execCommand alone: this page loads script.js, whose manual-copy listener
+  // must not record the fallback's own copy event as a second row. The list
+  // takes any other tool whose copy runs through the same contract.
+  console.log('\nTool copy honesty (huruf letter variants)');
+  {
+    const stub = (mode) => `Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } });` +
+      (mode === 'real fallback' ? '' : `
+      const orig = document.execCommand.bind(document);
+      document.execCommand = function (c) { if (c === 'copy') return ${mode === 'API refused'}; return orig.apply(null, arguments); };`);
+    const variant = (s) => `.bubble-variant[data-style="${s.style}"]`;
+    const tools = [
+      { name: 'huruf variants', url: '/id/huruf-keren-a-sampai-z/', method: 'huruf_variant', ok: /^Tersalin!$/, fail: /^✗ Gagal$/,
+        modes: ['both refused', 'API refused', 'real fallback'], restores: true,
+        setup: async (p, s) => { s.style = await p.locator('.bubble-variant').first().getAttribute('data-style'); },
+        press: (p, s) => p.locator(variant(s)).click(),
+        label: (p, s) => p.locator(variant(s) + ' .bubble-variant-copy').textContent() }
+    ];
+    for (const tool of tools) {
+      for (const mode of tool.modes) {
+        const copies = mode !== 'both refused';
+        const tag = `${tool.name}, ${mode}`;
+        const { ctx, page, errors } = await open(tool.url, 'desktop', stub(mode));
+        const s = {};
+        if (tool.setup) await tool.setup(page, s);
+        const before = ((await tool.label(page, s)) || '').trim();
+        const seen = [];
+        for (let press = 0; press < 2; press++) {
+          await tool.press(page, s);
+          await page.waitForTimeout(200);
+          seen.push(((await tool.label(page, s)) || '').trim());
+        }
+        check(`${tag}: ${copies ? 'confirms' : 'reports failure'} on both presses`,
+          seen.every((l) => (copies ? tool.ok : tool.fail).test(l)), seen.join(' | '));
+        const rows = (await dl(page)).filter((x) => x.event === 'copy_text');
+        check(`${tag}: ${copies ? 'two' : 'no'} copy_text rows, method ${tool.method} only`,
+          rows.length === (copies ? 2 : 0) && rows.every((r) => r.copy_method === tool.method),
+          rows.map((r) => r.copy_method).join(',') || '0 rows');
+        if (tool.restores) {
+          await page.waitForTimeout(1600);
+          const after = ((await tool.label(page, s)) || '').trim();
+          check(`${tag}: label returns to "${before}"`, after === before, after);
+        }
+        check(`${tag}: no page errors`, !errors.length, errors.join(' | '));
+        await ctx.close();
+      }
+    }
   }
 
   // 20. Title case on a tracing sheet. \b\w is ASCII-only, so every accented

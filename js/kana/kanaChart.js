@@ -56,6 +56,7 @@
   const TEXT = Object.assign({
     copied: "Copied {k}",
     copiedWithReading: "Copied {k} ({r})",
+    copyFailed: "✗ Failed",
     copyLabel: "Copy {k} — {r}",
     blankSuffix: " (blank — fill in the romaji)",
     practiceTitle: NAME + " — writing practice",
@@ -137,25 +138,42 @@
     toastTimer = setTimeout(() => el.toast.classList.remove("is-visible"), 1400);
   }
 
-  function copyKana(kana, romaji) {
-    const done = () => showToast(fill(romaji ? TEXT.copiedWithReading : TEXT.copied, kana, romaji));
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(kana).then(() => {
-        // One copy_text row on success through header.js trackCopy. A chart cell
-        // is the site's own character, so it uses the catalogue method "glyph"
-        // and the row names the kana (2026-11-08 audit).
-        if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("glyph", kana);
-        done();
-      }).catch(done);
-    } else {
+  // Resolves only when the text reached the clipboard; rejects when neither
+  // writeText nor execCommand put it there. script.js publishes the site's
+  // helper with this contract; these pages do not load script.js, so the same
+  // contract is kept locally (2026-11-21: a refused copy used to say "Copied").
+  function writeClipboard(text) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.writeClipboard === "function") return ns.writeClipboard(text);
+    const legacy = () => {
+      const focused = document.activeElement;
       const ta = document.createElement("textarea");
-      ta.value = kana;
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand("copy"); } catch (e) { /* noop */ }
+      let ok = false;
+      try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
       document.body.removeChild(ta);
-      done();
+      if (focused && typeof focused.focus === "function") focused.focus();
+      return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(legacy);
     }
+    return legacy();
+  }
+
+  function copyKana(kana, romaji) {
+    writeClipboard(kana).then(() => {
+      // One copy_text row on success through header.js trackCopy. A chart cell
+      // is the site's own character, so it uses the catalogue method "glyph"
+      // and the row names the kana (2026-11-08 audit).
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("glyph", kana);
+      showToast(fill(romaji ? TEXT.copiedWithReading : TEXT.copied, kana, romaji));
+    }, () => showToast(TEXT.copyFailed));
   }
 
   /* --------------------------------------------------------------

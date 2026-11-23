@@ -27,11 +27,6 @@ Network-free by design, so it is unit-testable with a fixture
 Usage:
     python3 scripts/fetch_ga4_reports.py \
       | python3 scripts/ga4_snapshot.py --out-dir data/ga4
-
-Exit status:
-    0  wrote a snapshot
-    1  bad input, or the bundle could not be read
-    3  that window is already recorded -- a no-op, not a failure
 """
 
 import argparse
@@ -62,10 +57,6 @@ SECTION_DIRS = {
 LOCALE_RE = re.compile(r"^[a-z]{2}(-[a-z]{2,4})?$")
 
 DEFAULT_LOCALE = "en"
-
-# Exit status for "this window is already on disk". Distinct from 1 so a caller
-# can treat a repeat run as a no-op without also swallowing real failures.
-ALREADY_RECORDED = 3
 
 # Dates on which a metric's *definition* changed, so counts either side are not
 # comparable. Trending straight through one of these reads a definition change
@@ -187,6 +178,53 @@ def load_intents(path):
     return mapping
 
 
+def fetched_range(bundle, entries):
+    """
+    The date range this run actually asked GA4 for: [daily_since, until].
+
+    Rows inside it are authoritative (GA4 restates recent days, so they are
+    replaced); rows outside it were recorded by earlier runs and must be kept.
+    Falls back to the span of the fetched rows for a bundle without metadata.
+    """
+    meta = bundle.get("meta", {}) or {}
+    lo = meta.get("daily_since") or ""
+    hi = (meta.get("window", {}) or {}).get("until") or ""
+    dates = [e["date"] for e in entries]
+    if not lo and dates:
+        lo = min(dates)
+    if not hi and dates:
+        hi = max(dates)
+    return lo, hi
+
+
+def merge_dated_csv(path, fieldnames, entries, lo, hi):
+    """
+    Write `entries` into a dated CSV without discarding history.
+
+    An earlier version overwrote the file with only the fetched rows. With the
+    default 35-day daily window that cut the partial month and daily_totals.csv
+    down to the trailing window on the first real CI run (7,922 recorded lines
+    gone in one commit, restored from git). Existing rows dated inside
+    [lo, hi] are replaced by the fresh fetch; all others are kept.
+    """
+    kept = []
+    if os.path.exists(path):
+        with open(path, newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                day = row.get("date", "")
+                if not day or not (lo <= day <= hi):
+                    kept.append(row)
+
+    def order(row):
+        try:
+            sessions = float(row.get("sessions", 0) or 0)
+        except (TypeError, ValueError):
+            sessions = 0.0
+        return (row.get("date", ""), -sessions)
+
+    write_csv(path, fieldnames, sorted(kept + list(entries), key=order))
+
+
 def write_daily_partitions(bundle, out_dir, intents):
     """
     Daily detail, partitioned by month.
@@ -208,12 +246,12 @@ def write_daily_partitions(bundle, out_dir, intents):
             if not date:
                 continue
             buckets.setdefault(date[:7], []).append(build(row, idx, date))
+        lo, hi = fetched_range(bundle, [e for b in buckets.values() for e in b])
         for month, entries in sorted(buckets.items()):
             name = "{}-{}.csv".format(month, report.replace("daily_", "")
                                      .replace("_", "-"))
-            write_csv(os.path.join(daily_dir, name), fields,
-                      sorted(entries, key=lambda r: (r["date"],
-                                                     -r.get("sessions", 0))))
+            merge_dated_csv(os.path.join(daily_dir, name), fields, entries,
+                            lo, hi)
             written[name] = len(entries)
 
     def landing(row, idx, date):
@@ -284,11 +322,12 @@ def write_daily_partitions(bundle, out_dir, intents):
             "publisher_ad_impressions": pick(row, totals_idx,
                                              "publisherAdImpressions"),
         })
-    write_csv(os.path.join(out_dir, "daily_totals.csv"),
-              ["date", "sessions", "screen_page_views", "active_users",
-               "new_users", "avg_engagement_seconds", "ad_revenue",
-               "publisher_ad_impressions"],
-              sorted(totals, key=lambda r: r["date"]))
+    lo, hi = fetched_range(bundle, totals)
+    merge_dated_csv(os.path.join(out_dir, "daily_totals.csv"),
+                    ["date", "sessions", "screen_page_views", "active_users",
+                     "new_users", "avg_engagement_seconds", "ad_revenue",
+                     "publisher_ad_impressions"],
+                    totals, lo, hi)
     written["daily_totals.csv"] = len(totals)
     return written
 
@@ -663,6 +702,13 @@ def main(argv=None):
     ap.add_argument("--input", help="bundle JSON file (default: stdin)")
     ap.add_argument("--force", action="store_true",
                     help="allow overwriting an existing dated snapshot")
+    ap.add_argument("--if-recorded", choices=("fail", "skip"), default="fail",
+                    help="what to do when this window's dated snapshot already "
+                         "exists. 'fail' (default) refuses and exits 1. 'skip' "
+                         "leaves the recorded window untouched, still refreshes "
+                         "the restated-in-full history and daily files, and "
+                         "exits 0 with a [skip] line. Never rewrites a window; "
+                         "--force is the only way to do that.")
     ap.add_argument("--intents",
                     default=os.path.join("data", "canonical_intents.json"),
                     help="canonical intent register to join landing pages against")
@@ -696,50 +742,59 @@ def main(argv=None):
 
     # Historical evidence is append-only: a dated snapshot records what GA4
     # said for that window and is never silently rewritten.
-    #
-    # This exits ALREADY_RECORDED, not 1, because "that window is already on
-    # disk" is not a failure -- it is the correct answer to running the same
-    # window twice, which the weekly job does whenever it is dispatched by hand
-    # inside a week it has already captured. The caller can treat that as a
-    # clean no-op while still failing on every other non-zero status. Keeping
-    # it distinct is what stops a genuine fetch failure from being waved
-    # through as "probably just a re-run".
-    if os.path.exists(dated_json) and not args.force:
+    recorded = os.path.exists(dated_json)
+    if recorded and not args.force and args.if_recorded != "skip":
         sys.stderr.write(
-            "[skip] {} already exists; window already recorded, nothing to do.\n"
-            "       Pass --force only if you intend to restate that window.\n"
+            "[error] {} already exists; refusing to overwrite history.\n"
+            "        Pass --force only if you intend to restate that window,\n"
+            "        or --if-recorded skip to refresh the restated-in-full\n"
+            "        files and leave the recorded window alone.\n"
             .format(dated_json))
-        return ALREADY_RECORDED
+        return 1
+    skip_window = recorded and not args.force
 
-    with open(dated_json, "w", encoding="utf-8", newline="\n") as handle:
-        json.dump(snapshot, handle, indent=1, sort_keys=True)
-        handle.write("\n")
-    shutil.copyfile(dated_json, os.path.join(args.out_dir, "latest.json"))
+    if not skip_window:
+        with open(dated_json, "w", encoding="utf-8", newline="\n") as handle:
+            json.dump(snapshot, handle, indent=1, sort_keys=True)
+            handle.write("\n")
+        shutil.copyfile(dated_json, os.path.join(args.out_dir, "latest.json"))
 
-    dated_md = os.path.join(args.out_dir, until + ".md")
-    with open(dated_md, "w", encoding="utf-8", newline="\n") as handle:
-        handle.write(render_markdown(snapshot))
-    shutil.copyfile(dated_md, os.path.join(args.out_dir, "latest.md"))
+        dated_md = os.path.join(args.out_dir, until + ".md")
+        with open(dated_md, "w", encoding="utf-8", newline="\n") as handle:
+            handle.write(render_markdown(snapshot))
+        shutil.copyfile(dated_md, os.path.join(args.out_dir, "latest.md"))
 
+    # These are restated in full from GA4 on every run (they self-heal), so they
+    # refresh even when the window's own snapshot is already recorded.
     write_history_csvs(bundle, args.out_dir, until=until)
 
     intents = load_intents(args.intents)
     partitions = write_daily_partitions(bundle, args.out_dir, intents)
 
-    pages = build_pages(bundle)
-    write_csv(os.path.join(args.out_dir, "page_performance.csv"),
-              ["page_path", "locale", "page_type", "slug", "screen_page_views",
-               "sessions", "active_users", "avg_engagement_seconds"],
-              sorted(pages, key=lambda page: -page["screen_page_views"]))
-    write_csv(os.path.join(args.out_dir, "locale_performance.csv"),
-              ["locale", "pages", "screen_page_views", "sessions", "active_users"],
-              aggregate_locales(pages))
+    if not skip_window:
+        pages = build_pages(bundle)
+        write_csv(os.path.join(args.out_dir, "page_performance.csv"),
+                  ["page_path", "locale", "page_type", "slug",
+                   "screen_page_views", "sessions", "active_users",
+                   "avg_engagement_seconds"],
+                  sorted(pages, key=lambda page: -page["screen_page_views"]))
+        write_csv(os.path.join(args.out_dir, "locale_performance.csv"),
+                  ["locale", "pages", "screen_page_views", "sessions",
+                   "active_users"],
+                  aggregate_locales(pages))
 
-    sys.stderr.write(
-        "[ok] snapshot {}..{}: {:,} views across {:,} pages -> {}\n".format(
-            snapshot["window"]["since"], until,
-            snapshot["totals"]["screen_page_views"],
-            snapshot["page_count"], args.out_dir))
+    if skip_window:
+        sys.stderr.write(
+            "[skip] window {}..{} is already recorded in {}; its snapshot, "
+            "page and locale files were left untouched. History and daily "
+            "files were refreshed.\n".format(
+                snapshot["window"]["since"], until, dated_json))
+    else:
+        sys.stderr.write(
+            "[ok] snapshot {}..{}: {:,} views across {:,} pages -> {}\n".format(
+                snapshot["window"]["since"], until,
+                snapshot["totals"]["screen_page_views"],
+                snapshot["page_count"], args.out_dir))
     sys.stderr.write("[ok] daily detail: {:,} rows across {} file(s)\n".format(
         sum(partitions.values()), len(partitions)))
     if not intents:

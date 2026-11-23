@@ -233,21 +233,40 @@
       });
       setGrid(html);
     }
+    // Resolves only when the text reached the clipboard; rejects when neither
+    // writeText nor execCommand put it there (script.js's contract; this page
+    // does not load script.js).
+    function writeClipboard(text) {
+      const ns = window.UltraTextGen;
+      if (ns && typeof ns.writeClipboard === 'function') return ns.writeClipboard(text);
+      const legacy = () => {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute'; ta.style.left = '-9999px';
+        document.body.appendChild(ta); ta.select();
+        let ok = false;
+        try { ok = !!document.execCommand('copy'); } catch (err) { ok = false; }
+        ta.remove();
+        return ok ? Promise.resolve() : Promise.reject(new Error('copy refused'));
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).catch(legacy);
+      return legacy();
+    }
     grid.addEventListener('click', function (e) {
       const btn = e.target.closest('.copy-btn');
       if (!btn) return;
       const text = btn.getAttribute('data-text') || '';
-      const done = () => {
+      const show = (label) => {
         // Only the first click of a burst reads the label.
         if (btn._copyTimer) clearTimeout(btn._copyTimer); else btn._copyPrev = btn.textContent;
-        btn.textContent = t('copied', 'Copied');
+        btn.textContent = label;
         btn._copyTimer = setTimeout(() => { btn.textContent = btn._copyPrev; btn._copyTimer = 0; }, 1200);
       };
       // One copy_text row on success through header.js trackCopy; the names are
-      // typed, so the method is not a catalogue one (2026-11-08 audit).
-      const tracked = () => { if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy('korean_romanize', text); done(); };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(tracked, done);
-      else { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (err) { /* ignore */ } ta.remove(); done(); }
+      // typed, so the method is not a catalogue one (2026-11-08 audit). The label
+      // says "Copied" only once the clipboard accepted the text (2026-11-21).
+      const tracked = () => { if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy('korean_romanize', text); show(t('copied', 'Copied')); };
+      writeClipboard(text).then(tracked, () => show(t('failed', '✗ Failed')));
     });
     modeBtns.forEach(b => b.addEventListener('click', function () {
       mode = b.getAttribute('data-romanize-mode');

@@ -38,22 +38,21 @@ credentials**.
 **Read-only by construction:** the fetcher calls `runReport` and nothing else.
 The service account needs **Viewer**; it cannot modify the property.
 
+**Re-running a window that is already recorded (2026-11-19).** The scheduled Monday
+run always lands on a new window, but a manual dispatch before the next week closes
+targets the same default window as the last run. The workflow passes
+`--if-recorded skip` to the normalizer, so that case is no longer a failure: the
+recorded window's snapshot, summary, `page_performance.csv` and
+`locale_performance.csv` are left untouched, the restated-in-full history and daily
+files still refresh (picking up the partial current week, flagged `week_complete=no`),
+and the log says `[skip] window ... is already recorded`. Run by hand without the
+flag, the normalizer still refuses and exits 1, and `--force` remains the only way to
+restate a window. Date inputs to the workflow are validated first: a value that is
+not `YYYY-MM-DD` fails in its own step instead of as a 400 from the GA4 API.
+
 **If the credential is missing the workflow fails loudly rather than skipping.**
 A weekly ingestion that quietly does nothing looks exactly like one that works
 (`.claude/rules/tooling-and-gates.md`). Set the secret or disable the schedule.
-
-**Re-running a window that is already recorded is a no-op, not a failure.**
-`ga4_snapshot.py` exits **3** (`ALREADY_RECORDED`) when the dated snapshot is
-already on disk, and the workflow reports that as a notice and commits
-nothing. Any other non-zero status still fails the job. The two are kept
-distinct on purpose: if "already recorded" shared an exit code with a real
-failure, a dead fetch would eventually get waved through as "probably just a
-re-run".
-
-This matters because the default window is the last complete Mon–Sun week, so
-**every manual run inside a week that has already been captured lands on the
-same window**. The Monday schedule moves to a new one by itself; a manual run
-that needs a different window should pass `--since` / `--until`.
 
 ---
 
@@ -75,6 +74,18 @@ that needs a different window should pass `--since` / `--until`.
 | `daily/<YYYY-MM>-source-medium.csv` | one row per day per source/medium | |
 | `daily/<YYYY-MM>-events.csv` | one row per day per event | Every event, not just the action set. |
 | `reports/<until>.md` | one window | The weekly report — see below. |
+
+**Correction (2026-11-19): daily files are merged by date, not rewritten.** The
+first CI run of this workflow overwrote each month's file, and `daily_totals.csv`,
+with only the days it fetched. With the default 35-day daily window that cut the
+partial month and the whole series down to the trailing window: 7,922 recorded lines
+gone in one bot commit, recovered from git history and re-fetched with
+`daily_since=2026-02-02`. `scripts/ga4_snapshot.py` now replaces only rows dated
+inside the fetched range (`daily_since`..`until`, so GA4's restatements of recent days
+still win) and keeps every other row. The unit tests seed existing files and assert
+that history outside the range survives, so a fetch can never again shrink the series.
+The weekly history CSVs were never affected: they are fetched from the property's
+first week on every run.
 
 **Why the daily files are partitioned by month.** They are restated on every
 run. A single 78k-row landing-page file would rewrite ~6MB of history every

@@ -465,40 +465,136 @@ class WriteTests(unittest.TestCase):
     def test_existing_snapshot_is_not_overwritten(self):
         with tempfile.TemporaryDirectory() as out_dir:
             self.assertEqual(self.run_main(out_dir), 0)
-            # A second run over the same window must not rewrite recorded
-            # history -- and must say "already recorded" (3) rather than
-            # "failed" (1), because a repeat run is a no-op, not a fault.
-            self.assertEqual(self.run_main(out_dir), mod.ALREADY_RECORDED)
+            # A second run over the same window must fail rather than rewrite
+            # recorded history.
+            self.assertEqual(self.run_main(out_dir), 1)
             self.assertEqual(self.run_main(out_dir, ["--force"]), 0)
 
-    def test_already_recorded_is_distinct_from_failure(self):
-        # The whole point of the separate status: a caller may treat 3 as a
-        # clean no-op, so 3 must never be what a real failure returns. If these
-        # ever collapse to one number, a dead fetch gets waved through as
-        # "probably just a re-run".
-        self.assertEqual(mod.ALREADY_RECORDED, 3)
-        self.assertNotEqual(mod.ALREADY_RECORDED, 0)
-        self.assertNotEqual(mod.ALREADY_RECORDED, 1)
-        with tempfile.TemporaryDirectory() as out_dir:
-            bad = os.path.join(out_dir, "bad.json")
-            with open(bad, "w", encoding="utf-8") as handle:
-                json.dump({"nope": True}, handle)
-            self.assertEqual(
-                mod.main(["--input", bad, "--out-dir", out_dir]), 1)
-            empty = os.path.join(out_dir, "empty.json")
-            open(empty, "w").close()
-            self.assertEqual(
-                mod.main(["--input", empty, "--out-dir", out_dir]), 1)
+    def seed_history(self, out_dir):
+        """Existing files holding days the next fetch does not cover."""
+        daily = os.path.join(out_dir, "daily")
+        os.makedirs(daily)
+        with open(os.path.join(daily, "2026-11-landing-pages.csv"), "w",
+                  encoding="utf-8", newline="\n") as handle:
+            handle.write(
+                "date,landing_page,locale,page_type,slug,intent_id,"
+                "intent_mapped,sessions,screen_page_views,"
+                "user_engagement_seconds\n"
+                "2026-11-02,/old/,en,old,old,,no,7,9,1\n"
+                "2026-11-10,/stale/,en,stale,stale,,no,999,999,999\n")
+        with open(os.path.join(out_dir, "daily_totals.csv"), "w",
+                  encoding="utf-8", newline="\n") as handle:
+            handle.write(
+                "date,sessions,screen_page_views,active_users,new_users,"
+                "avg_engagement_seconds,ad_revenue,publisher_ad_impressions\n"
+                "2026-10-05,11,22,3,2,1.5,0.1,4\n"
+                "2026-11-10,999,999,9,9,9.0,9.0,9\n")
 
-    def test_already_recorded_leaves_the_recorded_snapshot_byte_identical(self):
+    def read_rows(self, path):
+        with open(path, encoding="utf-8") as handle:
+            return list(csv.DictReader(handle))
+
+    def test_daily_files_keep_history_outside_the_fetched_range(self):
+        # Regression: daily writers used to overwrite with only the fetched
+        # rows, so a 35-day fetch truncated the partial month and
+        # daily_totals.csv on the first real CI run.
         with tempfile.TemporaryDirectory() as out_dir:
+            self.seed_history(out_dir)
+            self.assertEqual(self.run_main(out_dir), 0)
+            totals = self.read_rows(os.path.join(out_dir, "daily_totals.csv"))
+            self.assertEqual([r["date"] for r in totals],
+                             ["2026-10-05", "2026-11-10"])
+            self.assertEqual(totals[0]["sessions"], "11",
+                             "a day outside the fetch must survive untouched")
+            landing = self.read_rows(os.path.join(
+                out_dir, "daily", "2026-11-landing-pages.csv"))
+            self.assertIn("/old/", [r["landing_page"] for r in landing])
+
+    def test_daily_files_replace_rows_inside_the_fetched_range(self):
+        # GA4 restates recent days, so the fresh fetch wins for dates it covers.
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.seed_history(out_dir)
             self.run_main(out_dir)
-            recorded = os.path.join(out_dir, "snapshots", "2026-11-15.json")
-            with open(recorded, "rb") as handle:
-                before = handle.read()
-            self.assertEqual(self.run_main(out_dir), mod.ALREADY_RECORDED)
-            with open(recorded, "rb") as handle:
-                self.assertEqual(handle.read(), before)
+            totals = {r["date"]: r for r in self.read_rows(
+                os.path.join(out_dir, "daily_totals.csv"))}
+            self.assertEqual(totals["2026-11-10"]["sessions"], "80")
+            landing = self.read_rows(os.path.join(
+                out_dir, "daily", "2026-11-landing-pages.csv"))
+            self.assertNotIn("/stale/", [r["landing_page"] for r in landing])
+            self.assertIn("/id/library/simbol-love/",
+                          [r["landing_page"] for r in landing])
+
+    def test_daily_merge_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.seed_history(out_dir)
+            self.run_main(out_dir)
+            paths = [os.path.join(out_dir, "daily_totals.csv"),
+                     os.path.join(out_dir, "daily",
+                                  "2026-11-landing-pages.csv")]
+            first = []
+            for path in paths:
+                with open(path, "rb") as handle:
+                    first.append(handle.read())
+            self.assertEqual(
+                self.run_main(out_dir, ["--if-recorded", "skip"]), 0)
+            for path, before in zip(paths, first):
+                with open(path, "rb") as handle:
+                    self.assertEqual(handle.read(), before, path)
+
+    def test_if_recorded_skip_keeps_the_window_but_refreshes_history(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.assertEqual(self.run_main(out_dir), 0)
+            snap = os.path.join(out_dir, "snapshots", "2026-11-15.json")
+            page = os.path.join(out_dir, "page_performance.csv")
+            with open(snap, "rb") as handle:
+                snap_before = handle.read()
+            with open(page, "rb") as handle:
+                page_before = handle.read()
+            # Poison the recorded window and a restated-in-full file, and make
+            # the second bundle carry an extra week, so both outcomes are visible.
+            with open(snap, "wb") as handle:
+                handle.write(snap_before + b" ")
+            snap_poisoned = snap_before + b" "
+            os.remove(os.path.join(out_dir, "weekly_totals.csv"))
+            bundle = bundle_fixture()
+            bundle["reports"]["weekly_totals"]["rows"].append(
+                {"d": ["202647"], "m": ["12", "9", "7", "7"]})
+            path = os.path.join(out_dir, "bundle2.json")
+            with open(path, "w", encoding="utf-8") as handle:
+                json.dump(bundle, handle)
+            rc = mod.main(["--input", path, "--out-dir", out_dir,
+                           "--if-recorded", "skip"])
+            self.assertEqual(rc, 0)
+            with open(snap, "rb") as handle:
+                self.assertEqual(handle.read(), snap_poisoned,
+                                 "recorded window must not be rewritten")
+            with open(page, "rb") as handle:
+                self.assertEqual(handle.read(), page_before)
+            with open(os.path.join(out_dir, "weekly_totals.csv"),
+                      encoding="utf-8") as handle:
+                weeks = [r["year_week"] for r in csv.DictReader(handle)]
+            self.assertEqual(weeks, ["202645", "202646", "202647"],
+                             "history must be restated even when skipping")
+
+    def test_if_recorded_skip_still_writes_a_new_window(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.assertEqual(
+                self.run_main(out_dir, ["--if-recorded", "skip"]), 0)
+            self.assertTrue(os.path.exists(
+                os.path.join(out_dir, "snapshots", "2026-11-15.json")))
+            self.assertTrue(os.path.exists(
+                os.path.join(out_dir, "page_performance.csv")))
+
+    def test_if_recorded_skip_does_not_defeat_force(self):
+        with tempfile.TemporaryDirectory() as out_dir:
+            self.assertEqual(self.run_main(out_dir), 0)
+            snap = os.path.join(out_dir, "snapshots", "2026-11-15.json")
+            with open(snap, "w", encoding="utf-8") as handle:
+                handle.write("{}")
+            self.assertEqual(
+                self.run_main(out_dir, ["--if-recorded", "skip", "--force"]), 0)
+            with open(snap, encoding="utf-8") as handle:
+                self.assertIn("totals", json.load(handle))
 
     def test_rejects_non_bundle_json(self):
         with tempfile.TemporaryDirectory() as out_dir:

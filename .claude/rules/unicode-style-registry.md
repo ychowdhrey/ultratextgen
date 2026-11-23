@@ -45,3 +45,6 @@ procedure and the verification command.
   keycap (`1️⃣`, `#️⃣`, `*️⃣`) or emoji circled letter (`Ⓜ️`) is held out of
   the style as one placeholder and put back. Already-NFC text with neither takes
   the unchanged path. `npm run test:renderer-unicode` pins it for every style.
+- `js/style-coverage.js` records what every style does to each plain letter and
+  digit. After any style or renderer change run `npm run build:style-coverage`;
+  `check:style-coverage` fails on a stale table.

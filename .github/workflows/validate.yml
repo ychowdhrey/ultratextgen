@@ -643,6 +643,15 @@ jobs:
         continue-on-error: true
         run: npm run test:romanize | tee romanize-tests.log
 
+      # Gating, no backlog: the old Roblox font export is sized by an estimate, not
+      # a measurement, and a wide (Hangul, kana, CJK) name was cropped in both the
+      # SVG and the PNG with no warning. Pins main's bytes for Latin and every other
+      # non-wide line, and the two-column count for wide characters.
+      - name: Old Roblox font builder tests
+        id: old_roblox_tests
+        continue-on-error: true
+        run: npm run test:old-roblox | tee old-roblox-tests.log
+
       # Gating, no backlog: the QR encoder that stamps a way back to the site
       # onto every printed sheet and PNG export. Its one failure mode is a
       # symbol that looks perfectly well-formed and that no phone can read, so
@@ -1050,6 +1059,17 @@ jobs:
         continue-on-error: true
         run: npm run check:kaomoji-generator-static | tee kaomoji-generator-static.log
 
+      # Gating, with no backlog: js/style-coverage.js is generated from
+      # styles.js and renderer.js (build-style-coverage.js runs every letter
+      # and digit through renderAny). script.js reads it for the per-card
+      # coverage line on pages that set window.UTG_COVERAGE_LINE. A style
+      # edit without a regenerate would leave the line naming the wrong
+      # letters; `npm run build:style-coverage` closes it.
+      - name: Run style coverage table check
+        id: style_coverage
+        continue-on-error: true
+        run: npm run check:style-coverage | tee style-coverage.log
+
       # The locale directory hubs are pre-rendered so a non-rendering crawler
       # sees their links. This step used to run check:locale-library-directory,
       # which reads a `const LIBRARY = [...]` array — a format every locale hub
@@ -1294,6 +1314,17 @@ jobs:
         id: format_marks_tests
         continue-on-error: true
         run: npm run test:format-marks | tee format-marks-tests.log
+
+      # Gating, zero backlog: the per-card coverage line (script.js
+      # coverageLineText, sliced between its @coverage-line markers). "Quick"
+      # on small caps names Q, "hello" names nothing, "H2O" on subscript names
+      # H and O but never the digit, "Fix" on superscript names the case
+      # change on F; a locale without strings and a page without the flag get
+      # nothing.
+      - name: Run coverage line tests
+        id: coverage_line_tests
+        continue-on-error: true
+        run: npm run test:coverage-line | tee coverage-line-tests.log
 
       # Gating, zero backlog: the case converter's Capitalized, Title and
       # Sentence modes. The page promises to fix Caps-Lock text, and the
@@ -1682,6 +1713,11 @@ jobs:
             cat romanize-tests.log
             echo '```'
             echo ""
+            echo "### Old Roblox font builder tests — \`${{ steps.old_roblox_tests.outcome }}\`"
+            echo '```'
+            cat old-roblox-tests.log
+            echo '```'
+            echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
             echo "### Japanese worksheet engine tests — \`${{ steps.ja_sheets_tests.outcome }}\`"
             echo "### Japanese printables render check — \`${{ steps.ja_printables.outcome }}\`"
@@ -1792,6 +1828,11 @@ jobs:
             cat kaomoji-generator-static.log
             echo '```'
             echo ""
+            echo "### Style coverage table check — \`${{ steps.style_coverage.outcome }}\`"
+            echo '```'
+            cat style-coverage.log
+            echo '```'
+            echo ""
             echo "### Locale library directory freshness check — \`${{ steps.locale_library_directory.outcome }}\`"
             echo '```'
             cat locale-library-directory.log
@@ -1885,6 +1926,11 @@ jobs:
             echo "### Format marks tests: \`${{ steps.format_marks_tests.outcome }}\`"
             echo '```'
             cat format-marks-tests.log
+            echo '```'
+            echo ""
+            echo "### Coverage line tests: \`${{ steps.coverage_line_tests.outcome }}\`"
+            echo '```'
+            cat coverage-line-tests.log
             echo '```'
             echo ""
             echo "### Case converter tests — \`${{ steps.case_converter_tests.outcome }}\`"
@@ -2036,6 +2082,7 @@ jobs:
           steps.llms_index_tests.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.romanize_tests.outcome == 'failure' ||
+          steps.old_roblox_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
           steps.moon_phase_tests.outcome == 'failure' ||
           steps.unicode_reference_sets.outcome == 'failure' ||
@@ -2065,6 +2112,7 @@ jobs:
           steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
           steps.kaomoji_generator_static.outcome == 'failure' ||
+          steps.style_coverage.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
           steps.library_link_mirror.outcome == 'failure' ||
@@ -2082,6 +2130,7 @@ jobs:
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||
           steps.format_marks_tests.outcome == 'failure' ||
+          steps.coverage_line_tests.outcome == 'failure' ||
           steps.case_converter_tests.outcome == 'failure' ||
           steps.counter_tests.outcome == 'failure' ||
           steps.renderer_unicode_tests.outcome == 'failure' ||

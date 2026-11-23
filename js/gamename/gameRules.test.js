@@ -169,6 +169,36 @@ t("discord username: 2 characters fit", du("ab"), ["ok", []]);
 t("discord username: 33 characters do not", du("a".repeat(33))[1], ["over-limit"]);
 t("discord username: a space is refused", du("jose bot")[1].indexOf("space") !== -1, true);
 
+// --- social @usernames from each platform's own help page (2026-11-21) ---
+const su = (id, s) => { const r = G.analyze(s, id); return [r.level, r.issues]; };
+t("snapchat: 3 to 15, letters/digits and one separator", su("snapchatUser", "jose.bot99"), ["ok", []]);
+t("snapchat: 15 characters fit", su("snapchatUser", "a".repeat(15)), ["ok", []]);
+t("snapchat: 16 do not", su("snapchatUser", "a".repeat(16))[1], ["over-limit"]);
+t("snapchat: 2 are too short", su("snapchatUser", "ab")[1], ["too-short"]);
+t("snapchat: two separators are refused", su("snapchatUser", "a.b_c"), ["fail", ["separator"]]);
+t("snapchat: a hyphen alone is fine", su("snapchatUser", "jose-bot"), ["ok", []]);
+t("snapchat: must start with a letter", su("snapchatUser", "9abc"), ["fail", ["charset"]]);
+t("snapchat: must end with a letter or number", su("snapchatUser", "abc_"), ["fail", ["charset"]]);
+t("snapchat: an accent is refused", su("snapchatUser", "josé"), ["fail", ["charset"]]);
+t("snapchat: a long digit run warns (phone number rule, undefined by Snapchat)", su("snapchatUser", "a5551234567"), ["warn", ["phone-like"]]);
+t("snapchat: the charset reason names the rule", G.defaultReason("charset", G.RULES.snapchatUser), "Snapchat usernames take only Latin letters and numbers, start with a letter and end with a letter or number.");
+t("snapchat: the separator reason", G.defaultReason("separator", G.RULES.snapchatUser), "Snapchat (username) allows only one of - _ or . in the whole name.");
+t("snapchat: the phone-number warning has an English reason", G.defaultReason("phone-like", G.RULES.snapchatUser), "Snapchat (username) does not allow a phone number in the name, so a long run of digits may be refused.");
+t("whatsapp: the blocked-word warning has an English reason", G.defaultReason("blocked-word", G.RULES.whatsappUser).indexOf("bank, government, police or verified") !== -1, true);
+t("telegram: 5 to 32, a-z 0-9 _", su("telegramUser", "Jose_99"), ["ok", []]);
+t("telegram: 4 are too short", su("telegramUser", "jose")[1], ["too-short"]);
+t("telegram: 33 are too long", su("telegramUser", "a".repeat(33))[1], ["over-limit"]);
+t("telegram: a period is refused", su("telegramUser", "jose.bot"), ["fail", ["charset"]]);
+t("whatsapp: 3 to 35, letters/digits/period/underscore", su("whatsappUser", "jose.bot_99"), ["ok", []]);
+t("whatsapp: 36 are too long", su("whatsappUser", "a".repeat(36))[1], ["over-limit"]);
+t("whatsapp: a hyphen is refused", su("whatsappUser", "jose-bot"), ["fail", ["charset"]]);
+t("whatsapp: a blocked key word warns, never fails", su("whatsappUser", "mybank_1"), ["warn", ["blocked-word"]]);
+t("pinterest: 3 to 30, letters/digits/underscore", su("pinterestUser", "jose_99"), ["ok", []]);
+t("pinterest: numbers only are refused", su("pinterestUser", "123456"), ["fail", ["digits-only"]]);
+t("pinterest: a period is refused", su("pinterestUser", "jose.bot"), ["fail", ["charset"]]);
+t("pinterest: 31 are too long", su("pinterestUser", "a".repeat(31))[1], ["over-limit"]);
+t("no entry claims an Instagram or TikTok username rule", [G.RULES.instagramUser, G.RULES.tiktokUser], [undefined, undefined]);
+
 // --- what did NOT change: games without an official character rule ---
 t("free fire: Hangul still warns (no published rule; held for the in-game test)", G.analyze("민준", "ff").issues, ["unknown-chars"]);
 t("pubg: an accent still warns", G.analyze("José", "pubg").issues, ["unknown-chars"]);

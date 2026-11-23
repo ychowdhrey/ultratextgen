@@ -69,51 +69,53 @@ That is what any manual run in the same week would collide with. The collision
 was not a coincidence of timing; it was guaranteed by shipping the snapshot and
 defaulting to that window.
 
-## The fix
+## The fix that shipped
 
-`ga4_snapshot.py` now exits `ALREADY_RECORDED = 3` for this case, with a
-`[skip]` message rather than `[error]`. The workflow treats 3 as a clean no-op
-(a GitHub notice, no commit) and **still fails on every other non-zero status**.
+> **Correction (2026-11-23).** This record was first written for PR #1246, which
+> proposed a different fix: a dedicated exit status `ALREADY_RECORDED = 3` that
+> the workflow treated as a no-op and committed nothing. That design **did not
+> ship**. Commit `8f2ad39b` ("GA4 workflow re-runs on a recorded window instead
+> of failing") reached `main` first, and PR #1246 was reduced to this evidence
+> record when its conflicts with `main` were resolved. The sections below
+> describe what is on `main`.
 
-The two statuses are deliberately kept apart. Collapsing them would mean a
-genuinely dead fetch could be waved through as "probably just a re-run", which
-is the same class of mistake as the exit code it replaces — just pointed the
-other way.
+`ga4_snapshot.py` takes `--if-recorded {fail,skip}`; the default stays `fail`,
+and the workflow passes `skip`. When the window's dated snapshot already exists:
 
-Fetch and normalize are also split into separate commands instead of a
-pipeline, because under `pipefail` a pipeline reports one status and cannot
-distinguish 3 from 1.
+- the recorded snapshot, its summary and the page/locale files are left
+  untouched (`--force` is still the only way to restate a window);
+- the history and daily files, which are restated in full from GA4 on every
+  run, still refresh;
+- the run exits 0 with a `[skip] window ... is already recorded` line, and the
+  commit step commits whatever refreshed.
+
+Any other failure still exits non-zero and fails the job. The same commit also
+validates the `since` / `until` / `daily_since` inputs as `YYYY-MM-DD` in their
+own step, and pushes with rebase-and-retry because `main` moves mid-job.
+`docs/measurement-ga4.md` documents the behaviour.
 
 ### Verification
 
-- 68 unit tests pass (3 new: the status is 3 and not 0 or 1; a real bad input
-  still returns 1; a repeat run leaves the recorded snapshot **byte-identical**).
-- The original failure was reproduced locally before the fix (`repeat run -> 1`)
-  and after (`repeat run -> 3`).
-- Probes, each run against a deliberately broken copy, exit status read
-  directly:
+- `scripts/test_ga4_snapshot.py` passes on `main` (50 tests), including the
+  cases `8f2ad39b` added: `skip` keeps the window and refreshes history, `skip`
+  still writes a new window, and `skip` does not defeat `--force`.
+- The next two manual runs on `main` succeeded:
 
-  | Probe | Result |
-  |---|---|
-  | baseline | exit 0, 68 tests OK |
-  | `ALREADY_RECORDED` collapsed back to `1` (the shipped bug) | **exit 1**, caught |
-  | `ALREADY_RECORDED` collapsed to `0` (would claim false success) | **exit 1**, caught |
-  | guard removed entirely (would overwrite history) | **exit 1**, 2 caught |
-
-- `check-workflows.py`: 15 workflows, 0 errors. `check-external-refs.js`: 0
-  outside references.
+  | Run | Commit | Conclusion |
+  |---|---|---|
+  | [44536454938](https://github.com/ychowdhrey/ultratextgen/actions/runs/44536454938) | `318fcc08` | success |
+  | [44539779829](https://github.com/ychowdhrey/ultratextgen/actions/runs/44539779829) | `dc17e08d` | success |
 
 ## What this does not change
 
-No page, score, spec, register or historical figure. `data/ga4/` is untouched
-by this branch — the point of the fix is that the already-recorded snapshot
-stays exactly as it is.
+No page, score, spec, register or historical figure. The recorded
+`snapshots/2026-11-15.json` window was not rewritten by any of these runs.
 
 ## Expected behaviour from here
 
-- **Monday 07:00 UTC schedule** — computes 2026-11-16 → 2026-11-22, a new
-  window, writes a snapshot and commits.
-- **A manual run this week** — exits 3, reports "Window already recorded", and
-  the job is green with nothing committed.
+- **Monday 07:00 UTC schedule** — computes the next complete Mon–Sun week, a
+  new window, writes a snapshot and commits.
+- **A manual run inside a week already captured** — `[skip]` for the window,
+  refreshed history/daily files committed, job green.
 - **A manual run for a specific past window** — pass `since` / `until`; it
   writes if that window is not already on disk.
