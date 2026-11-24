@@ -582,6 +582,35 @@ used to scan to the end of the file, so in this engine it read the later `OPTION
 `AUDIENCE_I18N` entries as part of the table (18 false drifts), and `--write` would have
 patched keys into them.
 
+### Zalgo, curved text, old Roblox and the scroll embed confirm a copy only when one happened (2026-11-24)
+
+Four more copy paths said they had copied when both clipboard paths failed:
+- the zalgo Copy buttons (`usecase/zalgo-text/zalgo-text.js`, 13 pages; their fallback ignored
+  `execCommand`'s answer, then confirmed and counted);
+- Copy SVG on the curved-text pages (`js/curved/curvedTextController.js`, en and fr) and on
+  `/roblox/old-roblox-font/` (`js/oldroblox/oldRobloxController.js`); their fallback treated
+  "`execCommand` did not throw" as "copied", but it returns false instead of throwing;
+- the embed-code copy on `/usecase/scrolling-text/` (`js/scroll/scrollPageController.js`).
+
+All four now use the `writeClipboard` contract (`UltraTextGen.writeClipboard` where the page loads
+`script.js`, as the zalgo and scroll pages do; otherwise a local function that reads `execCommand`'s
+answer). They confirm and count only on success and show `ui.copyButtons.failed` otherwise. That
+word is harvested into zalgo for its 13 languages and into curved text for en and fr; old Roblox
+and the scroll page are English only. The zalgo GIF alt-text copy, which did nothing when refused,
+now says so too; it is still not counted. The zalgo embed widget wires its own copy and is not
+part of this change.
+
+**Definition change on the merge date.** A refused copy no longer records a `copy_text` row:
+`button` on the zalgo pages and `svg` on the curved-text and old Roblox pages were counted before
+whether or not anything was copied, so those counts can only go down. On `/usecase/scrolling-text/`,
+the embed copy's fallback no longer adds a `manual` row: its textarea copy fired the native copy
+event that `script.js`'s manual-copy listener records, which the shared helper suppresses.
+Measured on the `main` that preceded this change: 0 extra rows on zalgo pages through the real
+fallback, and a `manual` row per fallback embed copy on the scroll page.
+
+`check:runtime-smoke` case 19b covers all four modules in up to three clipboard states, plus the
+German zalgo button at 390px. On that `main`, 12 of the 44 assertions for these four modules fail.
+
 ## Verification
 
 Verified against seven differently-shaped broken inputs — the push moved back before

@@ -1368,7 +1368,11 @@ async function main() {
   // variantFamily is not empty). They record no copy_text row (method: null), so
   // their check is no row when refused and no stray "manual" row otherwise.
   // The German word is the longest; it must fit its card at 390px.
-  console.log('\nTool copy honesty (huruf letter variants, printables copy cards)');
+  // Zalgo, curved text, old Roblox and the scroll embed joined 2026-11-24:
+  // each said it copied when both paths failed, and the first three recorded
+  // a copy_text row for it. The zalgo and scroll pages load script.js, so
+  // "real fallback" must not add a "manual" row there either.
+  console.log('\nTool copy honesty (huruf, printables cards, zalgo, curved text, old Roblox, scroll embed)');
   {
     const stub = (mode) => `Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } });` +
       (mode === 'real fallback' ? '' : `
@@ -1386,9 +1390,38 @@ async function main() {
         press: (p) => p.locator('.bubble-variant.glyph-copy').first().click(),
         label: (p) => p.locator('.bubble-variant.glyph-copy .bubble-variant-copy').first().textContent() },
       { name: 'printables copy cards (de, 390px)', url: '/de/zum-ausdrucken/graffiti-buchstaben/', method: null, ok: /^Kopiert!$/, fail: /^✗ Fehlgeschlagen$/,
-        modes: ['both refused'], restores: true, device: 'narrow', fits: true,
+        modes: ['both refused'], restores: true, device: 'narrow', fits: '.bubble-variant.glyph-copy',
         press: (p) => p.locator('.bubble-variant.glyph-copy').first().click(),
-        label: (p) => p.locator('.bubble-variant.glyph-copy .bubble-variant-copy').first().textContent() }
+        label: (p) => p.locator('.bubble-variant.glyph-copy .bubble-variant-copy').first().textContent() },
+      { name: 'zalgo Copy', url: '/usecase/zalgo-text/', method: 'button', ok: /Copied/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused', 'real fallback'], restores: true,
+        setup: async (p) => { await p.fill('#mainInput', 'Hello'); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#copyBtn').click(),
+        label: (p) => p.locator('#copyBtn').textContent() },
+      { name: 'zalgo Copy (de, 390px)', url: '/de/usecase/zalgo-text/', method: 'button', ok: /./, fail: /^✗ Fehlgeschlagen$/,
+        modes: ['both refused'], restores: true, device: 'narrow', fits: '#copyBtn',
+        setup: async (p) => { await p.fill('#mainInput', 'Hallo'); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#copyBtn').click(),
+        label: (p) => p.locator('#copyBtn').textContent() },
+      { name: 'curved text Copy SVG', url: '/curved-text/', method: 'svg', ok: /^SVG copied$/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused', 'real fallback'],
+        setup: async (p) => { await p.fill('#curvedInput', 'Hello'); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#curvedCopySvg').click(),
+        label: (p) => p.locator('#curvedToast').textContent() },
+      { name: 'curved text Copy SVG (fr)', url: '/fr/texte-courbe/', method: 'svg', ok: /./, fail: /^✗ Échec$/,
+        modes: ['both refused'],
+        setup: async (p) => { await p.fill('#curvedInput', 'Bonjour'); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#curvedCopySvg').click(),
+        label: (p) => p.locator('#curvedToast').textContent() },
+      { name: 'old Roblox Copy SVG', url: '/roblox/old-roblox-font/', method: 'svg', ok: /^SVG copied$/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused'], wait: 900,
+        press: (p) => p.locator('#orfCopySvg').click(),
+        label: (p) => p.locator('#orfToast').textContent() },
+      { name: 'scroll embed Copy', url: '/usecase/scrolling-text/', method: null, ok: /^Embed code copied$/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused', 'real fallback'],
+        setup: async (p) => { await p.locator('.scroll-mode-tab[data-mode="marquee"]').click(); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#scrollCopyEmbed').click(),
+        label: (p) => p.locator('#scrollToast').textContent() }
     ];
     for (const tool of tools) {
       for (const mode of tool.modes) {
@@ -1401,7 +1434,7 @@ async function main() {
         const seen = [];
         for (let press = 0; press < 2; press++) {
           await tool.press(page, s);
-          await page.waitForTimeout(200);
+          await page.waitForTimeout(tool.wait || 200);
           seen.push(((await tool.label(page, s)) || '').trim());
         }
         check(`${tag}: ${copies ? 'confirms' : 'reports failure'} on both presses`,
@@ -1417,11 +1450,11 @@ async function main() {
             rows.map((r) => r.copy_method).join(',') || '0 rows');
         }
         if (tool.fits) {
-          const fit = await page.evaluate(() => {
-            const row = document.querySelector('.bubble-variant.glyph-copy');
+          const fit = await page.evaluate((sel) => {
+            const row = document.querySelector(sel);
             const de = document.documentElement;
             return { page: de.scrollWidth - de.clientWidth, card: row ? row.scrollWidth - row.clientWidth : null };
-          });
+          }, tool.fits);
           check(`${tag}: the failed label fits its card and the page`, fit.page <= 0 && fit.card !== null && fit.card <= 0, JSON.stringify(fit));
         }
         if (tool.restores) {

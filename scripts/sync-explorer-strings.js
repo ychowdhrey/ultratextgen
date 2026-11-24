@@ -97,7 +97,11 @@ const TARGETS = [
   { file: path.join(ROOT, 'js', 'huruf', 'hurufExplorer.js'), keys: { failed: 'copyButtons.failed' } },
   // The printables copy-paste cards (2026-11-23): one entry per language
   // whose pages mount the grid (en plus nine locales).
-  { file: path.join(ROOT, 'js', 'printables', 'printablesEngine.js'), keys: { failed: 'copyButtons.failed' } }
+  { file: path.join(ROOT, 'js', 'printables', 'printablesEngine.js'), keys: { failed: 'copyButtons.failed' } },
+  // The zalgo Copy buttons and the curved-text SVG toast (2026-11-24): one
+  // entry per language with a page (zalgo en plus twelve, curved en and fr).
+  { file: path.join(ROOT, 'usecase', 'zalgo-text', 'zalgo-text.js'), keys: { failed: 'copyButtons.failed' } },
+  { file: path.join(ROOT, 'js', 'curved', 'curvedTextController.js'), keys: { failed: 'copyButtons.failed' } }
 ];
 
 /** English is the in-code fallback and ships no copyButtons block, by design
