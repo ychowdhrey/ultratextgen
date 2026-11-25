@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Srdíčka ke zkopírování ♥ ❤️ 💕 – barevná srdce, emoji a textové znaky</title>
+<meta name="description" content="Srdíčka ke zkopírování: srdce emoji ve všech barvách, textový znak srdíčka ♥ ♡ a symboly lásky. Klikni na libovolné srdíčko a hned se zkopíruje.">
+
+<link rel="canonical" href="https://ultratextgen.com/cs/library/srdicka/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/heart-symbols/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/heart-symbols/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/herz-symbole/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/simbolos-de-corazon/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/library/symboles-coeur/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/simbol-love/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/library/simboli-cuore/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/library/heart-symbols/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/library/hateu-giho/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/library/symbole-serca/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/library/simbolos-de-coracao/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/serdechki/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/kalp-sembolleri/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/library/hartjes/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/library/hjarta-symboler/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/ki-tu-trai-tim/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/library/hjerte-symboler/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/library/heart-symbols/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/library/aixin-fuhao/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/library/hjertesymboler/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/library/srdicka/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/library/srdiecka/">
+<link rel="alternate" hreflang="hu" href="https://ultratextgen.com/hu/library/sziv-szimbolum/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/library/simbol-inima/">
+<link rel="alternate" hreflang="fi" href="https://ultratextgen.com/fi/library/sydan-symboli/">
+<link rel="alternate" hreflang="uk" href="https://ultratextgen.com/uk/library/serdechka/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/library/heart-symbols/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/library/heart-symbols/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/heart-symbols/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/cs-library-srdicka.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Srdíčka ke zkopírování ♥ ❤️ 💕 – barevná srdce, emoji a textové znaky">
+<meta name="twitter:description" content="Srdíčka ke zkopírování: srdce emoji ve všech barvách, textový znak srdíčka ♥ ♡ a symboly lásky. Klikni na libovolné srdíčko a hned se zkopíruje.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/cs-library-srdicka.png">
+<meta property="og:title" content="Srdíčka ke zkopírování ♥ ❤️ 💕 – barevná srdce, emoji a textové znaky">
+<meta property="og:description" content="Srdíčka ke zkopírování: srdce emoji ve všech barvách, textový znak srdíčka ♥ ♡ a symboly lásky. Klikni na libovolné srdíčko a hned se zkopíruje.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/cs/library/srdicka/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Srdíčka ke zkopírování ♥ ❤️ 💕 – barevná srdce, emoji a textové znaky",
+  "description": "Srdíčka ke zkopírování: srdce emoji ve všech barvách, textový znak srdíčka ♥ ♡ a symboly lásky. Klikni na libovolné srdíčko a hned se zkopíruje.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/cs/library/srdicka/",
+  "datePublished": "2026-11-26T00:00:00+00:00",
+  "dateModified": "2026-11-26T00:00:00+00:00"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://ultratextgen.com/cs/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Knihovna",
+      "item": "https://ultratextgen.com/cs/library/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Srdíčka",
+      "item": "https://ultratextgen.com/cs/library/srdicka/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Co znamenají jednotlivé barvy srdíček?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Barva je hlavní věc, která odlišuje jedno srdíčko emoji od druhého, a většina barev už má ustálený význam: ❤️ červené je klasická romantická láska; 🧡 oranžové znamená vřelost a péči bez romantiky; 💛 žluté se čte jako přátelství a radost; 💚 zelené pokrývá přírodu, zdraví a ve starším významu i žárlivost; 💙 modré je důvěra, věrnost a přátelská náklonnost; 💜 fialové nese soucit a pro miliony fanoušků K-popu i lásku k fandomu; 🖤 černé je spíš černý humor, smutek nebo gotická estetika než nenávist; 🤍 bílé je čistota, klid a minimalistická estetika; 🤎 hnědé působí zemitě a konejšivě; a růžová rodina (💗 💓 💕) se čte jako sladká, rostoucí náklonnost. Nic z toho neurčuje Unicode: jde o zvyklost, která se liší podle platformy, věku i země."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co znamená žluté srdíčko 💛?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "💛 je srdíčko přátelství. V běžném použití vyjadřuje přátelskou náklonnost, vřelost a radost: je to srdíčko, které pošleš kamarádovi, ne partnerovi. Na Snapchatu má navíc samostatný, konkrétní význam: žluté srdíčko u jména znamená, že jste si s tím člověkem navzájem nejlepší přátelé číslo 1. To je vlastní systém Snapchatu, ne obecný význam. Celý průběh najdeš v přehledu barev srdíček na Snapchatu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co znamená fialové srdíčko 💜?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "💜 má tři běžné významy. Obecně znamená soucit, obdiv a něco trochu něžného či tajemného. Ve Spojených státech odkazuje také na Purpurové srdce (Purple Heart), vojenské vyznamenání pro vojáky zraněné v boji, takže se objevuje v příspěvcích veteránů a ve vzpomínkových příspěvcích. A v K-popu je to srdíčko fandomu: V z BTS v roce 2016 vymyslel „I purple you“ ve smyslu dlouhodobé důvěry a lásky k někomu a od té doby je fialová zkratkou právě pro tohle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co znamená černé srdíčko 🖤?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "🖤 je mnohem častěji černý humor, suchý sarkasmus nebo gotická či grunge estetika než cokoli nenávistného. Hodně se používá i pro smutek a truchlení a prostě jako srdíčko, které ladí s černobílým nebo minimalistickým profilem. Čti ho podle kontextu: vedle vtipu je to obvykle ironie, vedle vzpomínky obvykle ztráta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co znamená zelené srdíčko 💚?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "💚 pokrývá přírodu, růst, zdraví a ekologická témata: je to standardní srdíčko pro všechno rostlinné, veganské nebo udržitelné. V angličtině je to také tradiční barva žárlivosti (tamní „zelenooká obluda“), online se ale tenhle význam objevuje mnohem vzácněji než ten přírodní. Ve sportu a u národních témat často jen ladí s barvami týmu nebo vlajky."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Znamenají barvy srdíček v každé aplikaci totéž?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne, a právě tady vzniká nejvíc zmatků. Obecné významy barev platí v běžném chatu a popiscích na většině platforem. Velkou výjimkou je Snapchat: srdíčka u jména kamaráda tam generuje sám Snapchat a vyjadřují, jak dlouho jste si navzájem nejlepšími přáteli číslo 1, takže 💛 je tam ukazatel stavu, ne něco, co ti ten druhý poslal. Liší se i vykreslení: stejný kódový bod kreslí jinak Apple, Google, Samsung a Microsoft, takže srdíčko může na displeji příjemce vypadat znatelně jinak."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jaký je rozdíl mezi srdíčkem emoji (💕) a textovým znakem srdíčka (♥)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "💕 💖 ❤️ jsou emoji: na každém zařízení se zobrazí velké a v pevné barvě, takže vyniknou. ♥ ♡ ❥ ❦ jsou textové znaky Unicode: převezmou barvu a velikost okolního textu, a proto jsou nenápadnější volbou do bia, uživatelského jména nebo zobrazovaného jména. Obojí jsou skutečné znaky, ne obrázky, takže obojí zkopíruješ a vložíš všude, kde jde vložit obyčejný text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proč se srdíčko zobrazí jako čtvereček (□) nebo otazník?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jde o chybějící glyf, kterému se říká tofu. Zařízení, které tvůj text přijímá, nemá písmo s tímto znakem, a tak místo něj nakreslí zástupný čtvereček. Nejčastěji selžou novější nebo vzácnější srdíčka (🩷 🩵 🩶, přidaná v Unicode 15) na starších telefonech a v desktopových aplikacích. Pokud záleží na tom, aby ho viděli všichni, použij dlouho zavedené srdíčko jako ♥ ❤️ 💕."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak napsat srdíčko bez kopírování?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ve Windows podrž Alt a na numerické klávesnici napiš 3, dostaneš ♥ (textový znak srdíčka, ne emoji), nebo stiskni Windows + . a otevře se výběr emoji. Na Macu stiskni Control + Command + mezerník pro prohlížeč emoji a symbolů. Na iPhonu a Androidu přidej klávesnici emoji a vyhledej „srdce“. Kopírování z této stránky je obvykle rychlejší a u vzácnějších textových srdíček jako ❥ a ❦ je to jediná spolehlivá cesta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Můžu tato srdíčka používat zdarma?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Jde o standardní znaky Unicode, ne o obrázky ani fonty, takže není co licencovat a není třeba uvádět autora: používej je volně v biu, příspěvcích, jménech, dokumentech i v komerční práci. To, jak daný znak vykreslí jednotlivé platformy, je vlastní grafika každého výrobce, ale znak, který kopíruješ, je univerzální."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<script src="/header.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Srdíčka ke zkopírování</h1>
+    <p class="hero-tagline">Sbírka srdíček emoji, textových srdcí Unicode a symbolů lásky. Klikni na libovolný symbol a hned se zkopíruje.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Najdeš tu srdíčka emoji ve všech dostupných barvách, textová srdce Unicode v různých stylech, emoji lásky a něhy i další související symboly, seřazené podle barvy, stylu a typu znaku.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="pride-rainbow-hearts">
+  <span class="article-section-label">Duhová srdíčka</span>
+  <h2>Duhová srdíčka k Pride</h2>
+  <p class="u-secondary-tight">Duha a za ní barevná srdíčka v pořadí, jaké se používá v příspěvcích k Pride, na podporu a pro inkluzi. Zkopíruj je po jednom, nebo jako celou řadu.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌈" aria-label="Kopírovat: Duha">🌈</button>
+      <span class="flag-label">Duha</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤" aria-label="Kopírovat: Červené">❤</button>
+      <span class="flag-label">Červené</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧡" aria-label="Kopírovat: Oranžové">🧡</button>
+      <span class="flag-label">Oranžové</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💛" aria-label="Kopírovat: Žluté">💛</button>
+      <span class="flag-label">Žluté</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💚" aria-label="Kopírovat: Zelené">💚</button>
+      <span class="flag-label">Zelené</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💙" aria-label="Kopírovat: Modré">💙</button>
+      <span class="flag-label">Modré</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💜" aria-label="Kopírovat: Fialové">💜</button>
+      <span class="flag-label">Fialové</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤎" aria-label="Kopírovat: Hnědé">🤎</button>
+      <span class="flag-label">Hnědé</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🖤" aria-label="Kopírovat: Černé">🖤</button>
+      <span class="flag-label">Černé</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤍" aria-label="Kopírovat: Bílé">🤍</button>
+      <span class="flag-label">Bílé</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="color-hearts">
+  <span class="article-section-label">Barevná srdíčka</span>
+  <h2>Barevná srdíčka emoji</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤" aria-label="Kopírovat: Červené">❤</button>
+      <span class="flag-label">Červené</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧡" aria-label="Kopírovat: Oranžové">🧡</button>
+      <span class="flag-label">Oranžové</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💛" aria-label="Kopírovat: Žluté">💛</button>
+      <span class="flag-label">Žluté</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💚" aria-label="Kopírovat: Zelené">💚</button>
+      <span class="flag-label">Zelené</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💙" aria-label="Kopírovat: Modré">💙</button>
+      <span class="flag-label">Modré</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💜" aria-label="Kopírovat: Fialové">💜</button>
+      <span class="flag-label">Fialové</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🖤" aria-label="Kopírovat: Černé">🖤</button>
+      <span class="flag-label">Černé</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤍" aria-label="Kopírovat: Bílé">🤍</button>
+      <span class="flag-label">Bílé</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤎" aria-label="Kopírovat: Hnědé">🤎</button>
+      <span class="flag-label">Hnědé</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🩷" aria-label="Kopírovat: Růžové">🩷</button>
+      <span class="flag-label">Růžové</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🩵" aria-label="Kopírovat: Světle modré">🩵</button>
+      <span class="flag-label">Světle modré</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🩶" aria-label="Kopírovat: Šedé">🩶</button>
+      <span class="flag-label">Šedé</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤️" aria-label="Kopírovat: Červené (emoji)">❤️</button>
+      <span class="flag-label">Červené (emoji)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♥️" aria-label="Kopírovat: Karetní srdce (emoji)">♥️</button>
+      <span class="flag-label">Karetní srdce (emoji)</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="decorated-hearts">
+  <span class="article-section-label">Zdobená srdíčka</span>
+  <h2>Zdobená srdíčka emoji</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💕" aria-label="Kopírovat: Dvě srdíčka">💕</button>
+      <span class="flag-label">Dvě srdíčka</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💞" aria-label="Kopírovat: Kroužící srdíčka">💞</button>
+      <span class="flag-label">Kroužící srdíčka</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💓" aria-label="Kopírovat: Tlukoucí srdce">💓</button>
+      <span class="flag-label">Tlukoucí srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💗" aria-label="Kopírovat: Rostoucí srdce">💗</button>
+      <span class="flag-label">Rostoucí srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💖" aria-label="Kopírovat: Třpytivé srdce">💖</button>
+      <span class="flag-label">Třpytivé srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💘" aria-label="Kopírovat: Srdce se šípem">💘</button>
+      <span class="flag-label">Srdce se šípem</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💝" aria-label="Kopírovat: Srdce s mašlí">💝</button>
+      <span class="flag-label">Srdce s mašlí</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💟" aria-label="Kopírovat: Ozdobné srdce">💟</button>
+      <span class="flag-label">Ozdobné srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❣" aria-label="Kopírovat: Srdce jako vykřičník">❣</button>
+      <span class="flag-label">Srdce jako vykřičník</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤️‍🔥" aria-label="Kopírovat: Hořící srdce">❤️‍🔥</button>
+      <span class="flag-label">Hořící srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤️‍🩹" aria-label="Kopírovat: Uzdravující se srdce">❤️‍🩹</button>
+      <span class="flag-label">Uzdravující se srdce</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="special-hearts">
+  <span class="article-section-label">Zvláštní srdíčka</span>
+  <h2>Zlomené a zvláštní srdce</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💔" aria-label="Kopírovat: Zlomené srdce">💔</button>
+      <span class="flag-label">Zlomené srdce</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="love-affection">
+  <span class="article-section-label">Láska a něha</span>
+  <h2>Emoji lásky a něhy</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💌" aria-label="Kopírovat: Milostný dopis">💌</button>
+      <span class="flag-label">Milostný dopis</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💑" aria-label="Kopírovat: Pár se srdíčkem">💑</button>
+      <span class="flag-label">Pár se srdíčkem</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❣️" aria-label="Kopírovat: Srdce jako vykřičník">❣️</button>
+      <span class="flag-label">Srdce jako vykřičník</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😻" aria-label="Kopírovat: Zamilovaná kočka">😻</button>
+      <span class="flag-label">Zamilovaná kočka</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💋" aria-label="Kopírovat: Otisk polibku">💋</button>
+      <span class="flag-label">Otisk polibku</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫶" aria-label="Kopírovat: Ruce do srdce">🫶</button>
+      <span class="flag-label">Ruce do srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💏" aria-label="Kopírovat: Polibek">💏</button>
+      <span class="flag-label">Polibek</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💒" aria-label="Kopírovat: Svatba">💒</button>
+      <span class="flag-label">Svatba</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😍" aria-label="Kopírovat: Srdíčkové oči">😍</button>
+      <span class="flag-label">Srdíčkové oči</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥰" aria-label="Kopírovat: Úsměv se srdíčky">🥰</button>
+      <span class="flag-label">Úsměv se srdíčky</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😘" aria-label="Kopírovat: Posílá pusu">😘</button>
+      <span class="flag-label">Posílá pusu</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="unicode-hearts">
+  <span class="article-section-label">Textová srdíčka</span>
+  <h2>Znak srdíčka: textová srdce Unicode</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♥" aria-label="Kopírovat: Plné srdce (karetní)">♥</button>
+      <span class="flag-label">Plné srdce (karetní)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♡" aria-label="Kopírovat: Obrysové srdce">♡</button>
+      <span class="flag-label">Obrysové srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❥" aria-label="Kopírovat: Otočené srdce">❥</button>
+      <span class="flag-label">Otočené srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❦" aria-label="Kopírovat: Květinové srdce">❦</button>
+      <span class="flag-label">Květinové srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❧" aria-label="Kopírovat: Otočený květinový ornament">❧</button>
+      <span class="flag-label">Otočený květinový ornament</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☙" aria-label="Kopírovat: Obrácený květinový ornament">☙</button>
+      <span class="flag-label">Obrácený květinový ornament</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫀" aria-label="Kopírovat: Anatomické srdce">🫀</button>
+      <span class="flag-label">Anatomické srdce</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="valentines-day-symbols">
+  <span class="article-section-label">Valentýn</span>
+  <h2>Symboly na Valentýna</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❣" aria-label="Kopírovat: Srdce jako vykřičník">❣</button>
+      <span class="flag-label">Srdce jako vykřičník</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤" aria-label="Kopírovat: Červené srdce">❤</button>
+      <span class="flag-label">Červené srdce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💐" aria-label="Kopírovat: Kytice">💐</button>
+      <span class="flag-label">Kytice</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌹" aria-label="Kopírovat: Růže">🌹</button>
+      <span class="flag-label">Růže</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💘" aria-label="Kopírovat: Srdce se šípem">💘</button>
+      <span class="flag-label">Srdce se šípem</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💝" aria-label="Kopírovat: Srdce s mašlí">💝</button>
+      <span class="flag-label">Srdce s mašlí</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💌" aria-label="Kopírovat: Milostný dopis">💌</button>
+      <span class="flag-label">Milostný dopis</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💞" aria-label="Kopírovat: Kroužící srdíčka">💞</button>
+      <span class="flag-label">Kroužící srdíčka</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💕" aria-label="Kopírovat: Dvě srdíčka">💕</button>
+      <span class="flag-label">Dvě srdíčka</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🍫" aria-label="Kopírovat: Čokoláda">🍫</button>
+      <span class="flag-label">Čokoláda</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="heart-collections">
+  <span class="article-section-label">Sady srdíček</span>
+  <h2>Srdíčka do bia a ozdobné řádky</h2>
+  <p class="u-secondary-block">Hotové řetězce srdíček, které vložíš rovnou do bia, popisku nebo jména: celé kombo zkopíruješ jedním klikem. Na dlouhý blok, třeba 1000 ❤️ za sebou, se hodí generátor opakování textu.</p>
+  <div id="heartCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <h2>Srdíčka do bia a ozdobné řádky</h2>
+  <div class="editorial-block">
+    <p>Hotové řetězce srdíček, které vložíš rovnou do bia, popisku nebo jména: celé kombo zkopíruješ jedním klikem. Na dlouhý blok, třeba 1000 ❤️ za sebou, ho <a href="/usecase/repeat-text/">generátor opakování textu</a> vytvoří jedním ťuknutím.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section class="editorial-section" id="faq">
+  <span class="article-section-label">Časté dotazy</span>
+  <h2>Co znamenají srdíčka: barvy, emoji a textové znaky</h2>
+  <details class="faq-item">
+    <summary class="faq-question">Co znamenají jednotlivé barvy srdíček?</summary>
+    <div class="faq-answer"><p>Barva je hlavní věc, která odlišuje jedno srdíčko emoji od druhého, a většina barev už má ustálený význam: ❤️ červené je klasická romantická láska; 🧡 oranžové znamená vřelost a péči bez romantiky; 💛 žluté se čte jako přátelství a radost; 💚 zelené pokrývá přírodu, zdraví a ve starším významu i žárlivost; 💙 modré je důvěra, věrnost a přátelská náklonnost; 💜 fialové nese soucit a pro miliony fanoušků K-popu i lásku k fandomu; 🖤 černé je spíš černý humor, smutek nebo gotická estetika než nenávist; 🤍 bílé je čistota, klid a minimalistická estetika; 🤎 hnědé působí zemitě a konejšivě; a růžová rodina (💗 💓 💕) se čte jako sladká, rostoucí náklonnost. Nic z toho neurčuje Unicode: jde o zvyklost, která se liší podle platformy, věku i země.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Co znamená žluté srdíčko 💛?</summary>
+    <div class="faq-answer"><p>💛 je srdíčko přátelství. V běžném použití vyjadřuje přátelskou náklonnost, vřelost a radost: je to srdíčko, které pošleš kamarádovi, ne partnerovi. Na Snapchatu má navíc samostatný, konkrétní význam: žluté srdíčko u jména znamená, že jste si s tím člověkem navzájem nejlepší přátelé číslo 1. To je vlastní systém Snapchatu, ne obecný význam. Celý průběh najdeš v přehledu barev srdíček na Snapchatu.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Co znamená fialové srdíčko 💜?</summary>
+    <div class="faq-answer"><p>💜 má tři běžné významy. Obecně znamená soucit, obdiv a něco trochu něžného či tajemného. Ve Spojených státech odkazuje také na Purpurové srdce (Purple Heart), vojenské vyznamenání pro vojáky zraněné v boji, takže se objevuje v příspěvcích veteránů a ve vzpomínkových příspěvcích. A v K-popu je to srdíčko fandomu: V z BTS v roce 2016 vymyslel „I purple you“ ve smyslu dlouhodobé důvěry a lásky k někomu a od té doby je fialová zkratkou právě pro tohle.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Co znamená černé srdíčko 🖤?</summary>
+    <div class="faq-answer"><p>🖤 je mnohem častěji černý humor, suchý sarkasmus nebo gotická či grunge estetika než cokoli nenávistného. Hodně se používá i pro smutek a truchlení a prostě jako srdíčko, které ladí s černobílým nebo minimalistickým profilem. Čti ho podle kontextu: vedle vtipu je to obvykle ironie, vedle vzpomínky obvykle ztráta.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Co znamená zelené srdíčko 💚?</summary>
+    <div class="faq-answer"><p>💚 pokrývá přírodu, růst, zdraví a ekologická témata: je to standardní srdíčko pro všechno rostlinné, veganské nebo udržitelné. V angličtině je to také tradiční barva žárlivosti (tamní „zelenooká obluda“), online se ale tenhle význam objevuje mnohem vzácněji než ten přírodní. Ve sportu a u národních témat často jen ladí s barvami týmu nebo vlajky.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Znamenají barvy srdíček v každé aplikaci totéž?</summary>
+    <div class="faq-answer"><p>Ne, a právě tady vzniká nejvíc zmatků. Obecné významy barev platí v běžném chatu a popiscích na většině platforem. Velkou výjimkou je Snapchat: srdíčka u jména kamaráda tam generuje sám Snapchat a vyjadřují, jak dlouho jste si navzájem nejlepšími přáteli číslo 1, takže 💛 je tam ukazatel stavu, ne něco, co ti ten druhý poslal. Liší se i vykreslení: stejný kódový bod kreslí jinak Apple, Google, Samsung a Microsoft, takže srdíčko může na displeji příjemce vypadat znatelně jinak.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Jaký je rozdíl mezi srdíčkem emoji (💕) a textovým znakem srdíčka (♥)?</summary>
+    <div class="faq-answer"><p>💕 💖 ❤️ jsou emoji: na každém zařízení se zobrazí velké a v pevné barvě, takže vyniknou. ♥ ♡ ❥ ❦ jsou textové znaky Unicode: převezmou barvu a velikost okolního textu, a proto jsou nenápadnější volbou do bia, uživatelského jména nebo zobrazovaného jména. Obojí jsou skutečné znaky, ne obrázky, takže obojí zkopíruješ a vložíš všude, kde jde vložit obyčejný text.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Proč se srdíčko zobrazí jako čtvereček (□) nebo otazník?</summary>
+    <div class="faq-answer"><p>Jde o chybějící glyf, kterému se říká tofu. Zařízení, které tvůj text přijímá, nemá písmo s tímto znakem, a tak místo něj nakreslí zástupný čtvereček. Nejčastěji selžou novější nebo vzácnější srdíčka (🩷 🩵 🩶, přidaná v Unicode 15) na starších telefonech a v desktopových aplikacích. Pokud záleží na tom, aby ho viděli všichni, použij dlouho zavedené srdíčko jako ♥ ❤️ 💕.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Jak napsat srdíčko bez kopírování?</summary>
+    <div class="faq-answer"><p>Ve Windows podrž Alt a na numerické klávesnici napiš 3, dostaneš ♥ (textový znak srdíčka, ne emoji), nebo stiskni Windows + . a otevře se výběr emoji. Na Macu stiskni Control + Command + mezerník pro prohlížeč emoji a symbolů. Na iPhonu a Androidu přidej klávesnici emoji a vyhledej „srdce“. Kopírování z této stránky je obvykle rychlejší a u vzácnějších textových srdíček jako ❥ a ❦ je to jediná spolehlivá cesta.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Můžu tato srdíčka používat zdarma?</summary>
+    <div class="faq-answer"><p>Ano. Jde o standardní znaky Unicode, ne o obrázky ani fonty, takže není co licencovat a není třeba uvádět autora: používej je volně v biu, příspěvcích, jménech, dokumentech i v komerční práci. To, jak daný znak vykreslí jednotlivé platformy, je vlastní grafika každého výrobce, ale znak, který kopíruješ, je univerzální.</p></div>
+  </details>
+</section>
+
+<!-- CTA -->
+<div class="cta-card">
+  <h3>Vytvoř ozdobné písmo</h3>
+  <p>Převeď obyčejný text do 100+ Unicode fontů. Zdarma a hned.</p>
+  <a href="https://ultratextgen.com/cs/" class="cta-btn">Otevřít generátor písma →</a>
+</div>
+
+<!-- RELATED -->
+<section class="editorial-section">
+  <span class="article-section-label">Související stránky</span>
+  <div class="compare-grid">
+    <a href="/usecase/aesthetic-contact-names/" class="compare-card variant-muted u-no-underline">
+      <h4>Ozdobná jména kontaktů</h4>
+      <p>Ozdob jméno kontaktu pro svou lásku srdíčky a zkopíruj ho rovnou do telefonu.</p>
+    </a>
+    <a href="/library/awareness-ribbons/" class="compare-card variant-muted u-no-underline">
+      <h4>Symboly stužek</h4>
+      <p>Emoji stužek a symboly osvětových kampaní v mnoha barvách a stylech.</p>
+    </a>
+    <a href="/library/card-suit-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Symboly karetních barev</h4>
+      <p>Symboly karetních barev včetně klasického srdce ♥.</p>
+    </a>
+    <a href="/library/hand-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Symboly rukou</h4>
+      <p>Emoji gest a symboly rukou Unicode, včetně rukou do srdce a sepjatých rukou.</p>
+    </a>
+    <a href="/library/star-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Symboly hvězd</h4>
+      <p>Emoji hvězd a třpytivé znaky v různých stylech a velikostech Unicode.</p>
+    </a>
+    <a href="/symbol/autism-symbol/" class="compare-card variant-muted u-no-underline">
+      <h4>Symbol autismu</h4>
+      <p>Symbol nekonečna (∞ ♾️), který autističtí sebeobhájci používají pro autismus a neurodiverzitu, a proč nahradil dílek puzzle 🧩.</p>
+    </a>
+    <a href="/symbol/heart-symbol/" class="compare-card variant-muted u-no-underline">
+      <h4>Symbol srdce</h4>
+      <p>Symbol srdce (♥ ❤), karetní znak, který se stal univerzálním znakem lásky, plus jeho emoji verze a textové srdíčko &lt;3.</p>
+    </a>
+    <a href="/events/fathers-day/" class="compare-card variant-muted u-no-underline">
+      <h4>Generátor textu a symbolů ke Dni otců</h4>
+      <p>Ostyluj přání ke Dni otců naživo a zkopíruj k němu písmo, emoji, kaomoji i hotové fráze.</p>
+    </a>
+    <a href="/events/mothers-day/" class="compare-card variant-muted u-no-underline">
+      <h4>Generátor textu a symbolů ke Dni matek</h4>
+      <p>Ostyluj přání ke Dni matek naživo a zkopíruj k němu písmo, emoji, kaomoji i hotové fráze.</p>
+    </a>
+    <a href="/events/valentines-day/" class="compare-card variant-muted u-no-underline">
+      <h4>Generátor textu a symbolů na Valentýna</h4>
+      <p>Ostyluj valentýnské přání naživo a zkopíruj k němu písmo, emoji, kaomoji i hotové fráze.</p>
+    </a>
+    <a href="/library/love-kaomoji/" class="compare-card variant-muted u-no-underline">
+      <h4>Kaomoji lásky a srdíček</h4>
+      <p>Zkopíruj kaomoji lásky a srdíček: roztomilé japonské textové obličeje pro zamilovanost, pusy a objetí.</p>
+    </a>
+    <a href="/library/heart-kaomoji/" class="compare-card variant-muted u-no-underline">
+      <h4>Srdíčková kaomoji</h4>
+      <p>Zkopíruj srdíčková kaomoji: roztomilé japonské textové obličeje se srdíčky a srdíčkovýma očima.</p>
+    </a>
+    <a href="/library/heart-ascii-art/" class="compare-card variant-muted u-no-underline">
+      <h4>Srdce v ASCII artu</h4>
+      <p>Originální obrázky srdcí nakreslené jen obyčejným textem: jednořádková srdíčka, malá srdce i velká víceřádková díla.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Prozkoumat</span><a href="/cs/" class="footer-link">Domů</a><a href="/cs/guide/" class="footer-link">Návody</a><a href="/answers/" class="footer-link">Odpovědi</a><a href="/usecase/" class="footer-link">Použití</a><a href="/category/" class="footer-link">Kategorie</a><a href="/library/" class="footer-link">Knihovna</a><a href="/printables/" class="footer-link">K tisku</a><a href="/events/" class="footer-link">Události</a></div><div class="footer-col"><span class="footer-col-title">Oblíbené nástroje</span><a href="/cs/usecase/pismo-pro-bio/" class="footer-link">Písmo pro bio</a><a href="/usecase/tattoo-fonts/" class="footer-link">Písmo pro tetování</a><a href="/usecase/text-to-emoji/" class="footer-link">Překladač emoji</a><a href="/usecase/vertical-text/" class="footer-link">Svislý text</a></div><div class="footer-col"><span class="footer-col-title">Oblíbené kategorie</span><a href="/cs/tucne-pismo/" class="footer-link">Tučné písmo</a><a href="/cs/kurziva/" class="footer-link">Kurzíva</a><a href="/cs/goticke-pismo/" class="footer-link">Gotické písmo</a><a href="/cs/male-pismo/" class="footer-link">Malé písmo</a><a href="/category/strikethrough-text/" class="footer-link">Přeškrtnutý text</a></div><div class="footer-col"><span class="footer-col-title">Společnost</span><a href="/about/" class="footer-link">O nás</a><a href="/privacy/" class="footer-link">Zásady ochrany osobních údajů</a><a href="/terms/" class="footer-link">Podmínky služby</a><a href="/contact/" class="footer-link">Kontakt</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Stylové písmo, které funguje kdekoli.</div>
+<!-- END static footer -->
+</div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Duhová řada srdíček",
+      flags: ["❤", "🧡", "💛", "💚", "💙", "💜"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Jemný srdíčkový rámeček",
+      flags: ["⋆｡˚♡˚｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pastelové trio",
+      flags: ["🩷", "🤍", "🩵"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bílá srdíčka do bia",
+      flags: ["♡", "˚", "♡", "˚", "♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Třpytivé kombo lásky",
+      flags: ["💕", "˖", "💖", "˖", "💞"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Květinový oddělovač se srdíčkem",
+      flags: ["❦", "˚", "｡", "♡", "｡", "˚", "❧"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("heartCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+<script src="/footer.js"></script>
+</body>
+</html>

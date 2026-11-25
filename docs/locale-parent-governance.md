@@ -324,7 +324,8 @@ procedural and handled elsewhere (noted below).
    No spec mirroring. (A held locale is checked first, ahead of the general
    Tier-3 check, so its distinct reason — authority gap, not stub — surfaces
    correctly. No locale currently carries `hold: true` — see the `vi` note
-   in §2 above.)
+   in §2 above.) **A Tier-3 stub can still admit one page** through the Rule B
+   exception (§3a); a hold cannot.
 2. **Is `P` script-incompatible with `L`?** (`P` is Core with
    `scriptIndependent: false`, and `L` is one of the CJK/Arabic/Indic locales
    — `ar, hi, ja, ko, th, zh-tw`) → `skip-script-incompatible`. Substitute
@@ -355,6 +356,56 @@ than an oversight.
 
 ---
 
+## 3a. The Rule B exception: one page in an existing Tier-3 locale (owner decision 2026-11-26)
+
+Tier 3 used to stop every page in a locale, however well the page's own job
+was evidenced. The owner kept the tier system and added a per-page exception.
+
+| Qualification of the (page, locale) | Authority |
+|---|---|
+| Rule A only (an established core offering) | the tier restriction stands |
+| Rule B + positive target-language demand evidence | this one translation is authorized in an existing locale: verdict `rule-b-exception` |
+| Rule B + insufficient target-language evidence | eligible for a bounded experimental cohort: verdict `rule-b-experiment`, counted against an allowance |
+| Rule B + negative target-language evidence | held, with the reason recorded (verdict `gate-fail`) |
+| A new locale (no tier entry) | owner approval, as before |
+| Technical prerequisites unresolved | blocked |
+
+**Rule B** is the qualification the owner set on 2026-11-18: the canonical
+intent earned at least 100 Google organic impressions in each of at least five
+languages over the trailing 90 days. **Target-language evidence** is about the
+target language itself: a market-native query for the same job measured in
+that market, or first-party impressions from target-language queries for the
+job. Evidence in other languages is what qualified the intent; it is never
+counted twice as target-language evidence. Missing measurement is
+*insufficient*, never *negative*: negative needs a measurement that came back
+low, or a recorded locale-level negative finding that new evidence has not
+overturned.
+
+What the exception authorizes is a **page-language combination**, never a
+language, a family or a mirror:
+
+- The record is a `data/locale_parent_gap_audit.json` entry with
+  `"scope": "page"`, `pattern` = the reference page's path without
+  `index.html` (`"library/heart-symbols"`), the locale, `verdict`,
+  `targetEvidence` (`positive` / `insufficient`), `ruleB.languages`,
+  `scriptReadiness`, `evidence`, `checkedDate`, and for an experiment
+  `experimentCohort` and `recheckDate`.
+- `scripts/lib/locale-parent-registry.js` → `ruleBException()` admits a page
+  only when `decide()` says `skip-stub-locale` (an existing, unheld Tier-3
+  locale) and the entry for exactly that page validates;
+  `validateRuleBEntries()` checks every Rule B entry as a set, including the
+  experimental cap in `data/locale_rule_b_exception.json`.
+  `check-locale-parent-gap.js` fails on any broken entry;
+  `check-locale-parent-tier.js` prints the exception status.
+- `data/locale_qualification_tiers.json` is not edited by an exception. A
+  locale's tier changes only by an owner decision, as before.
+- Everything else still applies unchanged: canonical-intent mapping and the
+  one-page-per-language rule, cannibalization ("check who already owns it"),
+  translation quality and `check:locale-translation`, translation and
+  functional parity, spec-drift, revenue protection, and release review.
+
+---
+
 ## 4. The pre-build gap check
 
 ### `data/locale_parent_gap_audit.json`
@@ -378,7 +429,8 @@ The ledger — same `_readme` + array shape as
 }
 ```
 
-`verdict` is one of `mirror` (Core parent, demand confirms the default),
+`verdict` is one of `rule-b-exception` / `rule-b-experiment` (one page in a
+Tier-3 locale, §3a), `mirror` (Core parent, demand confirms the default),
 `veto` (Core parent, pre-build check showed genuinely negligible demand),
 `gate-pass` (gated-tail parent, pre-build check cleared threshold),
 `gate-fail` (gated-tail parent, did not clear threshold). `check-locale-parent-gap.js`

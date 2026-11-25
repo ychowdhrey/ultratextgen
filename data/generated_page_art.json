@@ -1092,6 +1092,149 @@
       ],
       "kicker": "LIB",
       "added": "2026-11-18"
+    },
+    "cs-library-srdicka": {
+      "title": "Srdíčka ke zkopírování",
+      "sub": "Sbírka srdíček emoji, textových srdcí Unicode a symbolů lásky. Klikni ",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "sk-library-srdiecka": {
+      "title": "Srdiečka na kopírovanie",
+      "sub": "Zbierka srdiečok emoji, textových srdiečok Unicode a symbolov lásky. K",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hu-library-sziv-szimbolum": {
+      "title": "Szív szimbólum gyűjtemény",
+      "sub": "Szív emojik, Unicode szívkarakterek és szerelmes szimbólumok egy helye",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "ro-library-simbol-inima": {
+      "title": "Simbol inimă: colecția de inimioare",
+      "sub": "Emoji inimă, caractere Unicode cu inimă și simboluri de dragoste, adun",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "fi-library-sydan-symboli": {
+      "title": "Sydänsymbolit ja sydän-emojit",
+      "sub": "Kokoelma sydän-emojeja, Unicoden sydänmerkkejä ja rakkauteen liittyviä",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "uk-library-serdechka": {
+      "title": "Символи сердечок",
+      "sub": "Довідкова колекція емодзі сердечок, текстових сердечок Unicode і симво",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "cs-library-sipky": {
+      "title": "Šipky ke zkopírování",
+      "sub": "Sbírka směrových šipek: rovné, zahnuté, dvojité, trojúhelníkové i emoj",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hu-library-nyil-szimbolum": {
+      "title": "Nyíl szimbólumok",
+      "sub": "Irányjelző nyilak gyűjteménye: egyenes, ívelt, dupla, háromszög és emo",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "fi-library-nuoli-symboli": {
+      "title": "Nuolisymbolit ja nuolimerkit",
+      "sub": "Kokoelma suuntanuolia: suoria, kaarevia, kaksois-, kolmio- ja emojinuo",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hr-library-strelice": {
+      "title": "Strelice za kopiranje",
+      "sub": "Zbirka strelica za smjer: ravne, zakrivljene, dvostruke, trokutaste i ",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "uk-library-strilky": {
+      "title": "Символи стрілок",
+      "sub": "Довідкова колекція символів стрілок: прямі, жирні, подвійні, вигнуті, ",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
     }
   }
 }

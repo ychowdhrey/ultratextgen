@@ -1,5 +1,5 @@
 {
-  "_readme": "Ledger of recorded pre-build competitor+keyword gap checks for (Core-parent-pattern, locale) cells and gated-tail-pattern build exceptions — the instrument that replaces incidental discovery (the FR /symbol/ blind spot: EN had 77 symbol pages, FR had 6, and nothing flagged the substantial French demand until a manual keyword pull found it) with a standing, recorded pass. Read/written by scripts/audit-locale-parent-gap.js (whole-site discovery) and scripts/check-locale-parent-gap.js (per-PR gate). Do NOT add or edit an entry here unilaterally — every entry must reflect a real, run instrument check, discussed with the user the same way data/translation_parity_exceptions.json entries are (see `docs/locale-parent-governance.md`). Entry shape: { pattern (a data/core_parent_set.json pattern string, e.g. \"symbol/*\"), locale (locale code), checkedDate (YYYY-MM-DD), instruments: { competitorFootprintInLocale: bool|null, keywordVolumeInLocaleMonthly: number|null, enGscImpressionsFromLocale: number|null } — null means that instrument was not run/available, not zero, evidence (short citation of where the numbers came from), recordedBy }. verdict: \"mirror\" (Core parent, demand confirms the default — informational, not required for the check to pass), \"veto\" (Core parent, pre-build check showed genuinely negligible demand — overrides the default-mirror), \"gate-pass\" (gated-tail parent, pre-build check cleared threshold — authorizes the build), \"gate-fail\" (gated-tail parent, pre-build check did not clear threshold — build not authorized). scripts/check-locale-parent-gap.js treats \"mirror\" and \"gate-pass\" as passing verdicts for a newly-shipped locale page; \"veto\" and \"gate-fail\" record that a page was deliberately NOT built. Do not invent additional entries with fabricated numbers — every cell without a real entry here is genuinely unaudited right now, which is exactly the gap this tooling exists to surface, not paper over.",
+  "_readme": "Ledger of recorded pre-build competitor+keyword gap checks for (Core-parent-pattern, locale) cells and gated-tail-pattern build exceptions — the instrument that replaces incidental discovery (the FR /symbol/ blind spot: EN had 77 symbol pages, FR had 6, and nothing flagged the substantial French demand until a manual keyword pull found it) with a standing, recorded pass. Read/written by scripts/audit-locale-parent-gap.js (whole-site discovery) and scripts/check-locale-parent-gap.js (per-PR gate). Do NOT add or edit an entry here unilaterally — every entry must reflect a real, run instrument check, discussed with the user the same way data/translation_parity_exceptions.json entries are (see `docs/locale-parent-governance.md`). Entry shape: { pattern (a data/core_parent_set.json pattern string, e.g. \"symbol/*\"), locale (locale code), checkedDate (YYYY-MM-DD), instruments: { competitorFootprintInLocale: bool|null, keywordVolumeInLocaleMonthly: number|null, enGscImpressionsFromLocale: number|null } — null means that instrument was not run/available, not zero, evidence (short citation of where the numbers came from), recordedBy }. verdict: \"mirror\" (Core parent, demand confirms the default — informational, not required for the check to pass), \"veto\" (Core parent, pre-build check showed genuinely negligible demand — overrides the default-mirror), \"gate-pass\" (gated-tail parent, pre-build check cleared threshold — authorizes the build), \"gate-fail\" (gated-tail parent, pre-build check did not clear threshold — build not authorized). scripts/check-locale-parent-gap.js treats \"mirror\" and \"gate-pass\" as passing verdicts for a newly-shipped locale page; \"veto\" and \"gate-fail\" record that a page was deliberately NOT built. Do not invent additional entries with fabricated numbers — every cell without a real entry here is genuinely unaudited right now, which is exactly the gap this tooling exists to surface, not paper over. Rule B exception (owner decision 2026-11-26): an entry with \"scope\": \"page\" authorizes ONE page in an existing Tier-3 locale, keyed by the reference page's path without index.html (pattern \"library/heart-symbols\", never a \"*\" pattern). Its verdict is \"rule-b-exception\" (targetEvidence \"positive\") or \"rule-b-experiment\" (targetEvidence \"insufficient\", plus experimentCohort and recheckDate, counted against the allowance in data/locale_rule_b_exception.json); it also carries ruleB {languages, window} and scriptReadiness. scripts/lib/locale-parent-registry.js validates these as a set and the gate fails a broken one. The tier is unchanged.",
   "entries": [
     {
       "pattern": "symbol/*",
@@ -1891,6 +1891,226 @@
       "verdict": "mirror",
       "evidence": "OWNER DECISION, 2026-11-18 (owner brief 'Kazakhstan (Kazakh) Localization: Evidence-Led Production Expansion'): a canonical intent qualifies for Kazakh when it is an established core product offering (Rule A) or earned at least 100 Google organic impressions in each of five or more languages over the trailing 90 days (Rule B); Kazakhstan keyword volume refines terminology and priority and is explicitly not a gate (zero or missing volume never disqualifies). Locale kk is added to data/locale_qualification_tiers.json at Tier 3 (hold-stub) in this same change, so the registry default is skip-stub-locale and this entry is the recorded per-page override. Rule B instrument: Search Console page x country exports covering 49 of the 90 days 2026-08-20..2026-11-17 (Aug 20 to Sep 29 and Nov 1 to 8; October not exported, so sums are lower bounds), language = the locale of the page that earned the impression, one language counted once however many URLs it has. Kazakhstan instrument: Semrush KZ database exports of 2026-11-18 (Kazakh-language seeds). Kazakhstan-country impressions on the cluster's existing pages in the same window are quoted where non-zero; the EN-from-locale instrument was not pulled separately, so it stays null. Scope: kk/syzylgan-matin/ (cluster category/strikethrough-text/). Qualifies under Rule A (footer Popular categories; core_parent_set core with the 2026-08-11 scriptIndependent override). Measured 2026-11-18: all 9 strikethrough styles mark every Kazakh letter including ә ғ қ ң ө ұ ү һ і. Kazakhstan volume for сызылған мәтін not measured (null). Register #48 (2026-09-10) found near-zero impressions for underline spokes in 8 locales; this page is therefore measured against the same 30/60/90-day rule as the wave rather than assumed. Re-check 2026-12-18 (30 days) against the page's own GSC impressions; zero impressions is an indexing question first, not a demand verdict.",
       "recordedBy": "claude-session-011zoJG34KynXEDTg5vBh9RP-owner-authorized"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "cs",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 260,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=cz 'šipka symbol' 260/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /cs/library/sipky/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "fi",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 480,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=fi 'nuoli symboli' 480/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /fi/library/nuoli-symboli/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "hr",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 390,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=hr 'strelica simbol' 390/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /hr/library/strelice/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "hu",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 390,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=hu 'nyíl szimbólum' 390/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /hu/library/nyil-szimbolum/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "uk",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 390,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=ua 'стрілка символ' 390/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /uk/library/strilky/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/heart-symbols",
+      "scope": "page",
+      "locale": "cs",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 590,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 9,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 9 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=cz 'srdce symbol' 590/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /cs/library/srdicka/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/heart-symbols",
+      "scope": "page",
+      "locale": "fi",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 320,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 9,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 9 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=fi 'sydän symboli' 320/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /fi/library/sydan-symboli/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/heart-symbols",
+      "scope": "page",
+      "locale": "hu",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 320,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 9,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 9 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=hu 'szív szimbólum' 320/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /hu/library/sziv-szimbolum/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/heart-symbols",
+      "scope": "page",
+      "locale": "ro",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 140,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 9,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 9 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=ro 'simbol inima' 140/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /ro/library/simbol-inima/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/heart-symbols",
+      "scope": "page",
+      "locale": "sk",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 170,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 9,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 9 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=sk 'srdce symbol' 170/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /sk/library/srdiecka/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/heart-symbols",
+      "scope": "page",
+      "locale": "uk",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 1300,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 9,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 9 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=ua 'сердечко символ' 1300/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /uk/library/serdechka/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
     }
   ]
 }

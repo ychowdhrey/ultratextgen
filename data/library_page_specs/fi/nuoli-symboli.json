@@ -1,0 +1,1244 @@
+{
+  "slug": "nuoli-symboli",
+  "lang": "fi",
+  "page_type": "library",
+  "title": "Nuolisymbolit ja nuolimerkit → ⇒ ➜ – kopioi ja liitä",
+  "meta_description": "Kopioi nuolisymbolit: suorat, kaarevat, kaksois-, kolmio- ja emojinuolet asiakirjoihin, julkaisuihin ja tekstin muotoiluun. Klikkaa nuolta, niin se kopioituu.",
+  "breadcrumb": "Nuolisymbolit",
+  "hero_h1": "Nuolisymbolit ja nuolimerkit",
+  "hero_tagline": "Kokoelma suuntanuolia: suoria, kaarevia, kaksois-, kolmio- ja emojinuolia. Klikkaa mitä tahansa symbolia kopioidaksesi sen heti.",
+  "intro": "Selaa ja kopioi nuolisymboleja asiakirjoihin, julkaisuihin ja tekstin muotoiluun. Nuolimerkit on järjestetty tyylin mukaan: yksinkertaisista suuntanuolista lihavoituihin, kaksois-, kaari- ja emojiversioihin.",
+  "sections": [
+    {
+      "id": "simple-directional",
+      "label": "Perussuunnat",
+      "h2": "Yksinkertaiset suuntanuolet",
+      "intro": "Klassiset Unicode-nuolet kaikkiin kahdeksaan suuntaan.",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Nuoli oikealle"
+        },
+        {
+          "char": "←",
+          "label": "Nuoli vasemmalle"
+        },
+        {
+          "char": "↑",
+          "label": "Nuoli ylös"
+        },
+        {
+          "char": "↓",
+          "label": "Nuoli alas"
+        },
+        {
+          "char": "↗",
+          "label": "Nuoli ylös oikealle"
+        },
+        {
+          "char": "↘",
+          "label": "Nuoli alas oikealle"
+        },
+        {
+          "char": "↙",
+          "label": "Nuoli alas vasemmalle"
+        },
+        {
+          "char": "↖",
+          "label": "Nuoli ylös vasemmalle"
+        },
+        {
+          "char": "↔",
+          "label": "Nuoli vasemmalle ja oikealle"
+        },
+        {
+          "char": "↕",
+          "label": "Nuoli ylös ja alas"
+        }
+      ]
+    },
+    {
+      "id": "bold-heavy",
+      "label": "Lihavoidut ja paksut",
+      "h2": "Lihavoidut ja paksut nuolisymbolit",
+      "intro": "Paksuja, lihavoituja nuolia, joissa on visuaalista painoa korostuksiin ja toimintakehotuksiin.",
+      "symbols": [
+        {
+          "char": "➜",
+          "label": "Paksu pyöreä nuoli"
+        },
+        {
+          "char": "➝",
+          "label": "Keskipaksu nuoli oikealle"
+        },
+        {
+          "char": "⟶",
+          "label": "Pitkä nuoli oikealle"
+        },
+        {
+          "char": "➡",
+          "label": "Nuoli oikealle"
+        },
+        {
+          "char": "⬅",
+          "label": "Nuoli vasemmalle"
+        },
+        {
+          "char": "⬆",
+          "label": "Nuoli ylös"
+        },
+        {
+          "char": "⬇",
+          "label": "Nuoli alas"
+        },
+        {
+          "char": "➔",
+          "label": "Paksu nuoli oikealle"
+        },
+        {
+          "char": "➙",
+          "label": "Katkoviivanuoli"
+        }
+      ]
+    },
+    {
+      "id": "double-formal",
+      "label": "Kaksois- ja muodolliset",
+      "h2": "Kaksoisnuolet ja muodolliset nuolisymbolit",
+      "intro": "Kaksoisnuolia ja matemaattisia nuolia logiikkaan, dokumentaatioon ja muodolliseen tekstiin.",
+      "symbols": [
+        {
+          "char": "⇒",
+          "label": "Kaksoisnuoli oikealle"
+        },
+        {
+          "char": "⇐",
+          "label": "Kaksoisnuoli vasemmalle"
+        },
+        {
+          "char": "⇑",
+          "label": "Kaksoisnuoli ylös"
+        },
+        {
+          "char": "⇓",
+          "label": "Kaksoisnuoli alas"
+        },
+        {
+          "char": "⇔",
+          "label": "Kaksoisnuoli molempiin suuntiin"
+        },
+        {
+          "char": "⟹",
+          "label": "Pitkä kaksoisnuoli oikealle"
+        },
+        {
+          "char": "⟸",
+          "label": "Pitkä kaksoisnuoli vasemmalle"
+        },
+        {
+          "char": "⇕",
+          "label": "Kaksoisnuoli ylös ja alas"
+        }
+      ]
+    },
+    {
+      "id": "curved-return",
+      "label": "Kaarevat ja paluunuolet",
+      "h2": "Kaarevat nuolet ja paluunuolet",
+      "intro": "Kaarevia, kiertäviä ja paluunuolia vastauksiin, kumoamiseen ja navigointiin.",
+      "symbols": [
+        {
+          "char": "↩",
+          "label": "Paluunuoli"
+        },
+        {
+          "char": "↪",
+          "label": "Kaareva nuoli oikealle"
+        },
+        {
+          "char": "↺",
+          "label": "Vastapäivään"
+        },
+        {
+          "char": "↻",
+          "label": "Myötäpäivään"
+        },
+        {
+          "char": "⤴",
+          "label": "Kaareva nuoli oikealle ylös"
+        },
+        {
+          "char": "⤵",
+          "label": "Kaareva nuoli oikealle alas"
+        },
+        {
+          "char": "↶",
+          "label": "Yläkaari vastapäivään"
+        },
+        {
+          "char": "↷",
+          "label": "Yläkaari myötäpäivään"
+        },
+        {
+          "char": "🔃",
+          "label": "Pystynuolet myötäpäivään"
+        },
+        {
+          "char": "🔄",
+          "label": "Nuolet vastapäivään"
+        }
+      ]
+    },
+    {
+      "id": "triangle-pointer",
+      "label": "Kolmiot ja osoittimet",
+      "h2": "Kolmio- ja osoitinnuolet",
+      "intro": "Kolmionuolia ja osoitinsymboleja luettelomerkeiksi ja navigointiin.",
+      "symbols": [
+        {
+          "char": "▶",
+          "label": "Kolmio oikealle"
+        },
+        {
+          "char": "◀",
+          "label": "Kolmio vasemmalle"
+        },
+        {
+          "char": "▲",
+          "label": "Kolmio ylös"
+        },
+        {
+          "char": "▼",
+          "label": "Kolmio alas"
+        },
+        {
+          "char": "►",
+          "label": "Musta osoitin oikealle"
+        },
+        {
+          "char": "◄",
+          "label": "Musta osoitin vasemmalle"
+        },
+        {
+          "char": "➤",
+          "label": "Musta nuolenkärki oikealle"
+        },
+        {
+          "char": "‣",
+          "label": "Kolmioluettelomerkki"
+        },
+        {
+          "char": "›",
+          "label": "Yksinkertainen kulma oikealle"
+        },
+        {
+          "char": "‹",
+          "label": "Yksinkertainen kulma vasemmalle"
+        },
+        {
+          "char": "⏩",
+          "label": "Pikakelaus eteenpäin"
+        },
+        {
+          "char": "⏪",
+          "label": "Pikakelaus taaksepäin"
+        },
+        {
+          "char": "⏫",
+          "label": "Nopeasti ylös"
+        },
+        {
+          "char": "⏬",
+          "label": "Nopeasti alas"
+        }
+      ]
+    },
+    {
+      "id": "thin-minimal",
+      "label": "Ohuet ja minimalistiset",
+      "h2": "Ohuet ja minimalistiset nuolisymbolit",
+      "intro": "Kevyitä kulmamerkkejä ja minimalistisia suuntamerkkejä.",
+      "symbols": [
+        {
+          "char": "«",
+          "label": "Kaksoiskulma vasemmalle"
+        },
+        {
+          "char": "»",
+          "label": "Kaksoiskulma oikealle"
+        },
+        {
+          "char": "‹",
+          "label": "Yksinkertainen kulma vasemmalle"
+        },
+        {
+          "char": "›",
+          "label": "Yksinkertainen kulma oikealle"
+        },
+        {
+          "char": "˂",
+          "label": "Pieni nuoli vasemmalle (muunnosmerkki)"
+        },
+        {
+          "char": "˃",
+          "label": "Pieni nuoli oikealle (muunnosmerkki)"
+        },
+        {
+          "char": "˄",
+          "label": "Pieni nuoli ylös (muunnosmerkki)"
+        },
+        {
+          "char": "˅",
+          "label": "Pieni nuoli alas (muunnosmerkki)"
+        },
+        {
+          "char": "⟵",
+          "label": "Pitkä nuoli vasemmalle"
+        },
+        {
+          "char": "⟶",
+          "label": "Pitkä nuoli oikealle"
+        },
+        {
+          "char": "⟷",
+          "label": "Pitkä nuoli molempiin suuntiin"
+        },
+        {
+          "char": "⟸",
+          "label": "Pitkä kaksoisnuoli vasemmalle"
+        },
+        {
+          "char": "⟹",
+          "label": "Pitkä kaksoisnuoli oikealle"
+        }
+      ]
+    },
+    {
+      "id": "emoji-arrows",
+      "label": "Nuoliemojit",
+      "h2": "Nuoliemojit ja suuntakuvakkeet",
+      "intro": "Värikkäitä nuoliemojeja ja suuntakuvakkeita sosiaaliseen mediaan ja viesteihin.",
+      "symbols": [
+        {
+          "char": "⬆️",
+          "label": "Nuoli ylös -emoji"
+        },
+        {
+          "char": "⬇️",
+          "label": "Nuoli alas -emoji"
+        },
+        {
+          "char": "➡️",
+          "label": "Nuoli oikealle -emoji"
+        },
+        {
+          "char": "⬅️",
+          "label": "Nuoli vasemmalle -emoji"
+        },
+        {
+          "char": "↕️",
+          "label": "Nuoli ylös ja alas"
+        },
+        {
+          "char": "↔️",
+          "label": "Nuoli vasemmalle ja oikealle"
+        },
+        {
+          "char": "↩️",
+          "label": "Paluunuoli-emoji"
+        },
+        {
+          "char": "↪️",
+          "label": "Kaareva nuoli oikealle"
+        },
+        {
+          "char": "🔄",
+          "label": "Vastapäivään"
+        },
+        {
+          "char": "🔃",
+          "label": "Myötäpäivään"
+        },
+        {
+          "char": "🔀",
+          "label": "Sekoita"
+        },
+        {
+          "char": "🔁",
+          "label": "Toista"
+        },
+        {
+          "char": "🔂",
+          "label": "Toista kerran"
+        },
+        {
+          "char": "🔙",
+          "label": "BACK-nuoli (takaisin)"
+        },
+        {
+          "char": "🔚",
+          "label": "END-nuoli (loppu)"
+        },
+        {
+          "char": "🔛",
+          "label": "ON!-nuoli"
+        },
+        {
+          "char": "🔜",
+          "label": "SOON-nuoli (pian)"
+        },
+        {
+          "char": "🔝",
+          "label": "TOP-nuoli (huipulle)"
+        },
+        {
+          "char": "🆙",
+          "label": "UP!-painike"
+        },
+        {
+          "char": "🔼",
+          "label": "Ylöspäin-painike"
+        }
+      ]
+    },
+    {
+      "id": "level-up-emoji",
+      "label": "Tasonnousu",
+      "h2": "Tasonnousu-emojit",
+      "intro": "🆙 on UP!-painike-emoji, jota käytetään merkitsemään tasonnousua, ylennystä tai uutta rankia. Kirjaimet ovat osa emojia, joten fonttityyli ei muuta niitä. Näissä yhdistelmissä sen rinnalla ovat ⏫, 🔝 ja 📈, jotta julkaisu kertoo noususta eikä pelkästä ylöspäin osoittamisesta.",
+      "symbols": [
+        {
+          "char": "🆙⏫",
+          "label": "Tasonnousu"
+        },
+        {
+          "char": "🆙🔝",
+          "label": "Huipputaso"
+        },
+        {
+          "char": "📈🆙",
+          "label": "Tilastot nousussa"
+        },
+        {
+          "char": "⬆️🆙🔝",
+          "label": "Nousu huipulle"
+        },
+        {
+          "char": "🎮🆙",
+          "label": "Pelin tasonnousu"
+        },
+        {
+          "char": "🏆🆙",
+          "label": "Rankin nousu"
+        }
+      ]
+    },
+    {
+      "id": "additional-arrows",
+      "label": "Koko lohko",
+      "h2": "Lisää Unicoden nuolilohkosta",
+      "intro": "Unicoden nuolilohkon (Arrows, U+2190–U+21FF) loput määritetyt koodipisteet, joita ei ole listattu yllä olevissa valikoiduissa osioissa.",
+      "symbols": [
+        {
+          "char": "↚",
+          "label": "Yliviivattu nuoli vasemmalle"
+        },
+        {
+          "char": "↛",
+          "label": "Yliviivattu nuoli oikealle"
+        },
+        {
+          "char": "↜",
+          "label": "Aaltonuoli vasemmalle"
+        },
+        {
+          "char": "↝",
+          "label": "Aaltonuoli oikealle"
+        },
+        {
+          "char": "↞",
+          "label": "Kaksikärkinen nuoli vasemmalle"
+        },
+        {
+          "char": "↟",
+          "label": "Kaksikärkinen nuoli ylös"
+        },
+        {
+          "char": "↠",
+          "label": "Kaksikärkinen nuoli oikealle"
+        },
+        {
+          "char": "↡",
+          "label": "Kaksikärkinen nuoli alas"
+        },
+        {
+          "char": "↢",
+          "label": "Pyrstöllinen nuoli vasemmalle"
+        },
+        {
+          "char": "↣",
+          "label": "Pyrstöllinen nuoli oikealle"
+        },
+        {
+          "char": "↤",
+          "label": "Nuoli vasemmalle palkista"
+        },
+        {
+          "char": "↥",
+          "label": "Nuoli ylös palkista"
+        },
+        {
+          "char": "↦",
+          "label": "Nuoli oikealle palkista"
+        },
+        {
+          "char": "↧",
+          "label": "Nuoli alas palkista"
+        },
+        {
+          "char": "↨",
+          "label": "Nuoli ylös ja alas jalustalla"
+        },
+        {
+          "char": "↫",
+          "label": "Silmukkanuoli vasemmalle"
+        },
+        {
+          "char": "↬",
+          "label": "Silmukkanuoli oikealle"
+        },
+        {
+          "char": "↭",
+          "label": "Aaltonuoli molempiin suuntiin"
+        },
+        {
+          "char": "↮",
+          "label": "Yliviivattu nuoli molempiin suuntiin"
+        },
+        {
+          "char": "↯",
+          "label": "Siksak-nuoli alas"
+        },
+        {
+          "char": "↰",
+          "label": "Nuoli ylös, kärki vasemmalle"
+        },
+        {
+          "char": "↱",
+          "label": "Nuoli ylös, kärki oikealle"
+        },
+        {
+          "char": "↲",
+          "label": "Nuoli alas, kärki vasemmalle"
+        },
+        {
+          "char": "↳",
+          "label": "Nuoli alas, kärki oikealle"
+        },
+        {
+          "char": "↴",
+          "label": "Nuoli oikealle, kulma alas"
+        },
+        {
+          "char": "↵",
+          "label": "Nuoli alas, kulma vasemmalle"
+        },
+        {
+          "char": "↸",
+          "label": "Nuoli luoteeseen pitkään palkkiin"
+        },
+        {
+          "char": "↹",
+          "label": "Nuolet palkkiin vasemmalle ja oikealle"
+        },
+        {
+          "char": "↼",
+          "label": "Harppuuna vasemmalle, väkä ylös"
+        },
+        {
+          "char": "↽",
+          "label": "Harppuuna vasemmalle, väkä alas"
+        },
+        {
+          "char": "↾",
+          "label": "Harppuuna ylös, väkä oikealle"
+        },
+        {
+          "char": "↿",
+          "label": "Harppuuna ylös, väkä vasemmalle"
+        },
+        {
+          "char": "⇀",
+          "label": "Harppuuna oikealle, väkä ylös"
+        },
+        {
+          "char": "⇁",
+          "label": "Harppuuna oikealle, väkä alas"
+        },
+        {
+          "char": "⇂",
+          "label": "Harppuuna alas, väkä oikealle"
+        },
+        {
+          "char": "⇃",
+          "label": "Harppuuna alas, väkä vasemmalle"
+        },
+        {
+          "char": "⇄",
+          "label": "Nuoli oikealle ja sen alla nuoli vasemmalle"
+        },
+        {
+          "char": "⇅",
+          "label": "Nuoli ylös ja sen oikealla nuoli alas"
+        },
+        {
+          "char": "⇆",
+          "label": "Nuoli vasemmalle ja sen alla nuoli oikealle"
+        },
+        {
+          "char": "⇇",
+          "label": "Nuolipari vasemmalle"
+        },
+        {
+          "char": "⇈",
+          "label": "Nuolipari ylös"
+        },
+        {
+          "char": "⇉",
+          "label": "Nuolipari oikealle"
+        },
+        {
+          "char": "⇊",
+          "label": "Nuolipari alas"
+        },
+        {
+          "char": "⇋",
+          "label": "Harppuuna vasemmalle ja sen alla harppuuna oikealle"
+        },
+        {
+          "char": "⇌",
+          "label": "Harppuuna oikealle ja sen alla harppuuna vasemmalle"
+        },
+        {
+          "char": "⇍",
+          "label": "Yliviivattu kaksoisnuoli vasemmalle"
+        },
+        {
+          "char": "⇎",
+          "label": "Yliviivattu kaksoisnuoli molempiin suuntiin"
+        },
+        {
+          "char": "⇏",
+          "label": "Yliviivattu kaksoisnuoli oikealle"
+        },
+        {
+          "char": "⇖",
+          "label": "Kaksoisnuoli luoteeseen"
+        },
+        {
+          "char": "⇗",
+          "label": "Kaksoisnuoli koilliseen"
+        },
+        {
+          "char": "⇘",
+          "label": "Kaksoisnuoli kaakkoon"
+        },
+        {
+          "char": "⇙",
+          "label": "Kaksoisnuoli lounaaseen"
+        },
+        {
+          "char": "⇚",
+          "label": "Kolmoisnuoli vasemmalle"
+        },
+        {
+          "char": "⇛",
+          "label": "Kolmoisnuoli oikealle"
+        },
+        {
+          "char": "⇜",
+          "label": "Kiemuranuoli vasemmalle"
+        },
+        {
+          "char": "⇝",
+          "label": "Kiemuranuoli oikealle"
+        },
+        {
+          "char": "⇞",
+          "label": "Kahdesti yliviivattu nuoli ylös"
+        },
+        {
+          "char": "⇟",
+          "label": "Kahdesti yliviivattu nuoli alas"
+        },
+        {
+          "char": "⇠",
+          "label": "Katkoviivanuoli vasemmalle"
+        },
+        {
+          "char": "⇡",
+          "label": "Katkoviivanuoli ylös"
+        },
+        {
+          "char": "⇢",
+          "label": "Katkoviivanuoli oikealle"
+        },
+        {
+          "char": "⇣",
+          "label": "Katkoviivanuoli alas"
+        },
+        {
+          "char": "⇤",
+          "label": "Nuoli vasemmalle palkkiin"
+        },
+        {
+          "char": "⇥",
+          "label": "Nuoli oikealle palkkiin"
+        },
+        {
+          "char": "⇦",
+          "label": "Valkoinen nuoli vasemmalle"
+        },
+        {
+          "char": "⇧",
+          "label": "Valkoinen nuoli ylös"
+        },
+        {
+          "char": "⇨",
+          "label": "Valkoinen nuoli oikealle"
+        },
+        {
+          "char": "⇩",
+          "label": "Valkoinen nuoli alas"
+        },
+        {
+          "char": "⇪",
+          "label": "Valkoinen nuoli ylös palkista"
+        },
+        {
+          "char": "⇫",
+          "label": "Valkoinen nuoli ylös jalustalla"
+        },
+        {
+          "char": "⇬",
+          "label": "Valkoinen nuoli ylös jalustalla, vaakapalkki"
+        },
+        {
+          "char": "⇭",
+          "label": "Valkoinen nuoli ylös jalustalla, pystypalkki"
+        },
+        {
+          "char": "⇮",
+          "label": "Valkoinen kaksoisnuoli ylös"
+        },
+        {
+          "char": "⇯",
+          "label": "Valkoinen kaksoisnuoli ylös jalustalla"
+        },
+        {
+          "char": "⇰",
+          "label": "Valkoinen nuoli oikealle seinästä"
+        },
+        {
+          "char": "⇱",
+          "label": "Nuoli luoteeseen kulmaan"
+        },
+        {
+          "char": "⇲",
+          "label": "Nuoli kaakkoon kulmaan"
+        },
+        {
+          "char": "⇳",
+          "label": "Valkoinen nuoli ylös ja alas"
+        },
+        {
+          "char": "⇴",
+          "label": "Nuoli oikealle pienellä ympyrällä"
+        },
+        {
+          "char": "⇵",
+          "label": "Nuoli alas ja sen oikealla nuoli ylös"
+        },
+        {
+          "char": "⇶",
+          "label": "Kolme nuolta oikealle"
+        },
+        {
+          "char": "⇷",
+          "label": "Pystyviivalla yliviivattu nuoli vasemmalle"
+        },
+        {
+          "char": "⇸",
+          "label": "Pystyviivalla yliviivattu nuoli oikealle"
+        },
+        {
+          "char": "⇹",
+          "label": "Pystyviivalla yliviivattu nuoli molempiin suuntiin"
+        },
+        {
+          "char": "⇺",
+          "label": "Kahdella pystyviivalla yliviivattu nuoli vasemmalle"
+        },
+        {
+          "char": "⇻",
+          "label": "Kahdella pystyviivalla yliviivattu nuoli oikealle"
+        },
+        {
+          "char": "⇼",
+          "label": "Kahdella pystyviivalla yliviivattu nuoli molempiin suuntiin"
+        },
+        {
+          "char": "⇽",
+          "label": "Avokärkinen nuoli vasemmalle"
+        },
+        {
+          "char": "⇾",
+          "label": "Avokärkinen nuoli oikealle"
+        },
+        {
+          "char": "⇿",
+          "label": "Avokärkinen nuoli molempiin suuntiin"
+        }
+      ]
+    },
+    {
+      "id": "right-arrow-variants",
+      "label": "Nuoli oikealle",
+      "h2": "Oikealle osoittavan nuolen muunnelmat",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Oikealle"
+        },
+        {
+          "char": "⇒",
+          "label": "Kaksoisnuoli"
+        },
+        {
+          "char": "⟶",
+          "label": "Pitkä"
+        },
+        {
+          "char": "➡",
+          "label": "Musta nuoli"
+        },
+        {
+          "char": "➜",
+          "label": "Paksu pyöreä"
+        },
+        {
+          "char": "➤",
+          "label": "Nuolenkärki"
+        },
+        {
+          "char": "➛",
+          "label": "Teknisen piirustuksen nuoli"
+        },
+        {
+          "char": "➠",
+          "label": "Paksu katkoviiva"
+        },
+        {
+          "char": "➢",
+          "label": "3D-nuolenkärki"
+        },
+        {
+          "char": "⮕",
+          "label": "Leveä musta"
+        },
+        {
+          "char": "↪",
+          "label": "Koukkunuoli"
+        },
+        {
+          "char": "↦",
+          "label": "Palkista"
+        }
+      ]
+    },
+    {
+      "id": "navigation-ui-arrows",
+      "label": "Navigointi ja käyttöliittymä",
+      "h2": "Nuolet navigoinnissa ja käyttöliittymissä",
+      "symbols": [
+        {
+          "char": "›",
+          "label": "Murupolku ›"
+        },
+        {
+          "char": "‹",
+          "label": "Takaisin ‹"
+        },
+        {
+          "char": "▸",
+          "label": "Valikon kohta ▸"
+        },
+        {
+          "char": "▾",
+          "label": "Pudotusvalikko ▾"
+        },
+        {
+          "char": "▴",
+          "label": "Kutista ▴"
+        },
+        {
+          "char": "⟩",
+          "label": "Seuraava ⟩"
+        },
+        {
+          "char": "⟨",
+          "label": "Edellinen ⟨"
+        },
+        {
+          "char": "▶",
+          "label": "Toista ▶"
+        },
+        {
+          "char": "⤓",
+          "label": "Lataa ⤓"
+        },
+        {
+          "char": "↑",
+          "label": "Sivun alkuun ↑"
+        }
+      ]
+    },
+    {
+      "id": "arrows-upload-resize-circle",
+      "label": "Lähetys ja kierto",
+      "h2": "Lähetys-, koonmuutos- ja ympyränuolet",
+      "intro": "Käyttöliittymän nuolia: lähetys palkkiin, kaksi vinottaista koonmuutosnuolta, suljetut ja avoimet ympyränuolet päivitykseen ja kumoamiseen, kaaria sekä nuolia, jotka kulkevat ensin alas ja kääntyvät sitten.",
+      "symbols": [
+        {
+          "char": "⤒",
+          "label": "Lähetä ⤒"
+        },
+        {
+          "char": "⤡",
+          "label": "Koonmuutos ylävasen/alaoikea"
+        },
+        {
+          "char": "⤢",
+          "label": "Koonmuutos yläoikea/alavasen"
+        },
+        {
+          "char": "⥀",
+          "label": "Suljettu ympyrä vastapäivään"
+        },
+        {
+          "char": "⥁",
+          "label": "Suljettu ympyrä myötäpäivään"
+        },
+        {
+          "char": "⟲",
+          "label": "Avoin ympyrä vastapäivään"
+        },
+        {
+          "char": "⤸",
+          "label": "Kaari myötäpäivään (oikea puoli)"
+        },
+        {
+          "char": "⤹",
+          "label": "Kaari vastapäivään (vasen puoli)"
+        },
+        {
+          "char": "⤺",
+          "label": "Kaari vastapäivään (ylhäällä)"
+        },
+        {
+          "char": "⤻",
+          "label": "Kaari vastapäivään (alhaalla)"
+        },
+        {
+          "char": "⤶",
+          "label": "Alas ja sitten vasemmalle"
+        },
+        {
+          "char": "⤷",
+          "label": "Alas ja sitten oikealle"
+        }
+      ]
+    },
+    {
+      "id": "arrows-long-extended",
+      "label": "Pitkät nuolet",
+      "h2": "Pitkät nuolet: palkista, kiemura ja nelinkertainen",
+      "intro": "Lisää pitkiä nuolia muistiinpanoihin ja matematiikkaan: nuolet palkista (⟼ on matematiikan kuvausnuoli), pitkät kaksoisnuolet, kiemuranuoli ja nelinkertaiset nuolet.",
+      "symbols": [
+        {
+          "char": "⟺",
+          "label": "Pitkä kaksoisnuoli molempiin suuntiin"
+        },
+        {
+          "char": "⟻",
+          "label": "Pitkä nuoli vasemmalle palkista"
+        },
+        {
+          "char": "⟼",
+          "label": "Pitkä nuoli oikealle palkista (kuvausnuoli)"
+        },
+        {
+          "char": "⟽",
+          "label": "Pitkä kaksoisnuoli vasemmalle palkista"
+        },
+        {
+          "char": "⟾",
+          "label": "Pitkä kaksoisnuoli oikealle palkista"
+        },
+        {
+          "char": "⟿",
+          "label": "Pitkä kiemuranuoli oikealle"
+        },
+        {
+          "char": "⟰",
+          "label": "Nelinkertainen nuoli ylös"
+        },
+        {
+          "char": "⟱",
+          "label": "Nelinkertainen nuoli alas"
+        },
+        {
+          "char": "⟴",
+          "label": "Nuoli oikealle ympyröidyllä plussalla"
+        }
+      ]
+    },
+    {
+      "id": "arrows-diagonal-bent-hooked",
+      "label": "Vinot ja taittuvat",
+      "h2": "Valkoiset, mustat, taittuvat ja koukkunuolet",
+      "intro": "Valkoisia ja mustia vinonuolia, kärjestään taittuvia nuolia sekä koukullisia vinonuolia.",
+      "symbols": [
+        {
+          "char": "⬀",
+          "label": "Valkoinen ylös oikealle"
+        },
+        {
+          "char": "⬁",
+          "label": "Valkoinen ylös vasemmalle"
+        },
+        {
+          "char": "⬂",
+          "label": "Valkoinen alas oikealle"
+        },
+        {
+          "char": "⬃",
+          "label": "Valkoinen alas vasemmalle"
+        },
+        {
+          "char": "⬄",
+          "label": "Valkoinen vasemmalle ja oikealle"
+        },
+        {
+          "char": "⬈",
+          "label": "Musta ylös oikealle"
+        },
+        {
+          "char": "⬉",
+          "label": "Musta ylös vasemmalle"
+        },
+        {
+          "char": "⬊",
+          "label": "Musta alas oikealle"
+        },
+        {
+          "char": "⬋",
+          "label": "Musta alas vasemmalle"
+        },
+        {
+          "char": "⬌",
+          "label": "Musta vasemmalle ja oikealle"
+        },
+        {
+          "char": "⬍",
+          "label": "Musta ylös ja alas"
+        },
+        {
+          "char": "⬎",
+          "label": "Oikealle ja sitten alas"
+        },
+        {
+          "char": "⬏",
+          "label": "Oikealle ja sitten ylös"
+        },
+        {
+          "char": "⬐",
+          "label": "Vasemmalle ja sitten alas"
+        },
+        {
+          "char": "⬑",
+          "label": "Vasemmalle ja sitten ylös"
+        },
+        {
+          "char": "⤣",
+          "label": "Koukku ylös vasemmalle"
+        },
+        {
+          "char": "⤤",
+          "label": "Koukku ylös oikealle"
+        },
+        {
+          "char": "⤥",
+          "label": "Koukku alas oikealle"
+        },
+        {
+          "char": "⤦",
+          "label": "Koukku alas vasemmalle"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedInin symbolikirjasto",
+      "desc": "Ammattimaiset Unicode-symbolit, jotka on testattu ja valittu LinkedIn-julkaisuihin ja -kommentteihin."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometriset symbolit",
+      "desc": "Ympyrät, vinoneliöt, neliöt, kolmiot ja koristeelliset muodot tekstin muotoiluun."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Valintamerkit",
+      "desc": "Väkäset, ruksit ja tilamerkit listoihin ja vertailuihin."
+    },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "LinkedIn-kommenttien muotoilu",
+      "desc": "Keinoja ja malleja ammattimaisiin LinkedIn-kommentteihin."
+    }
+  ],
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/fi/library/nuoli-symboli/",
+  "library_url": "https://ultratextgen.com/library/",
+  "date_published": "2026-11-26",
+  "date_modified": "2026-11-26",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/arrow-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/pfeil-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/simbolos-de-flechas/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-fleches/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-panah/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/arrow-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hwasalpyo-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/setas/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-mui-ten/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/pijl-symbolen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ok-isaretleri/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/pil-symboler/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/pil-symboler/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/jiantou-fuhao/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-freccia/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-strzalek/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/strelki/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/arrow-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/pilsymboler/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/library/sipky/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/library/nyil-szimbolum/"
+    },
+    {
+      "lang": "fi",
+      "href": "https://ultratextgen.com/fi/library/nuoli-symboli/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/library/strelice/"
+    },
+    {
+      "lang": "uk",
+      "href": "https://ultratextgen.com/uk/library/strilky/"
+    },
+    {
+      "lang": "sk",
+      "href": "https://ultratextgen.com/sk/library/sipky/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/library/sageti/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/library/simbol-panah/"
+    },
+    {
+      "lang": "hi",
+      "href": "https://ultratextgen.com/hi/library/arrow-symbols/"
+    },
+    {
+      "lang": "tl",
+      "href": "https://ultratextgen.com/tl/library/arrow-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    }
+  ]
+}
