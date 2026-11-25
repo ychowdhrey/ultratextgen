@@ -1313,6 +1313,136 @@
       ],
       "kicker": "LIB",
       "added": "2026-11-26"
+    },
+    "hi-library-heart-symbols": {
+      "title": "हार्ट सिंबल (Heart Symbol) कॉपी करें",
+      "sub": "हार्ट इमोजी, Unicode हार्ट कैरेक्टर और प्यार से जुड़े सिंबल का एक रेफर",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "tl-library-heart-symbols": {
+      "title": "Mga Heart Symbol na Pwedeng I-copy Paste",
+      "sub": "Koleksyon ng heart emoji, Unicode na puso, at mga simbolo ng pag-ibig.",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hi-library-arrow-symbols": {
+      "title": "एरो सिंबल (Arrow Symbol) कॉपी करें",
+      "sub": "दिशा बताने वाले एरो कैरेक्टर का एक रेफरेंस कलेक्शन: सीधे, घुमावदार, डब",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "tl-library-arrow-symbols": {
+      "title": "Mga Arrow Symbol na Pwedeng I-copy Paste",
+      "sub": "Koleksyon ng mga arrow na character sa bawat direksyon: tuwid, kurbado",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "sk-library-sipky": {
+      "title": "Symboly šípok",
+      "sub": "Zbierka šípok na kopírovanie pre každý smer: rovné, zahnuté, dvojité, ",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "ro-library-sageti": {
+      "title": "Simboluri de săgeți",
+      "sub": "O colecție de săgeți pentru fiecare direcție: drepte, curbate, duble, ",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "ms-library-simbol-panah": {
+      "title": "Simbol Panah",
+      "sub": "Koleksi rujukan aksara anak panah untuk setiap arah: lurus, melengkung",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hi-library-special-characters": {
+      "title": "स्पेशल कैरेक्टर (Special Characters) कॉपी करें",
+      "sub": "अनोखे Unicode सिंबल का एक रेफरेंस कलेक्शन: इनफ़िनिटी, शांति, विज्ञान, ",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "tl-library-special-characters": {
+      "title": "Mga Special Character na Pwedeng I-copy",
+      "sub": "Koleksyon ng mga natatanging Unicode symbol: infinity, kapayapaan, agh",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "ms-library-aksara-khas": {
+      "title": "Aksara Khas",
+      "sub": "Koleksi rujukan simbol Unicode yang unik: infiniti, keamanan, sains, t",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
     }
   }
 }

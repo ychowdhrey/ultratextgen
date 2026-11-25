@@ -2231,6 +2231,226 @@
       "scriptReadiness": "ready",
       "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=ua 'спецсимволи' 140/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /uk/library/spetssymvoly/.",
       "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "hi",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (no same-job target-language measurement); market evidence: largest measured same-job query in this market 22200/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #4. Built as /hi/library/arrow-symbols/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "ms",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (my 'simbol panah'); market evidence: largest measured same-job query in this market 0/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #11. Built as /ms/library/simbol-panah/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "ro",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (ro 'simbol sageata' 10; ro 'săgeată spre dreapta'); market evidence: largest measured same-job query in this market 10/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #9. Built as /ro/library/sageti/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "sk",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (sk 'šípka symbol' 20; sk 'šípka smerujúca doprava'); market evidence: largest measured same-job query in this market 20/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #8. Built as /sk/library/sipky/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/arrow-symbols",
+      "scope": "page",
+      "locale": "tl",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 7,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 7 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (no same-job target-language measurement); market evidence: largest measured same-job query in this market 18100/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #5. Built as /tl/library/arrow-symbols/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/heart-symbols",
+      "scope": "page",
+      "locale": "hi",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 9,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 9 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (no same-job target-language measurement); market evidence: largest measured same-job query in this market 33100/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #2. Built as /hi/library/heart-symbols/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/heart-symbols",
+      "scope": "page",
+      "locale": "tl",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 9,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 9 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (no same-job target-language measurement); market evidence: largest measured same-job query in this market 33100/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #3. Built as /tl/library/heart-symbols/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "hi",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (no same-job target-language measurement); market evidence: largest measured same-job query in this market 18100/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #6. Built as /hi/library/special-characters/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "ms",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (no same-job target-language measurement); market evidence: largest measured same-job query in this market 0/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #12. Built as /ms/library/aksara-khas/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
+    },
+    {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "tl",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-experiment",
+      "targetEvidence": "insufficient",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Target-language evidence insufficient (no same-job target-language measurement); market evidence: largest measured same-job query in this market 390/mo (another language or unmeasured locally). Experimental slot in EXP-20261126 (owner decision 2026-11-26), ranked #7. Built as /tl/library/special-characters/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized",
+      "experimentCohort": "EXP-20261126",
+      "recheckDate": "2027-02-24"
     }
   ]
 }

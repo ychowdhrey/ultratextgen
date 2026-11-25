@@ -1,0 +1,1243 @@
+{
+  "slug": "simbol-panah",
+  "lang": "ms",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "title": "Simbol Panah: Salin & Tampal Aksara Anak Panah Pelbagai Arah",
+  "meta_description": "Pilih dan salin simbol panah → ← ↑ ↓: lurus, melengkung, berganda, segi tiga dan emoji panah untuk dokumen, hantaran dan susun atur teks.",
+  "breadcrumb": "Simbol Panah",
+  "hero_h1": "Simbol Panah",
+  "hero_tagline": "Koleksi rujukan aksara anak panah untuk setiap arah: lurus, melengkung, berganda, segi tiga dan emoji. Klik simbol mana-mana untuk terus salin.",
+  "intro": "Pilih dan salin simbol panah untuk dokumen, hantaran dan susun atur teks. Semuanya disusun ikut gaya: daripada panah arah yang ringkas sampai varian tebal, berganda, melengkung dan emoji.",
+  "canonical": "https://ultratextgen.com/ms/library/simbol-panah/",
+  "date_published": "2026-11-26",
+  "date_modified": "2026-11-26",
+  "sections": [
+    {
+      "id": "simple-directional",
+      "label": "Arah Asas",
+      "h2": "Simbol Panah Arah Asas",
+      "intro": "Panah Unicode klasik yang menghala ke kelapan-lapan arah.",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Panah Kanan"
+        },
+        {
+          "char": "←",
+          "label": "Panah Kiri"
+        },
+        {
+          "char": "↑",
+          "label": "Panah Atas"
+        },
+        {
+          "char": "↓",
+          "label": "Panah Bawah"
+        },
+        {
+          "char": "↗",
+          "label": "Panah Atas-Kanan"
+        },
+        {
+          "char": "↘",
+          "label": "Panah Bawah-Kanan"
+        },
+        {
+          "char": "↙",
+          "label": "Panah Bawah-Kiri"
+        },
+        {
+          "char": "↖",
+          "label": "Panah Atas-Kiri"
+        },
+        {
+          "char": "↔",
+          "label": "Panah Kiri-Kanan"
+        },
+        {
+          "char": "↕",
+          "label": "Panah Atas-Bawah"
+        }
+      ]
+    },
+    {
+      "id": "bold-heavy",
+      "label": "Tebal",
+      "h2": "Simbol Panah Tebal",
+      "intro": "Panah tebal yang menonjol, sesuai untuk penekanan dan ajakan bertindak.",
+      "symbols": [
+        {
+          "char": "➜",
+          "label": "Panah Bulat Tebal"
+        },
+        {
+          "char": "➝",
+          "label": "Panah Kanan Sederhana"
+        },
+        {
+          "char": "⟶",
+          "label": "Panah Kanan Panjang"
+        },
+        {
+          "char": "➡",
+          "label": "Panah Kanan"
+        },
+        {
+          "char": "⬅",
+          "label": "Panah Kiri"
+        },
+        {
+          "char": "⬆",
+          "label": "Panah Atas"
+        },
+        {
+          "char": "⬇",
+          "label": "Panah Bawah"
+        },
+        {
+          "char": "➔",
+          "label": "Panah Kanan Tebal"
+        },
+        {
+          "char": "➙",
+          "label": "Panah Putus-putus"
+        }
+      ]
+    },
+    {
+      "id": "double-formal",
+      "label": "Berganda & Formal",
+      "h2": "Simbol Panah Berganda & Formal",
+      "intro": "Panah berganda dan panah matematik untuk logik, dokumentasi dan penulisan formal.",
+      "symbols": [
+        {
+          "char": "⇒",
+          "label": "Panah Kanan Berganda"
+        },
+        {
+          "char": "⇐",
+          "label": "Panah Kiri Berganda"
+        },
+        {
+          "char": "⇑",
+          "label": "Panah Atas Berganda"
+        },
+        {
+          "char": "⇓",
+          "label": "Panah Bawah Berganda"
+        },
+        {
+          "char": "⇔",
+          "label": "Kiri-Kanan Berganda"
+        },
+        {
+          "char": "⟹",
+          "label": "Kanan Berganda Panjang"
+        },
+        {
+          "char": "⟸",
+          "label": "Kiri Berganda Panjang"
+        },
+        {
+          "char": "⇕",
+          "label": "Atas-Bawah Berganda"
+        }
+      ]
+    },
+    {
+      "id": "curved-return",
+      "label": "Melengkung & Kembali",
+      "h2": "Simbol Panah Melengkung & Kembali",
+      "intro": "Panah melengkung, bergelung dan panah kembali untuk balasan, buat asal dan navigasi.",
+      "symbols": [
+        {
+          "char": "↩",
+          "label": "Panah Kembali"
+        },
+        {
+          "char": "↪",
+          "label": "Panah Lengkung Kanan"
+        },
+        {
+          "char": "↺",
+          "label": "Lawan Arah Jam"
+        },
+        {
+          "char": "↻",
+          "label": "Ikut Arah Jam"
+        },
+        {
+          "char": "⤴",
+          "label": "Lengkung Kanan ke Atas"
+        },
+        {
+          "char": "⤵",
+          "label": "Lengkung Kanan ke Bawah"
+        },
+        {
+          "char": "↶",
+          "label": "Lawan Arah Jam (Atas)"
+        },
+        {
+          "char": "↷",
+          "label": "Ikut Arah Jam (Atas)"
+        },
+        {
+          "char": "🔃",
+          "label": "Panah Menegak Ikut Arah Jam"
+        },
+        {
+          "char": "🔄",
+          "label": "Panah Lawan Arah Jam"
+        }
+      ]
+    },
+    {
+      "id": "triangle-pointer",
+      "label": "Segi Tiga & Penunjuk",
+      "h2": "Simbol Panah Segi Tiga & Penunjuk",
+      "intro": "Panah segi tiga dan simbol penunjuk untuk senarai bertitik dan navigasi.",
+      "symbols": [
+        {
+          "char": "▶",
+          "label": "Segi Tiga Kanan"
+        },
+        {
+          "char": "◀",
+          "label": "Segi Tiga Kiri"
+        },
+        {
+          "char": "▲",
+          "label": "Segi Tiga Atas"
+        },
+        {
+          "char": "▼",
+          "label": "Segi Tiga Bawah"
+        },
+        {
+          "char": "►",
+          "label": "Penunjuk Kanan Hitam"
+        },
+        {
+          "char": "◄",
+          "label": "Penunjuk Kiri Hitam"
+        },
+        {
+          "char": "➤",
+          "label": "Kepala Panah Kanan Hitam"
+        },
+        {
+          "char": "‣",
+          "label": "Titik Segi Tiga"
+        },
+        {
+          "char": "›",
+          "label": "Sudut Kanan Tunggal"
+        },
+        {
+          "char": "‹",
+          "label": "Sudut Kiri Tunggal"
+        },
+        {
+          "char": "⏩",
+          "label": "Mara Laju"
+        },
+        {
+          "char": "⏪",
+          "label": "Undur Laju"
+        },
+        {
+          "char": "⏫",
+          "label": "Naik Laju"
+        },
+        {
+          "char": "⏬",
+          "label": "Turun Laju"
+        }
+      ]
+    },
+    {
+      "id": "thin-minimal",
+      "label": "Nipis & Minimalis",
+      "h2": "Simbol Panah Nipis & Minimalis",
+      "intro": "Kurungan sudut yang ringan dan aksara arah yang minimalis.",
+      "symbols": [
+        {
+          "char": "«",
+          "label": "Sudut Kiri Berganda"
+        },
+        {
+          "char": "»",
+          "label": "Sudut Kanan Berganda"
+        },
+        {
+          "char": "‹",
+          "label": "Sudut Kiri Tunggal"
+        },
+        {
+          "char": "›",
+          "label": "Sudut Kanan Tunggal"
+        },
+        {
+          "char": "˂",
+          "label": "Panah Pengubah Kiri"
+        },
+        {
+          "char": "˃",
+          "label": "Panah Pengubah Kanan"
+        },
+        {
+          "char": "˄",
+          "label": "Panah Pengubah Atas"
+        },
+        {
+          "char": "˅",
+          "label": "Panah Pengubah Bawah"
+        },
+        {
+          "char": "⟵",
+          "label": "Panah Panjang ke Kiri"
+        },
+        {
+          "char": "⟶",
+          "label": "Panah Panjang ke Kanan"
+        },
+        {
+          "char": "⟷",
+          "label": "Panah Panjang Kiri-Kanan"
+        },
+        {
+          "char": "⟸",
+          "label": "Panah Berganda Panjang ke Kiri"
+        },
+        {
+          "char": "⟹",
+          "label": "Panah Berganda Panjang ke Kanan"
+        }
+      ]
+    },
+    {
+      "id": "emoji-arrows",
+      "label": "Emoji Panah",
+      "h2": "Simbol Emoji Panah",
+      "intro": "Emoji panah berwarna dan ikon arah untuk media sosial dan mesej.",
+      "symbols": [
+        {
+          "char": "⬆️",
+          "label": "Emoji Panah Atas"
+        },
+        {
+          "char": "⬇️",
+          "label": "Emoji Panah Bawah"
+        },
+        {
+          "char": "➡️",
+          "label": "Emoji Panah Kanan"
+        },
+        {
+          "char": "⬅️",
+          "label": "Emoji Panah Kiri"
+        },
+        {
+          "char": "↕️",
+          "label": "Panah Atas-Bawah"
+        },
+        {
+          "char": "↔️",
+          "label": "Panah Kiri-Kanan"
+        },
+        {
+          "char": "↩️",
+          "label": "Emoji Panah Kembali"
+        },
+        {
+          "char": "↪️",
+          "label": "Panah Lengkung Kanan"
+        },
+        {
+          "char": "🔄",
+          "label": "Lawan Arah Jam"
+        },
+        {
+          "char": "🔃",
+          "label": "Ikut Arah Jam"
+        },
+        {
+          "char": "🔀",
+          "label": "Main Rawak"
+        },
+        {
+          "char": "🔁",
+          "label": "Ulang"
+        },
+        {
+          "char": "🔂",
+          "label": "Ulang Sekali"
+        },
+        {
+          "char": "🔙",
+          "label": "Panah Balik"
+        },
+        {
+          "char": "🔚",
+          "label": "Panah Tamat"
+        },
+        {
+          "char": "🔛",
+          "label": "Panah ON!"
+        },
+        {
+          "char": "🔜",
+          "label": "Panah Segera"
+        },
+        {
+          "char": "🔝",
+          "label": "Panah Teratas"
+        },
+        {
+          "char": "🆙",
+          "label": "Butang UP!"
+        },
+        {
+          "char": "🔼",
+          "label": "Butang ke Atas"
+        }
+      ]
+    },
+    {
+      "id": "level-up-emoji",
+      "label": "Naik Level",
+      "h2": "Emoji Naik Level",
+      "intro": "🆙 ialah emoji butang UP! yang orang tampal untuk naik level, naik pangkat atau mencapai tahap baharu. Hurufnya sebahagian daripada emoji itu, jadi gaya font tak akan mengubahnya. Kombo di bawah memadankannya dengan ⏫, 🔝 dan 📈 supaya hantaran anda nampak sedang mendaki, bukan sekadar menunjuk ke atas.",
+      "symbols": [
+        {
+          "char": "🆙⏫",
+          "label": "Naik Level"
+        },
+        {
+          "char": "🆙🔝",
+          "label": "Level Teratas"
+        },
+        {
+          "char": "📈🆙",
+          "label": "Statistik Naik"
+        },
+        {
+          "char": "⬆️🆙🔝",
+          "label": "Daki ke Puncak"
+        },
+        {
+          "char": "🎮🆙",
+          "label": "Naik Level Game"
+        },
+        {
+          "char": "🏆🆙",
+          "label": "Naik Pangkat"
+        }
+      ]
+    },
+    {
+      "id": "additional-arrows",
+      "label": "Liputan Blok Penuh",
+      "h2": "Lagi daripada Blok Panah Unicode",
+      "intro": "Baki titik kod dalam blok Arrows Unicode (U+2190–U+21FF) yang belum disenaraikan dalam bahagian pilihan di atas.",
+      "symbols": [
+        {
+          "char": "↚",
+          "label": "Panah Kiri Berpalang"
+        },
+        {
+          "char": "↛",
+          "label": "Panah Kanan Berpalang"
+        },
+        {
+          "char": "↜",
+          "label": "Panah Kiri Beralun"
+        },
+        {
+          "char": "↝",
+          "label": "Panah Kanan Beralun"
+        },
+        {
+          "char": "↞",
+          "label": "Panah Kiri Dua Kepala"
+        },
+        {
+          "char": "↟",
+          "label": "Panah Atas Dua Kepala"
+        },
+        {
+          "char": "↠",
+          "label": "Panah Kanan Dua Kepala"
+        },
+        {
+          "char": "↡",
+          "label": "Panah Bawah Dua Kepala"
+        },
+        {
+          "char": "↢",
+          "label": "Panah Kiri Berekor"
+        },
+        {
+          "char": "↣",
+          "label": "Panah Kanan Berekor"
+        },
+        {
+          "char": "↤",
+          "label": "Panah Kiri dari Palang"
+        },
+        {
+          "char": "↥",
+          "label": "Panah Atas dari Palang"
+        },
+        {
+          "char": "↦",
+          "label": "Panah Kanan dari Palang"
+        },
+        {
+          "char": "↧",
+          "label": "Panah Bawah dari Palang"
+        },
+        {
+          "char": "↨",
+          "label": "Panah Atas-Bawah Bertapak"
+        },
+        {
+          "char": "↫",
+          "label": "Panah Kiri Bergelung"
+        },
+        {
+          "char": "↬",
+          "label": "Panah Kanan Bergelung"
+        },
+        {
+          "char": "↭",
+          "label": "Panah Kiri-Kanan Beralun"
+        },
+        {
+          "char": "↮",
+          "label": "Panah Kiri-Kanan Berpalang"
+        },
+        {
+          "char": "↯",
+          "label": "Panah Zigzag ke Bawah"
+        },
+        {
+          "char": "↰",
+          "label": "Panah Atas, Hujung ke Kiri"
+        },
+        {
+          "char": "↱",
+          "label": "Panah Atas, Hujung ke Kanan"
+        },
+        {
+          "char": "↲",
+          "label": "Panah Bawah, Hujung ke Kiri"
+        },
+        {
+          "char": "↳",
+          "label": "Panah Bawah, Hujung ke Kanan"
+        },
+        {
+          "char": "↴",
+          "label": "Panah Kanan, Membelok ke Bawah"
+        },
+        {
+          "char": "↵",
+          "label": "Panah Bawah, Membelok ke Kiri"
+        },
+        {
+          "char": "↸",
+          "label": "Panah Barat Laut ke Palang Panjang"
+        },
+        {
+          "char": "↹",
+          "label": "Panah Kiri ke Palang di Atas Panah Kanan ke Palang"
+        },
+        {
+          "char": "↼",
+          "label": "Tempuling Kiri, Duri ke Atas"
+        },
+        {
+          "char": "↽",
+          "label": "Tempuling Kiri, Duri ke Bawah"
+        },
+        {
+          "char": "↾",
+          "label": "Tempuling Atas, Duri ke Kanan"
+        },
+        {
+          "char": "↿",
+          "label": "Tempuling Atas, Duri ke Kiri"
+        },
+        {
+          "char": "⇀",
+          "label": "Tempuling Kanan, Duri ke Atas"
+        },
+        {
+          "char": "⇁",
+          "label": "Tempuling Kanan, Duri ke Bawah"
+        },
+        {
+          "char": "⇂",
+          "label": "Tempuling Bawah, Duri ke Kanan"
+        },
+        {
+          "char": "⇃",
+          "label": "Tempuling Bawah, Duri ke Kiri"
+        },
+        {
+          "char": "⇄",
+          "label": "Panah Kanan di Atas Panah Kiri"
+        },
+        {
+          "char": "⇅",
+          "label": "Panah Atas di Kiri Panah Bawah"
+        },
+        {
+          "char": "⇆",
+          "label": "Panah Kiri di Atas Panah Kanan"
+        },
+        {
+          "char": "⇇",
+          "label": "Sepasang Panah ke Kiri"
+        },
+        {
+          "char": "⇈",
+          "label": "Sepasang Panah ke Atas"
+        },
+        {
+          "char": "⇉",
+          "label": "Sepasang Panah ke Kanan"
+        },
+        {
+          "char": "⇊",
+          "label": "Sepasang Panah ke Bawah"
+        },
+        {
+          "char": "⇋",
+          "label": "Tempuling Kiri di Atas Tempuling Kanan"
+        },
+        {
+          "char": "⇌",
+          "label": "Tempuling Kanan di Atas Tempuling Kiri"
+        },
+        {
+          "char": "⇍",
+          "label": "Panah Berganda Kiri Berpalang"
+        },
+        {
+          "char": "⇎",
+          "label": "Panah Berganda Kiri-Kanan Berpalang"
+        },
+        {
+          "char": "⇏",
+          "label": "Panah Berganda Kanan Berpalang"
+        },
+        {
+          "char": "⇖",
+          "label": "Panah Berganda Barat Laut"
+        },
+        {
+          "char": "⇗",
+          "label": "Panah Berganda Timur Laut"
+        },
+        {
+          "char": "⇘",
+          "label": "Panah Berganda Tenggara"
+        },
+        {
+          "char": "⇙",
+          "label": "Panah Berganda Barat Daya"
+        },
+        {
+          "char": "⇚",
+          "label": "Panah Tiga Garis ke Kiri"
+        },
+        {
+          "char": "⇛",
+          "label": "Panah Tiga Garis ke Kanan"
+        },
+        {
+          "char": "⇜",
+          "label": "Panah Berliku ke Kiri"
+        },
+        {
+          "char": "⇝",
+          "label": "Panah Berliku ke Kanan"
+        },
+        {
+          "char": "⇞",
+          "label": "Panah Atas Berpalang Dua"
+        },
+        {
+          "char": "⇟",
+          "label": "Panah Bawah Berpalang Dua"
+        },
+        {
+          "char": "⇠",
+          "label": "Panah Putus-putus ke Kiri"
+        },
+        {
+          "char": "⇡",
+          "label": "Panah Putus-putus ke Atas"
+        },
+        {
+          "char": "⇢",
+          "label": "Panah Putus-putus ke Kanan"
+        },
+        {
+          "char": "⇣",
+          "label": "Panah Putus-putus ke Bawah"
+        },
+        {
+          "char": "⇤",
+          "label": "Panah Kiri ke Palang"
+        },
+        {
+          "char": "⇥",
+          "label": "Panah Kanan ke Palang"
+        },
+        {
+          "char": "⇦",
+          "label": "Panah Putih ke Kiri"
+        },
+        {
+          "char": "⇧",
+          "label": "Panah Putih ke Atas"
+        },
+        {
+          "char": "⇨",
+          "label": "Panah Putih ke Kanan"
+        },
+        {
+          "char": "⇩",
+          "label": "Panah Putih ke Bawah"
+        },
+        {
+          "char": "⇪",
+          "label": "Panah Putih ke Atas dari Palang"
+        },
+        {
+          "char": "⇫",
+          "label": "Panah Putih ke Atas, Bertapak"
+        },
+        {
+          "char": "⇬",
+          "label": "Panah Putih ke Atas, Bertapak dengan Palang Mendatar"
+        },
+        {
+          "char": "⇭",
+          "label": "Panah Putih ke Atas, Bertapak dengan Palang Menegak"
+        },
+        {
+          "char": "⇮",
+          "label": "Panah Putih Berganda ke Atas"
+        },
+        {
+          "char": "⇯",
+          "label": "Panah Putih Berganda ke Atas, Bertapak"
+        },
+        {
+          "char": "⇰",
+          "label": "Panah Putih ke Kanan dari Dinding"
+        },
+        {
+          "char": "⇱",
+          "label": "Panah Barat Laut ke Penjuru"
+        },
+        {
+          "char": "⇲",
+          "label": "Panah Tenggara ke Penjuru"
+        },
+        {
+          "char": "⇳",
+          "label": "Panah Putih Atas-Bawah"
+        },
+        {
+          "char": "⇴",
+          "label": "Panah Kanan dengan Bulatan Kecil"
+        },
+        {
+          "char": "⇵",
+          "label": "Panah Bawah di Kiri Panah Atas"
+        },
+        {
+          "char": "⇶",
+          "label": "Tiga Panah ke Kanan"
+        },
+        {
+          "char": "⇷",
+          "label": "Panah Kiri Berpalang Menegak"
+        },
+        {
+          "char": "⇸",
+          "label": "Panah Kanan Berpalang Menegak"
+        },
+        {
+          "char": "⇹",
+          "label": "Panah Kiri-Kanan Berpalang Menegak"
+        },
+        {
+          "char": "⇺",
+          "label": "Panah Kiri Berpalang Dua Menegak"
+        },
+        {
+          "char": "⇻",
+          "label": "Panah Kanan Berpalang Dua Menegak"
+        },
+        {
+          "char": "⇼",
+          "label": "Panah Kiri-Kanan Berpalang Dua Menegak"
+        },
+        {
+          "char": "⇽",
+          "label": "Panah Kiri Kepala Terbuka"
+        },
+        {
+          "char": "⇾",
+          "label": "Panah Kanan Kepala Terbuka"
+        },
+        {
+          "char": "⇿",
+          "label": "Panah Kiri-Kanan Kepala Terbuka"
+        }
+      ]
+    },
+    {
+      "id": "right-arrow-variants",
+      "label": "Panah Kanan",
+      "h2": "Varian Simbol Panah Kanan",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Ke Kanan"
+        },
+        {
+          "char": "⇒",
+          "label": "Berganda"
+        },
+        {
+          "char": "⟶",
+          "label": "Panjang"
+        },
+        {
+          "char": "➡",
+          "label": "Panah Hitam"
+        },
+        {
+          "char": "➜",
+          "label": "Bulat Tebal"
+        },
+        {
+          "char": "➤",
+          "label": "Kepala Panah"
+        },
+        {
+          "char": "➛",
+          "label": "Hujung Lukisan Teknik"
+        },
+        {
+          "char": "➠",
+          "label": "Tebal Putus-putus"
+        },
+        {
+          "char": "➢",
+          "label": "Kepala Panah 3D"
+        },
+        {
+          "char": "⮕",
+          "label": "Hitam Lebar"
+        },
+        {
+          "char": "↪",
+          "label": "Bercangkuk"
+        },
+        {
+          "char": "↦",
+          "label": "Dari Palang"
+        }
+      ]
+    },
+    {
+      "id": "navigation-ui-arrows",
+      "label": "Navigasi & Antara Muka",
+      "h2": "Kegunaan Panah dalam Navigasi & Antara Muka",
+      "symbols": [
+        {
+          "char": "›",
+          "label": "Jejak Navigasi ›"
+        },
+        {
+          "char": "‹",
+          "label": "Kembali ‹"
+        },
+        {
+          "char": "▸",
+          "label": "Item Menu ▸"
+        },
+        {
+          "char": "▾",
+          "label": "Menu Lungsur ▾"
+        },
+        {
+          "char": "▴",
+          "label": "Kuncupkan ▴"
+        },
+        {
+          "char": "⟩",
+          "label": "Seterusnya ⟩"
+        },
+        {
+          "char": "⟨",
+          "label": "Sebelumnya ⟨"
+        },
+        {
+          "char": "▶",
+          "label": "Main ▶"
+        },
+        {
+          "char": "⤓",
+          "label": "Muat Turun ⤓"
+        },
+        {
+          "char": "↑",
+          "label": "Kembali ke Atas ↑"
+        }
+      ]
+    },
+    {
+      "id": "arrows-upload-resize-circle",
+      "label": "Muat Naik & Bulatan",
+      "h2": "Panah Muat Naik, Ubah Saiz & Bulatan",
+      "intro": "Panah antara muka: muat naik ke palang, dua panah pepenjuru untuk ubah saiz, panah bulatan tertutup dan terbuka untuk muat semula dan buat asal, lengkok, serta panah yang turun kemudian membelok.",
+      "symbols": [
+        {
+          "char": "⤒",
+          "label": "Muat Naik ⤒"
+        },
+        {
+          "char": "⤡",
+          "label": "Ubah Saiz Atas-Kiri/Bawah-Kanan"
+        },
+        {
+          "char": "⤢",
+          "label": "Ubah Saiz Atas-Kanan/Bawah-Kiri"
+        },
+        {
+          "char": "⥀",
+          "label": "Bulatan Tertutup Lawan Arah Jam"
+        },
+        {
+          "char": "⥁",
+          "label": "Bulatan Tertutup Ikut Arah Jam"
+        },
+        {
+          "char": "⟲",
+          "label": "Bulatan Terbuka Lawan Arah Jam"
+        },
+        {
+          "char": "⤸",
+          "label": "Lengkok Ikut Arah Jam (Sisi Kanan)"
+        },
+        {
+          "char": "⤹",
+          "label": "Lengkok Lawan Arah Jam (Sisi Kiri)"
+        },
+        {
+          "char": "⤺",
+          "label": "Lengkok Lawan Arah Jam (Atas)"
+        },
+        {
+          "char": "⤻",
+          "label": "Lengkok Lawan Arah Jam (Bawah)"
+        },
+        {
+          "char": "⤶",
+          "label": "Turun Lalu ke Kiri"
+        },
+        {
+          "char": "⤷",
+          "label": "Turun Lalu ke Kanan"
+        }
+      ]
+    },
+    {
+      "id": "arrows-long-extended",
+      "label": "Panah Panjang",
+      "h2": "Panah Panjang: Dari Palang, Berliku & Empat Garis",
+      "intro": "Lebih banyak panah panjang untuk nota dan matematik: panah dari palang (⟼ ialah panah pemetaan dalam matematik), panah berganda panjang, panah berliku dan panah empat garis.",
+      "symbols": [
+        {
+          "char": "⟺",
+          "label": "Kiri-Kanan Berganda Panjang"
+        },
+        {
+          "char": "⟻",
+          "label": "Panjang ke Kiri dari Palang"
+        },
+        {
+          "char": "⟼",
+          "label": "Panjang ke Kanan dari Palang (Pemetaan)"
+        },
+        {
+          "char": "⟽",
+          "label": "Berganda Panjang ke Kiri dari Palang"
+        },
+        {
+          "char": "⟾",
+          "label": "Berganda Panjang ke Kanan dari Palang"
+        },
+        {
+          "char": "⟿",
+          "label": "Berliku Panjang ke Kanan"
+        },
+        {
+          "char": "⟰",
+          "label": "Empat Garis ke Atas"
+        },
+        {
+          "char": "⟱",
+          "label": "Empat Garis ke Bawah"
+        },
+        {
+          "char": "⟴",
+          "label": "Ke Kanan dengan Bulatan Tambah"
+        }
+      ]
+    },
+    {
+      "id": "arrows-diagonal-bent-hooked",
+      "label": "Pepenjuru & Bengkok",
+      "h2": "Panah Putih, Hitam, Bengkok & Bercangkuk",
+      "intro": "Panah pepenjuru putih dan hitam, panah yang membengkok di hujung, dan panah pepenjuru bercangkuk.",
+      "symbols": [
+        {
+          "char": "⬀",
+          "label": "Putih Atas-Kanan"
+        },
+        {
+          "char": "⬁",
+          "label": "Putih Atas-Kiri"
+        },
+        {
+          "char": "⬂",
+          "label": "Putih Bawah-Kanan"
+        },
+        {
+          "char": "⬃",
+          "label": "Putih Bawah-Kiri"
+        },
+        {
+          "char": "⬄",
+          "label": "Putih Kiri-Kanan"
+        },
+        {
+          "char": "⬈",
+          "label": "Hitam Atas-Kanan"
+        },
+        {
+          "char": "⬉",
+          "label": "Hitam Atas-Kiri"
+        },
+        {
+          "char": "⬊",
+          "label": "Hitam Bawah-Kanan"
+        },
+        {
+          "char": "⬋",
+          "label": "Hitam Bawah-Kiri"
+        },
+        {
+          "char": "⬌",
+          "label": "Hitam Kiri-Kanan"
+        },
+        {
+          "char": "⬍",
+          "label": "Hitam Atas-Bawah"
+        },
+        {
+          "char": "⬎",
+          "label": "Kanan Lalu Turun"
+        },
+        {
+          "char": "⬏",
+          "label": "Kanan Lalu Naik"
+        },
+        {
+          "char": "⬐",
+          "label": "Kiri Lalu Turun"
+        },
+        {
+          "char": "⬑",
+          "label": "Kiri Lalu Naik"
+        },
+        {
+          "char": "⤣",
+          "label": "Bercangkuk Atas-Kiri"
+        },
+        {
+          "char": "⤤",
+          "label": "Bercangkuk Atas-Kanan"
+        },
+        {
+          "char": "⤥",
+          "label": "Bercangkuk Bawah-Kanan"
+        },
+        {
+          "char": "⤦",
+          "label": "Bercangkuk Bawah-Kiri"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "Pustaka Simbol LinkedIn",
+      "desc": "Simbol Unicode profesional yang diuji dan dipilih untuk hantaran dan komen LinkedIn."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Simbol Geometri",
+      "desc": "Bulatan, belah ketupat, segi empat, segi tiga dan bentuk hiasan untuk susun atur teks."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Simbol Tanda Rait",
+      "desc": "Tanda rait, tanda pangkah dan penunjuk status untuk senarai dan perbandingan."
+    },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "Gaya Komen LinkedIn",
+      "desc": "Teknik dan templat untuk komen LinkedIn yang profesional."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/arrow-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/pfeil-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/simbolos-de-flechas/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-fleches/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-panah/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/arrow-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hwasalpyo-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/setas/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-mui-ten/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/pijl-symbolen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ok-isaretleri/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/pil-symboler/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/pil-symboler/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/jiantou-fuhao/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-freccia/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-strzalek/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/strelki/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/arrow-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/pilsymboler/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/library/sipky/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/library/nyil-szimbolum/"
+    },
+    {
+      "lang": "fi",
+      "href": "https://ultratextgen.com/fi/library/nuoli-symboli/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/library/strelice/"
+    },
+    {
+      "lang": "uk",
+      "href": "https://ultratextgen.com/uk/library/strilky/"
+    },
+    {
+      "lang": "sk",
+      "href": "https://ultratextgen.com/sk/library/sipky/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/library/sageti/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/library/simbol-panah/"
+    },
+    {
+      "lang": "hi",
+      "href": "https://ultratextgen.com/hi/library/arrow-symbols/"
+    },
+    {
+      "lang": "tl",
+      "href": "https://ultratextgen.com/tl/library/arrow-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    }
+  ]
+}

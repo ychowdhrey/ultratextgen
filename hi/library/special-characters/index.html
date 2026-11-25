@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>स्पेशल कैरेक्टर (Special Characters) कॉपी पेस्ट: अनोखे Unicode सिंबल</title>
+<meta name="description" content="अनोखे स्पेशल कैरेक्टर देखें और कॉपी करें: इनफ़िनिटी, शांति, ओके हाथ और बायो व टेक्स्ट के लिए अपने आप में मतलब रखने वाले Unicode सिंबल।">
+
+<link rel="canonical" href="https://ultratextgen.com/hi/library/special-characters/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/special-characters/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/special-characters/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/symbole-zum-kopieren/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/library/special-characters/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/library/teuksu-munja/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/special-characters/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/library/special-characters/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/specialni-znaky/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/posebni-znakovi/">
+<link rel="alternate" hreflang="hu" href="https://ultratextgen.com/hu/kulonleges-karakterek/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/caractere-speciale/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/semboller/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/caracteres-especiales/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/library/caracteres-speciaux/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/karakter-spesial/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/library/speciale-tekens/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/library/znaki-specjalne/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/library/caracteres-especiais/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/library/ky-tu-dac-biet-unicode/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/library/teshu-fuhao/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/library/caratteri-speciali-simboli/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/library/specialtegn/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/library/spesialtegn/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/library/specialtecken/">
+<link rel="alternate" hreflang="fi" href="https://ultratextgen.com/fi/library/erikoismerkit/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/library/specialne-znaky/">
+<link rel="alternate" hreflang="uk" href="https://ultratextgen.com/uk/library/spetssymvoly/">
+<link rel="alternate" hreflang="ms" href="https://ultratextgen.com/ms/library/aksara-khas/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/library/special-characters/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/library/special-characters/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/special-characters/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/hi-library-special-characters.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="स्पेशल कैरेक्टर (Special Characters) कॉपी पेस्ट: अनोखे Unicode सिंबल">
+<meta name="twitter:description" content="अनोखे स्पेशल कैरेक्टर देखें और कॉपी करें: इनफ़िनिटी, शांति, ओके हाथ और बायो व टेक्स्ट के लिए अपने आप में मतलब रखने वाले Unicode सिंबल।">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/hi-library-special-characters.png">
+<meta property="og:title" content="स्पेशल कैरेक्टर (Special Characters) कॉपी पेस्ट: अनोखे Unicode सिंबल">
+<meta property="og:description" content="अनोखे स्पेशल कैरेक्टर देखें और कॉपी करें: इनफ़िनिटी, शांति, ओके हाथ और बायो व टेक्स्ट के लिए अपने आप में मतलब रखने वाले Unicode सिंबल।">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/hi/library/special-characters/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "स्पेशल कैरेक्टर (Special Characters) कॉपी पेस्ट: अनोखे Unicode सिंबल",
+  "description": "अनोखे स्पेशल कैरेक्टर देखें और कॉपी करें: इनफ़िनिटी, शांति, ओके हाथ और बायो व टेक्स्ट के लिए अपने आप में मतलब रखने वाले Unicode सिंबल।",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/hi/library/special-characters/",
+  "datePublished": "2026-11-26T00:00:00+00:00",
+  "dateModified": "2026-11-26T00:00:00+00:00"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "होम",
+      "item": "https://ultratextgen.com/hi/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "लाइब्रेरी",
+      "item": "https://ultratextgen.com/hi/library/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "स्पेशल कैरेक्टर",
+      "item": "https://ultratextgen.com/hi/library/special-characters/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<script src="/header.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">स्पेशल कैरेक्टर (Special Characters) कॉपी करें</h1>
+    <p class="hero-tagline">अनोखे Unicode सिंबल का एक रेफरेंस कलेक्शन: इनफ़िनिटी, शांति, विज्ञान, कानूनी निशान, एस्थेटिक सिंबल और दुर्लभ अजूबे। किसी भी सिंबल पर क्लिक करें, तुरंत कॉपी हो जाएगा।</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>मतलब के हिसाब से छांटे गए अनोखे स्पेशल कैरेक्टर देखें और कॉपी करें: इनफ़िनिटी और अनंतता के सिंबल से लेकर शांति के निशान, वैज्ञानिक संकेत, कानूनी निशान, एस्थेटिक सजावट और दुर्लभ Unicode अजूबों तक।</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="infinity">
+  <span class="article-section-label">इनफ़िनिटी &amp; अनंत</span>
+  <h2>इनफ़िनिटी &amp; अनंत के सिंबल</h2>
+  <p class="u-secondary-tight">अंतहीनता, लूप और अनंत विचारों को दिखाने वाले सिंबल।</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∞" aria-label="इनफ़िनिटी कॉपी करें">∞</button>
+      <span class="flag-label">इनफ़िनिटी</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♾️" aria-label="इनफ़िनिटी इमोजी कॉपी करें">♾️</button>
+      <span class="flag-label">इनफ़िनिटी इमोजी</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⧜" aria-label="अधूरी इनफ़िनिटी कॉपी करें">⧜</button>
+      <span class="flag-label">अधूरी इनफ़िनिटी</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⧝" aria-label="इनफ़िनिटी के ऊपर बंधन चिह्न कॉपी करें">⧝</button>
+      <span class="flag-label">इनफ़िनिटी के ऊपर बंधन चिह्न</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⧞" aria-label="खड़ी लकीर से कटी इनफ़िनिटी कॉपी करें">⧞</button>
+      <span class="flag-label">खड़ी लकीर से कटी इनफ़िनिटी</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔁" aria-label="रिपीट बटन कॉपी करें">🔁</button>
+      <span class="flag-label">रिपीट बटन</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔂" aria-label="एक बार रिपीट बटन कॉपी करें">🔂</button>
+      <span class="flag-label">एक बार रिपीट बटन</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟳" aria-label="घड़ी की दिशा में खुला गोल एरो कॉपी करें">⟳</button>
+      <span class="flag-label">घड़ी की दिशा में खुला गोल एरो</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="not-on-your-keyboard">
+  <span class="article-section-label">कीबोर्ड पर नहीं</span>
+  <h2>वे सिंबल जो आपके कीबोर्ड पर नहीं हैं</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♥" aria-label="♥ कॉपी करें">♥</button>
+      <span class="flag-label">♥</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♡" aria-label="♡ कॉपी करें">♡</button>
+      <span class="flag-label">♡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="★" aria-label="★ कॉपी करें">★</button>
+      <span class="flag-label">★</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☆" aria-label="☆ कॉपी करें">☆</button>
+      <span class="flag-label">☆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✓" aria-label="✓ कॉपी करें">✓</button>
+      <span class="flag-label">✓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✔" aria-label="✔ कॉपी करें">✔</button>
+      <span class="flag-label">✔</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✗" aria-label="✗ कॉपी करें">✗</button>
+      <span class="flag-label">✗</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✘" aria-label="✘ कॉपी करें">✘</button>
+      <span class="flag-label">✘</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="→" aria-label="→ कॉपी करें">→</button>
+      <span class="flag-label">→</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="←" aria-label="← कॉपी करें">←</button>
+      <span class="flag-label">←</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↑" aria-label="↑ कॉपी करें">↑</button>
+      <span class="flag-label">↑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↓" aria-label="↓ कॉपी करें">↓</button>
+      <span class="flag-label">↓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∞" aria-label="∞ कॉपी करें">∞</button>
+      <span class="flag-label">∞</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="°" aria-label="° कॉपी करें">°</button>
+      <span class="flag-label">°</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="±" aria-label="± कॉपी करें">±</button>
+      <span class="flag-label">±</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="÷" aria-label="÷ कॉपी करें">÷</button>
+      <span class="flag-label">÷</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="×" aria-label="× कॉपी करें">×</button>
+      <span class="flag-label">×</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="≠" aria-label="≠ कॉपी करें">≠</button>
+      <span class="flag-label">≠</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="≈" aria-label="≈ कॉपी करें">≈</button>
+      <span class="flag-label">≈</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="²" aria-label="² कॉपी करें">²</button>
+      <span class="flag-label">²</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="³" aria-label="³ कॉपी करें">³</button>
+      <span class="flag-label">³</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="€" aria-label="€ कॉपी करें">€</button>
+      <span class="flag-label">€</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="£" aria-label="£ कॉपी करें">£</button>
+      <span class="flag-label">£</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="©" aria-label="© कॉपी करें">©</button>
+      <span class="flag-label">©</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="peace-harmony">
+  <span class="article-section-label">शांति &amp; सद्भाव</span>
+  <h2>शांति &amp; सद्भाव के सिंबल</h2>
+  <p class="u-secondary-tight">अलग-अलग संस्कृतियों में शांति, एकता और दुनिया भर के सद्भाव के सिंबल।</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☮" aria-label="शांति सिंबल कॉपी करें">☮</button>
+      <span class="flag-label">शांति सिंबल</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☯" aria-label="यिन यांग कॉपी करें">☯</button>
+      <span class="flag-label">यिन यांग</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✌" aria-label="विक्ट्री वाला हाथ कॉपी करें">✌</button>
+      <span class="flag-label">विक्ट्री वाला हाथ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🕊" aria-label="कबूतर कॉपी करें">🕊</button>
+      <span class="flag-label">कबूतर</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤍" aria-label="सफेद हार्ट कॉपी करें">🤍</button>
+      <span class="flag-label">सफेद हार्ट</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫶" aria-label="हार्ट बनाते हाथ कॉपी करें">🫶</button>
+      <span class="flag-label">हार्ट बनाते हाथ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌍" aria-label="धरती (अफ्रीका) कॉपी करें">🌍</button>
+      <span class="flag-label">धरती (अफ्रीका)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚖" aria-label="तराज़ू कॉपी करें">⚖</button>
+      <span class="flag-label">तराज़ू</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🕉" aria-label="ओम कॉपी करें">🕉</button>
+      <span class="flag-label">ओम</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="science-knowledge">
+  <span class="article-section-label">विज्ञान &amp; ज्ञान</span>
+  <h2>विज्ञान &amp; ज्ञान के सिंबल</h2>
+  <p class="u-secondary-tight">पढ़ाई-लिखाई वाले कंटेंट के लिए वैज्ञानिक, मेडिकल और ज्ञान से जुड़े सिंबल।</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚛" aria-label="परमाणु सिंबल कॉपी करें">⚛</button>
+      <span class="flag-label">परमाणु सिंबल</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚕" aria-label="मेडिकल सिंबल कॉपी करें">⚕</button>
+      <span class="flag-label">मेडिकल सिंबल</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♻" aria-label="रीसाइक्लिंग सिंबल कॉपी करें">♻</button>
+      <span class="flag-label">रीसाइक्लिंग सिंबल</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔬" aria-label="माइक्रोस्कोप कॉपी करें">🔬</button>
+      <span class="flag-label">माइक्रोस्कोप</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔭" aria-label="टेलीस्कोप कॉपी करें">🔭</button>
+      <span class="flag-label">टेलीस्कोप</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧪" aria-label="टेस्ट ट्यूब कॉपी करें">🧪</button>
+      <span class="flag-label">टेस्ट ट्यूब</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚗" aria-label="आसवन पात्र कॉपी करें">⚗</button>
+      <span class="flag-label">आसवन पात्र</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧬" aria-label="डीएनए कॉपी करें">🧬</button>
+      <span class="flag-label">डीएनए</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧫" aria-label="पेट्री डिश कॉपी करें">🧫</button>
+      <span class="flag-label">पेट्री डिश</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💡" aria-label="बल्ब कॉपी करें">💡</button>
+      <span class="flag-label">बल्ब</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚙" aria-label="गियर कॉपी करें">⚙</button>
+      <span class="flag-label">गियर</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="legal-office">
+  <span class="article-section-label">कानूनी &amp; ऑफ़िस</span>
+  <h2>कानूनी &amp; ऑफ़िस सिंबल</h2>
+  <p class="u-secondary-tight">प्रोफेशनल डॉक्यूमेंट के लिए कॉपीराइट, ट्रेडमार्क और टाइपोग्राफ़ी के निशान।</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="©" aria-label="कॉपीराइट कॉपी करें">©</button>
+      <span class="flag-label">कॉपीराइट</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="®" aria-label="रजिस्टर्ड कॉपी करें">®</button>
+      <span class="flag-label">रजिस्टर्ड</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="™" aria-label="ट्रेडमार्क कॉपी करें">™</button>
+      <span class="flag-label">ट्रेडमार्क</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="§" aria-label="सेक्शन चिह्न कॉपी करें">§</button>
+      <span class="flag-label">सेक्शन चिह्न</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="¶" aria-label="पिलक्रो (पैराग्राफ़) कॉपी करें">¶</button>
+      <span class="flag-label">पिलक्रो (पैराग्राफ़)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="†" aria-label="डैगर कॉपी करें">†</button>
+      <span class="flag-label">डैगर</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‡" aria-label="डबल डैगर कॉपी करें">‡</button>
+      <span class="flag-label">डबल डैगर</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="№" aria-label="न्यूमेरो चिह्न कॉपी करें">№</button>
+      <span class="flag-label">न्यूमेरो चिह्न</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℗" aria-label="साउंड रिकॉर्डिंग कॉपीराइट कॉपी करें">℗</button>
+      <span class="flag-label">साउंड रिकॉर्डिंग कॉपीराइट</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℠" aria-label="सर्विस मार्क कॉपी करें">℠</button>
+      <span class="flag-label">सर्विस मार्क</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="punctuation-marks">
+  <span class="article-section-label">विराम चिह्न &amp; टाइपोग्राफ़ी</span>
+  <h2>विराम चिह्न &amp; टाइपोग्राफ़ी के निशान</h2>
+  <p class="u-secondary-tight">एट साइन (@), एम्परसैंड (&amp;) और रोज़ के दूसरे टाइपोग्राफ़िक निशान, साथ में उनके फ़ुलविड्थ, छोटे और ऐतिहासिक वेरिएंट।</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="@" aria-label="एट साइन कॉपी करें">@</button>
+      <span class="flag-label">एट साइन</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="＠" aria-label="फ़ुलविड्थ एट साइन कॉपी करें">＠</button>
+      <span class="flag-label">फ़ुलविड्थ एट साइन</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="﹫" aria-label="छोटा एट साइन कॉपी करें">﹫</button>
+      <span class="flag-label">छोटा एट साइन</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="&amp;" aria-label="एम्परसैंड कॉपी करें">&amp;</button>
+      <span class="flag-label">एम्परसैंड</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="＆" aria-label="फ़ुलविड्थ एम्परसैंड कॉपी करें">＆</button>
+      <span class="flag-label">फ़ुलविड्थ एम्परसैंड</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⅋" aria-label="उल्टा एम्परसैंड कॉपी करें">⅋</button>
+      <span class="flag-label">उल्टा एम्परसैंड</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⁊" aria-label="टिरोनियन एट (और) कॉपी करें">⁊</button>
+      <span class="flag-label">टिरोनियन एट (और)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="※" aria-label="रेफ़रेंस चिह्न कॉपी करें">※</button>
+      <span class="flag-label">रेफ़रेंस चिह्न</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‰" aria-label="प्रति हज़ार चिह्न कॉपी करें">‰</button>
+      <span class="flag-label">प्रति हज़ार चिह्न</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‱" aria-label="प्रति दस हज़ार चिह्न कॉपी करें">‱</button>
+      <span class="flag-label">प्रति दस हज़ार चिह्न</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="＊" aria-label="फ़ुलविड्थ तारांकन कॉपी करें">＊</button>
+      <span class="flag-label">फ़ुलविड्थ तारांकन</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="＃" aria-label="फ़ुलविड्थ नंबर साइन कॉपी करें">＃</button>
+      <span class="flag-label">फ़ुलविड्थ नंबर साइन</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="#" aria-label="नंबर साइन (हैशटैग) कॉपी करें">#</button>
+      <span class="flag-label">नंबर साइन (हैशटैग)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="﹟" aria-label="छोटा नंबर साइन कॉपी करें">﹟</button>
+      <span class="flag-label">छोटा नंबर साइन</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="#️⃣" aria-label="कीकैप हैशटैग कॉपी करें">#️⃣</button>
+      <span class="flag-label">कीकैप हैशटैग</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♯" aria-label="संगीत का शार्प चिह्न कॉपी करें">♯</button>
+      <span class="flag-label">संगीत का शार्प चिह्न</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="aesthetic-standalone">
+  <span class="article-section-label">एस्थेटिक सिंबल</span>
+  <h2>अकेले इस्तेमाल होने वाले एस्थेटिक सिंबल</h2>
+  <p class="u-secondary-tight">बायो, यूज़रनेम और आर्ट टेक्स्ट में लोकप्रिय एस्थेटिक और सजावटी Unicode कैरेक्टर।</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✿" aria-label="काला फूल (फ़्लोरेट) कॉपी करें">✿</button>
+      <span class="flag-label">काला फूल (फ़्लोरेट)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❦" aria-label="फूलों वाला हार्ट कॉपी करें">❦</button>
+      <span class="flag-label">फूलों वाला हार्ट</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❧" aria-label="घूमा हुआ फूलों वाला हार्ट बुलेट कॉपी करें">❧</button>
+      <span class="flag-label">घूमा हुआ फूलों वाला हार्ट बुलेट</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♡" aria-label="खाली पान (ताश) कॉपी करें">♡</button>
+      <span class="flag-label">खाली पान (ताश)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☾" aria-label="घटता आधा चांद कॉपी करें">☾</button>
+      <span class="flag-label">घटता आधा चांद</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☽" aria-label="बढ़ता आधा चांद कॉपी करें">☽</button>
+      <span class="flag-label">बढ़ता आधा चांद</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⊹" aria-label="हर्मिटियन कंजुगेट मैट्रिक्स कॉपी करें">⊹</button>
+      <span class="flag-label">हर्मिटियन कंजुगेट मैट्रिक्स</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₊" aria-label="सबस्क्रिप्ट प्लस कॉपी करें">₊</button>
+      <span class="flag-label">सबस्क्रिप्ट प्लस</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="༄" aria-label="तिब्बती अलंकरण कॉपी करें">༄</button>
+      <span class="flag-label">तिब्बती अलंकरण</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⋆" aria-label="स्टार ऑपरेटर कॉपी करें">⋆</button>
+      <span class="flag-label">स्टार ऑपरेटर</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✧" aria-label="चार कोनों वाला सफेद स्टार कॉपी करें">✧</button>
+      <span class="flag-label">चार कोनों वाला सफेद स्टार</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❂" aria-label="घेरे में खुले बीच वाला आठ कोनों का स्टार कॉपी करें">❂</button>
+      <span class="flag-label">घेरे में खुले बीच वाला आठ कोनों का स्टार</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="˚" aria-label="ऊपर का छल्ला कॉपी करें">˚</button>
+      <span class="flag-label">ऊपर का छल्ला</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ɛ" aria-label="उल्टा 3 (लैटिन ओपन ई) कॉपी करें">Ɛ</button>
+      <span class="flag-label">उल्टा 3 (लैटिन ओपन ई)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Є" aria-label="उल्टा 3 (सिरिलिक Є) कॉपी करें">Є</button>
+      <span class="flag-label">उल्टा 3 (सिरिलिक Є)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Я" aria-label="उल्टा R (सिरिलिक Я) कॉपी करें">Я</button>
+      <span class="flag-label">उल्टा R (सिरिलिक Я)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ↄ" aria-label="उल्टा C कॉपी करें">ↄ</button>
+      <span class="flag-label">उल्टा C</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="и" aria-label="उल्टा N (सिरिलिक и) कॉपी करें">и</button>
+      <span class="flag-label">उल्टा N (सिरिलिक и)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ƨ" aria-label="उल्टा S कॉपी करें">ƨ</button>
+      <span class="flag-label">उल्टा S</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="rare-unicode">
+  <span class="article-section-label">दुर्लभ Unicode अजूबे</span>
+  <h2>दुर्लभ और अनोखे Unicode सिंबल</h2>
+  <p class="u-secondary-tight">तकनीकी और प्रतीकात्मक ब्लॉक से अनोखे और कम इस्तेमाल होने वाले Unicode कैरेक्टर।</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℞" aria-label="प्रिस्क्रिप्शन चिह्न कॉपी करें">℞</button>
+      <span class="flag-label">प्रिस्क्रिप्शन चिह्न</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚜" aria-label="फ़्लर-द-ली कॉपी करें">⚜</button>
+      <span class="flag-label">फ़्लर-द-ली</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⎈" aria-label="जहाज़ का पहिया (हेल्म) कॉपी करें">⎈</button>
+      <span class="flag-label">जहाज़ का पहिया (हेल्म)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⌘" aria-label="कमांड कुंजी कॉपी करें">⌘</button>
+      <span class="flag-label">कमांड कुंजी</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏏" aria-label="इजेक्ट सिंबल कॉपी करें">⏏</button>
+      <span class="flag-label">इजेक्ट सिंबल</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⌥" aria-label="ऑप्शन कुंजी कॉपी करें">⌥</button>
+      <span class="flag-label">ऑप्शन कुंजी</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇧" aria-label="शिफ़्ट कुंजी कॉपी करें">⇧</button>
+      <span class="flag-label">शिफ़्ट कुंजी</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏎" aria-label="रिटर्न सिंबल कॉपी करें">⏎</button>
+      <span class="flag-label">रिटर्न सिंबल</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⌫" aria-label="बाईं ओर डिलीट कॉपी करें">⌫</button>
+      <span class="flag-label">बाईं ओर डिलीट</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏻" aria-label="पावर सिंबल कॉपी करें">⏻</button>
+      <span class="flag-label">पावर सिंबल</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☙" aria-label="उल्टा घूमा फूलों वाला हार्ट बुलेट कॉपी करें">☙</button>
+      <span class="flag-label">उल्टा घूमा फूलों वाला हार्ट बुलेट</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☤" aria-label="कैड्यूसियस कॉपी करें">☤</button>
+      <span class="flag-label">कैड्यूसियस</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚚" aria-label="हर्मीस का दंड कॉपी करें">⚚</button>
+      <span class="flag-label">हर्मीस का दंड</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <h2>स्पेशल कैरेक्टर कहीं भी कैसे टाइप करें</h2>
+  <div class="editorial-block">
+    <p>स्पेशल कैरेक्टर डालने के कई तरीके हैं, लेकिन कॉपी-पेस्ट सबसे तेज़ है और हर डिवाइस पर सबसे भरोसेमंद भी:</p>
+    <p><strong>कॉपी-पेस्ट (सबसे आसान):</strong> इस पेज पर किसी भी सिंबल पर क्लिक करके उसे कॉपी करें, फिर जहां चाहिए वहां पेस्ट करें (<code>Ctrl/Cmd + V</code>)। कोई कोड याद रखने की ज़रूरत नहीं।</p>
+    <p><strong>Windows के ALT कोड:</strong> <code>Alt</code> दबाकर रखें और न्यूमेरिक कीपैड पर एक नंबर टाइप करें (जैसे © के लिए <code>Alt + 0169</code>)। यह सिर्फ उन कीबोर्ड पर चलता है जिनमें असली नंबर पैड हो।</p>
+    <p><strong>Mac का कैरेक्टर व्यूअर:</strong> इमोजी और सिंबल पिकर खोलने के लिए <code>Ctrl + Cmd + Space</code> दबाएं।</p>
+    <p><strong>Unicode कोड से:</strong> Windows पर कुछ ऐप में हेक्स कोड टाइप करके <code>Alt + X</code> दबाएं (जैसे <code>221E</code> के बाद <code>Alt + X</code> दबाने पर ∞ मिलता है)।</p>
+    <p>ये कैरेक्टर Unicode का हिस्सा हैं, इसलिए iPhone, Android, Windows और Mac पर एक जैसे दिखते हैं। कुछ दुर्लभ गणितीय और सजावटी ग्लिफ़ पुराने सिस्टम पर खाली बॉक्स में बदल सकते हैं; ऐसा हो तो उसी कैटेगरी से कोई ज़्यादा आम विकल्प चुनें। बिल्कुल सही कैरेक्टर पर भी बॉक्स दिखना फॉन्ट न होने की समस्या है, जिसे <a href="/guide/why-fonts-show-as-boxes/">टेक्स्ट बॉक्स में क्यों दिखता है</a> में समझाया गया है।</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <h2>कौन-सा फील्ड असल में स्पेशल कैरेक्टर स्वीकार करता है</h2>
+  <div class="editorial-block">
+    <p>स्पेशल कैरेक्टर के &ldquo;सेव न होने&rdquo; की सबसे आम वजह यह है कि वह गलत फील्ड में डाला गया। लगभग हर प्लेटफॉर्म आपकी पहचान को <strong>दो अलग नामों</strong> में बांटता है, और इनमें से सिर्फ एक ही ये कैरेक्टर स्वीकार करता है:</p>
+    <p><strong>यूज़रनेम / @हैंडल:</strong> वह यूनिक आईडी जिससे आप लॉग इन करते हैं। यह लगभग हमेशा छोटे अक्षरों, नंबर, डॉट और अंडरस्कोर तक सीमित रहता है, इसलिए वहां स्पेशल कैरेक्टर रिजेक्ट हो जाता है या फील्ड चुपचाप पहले जैसा हो जाता है।</p>
+    <p><strong>डिस्प्ले नेम / निकनेम:</strong> वह नाम जो दूसरे लोग देखते हैं। यह आमतौर पर Unicode की बड़ी रेंज स्वीकार करता है, और इस पेज का हर कैरेक्टर वहीं इस्तेमाल करने के लिए है।</p>
+    <p>हर प्लेटफॉर्म की बारीकियां, अलग-अलग जांची हुई: <a href="/answers/why-wont-instagram-accept-my-fancy-username/">Instagram</a>, <a href="/answers/why-wont-discord-accept-fancy-username/">Discord</a>, और Discord की कौन-सी जगह क्या स्वीकार करती है, इसका <a href="/answers/discord-allowed-characters/">फील्ड-दर-फील्ड ब्योरा</a>।</p>
+    <p><strong>गेम अपने नियम खुद तय करते हैं।</strong> कई गेम सिर्फ लैटिन अक्षर स्वीकार करते हैं और बाकी सब सीधे रिजेक्ट कर देते हैं, और नाम बदलने में अक्सर पैसे या टोकन लगते हैं। पक्का करने से पहले अपना टेक्स्ट फील्ड में पेस्ट करें और गेम को उसे जांचने दें।</p>
+    <p>ऐसा नाम चाहिए जो सजा हुआ नहीं, बल्कि खाली दिखे? सादा स्पेस काट दिया जाता है और रिजेक्ट हो जाता है: आपको ऐसा कैरेक्टर चाहिए जिसे व्हाइटस्पेस नहीं माना जाता। <a href="/library/invisible-character/">इनविज़िबल कैरेक्टर</a> देखें।</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <h2>स्पेशल कैरेक्टर: अक्सर पूछे जाने वाले प्रश्न</h2>
+  <div class="editorial-block">
+    <p><strong>स्पेशल कैरेक्टर किसे कहते हैं?</strong> बुनियादी अक्षरों (A–Z, a–z) और अंकों (0–9) के बाहर का कोई भी सिंबल स्पेशल कैरेक्टर है। इसमें &amp; और @ जैसे विराम चिह्न, € और £ जैसे करेंसी निशान, ∞ और ± जैसे गणित के चिह्न, और ★ और ✧ जैसे सजावटी ग्लिफ़ आते हैं। ये सब Unicode का हिस्सा हैं।</p>
+    <p><strong>ALT कोड के बिना स्पेशल कैरेक्टर कैसे कॉपी करें?</strong> इस पेज पर जो सिंबल चाहिए, उस पर बस क्लिक करें: वह तुरंत आपके क्लिपबोर्ड में कॉपी हो जाता है, फिर <code>Ctrl + V</code> (Windows) या <code>Cmd + V</code> (Mac) से पेस्ट करें। कोई नंबर वाला कोड याद रखने की ज़रूरत नहीं।</p>
+    <p><strong>स्पेशल कैरेक्टर बॉक्स या सवालिया निशान की तरह क्यों दिखता है?</strong> ऐसा तब होता है जब ऐप या डिवाइस में उस खास कैरेक्टर का फॉन्ट ग्लिफ़ नहीं होता। यह दिखने की समस्या है, कॉपी की गलती नहीं: अंदर कैरेक्टर फिर भी सही है। उसी कैटेगरी से कोई ज़्यादा सपोर्ट वाला सिंबल चुनने से आमतौर पर बात बन जाती है।</p>
+    <p><strong>क्या पासवर्ड और यूज़रनेम में स्पेशल कैरेक्टर इस्तेमाल करना सुरक्षित है?</strong> आम विराम चिह्न (! @ # $ % &amp; *) पासवर्ड को मज़बूत बनाते हैं और लगभग हर जगह स्वीकार होते हैं। लेकिन दुर्लभ Unicode सिंबल अक्सर यूज़रनेम और पासवर्ड फील्ड में रिजेक्ट हो जाते हैं, इसलिए वहां आम ASCII विराम चिह्न ही रखें और सजावटी ग्लिफ़ पोस्ट और बायो के लिए बचाकर रखें।</p>
+    <p><strong>इमोजी या सिंबल की जगह [OBJ] क्यों दिखता है?</strong> [OBJ] एक प्लेसहोल्डर है जो कुछ Android ऐप और पुराने मैसेजिंग ऐप तब दिखाते हैं जब वे किसी खास इमोजी या Unicode कैरेक्टर को नहीं दिखा पाते; यह &ldquo;ऑब्जेक्ट रिप्लेसमेंट&rdquo; का छोटा रूप है। कैरेक्टर खुद सही तरह कॉपी होकर भेजा गया था; बस पाने वाले ऐप के पास अभी उसका ग्लिफ़ नहीं है। यह ऊपर बताए खाली बॉक्स का टेक्स्ट वाला रूप है, और आमतौर पर ऐप या ऑपरेटिंग सिस्टम के फॉन्ट और इमोजी सेट अपडेट होने पर ठीक हो जाता है।</p>
+    <p><strong>कौन-से सिंबल आम कीबोर्ड पर नहीं होते?</strong> अक्षरों, अंकों और कीबोर्ड पर छपे विराम चिह्नों के अलावा लगभग सब कुछ: हार्ट (♥ ♡), स्टार (★ ☆), टिक (✓ ✔), एरो (→ ←), इनफ़िनिटी (∞), डिग्री (°) और ज़्यादातर करेंसी निशान। ये Unicode में मौजूद हैं, बस कीबोर्ड पर इनका कोई बटन नहीं है, इसलिए इन्हें इस्तेमाल करने का सबसे तेज़ तरीका कॉपी करना है।</p>
+    <p><strong>ऐसा हार्ट सिंबल कैसे पाएं जो इमोजी न हो?</strong> ऊपर ♥ या ♡ पर टैप करें। फोन कीबोर्ड के इमोजी से अलग, ये टेक्स्ट कैरेक्टर हैं: ये आसपास के टेक्स्ट का रंग और साइज़ ले लेते हैं, और उन यूज़रनेम फील्ड और फॉर्म में भी चलते हैं जो इमोजी रिजेक्ट कर देते हैं।</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-card">
+  <h3>और फॉन्ट स्टाइल चाहिए?</h3>
+  <p>UltraTextGen से किसी भी नाम को 100+ Unicode स्टाइल में बदलें — bold, कर्सिव, गॉथिक, बबल, small caps — फ्री और तुरंत।</p>
+  <a href="https://ultratextgen.com/hi/" class="cta-btn">UltraTextGen खोलें →</a>
+</div>
+
+<!-- RELATED -->
+<section class="editorial-section">
+  <span class="article-section-label">संबंधित पेज</span>
+  <div class="compare-grid">
+    <a href="/library/math-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>गणित के सिंबल</h4>
+      <p>हर Unicode गणित ऑपरेटर, सेट और संबंध: बीजगणित, कैलकुलस, लॉजिक और सांख्यिकी।</p>
+    </a>
+    <a href="/library/currency-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>करेंसी सिंबल</h4>
+      <p>डॉलर, यूरो, येन, पाउंड और दुनिया की हर करेंसी का निशान, एक ही रेफरेंस में।</p>
+    </a>
+    <a href="/library/accent-marks-diacritics/" class="compare-card variant-muted u-no-underline">
+      <h4>एक्सेंट मार्क &amp; डायक्रिटिक्स</h4>
+      <p>एक्यूट, ग्रेव, सरकमफ़्लेक्स, उमलाउट, टिल्डे और अलग-अलग लिपियों के हर डायक्रिटिक निशान।</p>
+    </a>
+    <a href="/library/bracket-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>ब्रैकेट सिंबल</h4>
+      <p>टेक्स्ट को फ्रेम करने के लिए CJK ब्रैकेट, एंगल ब्रैकेट और सजावटी ब्रैकेट के जोड़े।</p>
+    </a>
+    <a href="/library/dash-hyphen-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>डैश &amp; हाइफ़न सिंबल</h4>
+      <p>एम डैश, एन डैश, हाइफ़न, माइनस चिह्न और हर लंबे डैश का वेरिएंट।</p>
+    </a>
+    <a href="/library/slash-backslash-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>स्लैश &amp; बैकस्लैश सिंबल</h4>
+      <p>फ़ॉरवर्ड स्लैश, बैकस्लैश, फ़्रैक्शन स्लैश और भाग वाले ग्लिफ़।</p>
+    </a>
+    <a href="/library/religious-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>धार्मिक &amp; आध्यात्मिक सिंबल</h4>
+      <p>दुनिया के हर बड़े धर्म के आस्था सिंबल, एक ही रेफरेंस में।</p>
+    </a>
+    <a href="/library/zodiac-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>राशि &amp; ज्योतिष सिंबल</h4>
+      <p>सभी 12 पश्चिमी राशियां, साथ में ग्रह और चीनी राशि।</p>
+    </a>
+    <a href="/library/sparkle-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>स्पार्कल &amp; सजावटी सिंबल</h4>
+      <p>स्पार्कल सिंबल, चमकीले कैरेक्टर और एस्थेटिक सजावट।</p>
+    </a>
+    <a href="/library/geometric-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>ज्यामितीय सिंबल</h4>
+      <p>गोले, डायमंड, चौकोर, त्रिकोण और सजावटी आकार।</p>
+    </a>
+    <a href="/symbol/copyright-symbol/" class="compare-card variant-muted u-no-underline">
+      <h4>कॉपीराइट सिंबल (©)</h4>
+      <p>© का मतलब, क्या अब भी इसकी ज़रूरत है, और इसे कैसे टाइप करें: क्लिक करके कॉपी करें।</p>
+    </a>
+    <a href="/symbol/peace-sign/" class="compare-card variant-muted u-no-underline">
+      <h4>शांति सिंबल (☮)</h4>
+      <p>☮ का मतलब, 1958 में बने इसके डिज़ाइन की कहानी, और इसे कैसे टाइप करें: क्लिक करके कॉपी करें।</p>
+    </a>
+    <a href="/symbol/trademark-symbol/" class="compare-card variant-muted u-no-underline">
+      <h4>ट्रेडमार्क सिंबल (™)</h4>
+      <p>™ का मतलब, यह ® से कैसे अलग है, और इसे कैसे टाइप करें: क्लिक करके कॉपी करें।</p>
+    </a>
+    <a href="/symbol/yin-yang/" class="compare-card variant-muted u-no-underline">
+      <h4>यिन यांग सिंबल (☯)</h4>
+      <p>☯ का मतलब, इसकी प्राचीन जड़ें, और इसे कैसे टाइप करें: क्लिक करके कॉपी करें।</p>
+    </a>
+    <a href="/symbol/quotation-mark/" class="compare-card variant-muted u-no-underline">
+      <h4>उद्धरण चिह्न</h4>
+      <p>हर कीबोर्ड पर टाइप होने वाले सीधे " और ', और अलग-अलग सॉफ़्टवेयर में उनकी जगह आने वाले घुमावदार, गिलेमे और नीचे वाले उद्धरण वेरिएंट…</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">एक्सप्लोर करें</span><a href="/hi/" class="footer-link">होम</a><a href="/hi/guide/" class="footer-link">गाइड</a><a href="/answers/" class="footer-link">जवाब</a><a href="/usecase/" class="footer-link">उपयोग</a><a href="/category/" class="footer-link">श्रेणियाँ</a><a href="/library/" class="footer-link">लाइब्रेरी</a><a href="/printables/" class="footer-link">प्रिंट के लिए</a><a href="/events/" class="footer-link">इवेंट्स</a></div><div class="footer-col"><span class="footer-col-title">लोकप्रिय टूल्स</span><a href="/usecase/bio-font/" class="footer-link">बायो फॉन्ट</a><a href="/usecase/tattoo-fonts/" class="footer-link">टैटू फॉन्ट</a><a href="/hi/usecase/emoji-anuvadak/" class="footer-link">इमोजी अनुवादक</a><a href="/usecase/vertical-text/" class="footer-link">वर्टिकल टेक्स्ट</a></div><div class="footer-col"><span class="footer-col-title">लोकप्रिय श्रेणियाँ</span><a href="/category/bold-fonts/" class="footer-link">बोल्ड फॉन्ट</a><a href="/category/cursive-fonts/" class="footer-link">कर्सिव फॉन्ट</a><a href="/category/gothic-fonts/" class="footer-link">गॉथिक फॉन्ट</a><a href="/category/small-text/" class="footer-link">स्मॉल टेक्स्ट</a><a href="/category/strikethrough-text/" class="footer-link">स्ट्राइकथ्रू टेक्स्ट</a></div><div class="footer-col"><span class="footer-col-title">कंपनी</span><a href="/about/" class="footer-link">हमारे बारे में</a><a href="/privacy/" class="footer-link">गोपनीयता नीति</a><a href="/terms/" class="footer-link">सेवा की शर्तें</a><a href="/contact/" class="footer-link">संपर्क करें</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. स्टाइलिश फॉन्ट जो हर जगह चलते हैं।</div>
+<!-- END static footer -->
+</div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/symbol-explorer.js"></script>
+<script src="/footer.js"></script>
+</body>
+</html>
