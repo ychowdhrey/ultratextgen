@@ -853,10 +853,10 @@
         { label: "Mga Kaganapan", href: "/events/" }
       ],
       tools: [
-        { label: "Bio Font", href: "/tl/usecase/bio-font/" },
+        { label: "Font para sa Bio", href: "/tl/usecase/bio-font/" },
         { label: "Tattoo Font", href: "/usecase/tattoo-fonts/" },
         { label: "Emoji Translator", href: "/usecase/text-to-emoji/" },
-        { label: "Vertical Text", href: "/usecase/vertical-text/" }
+        { label: "Patayong Teksto", href: "/usecase/vertical-text/" }
       ],
       categories: [
         { label: "Bold Text", href: "/category/bold-fonts/" },
