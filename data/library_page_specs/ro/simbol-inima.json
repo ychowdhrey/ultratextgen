@@ -118,14 +118,6 @@
       "href": "https://ultratextgen.com/uk/library/serdechka/"
     },
     {
-      "lang": "hi",
-      "href": "https://ultratextgen.com/hi/library/heart-symbols/"
-    },
-    {
-      "lang": "tl",
-      "href": "https://ultratextgen.com/tl/library/heart-symbols/"
-    },
-    {
       "lang": "x-default",
       "href": "https://ultratextgen.com/library/heart-symbols/"
     }
@@ -442,7 +434,7 @@
     "id": "heart-collections",
     "label": "Seturi de inimioare",
     "h2": "Seturi de inimioare pentru bio și chenare",
-    "intro": "Șiruri de inimioare gata făcute, pe care le lipești direct în bio, în descriere sau în numele de utilizator: copiezi tot combo-ul dintr-un singur clic. Dacă vrei un bloc lung, cum ar fi 1000 de ❤️ la rând, <a href=\"/usecase/repeat-text/\">generatorul de text repetat</a> îl face dintr-o singură atingere."
+    "intro": "Șiruri de inimioare gata făcute, pe care le lipești direct în bio, în descriere sau în numele de utilizator: copiezi tot combo-ul dintr-un singur clic. Dacă vrei un bloc lung, cum ar fi 1000 de ❤️ la rând, generatorul de text repetat îl face dintr-o singură atingere."
   },
   "collection_container_id": "heartCollectionsContainer",
   "collections": [

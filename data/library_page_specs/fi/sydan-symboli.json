@@ -320,7 +320,7 @@
     "id": "heart-collections",
     "label": "Sydänkokoelmat",
     "h2": "Sydänsarjat bioon ja reunuksiksi",
-    "intro": "Valmiit sydänrivit, jotka voit liittää suoraan bioon, kuvatekstiin tai käyttäjänimeen: kopioi koko yhdistelmä yhdellä klikkauksella. Jos tarvitset pitkän jonon, esimerkiksi 1000 ❤️ peräkkäin, <a href=\"/usecase/repeat-text/\">tekstin toistogeneraattori</a> tekee sen yhdellä napautuksella."
+    "intro": "Valmiit sydänrivit, jotka voit liittää suoraan bioon, kuvatekstiin tai käyttäjänimeen: kopioi koko yhdistelmä yhdellä klikkauksella. Jos tarvitset pitkän jonon, esimerkiksi 1000 ❤️ peräkkäin, tekstin toistogeneraattori tekee sen yhdellä napautuksella."
   },
   "collection_container_id": "heartCollectionsContainer",
   "collections": [
@@ -615,14 +615,6 @@
     {
       "lang": "uk",
       "href": "https://ultratextgen.com/uk/library/serdechka/"
-    },
-    {
-      "lang": "hi",
-      "href": "https://ultratextgen.com/hi/library/heart-symbols/"
-    },
-    {
-      "lang": "tl",
-      "href": "https://ultratextgen.com/tl/library/heart-symbols/"
     },
     {
       "lang": "x-default",

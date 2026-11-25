@@ -118,14 +118,6 @@
       "href": "https://ultratextgen.com/uk/library/serdechka/"
     },
     {
-      "lang": "hi",
-      "href": "https://ultratextgen.com/hi/library/heart-symbols/"
-    },
-    {
-      "lang": "tl",
-      "href": "https://ultratextgen.com/tl/library/heart-symbols/"
-    },
-    {
       "lang": "x-default",
       "href": "https://ultratextgen.com/library/heart-symbols/"
     }
@@ -442,7 +434,7 @@
     "id": "heart-collections",
     "label": "Szív készletek",
     "h2": "Szív készletek bióhoz és kerethez",
-    "intro": "Kész szívsorok, amelyeket egyenesen a bióba, a feliratba vagy a felhasználónévbe illeszthetsz: másold ki az egész kombót egy kattintással. Ha inkább egy hosszú sort szeretnél, például 1000 ❤️-t egymás után, a <a href=\"/usecase/repeat-text/\">szövegismétlő generátor</a> egy koppintással elkészíti."
+    "intro": "Kész szívsorok, amelyeket egyenesen a bióba, a feliratba vagy a felhasználónévbe illeszthetsz: másold ki az egész kombót egy kattintással. Ha inkább egy hosszú sort szeretnél, például 1000 ❤️-t egymás után, a szövegismétlő generátor egy koppintással elkészíti."
   },
   "collection_container_id": "heartCollectionsContainer",
   "collections": [
