@@ -1843,6 +1843,53 @@ async function main() {
     }
   }
 
+  // 25e. Muted text reads at 4.5:1 wherever it lands, in both themes.
+  // --text-muted carries form labels and hints site-wide. It was #94a3b8 in
+  // light mode (2.43:1 on the page background) and #64748b in dark mode
+  // (3.07:1 on a card), so every one of those labels failed WCAG 1.4.3.
+  // The token is painted a sentinel colour to find exactly the elements it
+  // colours, then each is measured in its real colour against its real
+  // background: a new component that puts muted text on a tinted surface
+  // fails here, not only the token values.
+  for (const [url, typed] of [['/', 'Luna'], ['/library/', null], ['/printables/block-letters/', 'Emma']]) {
+    for (const dark of [false, true]) {
+      console.log(`\n${url} (muted text is legible, ${dark ? 'dark' : 'light'} mode)`);
+      const { ctx, page, errors } = await open(url, 'desktop');
+      if (dark) { await page.locator('#darkModeBtn').click(); await page.waitForTimeout(200); }
+      if (typed) {
+        const field = page.locator(url === '/' ? '#mainInput' : '#pt-name-input');
+        await field.fill(typed);
+        await page.waitForTimeout(400);
+      }
+      const r = await page.evaluate(() => {
+        const st = document.createElement('style');
+        st.textContent = ':root, body, body.dark-mode { --text-muted: rgb(1, 2, 3) !important; }';
+        document.head.appendChild(st);
+        const els = [...document.querySelectorAll('body *')].filter((e) => {
+          const cs = getComputedStyle(e);
+          if (cs.color !== 'rgb(1, 2, 3)' || cs.visibility === 'hidden') return false;
+          const b = e.getBoundingClientRect();
+          return b.width && b.height && [...e.childNodes].some((c) => c.nodeType === 3 && c.textContent.trim());
+        });
+        st.remove();
+        return els.map((e) => {
+          let n = e, bg = 'rgba(0, 0, 0, 0)';
+          while (n && /rgba\(0, 0, 0, 0\)|transparent/.test(bg)) { bg = getComputedStyle(n).backgroundColor; n = n.parentElement; }
+          if (!n && /rgba\(0, 0, 0, 0\)|transparent/.test(bg)) bg = getComputedStyle(document.body).backgroundColor;
+          const cs = getComputedStyle(e);
+          const large = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.66 && +cs.fontWeight >= 700);
+          return { cls: (typeof e.className === 'string' && e.className.split(' ')[0]) || e.tagName.toLowerCase(), text: e.textContent.trim().slice(0, 24), fg: cs.color, bg, large };
+        });
+      });
+      const bad = r.map((x) => ({ ...x, ratio: contrast(x.fg, x.bg) })).filter((x) => x.ratio < (x.large ? 3 : 4.5));
+      check('the page has muted text to measure', r.length > 0, `${r.length}`);
+      check(`every muted label reads at >= 4.5:1 (${r.length} measured)`, bad.length === 0,
+        bad.slice(0, 4).map((x) => `${x.cls} "${x.text}" ${x.fg} on ${x.bg} = ${x.ratio.toFixed(2)}`).join(' | '));
+      check('no page errors', !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+  }
+
   // 26. Decoration chips are buttons. They were spans with a click handler,
   // so Tab never reached them, Enter and Space did nothing, and a screen
   // reader did not announce them as controls: without a mouse, nobody could
