@@ -207,22 +207,44 @@
     window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
   }
 
-  function fallbackCopy(text, done) {
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "absolute";
-    ta.style.left = "-9999px";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); done(); } catch (e) { /* noop */ }
-    document.body.removeChild(ta);
+  // The page is English only; English is the in-code fallback, the same word
+  // as ui.copyButtons.failed on the generator's own buttons.
+  const COPY_FAILED = "✗ Failed";
+
+  // Resolves only when the text reached the clipboard; rejects when nothing
+  // did. script.js publishes the site's helper with this contract
+  // (UltraTextGen.writeClipboard); this page does not load it, so the same
+  // contract is kept here: writeText, then a textarea fallback that reads
+  // execCommand's own answer. The old fallback treated "did not throw" as
+  // "copied" (execCommand returns false instead of throwing).
+  function writeClipboard(text) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.writeClipboard === "function") return ns.writeClipboard(text);
+    const legacy = function () {
+      const focused = document.activeElement;
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      if (focused && typeof focused.focus === "function") focused.focus();
+      return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).catch(legacy);
+    return legacy();
   }
 
+  // "SVG copied" and the copy_text row only once the clipboard has the SVG;
+  // the failed word otherwise, and no row (2026-11-24).
   function copySvg() {
     if (!lastSvg) return;
     svgWithEmbeddedFonts().then(function (svg) {
-      const done = function () {
+      return writeClipboard(svg).then(function () {
         toast("SVG copied");
         if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
           window.UltraTextGen.trackCopy("svg", "");
@@ -230,12 +252,9 @@
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: "copy_text", copy_method: "svg" });
         }
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(svg).then(done, function () { fallbackCopy(svg, done); });
-      } else {
-        fallbackCopy(svg, done);
-      }
+      }, function () {
+        toast(COPY_FAILED);
+      });
     });
   }
 

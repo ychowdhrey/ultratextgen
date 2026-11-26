@@ -73,14 +73,33 @@
     });
   }
 
+  // Arabic writes the definite article, and the conjunction or preposition in
+  // front of it, onto the noun: القلب "the heart", والقلب, بالقلب, للقلب. A
+  // visitor types the bare noun (قلب), which never begins the indexed word, so
+  // on /ar/ the everyday query for "heart" returned nothing while the page is
+  // titled رمز القلب (2026-11-21 rendered UX audit). An Arabic token is also
+  // tried against the word without that prefix; the word as written is still
+  // tried first, so no match is lost. Broken plurals (قلب -> قلوب) are a
+  // different word and are not guessed at.
+  const ARABIC = /[؀-ۿ]/;
+  const AR_ARTICLE = /^(?:[وفبك]?ال|لل)(?=[؀-ۿ]{2})/;
+
   // Best score one token earns in one field, 0 when it does not match there.
   function tokenScore(token, field) {
     if (SPACELESS.test(token)) return field.text.indexOf(token) !== -1 ? field.weight : 0;
+    const arabic = ARABIC.test(token);
     let best = 0;
     for (let i = 0; i < field.words.length; i++) {
       const w = field.words[i];
       if (w === token) return field.weight * 1.5;
       if (w.indexOf(token) === 0) best = field.weight;
+      if (arabic) {
+        const bare = w.replace(AR_ARTICLE, "");
+        if (bare !== w) {
+          if (bare === token) return field.weight * 1.5;
+          if (bare.indexOf(token) === 0) best = field.weight;
+        }
+      }
     }
     // A plural the index never writes ("kaomojis" for kaomoji). Only tried
     // when nothing else matched, so it can never outrank a real match.

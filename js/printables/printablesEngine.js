@@ -1638,24 +1638,89 @@
     return out;
   }
 
+  // The word a copy-paste card shows when nothing reached the clipboard.
+  // English lives here; every other language is copied from
+  // locales/<lang>.json (ui.copyButtons.failed) by
+  // `npm run sync:explorer-strings`, and `check:explorer-strings` fails when
+  // they drift. One entry per language whose pages mount the card grid.
+  // Never hand-author an entry.
+  const UI_STRINGS = {
+    en: {
+      failed: "✗ Failed"
+    },
+    de: {
+      failed: "✗ Fehlgeschlagen"
+    },
+    es: {
+      failed: "✗ Falló"
+    },
+    fr: {
+      failed: "✗ Échec"
+    },
+    id: {
+      failed: "✗ Gagal"
+    },
+    it: {
+      failed: "✗ Errore"
+    },
+    nl: {
+      failed: "✗ Mislukt"
+    },
+    pl: {
+      failed: "✗ Błąd"
+    },
+    pt: {
+      failed: "✗ Falhou"
+    },
+    tr: {
+      failed: "✗ Başarısız"
+    }
+  };
+  const COPY_STR = UI_STRINGS[LANG] || UI_STRINGS.en;
+
+  // Resolves only when the text reached the clipboard; rejects when nothing
+  // did. script.js publishes the site's helper with this contract
+  // (UltraTextGen.writeClipboard) and is used where a page loads it; the
+  // printables pages do not, so the same contract is kept here: writeText,
+  // then a textarea fallback that reads execCommand's own answer instead of
+  // assuming it worked.
+  function writeClipboard(text) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.writeClipboard === "function") return ns.writeClipboard(text);
+    const legacy = () => {
+      const focused = document.activeElement;
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      if (focused && typeof focused.focus === "function") focused.focus();
+      return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).catch(legacy);
+    return legacy();
+  }
+
+  // "Copied!" only once the clipboard has the text, the failed word otherwise
+  // (2026-11-23: a refused copy said "Copied!"). Copies from this grid record
+  // no copy_text row, before or after this change.
   function copyText(value, btn) {
-    const done = () => {
+    const show = (label, ok) => {
       if (!btn) return;
       // Only the first click of a burst reads the label (a second click would
       // otherwise save "Copied" as the text to restore).
       if (btn._copyTimer) clearTimeout(btn._copyTimer); else btn._copyPrev = btn.textContent;
-      btn.classList.add("is-copied");
-      btn.textContent = T.copied;
-      btn._copyTimer = setTimeout(() => { btn.textContent = btn._copyPrev; btn.classList.remove("is-copied"); btn._copyTimer = 0; }, 1400);
+      btn.classList.toggle("is-copied", ok);
+      btn.classList.toggle("is-copy-failed", !ok);
+      btn.textContent = label;
+      btn._copyTimer = setTimeout(() => { btn.textContent = btn._copyPrev; btn.classList.remove("is-copied", "is-copy-failed"); btn._copyTimer = 0; }, 1400);
     };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(value).then(done).catch(done);
-    } else {
-      const ta = document.createElement("textarea");
-      ta.value = value; document.body.appendChild(ta); ta.select();
-      try { document.execCommand("copy"); } catch (e) { /* noop */ }
-      document.body.removeChild(ta); done();
-    }
+    writeClipboard(value).then(() => show(T.copied, true), () => show(COPY_STR.failed, false));
   }
 
   /* ---------------------------------------------------------------
