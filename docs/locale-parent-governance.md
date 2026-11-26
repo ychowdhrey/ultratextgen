@@ -397,6 +397,12 @@ language, a family or a mirror:
   experimental cap in `data/locale_rule_b_exception.json`.
   `check-locale-parent-gap.js` fails on any broken entry;
   `check-locale-parent-tier.js` prints the exception status.
+- **Owner decisions for a single page** use the same page scope: an entry with
+  `"scope": "page"`, `verdict` `gate-pass` or `mirror`, and `ownerDecision`
+  `{ date, summary }` admits exactly that page (`ownerPagePass()`), never the
+  pattern. First use: the locale library hubs the cohort needed (owner decision
+  2026-11-26, "Build locale hubs"); a hub is a Rule A page, so the Rule B
+  exception itself does not cover it.
 - `data/locale_qualification_tiers.json` is not edited by an exception. A
   locale's tier changes only by an owner decision, as before.
 - Everything else still applies unchanged: canonical-intent mapping and the

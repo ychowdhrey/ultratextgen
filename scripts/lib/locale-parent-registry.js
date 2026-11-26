@@ -311,6 +311,26 @@ function ruleBException(classifiedPath, localeCode, result, ledgerEntries, polic
   return { status: 'pass', entry };
 }
 
+/**
+ * An owner override for ONE page, recorded per page rather than per pattern
+ * (localization rule 8: "a locale hold is a default the user can override
+ * explicitly, per batch, recorded as a dated, attributed decision"). A
+ * pattern-level gate-pass on `library/*` would authorize every library page in
+ * the locale; this admits exactly the page named. First use: the locale library
+ * hubs the Rule B cohort needs (owner decision 2026-11-26).
+ *
+ * Entry: { pattern: "<reference path without index.html>", scope: "page",
+ * locale, verdict: "gate-pass" | "mirror", checkedDate, evidence,
+ * ownerDecision: { date, summary } }. Returns the entry or null.
+ */
+function ownerPagePass(classifiedPath, localeCode, ledgerEntries) {
+  const key = pageKey(classifiedPath);
+  const lc = String(localeCode || '').toLowerCase();
+  return (ledgerEntries || []).find((e) => e && e.scope === 'page' && pageKey(e.pattern) === key &&
+    String(e.locale || '').toLowerCase() === lc && (e.verdict === 'gate-pass' || e.verdict === 'mirror') &&
+    e.ownerDecision && e.ownerDecision.date && e.ownerDecision.summary && e.checkedDate && e.evidence) || null;
+}
+
 module.exports = {
   LOCALES,
   NON_LATIN_LOCALES,
@@ -323,4 +343,5 @@ module.exports = {
   ruleBException,
   validateRuleBEntries,
   RULE_B_VERDICTS,
+  ownerPagePass,
 };
