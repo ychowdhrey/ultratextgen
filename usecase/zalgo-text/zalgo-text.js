@@ -1475,11 +1475,16 @@
       gifAltCopy.addEventListener('click', () => {
         const alt = $('#gifAlt');
         const text = alt ? alt.textContent : '';
-        if (!text || !navigator.clipboard) return;
-        navigator.clipboard.writeText(text).then(() => {
+        if (!text) return;
+        // Same contract as every other copy here; the alt text is not counted
+        // (it never was). A refused copy now says so instead of doing nothing.
+        writeClipboard(text).then(() => {
           gifAltCopy.textContent = i18n.btnCopied;
           setTimeout(() => { gifAltCopy.textContent = i18n.btnCopyAlt; }, 1500);
-        }).catch(() => {});
+        }, () => {
+          gifAltCopy.textContent = COPY_STR.failed;
+          setTimeout(() => { gifAltCopy.textContent = i18n.btnCopyAlt; }, 1500);
+        });
       });
     }
 
@@ -1867,9 +1872,97 @@
     } catch (e) { /* analytics must never break the generator */ }
   }
 
-  // Shared clipboard helper with execCommand fallback + button feedback
+  // The word a Copy button shows when nothing reached the clipboard. English
+  // lives here; every other language is copied from locales/<lang>.json
+  // (ui.copyButtons.failed) by `npm run sync:explorer-strings`, and
+  // `check:explorer-strings` fails when they drift. One entry per language
+  // with a zalgo page. Never hand-author an entry.
+  const UI_STRINGS = {
+    en: {
+      failed: "✗ Failed"
+    },
+    de: {
+      failed: "✗ Fehlgeschlagen"
+    },
+    es: {
+      failed: "✗ Falló"
+    },
+    fr: {
+      failed: "✗ Échec"
+    },
+    id: {
+      failed: "✗ Gagal"
+    },
+    it: {
+      failed: "✗ Errore"
+    },
+    ko: {
+      failed: "✗ 실패"
+    },
+    nl: {
+      failed: "✗ Mislukt"
+    },
+    pl: {
+      failed: "✗ Błąd"
+    },
+    pt: {
+      failed: "✗ Falhou"
+    },
+    ru: {
+      failed: "✗ Ошибка"
+    },
+    tr: {
+      failed: "✗ Başarısız"
+    },
+    vi: {
+      failed: "✗ Thất bại"
+    }
+  };
+  const COPY_STR = UI_STRINGS[(document.documentElement.lang || 'en').slice(0, 2).toLowerCase()] || UI_STRINGS.en;
+
+  // Resolves only when the text reached the clipboard; rejects when nothing
+  // did. The zalgo pages load script.js, whose UltraTextGen.writeClipboard has
+  // that contract and marks its fallback's native "copy" event so script.js's
+  // manual-copy listener cannot count it a second time. The local copy is the
+  // same contract for a page that loads this file without script.js.
+  function writeClipboard(text) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.writeClipboard === 'function') return ns.writeClipboard(text);
+    const legacy = () => {
+      const focused = document.activeElement;
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = !!document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      if (focused && typeof focused.focus === 'function') focused.focus();
+      return ok ? Promise.resolve() : Promise.reject(new Error('copy refused'));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).catch(legacy);
+    return legacy();
+  }
+
+  // Shared clipboard helper with button feedback. "Copied" and the copy_text
+  // row only once the clipboard has the text; the failed word otherwise, and
+  // no row (2026-11-24: a refused copy said "Copied" and was counted).
   function copyToClipboard(text, btn, idleLabel) {
-    const done = () => {
+    const show = (label, ok) => {
+      if (!btn) return;
+      btn.textContent = label;
+      btn.classList.toggle('copied', ok);
+      btn.classList.toggle('copy-failed', !ok);
+      clearTimeout(btn._copyTimer);
+      btn._copyTimer = setTimeout(() => {
+        btn.textContent = idleLabel;
+        btn.classList.remove('copied', 'copy-failed');
+      }, 1500);
+    };
+    writeClipboard(text).then(() => {
       // Every copy on this page funnels through here, so this is the one
       // place it is counted. "button" carries no copy_item: the text is
       // generated from what the visitor typed.
@@ -1879,30 +1972,8 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: 'copy_text', copy_method: 'button' });
       }
-      if (!btn) return;
-      btn.textContent = i18n.btnCopied;
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = idleLabel;
-        btn.classList.remove('copied');
-      }, 1500);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done).catch(() => {
-        legacyCopy(text); done();
-      });
-    } else {
-      legacyCopy(text); done();
-    }
-  }
-
-  function legacyCopy(text) {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
+      show(i18n.btnCopied, true);
+    }, () => show(COPY_STR.failed, false));
   }
 
   // ── URL State Sync ──────────────────────────────────────────────
