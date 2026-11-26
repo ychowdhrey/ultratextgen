@@ -40,7 +40,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { discoverClusters } = require('./lib/translation-clusters');
-const { decide, LOCALES } = require('./lib/locale-parent-registry');
+const { decide, LOCALES, validateRuleBEntries } = require('./lib/locale-parent-registry');
 const { buildIntentModel, evaluateNewLocalePage } = require('./lib/intent-clusters');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -134,9 +134,15 @@ if (fs.existsSync(GAP_LEDGER_PATH)) {
 // locale-qualification gate as a translation. data/english_parent_exceptions.json
 // is retired and is no longer read here.
 
+// Rule B exception entries are validated as a set, whatever this diff adds:
+// an experimental cohort over its allowance, or an entry whose evidence class
+// does not match its verdict, is a broken authorization even before a page uses it.
+const ruleBProblems = validateRuleBEntries(ledgerEntries);
+
 const flagged = [];
 let checked = 0;
 const passedOrigin = [];
+const passedRuleB = [];
 
 for (const rel of addedFiles) {
   if (!LOCALE_PREFIX_RE.test(rel)) continue; // not a locale page — not this gate's job
@@ -145,6 +151,7 @@ for (const rel of addedFiles) {
   if (verdict.status === 'skip') continue;
   checked++;
   if (verdict.status === 'pass') {
+    if (verdict.authority) passedRuleB.push({ rel, authority: verdict.authority, cohort: verdict.ledgerEntry.experimentCohort || '' });
     if (verdict.cluster && !verdict.cluster.enUrl) {
       passedOrigin.push({ rel, id: verdict.cluster.key, classifiedPath: verdict.classifiedPath, decision: verdict.result.decision });
     }
@@ -161,6 +168,18 @@ console.log(`  newly-added HTML files:     ${addedFiles.length}`);
 console.log(`  new locale pages checked:   ${checked}`);
 console.log(`  problems found:             ${flagged.length}`);
 console.log('');
+
+if (passedRuleB.length) {
+  console.log('New pages in a Tier-3 locale admitted by the Rule B exception (one page each; the tier is unchanged):');
+  for (const p of passedRuleB) console.log(`  ✓ ${p.rel}  ${p.authority}${p.cohort ? ` (${p.cohort})` : ''}`);
+  console.log('');
+}
+
+if (ruleBProblems.length) {
+  console.log('Rule B exception entries that do not hold (data/locale_parent_gap_audit.json):');
+  for (const p of ruleBProblems) console.log(`✗ [${p.code}] ${p.detail}`);
+  console.log('');
+}
 
 if (passedOrigin.length) {
   console.log('New pages with no English member (passed: canonical intent registered, gate cleared):');
@@ -196,6 +215,8 @@ if (flagged.length) {
     );
     console.log('');
   }
+  process.exit(1);
+} else if (ruleBProblems.length) {
   process.exit(1);
 } else {
   console.log('No newly-added locale page shipped without a required pre-build gap-check record.');

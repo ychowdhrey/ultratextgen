@@ -3,7 +3,7 @@ paths:
   - "{ar,bs,cs,da,de,es,fi,fr,hi,hr,hu,id,it,ja,ko,ms,nl,no,pl,pt,ro,ru,sk,sr,sv,th,tl,tr,uk,vi,zh-tw}/**"
   - "locales/**"
   - "i18n.js"
-  - "data/{core_parent_set,locale_qualification_tiers,locale_parent_gap_audit,canonical_intents,english_parent_exceptions,parity_catalogue_pages,translation_parity_exceptions,translation_identical_strings,numeric_parity_exceptions,locale_glossary,library_hub_i18n,em_dash_locale_policy}.json"
+  - "data/{core_parent_set,locale_qualification_tiers,locale_rule_b_exception,locale_parent_gap_audit,canonical_intents,english_parent_exceptions,parity_catalogue_pages,translation_parity_exceptions,translation_identical_strings,numeric_parity_exceptions,locale_glossary,library_hub_i18n,em_dash_locale_policy}.json"
   - "data/library_page_specs/*/**"
   - "scripts/**/*{locale,translation,hreflang,parity}*"
 ---
@@ -204,6 +204,13 @@ own, harvested from what already shipped — never translated fresh here.
   the override recorded in the ledger as a dated, attributed decision; the registry
   keeps stating the standing default. Presenting the hold reasoning *before* the
   user decides is part of the override being legitimate.
+- **Rule B exception (owner decision 2026-11-26):** one page may ship in an existing
+  Tier-3 locale through a page-scoped ledger entry, verdict `rule-b-exception`
+  (Rule B + positive target-language evidence) or `rule-b-experiment` (insufficient
+  evidence, inside the bounded allowance in `data/locale_rule_b_exception.json`).
+  It never authorizes a language or a family, never passes negative evidence, a
+  held locale, a new locale or an unresolved prerequisite, and leaves the tier as
+  it is (`docs/locale-parent-governance.md` §3a).
 - An all-instruments-`null` authorization is a **bridge, not a pass**: it names a
   re-check date and is complete only when real numbers or a dated veto land.
 - **Governance arriving mid-flight binds unshipped work.** When merging main brings

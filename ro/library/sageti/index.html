@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Săgeți de copiat: simboluri săgeată → ← ↑ ↓ pentru orice direcție</title>
+<meta name="description" content="Alege și copiază simboluri de săgeți → ← ↑ ↓: drepte, curbate, duble, triunghiulare și emoji, pentru documente, postări și formatare.">
+
+<link rel="canonical" href="https://ultratextgen.com/ro/library/sageti/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/arrow-symbols/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/arrow-symbols/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/pfeil-symbole/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/simbolos-de-flechas/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/library/symboles-fleches/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/simbol-panah/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/library/arrow-symbols/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/library/hwasalpyo-giho/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/library/setas/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/ki-tu-mui-ten/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/library/pijl-symbolen/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/ok-isaretleri/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/library/pil-symboler/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/library/pil-symboler/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/library/jiantou-fuhao/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/library/simboli-freccia/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/library/symbole-strzalek/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/strelki/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/library/arrow-symbols/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/library/pilsymboler/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/library/sipky/">
+<link rel="alternate" hreflang="hu" href="https://ultratextgen.com/hu/library/nyil-szimbolum/">
+<link rel="alternate" hreflang="fi" href="https://ultratextgen.com/fi/library/nuoli-symboli/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/library/strelice/">
+<link rel="alternate" hreflang="uk" href="https://ultratextgen.com/uk/library/strilky/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/library/sipky/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/library/sageti/">
+<link rel="alternate" hreflang="ms" href="https://ultratextgen.com/ms/library/simbol-panah/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/library/arrow-symbols/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/library/arrow-symbols/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/arrow-symbols/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/ro-library-sageti.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Săgeți de copiat: simboluri săgeată → ← ↑ ↓ pentru orice direcție">
+<meta name="twitter:description" content="Alege și copiază simboluri de săgeți → ← ↑ ↓: drepte, curbate, duble, triunghiulare și emoji, pentru documente, postări și formatare.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/ro-library-sageti.png">
+<meta property="og:title" content="Săgeți de copiat: simboluri săgeată → ← ↑ ↓ pentru orice direcție">
+<meta property="og:description" content="Alege și copiază simboluri de săgeți → ← ↑ ↓: drepte, curbate, duble, triunghiulare și emoji, pentru documente, postări și formatare.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/ro/library/sageti/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Săgeți de copiat: simboluri săgeată → ← ↑ ↓ pentru orice direcție",
+  "description": "Alege și copiază simboluri de săgeți → ← ↑ ↓: drepte, curbate, duble, triunghiulare și emoji, pentru documente, postări și formatare.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/ro/library/sageti/",
+  "datePublished": "2026-11-26T00:00:00+00:00",
+  "dateModified": "2026-11-26T00:00:00+00:00"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://ultratextgen.com/ro/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bibliotecă",
+      "item": "https://ultratextgen.com/ro/library/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Săgeți",
+      "item": "https://ultratextgen.com/ro/library/sageti/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<script src="/header.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Simboluri de săgeți</h1>
+    <p class="hero-tagline">O colecție de săgeți pentru fiecare direcție: drepte, curbate, duble, triunghiulare și emoji. Apeși pe orice simbol ca să-l copiezi pe loc.</p>
+  </div>
+</section>
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/ro-library-sageti.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Alege și copiază săgeți pentru documente, postări și formatare. Sunt grupate după stil: de la săgeți simple de direcție până la variante groase, duble, curbate și emoji.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="simple-directional">
+  <span class="article-section-label">Direcții de Bază</span>
+  <h2>Săgeți simple de direcție</h2>
+  <p class="u-secondary-tight">Săgeți Unicode clasice, orientate în toate cele opt direcții.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="→" aria-label="Copiază Săgeată Dreapta">→</button>
+      <span class="flag-label">Săgeată Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="←" aria-label="Copiază Săgeată Stânga">←</button>
+      <span class="flag-label">Săgeată Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↑" aria-label="Copiază Săgeată Sus">↑</button>
+      <span class="flag-label">Săgeată Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↓" aria-label="Copiază Săgeată Jos">↓</button>
+      <span class="flag-label">Săgeată Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↗" aria-label="Copiază Săgeată Sus-Dreapta">↗</button>
+      <span class="flag-label">Săgeată Sus-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↘" aria-label="Copiază Săgeată Jos-Dreapta">↘</button>
+      <span class="flag-label">Săgeată Jos-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↙" aria-label="Copiază Săgeată Jos-Stânga">↙</button>
+      <span class="flag-label">Săgeată Jos-Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↖" aria-label="Copiază Săgeată Sus-Stânga">↖</button>
+      <span class="flag-label">Săgeată Sus-Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↔" aria-label="Copiază Săgeată Stânga-Dreapta">↔</button>
+      <span class="flag-label">Săgeată Stânga-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↕" aria-label="Copiază Săgeată Sus-Jos">↕</button>
+      <span class="flag-label">Săgeată Sus-Jos</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="bold-heavy">
+  <span class="article-section-label">Groase &amp; Accentuate</span>
+  <h2>Simboluri de săgeți groase</h2>
+  <p class="u-secondary-tight">Săgeți groase, cu greutate vizuală, pentru accent și îndemnuri la acțiune.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➜" aria-label="Copiază Săgeată Rotunjită Groasă">➜</button>
+      <span class="flag-label">Săgeată Rotunjită Groasă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➝" aria-label="Copiază Săgeată Dreapta Medie">➝</button>
+      <span class="flag-label">Săgeată Dreapta Medie</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟶" aria-label="Copiază Săgeată Dreapta Lungă">⟶</button>
+      <span class="flag-label">Săgeată Dreapta Lungă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➡" aria-label="Copiază Săgeată Dreapta">➡</button>
+      <span class="flag-label">Săgeată Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬅" aria-label="Copiază Săgeată Stânga">⬅</button>
+      <span class="flag-label">Săgeată Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬆" aria-label="Copiază Săgeată Sus">⬆</button>
+      <span class="flag-label">Săgeată Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬇" aria-label="Copiază Săgeată Jos">⬇</button>
+      <span class="flag-label">Săgeată Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➔" aria-label="Copiază Săgeată Dreapta Groasă">➔</button>
+      <span class="flag-label">Săgeată Dreapta Groasă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➙" aria-label="Copiază Săgeată Întreruptă">➙</button>
+      <span class="flag-label">Săgeată Întreruptă</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="double-formal">
+  <span class="article-section-label">Duble &amp; Formale</span>
+  <h2>Simboluri de săgeți duble &amp; formale</h2>
+  <p class="u-secondary-tight">Săgeți duble și matematice pentru logică, documentație și texte formale.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇒" aria-label="Copiază Săgeată Dublă Dreapta">⇒</button>
+      <span class="flag-label">Săgeată Dublă Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇐" aria-label="Copiază Săgeată Dublă Stânga">⇐</button>
+      <span class="flag-label">Săgeată Dublă Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇑" aria-label="Copiază Săgeată Dublă Sus">⇑</button>
+      <span class="flag-label">Săgeată Dublă Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇓" aria-label="Copiază Săgeată Dublă Jos">⇓</button>
+      <span class="flag-label">Săgeată Dublă Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇔" aria-label="Copiază Dublă Stânga-Dreapta">⇔</button>
+      <span class="flag-label">Dublă Stânga-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟹" aria-label="Copiază Dublă Lungă Dreapta">⟹</button>
+      <span class="flag-label">Dublă Lungă Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟸" aria-label="Copiază Dublă Lungă Stânga">⟸</button>
+      <span class="flag-label">Dublă Lungă Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇕" aria-label="Copiază Dublă Sus-Jos">⇕</button>
+      <span class="flag-label">Dublă Sus-Jos</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="curved-return">
+  <span class="article-section-label">Curbate &amp; Întoarcere</span>
+  <h2>Săgeți curbate &amp; de întoarcere</h2>
+  <p class="u-secondary-tight">Săgeți curbate, în buclă și de întoarcere pentru răspunsuri, anulare și navigare.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↩" aria-label="Copiază Săgeată de Întoarcere">↩</button>
+      <span class="flag-label">Săgeată de Întoarcere</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↪" aria-label="Copiază Săgeată Curbată Dreapta">↪</button>
+      <span class="flag-label">Săgeată Curbată Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↺" aria-label="Copiază Sens Antiorar">↺</button>
+      <span class="flag-label">Sens Antiorar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↻" aria-label="Copiază Sens Orar">↻</button>
+      <span class="flag-label">Sens Orar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤴" aria-label="Copiază Curbată Dreapta în Sus">⤴</button>
+      <span class="flag-label">Curbată Dreapta în Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤵" aria-label="Copiază Curbată Dreapta în Jos">⤵</button>
+      <span class="flag-label">Curbată Dreapta în Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↶" aria-label="Copiază Arc Sus Antiorar">↶</button>
+      <span class="flag-label">Arc Sus Antiorar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↷" aria-label="Copiază Arc Sus Orar">↷</button>
+      <span class="flag-label">Arc Sus Orar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔃" aria-label="Copiază Săgeți Verticale în Sens Orar">🔃</button>
+      <span class="flag-label">Săgeți Verticale în Sens Orar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔄" aria-label="Copiază Săgeți în Sens Antiorar">🔄</button>
+      <span class="flag-label">Săgeți în Sens Antiorar</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="triangle-pointer">
+  <span class="article-section-label">Triunghiuri &amp; Indicatoare</span>
+  <h2>Săgeți triunghiulare &amp; indicatoare</h2>
+  <p class="u-secondary-tight">Săgeți triunghiulare și simboluri indicatoare pentru liste cu buline și navigare.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▶" aria-label="Copiază Triunghi Dreapta">▶</button>
+      <span class="flag-label">Triunghi Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◀" aria-label="Copiază Triunghi Stânga">◀</button>
+      <span class="flag-label">Triunghi Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▲" aria-label="Copiază Triunghi Sus">▲</button>
+      <span class="flag-label">Triunghi Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▼" aria-label="Copiază Triunghi Jos">▼</button>
+      <span class="flag-label">Triunghi Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="►" aria-label="Copiază Indicator Negru Dreapta">►</button>
+      <span class="flag-label">Indicator Negru Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◄" aria-label="Copiază Indicator Negru Stânga">◄</button>
+      <span class="flag-label">Indicator Negru Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➤" aria-label="Copiază Vârf Negru Dreapta">➤</button>
+      <span class="flag-label">Vârf Negru Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‣" aria-label="Copiază Bulină Triunghiulară">‣</button>
+      <span class="flag-label">Bulină Triunghiulară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="›" aria-label="Copiază Unghi Simplu Dreapta">›</button>
+      <span class="flag-label">Unghi Simplu Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‹" aria-label="Copiază Unghi Simplu Stânga">‹</button>
+      <span class="flag-label">Unghi Simplu Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏩" aria-label="Copiază Derulare Înainte">⏩</button>
+      <span class="flag-label">Derulare Înainte</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏪" aria-label="Copiază Derulare Înapoi">⏪</button>
+      <span class="flag-label">Derulare Înapoi</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏫" aria-label="Copiază Rapid în Sus">⏫</button>
+      <span class="flag-label">Rapid în Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏬" aria-label="Copiază Rapid în Jos">⏬</button>
+      <span class="flag-label">Rapid în Jos</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="thin-minimal">
+  <span class="article-section-label">Subțiri &amp; Minimale</span>
+  <h2>Săgeți subțiri &amp; minimaliste</h2>
+  <p class="u-secondary-tight">Paranteze unghiulare discrete și caractere de direcție minimaliste.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="«" aria-label="Copiază Unghi Dublu Stânga">«</button>
+      <span class="flag-label">Unghi Dublu Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="»" aria-label="Copiază Unghi Dublu Dreapta">»</button>
+      <span class="flag-label">Unghi Dublu Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‹" aria-label="Copiază Unghi Simplu Stânga">‹</button>
+      <span class="flag-label">Unghi Simplu Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="›" aria-label="Copiază Unghi Simplu Dreapta">›</button>
+      <span class="flag-label">Unghi Simplu Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="˂" aria-label="Copiază Săgeată Modificator Stânga">˂</button>
+      <span class="flag-label">Săgeată Modificator Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="˃" aria-label="Copiază Săgeată Modificator Dreapta">˃</button>
+      <span class="flag-label">Săgeată Modificator Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="˄" aria-label="Copiază Săgeată Modificator Sus">˄</button>
+      <span class="flag-label">Săgeată Modificator Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="˅" aria-label="Copiază Săgeată Modificator Jos">˅</button>
+      <span class="flag-label">Săgeată Modificator Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟵" aria-label="Copiază Săgeată Lungă Stânga">⟵</button>
+      <span class="flag-label">Săgeată Lungă Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟶" aria-label="Copiază Săgeată Lungă Dreapta">⟶</button>
+      <span class="flag-label">Săgeată Lungă Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟷" aria-label="Copiază Săgeată Lungă Stânga-Dreapta">⟷</button>
+      <span class="flag-label">Săgeată Lungă Stânga-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟸" aria-label="Copiază Săgeată Dublă Lungă Stânga">⟸</button>
+      <span class="flag-label">Săgeată Dublă Lungă Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟹" aria-label="Copiază Săgeată Dublă Lungă Dreapta">⟹</button>
+      <span class="flag-label">Săgeată Dublă Lungă Dreapta</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="emoji-arrows">
+  <span class="article-section-label">Săgeți Emoji</span>
+  <h2>Simboluri de săgeți emoji</h2>
+  <p class="u-secondary-tight">Emoji colorate cu săgeți și pictograme de direcție pentru rețele sociale și mesaje.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬆️" aria-label="Copiază Emoji Săgeată Sus">⬆️</button>
+      <span class="flag-label">Emoji Săgeată Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬇️" aria-label="Copiază Emoji Săgeată Jos">⬇️</button>
+      <span class="flag-label">Emoji Săgeată Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➡️" aria-label="Copiază Emoji Săgeată Dreapta">➡️</button>
+      <span class="flag-label">Emoji Săgeată Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬅️" aria-label="Copiază Emoji Săgeată Stânga">⬅️</button>
+      <span class="flag-label">Emoji Săgeată Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↕️" aria-label="Copiază Săgeată Sus-Jos">↕️</button>
+      <span class="flag-label">Săgeată Sus-Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↔️" aria-label="Copiază Săgeată Stânga-Dreapta">↔️</button>
+      <span class="flag-label">Săgeată Stânga-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↩️" aria-label="Copiază Emoji Săgeată de Întoarcere">↩️</button>
+      <span class="flag-label">Emoji Săgeată de Întoarcere</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↪️" aria-label="Copiază Săgeată Curbată Dreapta">↪️</button>
+      <span class="flag-label">Săgeată Curbată Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔄" aria-label="Copiază Sens Antiorar">🔄</button>
+      <span class="flag-label">Sens Antiorar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔃" aria-label="Copiază Sens Orar">🔃</button>
+      <span class="flag-label">Sens Orar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔀" aria-label="Copiază Amestecare">🔀</button>
+      <span class="flag-label">Amestecare</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔁" aria-label="Copiază Repetare">🔁</button>
+      <span class="flag-label">Repetare</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔂" aria-label="Copiază Repetare o Dată">🔂</button>
+      <span class="flag-label">Repetare o Dată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔙" aria-label="Copiază Săgeată Înapoi">🔙</button>
+      <span class="flag-label">Săgeată Înapoi</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔚" aria-label="Copiază Săgeată Sfârșit">🔚</button>
+      <span class="flag-label">Săgeată Sfârșit</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔛" aria-label="Copiază Săgeată ON!">🔛</button>
+      <span class="flag-label">Săgeată ON!</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔜" aria-label="Copiază Săgeată În Curând">🔜</button>
+      <span class="flag-label">Săgeată În Curând</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔝" aria-label="Copiază Săgeată spre Vârf">🔝</button>
+      <span class="flag-label">Săgeată spre Vârf</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🆙" aria-label="Copiază Butonul UP!">🆙</button>
+      <span class="flag-label">Butonul UP!</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔼" aria-label="Copiază Buton Sus">🔼</button>
+      <span class="flag-label">Buton Sus</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="level-up-emoji">
+  <span class="article-section-label">Nivelul Următor</span>
+  <h2>Emoji pentru nivelul următor</h2>
+  <p class="u-secondary-tight">🆙 este emoji-ul butonului UP! pe care oamenii îl lipesc când trec la nivelul următor, primesc o promovare sau un rang nou. Literele fac parte din emoji, așa că un stil de font nu le schimbă. Combinațiile de mai jos îl pun lângă ⏫, 🔝 și 📈, ca postarea ta să pară o urcare, nu doar o săgeată în sus.</p>
+  <div class="flag-rows flag-rows--text">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🆙⏫" aria-label="Copiază Nivelul Următor">🆙⏫</button>
+      <span class="flag-label">Nivelul Următor</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🆙🔝" aria-label="Copiază Nivel Maxim">🆙🔝</button>
+      <span class="flag-label">Nivel Maxim</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="📈🆙" aria-label="Copiază Statistici în Creștere">📈🆙</button>
+      <span class="flag-label">Statistici în Creștere</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬆️🆙🔝" aria-label="Copiază Urcare spre Vârf">⬆️🆙🔝</button>
+      <span class="flag-label">Urcare spre Vârf</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🎮🆙" aria-label="Copiază Nivel Nou în Joc">🎮🆙</button>
+      <span class="flag-label">Nivel Nou în Joc</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏆🆙" aria-label="Copiază Rang Nou">🏆🆙</button>
+      <span class="flag-label">Rang Nou</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="additional-arrows">
+  <span class="article-section-label">Blocul Complet</span>
+  <h2>Mai multe din blocul Unicode de săgeți</h2>
+  <p class="u-secondary-tight">Restul punctelor de cod atribuite din blocul Unicode Arrows (U+2190–U+21FF), care nu apar în secțiunile selectate de mai sus.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↚" aria-label="Copiază Săgeată Stânga Tăiată">↚</button>
+      <span class="flag-label">Săgeată Stânga Tăiată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↛" aria-label="Copiază Săgeată Dreapta Tăiată">↛</button>
+      <span class="flag-label">Săgeată Dreapta Tăiată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↜" aria-label="Copiază Săgeată Ondulată Stânga">↜</button>
+      <span class="flag-label">Săgeată Ondulată Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↝" aria-label="Copiază Săgeată Ondulată Dreapta">↝</button>
+      <span class="flag-label">Săgeată Ondulată Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↞" aria-label="Copiază Săgeată Stânga cu Două Vârfuri">↞</button>
+      <span class="flag-label">Săgeată Stânga cu Două Vârfuri</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↟" aria-label="Copiază Săgeată Sus cu Două Vârfuri">↟</button>
+      <span class="flag-label">Săgeată Sus cu Două Vârfuri</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↠" aria-label="Copiază Săgeată Dreapta cu Două Vârfuri">↠</button>
+      <span class="flag-label">Săgeată Dreapta cu Două Vârfuri</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↡" aria-label="Copiază Săgeată Jos cu Două Vârfuri">↡</button>
+      <span class="flag-label">Săgeată Jos cu Două Vârfuri</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↢" aria-label="Copiază Săgeată Stânga cu Coadă">↢</button>
+      <span class="flag-label">Săgeată Stânga cu Coadă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↣" aria-label="Copiază Săgeată Dreapta cu Coadă">↣</button>
+      <span class="flag-label">Săgeată Dreapta cu Coadă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↤" aria-label="Copiază Săgeată Stânga din Bară">↤</button>
+      <span class="flag-label">Săgeată Stânga din Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↥" aria-label="Copiază Săgeată Sus din Bară">↥</button>
+      <span class="flag-label">Săgeată Sus din Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↦" aria-label="Copiază Săgeată Dreapta din Bară">↦</button>
+      <span class="flag-label">Săgeată Dreapta din Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↧" aria-label="Copiază Săgeată Jos din Bară">↧</button>
+      <span class="flag-label">Săgeată Jos din Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↨" aria-label="Copiază Săgeată Sus-Jos cu Bază">↨</button>
+      <span class="flag-label">Săgeată Sus-Jos cu Bază</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↫" aria-label="Copiază Săgeată Stânga cu Buclă">↫</button>
+      <span class="flag-label">Săgeată Stânga cu Buclă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↬" aria-label="Copiază Săgeată Dreapta cu Buclă">↬</button>
+      <span class="flag-label">Săgeată Dreapta cu Buclă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↭" aria-label="Copiază Săgeată Ondulată Stânga-Dreapta">↭</button>
+      <span class="flag-label">Săgeată Ondulată Stânga-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↮" aria-label="Copiază Săgeată Stânga-Dreapta Tăiată">↮</button>
+      <span class="flag-label">Săgeată Stânga-Dreapta Tăiată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↯" aria-label="Copiază Săgeată Zigzag în Jos">↯</button>
+      <span class="flag-label">Săgeată Zigzag în Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↰" aria-label="Copiază Săgeată Sus cu Vârful spre Stânga">↰</button>
+      <span class="flag-label">Săgeată Sus cu Vârful spre Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↱" aria-label="Copiază Săgeată Sus cu Vârful spre Dreapta">↱</button>
+      <span class="flag-label">Săgeată Sus cu Vârful spre Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↲" aria-label="Copiază Săgeată Jos cu Vârful spre Stânga">↲</button>
+      <span class="flag-label">Săgeată Jos cu Vârful spre Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↳" aria-label="Copiază Săgeată Jos cu Vârful spre Dreapta">↳</button>
+      <span class="flag-label">Săgeată Jos cu Vârful spre Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↴" aria-label="Copiază Săgeată Dreapta cu Colț în Jos">↴</button>
+      <span class="flag-label">Săgeată Dreapta cu Colț în Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↵" aria-label="Copiază Săgeată Jos cu Colț spre Stânga">↵</button>
+      <span class="flag-label">Săgeată Jos cu Colț spre Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↸" aria-label="Copiază Săgeată Nord-Vest spre Bară Lungă">↸</button>
+      <span class="flag-label">Săgeată Nord-Vest spre Bară Lungă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↹" aria-label="Copiază Săgeată Stânga spre Bară peste Săgeată Dreapta spre Bară">↹</button>
+      <span class="flag-label">Săgeată Stânga spre Bară peste Săgeată Dreapta spre Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↼" aria-label="Copiază Harpon Stânga cu Ghimpe în Sus">↼</button>
+      <span class="flag-label">Harpon Stânga cu Ghimpe în Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↽" aria-label="Copiază Harpon Stânga cu Ghimpe în Jos">↽</button>
+      <span class="flag-label">Harpon Stânga cu Ghimpe în Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↾" aria-label="Copiază Harpon Sus cu Ghimpe spre Dreapta">↾</button>
+      <span class="flag-label">Harpon Sus cu Ghimpe spre Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↿" aria-label="Copiază Harpon Sus cu Ghimpe spre Stânga">↿</button>
+      <span class="flag-label">Harpon Sus cu Ghimpe spre Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇀" aria-label="Copiază Harpon Dreapta cu Ghimpe în Sus">⇀</button>
+      <span class="flag-label">Harpon Dreapta cu Ghimpe în Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇁" aria-label="Copiază Harpon Dreapta cu Ghimpe în Jos">⇁</button>
+      <span class="flag-label">Harpon Dreapta cu Ghimpe în Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇂" aria-label="Copiază Harpon Jos cu Ghimpe spre Dreapta">⇂</button>
+      <span class="flag-label">Harpon Jos cu Ghimpe spre Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇃" aria-label="Copiază Harpon Jos cu Ghimpe spre Stânga">⇃</button>
+      <span class="flag-label">Harpon Jos cu Ghimpe spre Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇄" aria-label="Copiază Săgeată Dreapta peste Săgeată Stânga">⇄</button>
+      <span class="flag-label">Săgeată Dreapta peste Săgeată Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇅" aria-label="Copiază Săgeată Sus în Stânga Săgeții Jos">⇅</button>
+      <span class="flag-label">Săgeată Sus în Stânga Săgeții Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇆" aria-label="Copiază Săgeată Stânga peste Săgeată Dreapta">⇆</button>
+      <span class="flag-label">Săgeată Stânga peste Săgeată Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇇" aria-label="Copiază Pereche de Săgeți Stânga">⇇</button>
+      <span class="flag-label">Pereche de Săgeți Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇈" aria-label="Copiază Pereche de Săgeți Sus">⇈</button>
+      <span class="flag-label">Pereche de Săgeți Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇉" aria-label="Copiază Pereche de Săgeți Dreapta">⇉</button>
+      <span class="flag-label">Pereche de Săgeți Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇊" aria-label="Copiază Pereche de Săgeți Jos">⇊</button>
+      <span class="flag-label">Pereche de Săgeți Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇋" aria-label="Copiază Harpon Stânga peste Harpon Dreapta">⇋</button>
+      <span class="flag-label">Harpon Stânga peste Harpon Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇌" aria-label="Copiază Harpon Dreapta peste Harpon Stânga">⇌</button>
+      <span class="flag-label">Harpon Dreapta peste Harpon Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇍" aria-label="Copiază Săgeată Dublă Stânga Tăiată">⇍</button>
+      <span class="flag-label">Săgeată Dublă Stânga Tăiată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇎" aria-label="Copiază Săgeată Dublă Stânga-Dreapta Tăiată">⇎</button>
+      <span class="flag-label">Săgeată Dublă Stânga-Dreapta Tăiată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇏" aria-label="Copiază Săgeată Dublă Dreapta Tăiată">⇏</button>
+      <span class="flag-label">Săgeată Dublă Dreapta Tăiată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇖" aria-label="Copiază Săgeată Dublă Nord-Vest">⇖</button>
+      <span class="flag-label">Săgeată Dublă Nord-Vest</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇗" aria-label="Copiază Săgeată Dublă Nord-Est">⇗</button>
+      <span class="flag-label">Săgeată Dublă Nord-Est</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇘" aria-label="Copiază Săgeată Dublă Sud-Est">⇘</button>
+      <span class="flag-label">Săgeată Dublă Sud-Est</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇙" aria-label="Copiază Săgeată Dublă Sud-Vest">⇙</button>
+      <span class="flag-label">Săgeată Dublă Sud-Vest</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇚" aria-label="Copiază Săgeată Triplă Stânga">⇚</button>
+      <span class="flag-label">Săgeată Triplă Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇛" aria-label="Copiază Săgeată Triplă Dreapta">⇛</button>
+      <span class="flag-label">Săgeată Triplă Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇜" aria-label="Copiază Săgeată Șerpuită Stânga">⇜</button>
+      <span class="flag-label">Săgeată Șerpuită Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇝" aria-label="Copiază Săgeată Șerpuită Dreapta">⇝</button>
+      <span class="flag-label">Săgeată Șerpuită Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇞" aria-label="Copiază Săgeată Sus cu Tăietură Dublă">⇞</button>
+      <span class="flag-label">Săgeată Sus cu Tăietură Dublă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇟" aria-label="Copiază Săgeată Jos cu Tăietură Dublă">⇟</button>
+      <span class="flag-label">Săgeată Jos cu Tăietură Dublă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇠" aria-label="Copiază Săgeată Întreruptă Stânga">⇠</button>
+      <span class="flag-label">Săgeată Întreruptă Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇡" aria-label="Copiază Săgeată Întreruptă Sus">⇡</button>
+      <span class="flag-label">Săgeată Întreruptă Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇢" aria-label="Copiază Săgeată Întreruptă Dreapta">⇢</button>
+      <span class="flag-label">Săgeată Întreruptă Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇣" aria-label="Copiază Săgeată Întreruptă Jos">⇣</button>
+      <span class="flag-label">Săgeată Întreruptă Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇤" aria-label="Copiază Săgeată Stânga spre Bară">⇤</button>
+      <span class="flag-label">Săgeată Stânga spre Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇥" aria-label="Copiază Săgeată Dreapta spre Bară">⇥</button>
+      <span class="flag-label">Săgeată Dreapta spre Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇦" aria-label="Copiază Săgeată Albă Stânga">⇦</button>
+      <span class="flag-label">Săgeată Albă Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇧" aria-label="Copiază Săgeată Albă Sus">⇧</button>
+      <span class="flag-label">Săgeată Albă Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇨" aria-label="Copiază Săgeată Albă Dreapta">⇨</button>
+      <span class="flag-label">Săgeată Albă Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇩" aria-label="Copiază Săgeată Albă Jos">⇩</button>
+      <span class="flag-label">Săgeată Albă Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇪" aria-label="Copiază Săgeată Albă Sus din Bară">⇪</button>
+      <span class="flag-label">Săgeată Albă Sus din Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇫" aria-label="Copiază Săgeată Albă Sus pe Piedestal">⇫</button>
+      <span class="flag-label">Săgeată Albă Sus pe Piedestal</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇬" aria-label="Copiază Săgeată Albă Sus pe Piedestal cu Bară Orizontală">⇬</button>
+      <span class="flag-label">Săgeată Albă Sus pe Piedestal cu Bară Orizontală</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇭" aria-label="Copiază Săgeată Albă Sus pe Piedestal cu Bară Verticală">⇭</button>
+      <span class="flag-label">Săgeată Albă Sus pe Piedestal cu Bară Verticală</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇮" aria-label="Copiază Săgeată Albă Dublă Sus">⇮</button>
+      <span class="flag-label">Săgeată Albă Dublă Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇯" aria-label="Copiază Săgeată Albă Dublă Sus pe Piedestal">⇯</button>
+      <span class="flag-label">Săgeată Albă Dublă Sus pe Piedestal</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇰" aria-label="Copiază Săgeată Albă Dreapta din Perete">⇰</button>
+      <span class="flag-label">Săgeată Albă Dreapta din Perete</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇱" aria-label="Copiază Săgeată Nord-Vest spre Colț">⇱</button>
+      <span class="flag-label">Săgeată Nord-Vest spre Colț</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇲" aria-label="Copiază Săgeată Sud-Est spre Colț">⇲</button>
+      <span class="flag-label">Săgeată Sud-Est spre Colț</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇳" aria-label="Copiază Săgeată Albă Sus-Jos">⇳</button>
+      <span class="flag-label">Săgeată Albă Sus-Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇴" aria-label="Copiază Săgeată Dreapta cu Cerc Mic">⇴</button>
+      <span class="flag-label">Săgeată Dreapta cu Cerc Mic</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇵" aria-label="Copiază Săgeată Jos în Stânga Săgeții Sus">⇵</button>
+      <span class="flag-label">Săgeată Jos în Stânga Săgeții Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇶" aria-label="Copiază Trei Săgeți Dreapta">⇶</button>
+      <span class="flag-label">Trei Săgeți Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇷" aria-label="Copiază Săgeată Stânga cu Tăietură Verticală">⇷</button>
+      <span class="flag-label">Săgeată Stânga cu Tăietură Verticală</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇸" aria-label="Copiază Săgeată Dreapta cu Tăietură Verticală">⇸</button>
+      <span class="flag-label">Săgeată Dreapta cu Tăietură Verticală</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇹" aria-label="Copiază Săgeată Stânga-Dreapta cu Tăietură Verticală">⇹</button>
+      <span class="flag-label">Săgeată Stânga-Dreapta cu Tăietură Verticală</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇺" aria-label="Copiază Săgeată Stânga cu Tăietură Verticală Dublă">⇺</button>
+      <span class="flag-label">Săgeată Stânga cu Tăietură Verticală Dublă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇻" aria-label="Copiază Săgeată Dreapta cu Tăietură Verticală Dublă">⇻</button>
+      <span class="flag-label">Săgeată Dreapta cu Tăietură Verticală Dublă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇼" aria-label="Copiază Săgeată Stânga-Dreapta cu Tăietură Verticală Dublă">⇼</button>
+      <span class="flag-label">Săgeată Stânga-Dreapta cu Tăietură Verticală Dublă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇽" aria-label="Copiază Săgeată Stânga cu Vârf Deschis">⇽</button>
+      <span class="flag-label">Săgeată Stânga cu Vârf Deschis</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇾" aria-label="Copiază Săgeată Dreapta cu Vârf Deschis">⇾</button>
+      <span class="flag-label">Săgeată Dreapta cu Vârf Deschis</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇿" aria-label="Copiază Săgeată Stânga-Dreapta cu Vârf Deschis">⇿</button>
+      <span class="flag-label">Săgeată Stânga-Dreapta cu Vârf Deschis</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="right-arrow-variants">
+  <span class="article-section-label">Săgeată Dreapta</span>
+  <h2>Variante de săgeată dreapta</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="→" aria-label="Copiază Spre Dreapta">→</button>
+      <span class="flag-label">Spre Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇒" aria-label="Copiază Dublă">⇒</button>
+      <span class="flag-label">Dublă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟶" aria-label="Copiază Lungă">⟶</button>
+      <span class="flag-label">Lungă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➡" aria-label="Copiază Săgeată Neagră">➡</button>
+      <span class="flag-label">Săgeată Neagră</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➜" aria-label="Copiază Rotunjită Groasă">➜</button>
+      <span class="flag-label">Rotunjită Groasă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➤" aria-label="Copiază Vârf de Săgeată">➤</button>
+      <span class="flag-label">Vârf de Săgeată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➛" aria-label="Copiază Vârf de Desen Tehnic">➛</button>
+      <span class="flag-label">Vârf de Desen Tehnic</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➠" aria-label="Copiază Groasă Întreruptă">➠</button>
+      <span class="flag-label">Groasă Întreruptă</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➢" aria-label="Copiază Vârf de Săgeată 3D">➢</button>
+      <span class="flag-label">Vârf de Săgeată 3D</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⮕" aria-label="Copiază Neagră Lată">⮕</button>
+      <span class="flag-label">Neagră Lată</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↪" aria-label="Copiază Cu Cârlig">↪</button>
+      <span class="flag-label">Cu Cârlig</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↦" aria-label="Copiază Din Bară">↦</button>
+      <span class="flag-label">Din Bară</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="navigation-ui-arrows">
+  <span class="article-section-label">Navigare &amp; Interfață</span>
+  <h2>Săgeți pentru navigare &amp; interfață</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="›" aria-label="Copiază Fir de Navigare ›">›</button>
+      <span class="flag-label">Fir de Navigare ›</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‹" aria-label="Copiază Înapoi ‹">‹</button>
+      <span class="flag-label">Înapoi ‹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▸" aria-label="Copiază Element de Meniu ▸">▸</button>
+      <span class="flag-label">Element de Meniu ▸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▾" aria-label="Copiază Meniu Derulant ▾">▾</button>
+      <span class="flag-label">Meniu Derulant ▾</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▴" aria-label="Copiază Restrânge ▴">▴</button>
+      <span class="flag-label">Restrânge ▴</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟩" aria-label="Copiază Următorul ⟩">⟩</button>
+      <span class="flag-label">Următorul ⟩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟨" aria-label="Copiază Anteriorul ⟨">⟨</button>
+      <span class="flag-label">Anteriorul ⟨</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▶" aria-label="Copiază Redare ▶">▶</button>
+      <span class="flag-label">Redare ▶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤓" aria-label="Copiază Descarcă ⤓">⤓</button>
+      <span class="flag-label">Descarcă ⤓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↑" aria-label="Copiază Înapoi Sus ↑">↑</button>
+      <span class="flag-label">Înapoi Sus ↑</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="arrows-upload-resize-circle">
+  <span class="article-section-label">Încărcare &amp; Cerc</span>
+  <h2>Săgeți de încărcare, redimensionare &amp; în cerc</h2>
+  <p class="u-secondary-tight">Săgeți de interfață: încărcare spre o bară, cele două săgeți diagonale de redimensionare, săgeți în cerc închis și deschis pentru reîmprospătare și anulare, arce și săgeți care coboară, apoi cotesc.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤒" aria-label="Copiază Încărcare ⤒">⤒</button>
+      <span class="flag-label">Încărcare ⤒</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤡" aria-label="Copiază Redimensionare Sus-Stânga/Jos-Dreapta">⤡</button>
+      <span class="flag-label">Redimensionare Sus-Stânga/Jos-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤢" aria-label="Copiază Redimensionare Sus-Dreapta/Jos-Stânga">⤢</button>
+      <span class="flag-label">Redimensionare Sus-Dreapta/Jos-Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⥀" aria-label="Copiază Cerc Închis Antiorar">⥀</button>
+      <span class="flag-label">Cerc Închis Antiorar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⥁" aria-label="Copiază Cerc Închis Orar">⥁</button>
+      <span class="flag-label">Cerc Închis Orar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟲" aria-label="Copiază Cerc Deschis Antiorar">⟲</button>
+      <span class="flag-label">Cerc Deschis Antiorar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤸" aria-label="Copiază Arc Orar (Partea Dreaptă)">⤸</button>
+      <span class="flag-label">Arc Orar (Partea Dreaptă)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤹" aria-label="Copiază Arc Antiorar (Partea Stângă)">⤹</button>
+      <span class="flag-label">Arc Antiorar (Partea Stângă)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤺" aria-label="Copiază Arc Antiorar (Sus)">⤺</button>
+      <span class="flag-label">Arc Antiorar (Sus)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤻" aria-label="Copiază Arc Antiorar (Jos)">⤻</button>
+      <span class="flag-label">Arc Antiorar (Jos)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤶" aria-label="Copiază Jos, apoi Stânga">⤶</button>
+      <span class="flag-label">Jos, apoi Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤷" aria-label="Copiază Jos, apoi Dreapta">⤷</button>
+      <span class="flag-label">Jos, apoi Dreapta</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="arrows-long-extended">
+  <span class="article-section-label">Săgeți Lungi</span>
+  <h2>Săgeți lungi: din bară, șerpuite &amp; cvadruple</h2>
+  <p class="u-secondary-tight">Mai multe săgeți lungi pentru notițe și matematică: săgeți din bară (⟼ este săgeata de asociere din matematică), săgeți duble lungi, o săgeată șerpuită și săgeți cvadruple.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟺" aria-label="Copiază Dublă Lungă Stânga-Dreapta">⟺</button>
+      <span class="flag-label">Dublă Lungă Stânga-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟻" aria-label="Copiază Lungă Stânga din Bară">⟻</button>
+      <span class="flag-label">Lungă Stânga din Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟼" aria-label="Copiază Lungă Dreapta din Bară (Asociere)">⟼</button>
+      <span class="flag-label">Lungă Dreapta din Bară (Asociere)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟽" aria-label="Copiază Dublă Lungă Stânga din Bară">⟽</button>
+      <span class="flag-label">Dublă Lungă Stânga din Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟾" aria-label="Copiază Dublă Lungă Dreapta din Bară">⟾</button>
+      <span class="flag-label">Dublă Lungă Dreapta din Bară</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟿" aria-label="Copiază Șerpuită Lungă Dreapta">⟿</button>
+      <span class="flag-label">Șerpuită Lungă Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟰" aria-label="Copiază Cvadruplă Sus">⟰</button>
+      <span class="flag-label">Cvadruplă Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟱" aria-label="Copiază Cvadruplă Jos">⟱</button>
+      <span class="flag-label">Cvadruplă Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟴" aria-label="Copiază Dreapta cu Plus în Cerc">⟴</button>
+      <span class="flag-label">Dreapta cu Plus în Cerc</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="arrows-diagonal-bent-hooked">
+  <span class="article-section-label">Diagonale &amp; Frânte</span>
+  <h2>Săgeți albe, negre, frânte &amp; cu cârlig</h2>
+  <p class="u-secondary-tight">Săgeți diagonale albe și negre, săgeți care se frâng la vârf și diagonale cu cârlig.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬀" aria-label="Copiază Albă Sus-Dreapta">⬀</button>
+      <span class="flag-label">Albă Sus-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬁" aria-label="Copiază Albă Sus-Stânga">⬁</button>
+      <span class="flag-label">Albă Sus-Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬂" aria-label="Copiază Albă Jos-Dreapta">⬂</button>
+      <span class="flag-label">Albă Jos-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬃" aria-label="Copiază Albă Jos-Stânga">⬃</button>
+      <span class="flag-label">Albă Jos-Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬄" aria-label="Copiază Albă Stânga-Dreapta">⬄</button>
+      <span class="flag-label">Albă Stânga-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬈" aria-label="Copiază Neagră Sus-Dreapta">⬈</button>
+      <span class="flag-label">Neagră Sus-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬉" aria-label="Copiază Neagră Sus-Stânga">⬉</button>
+      <span class="flag-label">Neagră Sus-Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬊" aria-label="Copiază Neagră Jos-Dreapta">⬊</button>
+      <span class="flag-label">Neagră Jos-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬋" aria-label="Copiază Neagră Jos-Stânga">⬋</button>
+      <span class="flag-label">Neagră Jos-Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬌" aria-label="Copiază Neagră Stânga-Dreapta">⬌</button>
+      <span class="flag-label">Neagră Stânga-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬍" aria-label="Copiază Neagră Sus-Jos">⬍</button>
+      <span class="flag-label">Neagră Sus-Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬎" aria-label="Copiază Dreapta, apoi Jos">⬎</button>
+      <span class="flag-label">Dreapta, apoi Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬏" aria-label="Copiază Dreapta, apoi Sus">⬏</button>
+      <span class="flag-label">Dreapta, apoi Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬐" aria-label="Copiază Stânga, apoi Jos">⬐</button>
+      <span class="flag-label">Stânga, apoi Jos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬑" aria-label="Copiază Stânga, apoi Sus">⬑</button>
+      <span class="flag-label">Stânga, apoi Sus</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤣" aria-label="Copiază Cu Cârlig Sus-Stânga">⤣</button>
+      <span class="flag-label">Cu Cârlig Sus-Stânga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤤" aria-label="Copiază Cu Cârlig Sus-Dreapta">⤤</button>
+      <span class="flag-label">Cu Cârlig Sus-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤥" aria-label="Copiază Cu Cârlig Jos-Dreapta">⤥</button>
+      <span class="flag-label">Cu Cârlig Jos-Dreapta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⤦" aria-label="Copiază Cu Cârlig Jos-Stânga">⤦</button>
+      <span class="flag-label">Cu Cârlig Jos-Stânga</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-card">
+  <h3>Fă litere &amp; fonturi frumoase</h3>
+  <p>Transformă textul obișnuit în peste 100 de stiluri de font Unicode — gratis și instant.</p>
+  <a href="https://ultratextgen.com/ro/" class="cta-btn">Deschide Generatorul de Litere →</a>
+</div>
+
+<!-- RELATED -->
+<section class="editorial-section">
+  <span class="article-section-label">Pagini Conexe</span>
+  <div class="compare-grid">
+    <a href="/library/linkedin-symbol-library/" class="compare-card variant-muted u-no-underline">
+      <h4>Biblioteca de Simboluri pentru LinkedIn</h4>
+      <p>Simboluri Unicode profesionale, testate și alese pentru postări și comentarii pe LinkedIn.</p>
+    </a>
+    <a href="/library/geometric-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Simboluri Geometrice</h4>
+      <p>Cercuri, romburi, pătrate, triunghiuri și forme decorative pentru formatare.</p>
+    </a>
+    <a href="/library/checkmark-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Simboluri Bifă</h4>
+      <p>Bife, semne X și indicatori de stare pentru liste și comparații.</p>
+    </a>
+    <a href="/guide/linkedin-comment-styling/" class="compare-card variant-muted u-no-underline">
+      <h4>Stilizarea Comentariilor pe LinkedIn</h4>
+      <p>Tehnici și șabloane pentru comentarii profesionale pe LinkedIn.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Explorează</span><a href="/ro/" class="footer-link">Acasă</a><a href="/ro/guide/" class="footer-link">Ghiduri</a><a href="/answers/" class="footer-link">Răspunsuri</a><a href="/usecase/" class="footer-link">Utilizări</a><a href="/category/" class="footer-link">Categorii</a><a href="/ro/library/" class="footer-link">Bibliotecă</a><a href="/printables/" class="footer-link">De printat</a><a href="/events/" class="footer-link">Evenimente</a></div><div class="footer-col"><span class="footer-col-title">Instrumente populare</span><a href="/usecase/bio-font/" class="footer-link">Font pentru bio</a><a href="/usecase/tattoo-fonts/" class="footer-link">Litere pentru tatuaj</a><a href="/usecase/text-to-emoji/" class="footer-link">Traducător emoji</a><a href="/usecase/vertical-text/" class="footer-link">Text vertical</a></div><div class="footer-col"><span class="footer-col-title">Categorii populare</span><a href="/ro/text-ingrosat/" class="footer-link">Text Îngroșat</a><a href="/ro/text-cursiv/" class="footer-link">Text Cursiv</a><a href="/ro/scriere-gotica/" class="footer-link">Scriere Gotică</a><a href="/ro/text-mic/" class="footer-link">Text Mic</a><a href="/category/strikethrough-text/" class="footer-link">Text Tăiat</a></div><div class="footer-col"><span class="footer-col-title">Companie</span><a href="/about/" class="footer-link">Despre noi</a><a href="/privacy/" class="footer-link">Politica de confidențialitate</a><a href="/terms/" class="footer-link">Termeni și condiții</a><a href="/contact/" class="footer-link">Contact</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Litere stilate, gata de copiat oriunde.</div>
+<!-- END static footer -->
+</div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/symbol-explorer.js"></script>
+<script src="/footer.js"></script>
+</body>
+</html>

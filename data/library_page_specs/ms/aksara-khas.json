@@ -1,0 +1,765 @@
+{
+  "slug": "aksara-khas",
+  "lang": "ms",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "title": "Aksara Khas: Salin & Tampal Simbol Unicode yang Unik",
+  "meta_description": "Pilih dan salin aksara khas yang unik: infiniti, keamanan, sains, tanda undang-undang dan simbol Unicode bermakna untuk bio dan teks.",
+  "breadcrumb": "Aksara Khas",
+  "hero_h1": "Aksara Khas",
+  "hero_tagline": "Koleksi rujukan simbol Unicode yang unik: infiniti, keamanan, sains, tanda undang-undang, simbol aesthetic dan aksara jarang yang menarik. Klik simbol mana-mana untuk terus salin.",
+  "intro": "Pilih dan salin aksara khas yang disusun ikut makna: daripada simbol infiniti dan keabadian sampai tanda keamanan, notasi sains, tanda undang-undang, hiasan aesthetic dan aksara Unicode jarang yang unik.",
+  "canonical": "https://ultratextgen.com/ms/library/aksara-khas/",
+  "date_published": "2026-11-26",
+  "date_modified": "2026-11-26",
+  "sections": [
+    {
+      "id": "infinity",
+      "label": "Infiniti & Keabadian",
+      "h2": "Simbol Infiniti & Keabadian",
+      "intro": "Simbol yang melambangkan sesuatu yang tiada penghujung, kitaran dan konsep abadi.",
+      "symbols": [
+        {
+          "char": "∞",
+          "label": "Infiniti"
+        },
+        {
+          "char": "♾️",
+          "label": "Emoji Infiniti"
+        },
+        {
+          "char": "⧜",
+          "label": "Infiniti Tak Lengkap"
+        },
+        {
+          "char": "⧝",
+          "label": "Ikatan di Atas Infiniti"
+        },
+        {
+          "char": "⧞",
+          "label": "Infiniti Dinafikan dengan Palang Menegak"
+        },
+        {
+          "char": "🔁",
+          "label": "Butang Ulang"
+        },
+        {
+          "char": "🔂",
+          "label": "Butang Ulang Sekali"
+        },
+        {
+          "char": "⟳",
+          "label": "Panah Bulatan Terbuka Ikut Arah Jam"
+        }
+      ]
+    },
+    {
+      "id": "not-on-your-keyboard",
+      "label": "Tiada pada papan kekunci",
+      "h2": "Simbol yang tiada pada papan kekunci anda",
+      "symbols": [
+        {
+          "char": "♥",
+          "label": "♥"
+        },
+        {
+          "char": "♡",
+          "label": "♡"
+        },
+        {
+          "char": "★",
+          "label": "★"
+        },
+        {
+          "char": "☆",
+          "label": "☆"
+        },
+        {
+          "char": "✓",
+          "label": "✓"
+        },
+        {
+          "char": "✔",
+          "label": "✔"
+        },
+        {
+          "char": "✗",
+          "label": "✗"
+        },
+        {
+          "char": "✘",
+          "label": "✘"
+        },
+        {
+          "char": "→",
+          "label": "→"
+        },
+        {
+          "char": "←",
+          "label": "←"
+        },
+        {
+          "char": "↑",
+          "label": "↑"
+        },
+        {
+          "char": "↓",
+          "label": "↓"
+        },
+        {
+          "char": "∞",
+          "label": "∞"
+        },
+        {
+          "char": "°",
+          "label": "°"
+        },
+        {
+          "char": "±",
+          "label": "±"
+        },
+        {
+          "char": "÷",
+          "label": "÷"
+        },
+        {
+          "char": "×",
+          "label": "×"
+        },
+        {
+          "char": "≠",
+          "label": "≠"
+        },
+        {
+          "char": "≈",
+          "label": "≈"
+        },
+        {
+          "char": "²",
+          "label": "²"
+        },
+        {
+          "char": "³",
+          "label": "³"
+        },
+        {
+          "char": "€",
+          "label": "€"
+        },
+        {
+          "char": "£",
+          "label": "£"
+        },
+        {
+          "char": "©",
+          "label": "©"
+        }
+      ]
+    },
+    {
+      "id": "peace-harmony",
+      "label": "Keamanan & Keharmonian",
+      "h2": "Simbol Keamanan & Keharmonian",
+      "intro": "Simbol keamanan, perpaduan dan keharmonian sejagat merentas budaya.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Simbol Keamanan"
+        },
+        {
+          "char": "☯",
+          "label": "Simbol yin-yang"
+        },
+        {
+          "char": "✌",
+          "label": "Tangan Kemenangan"
+        },
+        {
+          "char": "🕊",
+          "label": "Burung Merpati"
+        },
+        {
+          "char": "🤍",
+          "label": "Hati Putih"
+        },
+        {
+          "char": "🫶",
+          "label": "Tangan Bentuk Hati"
+        },
+        {
+          "char": "🌍",
+          "label": "Bumi (Afrika)"
+        },
+        {
+          "char": "⚖",
+          "label": "Neraca Timbang"
+        },
+        {
+          "char": "🕉",
+          "label": "Om"
+        }
+      ]
+    },
+    {
+      "id": "science-knowledge",
+      "label": "Sains & Ilmu",
+      "h2": "Simbol Sains & Ilmu",
+      "intro": "Simbol sains, perubatan dan bertema ilmu untuk kandungan pendidikan.",
+      "symbols": [
+        {
+          "char": "⚛",
+          "label": "Simbol Atom"
+        },
+        {
+          "char": "⚕",
+          "label": "Simbol Perubatan"
+        },
+        {
+          "char": "♻",
+          "label": "Simbol Kitar Semula"
+        },
+        {
+          "char": "🔬",
+          "label": "Mikroskop"
+        },
+        {
+          "char": "🔭",
+          "label": "Teleskop"
+        },
+        {
+          "char": "🧪",
+          "label": "Tabung Uji"
+        },
+        {
+          "char": "⚗",
+          "label": "Alembik"
+        },
+        {
+          "char": "🧬",
+          "label": "DNA"
+        },
+        {
+          "char": "🧫",
+          "label": "Piring Petri"
+        },
+        {
+          "char": "💡",
+          "label": "Mentol Lampu"
+        },
+        {
+          "char": "⚙",
+          "label": "Roda gigi"
+        }
+      ]
+    },
+    {
+      "id": "legal-office",
+      "label": "Undang-undang & Pejabat",
+      "h2": "Simbol Undang-undang & Pejabat",
+      "intro": "Tanda hak cipta, cap dagangan dan tanda tipografi untuk dokumen profesional.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "Hak Cipta"
+        },
+        {
+          "char": "®",
+          "label": "Berdaftar"
+        },
+        {
+          "char": "™",
+          "label": "Cap Dagangan"
+        },
+        {
+          "char": "§",
+          "label": "Tanda Seksyen"
+        },
+        {
+          "char": "¶",
+          "label": "Tanda Perenggan (Pilcrow)"
+        },
+        {
+          "char": "†",
+          "label": "Belati"
+        },
+        {
+          "char": "‡",
+          "label": "Belati Berganda"
+        },
+        {
+          "char": "№",
+          "label": "Tanda Nombor"
+        },
+        {
+          "char": "℗",
+          "label": "Hak Cipta Rakaman Bunyi"
+        },
+        {
+          "char": "℠",
+          "label": "Tanda Perkhidmatan"
+        }
+      ]
+    },
+    {
+      "id": "punctuation-marks",
+      "label": "Tanda Baca & Tipografi",
+      "h2": "Tanda Baca & Tanda Tipografi",
+      "intro": "Tanda @, ampersand dan tanda tipografi harian yang lain, berserta varian lebar penuh, bentuk kecil dan varian sejarahnya.",
+      "symbols": [
+        {
+          "char": "@",
+          "label": "Tanda @"
+        },
+        {
+          "char": "＠",
+          "label": "Tanda @ Lebar Penuh"
+        },
+        {
+          "char": "﹫",
+          "label": "Tanda @ Kecil"
+        },
+        {
+          "char": "&",
+          "label": "Tanda dan (&)"
+        },
+        {
+          "char": "＆",
+          "label": "Ampersand Lebar Penuh"
+        },
+        {
+          "char": "⅋",
+          "label": "Ampersand Terbalik"
+        },
+        {
+          "char": "⁊",
+          "label": "Et Tironian (dan)"
+        },
+        {
+          "char": "※",
+          "label": "Tanda Rujukan"
+        },
+        {
+          "char": "‰",
+          "label": "Tanda Per Seribu"
+        },
+        {
+          "char": "‱",
+          "label": "Tanda Per Sepuluh Ribu"
+        },
+        {
+          "char": "＊",
+          "label": "Tanda Bintang Lebar Penuh"
+        },
+        {
+          "char": "＃",
+          "label": "Tanda Pagar Lebar Penuh"
+        },
+        {
+          "char": "#",
+          "label": "Tanda Pagar (Hashtag)"
+        },
+        {
+          "char": "﹟",
+          "label": "Tanda Pagar Kecil"
+        },
+        {
+          "char": "#️⃣",
+          "label": "Hashtag pada Kekunci"
+        },
+        {
+          "char": "♯",
+          "label": "Tanda Syap (Muzik)"
+        }
+      ]
+    },
+    {
+      "id": "aesthetic-standalone",
+      "label": "Simbol Aesthetic",
+      "h2": "Simbol Aesthetic Tunggal",
+      "intro": "Aksara Unicode aesthetic dan hiasan yang popular dalam bio, nama pengguna dan teks seni.",
+      "symbols": [
+        {
+          "char": "✿",
+          "label": "Bunga Hitam"
+        },
+        {
+          "char": "❦",
+          "label": "Hati Bunga"
+        },
+        {
+          "char": "❧",
+          "label": "Hati Bunga Berputar (Titik)"
+        },
+        {
+          "char": "♡",
+          "label": "Hati Putih (Daun Terup)"
+        },
+        {
+          "char": "☾",
+          "label": "Bulan Suku Akhir"
+        },
+        {
+          "char": "☽",
+          "label": "Bulan Suku Awal"
+        },
+        {
+          "char": "⊹",
+          "label": "Konjugat Hermitian (Matriks)"
+        },
+        {
+          "char": "₊",
+          "label": "Tambah Subskrip"
+        },
+        {
+          "char": "༄",
+          "label": "Ornamen Tibet"
+        },
+        {
+          "char": "⋆",
+          "label": "Operator Bintang"
+        },
+        {
+          "char": "✧",
+          "label": "Bintang Empat Sudut Putih"
+        },
+        {
+          "char": "❂",
+          "label": "Bintang Lapan Sudut Berpusat Terbuka dalam Bulatan"
+        },
+        {
+          "char": "˚",
+          "label": "Cincin di Atas"
+        },
+        {
+          "char": "Ɛ",
+          "label": "3 Terbalik (E Terbuka)"
+        },
+        {
+          "char": "Є",
+          "label": "3 Terbalik (Ie Cyril)"
+        },
+        {
+          "char": "Я",
+          "label": "R Terbalik (Ya)"
+        },
+        {
+          "char": "ↄ",
+          "label": "C Terbalik"
+        },
+        {
+          "char": "и",
+          "label": "N Terbalik (I Cyril)"
+        },
+        {
+          "char": "ƨ",
+          "label": "S Terbalik"
+        }
+      ]
+    },
+    {
+      "id": "rare-unicode",
+      "label": "Aksara Unicode Jarang",
+      "h2": "Simbol Unicode Jarang yang Unik",
+      "intro": "Aksara Unicode yang luar biasa dan jarang digunakan, daripada blok teknikal dan simbolik.",
+      "symbols": [
+        {
+          "char": "℞",
+          "label": "Tanda Preskripsi"
+        },
+        {
+          "char": "⚜",
+          "label": "Bunga lili heraldik"
+        },
+        {
+          "char": "⎈",
+          "label": "Simbol Kemudi"
+        },
+        {
+          "char": "⌘",
+          "label": "Kekunci Command"
+        },
+        {
+          "char": "⏏",
+          "label": "Simbol Keluarkan"
+        },
+        {
+          "char": "⌥",
+          "label": "Kekunci Option"
+        },
+        {
+          "char": "⇧",
+          "label": "Kekunci Shift"
+        },
+        {
+          "char": "⏎",
+          "label": "Simbol Kekunci Return"
+        },
+        {
+          "char": "⌫",
+          "label": "Padam ke Kiri"
+        },
+        {
+          "char": "⏻",
+          "label": "Simbol Kuasa"
+        },
+        {
+          "char": "☙",
+          "label": "Hati Bunga Berputar Terbalik (Titik)"
+        },
+        {
+          "char": "☤",
+          "label": "Kaduseus"
+        },
+        {
+          "char": "⚚",
+          "label": "Tongkat Hermes"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "how-to-use",
+      "label": "Cara Guna",
+      "h2": "Cara menaip aksara khas di mana-mana",
+      "paragraphs": [
+        "Ada beberapa cara untuk memasukkan aksara khas, tetapi salin dan tampal ialah cara paling pantas dan paling boleh diharap pada semua peranti:",
+        "<strong>Salin dan tampal (paling mudah):</strong> klik mana-mana simbol pada halaman ini untuk menyalinnya, kemudian tampal (<code>Ctrl/Cmd + V</code>) di tempat yang anda mahu. Tak perlu hafal apa-apa kod.",
+        "<strong>Kod ALT Windows:</strong> tekan dan tahan <code>Alt</code>, kemudian taip nombor pada pad nombor (contohnya <code>Alt + 0169</code> untuk ©). Cara ini hanya berfungsi pada papan kekunci yang ada pad nombor sebenar.",
+        "<strong>Character Viewer pada Mac:</strong> tekan <code>Ctrl + Cmd + Space</code> untuk membuka pemilih emoji dan simbol.",
+        "<strong>Input Unicode:</strong> pada Windows, taip kod hex dan tekan <code>Alt + X</code> dalam sesetengah aplikasi (contohnya <code>221E</code> kemudian <code>Alt + X</code> menghasilkan ∞).",
+        "Oleh sebab aksara ini sebahagian daripada Unicode, ia dipaparkan dengan konsisten pada iPhone, Android, Windows dan Mac. Segelintir glif matematik dan hiasan yang lebih jarang mungkin bertukar menjadi kotak kosong pada sistem lama; kalau itu berlaku, pilih alternatif yang lebih biasa daripada kategori yang sama. Kotak yang muncul pada aksara yang sebenarnya betul ialah masalah fon yang tiada, diterangkan dalam <a href=\"/guide/why-fonts-show-as-boxes/\">kenapa teks dipaparkan sebagai kotak</a>."
+      ]
+    },
+    {
+      "id": "where-they-work",
+      "label": "Ikut Ruangan",
+      "h2": "Ruangan Mana yang Benar-benar Terima Aksara Khas",
+      "paragraphs": [
+        "Sebab paling biasa aksara khas &ldquo;tak dapat disimpan&rdquo; ialah ia ditampal pada ruangan yang salah. Hampir setiap platform membahagikan identiti anda kepada <strong>dua nama yang berasingan</strong>, dan hanya satu daripadanya yang terima aksara ini:",
+        "<strong>Username / @handle</strong>: ID unik yang anda guna untuk log masuk. Hampir selalu terhad kepada huruf kecil, nombor, titik dan garis bawah, jadi aksara khas akan ditolak di situ atau ruangan itu senyap-senyap kembali seperti asal.",
+        "<strong>Display name / nickname</strong>: nama yang orang lain nampak. Biasanya terima pelbagai jenis Unicode, dan di situlah tempat setiap aksara pada halaman ini.",
+        "Butiran ikut platform, setiap satu disahkan berasingan: <a href=\"/answers/why-wont-instagram-accept-my-fancy-username/\">Instagram</a>, <a href=\"/answers/why-wont-discord-accept-fancy-username/\">Discord</a>, dan <a href=\"/answers/discord-allowed-characters/\">pecahan ikut ruangan</a> yang menunjukkan bahagian Discord mana yang terima apa.",
+        "<strong>Game ada peraturan sendiri.</strong> Banyak game hanya benarkan huruf Latin dan terus tolak yang lain, dan tukar nama selalunya perlukan duit atau token. Tampal teks anda ke dalam ruangan itu dan biarkan game itu mengesahkannya dahulu sebelum anda muktamadkan.",
+        "Mahu nama yang nampak kosong, bukan berhias? Ruang biasa akan dipangkas dan ditolak: anda perlukan aksara yang tidak dikelaskan sebagai ruang putih. Lihat <a href=\"/ms/library/ruang-kosong/\">aksara kosong</a>."
+      ]
+    },
+    {
+      "id": "faq",
+      "label": "Soalan Lazim",
+      "h2": "Soalan lazim tentang aksara khas",
+      "paragraphs": [
+        "<strong>Apakah yang dikira sebagai aksara khas?</strong><br>Aksara khas ialah mana-mana simbol di luar huruf asas (A–Z, a–z) dan digit (0–9). Ini termasuk tanda baca seperti &amp; dan @, simbol mata wang seperti € dan £, tanda matematik seperti ∞ dan ±, serta glif hiasan seperti ★ dan ✧. Kesemuanya sebahagian daripada Unicode.",
+        "<strong>Macam mana nak salin aksara khas tanpa kod ALT?</strong><br>Klik sahaja simbol yang anda mahu pada halaman ini: ia terus disalin ke papan klip, kemudian tampal dengan <code>Ctrl + V</code> (Windows) atau <code>Cmd + V</code> (Mac). Anda tak perlu ingat sebarang kod nombor.",
+        "<strong>Kenapa aksara khas dipaparkan sebagai kotak atau tanda soal?</strong><br>Ini berlaku apabila aplikasi atau peranti itu tiada glif fon untuk aksara tersebut. Ia masalah paparan, bukan ralat salinan: aksaranya masih betul di sebaliknya. Menukar kepada simbol yang lebih meluas disokong daripada kategori yang sama biasanya menyelesaikannya.",
+        "<strong>Selamatkah guna aksara khas dalam kata laluan dan username?</strong><br>Tanda baca khas (! @ # $ % &amp; *) menguatkan kata laluan dan diterima secara meluas. Namun simbol Unicode yang lebih jarang sering ditolak oleh ruangan username dan kata laluan, jadi gunakan tanda baca ASCII biasa di situ dan simpan glif hiasan untuk hantaran dan bio.",
+        "<strong>Kenapa saya nampak [OBJ] dan bukannya emoji atau simbol?</strong><br>[OBJ] ialah pemegang tempat yang dipaparkan oleh sesetengah aplikasi Android dan aplikasi mesej lama apabila ia tak dapat memaparkan emoji atau aksara Unicode tertentu: singkatan bagi \"object replacement\" (penggantian objek). Aksara itu sendiri disalin dan dihantar dengan betul; cuma aplikasi penerima belum ada glif untuknya. Ini versi mod teks bagi kotak kosong di atas, dan biasanya selesai sebaik aplikasi atau sistem pengendalian mengemas kini set fon dan emojinya.",
+        "<strong>Simbol apa yang tiada pada papan kekunci biasa?</strong><br>Apa sahaja selain huruf, digit dan tanda baca yang tercetak pada kekunci: hati (♥ ♡), bintang (★ ☆), tanda rait (✓ ✔), anak panah (→ ←), infiniti (∞), darjah (°) dan kebanyakan simbol mata wang. Semuanya wujud dalam Unicode, cuma tiada kekunci, jadi menyalin ialah cara paling pantas untuk menggunakannya.",
+        "<strong>Macam mana nak dapat simbol hati yang bukan emoji?</strong><br>Ketik ♥ atau ♡ di atas. Tidak seperti emoji pada papan kekunci telefon, ini aksara teks: ia ikut warna dan saiz teks di sekelilingnya, dan berfungsi dalam ruangan username serta borang yang menolak emoji."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Simbol Matematik",
+      "desc": "Setiap operator, set dan hubungan matematik Unicode: algebra, kalkulus, logik dan statistik."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Simbol Mata Wang",
+      "desc": "Dolar, euro, yen, paun dan setiap simbol mata wang dunia dalam satu rujukan."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Tanda Aksen & Diakritik",
+      "desc": "Akut, grave, sirkumfleks, umlaut, tilde dan setiap tanda diakritik merentas sistem tulisan."
+    },
+    {
+      "href": "/library/bracket-symbols/",
+      "title": "Simbol Kurungan",
+      "desc": "Kurungan CJK, kurungan sudut dan pasangan kurungan hiasan untuk membingkai teks."
+    },
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Simbol Tanda Pisah & Sengkang",
+      "desc": "Tanda pisah panjang dan pendek (em dash, en dash), sengkang, tanda tolak dan setiap varian tanda pisah panjang."
+    },
+    {
+      "href": "/library/slash-backslash-symbols/",
+      "title": "Simbol Garis Condong & Garis Condong Terbalik",
+      "desc": "Garis condong, garis condong terbalik, garis condong pecahan dan glif bahagi."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Simbol Agama & Kerohanian",
+      "desc": "Simbol kepercayaan daripada setiap agama utama dunia dalam satu rujukan."
+    },
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Simbol Zodiak & Astrologi",
+      "desc": "Kesemua 12 tanda zodiak Barat, berserta planet dan zodiak Cina."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Simbol Kilauan & Hiasan",
+      "desc": "Simbol kilauan, aksara berkilau dan hiasan aesthetic."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Simbol Geometri",
+      "desc": "Bulatan, belah ketupat, segi empat, segi tiga dan bentuk hiasan."
+    },
+    {
+      "href": "/symbol/copyright-symbol/",
+      "title": "Simbol Hak Cipta (©)",
+      "desc": "Maksud ©, sama ada anda masih memerlukannya, dan cara menaipnya: klik untuk salin."
+    },
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Simbol Keamanan (☮)",
+      "desc": "Maksud ☮, kisah reka bentuknya pada 1958, dan cara menaipnya: klik untuk salin."
+    },
+    {
+      "href": "/symbol/trademark-symbol/",
+      "title": "Simbol Cap Dagangan (™)",
+      "desc": "Maksud ™, bezanya dengan ®, dan cara menaipnya: klik untuk salin."
+    },
+    {
+      "href": "/symbol/yin-yang/",
+      "title": "Simbol Yin Yang (☯)",
+      "desc": "Maksud ☯, asal-usulnya sejak zaman purba, dan cara menaipnya: klik untuk salin."
+    },
+    {
+      "href": "/symbol/quotation-mark/",
+      "title": "Tanda Petik",
+      "desc": "Tanda \" dan ' lurus yang ditaip oleh setiap papan kekunci, serta varian melengkung, guillemet dan petik bawah yang menggantikannya dalam perisian yang berbeza…"
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/special-characters/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/special-characters/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/symbole-zum-kopieren/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/special-characters/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/teuksu-munja/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/special-characters/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/special-characters/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/specialni-znaky/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/posebni-znakovi/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/kulonleges-karakterek/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/caractere-speciale/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/semboller/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/caracteres-especiales/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/caracteres-speciaux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/karakter-spesial/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/speciale-tekens/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/znaki-specjalne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/caracteres-especiais/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-tu-dac-biet-unicode/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/teshu-fuhao/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/caratteri-speciali-simboli/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/specialtegn/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/spesialtegn/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/specialtecken/"
+    },
+    {
+      "lang": "fi",
+      "href": "https://ultratextgen.com/fi/library/erikoismerkit/"
+    },
+    {
+      "lang": "sk",
+      "href": "https://ultratextgen.com/sk/library/specialne-znaky/"
+    },
+    {
+      "lang": "uk",
+      "href": "https://ultratextgen.com/uk/library/spetssymvoly/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/library/aksara-khas/"
+    },
+    {
+      "lang": "hi",
+      "href": "https://ultratextgen.com/hi/library/special-characters/"
+    },
+    {
+      "lang": "tl",
+      "href": "https://ultratextgen.com/tl/library/special-characters/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/special-characters/"
+    }
+  ]
+}

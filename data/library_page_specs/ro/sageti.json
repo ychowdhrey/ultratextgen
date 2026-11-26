@@ -1,0 +1,1243 @@
+{
+  "slug": "sageti",
+  "lang": "ro",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "title": "Săgeți de copiat: simboluri săgeată → ← ↑ ↓ pentru orice direcție",
+  "meta_description": "Alege și copiază simboluri de săgeți → ← ↑ ↓: drepte, curbate, duble, triunghiulare și emoji, pentru documente, postări și formatare.",
+  "breadcrumb": "Săgeți",
+  "hero_h1": "Simboluri de săgeți",
+  "hero_tagline": "O colecție de săgeți pentru fiecare direcție: drepte, curbate, duble, triunghiulare și emoji. Apeși pe orice simbol ca să-l copiezi pe loc.",
+  "intro": "Alege și copiază săgeți pentru documente, postări și formatare. Sunt grupate după stil: de la săgeți simple de direcție până la variante groase, duble, curbate și emoji.",
+  "canonical": "https://ultratextgen.com/ro/library/sageti/",
+  "date_published": "2026-11-26",
+  "date_modified": "2026-11-26",
+  "sections": [
+    {
+      "id": "simple-directional",
+      "label": "Direcții de Bază",
+      "h2": "Săgeți simple de direcție",
+      "intro": "Săgeți Unicode clasice, orientate în toate cele opt direcții.",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Săgeată Dreapta"
+        },
+        {
+          "char": "←",
+          "label": "Săgeată Stânga"
+        },
+        {
+          "char": "↑",
+          "label": "Săgeată Sus"
+        },
+        {
+          "char": "↓",
+          "label": "Săgeată Jos"
+        },
+        {
+          "char": "↗",
+          "label": "Săgeată Sus-Dreapta"
+        },
+        {
+          "char": "↘",
+          "label": "Săgeată Jos-Dreapta"
+        },
+        {
+          "char": "↙",
+          "label": "Săgeată Jos-Stânga"
+        },
+        {
+          "char": "↖",
+          "label": "Săgeată Sus-Stânga"
+        },
+        {
+          "char": "↔",
+          "label": "Săgeată Stânga-Dreapta"
+        },
+        {
+          "char": "↕",
+          "label": "Săgeată Sus-Jos"
+        }
+      ]
+    },
+    {
+      "id": "bold-heavy",
+      "label": "Groase & Accentuate",
+      "h2": "Simboluri de săgeți groase",
+      "intro": "Săgeți groase, cu greutate vizuală, pentru accent și îndemnuri la acțiune.",
+      "symbols": [
+        {
+          "char": "➜",
+          "label": "Săgeată Rotunjită Groasă"
+        },
+        {
+          "char": "➝",
+          "label": "Săgeată Dreapta Medie"
+        },
+        {
+          "char": "⟶",
+          "label": "Săgeată Dreapta Lungă"
+        },
+        {
+          "char": "➡",
+          "label": "Săgeată Dreapta"
+        },
+        {
+          "char": "⬅",
+          "label": "Săgeată Stânga"
+        },
+        {
+          "char": "⬆",
+          "label": "Săgeată Sus"
+        },
+        {
+          "char": "⬇",
+          "label": "Săgeată Jos"
+        },
+        {
+          "char": "➔",
+          "label": "Săgeată Dreapta Groasă"
+        },
+        {
+          "char": "➙",
+          "label": "Săgeată Întreruptă"
+        }
+      ]
+    },
+    {
+      "id": "double-formal",
+      "label": "Duble & Formale",
+      "h2": "Simboluri de săgeți duble & formale",
+      "intro": "Săgeți duble și matematice pentru logică, documentație și texte formale.",
+      "symbols": [
+        {
+          "char": "⇒",
+          "label": "Săgeată Dublă Dreapta"
+        },
+        {
+          "char": "⇐",
+          "label": "Săgeată Dublă Stânga"
+        },
+        {
+          "char": "⇑",
+          "label": "Săgeată Dublă Sus"
+        },
+        {
+          "char": "⇓",
+          "label": "Săgeată Dublă Jos"
+        },
+        {
+          "char": "⇔",
+          "label": "Dublă Stânga-Dreapta"
+        },
+        {
+          "char": "⟹",
+          "label": "Dublă Lungă Dreapta"
+        },
+        {
+          "char": "⟸",
+          "label": "Dublă Lungă Stânga"
+        },
+        {
+          "char": "⇕",
+          "label": "Dublă Sus-Jos"
+        }
+      ]
+    },
+    {
+      "id": "curved-return",
+      "label": "Curbate & Întoarcere",
+      "h2": "Săgeți curbate & de întoarcere",
+      "intro": "Săgeți curbate, în buclă și de întoarcere pentru răspunsuri, anulare și navigare.",
+      "symbols": [
+        {
+          "char": "↩",
+          "label": "Săgeată de Întoarcere"
+        },
+        {
+          "char": "↪",
+          "label": "Săgeată Curbată Dreapta"
+        },
+        {
+          "char": "↺",
+          "label": "Sens Antiorar"
+        },
+        {
+          "char": "↻",
+          "label": "Sens Orar"
+        },
+        {
+          "char": "⤴",
+          "label": "Curbată Dreapta în Sus"
+        },
+        {
+          "char": "⤵",
+          "label": "Curbată Dreapta în Jos"
+        },
+        {
+          "char": "↶",
+          "label": "Arc Sus Antiorar"
+        },
+        {
+          "char": "↷",
+          "label": "Arc Sus Orar"
+        },
+        {
+          "char": "🔃",
+          "label": "Săgeți Verticale în Sens Orar"
+        },
+        {
+          "char": "🔄",
+          "label": "Săgeți în Sens Antiorar"
+        }
+      ]
+    },
+    {
+      "id": "triangle-pointer",
+      "label": "Triunghiuri & Indicatoare",
+      "h2": "Săgeți triunghiulare & indicatoare",
+      "intro": "Săgeți triunghiulare și simboluri indicatoare pentru liste cu buline și navigare.",
+      "symbols": [
+        {
+          "char": "▶",
+          "label": "Triunghi Dreapta"
+        },
+        {
+          "char": "◀",
+          "label": "Triunghi Stânga"
+        },
+        {
+          "char": "▲",
+          "label": "Triunghi Sus"
+        },
+        {
+          "char": "▼",
+          "label": "Triunghi Jos"
+        },
+        {
+          "char": "►",
+          "label": "Indicator Negru Dreapta"
+        },
+        {
+          "char": "◄",
+          "label": "Indicator Negru Stânga"
+        },
+        {
+          "char": "➤",
+          "label": "Vârf Negru Dreapta"
+        },
+        {
+          "char": "‣",
+          "label": "Bulină Triunghiulară"
+        },
+        {
+          "char": "›",
+          "label": "Unghi Simplu Dreapta"
+        },
+        {
+          "char": "‹",
+          "label": "Unghi Simplu Stânga"
+        },
+        {
+          "char": "⏩",
+          "label": "Derulare Înainte"
+        },
+        {
+          "char": "⏪",
+          "label": "Derulare Înapoi"
+        },
+        {
+          "char": "⏫",
+          "label": "Rapid în Sus"
+        },
+        {
+          "char": "⏬",
+          "label": "Rapid în Jos"
+        }
+      ]
+    },
+    {
+      "id": "thin-minimal",
+      "label": "Subțiri & Minimale",
+      "h2": "Săgeți subțiri & minimaliste",
+      "intro": "Paranteze unghiulare discrete și caractere de direcție minimaliste.",
+      "symbols": [
+        {
+          "char": "«",
+          "label": "Unghi Dublu Stânga"
+        },
+        {
+          "char": "»",
+          "label": "Unghi Dublu Dreapta"
+        },
+        {
+          "char": "‹",
+          "label": "Unghi Simplu Stânga"
+        },
+        {
+          "char": "›",
+          "label": "Unghi Simplu Dreapta"
+        },
+        {
+          "char": "˂",
+          "label": "Săgeată Modificator Stânga"
+        },
+        {
+          "char": "˃",
+          "label": "Săgeată Modificator Dreapta"
+        },
+        {
+          "char": "˄",
+          "label": "Săgeată Modificator Sus"
+        },
+        {
+          "char": "˅",
+          "label": "Săgeată Modificator Jos"
+        },
+        {
+          "char": "⟵",
+          "label": "Săgeată Lungă Stânga"
+        },
+        {
+          "char": "⟶",
+          "label": "Săgeată Lungă Dreapta"
+        },
+        {
+          "char": "⟷",
+          "label": "Săgeată Lungă Stânga-Dreapta"
+        },
+        {
+          "char": "⟸",
+          "label": "Săgeată Dublă Lungă Stânga"
+        },
+        {
+          "char": "⟹",
+          "label": "Săgeată Dublă Lungă Dreapta"
+        }
+      ]
+    },
+    {
+      "id": "emoji-arrows",
+      "label": "Săgeți Emoji",
+      "h2": "Simboluri de săgeți emoji",
+      "intro": "Emoji colorate cu săgeți și pictograme de direcție pentru rețele sociale și mesaje.",
+      "symbols": [
+        {
+          "char": "⬆️",
+          "label": "Emoji Săgeată Sus"
+        },
+        {
+          "char": "⬇️",
+          "label": "Emoji Săgeată Jos"
+        },
+        {
+          "char": "➡️",
+          "label": "Emoji Săgeată Dreapta"
+        },
+        {
+          "char": "⬅️",
+          "label": "Emoji Săgeată Stânga"
+        },
+        {
+          "char": "↕️",
+          "label": "Săgeată Sus-Jos"
+        },
+        {
+          "char": "↔️",
+          "label": "Săgeată Stânga-Dreapta"
+        },
+        {
+          "char": "↩️",
+          "label": "Emoji Săgeată de Întoarcere"
+        },
+        {
+          "char": "↪️",
+          "label": "Săgeată Curbată Dreapta"
+        },
+        {
+          "char": "🔄",
+          "label": "Sens Antiorar"
+        },
+        {
+          "char": "🔃",
+          "label": "Sens Orar"
+        },
+        {
+          "char": "🔀",
+          "label": "Amestecare"
+        },
+        {
+          "char": "🔁",
+          "label": "Repetare"
+        },
+        {
+          "char": "🔂",
+          "label": "Repetare o Dată"
+        },
+        {
+          "char": "🔙",
+          "label": "Săgeată Înapoi"
+        },
+        {
+          "char": "🔚",
+          "label": "Săgeată Sfârșit"
+        },
+        {
+          "char": "🔛",
+          "label": "Săgeată ON!"
+        },
+        {
+          "char": "🔜",
+          "label": "Săgeată În Curând"
+        },
+        {
+          "char": "🔝",
+          "label": "Săgeată spre Vârf"
+        },
+        {
+          "char": "🆙",
+          "label": "Butonul UP!"
+        },
+        {
+          "char": "🔼",
+          "label": "Buton Sus"
+        }
+      ]
+    },
+    {
+      "id": "level-up-emoji",
+      "label": "Nivelul Următor",
+      "h2": "Emoji pentru nivelul următor",
+      "intro": "🆙 este emoji-ul butonului UP! pe care oamenii îl lipesc când trec la nivelul următor, primesc o promovare sau un rang nou. Literele fac parte din emoji, așa că un stil de font nu le schimbă. Combinațiile de mai jos îl pun lângă ⏫, 🔝 și 📈, ca postarea ta să pară o urcare, nu doar o săgeată în sus.",
+      "symbols": [
+        {
+          "char": "🆙⏫",
+          "label": "Nivelul Următor"
+        },
+        {
+          "char": "🆙🔝",
+          "label": "Nivel Maxim"
+        },
+        {
+          "char": "📈🆙",
+          "label": "Statistici în Creștere"
+        },
+        {
+          "char": "⬆️🆙🔝",
+          "label": "Urcare spre Vârf"
+        },
+        {
+          "char": "🎮🆙",
+          "label": "Nivel Nou în Joc"
+        },
+        {
+          "char": "🏆🆙",
+          "label": "Rang Nou"
+        }
+      ]
+    },
+    {
+      "id": "additional-arrows",
+      "label": "Blocul Complet",
+      "h2": "Mai multe din blocul Unicode de săgeți",
+      "intro": "Restul punctelor de cod atribuite din blocul Unicode Arrows (U+2190–U+21FF), care nu apar în secțiunile selectate de mai sus.",
+      "symbols": [
+        {
+          "char": "↚",
+          "label": "Săgeată Stânga Tăiată"
+        },
+        {
+          "char": "↛",
+          "label": "Săgeată Dreapta Tăiată"
+        },
+        {
+          "char": "↜",
+          "label": "Săgeată Ondulată Stânga"
+        },
+        {
+          "char": "↝",
+          "label": "Săgeată Ondulată Dreapta"
+        },
+        {
+          "char": "↞",
+          "label": "Săgeată Stânga cu Două Vârfuri"
+        },
+        {
+          "char": "↟",
+          "label": "Săgeată Sus cu Două Vârfuri"
+        },
+        {
+          "char": "↠",
+          "label": "Săgeată Dreapta cu Două Vârfuri"
+        },
+        {
+          "char": "↡",
+          "label": "Săgeată Jos cu Două Vârfuri"
+        },
+        {
+          "char": "↢",
+          "label": "Săgeată Stânga cu Coadă"
+        },
+        {
+          "char": "↣",
+          "label": "Săgeată Dreapta cu Coadă"
+        },
+        {
+          "char": "↤",
+          "label": "Săgeată Stânga din Bară"
+        },
+        {
+          "char": "↥",
+          "label": "Săgeată Sus din Bară"
+        },
+        {
+          "char": "↦",
+          "label": "Săgeată Dreapta din Bară"
+        },
+        {
+          "char": "↧",
+          "label": "Săgeată Jos din Bară"
+        },
+        {
+          "char": "↨",
+          "label": "Săgeată Sus-Jos cu Bază"
+        },
+        {
+          "char": "↫",
+          "label": "Săgeată Stânga cu Buclă"
+        },
+        {
+          "char": "↬",
+          "label": "Săgeată Dreapta cu Buclă"
+        },
+        {
+          "char": "↭",
+          "label": "Săgeată Ondulată Stânga-Dreapta"
+        },
+        {
+          "char": "↮",
+          "label": "Săgeată Stânga-Dreapta Tăiată"
+        },
+        {
+          "char": "↯",
+          "label": "Săgeată Zigzag în Jos"
+        },
+        {
+          "char": "↰",
+          "label": "Săgeată Sus cu Vârful spre Stânga"
+        },
+        {
+          "char": "↱",
+          "label": "Săgeată Sus cu Vârful spre Dreapta"
+        },
+        {
+          "char": "↲",
+          "label": "Săgeată Jos cu Vârful spre Stânga"
+        },
+        {
+          "char": "↳",
+          "label": "Săgeată Jos cu Vârful spre Dreapta"
+        },
+        {
+          "char": "↴",
+          "label": "Săgeată Dreapta cu Colț în Jos"
+        },
+        {
+          "char": "↵",
+          "label": "Săgeată Jos cu Colț spre Stânga"
+        },
+        {
+          "char": "↸",
+          "label": "Săgeată Nord-Vest spre Bară Lungă"
+        },
+        {
+          "char": "↹",
+          "label": "Săgeată Stânga spre Bară peste Săgeată Dreapta spre Bară"
+        },
+        {
+          "char": "↼",
+          "label": "Harpon Stânga cu Ghimpe în Sus"
+        },
+        {
+          "char": "↽",
+          "label": "Harpon Stânga cu Ghimpe în Jos"
+        },
+        {
+          "char": "↾",
+          "label": "Harpon Sus cu Ghimpe spre Dreapta"
+        },
+        {
+          "char": "↿",
+          "label": "Harpon Sus cu Ghimpe spre Stânga"
+        },
+        {
+          "char": "⇀",
+          "label": "Harpon Dreapta cu Ghimpe în Sus"
+        },
+        {
+          "char": "⇁",
+          "label": "Harpon Dreapta cu Ghimpe în Jos"
+        },
+        {
+          "char": "⇂",
+          "label": "Harpon Jos cu Ghimpe spre Dreapta"
+        },
+        {
+          "char": "⇃",
+          "label": "Harpon Jos cu Ghimpe spre Stânga"
+        },
+        {
+          "char": "⇄",
+          "label": "Săgeată Dreapta peste Săgeată Stânga"
+        },
+        {
+          "char": "⇅",
+          "label": "Săgeată Sus în Stânga Săgeții Jos"
+        },
+        {
+          "char": "⇆",
+          "label": "Săgeată Stânga peste Săgeată Dreapta"
+        },
+        {
+          "char": "⇇",
+          "label": "Pereche de Săgeți Stânga"
+        },
+        {
+          "char": "⇈",
+          "label": "Pereche de Săgeți Sus"
+        },
+        {
+          "char": "⇉",
+          "label": "Pereche de Săgeți Dreapta"
+        },
+        {
+          "char": "⇊",
+          "label": "Pereche de Săgeți Jos"
+        },
+        {
+          "char": "⇋",
+          "label": "Harpon Stânga peste Harpon Dreapta"
+        },
+        {
+          "char": "⇌",
+          "label": "Harpon Dreapta peste Harpon Stânga"
+        },
+        {
+          "char": "⇍",
+          "label": "Săgeată Dublă Stânga Tăiată"
+        },
+        {
+          "char": "⇎",
+          "label": "Săgeată Dublă Stânga-Dreapta Tăiată"
+        },
+        {
+          "char": "⇏",
+          "label": "Săgeată Dublă Dreapta Tăiată"
+        },
+        {
+          "char": "⇖",
+          "label": "Săgeată Dublă Nord-Vest"
+        },
+        {
+          "char": "⇗",
+          "label": "Săgeată Dublă Nord-Est"
+        },
+        {
+          "char": "⇘",
+          "label": "Săgeată Dublă Sud-Est"
+        },
+        {
+          "char": "⇙",
+          "label": "Săgeată Dublă Sud-Vest"
+        },
+        {
+          "char": "⇚",
+          "label": "Săgeată Triplă Stânga"
+        },
+        {
+          "char": "⇛",
+          "label": "Săgeată Triplă Dreapta"
+        },
+        {
+          "char": "⇜",
+          "label": "Săgeată Șerpuită Stânga"
+        },
+        {
+          "char": "⇝",
+          "label": "Săgeată Șerpuită Dreapta"
+        },
+        {
+          "char": "⇞",
+          "label": "Săgeată Sus cu Tăietură Dublă"
+        },
+        {
+          "char": "⇟",
+          "label": "Săgeată Jos cu Tăietură Dublă"
+        },
+        {
+          "char": "⇠",
+          "label": "Săgeată Întreruptă Stânga"
+        },
+        {
+          "char": "⇡",
+          "label": "Săgeată Întreruptă Sus"
+        },
+        {
+          "char": "⇢",
+          "label": "Săgeată Întreruptă Dreapta"
+        },
+        {
+          "char": "⇣",
+          "label": "Săgeată Întreruptă Jos"
+        },
+        {
+          "char": "⇤",
+          "label": "Săgeată Stânga spre Bară"
+        },
+        {
+          "char": "⇥",
+          "label": "Săgeată Dreapta spre Bară"
+        },
+        {
+          "char": "⇦",
+          "label": "Săgeată Albă Stânga"
+        },
+        {
+          "char": "⇧",
+          "label": "Săgeată Albă Sus"
+        },
+        {
+          "char": "⇨",
+          "label": "Săgeată Albă Dreapta"
+        },
+        {
+          "char": "⇩",
+          "label": "Săgeată Albă Jos"
+        },
+        {
+          "char": "⇪",
+          "label": "Săgeată Albă Sus din Bară"
+        },
+        {
+          "char": "⇫",
+          "label": "Săgeată Albă Sus pe Piedestal"
+        },
+        {
+          "char": "⇬",
+          "label": "Săgeată Albă Sus pe Piedestal cu Bară Orizontală"
+        },
+        {
+          "char": "⇭",
+          "label": "Săgeată Albă Sus pe Piedestal cu Bară Verticală"
+        },
+        {
+          "char": "⇮",
+          "label": "Săgeată Albă Dublă Sus"
+        },
+        {
+          "char": "⇯",
+          "label": "Săgeată Albă Dublă Sus pe Piedestal"
+        },
+        {
+          "char": "⇰",
+          "label": "Săgeată Albă Dreapta din Perete"
+        },
+        {
+          "char": "⇱",
+          "label": "Săgeată Nord-Vest spre Colț"
+        },
+        {
+          "char": "⇲",
+          "label": "Săgeată Sud-Est spre Colț"
+        },
+        {
+          "char": "⇳",
+          "label": "Săgeată Albă Sus-Jos"
+        },
+        {
+          "char": "⇴",
+          "label": "Săgeată Dreapta cu Cerc Mic"
+        },
+        {
+          "char": "⇵",
+          "label": "Săgeată Jos în Stânga Săgeții Sus"
+        },
+        {
+          "char": "⇶",
+          "label": "Trei Săgeți Dreapta"
+        },
+        {
+          "char": "⇷",
+          "label": "Săgeată Stânga cu Tăietură Verticală"
+        },
+        {
+          "char": "⇸",
+          "label": "Săgeată Dreapta cu Tăietură Verticală"
+        },
+        {
+          "char": "⇹",
+          "label": "Săgeată Stânga-Dreapta cu Tăietură Verticală"
+        },
+        {
+          "char": "⇺",
+          "label": "Săgeată Stânga cu Tăietură Verticală Dublă"
+        },
+        {
+          "char": "⇻",
+          "label": "Săgeată Dreapta cu Tăietură Verticală Dublă"
+        },
+        {
+          "char": "⇼",
+          "label": "Săgeată Stânga-Dreapta cu Tăietură Verticală Dublă"
+        },
+        {
+          "char": "⇽",
+          "label": "Săgeată Stânga cu Vârf Deschis"
+        },
+        {
+          "char": "⇾",
+          "label": "Săgeată Dreapta cu Vârf Deschis"
+        },
+        {
+          "char": "⇿",
+          "label": "Săgeată Stânga-Dreapta cu Vârf Deschis"
+        }
+      ]
+    },
+    {
+      "id": "right-arrow-variants",
+      "label": "Săgeată Dreapta",
+      "h2": "Variante de săgeată dreapta",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Spre Dreapta"
+        },
+        {
+          "char": "⇒",
+          "label": "Dublă"
+        },
+        {
+          "char": "⟶",
+          "label": "Lungă"
+        },
+        {
+          "char": "➡",
+          "label": "Săgeată Neagră"
+        },
+        {
+          "char": "➜",
+          "label": "Rotunjită Groasă"
+        },
+        {
+          "char": "➤",
+          "label": "Vârf de Săgeată"
+        },
+        {
+          "char": "➛",
+          "label": "Vârf de Desen Tehnic"
+        },
+        {
+          "char": "➠",
+          "label": "Groasă Întreruptă"
+        },
+        {
+          "char": "➢",
+          "label": "Vârf de Săgeată 3D"
+        },
+        {
+          "char": "⮕",
+          "label": "Neagră Lată"
+        },
+        {
+          "char": "↪",
+          "label": "Cu Cârlig"
+        },
+        {
+          "char": "↦",
+          "label": "Din Bară"
+        }
+      ]
+    },
+    {
+      "id": "navigation-ui-arrows",
+      "label": "Navigare & Interfață",
+      "h2": "Săgeți pentru navigare & interfață",
+      "symbols": [
+        {
+          "char": "›",
+          "label": "Fir de Navigare ›"
+        },
+        {
+          "char": "‹",
+          "label": "Înapoi ‹"
+        },
+        {
+          "char": "▸",
+          "label": "Element de Meniu ▸"
+        },
+        {
+          "char": "▾",
+          "label": "Meniu Derulant ▾"
+        },
+        {
+          "char": "▴",
+          "label": "Restrânge ▴"
+        },
+        {
+          "char": "⟩",
+          "label": "Următorul ⟩"
+        },
+        {
+          "char": "⟨",
+          "label": "Anteriorul ⟨"
+        },
+        {
+          "char": "▶",
+          "label": "Redare ▶"
+        },
+        {
+          "char": "⤓",
+          "label": "Descarcă ⤓"
+        },
+        {
+          "char": "↑",
+          "label": "Înapoi Sus ↑"
+        }
+      ]
+    },
+    {
+      "id": "arrows-upload-resize-circle",
+      "label": "Încărcare & Cerc",
+      "h2": "Săgeți de încărcare, redimensionare & în cerc",
+      "intro": "Săgeți de interfață: încărcare spre o bară, cele două săgeți diagonale de redimensionare, săgeți în cerc închis și deschis pentru reîmprospătare și anulare, arce și săgeți care coboară, apoi cotesc.",
+      "symbols": [
+        {
+          "char": "⤒",
+          "label": "Încărcare ⤒"
+        },
+        {
+          "char": "⤡",
+          "label": "Redimensionare Sus-Stânga/Jos-Dreapta"
+        },
+        {
+          "char": "⤢",
+          "label": "Redimensionare Sus-Dreapta/Jos-Stânga"
+        },
+        {
+          "char": "⥀",
+          "label": "Cerc Închis Antiorar"
+        },
+        {
+          "char": "⥁",
+          "label": "Cerc Închis Orar"
+        },
+        {
+          "char": "⟲",
+          "label": "Cerc Deschis Antiorar"
+        },
+        {
+          "char": "⤸",
+          "label": "Arc Orar (Partea Dreaptă)"
+        },
+        {
+          "char": "⤹",
+          "label": "Arc Antiorar (Partea Stângă)"
+        },
+        {
+          "char": "⤺",
+          "label": "Arc Antiorar (Sus)"
+        },
+        {
+          "char": "⤻",
+          "label": "Arc Antiorar (Jos)"
+        },
+        {
+          "char": "⤶",
+          "label": "Jos, apoi Stânga"
+        },
+        {
+          "char": "⤷",
+          "label": "Jos, apoi Dreapta"
+        }
+      ]
+    },
+    {
+      "id": "arrows-long-extended",
+      "label": "Săgeți Lungi",
+      "h2": "Săgeți lungi: din bară, șerpuite & cvadruple",
+      "intro": "Mai multe săgeți lungi pentru notițe și matematică: săgeți din bară (⟼ este săgeata de asociere din matematică), săgeți duble lungi, o săgeată șerpuită și săgeți cvadruple.",
+      "symbols": [
+        {
+          "char": "⟺",
+          "label": "Dublă Lungă Stânga-Dreapta"
+        },
+        {
+          "char": "⟻",
+          "label": "Lungă Stânga din Bară"
+        },
+        {
+          "char": "⟼",
+          "label": "Lungă Dreapta din Bară (Asociere)"
+        },
+        {
+          "char": "⟽",
+          "label": "Dublă Lungă Stânga din Bară"
+        },
+        {
+          "char": "⟾",
+          "label": "Dublă Lungă Dreapta din Bară"
+        },
+        {
+          "char": "⟿",
+          "label": "Șerpuită Lungă Dreapta"
+        },
+        {
+          "char": "⟰",
+          "label": "Cvadruplă Sus"
+        },
+        {
+          "char": "⟱",
+          "label": "Cvadruplă Jos"
+        },
+        {
+          "char": "⟴",
+          "label": "Dreapta cu Plus în Cerc"
+        }
+      ]
+    },
+    {
+      "id": "arrows-diagonal-bent-hooked",
+      "label": "Diagonale & Frânte",
+      "h2": "Săgeți albe, negre, frânte & cu cârlig",
+      "intro": "Săgeți diagonale albe și negre, săgeți care se frâng la vârf și diagonale cu cârlig.",
+      "symbols": [
+        {
+          "char": "⬀",
+          "label": "Albă Sus-Dreapta"
+        },
+        {
+          "char": "⬁",
+          "label": "Albă Sus-Stânga"
+        },
+        {
+          "char": "⬂",
+          "label": "Albă Jos-Dreapta"
+        },
+        {
+          "char": "⬃",
+          "label": "Albă Jos-Stânga"
+        },
+        {
+          "char": "⬄",
+          "label": "Albă Stânga-Dreapta"
+        },
+        {
+          "char": "⬈",
+          "label": "Neagră Sus-Dreapta"
+        },
+        {
+          "char": "⬉",
+          "label": "Neagră Sus-Stânga"
+        },
+        {
+          "char": "⬊",
+          "label": "Neagră Jos-Dreapta"
+        },
+        {
+          "char": "⬋",
+          "label": "Neagră Jos-Stânga"
+        },
+        {
+          "char": "⬌",
+          "label": "Neagră Stânga-Dreapta"
+        },
+        {
+          "char": "⬍",
+          "label": "Neagră Sus-Jos"
+        },
+        {
+          "char": "⬎",
+          "label": "Dreapta, apoi Jos"
+        },
+        {
+          "char": "⬏",
+          "label": "Dreapta, apoi Sus"
+        },
+        {
+          "char": "⬐",
+          "label": "Stânga, apoi Jos"
+        },
+        {
+          "char": "⬑",
+          "label": "Stânga, apoi Sus"
+        },
+        {
+          "char": "⤣",
+          "label": "Cu Cârlig Sus-Stânga"
+        },
+        {
+          "char": "⤤",
+          "label": "Cu Cârlig Sus-Dreapta"
+        },
+        {
+          "char": "⤥",
+          "label": "Cu Cârlig Jos-Dreapta"
+        },
+        {
+          "char": "⤦",
+          "label": "Cu Cârlig Jos-Stânga"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "Biblioteca de Simboluri pentru LinkedIn",
+      "desc": "Simboluri Unicode profesionale, testate și alese pentru postări și comentarii pe LinkedIn."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Simboluri Geometrice",
+      "desc": "Cercuri, romburi, pătrate, triunghiuri și forme decorative pentru formatare."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Simboluri Bifă",
+      "desc": "Bife, semne X și indicatori de stare pentru liste și comparații."
+    },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "Stilizarea Comentariilor pe LinkedIn",
+      "desc": "Tehnici și șabloane pentru comentarii profesionale pe LinkedIn."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/arrow-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/pfeil-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/simbolos-de-flechas/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-fleches/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-panah/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/arrow-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hwasalpyo-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/setas/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-mui-ten/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/pijl-symbolen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ok-isaretleri/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/pil-symboler/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/pil-symboler/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/jiantou-fuhao/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-freccia/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-strzalek/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/strelki/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/arrow-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/pilsymboler/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/library/sipky/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/library/nyil-szimbolum/"
+    },
+    {
+      "lang": "fi",
+      "href": "https://ultratextgen.com/fi/library/nuoli-symboli/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/library/strelice/"
+    },
+    {
+      "lang": "uk",
+      "href": "https://ultratextgen.com/uk/library/strilky/"
+    },
+    {
+      "lang": "sk",
+      "href": "https://ultratextgen.com/sk/library/sipky/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/library/sageti/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/library/simbol-panah/"
+    },
+    {
+      "lang": "hi",
+      "href": "https://ultratextgen.com/hi/library/arrow-symbols/"
+    },
+    {
+      "lang": "tl",
+      "href": "https://ultratextgen.com/tl/library/arrow-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    }
+  ]
+}

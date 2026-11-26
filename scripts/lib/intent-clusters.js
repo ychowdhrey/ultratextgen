@@ -51,6 +51,7 @@ const fs = require('fs');
 const path = require('path');
 const { discoverClusters, normalizeUrl } = require('./translation-clusters');
 const { functionalFingerprint } = require('./functional-fingerprint');
+const { ruleBException, ownerPagePass } = require('./locale-parent-registry');
 
 const SITE_ORIGIN = 'https://ultratextgen.com';
 const SITE_ROOT_URL = `${SITE_ORIGIN}/`;
@@ -636,6 +637,19 @@ function evaluateNewLocalePage({ rel, model, decide, ledgerEntries, locales }) {
     (e) => e.pattern === ledgerKey && lc(e.locale) === localeCode && (e.verdict === 'mirror' || e.verdict === 'gate-pass')
   );
   if (ok) return { status: 'pass', localeCode, cluster, classifiedPath, result, ledgerEntry: ok };
+  // A dated owner override recorded for exactly this page (never for its pattern).
+  const owned = ownerPagePass(classifiedPath, localeCode, ledgerEntries);
+  if (owned) return { status: 'pass', localeCode, cluster, classifiedPath, result, ledgerEntry: owned, authority: 'owner-page-decision' };
+  // Rule B exception (owner decision 2026-11-26): a Tier-3 stub decision can be
+  // cleared for THIS page only, by a page-scoped entry. The tier stays as it is.
+  const rb = ruleBException(classifiedPath, localeCode, result, ledgerEntries);
+  if (rb.status === 'pass') {
+    return { status: 'pass', localeCode, cluster, classifiedPath, result, ledgerEntry: rb.entry, authority: rb.entry.verdict };
+  }
+  if (rb.status === 'fail') {
+    return { status: 'fail', problem: rb.code, localeCode, cluster, classifiedPath, result, ledgerKey,
+      detail: `Rule B exception entry for ${String(classifiedPath).replace(/\/?index\.html$/, '')} x ${localeCode} does not authorize this page: ${rb.detail}` };
+  }
   return { status: 'fail', problem: 'missing-ledger-entry', localeCode, cluster, classifiedPath, result, ledgerKey };
 }
 

@@ -1092,6 +1092,357 @@
       ],
       "kicker": "LIB",
       "added": "2026-11-18"
+    },
+    "cs-library-srdicka": {
+      "title": "Srdíčka ke zkopírování",
+      "sub": "Sbírka srdíček emoji, textových srdcí Unicode a symbolů lásky. Klikni ",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "sk-library-srdiecka": {
+      "title": "Srdiečka na kopírovanie",
+      "sub": "Zbierka srdiečok emoji, textových srdiečok Unicode a symbolov lásky. K",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hu-library-sziv-szimbolum": {
+      "title": "Szív szimbólum gyűjtemény",
+      "sub": "Szív emojik, Unicode szívkarakterek és szerelmes szimbólumok egy helye",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "ro-library-simbol-inima": {
+      "title": "Simbol inimă: colecția de inimioare",
+      "sub": "Emoji inimă, caractere Unicode cu inimă și simboluri de dragoste, adun",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "fi-library-sydan-symboli": {
+      "title": "Sydänsymbolit ja sydän-emojit",
+      "sub": "Kokoelma sydän-emojeja, Unicoden sydänmerkkejä ja rakkauteen liittyviä",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "uk-library-serdechka": {
+      "title": "Символи сердечок",
+      "sub": "Довідкова колекція емодзі сердечок, текстових сердечок Unicode і симво",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "cs-library-sipky": {
+      "title": "Šipky ke zkopírování",
+      "sub": "Sbírka směrových šipek: rovné, zahnuté, dvojité, trojúhelníkové i emoj",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hu-library-nyil-szimbolum": {
+      "title": "Nyíl szimbólumok",
+      "sub": "Irányjelző nyilak gyűjteménye: egyenes, ívelt, dupla, háromszög és emo",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "fi-library-nuoli-symboli": {
+      "title": "Nuolisymbolit ja nuolimerkit",
+      "sub": "Kokoelma suuntanuolia: suoria, kaarevia, kaksois-, kolmio- ja emojinuo",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hr-library-strelice": {
+      "title": "Strelice za kopiranje",
+      "sub": "Zbirka strelica za smjer: ravne, zakrivljene, dvostruke, trokutaste i ",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "uk-library-strilky": {
+      "title": "Символи стрілок",
+      "sub": "Довідкова колекція символів стрілок: прямі, жирні, подвійні, вигнуті, ",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "da-library-specialtegn": {
+      "title": "Specialtegn",
+      "sub": "Små tegn, der gør en stor forskel: uendelig, fred, videnskab, juridisk",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "no-library-spesialtegn": {
+      "title": "Spesialtegn",
+      "sub": "Små tegn som gjør mye: uendelig, fred, vitenskap, juridiske merker, fi",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "sv-library-specialtecken": {
+      "title": "Specialtecken",
+      "sub": "Snygga tecken som lyfter din text: oändlighet, fred, vetenskap, juridi",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "fi-library-erikoismerkit": {
+      "title": "Erikoismerkkejä ja symboleja kopioitavaksi",
+      "sub": "Kokoelma ainutlaatuisia Unicode-symboleja: äärettömyys, rauha, tiede, ",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "sk-library-specialne-znaky": {
+      "title": "Špeciálne znaky",
+      "sub": "Zbierka výnimočných symbolov Unicode: nekonečno, mier, veda, právne zn",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "uk-library-spetssymvoly": {
+      "title": "Спецсимволи",
+      "sub": "Довідкова колекція унікальних символів Unicode: нескінченність, мир, н",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hi-library-heart-symbols": {
+      "title": "हार्ट सिंबल (Heart Symbol) कॉपी करें",
+      "sub": "हार्ट इमोजी, Unicode हार्ट कैरेक्टर और प्यार से जुड़े सिंबल का एक रेफर",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "tl-library-heart-symbols": {
+      "title": "Mga Heart Symbol na Pwedeng I-copy Paste",
+      "sub": "Koleksyon ng heart emoji, Unicode na puso, at mga simbolo ng pag-ibig.",
+      "glyphs": [
+        "🌈",
+        "❤",
+        "🧡",
+        "💛",
+        "💚"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hi-library-arrow-symbols": {
+      "title": "एरो सिंबल (Arrow Symbol) कॉपी करें",
+      "sub": "दिशा बताने वाले एरो कैरेक्टर का एक रेफरेंस कलेक्शन: सीधे, घुमावदार, डब",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "tl-library-arrow-symbols": {
+      "title": "Mga Arrow Symbol na Pwedeng I-copy Paste",
+      "sub": "Koleksyon ng mga arrow na character sa bawat direksyon: tuwid, kurbado",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "sk-library-sipky": {
+      "title": "Symboly šípok",
+      "sub": "Zbierka šípok na kopírovanie pre každý smer: rovné, zahnuté, dvojité, ",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "ro-library-sageti": {
+      "title": "Simboluri de săgeți",
+      "sub": "O colecție de săgeți pentru fiecare direcție: drepte, curbate, duble, ",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "ms-library-simbol-panah": {
+      "title": "Simbol Panah",
+      "sub": "Koleksi rujukan aksara anak panah untuk setiap arah: lurus, melengkung",
+      "glyphs": [
+        "→",
+        "←",
+        "↑",
+        "↓",
+        "↗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "hi-library-special-characters": {
+      "title": "स्पेशल कैरेक्टर (Special Characters)",
+      "sub": "अनोखे Unicode सिंबल का एक रेफरेंस कलेक्शन: इनफ़िनिटी, शांति, विज्ञान, ",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "tl-library-special-characters": {
+      "title": "Mga Special Character na Pwedeng I-copy",
+      "sub": "Koleksyon ng mga natatanging Unicode symbol: infinity, kapayapaan, agh",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
+    },
+    "ms-library-aksara-khas": {
+      "title": "Aksara Khas",
+      "sub": "Koleksi rujukan simbol Unicode yang unik: infiniti, keamanan, sains, t",
+      "glyphs": [
+        "∞",
+        "♾️",
+        "⧜",
+        "⧝",
+        "⧞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-11-26"
     }
   }
 }

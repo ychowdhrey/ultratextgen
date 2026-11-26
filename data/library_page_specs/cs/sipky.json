@@ -1,0 +1,1243 @@
+{
+  "slug": "sipky",
+  "lang": "cs",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "title": "Šipky ke zkopírování → ⇒ ➜ ↩ – symbol šipky pro každý směr",
+  "meta_description": "Šipky ke zkopírování: rovné, zahnuté, dvojité, trojúhelníkové i emoji šipky do dokumentů, příspěvků a formátování textu.",
+  "canonical": "https://ultratextgen.com/cs/library/sipky/",
+  "breadcrumb": "Šipky",
+  "hero_h1": "Šipky ke zkopírování",
+  "hero_tagline": "Sbírka směrových šipek: rovné, zahnuté, dvojité, trojúhelníkové i emoji. Klikni na libovolný symbol a hned se zkopíruje.",
+  "intro": "Zkopíruj si symbol šipky do dokumentu, příspěvku nebo pro formátování textu. Šipky jsou seřazené podle stylu: od jednoduchých směrových přes tučné, dvojité a zahnuté až po emoji.",
+  "date_published": "2026-11-26",
+  "date_modified": "2026-11-26",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/arrow-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/pfeil-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/simbolos-de-flechas/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-fleches/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-panah/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/arrow-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hwasalpyo-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/setas/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-mui-ten/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/pijl-symbolen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ok-isaretleri/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/pil-symboler/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/pil-symboler/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/jiantou-fuhao/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-freccia/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-strzalek/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/strelki/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/arrow-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/pilsymboler/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/library/sipky/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/library/nyil-szimbolum/"
+    },
+    {
+      "lang": "fi",
+      "href": "https://ultratextgen.com/fi/library/nuoli-symboli/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/library/strelice/"
+    },
+    {
+      "lang": "uk",
+      "href": "https://ultratextgen.com/uk/library/strilky/"
+    },
+    {
+      "lang": "sk",
+      "href": "https://ultratextgen.com/sk/library/sipky/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/library/sageti/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/library/simbol-panah/"
+    },
+    {
+      "lang": "hi",
+      "href": "https://ultratextgen.com/hi/library/arrow-symbols/"
+    },
+    {
+      "lang": "tl",
+      "href": "https://ultratextgen.com/tl/library/arrow-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "simple-directional",
+      "label": "Základní směry",
+      "h2": "Základní směrové šipky",
+      "intro": "Klasické šipky Unicode do všech osmi směrů.",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Šipka doprava"
+        },
+        {
+          "char": "←",
+          "label": "Šipka doleva"
+        },
+        {
+          "char": "↑",
+          "label": "Šipka nahoru"
+        },
+        {
+          "char": "↓",
+          "label": "Šipka dolů"
+        },
+        {
+          "char": "↗",
+          "label": "Šipka vpravo nahoru"
+        },
+        {
+          "char": "↘",
+          "label": "Šipka vpravo dolů"
+        },
+        {
+          "char": "↙",
+          "label": "Šipka vlevo dolů"
+        },
+        {
+          "char": "↖",
+          "label": "Šipka vlevo nahoru"
+        },
+        {
+          "char": "↔",
+          "label": "Šipka doleva a doprava"
+        },
+        {
+          "char": "↕",
+          "label": "Šipka nahoru a dolů"
+        }
+      ]
+    },
+    {
+      "id": "bold-heavy",
+      "label": "Tučné a výrazné",
+      "h2": "Tučné a výrazné šipky",
+      "intro": "Silné, tučné šipky s vizuální vahou pro zdůraznění a výzvy k akci.",
+      "symbols": [
+        {
+          "char": "➜",
+          "label": "Tučná oblá šipka"
+        },
+        {
+          "char": "➝",
+          "label": "Středně silná šipka doprava"
+        },
+        {
+          "char": "⟶",
+          "label": "Dlouhá šipka doprava"
+        },
+        {
+          "char": "➡",
+          "label": "Šipka doprava"
+        },
+        {
+          "char": "⬅",
+          "label": "Šipka doleva"
+        },
+        {
+          "char": "⬆",
+          "label": "Šipka nahoru"
+        },
+        {
+          "char": "⬇",
+          "label": "Šipka dolů"
+        },
+        {
+          "char": "➔",
+          "label": "Tučná šipka doprava"
+        },
+        {
+          "char": "➙",
+          "label": "Čárkovaná šipka"
+        }
+      ]
+    },
+    {
+      "id": "double-formal",
+      "label": "Dvojité a formální",
+      "h2": "Dvojité a formální šipky",
+      "intro": "Dvojité a matematické šipky pro logiku, dokumentaci a odborné texty.",
+      "symbols": [
+        {
+          "char": "⇒",
+          "label": "Dvojitá šipka doprava"
+        },
+        {
+          "char": "⇐",
+          "label": "Dvojitá šipka doleva"
+        },
+        {
+          "char": "⇑",
+          "label": "Dvojitá šipka nahoru"
+        },
+        {
+          "char": "⇓",
+          "label": "Dvojitá šipka dolů"
+        },
+        {
+          "char": "⇔",
+          "label": "Dvojitá doleva a doprava"
+        },
+        {
+          "char": "⟹",
+          "label": "Dlouhá dvojitá doprava"
+        },
+        {
+          "char": "⟸",
+          "label": "Dlouhá dvojitá doleva"
+        },
+        {
+          "char": "⇕",
+          "label": "Dvojitá nahoru a dolů"
+        }
+      ]
+    },
+    {
+      "id": "curved-return",
+      "label": "Zahnuté a zpětné",
+      "h2": "Zahnuté a zpětné šipky",
+      "intro": "Zahnuté, kruhové a zpětné šipky pro odpovědi, akci zpět a navigaci.",
+      "symbols": [
+        {
+          "char": "↩",
+          "label": "Zpáteční šipka"
+        },
+        {
+          "char": "↪",
+          "label": "Zahnutá šipka doprava"
+        },
+        {
+          "char": "↺",
+          "label": "Proti směru hodinových ručiček"
+        },
+        {
+          "char": "↻",
+          "label": "Po směru hodinových ručiček"
+        },
+        {
+          "char": "⤴",
+          "label": "Zahnutá doprava nahoru"
+        },
+        {
+          "char": "⤵",
+          "label": "Zahnutá doprava dolů"
+        },
+        {
+          "char": "↶",
+          "label": "Horní oblouk proti směru hodinových ručiček"
+        },
+        {
+          "char": "↷",
+          "label": "Horní oblouk po směru hodinových ručiček"
+        },
+        {
+          "char": "🔃",
+          "label": "Svislé šipky po směru hodinových ručiček"
+        },
+        {
+          "char": "🔄",
+          "label": "Šipky proti směru hodinových ručiček"
+        }
+      ]
+    },
+    {
+      "id": "triangle-pointer",
+      "label": "Trojúhelníky a ukazatele",
+      "h2": "Trojúhelníkové šipky a ukazatele",
+      "intro": "Trojúhelníkové šipky a ukazatele pro odrážky a navigaci.",
+      "symbols": [
+        {
+          "char": "▶",
+          "label": "Trojúhelník doprava"
+        },
+        {
+          "char": "◀",
+          "label": "Trojúhelník doleva"
+        },
+        {
+          "char": "▲",
+          "label": "Trojúhelník nahoru"
+        },
+        {
+          "char": "▼",
+          "label": "Trojúhelník dolů"
+        },
+        {
+          "char": "►",
+          "label": "Plný ukazatel doprava"
+        },
+        {
+          "char": "◄",
+          "label": "Plný ukazatel doleva"
+        },
+        {
+          "char": "➤",
+          "label": "Plný hrot doprava"
+        },
+        {
+          "char": "‣",
+          "label": "Trojúhelníková odrážka"
+        },
+        {
+          "char": "›",
+          "label": "Jednoduchá úhlová uvozovka vpravo"
+        },
+        {
+          "char": "‹",
+          "label": "Jednoduchá úhlová uvozovka vlevo"
+        },
+        {
+          "char": "⏩",
+          "label": "Rychle vpřed"
+        },
+        {
+          "char": "⏪",
+          "label": "Rychle zpět"
+        },
+        {
+          "char": "⏫",
+          "label": "Rychle nahoru"
+        },
+        {
+          "char": "⏬",
+          "label": "Rychle dolů"
+        }
+      ]
+    },
+    {
+      "id": "thin-minimal",
+      "label": "Tenké a minimalistické",
+      "h2": "Tenké a minimalistické šipky",
+      "intro": "Lehké úhlové uvozovky a minimalistické směrové znaky.",
+      "symbols": [
+        {
+          "char": "«",
+          "label": "Dvojitá úhlová uvozovka vlevo"
+        },
+        {
+          "char": "»",
+          "label": "Dvojitá úhlová uvozovka vpravo"
+        },
+        {
+          "char": "‹",
+          "label": "Jednoduchá úhlová uvozovka vlevo"
+        },
+        {
+          "char": "›",
+          "label": "Jednoduchá úhlová uvozovka vpravo"
+        },
+        {
+          "char": "˂",
+          "label": "Malý hrot doleva"
+        },
+        {
+          "char": "˃",
+          "label": "Malý hrot doprava"
+        },
+        {
+          "char": "˄",
+          "label": "Malý hrot nahoru"
+        },
+        {
+          "char": "˅",
+          "label": "Malý hrot dolů"
+        },
+        {
+          "char": "⟵",
+          "label": "Dlouhá šipka doleva"
+        },
+        {
+          "char": "⟶",
+          "label": "Dlouhá šipka doprava"
+        },
+        {
+          "char": "⟷",
+          "label": "Dlouhá šipka doleva a doprava"
+        },
+        {
+          "char": "⟸",
+          "label": "Dlouhá dvojitá šipka doleva"
+        },
+        {
+          "char": "⟹",
+          "label": "Dlouhá dvojitá šipka doprava"
+        }
+      ]
+    },
+    {
+      "id": "emoji-arrows",
+      "label": "Emoji šipky",
+      "h2": "Šipky emoji",
+      "intro": "Barevné emoji šipek a směrové ikony pro sociální sítě a zprávy.",
+      "symbols": [
+        {
+          "char": "⬆️",
+          "label": "Šipka nahoru (emoji)"
+        },
+        {
+          "char": "⬇️",
+          "label": "Šipka dolů (emoji)"
+        },
+        {
+          "char": "➡️",
+          "label": "Šipka doprava (emoji)"
+        },
+        {
+          "char": "⬅️",
+          "label": "Šipka doleva (emoji)"
+        },
+        {
+          "char": "↕️",
+          "label": "Šipka nahoru a dolů"
+        },
+        {
+          "char": "↔️",
+          "label": "Šipka doleva a doprava"
+        },
+        {
+          "char": "↩️",
+          "label": "Zpáteční šipka (emoji)"
+        },
+        {
+          "char": "↪️",
+          "label": "Zahnutá šipka doprava"
+        },
+        {
+          "char": "🔄",
+          "label": "Proti směru hodinových ručiček"
+        },
+        {
+          "char": "🔃",
+          "label": "Po směru hodinových ručiček"
+        },
+        {
+          "char": "🔀",
+          "label": "Náhodné pořadí"
+        },
+        {
+          "char": "🔁",
+          "label": "Opakovat"
+        },
+        {
+          "char": "🔂",
+          "label": "Opakovat jednou"
+        },
+        {
+          "char": "🔙",
+          "label": "Šipka zpět"
+        },
+        {
+          "char": "🔚",
+          "label": "Šipka konec"
+        },
+        {
+          "char": "🔛",
+          "label": "Šipka zapnuto"
+        },
+        {
+          "char": "🔜",
+          "label": "Šipka brzy"
+        },
+        {
+          "char": "🔝",
+          "label": "Šipka na vrchol"
+        },
+        {
+          "char": "🆙",
+          "label": "Tlačítko UP!"
+        },
+        {
+          "char": "🔼",
+          "label": "Tlačítko nahoru"
+        }
+      ]
+    },
+    {
+      "id": "level-up-emoji",
+      "label": "Další level",
+      "h2": "Emoji na postup do dalšího levelu",
+      "intro": "🆙 je emoji tlačítka UP!, které lidé vkládají při postupu do dalšího levelu, povýšení nebo nové hodnosti. Písmena jsou součástí emoji, takže je styl písma nezmění. Tyhle kombinace ho spojují s ⏫, 🔝 a 📈, aby příspěvek působil jako stoupání, ne jen jako ukazování nahoru.",
+      "symbols": [
+        {
+          "char": "🆙⏫",
+          "label": "Další level"
+        },
+        {
+          "char": "🆙🔝",
+          "label": "Nejvyšší level"
+        },
+        {
+          "char": "📈🆙",
+          "label": "Statistiky nahoru"
+        },
+        {
+          "char": "⬆️🆙🔝",
+          "label": "Až na vrchol"
+        },
+        {
+          "char": "🎮🆙",
+          "label": "Postup ve hře"
+        },
+        {
+          "char": "🏆🆙",
+          "label": "Vyšší hodnost"
+        }
+      ]
+    },
+    {
+      "id": "additional-arrows",
+      "label": "Kompletní blok",
+      "h2": "Další šipky z bloku šipek v Unicode",
+      "intro": "Zbývající přiřazené kódové body z bloku šipek v Unicode (U+2190–U+21FF), které nejsou ve vybraných sekcích výše.",
+      "symbols": [
+        {
+          "char": "↚",
+          "label": "Šipka doleva, přeškrtnutá"
+        },
+        {
+          "char": "↛",
+          "label": "Šipka doprava, přeškrtnutá"
+        },
+        {
+          "char": "↜",
+          "label": "Vlnitá šipka doleva"
+        },
+        {
+          "char": "↝",
+          "label": "Vlnitá šipka doprava"
+        },
+        {
+          "char": "↞",
+          "label": "Šipka doleva se dvěma hroty"
+        },
+        {
+          "char": "↟",
+          "label": "Šipka nahoru se dvěma hroty"
+        },
+        {
+          "char": "↠",
+          "label": "Šipka doprava se dvěma hroty"
+        },
+        {
+          "char": "↡",
+          "label": "Šipka dolů se dvěma hroty"
+        },
+        {
+          "char": "↢",
+          "label": "Šipka doleva s ocasem"
+        },
+        {
+          "char": "↣",
+          "label": "Šipka doprava s ocasem"
+        },
+        {
+          "char": "↤",
+          "label": "Šipka doleva od čárky"
+        },
+        {
+          "char": "↥",
+          "label": "Šipka nahoru od čárky"
+        },
+        {
+          "char": "↦",
+          "label": "Šipka doprava od čárky"
+        },
+        {
+          "char": "↧",
+          "label": "Šipka dolů od čárky"
+        },
+        {
+          "char": "↨",
+          "label": "Šipka nahoru a dolů s podstavou"
+        },
+        {
+          "char": "↫",
+          "label": "Šipka doleva se smyčkou"
+        },
+        {
+          "char": "↬",
+          "label": "Šipka doprava se smyčkou"
+        },
+        {
+          "char": "↭",
+          "label": "Vlnitá šipka doleva a doprava"
+        },
+        {
+          "char": "↮",
+          "label": "Šipka doleva a doprava, přeškrtnutá"
+        },
+        {
+          "char": "↯",
+          "label": "Klikatá šipka dolů"
+        },
+        {
+          "char": "↰",
+          "label": "Šipka nahoru se špičkou doleva"
+        },
+        {
+          "char": "↱",
+          "label": "Šipka nahoru se špičkou doprava"
+        },
+        {
+          "char": "↲",
+          "label": "Šipka dolů se špičkou doleva"
+        },
+        {
+          "char": "↳",
+          "label": "Šipka dolů se špičkou doprava"
+        },
+        {
+          "char": "↴",
+          "label": "Šipka doprava, v rohu dolů"
+        },
+        {
+          "char": "↵",
+          "label": "Šipka dolů, v rohu doleva"
+        },
+        {
+          "char": "↸",
+          "label": "Šipka severozápad k dlouhé čáře"
+        },
+        {
+          "char": "↹",
+          "label": "Šipka doleva k čárce nad šipkou doprava k čárce"
+        },
+        {
+          "char": "↼",
+          "label": "Harpuna doleva s ostnem nahoru"
+        },
+        {
+          "char": "↽",
+          "label": "Harpuna doleva s ostnem dolů"
+        },
+        {
+          "char": "↾",
+          "label": "Harpuna nahoru s ostnem doprava"
+        },
+        {
+          "char": "↿",
+          "label": "Harpuna nahoru s ostnem doleva"
+        },
+        {
+          "char": "⇀",
+          "label": "Harpuna doprava s ostnem nahoru"
+        },
+        {
+          "char": "⇁",
+          "label": "Harpuna doprava s ostnem dolů"
+        },
+        {
+          "char": "⇂",
+          "label": "Harpuna dolů s ostnem doprava"
+        },
+        {
+          "char": "⇃",
+          "label": "Harpuna dolů s ostnem doleva"
+        },
+        {
+          "char": "⇄",
+          "label": "Šipka doprava nad šipkou doleva"
+        },
+        {
+          "char": "⇅",
+          "label": "Šipka nahoru vlevo od šipky dolů"
+        },
+        {
+          "char": "⇆",
+          "label": "Šipka doleva nad šipkou doprava"
+        },
+        {
+          "char": "⇇",
+          "label": "Dvojice šipek doleva"
+        },
+        {
+          "char": "⇈",
+          "label": "Dvojice šipek nahoru"
+        },
+        {
+          "char": "⇉",
+          "label": "Dvojice šipek doprava"
+        },
+        {
+          "char": "⇊",
+          "label": "Dvojice šipek dolů"
+        },
+        {
+          "char": "⇋",
+          "label": "Harpuna doleva nad harpunou doprava"
+        },
+        {
+          "char": "⇌",
+          "label": "Harpuna doprava nad harpunou doleva"
+        },
+        {
+          "char": "⇍",
+          "label": "Dvojitá šipka doleva, přeškrtnutá"
+        },
+        {
+          "char": "⇎",
+          "label": "Dvojitá šipka doleva a doprava, přeškrtnutá"
+        },
+        {
+          "char": "⇏",
+          "label": "Dvojitá šipka doprava, přeškrtnutá"
+        },
+        {
+          "char": "⇖",
+          "label": "Dvojitá šipka severozápad"
+        },
+        {
+          "char": "⇗",
+          "label": "Dvojitá šipka severovýchod"
+        },
+        {
+          "char": "⇘",
+          "label": "Dvojitá šipka jihovýchod"
+        },
+        {
+          "char": "⇙",
+          "label": "Dvojitá šipka jihozápad"
+        },
+        {
+          "char": "⇚",
+          "label": "Trojitá šipka doleva"
+        },
+        {
+          "char": "⇛",
+          "label": "Trojitá šipka doprava"
+        },
+        {
+          "char": "⇜",
+          "label": "Kroucená šipka doleva"
+        },
+        {
+          "char": "⇝",
+          "label": "Kroucená šipka doprava"
+        },
+        {
+          "char": "⇞",
+          "label": "Šipka nahoru s dvojitým přeškrtnutím"
+        },
+        {
+          "char": "⇟",
+          "label": "Šipka dolů s dvojitým přeškrtnutím"
+        },
+        {
+          "char": "⇠",
+          "label": "Přerušovaná šipka doleva"
+        },
+        {
+          "char": "⇡",
+          "label": "Přerušovaná šipka nahoru"
+        },
+        {
+          "char": "⇢",
+          "label": "Přerušovaná šipka doprava"
+        },
+        {
+          "char": "⇣",
+          "label": "Přerušovaná šipka dolů"
+        },
+        {
+          "char": "⇤",
+          "label": "Šipka doleva k čárce"
+        },
+        {
+          "char": "⇥",
+          "label": "Šipka doprava k čárce"
+        },
+        {
+          "char": "⇦",
+          "label": "Obrysová šipka doleva"
+        },
+        {
+          "char": "⇧",
+          "label": "Obrysová šipka nahoru"
+        },
+        {
+          "char": "⇨",
+          "label": "Obrysová šipka doprava"
+        },
+        {
+          "char": "⇩",
+          "label": "Obrysová šipka dolů"
+        },
+        {
+          "char": "⇪",
+          "label": "Obrysová šipka nahoru od čárky"
+        },
+        {
+          "char": "⇫",
+          "label": "Obrysová šipka nahoru na podstavci"
+        },
+        {
+          "char": "⇬",
+          "label": "Obrysová šipka nahoru na podstavci s vodorovnou čárkou"
+        },
+        {
+          "char": "⇭",
+          "label": "Obrysová šipka nahoru na podstavci se svislou čárkou"
+        },
+        {
+          "char": "⇮",
+          "label": "Obrysová dvojitá šipka nahoru"
+        },
+        {
+          "char": "⇯",
+          "label": "Obrysová dvojitá šipka nahoru na podstavci"
+        },
+        {
+          "char": "⇰",
+          "label": "Obrysová šipka doprava od zdi"
+        },
+        {
+          "char": "⇱",
+          "label": "Šipka severozápad do rohu"
+        },
+        {
+          "char": "⇲",
+          "label": "Šipka jihovýchod do rohu"
+        },
+        {
+          "char": "⇳",
+          "label": "Obrysová šipka nahoru a dolů"
+        },
+        {
+          "char": "⇴",
+          "label": "Šipka doprava s malým kroužkem"
+        },
+        {
+          "char": "⇵",
+          "label": "Šipka dolů vlevo od šipky nahoru"
+        },
+        {
+          "char": "⇶",
+          "label": "Tři šipky doprava"
+        },
+        {
+          "char": "⇷",
+          "label": "Šipka doleva se svislým přeškrtnutím"
+        },
+        {
+          "char": "⇸",
+          "label": "Šipka doprava se svislým přeškrtnutím"
+        },
+        {
+          "char": "⇹",
+          "label": "Šipka doleva a doprava se svislým přeškrtnutím"
+        },
+        {
+          "char": "⇺",
+          "label": "Šipka doleva s dvojitým svislým přeškrtnutím"
+        },
+        {
+          "char": "⇻",
+          "label": "Šipka doprava s dvojitým svislým přeškrtnutím"
+        },
+        {
+          "char": "⇼",
+          "label": "Šipka doleva a doprava s dvojitým svislým přeškrtnutím"
+        },
+        {
+          "char": "⇽",
+          "label": "Šipka doleva s otevřeným hrotem"
+        },
+        {
+          "char": "⇾",
+          "label": "Šipka doprava s otevřeným hrotem"
+        },
+        {
+          "char": "⇿",
+          "label": "Šipka doleva a doprava s otevřeným hrotem"
+        }
+      ]
+    },
+    {
+      "id": "right-arrow-variants",
+      "label": "Šipka doprava",
+      "h2": "Varianty šipky doprava",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Doprava"
+        },
+        {
+          "char": "⇒",
+          "label": "Dvojitá"
+        },
+        {
+          "char": "⟶",
+          "label": "Dlouhá"
+        },
+        {
+          "char": "➡",
+          "label": "Plná šipka"
+        },
+        {
+          "char": "➜",
+          "label": "Tučná oblá"
+        },
+        {
+          "char": "➤",
+          "label": "Hrot šipky"
+        },
+        {
+          "char": "➛",
+          "label": "Rýsovací hrot"
+        },
+        {
+          "char": "➠",
+          "label": "Čárkovaná tučná"
+        },
+        {
+          "char": "➢",
+          "label": "3D hrot"
+        },
+        {
+          "char": "⮕",
+          "label": "Plná široká"
+        },
+        {
+          "char": "↪",
+          "label": "S háčkem"
+        },
+        {
+          "char": "↦",
+          "label": "Od čárky"
+        }
+      ]
+    },
+    {
+      "id": "navigation-ui-arrows",
+      "label": "Navigace a rozhraní",
+      "h2": "Šipky v navigaci a rozhraní",
+      "symbols": [
+        {
+          "char": "›",
+          "label": "Drobečková navigace ›"
+        },
+        {
+          "char": "‹",
+          "label": "Zpět ‹"
+        },
+        {
+          "char": "▸",
+          "label": "Položka menu ▸"
+        },
+        {
+          "char": "▾",
+          "label": "Rozbalovací nabídka ▾"
+        },
+        {
+          "char": "▴",
+          "label": "Sbalit ▴"
+        },
+        {
+          "char": "⟩",
+          "label": "Další ⟩"
+        },
+        {
+          "char": "⟨",
+          "label": "Předchozí ⟨"
+        },
+        {
+          "char": "▶",
+          "label": "Přehrát ▶"
+        },
+        {
+          "char": "⤓",
+          "label": "Stáhnout ⤓"
+        },
+        {
+          "char": "↑",
+          "label": "Zpět nahoru ↑"
+        }
+      ]
+    },
+    {
+      "id": "arrows-upload-resize-circle",
+      "label": "Nahrávání a kruhy",
+      "h2": "Šipky pro nahrávání, změnu velikosti a kruhové šipky",
+      "intro": "Šipky z rozhraní: nahrávání k čárce, dvě diagonální šipky pro změnu velikosti, uzavřené a otevřené kruhové šipky pro obnovení a akci zpět, oblouky a šipky, které jdou dolů a pak zahnou.",
+      "symbols": [
+        {
+          "char": "⤒",
+          "label": "Nahrát ⤒"
+        },
+        {
+          "char": "⤡",
+          "label": "Změna velikosti vlevo nahoru / vpravo dolů"
+        },
+        {
+          "char": "⤢",
+          "label": "Změna velikosti vpravo nahoru / vlevo dolů"
+        },
+        {
+          "char": "⥀",
+          "label": "Uzavřený kruh proti směru hodinových ručiček"
+        },
+        {
+          "char": "⥁",
+          "label": "Uzavřený kruh po směru hodinových ručiček"
+        },
+        {
+          "char": "⟲",
+          "label": "Otevřený kruh proti směru hodinových ručiček"
+        },
+        {
+          "char": "⤸",
+          "label": "Oblouk po směru hodinových ručiček (vpravo)"
+        },
+        {
+          "char": "⤹",
+          "label": "Oblouk proti směru hodinových ručiček (vlevo)"
+        },
+        {
+          "char": "⤺",
+          "label": "Oblouk proti směru hodinových ručiček (nahoře)"
+        },
+        {
+          "char": "⤻",
+          "label": "Oblouk proti směru hodinových ručiček (dole)"
+        },
+        {
+          "char": "⤶",
+          "label": "Dolů a pak doleva"
+        },
+        {
+          "char": "⤷",
+          "label": "Dolů a pak doprava"
+        }
+      ]
+    },
+    {
+      "id": "arrows-long-extended",
+      "label": "Dlouhé šipky",
+      "h2": "Dlouhé šipky: od čárky, vlnité a čtyřnásobné",
+      "intro": "Další dlouhé šipky pro poznámky a matematiku: šipky od čárky (⟼ je matematická šipka zobrazení), dlouhé dvojité šipky, vlnitá šipka a čtyřnásobné šipky.",
+      "symbols": [
+        {
+          "char": "⟺",
+          "label": "Dlouhá dvojitá doleva a doprava"
+        },
+        {
+          "char": "⟻",
+          "label": "Dlouhá doleva od čárky"
+        },
+        {
+          "char": "⟼",
+          "label": "Dlouhá doprava od čárky (zobrazení)"
+        },
+        {
+          "char": "⟽",
+          "label": "Dlouhá dvojitá doleva od čárky"
+        },
+        {
+          "char": "⟾",
+          "label": "Dlouhá dvojitá doprava od čárky"
+        },
+        {
+          "char": "⟿",
+          "label": "Dlouhá vlnitá doprava"
+        },
+        {
+          "char": "⟰",
+          "label": "Čtyřnásobná nahoru"
+        },
+        {
+          "char": "⟱",
+          "label": "Čtyřnásobná dolů"
+        },
+        {
+          "char": "⟴",
+          "label": "Doprava s plusem v kroužku"
+        }
+      ]
+    },
+    {
+      "id": "arrows-diagonal-bent-hooked",
+      "label": "Diagonální a lomené",
+      "h2": "Obrysové, plné, lomené a zahnuté šipky",
+      "intro": "Obrysové a plné diagonální šipky, šipky lomené u hrotu a diagonální šipky s háčkem.",
+      "symbols": [
+        {
+          "char": "⬀",
+          "label": "Obrysová vpravo nahoru"
+        },
+        {
+          "char": "⬁",
+          "label": "Obrysová vlevo nahoru"
+        },
+        {
+          "char": "⬂",
+          "label": "Obrysová vpravo dolů"
+        },
+        {
+          "char": "⬃",
+          "label": "Obrysová vlevo dolů"
+        },
+        {
+          "char": "⬄",
+          "label": "Obrysová doleva a doprava"
+        },
+        {
+          "char": "⬈",
+          "label": "Plná vpravo nahoru"
+        },
+        {
+          "char": "⬉",
+          "label": "Plná vlevo nahoru"
+        },
+        {
+          "char": "⬊",
+          "label": "Plná vpravo dolů"
+        },
+        {
+          "char": "⬋",
+          "label": "Plná vlevo dolů"
+        },
+        {
+          "char": "⬌",
+          "label": "Plná doleva a doprava"
+        },
+        {
+          "char": "⬍",
+          "label": "Plná nahoru a dolů"
+        },
+        {
+          "char": "⬎",
+          "label": "Doprava a pak dolů"
+        },
+        {
+          "char": "⬏",
+          "label": "Doprava a pak nahoru"
+        },
+        {
+          "char": "⬐",
+          "label": "Doleva a pak dolů"
+        },
+        {
+          "char": "⬑",
+          "label": "Doleva a pak nahoru"
+        },
+        {
+          "char": "⤣",
+          "label": "S háčkem vlevo nahoru"
+        },
+        {
+          "char": "⤤",
+          "label": "S háčkem vpravo nahoru"
+        },
+        {
+          "char": "⤥",
+          "label": "S háčkem vpravo dolů"
+        },
+        {
+          "char": "⤦",
+          "label": "S háčkem vlevo dolů"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "Symboly pro LinkedIn",
+      "desc": "Profesionální symboly Unicode vyzkoušené a vybrané pro příspěvky a komentáře na LinkedInu."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometrické symboly",
+      "desc": "Kruhy, kosočtverce, čtverce, trojúhelníky a ozdobné tvary pro formátování."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Symboly fajfky",
+      "desc": "Fajfky, křížky a ukazatele stavu pro seznamy a srovnání."
+    },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "Stylování komentářů na LinkedInu",
+      "desc": "Postupy a šablony pro profesionální komentáře na LinkedInu."
+    }
+  ]
+}

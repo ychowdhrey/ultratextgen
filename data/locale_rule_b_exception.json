@@ -1,0 +1,21 @@
+{
+  "_readme": "Enforcement constants for the Rule B exception to the Tier-3 locale default (owner decision 2026-11-26). A Tier-3 locale stays Tier 3 in data/locale_qualification_tiers.json; this exception authorizes ONE page in ONE existing locale, never a language or a whole family. It is read by scripts/lib/locale-parent-registry.js (ruleBException, validateRuleBEntries) and enforced by scripts/check-locale-parent-gap.js. The authorizing record for each page is a data/locale_parent_gap_audit.json entry with scope \"page\", pattern = the reference page's path without index.html (e.g. \"library/heart-symbols\"), and verdict \"rule-b-exception\" (Rule B + positive target-language evidence) or \"rule-b-experiment\" (Rule B + insufficient target-language evidence, inside a bounded experimental allowance below). Negative target-language evidence never passes. A locale with no tier entry is a new-locale launch and stays an owner decision; a held locale stays held; a script-incompatible parent stays blocked. Revenue protection, canonical-intent, cannibalization, translation-quality, parity and release gates apply unchanged. Do not raise a cap or add an allowance without a dated owner decision.",
+  "decision": {
+    "date": "2026-11-26",
+    "by": "owner",
+    "summary": "Rule A only keeps the tier restriction. Rule B + positive target-language evidence authorizes an individual translation in an existing locale. Rule B + insufficient target-language evidence is eligible for a bounded experimental cohort. Rule B + negative target-language evidence is held. A new locale launch keeps owner approval. Unresolved technical prerequisites stay blocked."
+  },
+  "ruleB": {
+    "minLanguages": 5,
+    "minImpressionsPerLanguage": 100,
+    "windowDays": 90
+  },
+  "verdicts": {
+    "rule-b-exception": { "targetEvidence": "positive" },
+    "rule-b-experiment": { "targetEvidence": "insufficient" }
+  },
+  "experimentalAllowances": {
+    "EXP-20261126": { "cap": 30, "authorized": "2026-11-26", "note": "Up to 30 translations with strong cross-language (Rule B) evidence and insufficient target-language measurement, ranked by market evidence and expected usefulness. Never overrides negative evidence or a technical blocker." }
+  },
+  "readyScriptReadiness": ["ready", "ready-with-honest-copy"]
+}

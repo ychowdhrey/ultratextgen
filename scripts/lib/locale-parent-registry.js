@@ -155,7 +155,8 @@ function decide(relPath, localeCode) {
   if (localeInfo.tier === 3) {
     return {
       decision: 'skip-stub-locale',
-      reason: `Locale "${localeCode}" is Tier 3 (${localeInfo.action}) — no spec mirroring until it's promoted via the 7-point qualification gate.`,
+      reason: `Locale "${localeCode}" is Tier 3 (${localeInfo.action}) — no spec mirroring until it's promoted via the 7-point qualification gate. ` +
+        'One page may still ship here under the Rule B exception (owner decision 2026-11-26): a page-scoped data/locale_parent_gap_audit.json entry with verdict "rule-b-exception" or "rule-b-experiment" (see data/locale_rule_b_exception.json).',
       requiresLedgerEntry: true,
       parentInfo,
       localeInfo,
@@ -205,6 +206,131 @@ function decide(relPath, localeCode) {
   };
 }
 
+// ─── Rule B exception (owner decision 2026-11-26) ─────────────────────────
+//
+// A Tier-3 locale stays Tier 3: decide() above still returns skip-stub-locale
+// for it, so the registry keeps stating the standing default. What the owner
+// added is a per-PAGE exception: one page-language combination may ship in an
+// EXISTING Tier-3 locale when its canonical intent qualifies by Rule B
+// (>= 100 Google impressions in each of >= 5 languages over 90 days) and the
+// target language's own evidence is positive (verdict "rule-b-exception") or,
+// inside a bounded experimental allowance, merely insufficient (verdict
+// "rule-b-experiment"). Negative evidence never passes. Constants and the
+// allowance live in data/locale_rule_b_exception.json.
+
+const RULE_B_PATH = path.join(ROOT, 'data', 'locale_rule_b_exception.json');
+const ruleBPolicy = loadJson(RULE_B_PATH, null);
+const RULE_B_VERDICTS = new Set(['rule-b-exception', 'rule-b-experiment']);
+
+function pageKey(relPath) {
+  return normalizeRelPath(relPath).replace(/\/?index\.html$/, '');
+}
+
+/**
+ * Problems with the Rule B entries in a gap-ledger array, independent of any
+ * page: missing fields, a verdict whose evidence class does not match, an
+ * unknown locale (that would be a new-locale launch), an experimental cohort
+ * with no allowance or over its cap. Returns [{entry, code, detail}].
+ */
+function validateRuleBEntries(entries, policy = ruleBPolicy, tiers = localeTiers) {
+  const problems = [];
+  const rb = (entries || []).filter((e) => e && RULE_B_VERDICTS.has(e.verdict));
+  if (!rb.length) return problems;
+  if (!policy) {
+    return rb.map((entry) => ({ entry, code: 'rule-b-policy-missing', detail: 'data/locale_rule_b_exception.json is missing or unreadable, so no Rule B entry can be honoured (UNKNOWN, never a pass).' }));
+  }
+  const minLangs = (policy.ruleB && policy.ruleB.minLanguages) || 5;
+  const ready = new Set(policy.readyScriptReadiness || []);
+  const perCohort = new Map();
+  for (const e of rb) {
+    const where = `${e.pattern} x ${e.locale}`;
+    const want = ((policy.verdicts || {})[e.verdict] || {}).targetEvidence;
+    if (e.scope !== 'page' || !e.pattern || /\*/.test(e.pattern)) {
+      problems.push({ entry: e, code: 'rule-b-not-page-scoped', detail: `${where}: a Rule B entry authorizes one page, so it needs scope "page" and a pattern without "*".` });
+    }
+    const tierRec = tiers.locales[String(e.locale || '').toLowerCase()];
+    if (!tierRec) {
+      problems.push({ entry: e, code: 'rule-b-new-locale', detail: `${where}: "${e.locale}" has no tier entry; launching a new locale stays an owner decision, not a Rule B exception.` });
+    } else if (tierRec.hold) {
+      problems.push({ entry: e, code: 'rule-b-held-locale', detail: `${where}: "${e.locale}" carries an explicit hold; the exception does not lift a hold.` });
+    }
+    const langs = e.ruleB && Number(e.ruleB.languages);
+    if (!(langs >= minLangs)) {
+      problems.push({ entry: e, code: 'rule-b-not-qualified', detail: `${where}: ruleB.languages must be >= ${minLangs} (got ${langs || 'none'}).` });
+    }
+    if (e.targetEvidence !== want) {
+      problems.push({ entry: e, code: 'rule-b-evidence-mismatch', detail: `${where}: verdict "${e.verdict}" requires targetEvidence "${want}" (got "${e.targetEvidence}"). Negative target-language evidence is a hold, never a pass.` });
+    }
+    if (!ready.has(e.scriptReadiness)) {
+      problems.push({ entry: e, code: 'rule-b-prerequisite', detail: `${where}: scriptReadiness "${e.scriptReadiness}" is not one of ${[...ready].join(', ')}; an unresolved technical prerequisite stays blocked.` });
+    }
+    if (!e.checkedDate || !e.evidence) {
+      problems.push({ entry: e, code: 'rule-b-incomplete', detail: `${where}: checkedDate and evidence are required.` });
+    }
+    if (e.verdict === 'rule-b-experiment') {
+      const cohort = e.experimentCohort;
+      const allowance = cohort && (policy.experimentalAllowances || {})[cohort];
+      if (!allowance) {
+        problems.push({ entry: e, code: 'rule-b-no-allowance', detail: `${where}: experimentCohort "${cohort || ''}" has no allowance in data/locale_rule_b_exception.json.` });
+      } else {
+        perCohort.set(cohort, (perCohort.get(cohort) || 0) + 1);
+      }
+      if (!e.recheckDate) {
+        problems.push({ entry: e, code: 'rule-b-incomplete', detail: `${where}: an experiment needs a recheckDate.` });
+      }
+    }
+  }
+  for (const [cohort, n] of perCohort) {
+    const cap = policy.experimentalAllowances[cohort].cap;
+    if (n > cap) problems.push({ entry: null, code: 'rule-b-over-allowance', detail: `experimental cohort ${cohort} has ${n} entries; its allowance is ${cap}.` });
+  }
+  return problems;
+}
+
+/**
+ * The Rule B exception for one (classified page path, locale), given the
+ * decide() result for it. Returns { status: 'none' } when the exception does
+ * not apply (not a Tier-3 stub decision, or no page entry), { status: 'pass',
+ * entry } or { status: 'fail', code, detail, entry }.
+ */
+function ruleBException(classifiedPath, localeCode, result, ledgerEntries, policy = ruleBPolicy, tiers = localeTiers) {
+  if (!result || result.decision !== 'skip-stub-locale') return { status: 'none' };
+  const key = pageKey(classifiedPath);
+  const lc = String(localeCode || '').toLowerCase();
+  const entry = (ledgerEntries || []).find(
+    (e) => e && RULE_B_VERDICTS.has(e.verdict) && pageKey(e.pattern) === key && String(e.locale || '').toLowerCase() === lc
+  );
+  if (!entry) return { status: 'none' };
+  const problems = validateRuleBEntries([entry], policy, tiers);
+  if (problems.length) return { status: 'fail', code: problems[0].code, detail: problems.map((p) => p.detail).join(' '), entry };
+  const parent = result.parentInfo || {};
+  if (parent.tier === 'core' && parent.scriptIndependent === false && NON_LATIN_LOCALES.has(lc)) {
+    return { status: 'fail', code: 'rule-b-script-incompatible', entry,
+      detail: `"${parent.pattern}" is Latin-transform-dependent and "${lc}" is not Latin-script: the exception never overrides a script blocker.` };
+  }
+  return { status: 'pass', entry };
+}
+
+/**
+ * An owner override for ONE page, recorded per page rather than per pattern
+ * (localization rule 8: "a locale hold is a default the user can override
+ * explicitly, per batch, recorded as a dated, attributed decision"). A
+ * pattern-level gate-pass on `library/*` would authorize every library page in
+ * the locale; this admits exactly the page named. First use: the locale library
+ * hubs the Rule B cohort needs (owner decision 2026-11-26).
+ *
+ * Entry: { pattern: "<reference path without index.html>", scope: "page",
+ * locale, verdict: "gate-pass" | "mirror", checkedDate, evidence,
+ * ownerDecision: { date, summary } }. Returns the entry or null.
+ */
+function ownerPagePass(classifiedPath, localeCode, ledgerEntries) {
+  const key = pageKey(classifiedPath);
+  const lc = String(localeCode || '').toLowerCase();
+  return (ledgerEntries || []).find((e) => e && e.scope === 'page' && pageKey(e.pattern) === key &&
+    String(e.locale || '').toLowerCase() === lc && (e.verdict === 'gate-pass' || e.verdict === 'mirror') &&
+    e.ownerDecision && e.ownerDecision.date && e.ownerDecision.summary && e.checkedDate && e.evidence) || null;
+}
+
 module.exports = {
   LOCALES,
   NON_LATIN_LOCALES,
@@ -213,4 +339,9 @@ module.exports = {
   decide,
   coreParentSet,
   localeTiers,
+  ruleBPolicy,
+  ruleBException,
+  validateRuleBEntries,
+  RULE_B_VERDICTS,
+  ownerPagePass,
 };

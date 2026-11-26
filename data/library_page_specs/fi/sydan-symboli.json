@@ -1,0 +1,631 @@
+{
+  "slug": "sydan-symboli",
+  "lang": "fi",
+  "page_type": "library",
+  "title": "Sydänsymbolit ♥ ❤ 💕 – kopioi ja liitä sydänmerkit ja sydän-emojit",
+  "meta_description": "Kopioi sydän-emojit kaikissa väreissä, Unicoden sydänmerkit ja rakkauteen liittyvät symbolit. Klikkaa mitä tahansa symbolia, niin se kopioituu heti.",
+  "breadcrumb": "Sydänsymbolit",
+  "hero_h1": "Sydänsymbolit ja sydän-emojit",
+  "hero_tagline": "Kokoelma sydän-emojeja, Unicoden sydänmerkkejä ja rakkauteen liittyviä symboleja. Klikkaa mitä tahansa symbolia kopioidaksesi sen heti.",
+  "intro": "Tästä kirjastosta löydät sydän-emojit kaikissa saatavilla olevissa väreissä, eri tyylisiä Unicoden sydänmerkkejä, rakkautta ja hellyyttä kuvaavia emojeja sekä muita aiheeseen liittyviä symboleja. Etsitpä sitten sydänmerkkiä, sydän-merkkiä vai sydänhymiötä, ne on ryhmitelty alle värin, tyylin ja merkkityypin mukaan.",
+  "sections": [
+    {
+      "id": "pride-rainbow-hearts",
+      "label": "Pride ja sateenkaari",
+      "h2": "Pride- ja sateenkaarisydämet",
+      "intro": "Sateenkaari ja värilliset sydämet siinä järjestyksessä, jota käytetään yleisesti Pride-, tuki- ja yhdenvertaisuuspostauksissa. Kopioi yksitellen tai koko rivinä.",
+      "symbols": [
+        {
+          "char": "🌈",
+          "label": "Sateenkaari"
+        },
+        {
+          "char": "❤",
+          "label": "Punainen"
+        },
+        {
+          "char": "🧡",
+          "label": "Oranssi"
+        },
+        {
+          "char": "💛",
+          "label": "Keltainen"
+        },
+        {
+          "char": "💚",
+          "label": "Vihreä"
+        },
+        {
+          "char": "💙",
+          "label": "Sininen"
+        },
+        {
+          "char": "💜",
+          "label": "Violetti"
+        },
+        {
+          "char": "🤎",
+          "label": "Ruskea"
+        },
+        {
+          "char": "🖤",
+          "label": "Musta"
+        },
+        {
+          "char": "🤍",
+          "label": "Valkoinen"
+        }
+      ]
+    },
+    {
+      "id": "color-hearts",
+      "label": "Värilliset sydämet",
+      "h2": "Värilliset sydän-emojit",
+      "symbols": [
+        {
+          "char": "❤",
+          "label": "Punainen"
+        },
+        {
+          "char": "🧡",
+          "label": "Oranssi"
+        },
+        {
+          "char": "💛",
+          "label": "Keltainen"
+        },
+        {
+          "char": "💚",
+          "label": "Vihreä"
+        },
+        {
+          "char": "💙",
+          "label": "Sininen"
+        },
+        {
+          "char": "💜",
+          "label": "Violetti"
+        },
+        {
+          "char": "🖤",
+          "label": "Musta"
+        },
+        {
+          "char": "🤍",
+          "label": "Valkoinen"
+        },
+        {
+          "char": "🤎",
+          "label": "Ruskea"
+        },
+        {
+          "char": "🩷",
+          "label": "Vaaleanpunainen"
+        },
+        {
+          "char": "🩵",
+          "label": "Vaaleansininen"
+        },
+        {
+          "char": "🩶",
+          "label": "Harmaa"
+        },
+        {
+          "char": "❤️",
+          "label": "Punainen (emoji)"
+        },
+        {
+          "char": "♥️",
+          "label": "Hertta (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "decorated-hearts",
+      "label": "Koristellut sydämet",
+      "h2": "Koristellut sydän-emojit",
+      "symbols": [
+        {
+          "char": "💕",
+          "label": "Kaksi sydäntä"
+        },
+        {
+          "char": "💞",
+          "label": "Pyörivät sydämet"
+        },
+        {
+          "char": "💓",
+          "label": "Sykkivä sydän"
+        },
+        {
+          "char": "💗",
+          "label": "Kasvava sydän"
+        },
+        {
+          "char": "💖",
+          "label": "Kimalteleva sydän"
+        },
+        {
+          "char": "💘",
+          "label": "Nuolen lävistämä sydän"
+        },
+        {
+          "char": "💝",
+          "label": "Sydän rusetilla"
+        },
+        {
+          "char": "💟",
+          "label": "Sydänkoriste"
+        },
+        {
+          "char": "❣",
+          "label": "Sydän-huutomerkki"
+        },
+        {
+          "char": "❤️‍🔥",
+          "label": "Liekehtivä sydän"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Paikattu sydän"
+        }
+      ]
+    },
+    {
+      "id": "special-hearts",
+      "label": "Erikoissydämet",
+      "h2": "Särkynyt sydän ja muut erikoissydämet",
+      "symbols": [
+        {
+          "char": "💔",
+          "label": "Särkynyt sydän"
+        }
+      ]
+    },
+    {
+      "id": "love-affection",
+      "label": "Rakkaus ja hellyys",
+      "h2": "Rakkauden ja hellyyden emojit",
+      "symbols": [
+        {
+          "char": "💌",
+          "label": "Rakkauskirje"
+        },
+        {
+          "char": "💑",
+          "label": "Pariskunta ja sydän"
+        },
+        {
+          "char": "❣️",
+          "label": "Sydän-huutomerkki"
+        },
+        {
+          "char": "😻",
+          "label": "Sydänsilmäinen kissa"
+        },
+        {
+          "char": "💋",
+          "label": "Suukon jälki"
+        },
+        {
+          "char": "🫶",
+          "label": "Sydänkädet"
+        },
+        {
+          "char": "💏",
+          "label": "Suudelma"
+        },
+        {
+          "char": "💒",
+          "label": "Häät"
+        },
+        {
+          "char": "😍",
+          "label": "Sydänsilmät"
+        },
+        {
+          "char": "🥰",
+          "label": "Hymy ja sydämet"
+        },
+        {
+          "char": "😘",
+          "label": "Lentosuukko"
+        }
+      ]
+    },
+    {
+      "id": "unicode-hearts",
+      "label": "Unicode-sydämet",
+      "h2": "Unicoden sydänmerkit",
+      "symbols": [
+        {
+          "char": "♥",
+          "label": "Musta hertta"
+        },
+        {
+          "char": "♡",
+          "label": "Valkoinen hertta"
+        },
+        {
+          "char": "❥",
+          "label": "Kallistettu sydän"
+        },
+        {
+          "char": "❦",
+          "label": "Kukkasydän"
+        },
+        {
+          "char": "❧",
+          "label": "Kallistettu kukkasydän"
+        },
+        {
+          "char": "☙",
+          "label": "Käännetty kukkasydän"
+        },
+        {
+          "char": "🫀",
+          "label": "Anatominen sydän"
+        }
+      ]
+    },
+    {
+      "id": "valentines-day-symbols",
+      "label": "Ystävänpäivä",
+      "h2": "Ystävänpäivän symbolit",
+      "symbols": [
+        {
+          "char": "❣",
+          "label": "Paksu sydän-huutomerkki"
+        },
+        {
+          "char": "❤",
+          "label": "Paksu musta sydän"
+        },
+        {
+          "char": "💐",
+          "label": "Kukkakimppu"
+        },
+        {
+          "char": "🌹",
+          "label": "Ruusu"
+        },
+        {
+          "char": "💘",
+          "label": "Nuolen lävistämä sydän"
+        },
+        {
+          "char": "💝",
+          "label": "Sydän rusetilla"
+        },
+        {
+          "char": "💌",
+          "label": "Rakkauskirje"
+        },
+        {
+          "char": "💞",
+          "label": "Pyörivät sydämet"
+        },
+        {
+          "char": "💕",
+          "label": "Kaksi sydäntä"
+        },
+        {
+          "char": "🍫",
+          "label": "Suklaapatukka"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "heart-collections",
+    "label": "Sydänkokoelmat",
+    "h2": "Sydänsarjat bioon ja reunuksiksi",
+    "intro": "Valmiit sydänrivit, jotka voit liittää suoraan bioon, kuvatekstiin tai käyttäjänimeen: kopioi koko yhdistelmä yhdellä klikkauksella. Jos tarvitset pitkän jonon, esimerkiksi 1000 ❤️ peräkkäin, tekstin toistogeneraattori tekee sen yhdellä napautuksella."
+  },
+  "collection_container_id": "heartCollectionsContainer",
+  "collections": [
+    {
+      "name": "Sateenkaarisydänten rivi",
+      "flags": [
+        "❤",
+        "🧡",
+        "💛",
+        "💚",
+        "💙",
+        "💜"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pehmeä sydänreunus",
+      "flags": [
+        "⋆｡˚♡˚｡⋆"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pastellisydänten kolmikko",
+      "flags": [
+        "🩷",
+        "🤍",
+        "🩵"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Valkoinen sydänjono bioon",
+      "flags": [
+        "♡",
+        "˚",
+        "♡",
+        "˚",
+        "♡"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kimalteleva rakkausyhdistelmä",
+      "flags": [
+        "💕",
+        "˖",
+        "💖",
+        "˖",
+        "💞"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kukkasydänerotin",
+      "flags": [
+        "❦",
+        "˚",
+        "｡",
+        "♡",
+        "｡",
+        "˚",
+        "❧"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Sydänsarjat bioon ja reunuksiksi",
+      "paragraphs": [
+        "Valmiit sydänrivit, jotka voit liittää suoraan bioon, kuvatekstiin tai käyttäjänimeen: kopioi koko yhdistelmä yhdellä klikkauksella. Jos tarvitset pitkän jonon, esimerkiksi 1000 ❤️ peräkkäin, <a href=\"/usecase/repeat-text/\">tekstin toistogeneraattori</a> tekee sen yhdellä napautuksella."
+      ]
+    }
+  ],
+  "faq_h2": "Sydänsymbolien ja sydän-emojien merkitykset",
+  "faq": [
+    {
+      "q": "Mitä sydänten eri värit tarkoittavat?",
+      "a": "Väri on tärkein asia, joka erottaa sydän-emojit toisistaan, ja useimmille väreille on vakiintunut yhteinen merkitys: ❤️ punainen on klassinen romanttinen rakkaus; 🧡 oranssi on lämpöä ja välittämistä ilman romantiikkaa; 💛 keltainen tarkoittaa ystävyyttä ja iloa; 💚 vihreä kattaa luonnon, terveyden ja vanhassa sanonnassa kateuden; 💙 sininen on luottamusta, uskollisuutta ja platonista kiintymystä; 💜 violetti kantaa myötätuntoa ja miljoonille K-pop-faneille fanirakkautta; 🖤 musta on mustaa huumoria, surua tai goottiestetiikkaa eikä vihaa; 🤍 valkoinen on puhtautta, rauhaa ja minimalistista estetiikkaa; 🤎 ruskea on maanläheinen ja lohdullinen; ja vaaleanpunaisten sydänten perhe (💗 💓 💕) tarkoittaa suloista, kasvavaa kiintymystä. Mikään näistä ei ole Unicoden määrittelemää: kyse on käytännöstä, joka vaihtelee alustan, ikäryhmän ja maan mukaan."
+    },
+    {
+      "q": "Mitä keltainen sydän 💛 tarkoittaa?",
+      "a": "💛 on ystävyyden sydän. Arkikäytössä se viestii platonista kiintymystä, lämpöä ja iloa: sen sydämen lähetät ystävälle etkä kumppanille. Snapchatissa sillä on lisäksi oma, tarkka merkityksensä: keltainen sydän nimen vieressä tarkoittaa, että sinä ja kyseinen henkilö olette tällä hetkellä toistenne #1 parhaat ystävät. Se on Snapchatin oma järjestelmä eikä yleinen merkitys. Koko eteneminen selviää Snapchatin sydänvärien erittelystä."
+    },
+    {
+      "q": "Mitä violetti sydän 💜 tarkoittaa?",
+      "a": "💜:llä on kolme yleistä tulkintaa. Yleisesti se tarkoittaa myötätuntoa, ihailua ja jotain hieman hellää tai mystistä. Yhdysvalloissa se viittaa myös Purple Heart -kunniamerkkiin, joka myönnetään taistelussa haavoittuneille sotilaille, joten sitä näkee veteraani- ja muistopostauksissa. K-popissa se on fanien sydän: BTS:n V keksi vuonna 2016 ilmauksen ”I purple you”, joka tarkoittaa toiseen luottamista ja tämän rakastamista pitkään, ja väri on siitä lähtien ollut sen lyhenne."
+    },
+    {
+      "q": "Mitä musta sydän 🖤 tarkoittaa?",
+      "a": "🖤 on paljon useammin mustaa huumoria, kuivaa sarkasmia tai gootti- ja grunge-estetiikkaa kuin mitään vihamielistä. Sitä käytetään laajasti myös surun ja muistamisen merkkinä sekä yksinkertaisesti sydämenä, joka sopii mustavalkoiseen tai minimalistiseen syötteeseen. Tulkitse se asiayhteydestä: vitsin vieressä se on yleensä ironiaa, muistoviestin vieressä yleensä menetystä."
+    },
+    {
+      "q": "Mitä vihreä sydän 💚 tarkoittaa?",
+      "a": "💚 kattaa luonnon, kasvun, terveyden ja ympäristöaiheet: se on vakiosydän kaikelle kasvipohjaiselle, vegaaniselle ja kestävään kehitykseen liittyvälle. Se on myös kateuden perinteinen väri (ollaan ”vihreänä kateudesta”), mutta verkossa tämä tulkinta on paljon harvinaisempi kuin luontomerkitys. Urheilussa ja kansallisissa yhteyksissä se usein vain vastaa joukkueen tai lipun värejä."
+    },
+    {
+      "q": "Tarkoittavatko sydänten värit samaa kaikissa sovelluksissa?",
+      "a": "Eivät, ja tämä on yleisin hämmennyksen aihe. Yleiset värimerkitykset pätevät tavallisissa keskusteluissa ja kuvateksteissä useimmilla alustoilla. Snapchat on suuri poikkeus: siellä ystävän nimen vieressä näkyvät sydämet luo Snapchat itse, ja ne kertovat, kuinka kauan olette olleet toistenne #1 parhaat ystävät, joten 💛 on siellä tilailmaisin eikä jotain, minkä toinen olisi lähettänyt sinulle. Myös ulkoasu vaihtelee: Apple, Google, Samsung ja Microsoft piirtävät saman koodipisteen eri tavoin, joten sydän voi näyttää vastaanottajan näytöllä selvästi erilaiselta."
+    },
+    {
+      "q": "Mitä eroa on sydän-emojilla (💕) ja tekstisydämellä (♥)?",
+      "a": "💕 💖 ❤️ ovat emojeja: ne näkyvät suurina ja kiinteän värisinä kaikilla laitteilla, joten ne erottuvat. ♥ ♡ ❥ ❦ ovat Unicoden tekstimerkkejä: ne saavat saman värin ja koon kuin ympäröivä teksti, mikä tekee niistä hienovaraisemman valinnan bioon, käyttäjänimeen tai näyttönimeen. Molemmat ovat oikeita merkkejä eivätkä kuvia, joten molemmat voi kopioida ja liittää kaikkialle, missä tavallinen teksti kelpaa."
+    },
+    {
+      "q": "Miksi sydän näkyy laatikkona (□) tai kysymysmerkkinä?",
+      "a": "Kyse on puuttuvasta merkkikuvasta, jota kutsutaan usein tofuksi. Tekstisi vastaanottavalla laitteella ei ole fonttia, joka kattaisi kyseisen merkin, joten se piirtää tilalle laatikon. Uudemmat tai harvinaisemmat sydämet (🩷 🩵 🩶, lisätty Unicode 15:ssä) jäävät todennäköisimmin näkymättä vanhoissa puhelimissa ja työpöytäsovelluksissa. Jos on tärkeää, että kaikki näkevät sen, käytä sen sijaan pitkään käytössä ollutta sydäntä, kuten ♥ ❤️ 💕."
+    },
+    {
+      "q": "Miten kirjoitan sydämen kopioimatta sitä?",
+      "a": "Windowsissa pidä Alt pohjassa ja näppäile 3 numeronäppäimistöllä, niin saat merkin ♥, tai avaa emojivalitsin painamalla Windows + . (piste). Macillä avaa emoji- ja symbolinäkymä painamalla Ctrl + Cmd + välilyönti. iPhonessa ja Androidissa ota käyttöön emojinäppäimistö ja hae sanalla ”sydän”. Kopioiminen tältä sivulta on yleensä nopeampaa, ja harvinaisemmille tekstisydämille, kuten ❥ ja ❦, se on ainoa luotettava tapa."
+    },
+    {
+      "q": "Saako näitä sydänsymboleja käyttää vapaasti?",
+      "a": "Kyllä. Nämä ovat tavallisia Unicode-merkkejä eivätkä kuvia tai fontteja, joten mitään ei tarvitse lisensoida eikä lähdettä mainita: käytä niitä vapaasti bioissa, julkaisuissa, nimissä, asiakirjoissa ja kaupallisissa töissä. Se, miltä merkki kullakin alustalla näyttää, on kyseisen valmistajan omaa grafiikkaa, mutta kopioimasi merkki on yleismaailmallinen."
+    }
+  ],
+  "related": [
+    {
+      "href": "/usecase/aesthetic-contact-names/",
+      "title": "Esteettiset yhteystietojen nimet",
+      "desc": "Muotoile rakkaallesi sydämillä kehystetty yhteystiedon nimi ja kopioi se suoraan puhelimeesi."
+    },
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Tukinauhojen symbolit",
+      "desc": "Nauhaemojit ja tukinauhasymbolit useissa väreissä ja tyyleissä."
+    },
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Korttimaiden symbolit",
+      "desc": "Pelikorttien maasymbolit, mukaan lukien klassinen ♥-herttamerkki."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Käsisymbolien kokoelma",
+      "desc": "Käsieleiden emojit ja Unicoden käsisymbolit, mukaan lukien sydänkädet ja yhteen liitetyt kädet."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Tähtimerkkien kokoelma",
+      "desc": "Tähti-emojit ja kimallemerkit eri Unicode-tyyleissä ja -kokoisina."
+    },
+    {
+      "href": "/symbol/autism-symbol/",
+      "title": "Autismin symboli",
+      "desc": "Äärettömyyden merkki (∞ ♾️), jota autistit itse käyttävät autismin ja neurokirjon symbolina, ja miksi se korvasi palapelin palan 🧩."
+    },
+    {
+      "href": "/symbol/heart-symbol/",
+      "title": "Sydänmerkki",
+      "desc": "Sydänmerkki (♥ ❤) on korttimaan kuvio, josta tuli rakkauden yleismaailmallinen merkki, ja lisäksi sen emojiversiot ja <3-tekstisydän."
+    },
+    {
+      "href": "/events/fathers-day/",
+      "title": "Isänpäivän teksti- ja symboligeneraattori",
+      "desc": "Muotoile isänpäivätervehdys reaaliajassa ja kopioi siihen sopivat fontit, emojit, kaomojit ja valmiit fraasit."
+    },
+    {
+      "href": "/events/mothers-day/",
+      "title": "Äitienpäivän teksti- ja symboligeneraattori",
+      "desc": "Muotoile äitienpäivätervehdys reaaliajassa ja kopioi siihen sopivat fontit, emojit, kaomojit ja valmiit fraasit."
+    },
+    {
+      "href": "/events/valentines-day/",
+      "title": "Ystävänpäivän teksti- ja symboligeneraattori",
+      "desc": "Muotoile ystävänpäivätervehdys reaaliajassa ja kopioi siihen sopivat fontit, emojit, kaomojit ja valmiit fraasit."
+    },
+    {
+      "href": "/library/love-kaomoji/",
+      "title": "Rakkaus- ja sydänkaomojit",
+      "desc": "Kopioi ja liitä rakkaus- ja sydänkaomojit: söpöt japanilaiset tekstinaamat ihastuksille, suukoille ja haleille."
+    },
+    {
+      "href": "/library/heart-kaomoji/",
+      "title": "Sydänkaomojit",
+      "desc": "Kopioi ja liitä sydänkaomojit: söpöt japanilaiset tekstinaamat, joissa on sydämiä ja sydänsilmiä."
+    },
+    {
+      "href": "/library/heart-ascii-art/",
+      "title": "Sydän-ASCII-taide",
+      "desc": "Alkuperäisiä sydänkuvia, jotka on piirretty kokonaan tavallisella tekstillä: yksirivisiä sydämiä, pieniä sydämiä ja suuria monirivisiä teoksia."
+    }
+  ],
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/fi/library/sydan-symboli/",
+  "date_published": "2026-11-26",
+  "date_modified": "2026-11-26",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/heart-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/heart-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/herz-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/simbolos-de-corazon/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-coeur/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-love/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-cuore/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/heart-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hateu-giho/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-serca/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-coracao/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/serdechki/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/kalp-sembolleri/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/hartjes/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/hjarta-symboler/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-trai-tim/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/hjerte-symboler/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/heart-symbols/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/aixin-fuhao/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/hjertesymboler/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/library/srdicka/"
+    },
+    {
+      "lang": "sk",
+      "href": "https://ultratextgen.com/sk/library/srdiecka/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/library/sziv-szimbolum/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/library/simbol-inima/"
+    },
+    {
+      "lang": "fi",
+      "href": "https://ultratextgen.com/fi/library/sydan-symboli/"
+    },
+    {
+      "lang": "uk",
+      "href": "https://ultratextgen.com/uk/library/serdechka/"
+    },
+    {
+      "lang": "hi",
+      "href": "https://ultratextgen.com/hi/library/heart-symbols/"
+    },
+    {
+      "lang": "tl",
+      "href": "https://ultratextgen.com/tl/library/heart-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/heart-symbols/"
+    }
+  ]
+}
