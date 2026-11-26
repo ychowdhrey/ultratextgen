@@ -291,7 +291,7 @@ LOCALE_UI_STRINGS = {
     # Dutch label instead (matches the hand-written labels already on /nl/).
     "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_body": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes. Gratis en direct.", "cta_btn": "Open de tekstgenerator →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
     "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_body": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
-    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_body": "UltraTextGenillä muunnat tavallisen tekstin lihavoiduksi, kursivoiduksi, kaunokirjoitukseksi ja yli sadaksi muuksi Unicode-fonttityyliksi — ilmaiseksi ja heti.", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
+    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_body": "UltraTextGenillä muunnat tavallisen tekstin lihavoiduksi, kursivoiduksi, kaunokirjoitukseksi ja yli sadaksi muuksi Unicode-fonttityyliksi, ilmaiseksi ja heti.", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
     # Values below match the chrome already used by these locales' hand-authored
     # library pages (breadcrumbs, "related" label, copy aria-label, CTA button),
     # so generated and hand-authored pages read the same inside one locale.
@@ -319,6 +319,23 @@ LOCALE_UI_STRINGS = {
     # renderer's bold/script/gothic styles change only A-Z and 0-9, and
     # Kazakh Cyrillic letters pass through unchanged.
     "kk": {"copy": "Көшіру", "copyAria": "{copy}: {label}", "related": "Ұқсас беттер", "cta_h3": "Мәтінді Unicode қаріптерімен өзгертіңіз", "cta_body": "UltraTextGen латын әріптері мен цифрларды жуан, курсив, жазба және 100-ден астам басқа Unicode стиліне айналдырады. Тегін әрі лезде.", "cta_btn": "Мәтін стильдерін ашу →", "home": "Басты бет", "symbols": "Белгілер", "library": "Кітапхана"},
+    # Rule B exception cohort (2026-11-26): cs, sk, hu, ro, hr, uk, da, no, ms, hi, tl had no entry, so a generated
+    # page there would fall back to English chrome. Every value is harvested from that locale's own live pages
+    # (file:line kept with the batch record); none is authored here. sk cta_body and tl related are assembled from
+    # attested fragments. copyAria takes a colon where the verb governs a case a nominative tile label cannot take
+    # (cs, sk, hr, uk, as pl and kk); hi puts the object first; tl needs the 'ang' marker. no 'library' is
+    # "Symboler" because every /no/library/ breadcrumb reads that.
+    "cs": {"copy": "Kopírovat", "copyAria": "{copy}: {label}", "related": "Související stránky", "cta_h3": "Vytvoř ozdobné písmo", "cta_body": "Převeď obyčejný text do 100+ Unicode fontů. Zdarma a hned.", "cta_btn": "Otevřít generátor písma →", "home": "Domů", "symbols": "Symboly", "library": "Knihovna"},
+    "sk": {"copy": "Kopírovať", "copyAria": "{copy}: {label}", "related": "Súvisiace stránky", "cta_h3": "Vytvor ozdobné písmo", "cta_body": "Preveď obyčajný text na tučné písmo, kurzívu, gotiku a ďalšie štýly Unicode. Celé je to zadarmo.", "cta_btn": "Otvoriť generátor písma →", "home": "Domov", "symbols": "Symboly", "library": "Knižnica"},
+    "hu": {"copy": "Másolás", "related": "Kapcsolódó Oldalak", "cta_h3": "Készíts stílusos szöveget & betűket", "cta_body": "Alakítsd a hétköznapi szöveget 100+ menő Unicode betűstílussá, ingyen és azonnal.", "cta_btn": "Betűtípus Generátor megnyitása →", "home": "Kezdőlap", "symbols": "Szimbólumok", "library": "Könyvtár"},
+    "ro": {"copy": "Copiază", "related": "Pagini Conexe", "cta_h3": "Fă litere & fonturi frumoase", "cta_body": "Transformă textul obișnuit în peste 100 de stiluri de font Unicode — gratis și instant.", "cta_btn": "Deschide Generatorul de Litere →", "home": "Acasă", "symbols": "Simboluri", "library": "Bibliotecă"},
+    "hr": {"copy": "Kopiraj", "copyAria": "{copy}: {label}", "related": "Povezane stranice", "cta_h3": "Napravi estetska slova i fontove", "cta_body": "Pretvori obični tekst u 100+ kul Unicode stilova fonta, besplatno i u trenu.", "cta_btn": "Otvori Generator Slova →", "home": "Početna", "symbols": "Simboli", "library": "Biblioteka"},
+    "uk": {"copy": "Копіювати", "copyAria": "{copy}: {label}", "related": "Схожі сторінки", "cta_h3": "Перетвори текст на шрифти Unicode", "cta_body": "Генератор шрифтів робить з латинських літер і цифр жирний, рукописний, готичний та ще понад 100 стилів Unicode, безкоштовно й одразу.", "cta_btn": "Відкрити генератор шрифтів →", "home": "Головна", "symbols": "Символи", "library": "Бібліотека"},
+    "da": {"copy": "Kopiér", "related": "Relaterede sider", "cta_h3": "Omdan tekst med Unicode-skrifttyper", "cta_body": "Brug UltraTextGen til at omdanne almindelig tekst til fed, kursiv, script og 100+ andre Unicode-skrifttyper: gratis og med det samme.", "cta_btn": "Åbn UltraTextGen →", "home": "Hjem", "symbols": "Symboler", "library": "Bibliotek"},
+    "no": {"copy": "Kopier", "related": "Relaterte sider", "cta_h3": "Gjør om tekst med Unicode-skrifttyper", "cta_body": "Bruk UltraTextGen til å gjøre om vanlig tekst til fet, kursiv og 100+ andre Unicode-skrifttyper: gratis og med en gang.", "cta_btn": "Åpne UltraTextGen →", "home": "Hjem", "symbols": "Symboler", "library": "Symboler"},
+    "ms": {"copy": "Salin", "related": "Halaman Berkaitan", "cta_h3": "Tukar teks dengan font Unicode", "cta_body": "Guna UltraTextGen untuk menukar teks biasa kepada tebal, condong, kursif dan 100+ gaya fon Unicode lain — percuma dan serta-merta.", "cta_btn": "Buka UltraTextGen →", "home": "Laman Utama", "symbols": "Simbol", "library": "Pustaka"},
+    "hi": {"copy": "कॉपी करें", "copyAria": "{label} {copy}", "related": "संबंधित पेज", "cta_h3": "और फॉन्ट स्टाइल चाहिए?", "cta_body": "UltraTextGen से किसी भी नाम को 100+ Unicode स्टाइल में बदलें — bold, कर्सिव, गॉथिक, बबल, small caps — फ्री और तुरंत।", "cta_btn": "UltraTextGen खोलें →", "home": "होम", "symbols": "सिंबल", "library": "लाइब्रेरी"},
+    "tl": {"copy": "Kopyahin", "copyAria": "{copy} ang {label}", "related": "Mga Kaugnay na Pahina", "cta_h3": "Gawing stylish ang text mo gamit ang Unicode fonts", "cta_body": "Gamitin ang UltraTextGen para gawing bold, italic, cursive, at 100+ pang Unicode font style ang ordinaryong text. Libre at agad-agad.", "cta_btn": "Buksan ang Font Generator →", "home": "Home", "symbols": "Mga Simbolo", "library": "Aklatan"},
     "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_body": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain. Gratis dan instan.", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
 }
 
@@ -343,6 +360,17 @@ LOCALE_FAQ_LABEL = {
     "sv": "Vanliga frågor",
     "id": "Pertanyaan Umum",
     "kk": "Жиі қойылатын сұрақтар",
+    "cs": "Časté dotazy",
+    "sk": "Najčastejšie otázky",
+    "hu": "GYIK",
+    "ro": "Întrebări frecvente",
+    "hr": "Najčešća pitanja",
+    "uk": "Часті запитання",
+    "da": "FAQ",
+    "no": "FAQ",
+    "ms": "Soalan Lazim",
+    "hi": "अक्सर पूछे जाने वाले प्रश्न",
+    "tl": "Mga Madalas Itanong",
 }
 
 # ---------------------------------------------------------------------------

@@ -133,7 +133,9 @@ function footerFor(urlPath) {
 }
 
 function urlPathFor(rel) {
-  const p = "/" + rel.replace(/index\.html$/, "");
+  // path.relative() returns backslashes on Windows; a URL path never has them, and
+  // without this every page there read as locale-less and baked the English footer.
+  const p = "/" + rel.split(path.sep).join("/").replace(/index\.html$/, "");
   return p.endsWith("/") ? p : p + "/";
 }
 

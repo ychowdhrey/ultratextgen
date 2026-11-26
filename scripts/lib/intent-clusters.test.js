@@ -615,6 +615,101 @@ console.log('K. Inapplicability is semantic, never demand');
   });
 }
 
+// ─── L ──────────────────────────────────────────────────────────────────────
+console.log('L. Rule B exception: one page in an existing Tier-3 locale (owner decision 2026-11-26)');
+{
+  const reg = require('./locale-parent-registry');
+  const FAMILY = {
+    'library/heart-symbols/': { lang: 'en', alts: [['cs', 'cs/library/srdicka/'], ['x-default', 'library/heart-symbols/']] },
+    'cs/library/srdicka/': { lang: 'cs', alts: [['en', 'library/heart-symbols/'], ['x-default', 'library/heart-symbols/']] },
+  };
+  const entry = (extra = {}) => Object.assign({
+    pattern: 'library/heart-symbols', scope: 'page', locale: 'cs', checkedDate: '2026-11-26',
+    verdict: 'rule-b-exception', targetEvidence: 'positive', scriptReadiness: 'ready',
+    ruleB: { languages: 9, window: '2026-08-25..2026-11-22' }, evidence: 'fixture',
+  }, extra);
+  const root = site(FAMILY, []);
+  const m = model(root);
+  const rel = 'cs/library/srdicka/index.html';
+  test('the tier is unchanged: decide() still says skip-stub-locale for cs', () => {
+    assert.strictEqual(decide('library/heart-symbols/index.html', 'cs').decision, 'skip-stub-locale');
+  });
+  test('no entry: fails as before (missing-ledger-entry)', () => {
+    assert.strictEqual(admit(m, rel).problem, 'missing-ledger-entry');
+  });
+  test('positive target-language evidence admits this one page', () => {
+    const v = admit(m, rel, [entry()]);
+    assert.strictEqual(v.status, 'pass', v.detail);
+    assert.strictEqual(v.authority, 'rule-b-exception');
+  });
+  test('the entry authorizes only its own page, not the family or the language', () => {
+    const v = admit(m, rel, [entry({ pattern: 'library/arrow-symbols' })]);
+    assert.strictEqual(v.problem, 'missing-ledger-entry');
+  });
+  test('negative target-language evidence never passes', () => {
+    const v = admit(m, rel, [entry({ targetEvidence: 'negative' })]);
+    assert.strictEqual(v.status, 'fail');
+    assert.strictEqual(v.problem, 'rule-b-evidence-mismatch');
+  });
+  test('an experiment needs an allowance and a recheck date, then passes', () => {
+    const bad = admit(m, rel, [entry({ verdict: 'rule-b-experiment', targetEvidence: 'insufficient' })]);
+    assert.strictEqual(bad.problem, 'rule-b-no-allowance');
+    const ok = admit(m, rel, [entry({ verdict: 'rule-b-experiment', targetEvidence: 'insufficient', experimentCohort: 'EXP-20261126', recheckDate: '2027-02-24' })]);
+    assert.strictEqual(ok.status, 'pass', ok.detail);
+  });
+  test('Rule A alone (fewer than five languages) is not Rule B', () => {
+    assert.strictEqual(admit(m, rel, [entry({ ruleB: { languages: 3 } })]).problem, 'rule-b-not-qualified');
+  });
+  test('an unresolved technical prerequisite stays blocked', () => {
+    assert.strictEqual(admit(m, rel, [entry({ scriptReadiness: 'prerequisite' })]).problem, 'rule-b-prerequisite');
+  });
+  test('a pattern with * is a language-wide authorization and is refused', () => {
+    const p = reg.validateRuleBEntries([entry({ pattern: 'library/*' })]);
+    assert.ok(p.some((x) => x.code === 'rule-b-not-page-scoped'));
+  });
+  test('a locale with no tier entry is a new-locale launch: owner decision, never the exception', () => {
+    const p = reg.validateRuleBEntries([entry({ locale: 'uz' })]);
+    assert.ok(p.some((x) => x.code === 'rule-b-new-locale'));
+  });
+  test('an experimental cohort over its allowance fails as a set', () => {
+    const cap = reg.ruleBPolicy.experimentalAllowances['EXP-20261126'].cap;
+    const many = Array.from({ length: cap + 1 }, (_, i) => entry({
+      pattern: `library/x-${i}`, verdict: 'rule-b-experiment', targetEvidence: 'insufficient', experimentCohort: 'EXP-20261126', recheckDate: '2027-02-24',
+    }));
+    assert.ok(reg.validateRuleBEntries(many).some((x) => x.code === 'rule-b-over-allowance'));
+    assert.deepStrictEqual(reg.validateRuleBEntries(many.slice(0, cap)), []);
+  });
+  test('a Latin-transform parent in a non-Latin locale stays blocked even with an entry', () => {
+    // category/* is registered script-independent today (owner flip 2026-08-15), so the
+    // per-script answer for cursive rides on the entry's scriptReadiness; the overlay
+    // still refuses any parent the registry marks Latin-dependent.
+    const r = Object.assign({}, decide('category/cursive-fonts/index.html', 'hi'));
+    r.parentInfo = { pattern: 'category/*', tier: 'core', scriptIndependent: false };
+    const out = reg.ruleBException('category/cursive-fonts/index.html', 'hi', r,
+      [entry({ pattern: 'category/cursive-fonts', locale: 'hi', scriptReadiness: 'ready-with-honest-copy' })]);
+    assert.strictEqual(out.code, 'rule-b-script-incompatible');
+    const cyr = reg.ruleBException('category/cursive-fonts/index.html', 'uk', decide('category/cursive-fonts/index.html', 'uk'),
+      [entry({ pattern: 'category/cursive-fonts', locale: 'uk', scriptReadiness: 'prerequisite' })]);
+    assert.strictEqual(cyr.code, 'rule-b-prerequisite');
+  });
+  test('an owner decision recorded for exactly this page admits it, and only it', () => {
+    const own = { pattern: 'library/heart-symbols', scope: 'page', locale: 'cs', verdict: 'gate-pass', checkedDate: '2026-11-26',
+      evidence: 'fixture', ownerDecision: { date: '2026-11-26', summary: 'build the cs library hub' } };
+    const v = admit(m, rel, [own]);
+    assert.strictEqual(v.status, 'pass', v.detail);
+    assert.strictEqual(v.authority, 'owner-page-decision');
+    assert.strictEqual(admit(m, rel, [Object.assign({}, own, { pattern: 'library/arrow-symbols' })]).problem, 'missing-ledger-entry');
+    const undated = Object.assign({}, own, { ownerDecision: { summary: 'x' } });
+    assert.strictEqual(admit(m, rel, [undated]).problem, 'missing-ledger-entry');
+    assert.strictEqual(admit(m, rel, [Object.assign({}, own, { scope: undefined })]).problem, 'missing-ledger-entry');
+  });
+  test('a Tier-1 locale never consults the exception (its own default applies)', () => {
+    const r = decide('library/heart-symbols/index.html', 'fr');
+    assert.strictEqual(reg.ruleBException('library/heart-symbols/index.html', 'fr', r, [entry({ locale: 'fr' })]).status, 'none');
+  });
+  cleanup(root);
+}
+
 console.log('');
 console.log(`${passes} passed, ${failures} failed`);
 process.exit(failures ? 1 : 0);

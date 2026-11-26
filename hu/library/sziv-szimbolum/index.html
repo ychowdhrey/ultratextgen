@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Szív szimbólum másoláshoz ♥ ♡ ❤ – szívecskék és szív emojik</title>
+<meta name="description" content="Szív szimbólumok és szívecskék másoláshoz: színes szív emojik, Unicode szívkarakterek (♥ ♡ ❥ ❦) és szerelmes jelek. Kattints bármelyik szimbólumra, és máris másolódik.">
+
+<link rel="canonical" href="https://ultratextgen.com/hu/library/sziv-szimbolum/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/heart-symbols/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/heart-symbols/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/herz-symbole/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/simbolos-de-corazon/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/library/symboles-coeur/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/simbol-love/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/library/simboli-cuore/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/library/heart-symbols/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/library/hateu-giho/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/library/symbole-serca/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/library/simbolos-de-coracao/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/serdechki/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/kalp-sembolleri/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/library/hartjes/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/library/hjarta-symboler/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/ki-tu-trai-tim/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/library/hjerte-symboler/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/library/heart-symbols/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/library/aixin-fuhao/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/library/hjertesymboler/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/library/srdicka/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/library/srdiecka/">
+<link rel="alternate" hreflang="hu" href="https://ultratextgen.com/hu/library/sziv-szimbolum/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/library/simbol-inima/">
+<link rel="alternate" hreflang="fi" href="https://ultratextgen.com/fi/library/sydan-symboli/">
+<link rel="alternate" hreflang="uk" href="https://ultratextgen.com/uk/library/serdechka/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/heart-symbols/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/hu-library-sziv-szimbolum.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Szív szimbólum másoláshoz ♥ ♡ ❤ – szívecskék és szív emojik">
+<meta name="twitter:description" content="Szív szimbólumok és szívecskék másoláshoz: színes szív emojik, Unicode szívkarakterek (♥ ♡ ❥ ❦) és szerelmes jelek. Kattints bármelyik szimbólumra, és máris másolódik.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/hu-library-sziv-szimbolum.png">
+<meta property="og:title" content="Szív szimbólum másoláshoz ♥ ♡ ❤ – szívecskék és szív emojik">
+<meta property="og:description" content="Szív szimbólumok és szívecskék másoláshoz: színes szív emojik, Unicode szívkarakterek (♥ ♡ ❥ ❦) és szerelmes jelek. Kattints bármelyik szimbólumra, és máris másolódik.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/hu/library/sziv-szimbolum/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Szív szimbólum másoláshoz ♥ ♡ ❤ – szívecskék és szív emojik",
+  "description": "Szív szimbólumok és szívecskék másoláshoz: színes szív emojik, Unicode szívkarakterek (♥ ♡ ❥ ❦) és szerelmes jelek. Kattints bármelyik szimbólumra, és máris másolódik.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/hu/library/sziv-szimbolum/",
+  "datePublished": "2026-11-26T00:00:00+00:00",
+  "dateModified": "2026-11-26T00:00:00+00:00"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://ultratextgen.com/hu/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Könyvtár",
+      "item": "https://ultratextgen.com/hu/library/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Szív szimbólum",
+      "item": "https://ultratextgen.com/hu/library/sziv-szimbolum/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mit jelentenek a különböző színű szívek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Egy szív emojit elsősorban a színe különböztet meg a többitől, és a legtöbb szín mára közös jelentést kapott: a ❤️ piros a klasszikus romantikus szerelem; a 🧡 narancssárga melegség és törődés romantika nélkül; a 💛 sárga barátságot és boldogságot jelez; a 💚 zöld a természetet, az egészséget és – az angol szólás szerint – a féltékenységet jelenti; a 💙 kék bizalom, hűség és plátói szeretet; a 💜 lila együttérzést hordoz, a K-pop rajongók millióinak pedig a rajongói szeretetet; a 🖤 fekete sötét humort, gyászt vagy goth esztétikát jelez, nem gyűlöletet; a 🤍 fehér tisztaság, béke és minimalista esztétika; a 🤎 barna földszínű és megnyugtató; a rózsaszín család (💗 💓 💕) pedig édes, egyre erősödő vonzalmat fejez ki. Ezek közül egyiket sem a Unicode határozza meg: szokásról van szó, amely platformonként, korosztályonként és országonként változik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit jelent a sárga szív 💛?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 💛 a barátság szíve. A hétköznapi használatban plátói szeretetet, melegséget és boldogságot jelez: ezt a szívet a barátodnak küldöd, nem a párodnak. A Snapchaten ezen felül külön, pontos jelentése is van: ha egy név mellett sárga szív áll, az azt jelenti, hogy jelenleg kölcsönösen egymás első számú legjobb barátai vagytok. Ez a Snapchat saját rendszere, nem az általános jelentés. A teljes sorrendet a Snapchat szívszíneiről szóló összefoglaló mutatja be."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit jelent a lila szív 💜?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 💜-nak három gyakori olvasata van. Általában együttérzést, csodálatot és valami gyengéd vagy misztikus érzést jelent. Az Egyesült Államokban a Purple Heart kitüntetésre is utal, amelyet a harcban megsebesült katonák kapnak, ezért veteránokról szóló és megemlékező posztokban is felbukkan. A K-popban pedig ez a rajongói szív: a BTS tagja, V 2016-ban alkotta meg az „I purple you” kifejezést, ami azt jelenti, hogy hosszú ideig bízol valakiben és szereted, és a szín azóta ennek a rövidítése."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit jelent a fekete szív 🖤?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 🖤 sokkal gyakrabban jelent sötét humort, szenvtelen szarkazmust vagy goth/grunge esztétikát, mint bármi gyűlölködőt. Széles körben használják gyász és megemlékezés kifejezésére is, és egyszerűen olyan szívként, amely illik egy fekete-fehér vagy minimalista profilhoz. A szövegkörnyezetből olvasd ki: egy vicc mellett többnyire irónia, egy megemlékezés mellett többnyire veszteség."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit jelent a zöld szív 💚?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 💚 a természetet, a növekedést, az egészséget és a környezetvédelmi témákat jelöli: ez az alapértelmezett szív mindenhez, ami növényi alapú, vegán vagy fenntarthatósággal kapcsolatos. Az angolban hagyományosan a féltékenység színe is (a „green-eyed monster”, vagyis a zöld szemű szörny), bár online ez az olvasat jóval ritkább, mint a természethez kötődő. Sport- és nemzeti témáknál gyakran egyszerűen a csapat vagy a zászló színéhez igazodik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Minden alkalmazásban ugyanazt jelentik a szívszínek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem, és ez a leggyakoribb félreértés forrása. Az általános színjelentések a legtöbb platformon érvényesek a hétköznapi csevegésben és a feliratokban. A nagy kivétel a Snapchat: ott a barátod neve mellett megjelenő szíveket maga a Snapchat hozza létre, és azt jelzik, mióta vagytok egymás első számú legjobb barátai, így ott a 💛 állapotjelző, nem olyasmi, amit a másik küldött neked. A megjelenítés is eltér: ugyanazt a kódpontot az Apple, a Google, a Samsung és a Microsoft másképp rajzolja meg, így egy szív a címzett képernyőjén érezhetően másként nézhet ki."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mi a különbség a szív emoji (💕) és a szöveges szív (♥) között?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 💕 💖 ❤️ emojik: minden eszközön nagyobb méretben és rögzített színnel jelennek meg, ezért kitűnnek. A ♥ ♡ ❥ ❦ Unicode szöveges karakterek: felveszik a körülöttük lévő szöveg színét és méretét, így visszafogottabb választást jelentenek a bióba, a felhasználónévbe vagy a megjelenített névbe. Mindkettő valódi karakter, nem kép, így mindkettő másolható és beilleszthető bárhová, ahol egyszerű szöveg elfogadott."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért jelenik meg egy szív négyzetként (□) vagy kérdőjelként?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ez egy hiányzó betűkép, amit gyakran „tofunak” hívnak. A szöveget fogadó eszközön nincs olyan betűtípus, amely tartalmazná az adott karaktert, ezért helyette egy helyőrző négyzetet rajzol. Az újabb vagy ritkább szívek (a Unicode 15-ben bekerült 🩷 🩵 🩶) jelennek meg a legnagyobb eséllyel hibásan régebbi telefonokon és asztali alkalmazásokban. Ha fontos, hogy mindenki lássa, inkább régóta létező szívet használj, például ♥ ❤️ 💕."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hogyan írok be szívet másolás nélkül?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Windowson tartsd lenyomva az Alt billentyűt, és a numerikus billentyűzeten üsd be a 3-at a ♥ jelhez, vagy nyomd meg a Windows + . billentyűket az emojiválasztó megnyitásához. Macen a Control + Command + Szóköz nyitja meg az emoji- és szimbólumnézegetőt. iPhone-on és Androidon add hozzá az emoji billentyűzetet, és keress rá a „szív” szóra. Erről az oldalról másolni általában gyorsabb, és a ritkább szöveges szíveknél, mint a ❥ és a ❦, ez az egyetlen megbízható út."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ingyen használhatók ezek a szív szimbólumok?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. Ezek szabványos Unicode karakterek, nem képek vagy betűtípusok, így nincs mit licencelni, és forrásmegjelölés sem kell: szabadon használhatod őket bióban, posztban, névben, dokumentumban és üzleti célú munkában is. Hogy egy platform hogyan rajzol meg egy adott karaktert, az a gyártó saját grafikája, de a karakter, amit kimásolsz, egyetemes."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<script src="/header.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Szív szimbólum gyűjtemény</h1>
+    <p class="hero-tagline">Szív emojik, Unicode szívkarakterek és szerelmes szimbólumok egy helyen. Kattints bármelyik szimbólumra az azonnali másoláshoz.</p>
+  </div>
+</section>
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/hu-library-sziv-szimbolum.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Ebben a gyűjteményben minden elérhető színben megtalálod a szív emojikat, különböző stílusú Unicode szívkaraktereket, szerelmes és kedveskedő emojikat, valamint a hozzájuk illő szimbólumokat. Szín, stílus és karaktertípus szerint rendezve.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="pride-rainbow-hearts">
+  <span class="article-section-label">Szivárványos szívek</span>
+  <h2>Pride és szivárványos szívek</h2>
+  <p class="u-secondary-tight">A szivárvány és utána a színes szívecskék sora, amelyet gyakran használnak pride-, támogató és befogadó posztokban. Másold egyenként, vagy használd egy sorban.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌈" aria-label="Másolás Szivárvány">🌈</button>
+      <span class="flag-label">Szivárvány</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤" aria-label="Másolás Piros">❤</button>
+      <span class="flag-label">Piros</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧡" aria-label="Másolás Narancssárga">🧡</button>
+      <span class="flag-label">Narancssárga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💛" aria-label="Másolás Sárga">💛</button>
+      <span class="flag-label">Sárga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💚" aria-label="Másolás Zöld">💚</button>
+      <span class="flag-label">Zöld</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💙" aria-label="Másolás Kék">💙</button>
+      <span class="flag-label">Kék</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💜" aria-label="Másolás Lila">💜</button>
+      <span class="flag-label">Lila</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤎" aria-label="Másolás Barna">🤎</button>
+      <span class="flag-label">Barna</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🖤" aria-label="Másolás Fekete">🖤</button>
+      <span class="flag-label">Fekete</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤍" aria-label="Másolás Fehér">🤍</button>
+      <span class="flag-label">Fehér</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="color-hearts">
+  <span class="article-section-label">Színes szívek</span>
+  <h2>Színes szív emojik</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤" aria-label="Másolás Piros">❤</button>
+      <span class="flag-label">Piros</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧡" aria-label="Másolás Narancssárga">🧡</button>
+      <span class="flag-label">Narancssárga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💛" aria-label="Másolás Sárga">💛</button>
+      <span class="flag-label">Sárga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💚" aria-label="Másolás Zöld">💚</button>
+      <span class="flag-label">Zöld</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💙" aria-label="Másolás Kék">💙</button>
+      <span class="flag-label">Kék</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💜" aria-label="Másolás Lila">💜</button>
+      <span class="flag-label">Lila</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🖤" aria-label="Másolás Fekete">🖤</button>
+      <span class="flag-label">Fekete</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤍" aria-label="Másolás Fehér">🤍</button>
+      <span class="flag-label">Fehér</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤎" aria-label="Másolás Barna">🤎</button>
+      <span class="flag-label">Barna</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🩷" aria-label="Másolás Rózsaszín">🩷</button>
+      <span class="flag-label">Rózsaszín</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🩵" aria-label="Másolás Világoskék">🩵</button>
+      <span class="flag-label">Világoskék</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🩶" aria-label="Másolás Szürke">🩶</button>
+      <span class="flag-label">Szürke</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤️" aria-label="Másolás Piros (emoji)">❤️</button>
+      <span class="flag-label">Piros (emoji)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♥️" aria-label="Másolás Kőr (emoji)">♥️</button>
+      <span class="flag-label">Kőr (emoji)</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="decorated-hearts">
+  <span class="article-section-label">Díszes szívek</span>
+  <h2>Díszes szív emojik</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💕" aria-label="Másolás Két szív">💕</button>
+      <span class="flag-label">Két szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💞" aria-label="Másolás Keringő szívek">💞</button>
+      <span class="flag-label">Keringő szívek</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💓" aria-label="Másolás Dobogó szív">💓</button>
+      <span class="flag-label">Dobogó szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💗" aria-label="Másolás Növekvő szív">💗</button>
+      <span class="flag-label">Növekvő szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💖" aria-label="Másolás Csillogó szív">💖</button>
+      <span class="flag-label">Csillogó szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💘" aria-label="Másolás Nyíllal átlőtt szív">💘</button>
+      <span class="flag-label">Nyíllal átlőtt szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💝" aria-label="Másolás Masnis szív">💝</button>
+      <span class="flag-label">Masnis szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💟" aria-label="Másolás Szív dísz">💟</button>
+      <span class="flag-label">Szív dísz</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❣" aria-label="Másolás Szív felkiáltójel">❣</button>
+      <span class="flag-label">Szív felkiáltójel</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤️‍🔥" aria-label="Másolás Lángoló szív">❤️‍🔥</button>
+      <span class="flag-label">Lángoló szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤️‍🩹" aria-label="Másolás Gyógyuló szív">❤️‍🩹</button>
+      <span class="flag-label">Gyógyuló szív</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="special-hearts">
+  <span class="article-section-label">Különleges szívek</span>
+  <h2>Összetört és különleges szívek</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💔" aria-label="Másolás Összetört szív">💔</button>
+      <span class="flag-label">Összetört szív</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="love-affection">
+  <span class="article-section-label">Szerelem &amp; kedvesség</span>
+  <h2>Szerelmes és kedveskedő emojik</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💌" aria-label="Másolás Szerelmes levél">💌</button>
+      <span class="flag-label">Szerelmes levél</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💑" aria-label="Másolás Pár szívvel">💑</button>
+      <span class="flag-label">Pár szívvel</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❣️" aria-label="Másolás Szív felkiáltójel">❣️</button>
+      <span class="flag-label">Szív felkiáltójel</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😻" aria-label="Másolás Szívszemű macska">😻</button>
+      <span class="flag-label">Szívszemű macska</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💋" aria-label="Másolás Csókjel">💋</button>
+      <span class="flag-label">Csókjel</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫶" aria-label="Másolás Szívet formáló kezek">🫶</button>
+      <span class="flag-label">Szívet formáló kezek</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💏" aria-label="Másolás Csók">💏</button>
+      <span class="flag-label">Csók</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💒" aria-label="Másolás Esküvő">💒</button>
+      <span class="flag-label">Esküvő</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😍" aria-label="Másolás Szívszemű arc">😍</button>
+      <span class="flag-label">Szívszemű arc</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥰" aria-label="Másolás Mosolygó arc szívekkel">🥰</button>
+      <span class="flag-label">Mosolygó arc szívekkel</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😘" aria-label="Másolás Puszit küldő arc">😘</button>
+      <span class="flag-label">Puszit küldő arc</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="unicode-hearts">
+  <span class="article-section-label">Unicode szívek</span>
+  <h2>Unicode szívkarakterek</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♥" aria-label="Másolás Teli kőr">♥</button>
+      <span class="flag-label">Teli kőr</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♡" aria-label="Másolás Üres kőr">♡</button>
+      <span class="flag-label">Üres kőr</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❥" aria-label="Másolás Elforgatott szív">❥</button>
+      <span class="flag-label">Elforgatott szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❦" aria-label="Másolás Virágos szív">❦</button>
+      <span class="flag-label">Virágos szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❧" aria-label="Másolás Elforgatott virágdísz">❧</button>
+      <span class="flag-label">Elforgatott virágdísz</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☙" aria-label="Másolás Fordított virágdísz">☙</button>
+      <span class="flag-label">Fordított virágdísz</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫀" aria-label="Másolás Anatómiai szív">🫀</button>
+      <span class="flag-label">Anatómiai szív</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="valentines-day-symbols">
+  <span class="article-section-label">Valentin-nap</span>
+  <h2>Valentin-napi szimbólumok</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❣" aria-label="Másolás Vastag szív felkiáltójel">❣</button>
+      <span class="flag-label">Vastag szív felkiáltójel</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❤" aria-label="Másolás Vastag szív">❤</button>
+      <span class="flag-label">Vastag szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💐" aria-label="Másolás Virágcsokor">💐</button>
+      <span class="flag-label">Virágcsokor</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌹" aria-label="Másolás Rózsa">🌹</button>
+      <span class="flag-label">Rózsa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💘" aria-label="Másolás Nyíllal átlőtt szív">💘</button>
+      <span class="flag-label">Nyíllal átlőtt szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💝" aria-label="Másolás Masnis szív">💝</button>
+      <span class="flag-label">Masnis szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💌" aria-label="Másolás Szerelmes levél">💌</button>
+      <span class="flag-label">Szerelmes levél</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💞" aria-label="Másolás Keringő szívek">💞</button>
+      <span class="flag-label">Keringő szívek</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💕" aria-label="Másolás Két szív">💕</button>
+      <span class="flag-label">Két szív</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🍫" aria-label="Másolás Csokoládé">🍫</button>
+      <span class="flag-label">Csokoládé</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="heart-collections">
+  <span class="article-section-label">Szív készletek</span>
+  <h2>Szív készletek bióhoz és kerethez</h2>
+  <p class="u-secondary-block">Kész szívsorok, amelyeket egyenesen a bióba, a feliratba vagy a felhasználónévbe illeszthetsz: másold ki az egész kombót egy kattintással. Ha inkább egy hosszú sort szeretnél, például 1000 ❤️-t egymás után, a szövegismétlő generátor egy koppintással elkészíti.</p>
+  <div id="heartCollectionsContainer">
+    <!-- BEGIN prerendered collections: generated by scripts/prerender-collection-grids.js, do not edit -->
+    <div class="mood-explainer flag-grid-section"><h3>Szivárványos szívsor</h3><div class="flag-grid-display">❤ 🧡 💛 💚 💙 💜</div><div class="format-selector"><div class="format-selector-label">Másolási formátum</div><div class="format-tabs"><button class="format-tab active" data-format="inline" data-group="0">Egy sorban</button><button class="format-tab" data-format="vertical" data-group="0">Függőlegesen</button><button class="format-tab" data-format="comma" data-group="0">Vesszővel</button><button class="format-tab" data-format="space" data-group="0">Szóközzel</button><button class="format-tab" data-format="bullet" data-group="0">Felsorolás</button></div></div><div class="format-preview" id="preview-0">❤ 🧡 💛 💚 💙 💜</div><button class="copy-collection-btn" id="copyBtn-0" data-group="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Gyűjtemény másolása</button></div>
+    <div class="mood-explainer flag-grid-section"><h3>Lágy szívkeret</h3><div class="flag-grid-display">⋆｡˚♡˚｡⋆</div><div class="format-selector"><div class="format-selector-label">Másolási formátum</div><div class="format-tabs"><button class="format-tab active" data-format="inline" data-group="1">Egy sorban</button><button class="format-tab" data-format="vertical" data-group="1">Függőlegesen</button><button class="format-tab" data-format="comma" data-group="1">Vesszővel</button><button class="format-tab" data-format="space" data-group="1">Szóközzel</button><button class="format-tab" data-format="bullet" data-group="1">Felsorolás</button></div></div><div class="format-preview" id="preview-1">⋆｡˚♡˚｡⋆</div><button class="copy-collection-btn" id="copyBtn-1" data-group="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Gyűjtemény másolása</button></div>
+    <div class="mood-explainer flag-grid-section"><h3>Pasztell szívtrió</h3><div class="flag-grid-display">🩷 🤍 🩵</div><div class="format-selector"><div class="format-selector-label">Másolási formátum</div><div class="format-tabs"><button class="format-tab active" data-format="inline" data-group="2">Egy sorban</button><button class="format-tab" data-format="vertical" data-group="2">Függőlegesen</button><button class="format-tab" data-format="comma" data-group="2">Vesszővel</button><button class="format-tab" data-format="space" data-group="2">Szóközzel</button><button class="format-tab" data-format="bullet" data-group="2">Felsorolás</button></div></div><div class="format-preview" id="preview-2">🩷 🤍 🩵</div><button class="copy-collection-btn" id="copyBtn-2" data-group="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Gyűjtemény másolása</button></div>
+    <div class="mood-explainer flag-grid-section"><h3>Fehér szíves bió-sor</h3><div class="flag-grid-display">♡ ˚ ♡ ˚ ♡</div><div class="format-selector"><div class="format-selector-label">Másolási formátum</div><div class="format-tabs"><button class="format-tab active" data-format="inline" data-group="3">Egy sorban</button><button class="format-tab" data-format="vertical" data-group="3">Függőlegesen</button><button class="format-tab" data-format="comma" data-group="3">Vesszővel</button><button class="format-tab" data-format="space" data-group="3">Szóközzel</button><button class="format-tab" data-format="bullet" data-group="3">Felsorolás</button></div></div><div class="format-preview" id="preview-3">♡ ˚ ♡ ˚ ♡</div><button class="copy-collection-btn" id="copyBtn-3" data-group="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Gyűjtemény másolása</button></div>
+    <div class="mood-explainer flag-grid-section"><h3>Csillogó szerelem kombó</h3><div class="flag-grid-display">💕 ˖ 💖 ˖ 💞</div><div class="format-selector"><div class="format-selector-label">Másolási formátum</div><div class="format-tabs"><button class="format-tab active" data-format="inline" data-group="4">Egy sorban</button><button class="format-tab" data-format="vertical" data-group="4">Függőlegesen</button><button class="format-tab" data-format="comma" data-group="4">Vesszővel</button><button class="format-tab" data-format="space" data-group="4">Szóközzel</button><button class="format-tab" data-format="bullet" data-group="4">Felsorolás</button></div></div><div class="format-preview" id="preview-4">💕 ˖ 💖 ˖ 💞</div><button class="copy-collection-btn" id="copyBtn-4" data-group="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Gyűjtemény másolása</button></div>
+    <div class="mood-explainer flag-grid-section"><h3>Virágos szív elválasztó</h3><div class="flag-grid-display">❦ ˚ ｡ ♡ ｡ ˚ ❧</div><div class="format-selector"><div class="format-selector-label">Másolási formátum</div><div class="format-tabs"><button class="format-tab active" data-format="inline" data-group="5">Egy sorban</button><button class="format-tab" data-format="vertical" data-group="5">Függőlegesen</button><button class="format-tab" data-format="comma" data-group="5">Vesszővel</button><button class="format-tab" data-format="space" data-group="5">Szóközzel</button><button class="format-tab" data-format="bullet" data-group="5">Felsorolás</button></div></div><div class="format-preview" id="preview-5">❦ ˚ ｡ ♡ ｡ ˚ ❧</div><button class="copy-collection-btn" id="copyBtn-5" data-group="5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Gyűjtemény másolása</button></div>
+    <!-- END prerendered collections -->
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <h2>Szív készletek bióhoz és kerethez</h2>
+  <div class="editorial-block">
+    <p>Kész szívsorok, amelyeket egyenesen a bióba, a feliratba vagy a felhasználónévbe illeszthetsz: másold ki az egész kombót egy kattintással. Ha inkább egy hosszú sort szeretnél, például 1000 ❤️-t egymás után, a <a href="/usecase/repeat-text/">szövegismétlő generátor</a> egy koppintással elkészíti.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section class="editorial-section" id="faq">
+  <span class="article-section-label">GYIK</span>
+  <h2>Szív szimbólumok és szív emojik jelentése</h2>
+  <details class="faq-item">
+    <summary class="faq-question">Mit jelentenek a különböző színű szívek?</summary>
+    <div class="faq-answer"><p>Egy szív emojit elsősorban a színe különböztet meg a többitől, és a legtöbb szín mára közös jelentést kapott: a ❤️ piros a klasszikus romantikus szerelem; a 🧡 narancssárga melegség és törődés romantika nélkül; a 💛 sárga barátságot és boldogságot jelez; a 💚 zöld a természetet, az egészséget és – az angol szólás szerint – a féltékenységet jelenti; a 💙 kék bizalom, hűség és plátói szeretet; a 💜 lila együttérzést hordoz, a K-pop rajongók millióinak pedig a rajongói szeretetet; a 🖤 fekete sötét humort, gyászt vagy goth esztétikát jelez, nem gyűlöletet; a 🤍 fehér tisztaság, béke és minimalista esztétika; a 🤎 barna földszínű és megnyugtató; a rózsaszín család (💗 💓 💕) pedig édes, egyre erősödő vonzalmat fejez ki. Ezek közül egyiket sem a Unicode határozza meg: szokásról van szó, amely platformonként, korosztályonként és országonként változik.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Mit jelent a sárga szív 💛?</summary>
+    <div class="faq-answer"><p>A 💛 a barátság szíve. A hétköznapi használatban plátói szeretetet, melegséget és boldogságot jelez: ezt a szívet a barátodnak küldöd, nem a párodnak. A Snapchaten ezen felül külön, pontos jelentése is van: ha egy név mellett sárga szív áll, az azt jelenti, hogy jelenleg kölcsönösen egymás első számú legjobb barátai vagytok. Ez a Snapchat saját rendszere, nem az általános jelentés. A teljes sorrendet a Snapchat szívszíneiről szóló összefoglaló mutatja be.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Mit jelent a lila szív 💜?</summary>
+    <div class="faq-answer"><p>A 💜-nak három gyakori olvasata van. Általában együttérzést, csodálatot és valami gyengéd vagy misztikus érzést jelent. Az Egyesült Államokban a Purple Heart kitüntetésre is utal, amelyet a harcban megsebesült katonák kapnak, ezért veteránokról szóló és megemlékező posztokban is felbukkan. A K-popban pedig ez a rajongói szív: a BTS tagja, V 2016-ban alkotta meg az „I purple you” kifejezést, ami azt jelenti, hogy hosszú ideig bízol valakiben és szereted, és a szín azóta ennek a rövidítése.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Mit jelent a fekete szív 🖤?</summary>
+    <div class="faq-answer"><p>A 🖤 sokkal gyakrabban jelent sötét humort, szenvtelen szarkazmust vagy goth/grunge esztétikát, mint bármi gyűlölködőt. Széles körben használják gyász és megemlékezés kifejezésére is, és egyszerűen olyan szívként, amely illik egy fekete-fehér vagy minimalista profilhoz. A szövegkörnyezetből olvasd ki: egy vicc mellett többnyire irónia, egy megemlékezés mellett többnyire veszteség.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Mit jelent a zöld szív 💚?</summary>
+    <div class="faq-answer"><p>A 💚 a természetet, a növekedést, az egészséget és a környezetvédelmi témákat jelöli: ez az alapértelmezett szív mindenhez, ami növényi alapú, vegán vagy fenntarthatósággal kapcsolatos. Az angolban hagyományosan a féltékenység színe is (a „green-eyed monster”, vagyis a zöld szemű szörny), bár online ez az olvasat jóval ritkább, mint a természethez kötődő. Sport- és nemzeti témáknál gyakran egyszerűen a csapat vagy a zászló színéhez igazodik.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Minden alkalmazásban ugyanazt jelentik a szívszínek?</summary>
+    <div class="faq-answer"><p>Nem, és ez a leggyakoribb félreértés forrása. Az általános színjelentések a legtöbb platformon érvényesek a hétköznapi csevegésben és a feliratokban. A nagy kivétel a Snapchat: ott a barátod neve mellett megjelenő szíveket maga a Snapchat hozza létre, és azt jelzik, mióta vagytok egymás első számú legjobb barátai, így ott a 💛 állapotjelző, nem olyasmi, amit a másik küldött neked. A megjelenítés is eltér: ugyanazt a kódpontot az Apple, a Google, a Samsung és a Microsoft másképp rajzolja meg, így egy szív a címzett képernyőjén érezhetően másként nézhet ki.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Mi a különbség a szív emoji (💕) és a szöveges szív (♥) között?</summary>
+    <div class="faq-answer"><p>A 💕 💖 ❤️ emojik: minden eszközön nagyobb méretben és rögzített színnel jelennek meg, ezért kitűnnek. A ♥ ♡ ❥ ❦ Unicode szöveges karakterek: felveszik a körülöttük lévő szöveg színét és méretét, így visszafogottabb választást jelentenek a bióba, a felhasználónévbe vagy a megjelenített névbe. Mindkettő valódi karakter, nem kép, így mindkettő másolható és beilleszthető bárhová, ahol egyszerű szöveg elfogadott.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Miért jelenik meg egy szív négyzetként (□) vagy kérdőjelként?</summary>
+    <div class="faq-answer"><p>Ez egy hiányzó betűkép, amit gyakran „tofunak” hívnak. A szöveget fogadó eszközön nincs olyan betűtípus, amely tartalmazná az adott karaktert, ezért helyette egy helyőrző négyzetet rajzol. Az újabb vagy ritkább szívek (a Unicode 15-ben bekerült 🩷 🩵 🩶) jelennek meg a legnagyobb eséllyel hibásan régebbi telefonokon és asztali alkalmazásokban. Ha fontos, hogy mindenki lássa, inkább régóta létező szívet használj, például ♥ ❤️ 💕.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Hogyan írok be szívet másolás nélkül?</summary>
+    <div class="faq-answer"><p>Windowson tartsd lenyomva az Alt billentyűt, és a numerikus billentyűzeten üsd be a 3-at a ♥ jelhez, vagy nyomd meg a Windows + . billentyűket az emojiválasztó megnyitásához. Macen a Control + Command + Szóköz nyitja meg az emoji- és szimbólumnézegetőt. iPhone-on és Androidon add hozzá az emoji billentyűzetet, és keress rá a „szív” szóra. Erről az oldalról másolni általában gyorsabb, és a ritkább szöveges szíveknél, mint a ❥ és a ❦, ez az egyetlen megbízható út.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Ingyen használhatók ezek a szív szimbólumok?</summary>
+    <div class="faq-answer"><p>Igen. Ezek szabványos Unicode karakterek, nem képek vagy betűtípusok, így nincs mit licencelni, és forrásmegjelölés sem kell: szabadon használhatod őket bióban, posztban, névben, dokumentumban és üzleti célú munkában is. Hogy egy platform hogyan rajzol meg egy adott karaktert, az a gyártó saját grafikája, de a karakter, amit kimásolsz, egyetemes.</p></div>
+  </details>
+</section>
+
+<!-- CTA -->
+<div class="cta-card">
+  <h3>Készíts stílusos szöveget &amp; betűket</h3>
+  <p>Alakítsd a hétköznapi szöveget 100+ menő Unicode betűstílussá, ingyen és azonnal.</p>
+  <a href="https://ultratextgen.com/hu/" class="cta-btn">Betűtípus Generátor megnyitása →</a>
+</div>
+
+<!-- RELATED -->
+<section class="editorial-section">
+  <span class="article-section-label">Kapcsolódó Oldalak</span>
+  <div class="compare-grid">
+    <a href="/usecase/aesthetic-contact-names/" class="compare-card variant-muted u-no-underline">
+      <h4>Esztétikus névjegynevek</h4>
+      <p>Formázz meg egy szívekkel keretezett nevet a kedvesednek, aztán másold egyenesen a telefonodba.</p>
+    </a>
+    <a href="/library/awareness-ribbons/" class="compare-card variant-muted u-no-underline">
+      <h4>Figyelemfelhívó szalag szimbólumok</h4>
+      <p>Szalag emojik és figyelemfelhívó szimbólumok többféle színben és stílusban.</p>
+    </a>
+    <a href="/library/card-suit-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Kártyaszín szimbólumok</h4>
+      <p>A francia kártya színeinek szimbólumai, köztük a klasszikus ♥ kőr karakter.</p>
+    </a>
+    <a href="/library/hand-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Kéz szimbólum gyűjtemény</h4>
+      <p>Kézmozdulat emojik és Unicode kéz szimbólumok, köztük a szívet formáló és az összetett kezek.</p>
+    </a>
+    <a href="/library/star-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Csillag szimbólum gyűjtemény</h4>
+      <p>Csillag emojik és csillogó karakterek különféle Unicode stílusokban és méretekben.</p>
+    </a>
+    <a href="/symbol/autism-symbol/" class="compare-card variant-muted u-no-underline">
+      <h4>Autizmus szimbólum</h4>
+      <p>A végtelen jel (∞ ♾️), amelyet az autista önérdek-érvényesítők az autizmus és a neurodiverzitás jelképeként használnak, és hogy miért váltotta fel a kirakósdarabot 🧩.</p>
+    </a>
+    <a href="/symbol/heart-symbol/" class="compare-card variant-muted u-no-underline">
+      <h4>Szív jel</h4>
+      <p>A szív jel (♥ ❤): kártyaszínből lett a szerelem egyetemes jelképe, mellette az emoji változatai és a &lt;3 szöveges szív.</p>
+    </a>
+    <a href="/events/fathers-day/" class="compare-card variant-muted u-no-underline">
+      <h4>Apák napi szöveg- és szimbólumgenerátor</h4>
+      <p>Formázd meg élőben az apák napi üdvözletet, aztán másolj hozzá illő betűtípusokat, emojikat, kaomojikat és kész mondatokat.</p>
+    </a>
+    <a href="/events/mothers-day/" class="compare-card variant-muted u-no-underline">
+      <h4>Anyák napi szöveg- és szimbólumgenerátor</h4>
+      <p>Formázd meg élőben az anyák napi üdvözletet, aztán másolj hozzá illő betűtípusokat, emojikat, kaomojikat és kész mondatokat.</p>
+    </a>
+    <a href="/events/valentines-day/" class="compare-card variant-muted u-no-underline">
+      <h4>Valentin-napi szöveg- és szimbólumgenerátor</h4>
+      <p>Formázd meg élőben a Valentin-napi üdvözletet, aztán másolj hozzá illő betűtípusokat, emojikat, kaomojikat és kész mondatokat.</p>
+    </a>
+    <a href="/library/love-kaomoji/" class="compare-card variant-muted u-no-underline">
+      <h4>Szerelmes és szíves kaomojik</h4>
+      <p>Szerelmes és szíves kaomojik másoláshoz: aranyos japán szövegarcok udvarláshoz, puszikhoz és ölelésekhez.</p>
+    </a>
+    <a href="/library/heart-kaomoji/" class="compare-card variant-muted u-no-underline">
+      <h4>Szíves kaomojik</h4>
+      <p>Szíves kaomojik másoláshoz: aranyos japán szövegarcok szívekkel és szívszemekkel.</p>
+    </a>
+    <a href="/library/heart-ascii-art/" class="compare-card variant-muted u-no-underline">
+      <h4>ASCII szívrajzok</h4>
+      <p>Eredeti szívrajzok kizárólag egyszerű szövegből: egysoros szívek, kis szívek és nagy, többsoros alkotások.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Felfedezés</span><a href="/hu/" class="footer-link">Kezdőlap</a><a href="/hu/guide/" class="footer-link">Útmutatók</a><a href="/answers/" class="footer-link">Válaszok</a><a href="/usecase/" class="footer-link">Felhasználások</a><a href="/category/" class="footer-link">Kategóriák</a><a href="/hu/library/" class="footer-link">Könyvtár</a><a href="/printables/" class="footer-link">Nyomtatható</a><a href="/events/" class="footer-link">Események</a></div><div class="footer-col"><span class="footer-col-title">Népszerű eszközök</span><a href="/usecase/bio-font/" class="footer-link">Bio betűtípus</a><a href="/usecase/tattoo-fonts/" class="footer-link">Tetoválás betűtípus</a><a href="/usecase/text-to-emoji/" class="footer-link">Emoji fordító</a><a href="/usecase/vertical-text/" class="footer-link">Függőleges szöveg</a></div><div class="footer-col"><span class="footer-col-title">Népszerű kategóriák</span><a href="/hu/felkover-szoveg/" class="footer-link">Félkövér Szöveg</a><a href="/hu/dolt-szoveg/" class="footer-link">Dőlt Szöveg</a><a href="/hu/gotikus-betuk/" class="footer-link">Gotikus Betűk</a><a href="/hu/apro-betuk/" class="footer-link">Apró Betűk</a><a href="/category/strikethrough-text/" class="footer-link">Áthúzott Szöveg</a></div><div class="footer-col"><span class="footer-col-title">Cég</span><a href="/about/" class="footer-link">Rólunk</a><a href="/privacy/" class="footer-link">Adatvédelmi irányelvek</a><a href="/terms/" class="footer-link">Felhasználási feltételek</a><a href="/contact/" class="footer-link">Kapcsolat</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Stílusos betűk, amik mindenhol működnek.</div>
+<!-- END static footer -->
+</div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Szivárványos szívsor",
+      flags: ["❤", "🧡", "💛", "💚", "💙", "💜"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Lágy szívkeret",
+      flags: ["⋆｡˚♡˚｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pasztell szívtrió",
+      flags: ["🩷", "🤍", "🩵"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Fehér szíves bió-sor",
+      flags: ["♡", "˚", "♡", "˚", "♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Csillogó szerelem kombó",
+      flags: ["💕", "˖", "💖", "˖", "💞"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Virágos szív elválasztó",
+      flags: ["❦", "˚", "｡", "♡", "｡", "˚", "❧"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("heartCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+<script src="/footer.js"></script>
+</body>
+</html>

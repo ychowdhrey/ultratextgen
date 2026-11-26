@@ -1,0 +1,1223 @@
+{
+  "lang": "hr",
+  "page_type": "library",
+  "slug": "strelice",
+  "copy_pattern": "single",
+  "title": "Strelice za kopiranje → ← ↑ ↓ – strelica simbol u svakom smjeru",
+  "meta_description": "Strelice i simboli strelica za kopiranje: ravne, zakrivljene, dvostruke, trokutaste i emoji strelice za dokumente, objave i oblikovanje teksta.",
+  "canonical": "https://ultratextgen.com/hr/library/strelice/",
+  "breadcrumb": "Strelice",
+  "hero_h1": "Strelice za kopiranje",
+  "hero_tagline": "Zbirka strelica za smjer: ravne, zakrivljene, dvostruke, trokutaste i emoji strelice. Klikni bilo koji simbol da ga odmah kopiraš.",
+  "intro": "Kopiraj strelice za dokumente, objave i oblikovanje teksta. Poredane su po stilu: od jednostavnih strelica za smjer do podebljanih, dvostrukih, zakrivljenih i emoji varijanti.",
+  "date_published": "2026-11-26",
+  "date_modified": "2026-11-26",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/arrow-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/pfeil-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/simbolos-de-flechas/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-fleches/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-panah/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/arrow-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hwasalpyo-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/setas/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-mui-ten/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/pijl-symbolen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ok-isaretleri/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/pil-symboler/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/pil-symboler/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/jiantou-fuhao/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-freccia/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-strzalek/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/strelki/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/arrow-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/pilsymboler/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/library/sipky/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/library/nyil-szimbolum/"
+    },
+    {
+      "lang": "fi",
+      "href": "https://ultratextgen.com/fi/library/nuoli-symboli/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/library/strelice/"
+    },
+    {
+      "lang": "uk",
+      "href": "https://ultratextgen.com/uk/library/strilky/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/arrow-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "simple-directional",
+      "label": "Osnovni smjerovi",
+      "h2": "Osnovne strelice za smjer",
+      "intro": "Klasične Unicode strelice u svih osam smjerova.",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Strelica desno"
+        },
+        {
+          "char": "←",
+          "label": "Strelica lijevo"
+        },
+        {
+          "char": "↑",
+          "label": "Strelica gore"
+        },
+        {
+          "char": "↓",
+          "label": "Strelica dolje"
+        },
+        {
+          "char": "↗",
+          "label": "Strelica gore desno"
+        },
+        {
+          "char": "↘",
+          "label": "Strelica dolje desno"
+        },
+        {
+          "char": "↙",
+          "label": "Strelica dolje lijevo"
+        },
+        {
+          "char": "↖",
+          "label": "Strelica gore lijevo"
+        },
+        {
+          "char": "↔",
+          "label": "Strelica lijevo-desno"
+        },
+        {
+          "char": "↕",
+          "label": "Strelica gore-dolje"
+        }
+      ]
+    },
+    {
+      "id": "bold-heavy",
+      "label": "Podebljane & debele",
+      "h2": "Podebljane i debele strelice",
+      "intro": "Debele, naglašene strelice za isticanje i pozive na akciju.",
+      "symbols": [
+        {
+          "char": "➜",
+          "label": "Debela zaobljena strelica"
+        },
+        {
+          "char": "➝",
+          "label": "Srednja strelica desno"
+        },
+        {
+          "char": "⟶",
+          "label": "Duga strelica desno"
+        },
+        {
+          "char": "➡",
+          "label": "Strelica desno"
+        },
+        {
+          "char": "⬅",
+          "label": "Strelica lijevo"
+        },
+        {
+          "char": "⬆",
+          "label": "Strelica gore"
+        },
+        {
+          "char": "⬇",
+          "label": "Strelica dolje"
+        },
+        {
+          "char": "➔",
+          "label": "Debela strelica desno"
+        },
+        {
+          "char": "➙",
+          "label": "Isprekidana strelica"
+        }
+      ]
+    },
+    {
+      "id": "double-formal",
+      "label": "Dvostruke & formalne",
+      "h2": "Dvostruke i formalne strelice",
+      "intro": "Dvostruke i matematičke strelice za logiku, dokumentaciju i formalno pisanje.",
+      "symbols": [
+        {
+          "char": "⇒",
+          "label": "Dvostruka strelica desno"
+        },
+        {
+          "char": "⇐",
+          "label": "Dvostruka strelica lijevo"
+        },
+        {
+          "char": "⇑",
+          "label": "Dvostruka strelica gore"
+        },
+        {
+          "char": "⇓",
+          "label": "Dvostruka strelica dolje"
+        },
+        {
+          "char": "⇔",
+          "label": "Dvostruka lijevo-desno"
+        },
+        {
+          "char": "⟹",
+          "label": "Duga dvostruka desno"
+        },
+        {
+          "char": "⟸",
+          "label": "Duga dvostruka lijevo"
+        },
+        {
+          "char": "⇕",
+          "label": "Dvostruka gore-dolje"
+        }
+      ]
+    },
+    {
+      "id": "curved-return",
+      "label": "Zakrivljene & povratne",
+      "h2": "Zakrivljene i povratne strelice",
+      "intro": "Zakrivljene, kružne i povratne strelice za odgovore, poništavanje i navigaciju.",
+      "symbols": [
+        {
+          "char": "↩",
+          "label": "Povratna strelica"
+        },
+        {
+          "char": "↪",
+          "label": "Zakrivljena strelica desno"
+        },
+        {
+          "char": "↺",
+          "label": "Suprotno od kazaljke"
+        },
+        {
+          "char": "↻",
+          "label": "U smjeru kazaljke"
+        },
+        {
+          "char": "⤴",
+          "label": "Zakrivljena desno gore"
+        },
+        {
+          "char": "⤵",
+          "label": "Zakrivljena desno dolje"
+        },
+        {
+          "char": "↶",
+          "label": "Gornji luk suprotno od kazaljke"
+        },
+        {
+          "char": "↷",
+          "label": "Gornji luk u smjeru kazaljke"
+        },
+        {
+          "char": "🔃",
+          "label": "Okomite strelice u smjeru kazaljke"
+        },
+        {
+          "char": "🔄",
+          "label": "Strelice suprotno od kazaljke"
+        }
+      ]
+    },
+    {
+      "id": "triangle-pointer",
+      "label": "Trokuti & pokazivači",
+      "h2": "Trokutaste strelice i pokazivači",
+      "intro": "Trokutaste strelice i pokazivači za grafičke oznake i navigaciju.",
+      "symbols": [
+        {
+          "char": "▶",
+          "label": "Trokut desno"
+        },
+        {
+          "char": "◀",
+          "label": "Trokut lijevo"
+        },
+        {
+          "char": "▲",
+          "label": "Trokut gore"
+        },
+        {
+          "char": "▼",
+          "label": "Trokut dolje"
+        },
+        {
+          "char": "►",
+          "label": "Crni pokazivač desno"
+        },
+        {
+          "char": "◄",
+          "label": "Crni pokazivač lijevo"
+        },
+        {
+          "char": "➤",
+          "label": "Crni vrh strelice desno"
+        },
+        {
+          "char": "‣",
+          "label": "Trokutasta grafička oznaka"
+        },
+        {
+          "char": "›",
+          "label": "Jednostruki kutni navodnik desno"
+        },
+        {
+          "char": "‹",
+          "label": "Jednostruki kutni navodnik lijevo"
+        },
+        {
+          "char": "⏩",
+          "label": "Brzo naprijed"
+        },
+        {
+          "char": "⏪",
+          "label": "Brzo natrag"
+        },
+        {
+          "char": "⏫",
+          "label": "Brzo gore"
+        },
+        {
+          "char": "⏬",
+          "label": "Brzo dolje"
+        }
+      ]
+    },
+    {
+      "id": "thin-minimal",
+      "label": "Tanke & minimalne",
+      "h2": "Tanke i minimalističke strelice",
+      "intro": "Lagani kutni znakovi i minimalistički znakovi za smjer.",
+      "symbols": [
+        {
+          "char": "«",
+          "label": "Dvostruki kutni navodnik lijevo"
+        },
+        {
+          "char": "»",
+          "label": "Dvostruki kutni navodnik desno"
+        },
+        {
+          "char": "‹",
+          "label": "Jednostruki kutni navodnik lijevo"
+        },
+        {
+          "char": "›",
+          "label": "Jednostruki kutni navodnik desno"
+        },
+        {
+          "char": "˂",
+          "label": "Modifikatorski vrh lijevo"
+        },
+        {
+          "char": "˃",
+          "label": "Modifikatorski vrh desno"
+        },
+        {
+          "char": "˄",
+          "label": "Modifikatorski vrh gore"
+        },
+        {
+          "char": "˅",
+          "label": "Modifikatorski vrh dolje"
+        },
+        {
+          "char": "⟵",
+          "label": "Duga strelica lijevo"
+        },
+        {
+          "char": "⟶",
+          "label": "Duga strelica desno"
+        },
+        {
+          "char": "⟷",
+          "label": "Duga strelica lijevo-desno"
+        },
+        {
+          "char": "⟸",
+          "label": "Duga dvostruka strelica lijevo"
+        },
+        {
+          "char": "⟹",
+          "label": "Duga dvostruka strelica desno"
+        }
+      ]
+    },
+    {
+      "id": "emoji-arrows",
+      "label": "Emoji strelice",
+      "h2": "Emoji strelice",
+      "intro": "Šarene emoji strelice i ikone smjera za društvene mreže i poruke.",
+      "symbols": [
+        {
+          "char": "⬆️",
+          "label": "Strelica gore emoji"
+        },
+        {
+          "char": "⬇️",
+          "label": "Strelica dolje emoji"
+        },
+        {
+          "char": "➡️",
+          "label": "Strelica desno emoji"
+        },
+        {
+          "char": "⬅️",
+          "label": "Strelica lijevo emoji"
+        },
+        {
+          "char": "↕️",
+          "label": "Strelica gore-dolje"
+        },
+        {
+          "char": "↔️",
+          "label": "Strelica lijevo-desno"
+        },
+        {
+          "char": "↩️",
+          "label": "Povratna strelica emoji"
+        },
+        {
+          "char": "↪️",
+          "label": "Zakrivljena strelica desno"
+        },
+        {
+          "char": "🔄",
+          "label": "Suprotno od kazaljke"
+        },
+        {
+          "char": "🔃",
+          "label": "U smjeru kazaljke"
+        },
+        {
+          "char": "🔀",
+          "label": "Nasumično"
+        },
+        {
+          "char": "🔁",
+          "label": "Ponavljanje"
+        },
+        {
+          "char": "🔂",
+          "label": "Ponovi jednom"
+        },
+        {
+          "char": "🔙",
+          "label": "Strelica natrag (BACK)"
+        },
+        {
+          "char": "🔚",
+          "label": "Strelica kraj (END)"
+        },
+        {
+          "char": "🔛",
+          "label": "Strelica uključeno (ON!)"
+        },
+        {
+          "char": "🔜",
+          "label": "Strelica uskoro (SOON)"
+        },
+        {
+          "char": "🔝",
+          "label": "Strelica vrh (TOP)"
+        },
+        {
+          "char": "🆙",
+          "label": "Gumb gore (UP!)"
+        },
+        {
+          "char": "🔼",
+          "label": "Gumb prema gore"
+        }
+      ]
+    },
+    {
+      "id": "level-up-emoji",
+      "label": "Nova razina",
+      "h2": "Emoji za prelazak na višu razinu",
+      "intro": "🆙 je emoji gumba UP! koji ljudi lijepe za prelazak na višu razinu, promaknuće ili novi rang. Slova su dio emojija, pa ih stil fonta neće promijeniti. Ove kombinacije spajaju ga s ⏫, 🔝 i 📈 da objava izgleda kao uspon, a ne samo kao strelica prema gore.",
+      "symbols": [
+        {
+          "char": "🆙⏫",
+          "label": "Viša razina"
+        },
+        {
+          "char": "🆙🔝",
+          "label": "Najviša razina"
+        },
+        {
+          "char": "📈🆙",
+          "label": "Statistika raste"
+        },
+        {
+          "char": "⬆️🆙🔝",
+          "label": "Uspon do vrha"
+        },
+        {
+          "char": "🎮🆙",
+          "label": "Nova razina u igri"
+        },
+        {
+          "char": "🏆🆙",
+          "label": "Viši rang"
+        }
+      ]
+    },
+    {
+      "id": "additional-arrows",
+      "label": "Cijeli blok",
+      "h2": "Još iz Unicode bloka strelica",
+      "intro": "Preostale dodijeljene kodne točke iz Unicode bloka strelica (U+2190–U+21FF) koje nisu navedene u odabranim odjeljcima iznad.",
+      "symbols": [
+        {
+          "char": "↚",
+          "label": "Precrtana strelica lijevo"
+        },
+        {
+          "char": "↛",
+          "label": "Precrtana strelica desno"
+        },
+        {
+          "char": "↜",
+          "label": "Valovita strelica lijevo"
+        },
+        {
+          "char": "↝",
+          "label": "Valovita strelica desno"
+        },
+        {
+          "char": "↞",
+          "label": "Dvoglava strelica lijevo"
+        },
+        {
+          "char": "↟",
+          "label": "Dvoglava strelica gore"
+        },
+        {
+          "char": "↠",
+          "label": "Dvoglava strelica desno"
+        },
+        {
+          "char": "↡",
+          "label": "Dvoglava strelica dolje"
+        },
+        {
+          "char": "↢",
+          "label": "Strelica s repom lijevo"
+        },
+        {
+          "char": "↣",
+          "label": "Strelica s repom desno"
+        },
+        {
+          "char": "↤",
+          "label": "Strelica lijevo od crte"
+        },
+        {
+          "char": "↥",
+          "label": "Strelica gore od crte"
+        },
+        {
+          "char": "↦",
+          "label": "Strelica desno od crte"
+        },
+        {
+          "char": "↧",
+          "label": "Strelica dolje od crte"
+        },
+        {
+          "char": "↨",
+          "label": "Strelica gore-dolje s podnožjem"
+        },
+        {
+          "char": "↫",
+          "label": "Strelica s petljom lijevo"
+        },
+        {
+          "char": "↬",
+          "label": "Strelica s petljom desno"
+        },
+        {
+          "char": "↭",
+          "label": "Valovita strelica lijevo-desno"
+        },
+        {
+          "char": "↮",
+          "label": "Precrtana strelica lijevo-desno"
+        },
+        {
+          "char": "↯",
+          "label": "Cik-cak strelica dolje"
+        },
+        {
+          "char": "↰",
+          "label": "Strelica gore s vrhom ulijevo"
+        },
+        {
+          "char": "↱",
+          "label": "Strelica gore s vrhom udesno"
+        },
+        {
+          "char": "↲",
+          "label": "Strelica dolje s vrhom ulijevo"
+        },
+        {
+          "char": "↳",
+          "label": "Strelica dolje s vrhom udesno"
+        },
+        {
+          "char": "↴",
+          "label": "Strelica desno s kutom prema dolje"
+        },
+        {
+          "char": "↵",
+          "label": "Strelica dolje s kutom ulijevo"
+        },
+        {
+          "char": "↸",
+          "label": "Sjeverozapadna strelica do duge crte"
+        },
+        {
+          "char": "↹",
+          "label": "Strelica lijevo do crte iznad strelice desno do crte"
+        },
+        {
+          "char": "↼",
+          "label": "Harpun lijevo s kukom gore"
+        },
+        {
+          "char": "↽",
+          "label": "Harpun lijevo s kukom dolje"
+        },
+        {
+          "char": "↾",
+          "label": "Harpun gore s kukom desno"
+        },
+        {
+          "char": "↿",
+          "label": "Harpun gore s kukom lijevo"
+        },
+        {
+          "char": "⇀",
+          "label": "Harpun desno s kukom gore"
+        },
+        {
+          "char": "⇁",
+          "label": "Harpun desno s kukom dolje"
+        },
+        {
+          "char": "⇂",
+          "label": "Harpun dolje s kukom desno"
+        },
+        {
+          "char": "⇃",
+          "label": "Harpun dolje s kukom lijevo"
+        },
+        {
+          "char": "⇄",
+          "label": "Strelica desno iznad strelice lijevo"
+        },
+        {
+          "char": "⇅",
+          "label": "Strelica gore lijevo od strelice dolje"
+        },
+        {
+          "char": "⇆",
+          "label": "Strelica lijevo iznad strelice desno"
+        },
+        {
+          "char": "⇇",
+          "label": "Udvojene strelice lijevo"
+        },
+        {
+          "char": "⇈",
+          "label": "Udvojene strelice gore"
+        },
+        {
+          "char": "⇉",
+          "label": "Udvojene strelice desno"
+        },
+        {
+          "char": "⇊",
+          "label": "Udvojene strelice dolje"
+        },
+        {
+          "char": "⇋",
+          "label": "Harpun lijevo iznad harpuna desno"
+        },
+        {
+          "char": "⇌",
+          "label": "Harpun desno iznad harpuna lijevo"
+        },
+        {
+          "char": "⇍",
+          "label": "Precrtana dvostruka strelica lijevo"
+        },
+        {
+          "char": "⇎",
+          "label": "Precrtana dvostruka strelica lijevo-desno"
+        },
+        {
+          "char": "⇏",
+          "label": "Precrtana dvostruka strelica desno"
+        },
+        {
+          "char": "⇖",
+          "label": "Sjeverozapadna dvostruka strelica"
+        },
+        {
+          "char": "⇗",
+          "label": "Sjeveroistočna dvostruka strelica"
+        },
+        {
+          "char": "⇘",
+          "label": "Jugoistočna dvostruka strelica"
+        },
+        {
+          "char": "⇙",
+          "label": "Jugozapadna dvostruka strelica"
+        },
+        {
+          "char": "⇚",
+          "label": "Trostruka strelica lijevo"
+        },
+        {
+          "char": "⇛",
+          "label": "Trostruka strelica desno"
+        },
+        {
+          "char": "⇜",
+          "label": "Vijugava strelica lijevo"
+        },
+        {
+          "char": "⇝",
+          "label": "Vijugava strelica desno"
+        },
+        {
+          "char": "⇞",
+          "label": "Dvaput precrtana strelica gore"
+        },
+        {
+          "char": "⇟",
+          "label": "Dvaput precrtana strelica dolje"
+        },
+        {
+          "char": "⇠",
+          "label": "Isprekidana strelica lijevo"
+        },
+        {
+          "char": "⇡",
+          "label": "Isprekidana strelica gore"
+        },
+        {
+          "char": "⇢",
+          "label": "Isprekidana strelica desno"
+        },
+        {
+          "char": "⇣",
+          "label": "Isprekidana strelica dolje"
+        },
+        {
+          "char": "⇤",
+          "label": "Strelica lijevo do crte"
+        },
+        {
+          "char": "⇥",
+          "label": "Strelica desno do crte"
+        },
+        {
+          "char": "⇦",
+          "label": "Bijela strelica lijevo"
+        },
+        {
+          "char": "⇧",
+          "label": "Bijela strelica gore"
+        },
+        {
+          "char": "⇨",
+          "label": "Bijela strelica desno"
+        },
+        {
+          "char": "⇩",
+          "label": "Bijela strelica dolje"
+        },
+        {
+          "char": "⇪",
+          "label": "Bijela strelica gore od crte"
+        },
+        {
+          "char": "⇫",
+          "label": "Bijela strelica gore na postolju"
+        },
+        {
+          "char": "⇬",
+          "label": "Bijela strelica gore na postolju s vodoravnom crtom"
+        },
+        {
+          "char": "⇭",
+          "label": "Bijela strelica gore na postolju s okomitom crtom"
+        },
+        {
+          "char": "⇮",
+          "label": "Bijela dvostruka strelica gore"
+        },
+        {
+          "char": "⇯",
+          "label": "Bijela dvostruka strelica gore na postolju"
+        },
+        {
+          "char": "⇰",
+          "label": "Bijela strelica desno od zida"
+        },
+        {
+          "char": "⇱",
+          "label": "Sjeverozapadna strelica do kuta"
+        },
+        {
+          "char": "⇲",
+          "label": "Jugoistočna strelica do kuta"
+        },
+        {
+          "char": "⇳",
+          "label": "Bijela strelica gore-dolje"
+        },
+        {
+          "char": "⇴",
+          "label": "Strelica desno s malim krugom"
+        },
+        {
+          "char": "⇵",
+          "label": "Strelica dolje lijevo od strelice gore"
+        },
+        {
+          "char": "⇶",
+          "label": "Tri strelice desno"
+        },
+        {
+          "char": "⇷",
+          "label": "Strelica lijevo s okomitom crticom"
+        },
+        {
+          "char": "⇸",
+          "label": "Strelica desno s okomitom crticom"
+        },
+        {
+          "char": "⇹",
+          "label": "Strelica lijevo-desno s okomitom crticom"
+        },
+        {
+          "char": "⇺",
+          "label": "Strelica lijevo s dvije okomite crtice"
+        },
+        {
+          "char": "⇻",
+          "label": "Strelica desno s dvije okomite crtice"
+        },
+        {
+          "char": "⇼",
+          "label": "Strelica lijevo-desno s dvije okomite crtice"
+        },
+        {
+          "char": "⇽",
+          "label": "Strelica lijevo s otvorenim vrhom"
+        },
+        {
+          "char": "⇾",
+          "label": "Strelica desno s otvorenim vrhom"
+        },
+        {
+          "char": "⇿",
+          "label": "Strelica lijevo-desno s otvorenim vrhom"
+        }
+      ]
+    },
+    {
+      "id": "right-arrow-variants",
+      "label": "Strelica desno",
+      "h2": "Varijante strelice desno",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Desno"
+        },
+        {
+          "char": "⇒",
+          "label": "Dvostruka"
+        },
+        {
+          "char": "⟶",
+          "label": "Duga"
+        },
+        {
+          "char": "➡",
+          "label": "Crna strelica"
+        },
+        {
+          "char": "➜",
+          "label": "Debela zaobljena"
+        },
+        {
+          "char": "➤",
+          "label": "Vrh strelice"
+        },
+        {
+          "char": "➛",
+          "label": "Tehnički vrh"
+        },
+        {
+          "char": "➠",
+          "label": "Debela isprekidana"
+        },
+        {
+          "char": "➢",
+          "label": "3D vrh strelice"
+        },
+        {
+          "char": "⮕",
+          "label": "Široka crna"
+        },
+        {
+          "char": "↪",
+          "label": "S kukom"
+        },
+        {
+          "char": "↦",
+          "label": "Od crte"
+        }
+      ]
+    },
+    {
+      "id": "navigation-ui-arrows",
+      "label": "Navigacija & sučelje",
+      "h2": "Strelice za navigaciju i sučelje",
+      "symbols": [
+        {
+          "char": "›",
+          "label": "Navigacijski trag ›"
+        },
+        {
+          "char": "‹",
+          "label": "Natrag ‹"
+        },
+        {
+          "char": "▸",
+          "label": "Stavka izbornika ▸"
+        },
+        {
+          "char": "▾",
+          "label": "Padajući izbornik ▾"
+        },
+        {
+          "char": "▴",
+          "label": "Sažmi ▴"
+        },
+        {
+          "char": "⟩",
+          "label": "Sljedeće ⟩"
+        },
+        {
+          "char": "⟨",
+          "label": "Prethodno ⟨"
+        },
+        {
+          "char": "▶",
+          "label": "Reproduciraj ▶"
+        },
+        {
+          "char": "⤓",
+          "label": "Preuzmi ⤓"
+        },
+        {
+          "char": "↑",
+          "label": "Natrag na vrh ↑"
+        }
+      ]
+    },
+    {
+      "id": "arrows-upload-resize-circle",
+      "label": "Učitavanje & kružne",
+      "h2": "Strelice za učitavanje, promjenu veličine i kružne strelice",
+      "intro": "Strelice za sučelje: učitavanje do crte, dvije dijagonalne strelice za promjenu veličine, zatvorene i otvorene kružne strelice za osvježavanje i poništavanje, lukovi te strelice koje idu dolje pa skreću.",
+      "symbols": [
+        {
+          "char": "⤒",
+          "label": "Učitavanje ⤒"
+        },
+        {
+          "char": "⤡",
+          "label": "Promjena veličine gore lijevo/dolje desno"
+        },
+        {
+          "char": "⤢",
+          "label": "Promjena veličine gore desno/dolje lijevo"
+        },
+        {
+          "char": "⥀",
+          "label": "Zatvoreni krug suprotno od kazaljke"
+        },
+        {
+          "char": "⥁",
+          "label": "Zatvoreni krug u smjeru kazaljke"
+        },
+        {
+          "char": "⟲",
+          "label": "Otvoreni krug suprotno od kazaljke"
+        },
+        {
+          "char": "⤸",
+          "label": "Luk u smjeru kazaljke (desna strana)"
+        },
+        {
+          "char": "⤹",
+          "label": "Luk suprotno od kazaljke (lijeva strana)"
+        },
+        {
+          "char": "⤺",
+          "label": "Luk suprotno od kazaljke (gore)"
+        },
+        {
+          "char": "⤻",
+          "label": "Luk suprotno od kazaljke (dolje)"
+        },
+        {
+          "char": "⤶",
+          "label": "Dolje pa lijevo"
+        },
+        {
+          "char": "⤷",
+          "label": "Dolje pa desno"
+        }
+      ]
+    },
+    {
+      "id": "arrows-long-extended",
+      "label": "Duge strelice",
+      "h2": "Duge strelice: od crte, vijugave i četverostruke",
+      "intro": "Još dugih strelica za bilješke i matematiku: strelice od crte (⟼ je matematička strelica preslikavanja), duge dvostruke strelice, vijugava strelica i četverostruke strelice.",
+      "symbols": [
+        {
+          "char": "⟺",
+          "label": "Duga dvostruka lijevo-desno"
+        },
+        {
+          "char": "⟻",
+          "label": "Duga lijevo od crte"
+        },
+        {
+          "char": "⟼",
+          "label": "Duga desno od crte (preslikavanje)"
+        },
+        {
+          "char": "⟽",
+          "label": "Duga dvostruka lijevo od crte"
+        },
+        {
+          "char": "⟾",
+          "label": "Duga dvostruka desno od crte"
+        },
+        {
+          "char": "⟿",
+          "label": "Duga vijugava desno"
+        },
+        {
+          "char": "⟰",
+          "label": "Četverostruka gore"
+        },
+        {
+          "char": "⟱",
+          "label": "Četverostruka dolje"
+        },
+        {
+          "char": "⟴",
+          "label": "Desno sa zaokruženim plusom"
+        }
+      ]
+    },
+    {
+      "id": "arrows-diagonal-bent-hooked",
+      "label": "Dijagonalne & svinute",
+      "h2": "Bijele, crne, svinute i kukaste strelice",
+      "intro": "Bijele i crne dijagonalne strelice, strelice koje se savijaju na vrhu i dijagonalne strelice s kukom.",
+      "symbols": [
+        {
+          "char": "⬀",
+          "label": "Bijela gore desno"
+        },
+        {
+          "char": "⬁",
+          "label": "Bijela gore lijevo"
+        },
+        {
+          "char": "⬂",
+          "label": "Bijela dolje desno"
+        },
+        {
+          "char": "⬃",
+          "label": "Bijela dolje lijevo"
+        },
+        {
+          "char": "⬄",
+          "label": "Bijela lijevo-desno"
+        },
+        {
+          "char": "⬈",
+          "label": "Crna gore desno"
+        },
+        {
+          "char": "⬉",
+          "label": "Crna gore lijevo"
+        },
+        {
+          "char": "⬊",
+          "label": "Crna dolje desno"
+        },
+        {
+          "char": "⬋",
+          "label": "Crna dolje lijevo"
+        },
+        {
+          "char": "⬌",
+          "label": "Crna lijevo-desno"
+        },
+        {
+          "char": "⬍",
+          "label": "Crna gore-dolje"
+        },
+        {
+          "char": "⬎",
+          "label": "Desno pa dolje"
+        },
+        {
+          "char": "⬏",
+          "label": "Desno pa gore"
+        },
+        {
+          "char": "⬐",
+          "label": "Lijevo pa dolje"
+        },
+        {
+          "char": "⬑",
+          "label": "Lijevo pa gore"
+        },
+        {
+          "char": "⤣",
+          "label": "S kukom gore lijevo"
+        },
+        {
+          "char": "⤤",
+          "label": "S kukom gore desno"
+        },
+        {
+          "char": "⤥",
+          "label": "S kukom dolje desno"
+        },
+        {
+          "char": "⤦",
+          "label": "S kukom dolje lijevo"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "Biblioteka simbola za LinkedIn",
+      "desc": "Profesionalni Unicode simboli, isprobani i odabrani za objave i komentare na LinkedInu."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometrijski simboli",
+      "desc": "Krugovi, rombovi, kvadrati, trokuti i ukrasni oblici za oblikovanje teksta."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Simboli kvačica",
+      "desc": "Kvačice, križići i oznake statusa za popise i usporedbe."
+    },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "Oblikovanje komentara na LinkedInu",
+      "desc": "Tehnike i predlošci za profesionalne komentare na LinkedInu."
+    }
+  ]
+}

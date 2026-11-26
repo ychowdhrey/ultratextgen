@@ -29,7 +29,7 @@
  */
 
 const path = require('path');
-const { decide, LOCALES } = require('./lib/locale-parent-registry');
+const { decide, LOCALES, ruleBException } = require('./lib/locale-parent-registry');
 const { buildIntentModel, lanePathFor } = require('./lib/intent-clusters');
 
 const [, , relPathArg, localeArg] = process.argv;
@@ -62,6 +62,27 @@ console.log(`  locale action:           ${result.localeInfo.action}`);
 console.log('');
 console.log(`  DECISION: ${result.decision}`);
 console.log(`  REASON:   ${result.reason}`);
+
+if (result.decision === 'skip-stub-locale') {
+  const fs = require('fs');
+  const ledgerPath = path.join(__dirname, '..', 'data', 'locale_parent_gap_audit.json');
+  let entries = [];
+  try {
+    const parsed = JSON.parse(fs.readFileSync(ledgerPath, 'utf8'));
+    entries = Array.isArray(parsed) ? parsed : parsed.entries || [];
+  } catch (e) { /* the gate reports an unreadable ledger; advice continues without it */ }
+  const rb = ruleBException(classified, localeArg, result, entries);
+  console.log('');
+  if (rb.status === 'pass') {
+    console.log(`  RULE B EXCEPTION: this page is authorized here by "${rb.entry.verdict}"` +
+      `${rb.entry.experimentCohort ? ` (${rb.entry.experimentCohort}, recheck ${rb.entry.recheckDate})` : ''}; the locale stays Tier 3.`);
+  } else if (rb.status === 'fail') {
+    console.log(`  RULE B EXCEPTION entry present but it does not hold: [${rb.code}] ${rb.detail}`);
+  } else {
+    console.log('  Rule B exception: no page-scoped entry. Positive target-language evidence (verdict "rule-b-exception") or a slot in');
+    console.log('  an experimental allowance (verdict "rule-b-experiment") can authorize this one page; see data/locale_rule_b_exception.json.');
+  }
+}
 
 if (result.requiresLedgerEntry) {
   console.log('');
