@@ -3552,6 +3552,10 @@ PAGES.update({
 "th-updates-unicode-18-release-date-confirmed": ("วันปล่อย Unicode 18.0", "ออกแล้ว 16 กันยายน 2026 · ตัดอักษรออกหนึ่งชุด", m_doc, K_UPDATE),
 "tr-updates-unicode-18-cikis-tarihi-onaylandi": ("Unicode 18.0 çıkış tarihi", "16 Eylül 2026’da yayımlandı · bir yazı çıkarıldı", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
+# The page's copy tiles are stand-ins (hibiscus for Orchid, eagle for Vulture)
+# for emoji no font can draw yet; a motif derived from them would picture the
+# stand-ins as if they were the new emoji. The keyword pins the plain motif.
+"updates-unicode-19-new-emoji": ("Unicode 19.0 New Emoji", "The list, and when each one reaches your phone", P(m_doc, accent=PURPLE), K_UPDATE),
 "ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة", "الوجه المتصدّع يفوز بالتصويت العام، ثم المخلل والشهاب", m_doc, K_UPDATE),
 "de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Die neuen Emojis", "Berstendes Gesicht gewinnt die Abstimmung, dahinter Essiggurke und Meteor", m_doc, K_UPDATE),
 "es-updates-unicode-18-nuevos-emojis-votacion": ("Los Nuevos Emojis de Unicode 18.0: Cara Agrietada Gana la Votación", "Pepinillo y Meteoro completan el top 3", m_doc, K_UPDATE),
