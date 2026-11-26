@@ -1,0 +1,795 @@
+{
+  "slug": "spesialtegn",
+  "lang": "no",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "title": "Spesialtegn: kopier og lim inn unike Unicode-symboler",
+  "meta_description": "Bla gjennom og kopier unike spesialtegn: uendelig ∞, fred ☮, seierstegn ✌ og andre meningsfulle Unicode-symboler til bio, navn og tekst.",
+  "canonical": "https://ultratextgen.com/no/library/spesialtegn/",
+  "breadcrumb": "Spesialtegn",
+  "hero_h1": "Spesialtegn",
+  "hero_tagline": "Små tegn som gjør mye: uendelig, fred, vitenskap, juridiske merker, fine enkelttegn og sjeldne Unicode-kuriositeter. Klikk på et symbol for å kopiere det med en gang.",
+  "intro": "Bla gjennom og kopier unike spesialtegn sortert etter betydning: fra uendelighet og evighet via fredssymboler, vitenskapelig notasjon og juridiske merker til estetisk pynt og sjeldne Unicode-kuriositeter.",
+  "date_published": "2026-11-26",
+  "date_modified": "2026-11-26",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/special-characters/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/special-characters/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/symbole-zum-kopieren/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/special-characters/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/teuksu-munja/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/special-characters/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/special-characters/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/specialni-znaky/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/posebni-znakovi/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/kulonleges-karakterek/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/caractere-speciale/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/semboller/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/caracteres-especiales/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/caracteres-speciaux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/karakter-spesial/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/speciale-tekens/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/znaki-specjalne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/caracteres-especiais/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-tu-dac-biet-unicode/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/teshu-fuhao/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/caratteri-speciali-simboli/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/specialtegn/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/spesialtegn/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/specialtecken/"
+    },
+    {
+      "lang": "fi",
+      "href": "https://ultratextgen.com/fi/library/erikoismerkit/"
+    },
+    {
+      "lang": "sk",
+      "href": "https://ultratextgen.com/sk/library/specialne-znaky/"
+    },
+    {
+      "lang": "uk",
+      "href": "https://ultratextgen.com/uk/library/spetssymvoly/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/special-characters/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "infinity",
+      "label": "Uendelighet og evighet",
+      "h2": "Symboler for uendelighet og evighet",
+      "intro": "Symboler for det endeløse, for sløyfer og for evighet.",
+      "symbols": [
+        {
+          "char": "∞",
+          "label": "Uendelig"
+        },
+        {
+          "char": "♾️",
+          "label": "Uendelig-emoji"
+        },
+        {
+          "char": "⧜",
+          "label": "Ufullstendig uendelig"
+        },
+        {
+          "char": "⧝",
+          "label": "Bue over uendelig"
+        },
+        {
+          "char": "⧞",
+          "label": "Uendelig med loddrett strek (negert)"
+        },
+        {
+          "char": "🔁",
+          "label": "Gjenta-knapp"
+        },
+        {
+          "char": "🔂",
+          "label": "Gjenta én gang-knapp"
+        },
+        {
+          "char": "⟳",
+          "label": "Sirkelpil med åpning, med klokka"
+        }
+      ]
+    },
+    {
+      "id": "not-on-your-keyboard",
+      "label": "Ikke på tastaturet",
+      "h2": "Symboler som ikke finnes på tastaturet",
+      "symbols": [
+        {
+          "char": "♥",
+          "label": "♥"
+        },
+        {
+          "char": "♡",
+          "label": "♡"
+        },
+        {
+          "char": "★",
+          "label": "★"
+        },
+        {
+          "char": "☆",
+          "label": "☆"
+        },
+        {
+          "char": "✓",
+          "label": "✓"
+        },
+        {
+          "char": "✔",
+          "label": "✔"
+        },
+        {
+          "char": "✗",
+          "label": "✗"
+        },
+        {
+          "char": "✘",
+          "label": "✘"
+        },
+        {
+          "char": "→",
+          "label": "→"
+        },
+        {
+          "char": "←",
+          "label": "←"
+        },
+        {
+          "char": "↑",
+          "label": "↑"
+        },
+        {
+          "char": "↓",
+          "label": "↓"
+        },
+        {
+          "char": "∞",
+          "label": "∞"
+        },
+        {
+          "char": "°",
+          "label": "°"
+        },
+        {
+          "char": "±",
+          "label": "±"
+        },
+        {
+          "char": "÷",
+          "label": "÷"
+        },
+        {
+          "char": "×",
+          "label": "×"
+        },
+        {
+          "char": "≠",
+          "label": "≠"
+        },
+        {
+          "char": "≈",
+          "label": "≈"
+        },
+        {
+          "char": "²",
+          "label": "²"
+        },
+        {
+          "char": "³",
+          "label": "³"
+        },
+        {
+          "char": "€",
+          "label": "€"
+        },
+        {
+          "char": "£",
+          "label": "£"
+        },
+        {
+          "char": "©",
+          "label": "©"
+        }
+      ]
+    },
+    {
+      "id": "peace-harmony",
+      "label": "Fred og harmoni",
+      "h2": "Symboler for fred og harmoni",
+      "intro": "Symboler for fred, samhold og harmoni på tvers av kulturer.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Fredssymbol"
+        },
+        {
+          "char": "☯",
+          "label": "Yin og yang"
+        },
+        {
+          "char": "✌",
+          "label": "Seierstegn (hånd)"
+        },
+        {
+          "char": "🕊",
+          "label": "Due"
+        },
+        {
+          "char": "🤍",
+          "label": "Hvitt hjerte"
+        },
+        {
+          "char": "🫶",
+          "label": "Hjertehender"
+        },
+        {
+          "char": "🌍",
+          "label": "Jordklode (Afrika)"
+        },
+        {
+          "char": "⚖",
+          "label": "Skålvekt"
+        },
+        {
+          "char": "🕉",
+          "label": "Om"
+        }
+      ]
+    },
+    {
+      "id": "science-knowledge",
+      "label": "Vitenskap og kunnskap",
+      "h2": "Symboler for vitenskap og kunnskap",
+      "intro": "Vitenskapelige, medisinske og kunnskapsrelaterte symboler til undervisningsinnhold.",
+      "symbols": [
+        {
+          "char": "⚛",
+          "label": "Atomsymbol"
+        },
+        {
+          "char": "⚕",
+          "label": "Medisinsk symbol"
+        },
+        {
+          "char": "♻",
+          "label": "Gjenvinningssymbol"
+        },
+        {
+          "char": "🔬",
+          "label": "Mikroskop"
+        },
+        {
+          "char": "🔭",
+          "label": "Teleskop"
+        },
+        {
+          "char": "🧪",
+          "label": "Reagensrør"
+        },
+        {
+          "char": "⚗",
+          "label": "Destillasjonskolbe (alembikk)"
+        },
+        {
+          "char": "🧬",
+          "label": "DNA"
+        },
+        {
+          "char": "🧫",
+          "label": "Petriskål"
+        },
+        {
+          "char": "💡",
+          "label": "Lyspære"
+        },
+        {
+          "char": "⚙",
+          "label": "Tannhjul"
+        }
+      ]
+    },
+    {
+      "id": "legal-office",
+      "label": "Juss og kontor",
+      "h2": "Juridiske symboler og kontorsymboler",
+      "intro": "Opphavsrett, varemerker og typografiske merker til profesjonelle dokumenter.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "Copyright-tegn"
+        },
+        {
+          "char": "®",
+          "label": "Registrert varemerke"
+        },
+        {
+          "char": "™",
+          "label": "Varemerketegn"
+        },
+        {
+          "char": "§",
+          "label": "Paragraftegn"
+        },
+        {
+          "char": "¶",
+          "label": "Avsnittstegn (pilcrow)"
+        },
+        {
+          "char": "†",
+          "label": "Kors (dagger)"
+        },
+        {
+          "char": "‡",
+          "label": "Dobbeltkors"
+        },
+        {
+          "char": "№",
+          "label": "Nummertegn (numero)"
+        },
+        {
+          "char": "℗",
+          "label": "Copyright for lydopptak"
+        },
+        {
+          "char": "℠",
+          "label": "Tjenestemerke"
+        }
+      ]
+    },
+    {
+      "id": "punctuation-marks",
+      "label": "Tegnsetting og typografi",
+      "h2": "Tegnsetting og typografiske merker",
+      "intro": "Krøllalfa, et-tegnet og andre hverdagstegn, pluss variantene i full bredde, i liten form og i historisk form.",
+      "symbols": [
+        {
+          "char": "@",
+          "label": "Krøllalfa"
+        },
+        {
+          "char": "＠",
+          "label": "Krøllalfa i full bredde"
+        },
+        {
+          "char": "﹫",
+          "label": "Liten krøllalfa"
+        },
+        {
+          "char": "&",
+          "label": "Et-tegn"
+        },
+        {
+          "char": "＆",
+          "label": "Et-tegn i full bredde"
+        },
+        {
+          "char": "⅋",
+          "label": "Snudd et-tegn"
+        },
+        {
+          "char": "⁊",
+          "label": "Tironsk et (og)"
+        },
+        {
+          "char": "※",
+          "label": "Referansemerke"
+        },
+        {
+          "char": "‰",
+          "label": "Promilletegn"
+        },
+        {
+          "char": "‱",
+          "label": "Per titusen-tegn"
+        },
+        {
+          "char": "＊",
+          "label": "Asterisk i full bredde"
+        },
+        {
+          "char": "＃",
+          "label": "Nummertegn i full bredde"
+        },
+        {
+          "char": "#",
+          "label": "Nummertegn (emneknagg)"
+        },
+        {
+          "char": "﹟",
+          "label": "Lite nummertegn"
+        },
+        {
+          "char": "#️⃣",
+          "label": "Emneknagg-tast (emoji)"
+        },
+        {
+          "char": "♯",
+          "label": "Kryss (musikalsk fortegn)"
+        }
+      ]
+    },
+    {
+      "id": "aesthetic-standalone",
+      "label": "Estetiske enkelttegn",
+      "h2": "Estetiske enkeltsymboler",
+      "intro": "Estetiske og dekorative Unicode-tegn som er populære i bio, brukernavn og tekstkunst.",
+      "symbols": [
+        {
+          "char": "✿",
+          "label": "Svart blomst (florette)"
+        },
+        {
+          "char": "❦",
+          "label": "Blomsterhjerte"
+        },
+        {
+          "char": "❧",
+          "label": "Rotert blomsterhjerte (punkttegn)"
+        },
+        {
+          "char": "♡",
+          "label": "Hvitt hjerte (kortfarge)"
+        },
+        {
+          "char": "☾",
+          "label": "Månens siste kvarter"
+        },
+        {
+          "char": "☽",
+          "label": "Månens første kvarter"
+        },
+        {
+          "char": "⊹",
+          "label": "Hermitesk konjugert matrise"
+        },
+        {
+          "char": "₊",
+          "label": "Senket pluss"
+        },
+        {
+          "char": "༄",
+          "label": "Tibetansk ornament"
+        },
+        {
+          "char": "⋆",
+          "label": "Stjerneoperator"
+        },
+        {
+          "char": "✧",
+          "label": "Hvit firtagget stjerne"
+        },
+        {
+          "char": "❂",
+          "label": "Åttetagget stjerne med åpen midte i sirkel"
+        },
+        {
+          "char": "˚",
+          "label": "Ring over"
+        },
+        {
+          "char": "Ɛ",
+          "label": "Speilvendt 3 (åpen E)"
+        },
+        {
+          "char": "Є",
+          "label": "Speilvendt 3 (kyrillisk Ie)"
+        },
+        {
+          "char": "Я",
+          "label": "Speilvendt R (Ja)"
+        },
+        {
+          "char": "ↄ",
+          "label": "Speilvendt C"
+        },
+        {
+          "char": "и",
+          "label": "Speilvendt N (kyrillisk I)"
+        },
+        {
+          "char": "ƨ",
+          "label": "Speilvendt S"
+        }
+      ]
+    },
+    {
+      "id": "rare-unicode",
+      "label": "Sjeldne Unicode-kuriositeter",
+      "h2": "Sjeldne Unicode-kuriositeter",
+      "intro": "Uvanlige og sjelden brukte Unicode-tegn fra tekniske og symbolske blokker.",
+      "symbols": [
+        {
+          "char": "℞",
+          "label": "Resepttegn"
+        },
+        {
+          "char": "⚜",
+          "label": "Fransk lilje (fleur-de-lis)"
+        },
+        {
+          "char": "⎈",
+          "label": "Rorsymbol"
+        },
+        {
+          "char": "⌘",
+          "label": "Kommandotast"
+        },
+        {
+          "char": "⏏",
+          "label": "Løs ut-symbol"
+        },
+        {
+          "char": "⌥",
+          "label": "Option-tast"
+        },
+        {
+          "char": "⇧",
+          "label": "Shift-tast"
+        },
+        {
+          "char": "⏎",
+          "label": "Retur-symbol"
+        },
+        {
+          "char": "⌫",
+          "label": "Slett til venstre"
+        },
+        {
+          "char": "⏻",
+          "label": "Av/på-symbol"
+        },
+        {
+          "char": "☙",
+          "label": "Omvendt rotert blomsterhjerte (punkttegn)"
+        },
+        {
+          "char": "☤",
+          "label": "Caduceus (slangestav)"
+        },
+        {
+          "char": "⚚",
+          "label": "Hermes' stav"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "how-to-use",
+      "label": "Slik gjør du",
+      "h2": "Slik skriver du spesialtegn overalt",
+      "paragraphs": [
+        "Det finnes flere måter å sette inn et spesialtegn på, men kopier og lim inn er den raskeste og mest pålitelige på tvers av enheter:",
+        "<strong>Kopier og lim inn (enklest):</strong> klikk på et symbol på denne siden for å kopiere det, og lim det deretter inn (<code>Ctrl/Cmd + V</code>) der du trenger det. Ingen koder å huske.",
+        "<strong>Alt-koder i Windows:</strong> hold inne <code>Alt</code> og skriv et tall på det numeriske tastaturet (for eksempel <code>Alt + 0169</code> for ©). Dette fungerer bare på tastaturer med et ekte talltastatur.",
+        "<strong>Tegnvisning på Mac:</strong> trykk <code>Ctrl + Cmd + Mellomrom</code> for å åpne velgeren med emoji og symboler.",
+        "<strong>Unicode-inntasting:</strong> i Windows skriver du hex-koden og trykker <code>Alt + X</code> i enkelte programmer (for eksempel <code>221E</code> og deretter <code>Alt + X</code>, som gir ∞).",
+        "Fordi tegnene er en del av Unicode, vises de likt på iPhone, Android, Windows og Mac. En håndfull av de sjeldnere matematiske og dekorative tegnene kan vises som en tom firkant på eldre systemer. Skjer det, velger du et vanligere alternativ fra samme kategori. Firkanter i stedet for et helt riktig tegn skyldes en manglende skrifttype, som forklart i <a href=\"/guide/why-fonts-show-as-boxes/\">hvorfor tekst vises som firkanter</a> (på engelsk)."
+      ]
+    },
+    {
+      "id": "where-they-work",
+      "label": "Felt for felt",
+      "h2": "Hvilket felt godtar egentlig spesialtegn?",
+      "paragraphs": [
+        "Den vanligste grunnen til at et spesialtegn «ikke vil lagres», er at det har havnet i feil felt. Nesten alle plattformer deler identiteten din i <strong>to forskjellige navn</strong>, og bare det ene godtar disse tegnene:",
+        "<strong>Brukernavn (@-navnet)</strong>: den unike ID-en du logger inn med. Den er nesten alltid begrenset til små bokstaver, tall, punktum og understrek, så et spesialtegn blir avvist der, eller feltet går stille tilbake til det gamle.",
+        "<strong>Visningsnavn eller kallenavn</strong>: det andre ser. Her godtas som regel et bredt utvalg av Unicode, og det er her alle tegnene på denne siden hører hjemme.",
+        "Detaljer for hver plattform, kontrollert hver for seg (på engelsk): <a href=\"/answers/why-wont-instagram-accept-my-fancy-username/\">Instagram</a>, <a href=\"/answers/why-wont-discord-accept-fancy-username/\">Discord</a> og <a href=\"/answers/discord-allowed-characters/\">gjennomgangen felt for felt</a> av hva hver del av Discord godtar.",
+        "<strong>Spill har sine egne regler.</strong> Mange spill tillater bare latinske bokstaver og avviser resten rett ut, og et navnebytte koster ofte penger eller en token. Lim inn teksten i feltet og la spillet godkjenne den før du bekrefter.",
+        "Vil du ha et navn som ser tomt ut i stedet for pyntet? Et vanlig mellomrom blir fjernet og avvist: du trenger et tegn som ikke er klassifisert som blanktegn. Se <a href=\"/library/invisible-character/\">usynlige tegn</a> (på engelsk)."
+      ]
+    }
+  ],
+  "faq_h2": "Spesialtegn, forklart",
+  "faq": [
+    {
+      "q": "Hva regnes som et spesialtegn?",
+      "a": "Et spesialtegn er ethvert symbol utenom de grunnleggende bokstavene (A–Z, a–z) og sifrene (0–9). Det gjelder tegnsetting som & og @, valutategn som € og £, matematiske tegn som ∞ og ± og dekorative tegn som ★ og ✧. Alle sammen er en del av Unicode."
+    },
+    {
+      "q": "Hvordan kopierer jeg et spesialtegn uten en Alt-kode?",
+      "a": "Bare klikk på symbolet du vil ha på denne siden: det kopieres til utklippstavlen med en gang, og så limer du det inn med Ctrl + V (Windows) eller Cmd + V (Mac). Du trenger aldri å huske en tallkode."
+    },
+    {
+      "q": "Hvorfor vises et spesialtegn som en firkant eller et spørsmålstegn?",
+      "a": "Det skjer når appen eller enheten ikke har en skrifttype med akkurat det tegnet. Det er et visningsproblem, ikke en kopieringsfeil: tegnet er fortsatt riktig i bakgrunnen. Bytter du til et mer utbredt symbol fra samme kategori, løser det seg som regel."
+    },
+    {
+      "q": "Er spesialtegn trygge å bruke i passord og brukernavn?",
+      "a": "Vanlige spesialtegn (! @ # $ % & *) gjør passord sterkere og godtas de fleste steder. Sjeldnere Unicode-symboler blir derimot ofte avvist i felt for brukernavn og passord, så hold deg til vanlig ASCII-tegnsetting der, og spar de dekorative tegnene til innlegg og bio."
+    },
+    {
+      "q": "Hvorfor ser jeg [OBJ] i stedet for en emoji eller et symbol?",
+      "a": "[OBJ] er en plassholder som enkelte Android-apper og eldre meldingsapper viser når de ikke klarer å vise en bestemt emoji eller et bestemt Unicode-tegn. Forkortelsen står for objekterstatning («object replacement»). Selve tegnet ble kopiert og sendt riktig; appen som mottar det, har bare ikke en skrifttype for det ennå. Det er tekstversjonen av den tomme firkanten over, og det ordner seg som regel når appen eller operativsystemet oppdaterer skrifttypene og emojiene sine."
+    },
+    {
+      "q": "Hvilke symboler finnes ikke på et vanlig tastatur?",
+      "a": "Alt utover bokstaver, tall og tegnene som står trykt på tastene: hjerter (♥ ♡), stjerner (★ ☆), haker (✓ ✔), piler (→ ←), uendelig (∞), gradtegn (°) og de fleste valutategn. De finnes i Unicode, de har bare ingen tast, så kopiering er den raskeste måten å bruke dem på."
+    },
+    {
+      "q": "Hvordan får jeg et hjertesymbol som ikke er en emoji?",
+      "a": "Trykk på ♥ eller ♡ over. I motsetning til emojien på mobiltastaturet er dette teksttegn: de får samme farge og størrelse som teksten rundt og fungerer i brukernavnfelt og skjemaer som avviser emoji."
+    }
+  ],
+  "related": [
+    {
+      "href": "/no/library/matematiske-symboler/",
+      "title": "Matematiske symboler",
+      "desc": "Matematiske symboler til å kopiere og lime inn: ± × ÷ √ ∞ ∑ ∫ ≤ ≥ ≠ π og mange flere. Skriv likninger og formler i tekst uten LaTeX."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Valutasymboler",
+      "desc": "Dollar, euro, yen, pund og alle verdens valutategn samlet på ett sted."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Aksenttegn og diakritiske tegn",
+      "desc": "Akutt, grav, cirkumfleks, omlyd, tilde og alle diakritiske tegn på tvers av skriftsystemer."
+    },
+    {
+      "href": "/library/bracket-symbols/",
+      "title": "Parentes- og klammesymboler",
+      "desc": "CJK-klammer, vinkelklammer og dekorative klammepar til å ramme inn tekst."
+    },
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Tankestreker og bindestreker",
+      "desc": "Lang og kort tankestrek, bindestreker, minustegn og alle de lange strekvariantene."
+    },
+    {
+      "href": "/library/slash-backslash-symbols/",
+      "title": "Skråstrek og omvendt skråstrek",
+      "desc": "Skråstreker, omvendte skråstreker, brøkstreker og divisjonstegn."
+    },
+    {
+      "href": "/no/library/korssymboler/",
+      "title": "Korssymboler og religiøse symboler",
+      "desc": "Korssymboler og religiøse symboler til å kopiere og lime inn: kors ✝ ☦ ✞, halvmåne ☪, davidsstjerne ✡, dharmahjul ☸, yin yang ☯ og fredssymbol ☮."
+    },
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Stjernetegn og astrologiske symboler",
+      "desc": "Alle de 12 vestlige stjernetegnene pluss planeter og den kinesiske dyrekretsen."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Glitter- og pyntesymboler",
+      "desc": "Glimtsymboler, glittertegn og estetisk pynt."
+    },
+    {
+      "href": "/no/library/geometriske-symboler/",
+      "title": "Geometriske symboler og trekant",
+      "desc": "Geometriske symboler til å kopiere og lime inn: trekant △ ▲, sirkel ○ ●, firkant ■ □, rombe ◆ ◇ og punkter."
+    },
+    {
+      "href": "/symbol/copyright-symbol/",
+      "title": "Copyright-tegnet (©)",
+      "desc": "Hva © betyr, om du fortsatt trenger det, og hvordan du skriver det: klikk for å kopiere."
+    },
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Fredssymbolet (☮)",
+      "desc": "Hva ☮ betyr, historien bak designet fra 1958, og hvordan du skriver det: klikk for å kopiere."
+    },
+    {
+      "href": "/symbol/trademark-symbol/",
+      "title": "Varemerketegnet (™)",
+      "desc": "Hva ™ betyr, hvordan det skiller seg fra ®, og hvordan du skriver det: klikk for å kopiere."
+    },
+    {
+      "href": "/symbol/yin-yang/",
+      "title": "Yin og yang-symbolet (☯)",
+      "desc": "Hva ☯ betyr, de eldgamle røttene, og hvordan du skriver det: klikk for å kopiere."
+    },
+    {
+      "href": "/symbol/quotation-mark/",
+      "title": "Anførselstegn",
+      "desc": "De rette \" og ' som alle tastaturer skriver, og de krøllete, vinklede («») og nedre anførselstegnene som tar plassen deres i ulike programmer."
+    },
+    {
+      "href": "/no/library/hjertesymboler/",
+      "title": "Hjertesymboler",
+      "desc": "Hjertesymboler til å kopiere og lime inn: ♡ ♥ ❥ ❤ 🤍 💕 og mange flere. Til Instagram-bio, navn, bildetekst og hilsener."
+    },
+    {
+      "href": "/no/library/pilsymboler/",
+      "title": "Pilsymboler",
+      "desc": "Pilsymboler til å kopiere og lime inn: → ← ↑ ↓ ➤ ⇒ og mange flere. Pil ned, pil opp, doble piler og emoji-piler til navigasjon og lister."
+    },
+    {
+      "href": "/no/library/hakesymboler/",
+      "title": "Hakesymboler",
+      "desc": "Hakesymboler og avkrysning til å kopiere og lime inn: ✓ ✔ ✅ ✗ ✘ ❌ ☑ ☐ og ferdige sjekklister."
+    },
+    {
+      "href": "/no/library/stjernesymboler/",
+      "title": "Stjernesymboler",
+      "desc": "Stjernesymboler til å kopiere og lime inn: ★ ☆ ✦ ✧ ✨ og glitter, gnister og stjernerangeringer."
+    },
+    {
+      "href": "/no/library/greske-bokstaver/",
+      "title": "Greske bokstaver",
+      "desc": "Kopier og lim inn alle greske bokstaver, store og små, pluss matematiske varianter som alfa, beta, delta, sigma, omega og pi."
+    }
+  ]
+}

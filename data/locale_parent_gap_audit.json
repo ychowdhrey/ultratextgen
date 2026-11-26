@@ -2113,6 +2113,126 @@
       "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
     },
     {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "da",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 140,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=dk 'specialtegn' 140/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /da/library/specialtegn/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "fi",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 480,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=fi 'erikoismerkit' 480/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /fi/library/erikoismerkit/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "no",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 170,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=no 'spesialtegn' 170/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /no/library/spesialtegn/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "sk",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 210,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=sk 'špeciálne znaky' 210/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /sk/library/specialne-znaky/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "sv",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 480,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=se 'specialtecken' 480/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /sv/library/specialtecken/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library/special-characters",
+      "scope": "page",
+      "locale": "uk",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 140,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "rule-b-exception",
+      "targetEvidence": "positive",
+      "ruleB": {
+        "languages": 6,
+        "window": "2026-08-25..2026-11-22"
+      },
+      "scriptReadiness": "ready",
+      "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=ua 'спецсимволи' 140/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /uk/library/spetssymvoly/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
       "pattern": "library",
       "scope": "page",
       "locale": "cs",
