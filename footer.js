@@ -345,7 +345,7 @@
         { label: "Odpovědi", href: "/answers/" },
         { label: "Použití", href: "/usecase/" },
         { label: "Kategorie", href: "/category/" },
-        { label: "Knihovna", href: "/library/" },
+        { label: "Knihovna", href: "/cs/library/" },
         { label: "K tisku", href: "/printables/" },
         { label: "Události", href: "/events/" }
       ],
@@ -411,7 +411,7 @@
         { label: "जवाब", href: "/answers/" },
         { label: "उपयोग", href: "/usecase/" },
         { label: "श्रेणियाँ", href: "/category/" },
-        { label: "लाइब्रेरी", href: "/library/" },
+        { label: "लाइब्रेरी", href: "/hi/library/" },
         { label: "प्रिंट के लिए", href: "/printables/" },
         { label: "इवेंट्स", href: "/events/" }
       ],
@@ -444,7 +444,7 @@
         { label: "Odgovori", href: "/answers/" },
         { label: "Upotrebe", href: "/usecase/" },
         { label: "Kategorije", href: "/category/" },
-        { label: "Biblioteka", href: "/library/" },
+        { label: "Biblioteka", href: "/hr/library/" },
         { label: "Za ispis", href: "/printables/" },
         { label: "Događaji", href: "/events/" }
       ],
@@ -477,7 +477,7 @@
         { label: "Válaszok", href: "/answers/" },
         { label: "Felhasználások", href: "/usecase/" },
         { label: "Kategóriák", href: "/category/" },
-        { label: "Könyvtár", href: "/library/" },
+        { label: "Könyvtár", href: "/hu/library/" },
         { label: "Nyomtatható", href: "/printables/" },
         { label: "Események", href: "/events/" }
       ],
@@ -650,7 +650,7 @@
         { label: "Răspunsuri", href: "/answers/" },
         { label: "Utilizări", href: "/usecase/" },
         { label: "Categorii", href: "/category/" },
-        { label: "Bibliotecă", href: "/library/" },
+        { label: "Bibliotecă", href: "/ro/library/" },
         { label: "De printat", href: "/printables/" },
         { label: "Evenimente", href: "/events/" }
       ],
@@ -716,7 +716,7 @@
         { label: "Odpovede", href: "/answers/" },
         { label: "Použitie", href: "/usecase/" },
         { label: "Kategórie", href: "/category/" },
-        { label: "Knižnica", href: "/library/" },
+        { label: "Knižnica", href: "/sk/library/" },
         { label: "Na tlač", href: "/printables/" },
         { label: "Podujatia", href: "/events/" }
       ],
@@ -848,7 +848,7 @@
         { label: "Mga Sagot", href: "/answers/" },
         { label: "Mga Gamit", href: "/usecase/" },
         { label: "Mga Kategorya", href: "/category/" },
-        { label: "Aklatan", href: "/library/" },
+        { label: "Aklatan", href: "/tl/library/" },
         { label: "Pwedeng I-print", href: "/printables/" },
         { label: "Mga Kaganapan", href: "/events/" }
       ],
@@ -947,7 +947,7 @@
         { label: "Vastaukset", href: "/answers/" },
         { label: "Käyttötavat", href: "/usecase/" },
         { label: "Kategoriat", href: "/category/" },
-        { label: "Kirjasto", href: "/library/" },
+        { label: "Kirjasto", href: "/fi/library/" },
         { label: "Tulostettavat", href: "/printables/" },
         { label: "Tapahtumat", href: "/events/" }
       ],
@@ -980,7 +980,7 @@
         { label: "Jawapan", href: "/answers/" },
         { label: "Kegunaan", href: "/usecase/" },
         { label: "Kategori", href: "/category/" },
-        { label: "Pustaka", href: "/library/" },
+        { label: "Pustaka", href: "/ms/library/" },
         { label: "Boleh Cetak", href: "/printables/" },
         { label: "Acara", href: "/events/" }
       ],
@@ -1013,7 +1013,7 @@
         { label: "Відповіді", href: "/answers/" },
         { label: "Ідеї", href: "/usecase/" },
         { label: "Категорії", href: "/category/" },
-        { label: "Бібліотека", href: "/library/" },
+        { label: "Бібліотека", href: "/uk/library/" },
         { label: "Для друку", href: "/printables/" },
         { label: "Події", href: "/events/" }
       ],

@@ -692,6 +692,17 @@ console.log('L. Rule B exception: one page in an existing Tier-3 locale (owner d
       [entry({ pattern: 'category/cursive-fonts', locale: 'uk', scriptReadiness: 'prerequisite' })]);
     assert.strictEqual(cyr.code, 'rule-b-prerequisite');
   });
+  test('an owner decision recorded for exactly this page admits it, and only it', () => {
+    const own = { pattern: 'library/heart-symbols', scope: 'page', locale: 'cs', verdict: 'gate-pass', checkedDate: '2026-11-26',
+      evidence: 'fixture', ownerDecision: { date: '2026-11-26', summary: 'build the cs library hub' } };
+    const v = admit(m, rel, [own]);
+    assert.strictEqual(v.status, 'pass', v.detail);
+    assert.strictEqual(v.authority, 'owner-page-decision');
+    assert.strictEqual(admit(m, rel, [Object.assign({}, own, { pattern: 'library/arrow-symbols' })]).problem, 'missing-ledger-entry');
+    const undated = Object.assign({}, own, { ownerDecision: { summary: 'x' } });
+    assert.strictEqual(admit(m, rel, [undated]).problem, 'missing-ledger-entry');
+    assert.strictEqual(admit(m, rel, [Object.assign({}, own, { scope: undefined })]).problem, 'missing-ledger-entry');
+  });
   test('a Tier-1 locale never consults the exception (its own default applies)', () => {
     const r = decide('library/heart-symbols/index.html', 'fr');
     assert.strictEqual(reg.ruleBException('library/heart-symbols/index.html', 'fr', r, [entry({ locale: 'fr' })]).status, 'none');
