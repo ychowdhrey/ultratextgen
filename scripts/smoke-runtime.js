@@ -1363,7 +1363,16 @@ async function main() {
   // execCommand alone: this page loads script.js, whose manual-copy listener
   // must not record the fallback's own copy event as a second row. The list
   // takes any other tool whose copy runs through the same contract.
-  console.log('\nTool copy honesty (huruf letter variants)');
+  // The printables copy-paste cards joined 2026-11-23: a refused copy said
+  // "Copied!" on the ten graffiti-letters pages (the only ones whose
+  // variantFamily is not empty). They record no copy_text row (method: null), so
+  // their check is no row when refused and no stray "manual" row otherwise.
+  // The German word is the longest; it must fit its card at 390px.
+  // Zalgo, curved text, old Roblox and the scroll embed joined 2026-11-24:
+  // each said it copied when both paths failed, and the first three recorded
+  // a copy_text row for it. The zalgo and scroll pages load script.js, so
+  // "real fallback" must not add a "manual" row there either.
+  console.log('\nTool copy honesty (huruf, printables cards, zalgo, curved text, old Roblox, scroll embed)');
   {
     const stub = (mode) => `Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } });` +
       (mode === 'real fallback' ? '' : `
@@ -1375,28 +1384,79 @@ async function main() {
         modes: ['both refused', 'API refused', 'real fallback'], restores: true,
         setup: async (p, s) => { s.style = await p.locator('.bubble-variant').first().getAttribute('data-style'); },
         press: (p, s) => p.locator(variant(s)).click(),
-        label: (p, s) => p.locator(variant(s) + ' .bubble-variant-copy').textContent() }
+        label: (p, s) => p.locator(variant(s) + ' .bubble-variant-copy').textContent() },
+      { name: 'printables copy cards (en)', url: '/printables/graffiti-letters/', method: null, ok: /^Copied!$/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused', 'real fallback'], restores: true,
+        press: (p) => p.locator('.bubble-variant.glyph-copy').first().click(),
+        label: (p) => p.locator('.bubble-variant.glyph-copy .bubble-variant-copy').first().textContent() },
+      { name: 'printables copy cards (de, 390px)', url: '/de/zum-ausdrucken/graffiti-buchstaben/', method: null, ok: /^Kopiert!$/, fail: /^✗ Fehlgeschlagen$/,
+        modes: ['both refused'], restores: true, device: 'narrow', fits: '.bubble-variant.glyph-copy',
+        press: (p) => p.locator('.bubble-variant.glyph-copy').first().click(),
+        label: (p) => p.locator('.bubble-variant.glyph-copy .bubble-variant-copy').first().textContent() },
+      { name: 'zalgo Copy', url: '/usecase/zalgo-text/', method: 'button', ok: /Copied/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused', 'real fallback'], restores: true,
+        setup: async (p) => { await p.fill('#mainInput', 'Hello'); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#copyBtn').click(),
+        label: (p) => p.locator('#copyBtn').textContent() },
+      { name: 'zalgo Copy (de, 390px)', url: '/de/usecase/zalgo-text/', method: 'button', ok: /./, fail: /^✗ Fehlgeschlagen$/,
+        modes: ['both refused'], restores: true, device: 'narrow', fits: '#copyBtn',
+        setup: async (p) => { await p.fill('#mainInput', 'Hallo'); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#copyBtn').click(),
+        label: (p) => p.locator('#copyBtn').textContent() },
+      { name: 'curved text Copy SVG', url: '/curved-text/', method: 'svg', ok: /^SVG copied$/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused', 'real fallback'],
+        setup: async (p) => { await p.fill('#curvedInput', 'Hello'); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#curvedCopySvg').click(),
+        label: (p) => p.locator('#curvedToast').textContent() },
+      { name: 'curved text Copy SVG (fr)', url: '/fr/texte-courbe/', method: 'svg', ok: /./, fail: /^✗ Échec$/,
+        modes: ['both refused'],
+        setup: async (p) => { await p.fill('#curvedInput', 'Bonjour'); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#curvedCopySvg').click(),
+        label: (p) => p.locator('#curvedToast').textContent() },
+      { name: 'old Roblox Copy SVG', url: '/roblox/old-roblox-font/', method: 'svg', ok: /^SVG copied$/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused'], wait: 900,
+        press: (p) => p.locator('#orfCopySvg').click(),
+        label: (p) => p.locator('#orfToast').textContent() },
+      { name: 'scroll embed Copy', url: '/usecase/scrolling-text/', method: null, ok: /^Embed code copied$/, fail: /^✗ Failed$/,
+        modes: ['both refused', 'API refused', 'real fallback'],
+        setup: async (p) => { await p.locator('.scroll-mode-tab[data-mode="marquee"]').click(); await p.waitForTimeout(300); },
+        press: (p) => p.locator('#scrollCopyEmbed').click(),
+        label: (p) => p.locator('#scrollToast').textContent() }
     ];
     for (const tool of tools) {
       for (const mode of tool.modes) {
         const copies = mode !== 'both refused';
         const tag = `${tool.name}, ${mode}`;
-        const { ctx, page, errors } = await open(tool.url, 'desktop', stub(mode));
+        const { ctx, page, errors } = await open(tool.url, tool.device || 'desktop', stub(mode));
         const s = {};
         if (tool.setup) await tool.setup(page, s);
         const before = ((await tool.label(page, s)) || '').trim();
         const seen = [];
         for (let press = 0; press < 2; press++) {
           await tool.press(page, s);
-          await page.waitForTimeout(200);
+          await page.waitForTimeout(tool.wait || 200);
           seen.push(((await tool.label(page, s)) || '').trim());
         }
         check(`${tag}: ${copies ? 'confirms' : 'reports failure'} on both presses`,
           seen.every((l) => (copies ? tool.ok : tool.fail).test(l)), seen.join(' | '));
         const rows = (await dl(page)).filter((x) => x.event === 'copy_text');
-        check(`${tag}: ${copies ? 'two' : 'no'} copy_text rows, method ${tool.method} only`,
-          rows.length === (copies ? 2 : 0) && rows.every((r) => r.copy_method === tool.method),
-          rows.map((r) => r.copy_method).join(',') || '0 rows');
+        if (tool.method) {
+          check(`${tag}: ${copies ? 'two' : 'no'} copy_text rows, method ${tool.method} only`,
+            rows.length === (copies ? 2 : 0) && rows.every((r) => r.copy_method === tool.method),
+            rows.map((r) => r.copy_method).join(',') || '0 rows');
+        } else {
+          check(`${tag}: ${copies ? 'no "manual" row' : 'no copy_text row'}`,
+            copies ? rows.every((r) => r.copy_method !== 'manual') : rows.length === 0,
+            rows.map((r) => r.copy_method).join(',') || '0 rows');
+        }
+        if (tool.fits) {
+          const fit = await page.evaluate((sel) => {
+            const row = document.querySelector(sel);
+            const de = document.documentElement;
+            return { page: de.scrollWidth - de.clientWidth, card: row ? row.scrollWidth - row.clientWidth : null };
+          }, tool.fits);
+          check(`${tag}: the failed label fits its card and the page`, fit.page <= 0 && fit.card !== null && fit.card <= 0, JSON.stringify(fit));
+        }
         if (tool.restores) {
           await page.waitForTimeout(1600);
           const after = ((await tool.label(page, s)) || '').trim();
@@ -1839,6 +1899,126 @@ async function main() {
       const claims = /Saved on this device/.test(hint || '');
       check(`/ storage ${blocked ? 'blocked' : 'allowed'}: the saved section ${wantHint ? 'keeps its hint' : 'makes no "Saved on this device" claim'}`, claims === wantHint, hint);
       check(`/ storage ${blocked ? 'blocked' : 'allowed'}: no page errors`, !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+  }
+
+  // 25b. The saved strip sits in the page's column. savedHost() inserts it as
+  // a sibling of the first tile section, straight into <body>, so it inherited
+  // no width: on every library, symbol and kaomoji page, and on the locale
+  // library hubs, it ran 1280px (1600px on a wide screen) beside an 800px
+  // page, and flush to both edges of a phone (rendered UX audit 2026-11-21).
+  // Its edges must match the content edges of the column it sits above
+  // (the first heading after it), on an article page and on a hub, at a
+  // desktop width and at 390px.
+  for (const [url, device] of [
+    ['/ko/library/baksu-imotikon/', 'desktop'], ['/ko/library/baksu-imotikon/', 'narrow'],
+    ['/ja/library/', 'desktop'], ['/ja/library/', 'narrow']
+  ]) {
+    console.log(`\n${url} (saved strip sits in the page column, ${device})`);
+    const { ctx, page, errors } = await open(url, device, () => {
+      if (!localStorage.getItem('utg_saved_items')) {
+        localStorage.setItem('utg_saved_items', JSON.stringify([{ type: 'symbol', value: '★', label: '★', href: '', t: 1 }]));
+      }
+    });
+    const g = await page.evaluate(() => {
+      const s = document.getElementById('symbolSavedStrip');
+      if (!s || s.hidden) return null;
+      const h = [...document.querySelectorAll('h2')].find((x) => x.compareDocumentPosition(s) & Node.DOCUMENT_POSITION_PRECEDING && !s.contains(x) && x.getBoundingClientRect().width);
+      const r = s.getBoundingClientRect();
+      const c = h ? h.getBoundingClientRect() : null;
+      return { s: [Math.round(r.left), Math.round(r.right)], c: c && [Math.round(c.left), Math.round(c.right)], vw: document.documentElement.clientWidth };
+    });
+    check('the strip renders for a device with a saved symbol', !!g);
+    check('the strip edges match the content column below it', g && g.c && Math.abs(g.s[0] - g.c[0]) <= 1 && Math.abs(g.s[1] - g.c[1]) <= 1, JSON.stringify(g));
+    check('the strip leaves a gutter at both screen edges', g && g.s[0] >= 16 && g.vw - g.s[1] >= 16, JSON.stringify(g));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25c. Dark mode keeps the sheet's Name and Date line legible. The preview
+  // paper stays white in dark mode, but the line's colour followed the theme:
+  // #f1f5f9 on white, 1.10:1, so a ticked "Name and date line" looked absent.
+  // The PDF was never affected (it rasterises on a white root); this is the
+  // on-screen preview only.
+  console.log('\n/printables/handwriting-worksheet-generator/ (dark mode: the Name and Date line is legible on the paper)');
+  {
+    const { ctx, page, errors } = await open('/printables/handwriting-worksheet-generator/', 'desktop');
+    await page.locator('#darkModeBtn').click();
+    await page.waitForTimeout(200);
+    for (const box of await page.locator('input[id$="-namedate"]').all()) await box.check({ force: true });
+    await page.waitForTimeout(300);
+    const c = await page.evaluate(() => {
+      const label = [...document.querySelectorAll('.pt-paper .pt-sheet-footer-label')].find((x) => x.getBoundingClientRect().width);
+      if (!label) return null;
+      let n = label, bg = 'rgba(0, 0, 0, 0)';
+      while (n && /rgba\(0, 0, 0, 0\)|transparent/.test(bg)) { bg = getComputedStyle(n).backgroundColor; n = n.parentElement; }
+      return { text: label.textContent, fg: getComputedStyle(label).color, bg, dark: document.body.classList.contains('dark-mode') };
+    });
+    const ratio = c ? contrast(c.fg, c.bg) : 0;
+    check('the page is in dark mode and the line is on the paper', c && c.dark, JSON.stringify(c));
+    check('dark mode: the Name label reads at >= 4.5:1 on the paper', ratio >= 4.5, c ? `${c.text} ${c.fg} on ${c.bg} = ${ratio.toFixed(2)}` : 'no footer label');
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25d. Arabic header search finds a noun written with its article. The index
+  // spells "the heart" القلب; the visitor types قلب. Matching is at a word
+  // start, so the article hid every heart page from the everyday query.
+  console.log('\n/ar/ (header search: a bare Arabic noun finds its article form)');
+  {
+    const { ctx, page, errors } = await open('/ar/', 'desktop');
+    await page.locator('#searchInput').fill('قلب');
+    await page.waitForTimeout(1300);
+    const hrefs = await page.locator('.site-search-results a').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
+    check('قلب returns Arabic heart pages', hrefs.includes('/ar/symbol/ramz-alqalb/'), JSON.stringify(hrefs));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25e. Muted text reads at 4.5:1 wherever it lands, in both themes.
+  // --text-muted carries form labels and hints site-wide. It was #94a3b8 in
+  // light mode (2.43:1 on the page background) and #64748b in dark mode
+  // (3.07:1 on a card), so every one of those labels failed WCAG 1.4.3.
+  // The token is painted a sentinel colour to find exactly the elements it
+  // colours, then each is measured in its real colour against its real
+  // background: a new component that puts muted text on a tinted surface
+  // fails here, not only the token values.
+  for (const [url, typed] of [['/', 'Luna'], ['/library/', null], ['/printables/block-letters/', 'Emma']]) {
+    for (const dark of [false, true]) {
+      console.log(`\n${url} (muted text is legible, ${dark ? 'dark' : 'light'} mode)`);
+      const { ctx, page, errors } = await open(url, 'desktop');
+      if (dark) { await page.locator('#darkModeBtn').click(); await page.waitForTimeout(200); }
+      if (typed) {
+        const field = page.locator(url === '/' ? '#mainInput' : '#pt-name-input');
+        await field.fill(typed);
+        await page.waitForTimeout(400);
+      }
+      const r = await page.evaluate(() => {
+        const st = document.createElement('style');
+        st.textContent = ':root, body, body.dark-mode { --text-muted: rgb(1, 2, 3) !important; }';
+        document.head.appendChild(st);
+        const els = [...document.querySelectorAll('body *')].filter((e) => {
+          const cs = getComputedStyle(e);
+          if (cs.color !== 'rgb(1, 2, 3)' || cs.visibility === 'hidden') return false;
+          const b = e.getBoundingClientRect();
+          return b.width && b.height && [...e.childNodes].some((c) => c.nodeType === 3 && c.textContent.trim());
+        });
+        st.remove();
+        return els.map((e) => {
+          let n = e, bg = 'rgba(0, 0, 0, 0)';
+          while (n && /rgba\(0, 0, 0, 0\)|transparent/.test(bg)) { bg = getComputedStyle(n).backgroundColor; n = n.parentElement; }
+          if (!n && /rgba\(0, 0, 0, 0\)|transparent/.test(bg)) bg = getComputedStyle(document.body).backgroundColor;
+          const cs = getComputedStyle(e);
+          const large = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.66 && +cs.fontWeight >= 700);
+          return { cls: (typeof e.className === 'string' && e.className.split(' ')[0]) || e.tagName.toLowerCase(), text: e.textContent.trim().slice(0, 24), fg: cs.color, bg, large };
+        });
+      });
+      const bad = r.map((x) => ({ ...x, ratio: contrast(x.fg, x.bg) })).filter((x) => x.ratio < (x.large ? 3 : 4.5));
+      check('the page has muted text to measure', r.length > 0, `${r.length}`);
+      check(`every muted label reads at >= 4.5:1 (${r.length} measured)`, bad.length === 0,
+        bad.slice(0, 4).map((x) => `${x.cls} "${x.text}" ${x.fg} on ${x.bg} = ${x.ratio.toFixed(2)}`).join(' | '));
+      check('no page errors', !errors.length, errors.join(' | '));
       await ctx.close();
     }
   }

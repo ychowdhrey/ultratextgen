@@ -524,7 +524,13 @@
       --bg-white: #FFFFFF;
       --text-primary: #1a1a2e;
       --text-secondary: #64748b;
-      --text-muted: #94a3b8;
+      /* Muted text must still read: WCAG 1.4.3 asks 4.5:1 for body-size text,
+         and muted carries form labels and hints site-wide ("Apply style to",
+         "Print size", library filters and tags, counter stats). #94a3b8 was
+         2.43:1 on --bg-base and 2.56:1 on white. #64748b is 4.52:1 / 4.76:1,
+         the lightest slate that passes on --bg-base, so in light mode muted and
+         secondary are now one colour (2026-11-23). */
+      --text-muted: #64748b;
       --accent-purple: #8b5cf6;
       --accent-blue: #3b82f6;
       --border-light: #e2e8f0;
@@ -550,7 +556,10 @@
       --bg-white: #1e293b;
       --text-primary: #f1f5f9;
       --text-secondary: #94a3b8;
-      --text-muted: #64748b;
+      /* Was #64748b: 3.75:1 on --bg-base and 3.07:1 on --bg-white cards.
+         #94a3b8 is 6.96:1 / 5.71:1. Text on white paper in dark mode keeps the
+         light-mode colour (.pt-paper-caption below). */
+      --text-muted: #94a3b8;
       --border-light: #334155;
       --shadow-soft: 0 1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15);
       --ts-safe: #4ade80;
@@ -1340,7 +1349,10 @@
       font-size: 0.65rem;
       font-weight: 600;
       background: var(--border-light);
-      color: var(--text-muted);
+      /* Shown on keyboard focus, on its own grey chip: muted on --border-light
+         is 3.86:1 (light) / 4.04:1 (dark), so the hint keyboard users get uses
+         the primary text colour (13:1 / 10:1). Hover keeps its white-on-purple. */
+      color: var(--text-primary);
       border-radius: 3px;
       padding: 1px 4px;
       line-height: 1.4;
@@ -5693,6 +5705,16 @@ button.clear-decoration {
   letter-spacing: 0.03em;
 }
 .bubble-variant-copy.is-copied { color: var(--ts-safe); }
+/* A refused copy shows the failed word (2026-11-23). The label never shrinks
+   in its normal states, but some failed words are long: "✗ FEHLGESCHLAGEN"
+   ran 39px past a two-column phone card. Only while it shows may the label
+   give way and wrap, so the Copy and Copied states render as before. */
+.bubble-variant-copy.is-copy-failed {
+  flex-shrink: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--ts-fail);
+}
 
 .bubble-howto { margin-top: 1.5rem; }
 .bubble-howto-steps {
@@ -8303,6 +8325,11 @@ body.is-printing.ja-printing { margin: 0 !important; padding: 0 !important; }
 
 /* Dark-mode: keep print-preview cards light so white-fill outlines stay visible */
 body.dark-mode .pt-name-preview { background: #fff; border-color: var(--border-light); }
+/* The paper-size caption ("A4 · Portrait · Normal") sits on white paper (.pt-paper,
+   or this card), so it keeps the light-mode muted colour: dark mode's lighter
+   muted would be 2.56:1 there. */
+body.dark-mode .pt-paper .pt-paper-caption,
+body.dark-mode .pt-name-preview .pt-paper-caption { color: #64748b; }
 
 /* How-to-write demo (js/printables/cursiveDemo.js): the phrase drawn stroke by
    stroke beside its written stroke plan. The stage is paper, so it stays white
@@ -13736,6 +13763,16 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   .pt-sheet-footer-field { color: #1a1a2e; }
   .pt-sheet-footer-rule { border-bottom-color: #9aa3b2; }
 }
+/* The on-screen sheet is white paper in dark mode too (.pt-paper and
+   .pt-sheet-thumb-paper are pinned to #fff), but the line's tokens flip with
+   the theme: "Name:" and "Date:" drew #f1f5f9 on white, 1.10:1, so a dark-mode
+   visitor who ticked the Name and date line saw no line in the preview
+   (2026-11-21 rendered UX audit). The PDF was never affected: it rasterises
+   under body.pt-pdf-rendering on a white root. Paper colours, as printed. */
+body.dark-mode .pt-paper .pt-sheet-footer-field,
+body.dark-mode .pt-sheet-thumb-paper .pt-sheet-footer-field { color: #1a1a2e; }
+body.dark-mode .pt-paper .pt-sheet-footer-rule,
+body.dark-mode .pt-sheet-thumb-paper .pt-sheet-footer-rule { border-bottom-color: #9aa3b2; }
 
 /* "Same word, another sheet" -- the journey links under a generator input.
    Screen only: a printed sheet has nowhere to click. */

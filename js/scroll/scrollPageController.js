@@ -371,28 +371,46 @@
     if (code) code.value = lastEmbedSnippet;
   }
 
-  function copyEmbed() {
-    if (!lastEmbedSnippet) return;
-    let done = function () { marqueeToast("Embed code copied"); };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(lastEmbedSnippet).then(done, function () {
-        fallbackCopy(lastEmbedSnippet, done);
-      });
-    } else {
-      fallbackCopy(lastEmbedSnippet, done);
-    }
+  // The page is English only; English is the in-code fallback, the same word
+  // as ui.copyButtons.failed on the generator's own buttons.
+  const COPY_FAILED = "✗ Failed";
+
+  // Resolves only when the text reached the clipboard; rejects when nothing
+  // did. This page loads script.js, whose UltraTextGen.writeClipboard has
+  // that contract and keeps its fallback's native "copy" event from being
+  // recorded as a manual copy (the old fallback here was recorded as one).
+  // The local copy is the same contract for a page without script.js.
+  function writeClipboard(text) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.writeClipboard === "function") return ns.writeClipboard(text);
+    const legacy = function () {
+      const focused = document.activeElement;
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      if (focused && typeof focused.focus === "function") focused.focus();
+      return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).catch(legacy);
+    return legacy();
   }
 
-  function fallbackCopy(text, done) {
-    let ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "absolute";
-    ta.style.left = "-9999px";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); done(); } catch (e) { /* noop */ }
-    document.body.removeChild(ta);
+  // "Embed code copied" only once the clipboard has the snippet; the failed
+  // word otherwise (2026-11-24: a refused copy still said it was copied).
+  function copyEmbed() {
+    if (!lastEmbedSnippet) return;
+    writeClipboard(lastEmbedSnippet).then(function () {
+      marqueeToast("Embed code copied");
+    }, function () {
+      marqueeToast(COPY_FAILED);
+    });
   }
 
   let marqueeToastTimer = null;

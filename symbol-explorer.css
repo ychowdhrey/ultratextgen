@@ -447,14 +447,34 @@
 
 /* ---- Saved strip ---- */
 /* Rendered above the page's first symbol section, and only when this device
-   has saved something. */
+   has saved something.
+
+   The strip is inserted as a SIBLING of that section, straight into <body>,
+   so it does not inherit the section's centred column: with margin 0 it ran
+   the full viewport (1280px or 1600px of card beside an 800px page, flush to
+   the screen edges on a phone) on every library, symbol and kaomoji page and
+   on the locale library hubs (2026-11-21 rendered UX audit). Its width is the
+   host column's CONTENT box, so its edges line up with the headings and tiles
+   below it at every width:
+     .mood-explainers / .editorial-section  max-width 800px, padding 0 1rem
+     .lib-directory (library hubs)           max-width 900px, padding 0 1.25rem
+   Keep these in step with style.css if either column changes. */
 .symbol-saved-strip {
-  margin: 1.25rem 0 1.75rem;
+  box-sizing: border-box;
+  width: min(768px, 100% - 2rem);
+  margin: 1.25rem auto 1.75rem;
   padding: 1rem 1.1rem 1.15rem;
   border: 1px solid var(--border-light, #e0e0e0);
   border-radius: var(--radius-lg, 12px);
   background: var(--bg-white, #fff);
   box-shadow: var(--shadow-soft, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+/* On a library hub the strip sits before main.lib-directory, a wider column.
+   A browser without :has() keeps the 768px width above: still centred and
+   inside the hub's column, only narrower than it. */
+.symbol-saved-strip:has(+ .lib-directory) {
+  width: min(860px, 100% - 2.5rem);
 }
 
 .symbol-saved-head {
