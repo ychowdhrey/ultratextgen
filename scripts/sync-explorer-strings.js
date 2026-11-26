@@ -89,7 +89,12 @@ const TARGETS = [
   // The decoration chips' copied/failed word (2026-11-15): the showcase runs
   // on pages with neither i18n.js nor symbol-explorer.js, so it carries its
   // own two strings, built from the JSON like the selection table.
-  { file: path.join(ROOT, 'decorations-showcase.js'), keys: { copied: 'copyButtons.copied', failed: 'copyButtons.failed' }, createMissing: true }
+  { file: path.join(ROOT, 'decorations-showcase.js'), keys: { copied: 'copyButtons.copied', failed: 'copyButtons.failed' }, createMissing: true },
+  // The huruf variants' failed word (2026-11-22). The module runs on one
+  // Indonesian page, so its table holds en and id and no others: without
+  // createMissing, every entry present is still checked against the JSON,
+  // and none is added.
+  { file: path.join(ROOT, 'js', 'huruf', 'hurufExplorer.js'), keys: { failed: 'copyButtons.failed' } }
 ];
 
 /** English is the in-code fallback and ships no copyButtons block, by design

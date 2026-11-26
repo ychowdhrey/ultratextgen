@@ -809,6 +809,91 @@ const decorations = window.UTG_DECORATIONS
     return chips ? `<div class="style-platforms">${chips}</div>` : "";
   }
 
+  // Which typed letters this card's style left plain or changed the case of
+  // ("Q stays a regular letter here."), read from the generated per-style
+  // table in js/style-coverage.js (npm run build:style-coverage). Opt-in per
+  // page via window.UTG_COVERAGE_LINE; without it, or without the table, the
+  // card gets nothing. Shown only when it names something; a locale page
+  // whose locale file has no ui.coverageLine strings gets nothing, never
+  // English. The block between the markers is sliced and evaluated by
+  // script.coverage-line.test.js: move the markers with the code.
+  /* @coverage-line:begin */
+  const COVERAGE_LINE_EN = {
+    keptLetter: "{chars} stays a regular letter here.",
+    keptLetters: "{chars} stay regular letters here.",
+    keptCharacter: "{chars} stays a regular character here.",
+    keptCharacters: "{chars} stay regular characters here.",
+    lowerOne: "{chars} becomes lowercase here.",
+    lowerMany: "{chars} become lowercase here.",
+    upperOne: "{chars} becomes a capital here.",
+    upperMany: "{chars} become capitals here."
+  };
+
+  // Typed characters, one per user-perceived character, so a letter carrying
+  // an accent or a keycap is not read as the plain letter.
+  function coverageGraphemes(text) {
+    if (typeof Intl !== "undefined" && typeof Intl.Segmenter === "function") {
+      return Array.from(new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(text), (s) => s.segment);
+    }
+    return Array.from(text);
+  }
+
+  function coverageJoin(items, lang) {
+    try {
+      if (typeof Intl !== "undefined" && typeof Intl.ListFormat === "function") {
+        return new Intl.ListFormat(lang, { style: "long", type: "conjunction" }).format(items);
+      }
+    } catch (err) { /* unknown language tag: fall through */ }
+    return items.join(", ");
+  }
+
+  // `strings` holds the eight sentences; a missing one means no line.
+  function coverageLineText(text, slug, table, strings, lang) {
+    if (!text || !slug || !table || !table.states || !strings) return "";
+    if (Array.isArray(table.contextual) && table.contextual.indexOf(slug) !== -1) return "";
+    const row = table.states[slug];
+    const chars = table.chars;
+    if (typeof row !== "string" || typeof chars !== "string" || row.length !== chars.length) return "";
+    const kept = [];
+    const lower = [];
+    const upper = [];
+    const seen = new Set();
+    coverageGraphemes(text).forEach((g) => {
+      if (g.length !== 1 || seen.has(g)) return;
+      const i = chars.indexOf(g);
+      if (i === -1) return;
+      seen.add(g);
+      if (row[i] === "p") kept.push(g);
+      else if (row[i] === "k") (g !== g.toLowerCase() ? lower : upper).push(g);
+    });
+    const sentences = [];
+    const say = (list, one, many) => {
+      if (!list.length) return true;
+      const tpl = list.length === 1 ? strings[one] : strings[many];
+      if (typeof tpl !== "string" || tpl.indexOf("{chars}") === -1) return false;
+      sentences.push(tpl.replace("{chars}", coverageJoin(list, lang)));
+      return true;
+    };
+    const lettersOnly = kept.every((c) => /[A-Za-z]/.test(c));
+    const ok = say(kept, lettersOnly ? "keptLetter" : "keptCharacter", lettersOnly ? "keptLetters" : "keptCharacters") &&
+      say(lower, "lowerOne", "lowerMany") &&
+      say(upper, "upperOne", "upperMany");
+    return ok ? sentences.join(" ") : "";
+  }
+  /* @coverage-line:end */
+
+  function coverageLineHtml(style, isDemo) {
+    if (!window.UTG_COVERAGE_LINE || isDemo || !style || !el.mainInput) return "";
+    let text = el.mainInput.value || "";
+    // First-line scope styles the first line only; the rest is plain by choice.
+    if (currentScope === "first-line" && text.indexOf("\n") !== -1) text = text.slice(0, text.indexOf("\n"));
+    const strings = PAGE_LANG === "en"
+      ? Object.assign({}, COVERAGE_LINE_EN, uiText("coverageLine", null) || {})
+      : uiText("coverageLine", null);
+    const line = coverageLineText(text, style.slug, window.UTG_STYLE_COVERAGE, strings, PAGE_LANG);
+    return line ? `<p class="style-coverage">${escapeHtml(line)}</p>` : "";
+  }
+
   /* ===================
      RENDER SAFETY
      =================== */
@@ -1125,7 +1210,7 @@ const decorations = window.UTG_DECORATIONS
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText ? escapeHtml(convertedText) : STR.empty}</p>
         ${decoHtml}
         ${safetyPillHtml(name, style, !isDemo && !!untouched)}
-        ${platformChipsHtml(style)}
+        ${platformChipsHtml(style)}${coverageLineHtml(style, isDemo)}
       </div>
       <div class="style-actions-stack">
         <div class="style-actions">

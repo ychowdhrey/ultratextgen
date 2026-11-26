@@ -32,7 +32,7 @@
     "username": {
       limit: 15,
       guidance:
-        "Dein eindeutiger @Handle. <strong>Nur einfaches ASCII — hier wird keine Unicode-Schrift dargestellt.</strong> Buchstaben, Zahlen, Bindestriche, Unterstriche und Punkte; 3–15 Zeichen, muss mit einem Buchstaben beginnen und mit einem Buchstaben oder einer Zahl enden.",
+        "Dein eindeutiger @Handle. <strong>Nur einfaches ASCII — hier wird keine Unicode-Schrift dargestellt.</strong> Buchstaben, Zahlen und eines der Zeichen Bindestrich, Unterstrich oder Punkt; 3–15 Zeichen, muss mit einem Buchstaben beginnen, mit einem Buchstaben oder einer Zahl enden und darf keine Telefonnummer sein oder enthalten.",
       previewType: "username",
       presets: [],
       showUsernameNote: true,
@@ -86,7 +86,7 @@
 
   const USERNAME_NOTE =
     '<span class="note-title">@Benutzername lässt sich nicht stylen</span>' +
-    "Snapchats @Benutzername-Feld akzeptiert nur einfaches ASCII: Buchstaben, Zahlen, Bindestriche ( - ), Unterstriche ( _ ) und Punkte ( . ). Jede stylische Unicode-Schrift — fett, Schreibschrift, gotisch, Bubble — lässt sich hier nicht speichern. Nutze diesen Generator für <em>Ideen</em> zum Benutzernamen und tippe dann die einfache, unstylische Version in das @Benutzername-Feld. Speichere dein stylisches Ergebnis stattdessen für deinen <strong>Anzeigenamen</strong> auf.";
+    "Snapchats @Benutzername-Feld akzeptiert nur einfaches ASCII: Buchstaben, Zahlen und eines der Zeichen Bindestrich ( - ), Unterstrich ( _ ) oder Punkt ( . ). Jede stylische Unicode-Schrift — fett, Schreibschrift, gotisch, Bubble — lässt sich hier nicht speichern. Nutze diesen Generator für <em>Ideen</em> zum Benutzernamen und tippe dann die einfache, unstylische Version in das @Benutzername-Feld. Speichere dein stylisches Ergebnis stattdessen für deinen <strong>Anzeigenamen</strong> auf.";
 
   const PUBLIC_NOTE =
     '<span class="note-title">Auffindbarkeit deines Public Profiles</span>' +

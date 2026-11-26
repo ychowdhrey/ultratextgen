@@ -286,39 +286,51 @@
 
   let copyTimer = null;
 
-  // Clipboard copy with an execCommand fallback and a "Copied!" label swap,
-  // mirroring the copyText()/copyToClipboard helpers used elsewhere in the repo
-  // (js/printables/printablesEngine.js, usecase/zalgo-text). Standalone here.
-  function copyToClipboard(value, btn) {
-    const done = function () {
-      if (!btn) return;
-      if (btn.dataset.origLabel == null) btn.dataset.origLabel = btn.textContent;
-      btn.classList.add("is-copied");
-      btn.textContent = "Copied!";
-      if (copyTimer) clearTimeout(copyTimer);
-      copyTimer = setTimeout(function () {
-        btn.textContent = btn.dataset.origLabel;
-        btn.classList.remove("is-copied");
-      }, 1400);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(value).then(function () {
-        // One copy_text row on success, through header.js trackCopy; the
-        // method is not a catalogue one, so the typed text stays out (2026-11-08).
-        if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("persona_translator", value);
-        done();
-      }).catch(done);
-    } else {
+  // Clipboard copy with an execCommand fallback and a label swap. The label
+  // says "Copied!" only once the clipboard accepted the text, and "Failed"
+  // otherwise (2026-11-21: a refused copy used to say "Copied!"). Same contract
+  // as script.js's writeClipboard, which these pages do not load. Standalone here.
+  function writeClipboard(value) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.writeClipboard === "function") return ns.writeClipboard(value);
+    const legacy = function () {
       const ta = document.createElement("textarea");
       ta.value = value;
+      ta.setAttribute("readonly", "");
       ta.style.position = "fixed";
       ta.style.opacity = "0";
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand("copy"); } catch (e) { /* noop */ }
+      let ok = false;
+      try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
       document.body.removeChild(ta);
-      done();
+      return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(value).catch(legacy);
     }
+    return legacy();
+  }
+
+  function copyToClipboard(value, btn) {
+    const show = function (label, cls) {
+      if (!btn) return;
+      if (btn.dataset.origLabel == null) btn.dataset.origLabel = btn.textContent;
+      btn.classList.remove("is-copied", "is-copy-failed");
+      btn.classList.add(cls);
+      btn.textContent = label;
+      if (copyTimer) clearTimeout(copyTimer);
+      copyTimer = setTimeout(function () {
+        btn.textContent = btn.dataset.origLabel;
+        btn.classList.remove(cls);
+      }, 1400);
+    };
+    writeClipboard(value).then(function () {
+      // One copy_text row on success, through header.js trackCopy; the
+      // method is not a catalogue one, so the typed text stays out (2026-11-08).
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) window.UltraTextGen.trackCopy("persona_translator", value);
+      show("Copied!", "is-copied");
+    }, function () { show("Failed", "is-copy-failed"); });
   }
 
   function initController() {

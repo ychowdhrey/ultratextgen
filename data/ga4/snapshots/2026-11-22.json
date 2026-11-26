@@ -1,0 +1,1747 @@
+{
+ "comparability_boundaries": [
+  {
+   "date": "2026-11-08",
+   "metrics": [
+    "screenPageViews",
+    "page_view",
+    "pages_per_session"
+   ],
+   "why": "typed text left the address bar; history-rewrite page views are no longer counted"
+  },
+  {
+   "date": "2026-09-13",
+   "metrics": [
+    "share_text"
+   ],
+   "why": "share_text fires on success, not on intent"
+  }
+ ],
+ "countries": [
+  {
+   "active_users": 3910,
+   "country": "Indonesia",
+   "sessions": 4833
+  },
+  {
+   "active_users": 1810,
+   "country": "South Korea",
+   "sessions": 2135
+  },
+  {
+   "active_users": 1064,
+   "country": "Singapore",
+   "sessions": 1074
+  },
+  {
+   "active_users": 506,
+   "country": "Russia",
+   "sessions": 570
+  },
+  {
+   "active_users": 444,
+   "country": "United States",
+   "sessions": 518
+  },
+  {
+   "active_users": 504,
+   "country": "China",
+   "sessions": 511
+  },
+  {
+   "active_users": 292,
+   "country": "France",
+   "sessions": 361
+  },
+  {
+   "active_users": 281,
+   "country": "Brazil",
+   "sessions": 341
+  },
+  {
+   "active_users": 264,
+   "country": "Mexico",
+   "sessions": 329
+  },
+  {
+   "active_users": 238,
+   "country": "Italy",
+   "sessions": 302
+  },
+  {
+   "active_users": 143,
+   "country": "Vietnam",
+   "sessions": 188
+  },
+  {
+   "active_users": 152,
+   "country": "Taiwan",
+   "sessions": 185
+  },
+  {
+   "active_users": 138,
+   "country": "Poland",
+   "sessions": 170
+  },
+  {
+   "active_users": 146,
+   "country": "Japan",
+   "sessions": 160
+  },
+  {
+   "active_users": 136,
+   "country": "T\u00fcrkiye",
+   "sessions": 158
+  }
+ ],
+ "events": {
+  "ad_click": 369,
+  "ad_impression": 32999,
+  "click": 57,
+  "copy_text": 9558,
+  "first_visit": 11146,
+  "page_view": 17155,
+  "save_style": 187,
+  "scroll": 2404,
+  "session_start": 14067,
+  "share_text": 46,
+  "user_engagement": 8982,
+  "view_search_results": 141
+ },
+ "families": [
+  {
+   "locale": "id",
+   "page_type": "library",
+   "pages": 35,
+   "screen_page_views": 2798
+  },
+  {
+   "locale": "id",
+   "page_type": "usecase",
+   "pages": 20,
+   "screen_page_views": 2271
+  },
+  {
+   "locale": "ko",
+   "page_type": "library",
+   "pages": 101,
+   "screen_page_views": 1692
+  },
+  {
+   "locale": "id",
+   "page_type": "root",
+   "pages": 30,
+   "screen_page_views": 802
+  },
+  {
+   "locale": "en",
+   "page_type": "library",
+   "pages": 227,
+   "screen_page_views": 696
+  },
+  {
+   "locale": "en",
+   "page_type": "printables",
+   "pages": 111,
+   "screen_page_views": 487
+  },
+  {
+   "locale": "ko",
+   "page_type": "symbol",
+   "pages": 51,
+   "screen_page_views": 453
+  },
+  {
+   "locale": "en",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 411
+  },
+  {
+   "locale": "ru",
+   "page_type": "library",
+   "pages": 30,
+   "screen_page_views": 404
+  },
+  {
+   "locale": "en",
+   "page_type": "root",
+   "pages": 32,
+   "screen_page_views": 392
+  },
+  {
+   "locale": "es",
+   "page_type": "symbol",
+   "pages": 37,
+   "screen_page_views": 367
+  },
+  {
+   "locale": "es",
+   "page_type": "root",
+   "pages": 30,
+   "screen_page_views": 321
+  },
+  {
+   "locale": "ru",
+   "page_type": "symbol",
+   "pages": 42,
+   "screen_page_views": 313
+  },
+  {
+   "locale": "es",
+   "page_type": "imprimibles",
+   "pages": 30,
+   "screen_page_views": 289
+  },
+  {
+   "locale": "ko",
+   "page_type": "root",
+   "pages": 15,
+   "screen_page_views": 271
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 237
+  },
+  {
+   "locale": "en",
+   "page_type": "symbol",
+   "pages": 73,
+   "screen_page_views": 228
+  },
+  {
+   "locale": "en",
+   "page_type": "usecase",
+   "pages": 29,
+   "screen_page_views": 216
+  },
+  {
+   "locale": "pt",
+   "page_type": "root",
+   "pages": 23,
+   "screen_page_views": 202
+  },
+  {
+   "locale": "fr",
+   "page_type": "root",
+   "pages": 24,
+   "screen_page_views": 193
+  },
+  {
+   "locale": "id",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 183
+  },
+  {
+   "locale": "ru",
+   "page_type": "root",
+   "pages": 18,
+   "screen_page_views": 158
+  },
+  {
+   "locale": "vi",
+   "page_type": "root",
+   "pages": 24,
+   "screen_page_views": 150
+  },
+  {
+   "locale": "it",
+   "page_type": "symbol",
+   "pages": 21,
+   "screen_page_views": 133
+  },
+  {
+   "locale": "it",
+   "page_type": "root",
+   "pages": 16,
+   "screen_page_views": 130
+  },
+  {
+   "locale": "ko",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 127
+  },
+  {
+   "locale": "en",
+   "page_type": "roblox",
+   "pages": 2,
+   "screen_page_views": 121
+  },
+  {
+   "locale": "es",
+   "page_type": "library",
+   "pages": 81,
+   "screen_page_views": 120
+  },
+  {
+   "locale": "ko",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 119
+  },
+  {
+   "locale": "fr",
+   "page_type": "symbol",
+   "pages": 22,
+   "screen_page_views": 109
+  },
+  {
+   "locale": "id",
+   "page_type": "symbol",
+   "pages": 37,
+   "screen_page_views": 102
+  },
+  {
+   "locale": "fr",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 99
+  },
+  {
+   "locale": "fr",
+   "page_type": "imprimables",
+   "pages": 11,
+   "screen_page_views": 98
+  },
+  {
+   "locale": "pl",
+   "page_type": "do-druku",
+   "pages": 9,
+   "screen_page_views": 95
+  },
+  {
+   "locale": "pt",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 93
+  },
+  {
+   "locale": "en",
+   "page_type": "category",
+   "pages": 20,
+   "screen_page_views": 81
+  },
+  {
+   "locale": "hi",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 77
+  },
+  {
+   "locale": "es",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 75
+  },
+  {
+   "locale": "pt",
+   "page_type": "symbol",
+   "pages": 33,
+   "screen_page_views": 74
+  },
+  {
+   "locale": "ar",
+   "page_type": "symbol",
+   "pages": 26,
+   "screen_page_views": 74
+  },
+  {
+   "locale": "ja",
+   "page_type": "library",
+   "pages": 20,
+   "screen_page_views": 67
+  },
+  {
+   "locale": "en",
+   "page_type": "answers",
+   "pages": 37,
+   "screen_page_views": 66
+  },
+  {
+   "locale": "tr",
+   "page_type": "root",
+   "pages": 12,
+   "screen_page_views": 65
+  },
+  {
+   "locale": "ar",
+   "page_type": "library",
+   "pages": 23,
+   "screen_page_views": 64
+  },
+  {
+   "locale": "tr",
+   "page_type": "symbol",
+   "pages": 28,
+   "screen_page_views": 59
+  },
+  {
+   "locale": "ar",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 57
+  },
+  {
+   "locale": "pl",
+   "page_type": "root",
+   "pages": 17,
+   "screen_page_views": 57
+  },
+  {
+   "locale": "fr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 51
+  },
+  {
+   "locale": "vi",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 45
+  },
+  {
+   "locale": "de",
+   "page_type": "zum-ausdrucken",
+   "pages": 8,
+   "screen_page_views": 45
+  },
+  {
+   "locale": "en",
+   "page_type": "guide",
+   "pages": 13,
+   "screen_page_views": 43
+  },
+  {
+   "locale": "tr",
+   "page_type": "library",
+   "pages": 25,
+   "screen_page_views": 43
+  },
+  {
+   "locale": "ja",
+   "page_type": "purinto",
+   "pages": 9,
+   "screen_page_views": 41
+  },
+  {
+   "locale": "ja",
+   "page_type": "symbol",
+   "pages": 27,
+   "screen_page_views": 37
+  },
+  {
+   "locale": "es",
+   "page_type": "usecase",
+   "pages": 4,
+   "screen_page_views": 35
+  },
+  {
+   "locale": "nl",
+   "page_type": "om-uit-te-printen",
+   "pages": 8,
+   "screen_page_views": 35
+  },
+  {
+   "locale": "pl",
+   "page_type": "symbol",
+   "pages": 13,
+   "screen_page_views": 35
+  },
+  {
+   "locale": "nl",
+   "page_type": "symbol",
+   "pages": 16,
+   "screen_page_views": 34
+  },
+  {
+   "locale": "it",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 32
+  },
+  {
+   "locale": "it",
+   "page_type": "da-stampare",
+   "pages": 13,
+   "screen_page_views": 32
+  },
+  {
+   "locale": "fr",
+   "page_type": "library",
+   "pages": 15,
+   "screen_page_views": 32
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 31
+  },
+  {
+   "locale": "it",
+   "page_type": "library",
+   "pages": 18,
+   "screen_page_views": 30
+  },
+  {
+   "locale": "da",
+   "page_type": "library",
+   "pages": 4,
+   "screen_page_views": 29
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "root",
+   "pages": 7,
+   "screen_page_views": 29
+  },
+  {
+   "locale": "sv",
+   "page_type": "library",
+   "pages": 16,
+   "screen_page_views": 28
+  },
+  {
+   "locale": "ru",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 26
+  },
+  {
+   "locale": "pt",
+   "page_type": "usecase",
+   "pages": 9,
+   "screen_page_views": 26
+  },
+  {
+   "locale": "vi",
+   "page_type": "symbol",
+   "pages": 10,
+   "screen_page_views": 26
+  },
+  {
+   "locale": "en",
+   "page_type": "updates",
+   "pages": 8,
+   "screen_page_views": 26
+  },
+  {
+   "locale": "no",
+   "page_type": "library",
+   "pages": 4,
+   "screen_page_views": 25
+  },
+  {
+   "locale": "nl",
+   "page_type": "root",
+   "pages": 8,
+   "screen_page_views": 25
+  },
+  {
+   "locale": "nl",
+   "page_type": "library",
+   "pages": 11,
+   "screen_page_views": 25
+  },
+  {
+   "locale": "en",
+   "page_type": "events",
+   "pages": 13,
+   "screen_page_views": 24
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "symbol",
+   "pages": 7,
+   "screen_page_views": 23
+  },
+  {
+   "locale": "ja",
+   "page_type": "root",
+   "pages": 11,
+   "screen_page_views": 23
+  },
+  {
+   "locale": "tr",
+   "page_type": "yazdirilabilir",
+   "pages": 3,
+   "screen_page_views": 20
+  },
+  {
+   "locale": "pt",
+   "page_type": "library",
+   "pages": 13,
+   "screen_page_views": 20
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "library",
+   "pages": 10,
+   "screen_page_views": 19
+  },
+  {
+   "locale": "th",
+   "page_type": "symbol",
+   "pages": 13,
+   "screen_page_views": 19
+  },
+  {
+   "locale": "fi",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 18
+  },
+  {
+   "locale": "vi",
+   "page_type": "library",
+   "pages": 4,
+   "screen_page_views": 18
+  },
+  {
+   "locale": "pt",
+   "page_type": "imprimiveis",
+   "pages": 8,
+   "screen_page_views": 17
+  },
+  {
+   "locale": "ar",
+   "page_type": "root",
+   "pages": 6,
+   "screen_page_views": 16
+  },
+  {
+   "locale": "ja",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 15
+  },
+  {
+   "locale": "pl",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 15
+  },
+  {
+   "locale": "de",
+   "page_type": "root",
+   "pages": 12,
+   "screen_page_views": 15
+  },
+  {
+   "locale": "tr",
+   "page_type": "usecase",
+   "pages": 5,
+   "screen_page_views": 14
+  },
+  {
+   "locale": "th",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 13
+  },
+  {
+   "locale": "fi",
+   "page_type": "root",
+   "pages": 6,
+   "screen_page_views": 13
+  },
+  {
+   "locale": "de",
+   "page_type": "symbol",
+   "pages": 13,
+   "screen_page_views": 13
+  },
+  {
+   "locale": "id",
+   "page_type": "printables",
+   "pages": 8,
+   "screen_page_views": 12
+  },
+  {
+   "locale": "ro",
+   "page_type": "root",
+   "pages": 5,
+   "screen_page_views": 11
+  },
+  {
+   "locale": "th",
+   "page_type": "library",
+   "pages": 6,
+   "screen_page_views": 10
+  },
+  {
+   "locale": "de",
+   "page_type": "library",
+   "pages": 8,
+   "screen_page_views": 10
+  },
+  {
+   "locale": "en",
+   "page_type": "learn",
+   "pages": 9,
+   "screen_page_views": 10
+  },
+  {
+   "locale": "ru",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 9
+  },
+  {
+   "locale": "hu",
+   "page_type": "root",
+   "pages": 7,
+   "screen_page_views": 9
+  },
+  {
+   "locale": "pl",
+   "page_type": "library",
+   "pages": 8,
+   "screen_page_views": 9
+  },
+  {
+   "locale": "en",
+   "page_type": "research",
+   "pages": 5,
+   "screen_page_views": 8
+  },
+  {
+   "locale": "hr",
+   "page_type": "root",
+   "pages": 7,
+   "screen_page_views": 8
+  },
+  {
+   "locale": "sr",
+   "page_type": "root",
+   "pages": 6,
+   "screen_page_views": 8
+  },
+  {
+   "locale": "es",
+   "page_type": "events",
+   "pages": 1,
+   "screen_page_views": 6
+  },
+  {
+   "locale": "da",
+   "page_type": "symbol",
+   "pages": 2,
+   "screen_page_views": 6
+  },
+  {
+   "locale": "es",
+   "page_type": "answers",
+   "pages": 4,
+   "screen_page_views": 6
+  },
+  {
+   "locale": "hu",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "ja",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "sr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "ko",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "cs",
+   "page_type": "root",
+   "pages": 4,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "bs",
+   "page_type": "root",
+   "pages": 5,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "ms",
+   "page_type": "library",
+   "pages": 5,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "sk",
+   "page_type": "root",
+   "pages": 5,
+   "screen_page_views": 5
+  },
+  {
+   "locale": "hr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "ja",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "tr",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "ru",
+   "page_type": "answers",
+   "pages": 3,
+   "screen_page_views": 4
+  },
+  {
+   "locale": "de",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "hi",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "id",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "kk",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "nl",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "sk",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "sv",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "uk",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "id",
+   "page_type": "answers",
+   "pages": 2,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "ms",
+   "page_type": "answers",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "sv",
+   "page_type": "updates",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "th",
+   "page_type": "root",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "vi",
+   "page_type": "usecase",
+   "pages": 3,
+   "screen_page_views": 3
+  },
+  {
+   "locale": "ar",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "en",
+   "page_type": "character-counter",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "cs",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "id",
+   "page_type": "updates",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "no",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "pt",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "ro",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "th",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "tr",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "uk",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "zh-tw",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "bs",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "hi",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "hr",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "hu",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "ms",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "sv",
+   "page_type": "guide",
+   "pages": 2,
+   "screen_page_views": 2
+  },
+  {
+   "locale": "en",
+   "page_type": "compare",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "en",
+   "page_type": "cursive-e",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "da",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "en",
+   "page_type": "embed",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "es",
+   "page_type": "aprender",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "es",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "fi",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "id",
+   "page_type": "belajar",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "id",
+   "page_type": "events",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "it",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ja",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "kk",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ms",
+   "page_type": "symbol",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ms",
+   "page_type": "root",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "ms",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "nl",
+   "page_type": "updates",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "no",
+   "page_type": "symbol",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "pl",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "pt",
+   "page_type": "updates",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "sk",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "sk",
+   "page_type": "usecase",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "sr",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "tl",
+   "page_type": "home",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "tl",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "vi",
+   "page_type": "answers",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "vi",
+   "page_type": "guide",
+   "pages": 1,
+   "screen_page_views": 1
+  },
+  {
+   "locale": "en",
+   "page_type": "youtube",
+   "pages": 1,
+   "screen_page_views": 1
+  }
+ ],
+ "fetched_at": "2026-11-23T07:14:09Z",
+ "locales": [
+  {
+   "active_users": 4285,
+   "locale": "id",
+   "pages": 137,
+   "screen_page_views": 6178,
+   "sessions": 5149
+  },
+  {
+   "active_users": 2236,
+   "locale": "en",
+   "pages": 585,
+   "screen_page_views": 2815,
+   "sessions": 2523
+  },
+  {
+   "active_users": 2074,
+   "locale": "ko",
+   "pages": 174,
+   "screen_page_views": 2667,
+   "sessions": 2407
+  },
+  {
+   "active_users": 986,
+   "locale": "es",
+   "pages": 190,
+   "screen_page_views": 1221,
+   "sessions": 1131
+  },
+  {
+   "active_users": 766,
+   "locale": "ru",
+   "pages": 96,
+   "screen_page_views": 914,
+   "sessions": 886
+  },
+  {
+   "active_users": 423,
+   "locale": "fr",
+   "pages": 77,
+   "screen_page_views": 582,
+   "sessions": 542
+  },
+  {
+   "active_users": 339,
+   "locale": "pt",
+   "pages": 89,
+   "screen_page_views": 435,
+   "sessions": 392
+  },
+  {
+   "active_users": 289,
+   "locale": "it",
+   "pages": 70,
+   "screen_page_views": 358,
+   "sessions": 353
+  },
+  {
+   "active_users": 233,
+   "locale": "zh-tw",
+   "pages": 30,
+   "screen_page_views": 341,
+   "sessions": 272
+  },
+  {
+   "active_users": 176,
+   "locale": "vi",
+   "pages": 44,
+   "screen_page_views": 244,
+   "sessions": 228
+  },
+  {
+   "active_users": 151,
+   "locale": "ar",
+   "pages": 57,
+   "screen_page_views": 213,
+   "sessions": 180
+  },
+  {
+   "active_users": 177,
+   "locale": "pl",
+   "pages": 49,
+   "screen_page_views": 212,
+   "sessions": 207
+  },
+  {
+   "active_users": 171,
+   "locale": "tr",
+   "pages": 75,
+   "screen_page_views": 207,
+   "sessions": 192
+  },
+  {
+   "active_users": 169,
+   "locale": "ja",
+   "pages": 71,
+   "screen_page_views": 193,
+   "sessions": 180
+  },
+  {
+   "active_users": 106,
+   "locale": "nl",
+   "pages": 45,
+   "screen_page_views": 123,
+   "sessions": 118
+  },
+  {
+   "active_users": 70,
+   "locale": "de",
+   "pages": 42,
+   "screen_page_views": 86,
+   "sessions": 72
+  },
+  {
+   "active_users": 50,
+   "locale": "hi",
+   "pages": 7,
+   "screen_page_views": 82,
+   "sessions": 54
+  },
+  {
+   "active_users": 41,
+   "locale": "th",
+   "pages": 24,
+   "screen_page_views": 47,
+   "sessions": 45
+  },
+  {
+   "active_users": 31,
+   "locale": "da",
+   "pages": 7,
+   "screen_page_views": 36,
+   "sessions": 39
+  },
+  {
+   "active_users": 34,
+   "locale": "sv",
+   "pages": 22,
+   "screen_page_views": 36,
+   "sessions": 37
+  },
+  {
+   "active_users": 16,
+   "locale": "fi",
+   "pages": 8,
+   "screen_page_views": 32,
+   "sessions": 19
+  },
+  {
+   "active_users": 23,
+   "locale": "no",
+   "pages": 6,
+   "screen_page_views": 28,
+   "sessions": 30
+  },
+  {
+   "active_users": 14,
+   "locale": "hu",
+   "pages": 10,
+   "screen_page_views": 16,
+   "sessions": 15
+  },
+  {
+   "active_users": 14,
+   "locale": "sr",
+   "pages": 8,
+   "screen_page_views": 14,
+   "sessions": 14
+  },
+  {
+   "active_users": 13,
+   "locale": "hr",
+   "pages": 10,
+   "screen_page_views": 14,
+   "sessions": 13
+  },
+  {
+   "active_users": 12,
+   "locale": "ro",
+   "pages": 6,
+   "screen_page_views": 13,
+   "sessions": 12
+  },
+  {
+   "active_users": 13,
+   "locale": "ms",
+   "pages": 13,
+   "screen_page_views": 13,
+   "sessions": 13
+  },
+  {
+   "active_users": 10,
+   "locale": "sk",
+   "pages": 8,
+   "screen_page_views": 10,
+   "sessions": 10
+  },
+  {
+   "active_users": 7,
+   "locale": "cs",
+   "pages": 5,
+   "screen_page_views": 7,
+   "sessions": 7
+  },
+  {
+   "active_users": 7,
+   "locale": "bs",
+   "pages": 7,
+   "screen_page_views": 7,
+   "sessions": 7
+  },
+  {
+   "active_users": 5,
+   "locale": "uk",
+   "pages": 2,
+   "screen_page_views": 5,
+   "sessions": 6
+  },
+  {
+   "active_users": 4,
+   "locale": "kk",
+   "pages": 2,
+   "screen_page_views": 4,
+   "sessions": 4
+  },
+  {
+   "active_users": 2,
+   "locale": "tl",
+   "pages": 2,
+   "screen_page_views": 2,
+   "sessions": 2
+  }
+ ],
+ "missing_product_events": [
+  "unsave_style"
+ ],
+ "page_count": 1978,
+ "pages_available": 1978,
+ "pages_truncated": false,
+ "property_id": "522553010",
+ "retention": {
+  "new_users": 11106,
+  "returning_share_pct": 12.8,
+  "returning_users": 1632
+ },
+ "revenue": {
+  "ad_revenue": 23.8346,
+  "publisher_ad_impressions": 32999,
+  "total_revenue": 23.8346
+ },
+ "save_rate_pct_of_copies": 1.96,
+ "sources": [
+  {
+   "active_users": 4114,
+   "sessions": 5063,
+   "source_medium": "google / organic"
+  },
+  {
+   "active_users": 2190,
+   "sessions": 2419,
+   "source_medium": "(direct) / (none)"
+  },
+  {
+   "active_users": 2004,
+   "sessions": 2412,
+   "source_medium": "bing / organic"
+  },
+  {
+   "active_users": 1149,
+   "sessions": 1305,
+   "source_medium": "m.search.naver.com / referral"
+  },
+  {
+   "active_users": 499,
+   "sessions": 602,
+   "source_medium": "naver / organic"
+  },
+  {
+   "active_users": 418,
+   "sessions": 515,
+   "source_medium": "chatgpt.com / ai-assistant"
+  },
+  {
+   "active_users": 357,
+   "sessions": 407,
+   "source_medium": "yandex.ru / referral"
+  },
+  {
+   "active_users": 119,
+   "sessions": 137,
+   "source_medium": "duckduckgo / organic"
+  },
+  {
+   "active_users": 103,
+   "sessions": 135,
+   "source_medium": "yahoo / organic"
+  },
+  {
+   "active_users": 119,
+   "sessions": 124,
+   "source_medium": "ya.ru / referral"
+  },
+  {
+   "active_users": 97,
+   "sessions": 108,
+   "source_medium": "yandex.com.tr / referral"
+  },
+  {
+   "active_users": 75,
+   "sessions": 90,
+   "source_medium": "it.search.yahoo.com / referral"
+  },
+  {
+   "active_users": 53,
+   "sessions": 78,
+   "source_medium": "id.search.yahoo.com / referral"
+  },
+  {
+   "active_users": 57,
+   "sessions": 76,
+   "source_medium": "yandex.kz / referral"
+  },
+  {
+   "active_users": 61,
+   "sessions": 72,
+   "source_medium": "search.brave.com / referral"
+  }
+ ],
+ "top_pages": [
+  {
+   "active_users": 1284,
+   "avg_engagement_seconds": 16.6,
+   "locale": "id",
+   "page_path": "/id/library/simbol-love/",
+   "page_type": "library",
+   "screen_page_views": 1770,
+   "sessions": 1618,
+   "slug": "simbol-love"
+  },
+  {
+   "active_users": 726,
+   "avg_engagement_seconds": 58.7,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-keren/",
+   "page_type": "usecase",
+   "screen_page_views": 1069,
+   "sessions": 848,
+   "slug": "nama-keren"
+  },
+  {
+   "active_users": 626,
+   "avg_engagement_seconds": 36.5,
+   "locale": "id",
+   "page_path": "/id/library/simbol-ff/",
+   "page_type": "library",
+   "screen_page_views": 860,
+   "sessions": 679,
+   "slug": "simbol-ff"
+  },
+  {
+   "active_users": 226,
+   "avg_engagement_seconds": 51.2,
+   "locale": "en",
+   "page_path": "/",
+   "page_type": "home",
+   "screen_page_views": 411,
+   "sessions": 355,
+   "slug": ""
+  },
+  {
+   "active_users": 278,
+   "avg_engagement_seconds": 91.9,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-tiktok-keren/",
+   "page_type": "usecase",
+   "screen_page_views": 402,
+   "sessions": 313,
+   "slug": "nama-tiktok-keren"
+  },
+  {
+   "active_users": 178,
+   "avg_engagement_seconds": 79.8,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-ig-aesthetic/",
+   "page_type": "usecase",
+   "screen_page_views": 257,
+   "sessions": 195,
+   "slug": "nama-ig-aesthetic"
+  },
+  {
+   "active_users": 183,
+   "avg_engagement_seconds": 38.9,
+   "locale": "es",
+   "page_path": "/es/letras-en-otros-idiomas/",
+   "page_type": "root",
+   "screen_page_views": 247,
+   "sessions": 198,
+   "slug": "letras-en-otros-idiomas"
+  },
+  {
+   "active_users": 171,
+   "avg_engagement_seconds": 93.1,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-ml-keren/",
+   "page_type": "usecase",
+   "screen_page_views": 239,
+   "sessions": 183,
+   "slug": "nama-ml-keren"
+  },
+  {
+   "active_users": 115,
+   "avg_engagement_seconds": 119.0,
+   "locale": "id",
+   "page_path": "/id/font-tiktok/",
+   "page_type": "root",
+   "screen_page_views": 236,
+   "sessions": 189,
+   "slug": "font-tiktok"
+  },
+  {
+   "active_users": 140,
+   "avg_engagement_seconds": 89.3,
+   "locale": "id",
+   "page_path": "/id/font-wa/",
+   "page_type": "root",
+   "screen_page_views": 235,
+   "sessions": 206,
+   "slug": "font-wa"
+  },
+  {
+   "active_users": 128,
+   "avg_engagement_seconds": 50.2,
+   "locale": "ko",
+   "page_path": "/ko/library/discord-giho/",
+   "page_type": "library",
+   "screen_page_views": 195,
+   "sessions": 172,
+   "slug": "discord-giho"
+  },
+  {
+   "active_users": 109,
+   "avg_engagement_seconds": 89.4,
+   "locale": "zh-tw",
+   "page_path": "/zh-tw/usecase/youxi-mingzi-fuhao/",
+   "page_type": "usecase",
+   "screen_page_views": 185,
+   "sessions": 132,
+   "slug": "youxi-mingzi-fuhao"
+  },
+  {
+   "active_users": 58,
+   "avg_engagement_seconds": 85.3,
+   "locale": "id",
+   "page_path": "/id/",
+   "page_type": "home",
+   "screen_page_views": 183,
+   "sessions": 112,
+   "slug": ""
+  },
+  {
+   "active_users": 147,
+   "avg_engagement_seconds": 54.0,
+   "locale": "es",
+   "page_path": "/es/imprimibles/moldes-de-letras/",
+   "page_type": "imprimibles",
+   "screen_page_views": 181,
+   "sessions": 167,
+   "slug": "moldes-de-letras"
+  },
+  {
+   "active_users": 81,
+   "avg_engagement_seconds": 18.6,
+   "locale": "ko",
+   "page_path": "/ko/library/imotikon/",
+   "page_type": "library",
+   "screen_page_views": 172,
+   "sessions": 103,
+   "slug": "imotikon"
+  },
+  {
+   "active_users": 115,
+   "avg_engagement_seconds": 10.3,
+   "locale": "ru",
+   "page_path": "/ru/library/serdechko-iz-simvolov/",
+   "page_type": "library",
+   "screen_page_views": 151,
+   "sessions": 137,
+   "slug": "serdechko-iz-simvolov"
+  },
+  {
+   "active_users": 87,
+   "avg_engagement_seconds": 36.3,
+   "locale": "ko",
+   "page_path": "/ko/",
+   "page_type": "home",
+   "screen_page_views": 127,
+   "sessions": 98,
+   "slug": ""
+  },
+  {
+   "active_users": 81,
+   "avg_engagement_seconds": 105.9,
+   "locale": "id",
+   "page_path": "/id/usecase/nama-ml-keren-girl/",
+   "page_type": "usecase",
+   "screen_page_views": 126,
+   "sessions": 89,
+   "slug": "nama-ml-keren-girl"
+  },
+  {
+   "active_users": 86,
+   "avg_engagement_seconds": 33.2,
+   "locale": "en",
+   "page_path": "/library/roblox-symbols/",
+   "page_type": "library",
+   "screen_page_views": 118,
+   "sessions": 106,
+   "slug": "roblox-symbols"
+  },
+  {
+   "active_users": 62,
+   "avg_engagement_seconds": 44.9,
+   "locale": "en",
+   "page_path": "/discord/",
+   "page_type": "root",
+   "screen_page_views": 112,
+   "sessions": 74,
+   "slug": "discord"
+  },
+  {
+   "active_users": 87,
+   "avg_engagement_seconds": 34.3,
+   "locale": "it",
+   "page_path": "/it/lettere-in-corsivo/",
+   "page_type": "root",
+   "screen_page_views": 109,
+   "sessions": 101,
+   "slug": "lettere-in-corsivo"
+  },
+  {
+   "active_users": 97,
+   "avg_engagement_seconds": 9.3,
+   "locale": "ko",
+   "page_path": "/ko/usecase/dantokbang-ireum/",
+   "page_type": "usecase",
+   "screen_page_views": 105,
+   "sessions": 103,
+   "slug": "dantokbang-ireum"
+  },
+  {
+   "active_users": 85,
+   "avg_engagement_seconds": 45.0,
+   "locale": "en",
+   "page_path": "/printables/block-letters/",
+   "page_type": "printables",
+   "screen_page_views": 98,
+   "sessions": 93,
+   "slug": "block-letters"
+  },
+  {
+   "active_users": 87,
+   "avg_engagement_seconds": 9.2,
+   "locale": "es",
+   "page_path": "/es/symbol/arroba/",
+   "page_type": "symbol",
+   "screen_page_views": 94,
+   "sessions": 95,
+   "slug": "arroba"
+  },
+  {
+   "active_users": 83,
+   "avg_engagement_seconds": 12.0,
+   "locale": "es",
+   "page_path": "/es/symbol/guion-bajo/",
+   "page_type": "symbol",
+   "screen_page_views": 94,
+   "sessions": 100,
+   "slug": "guion-bajo"
+  }
+ ],
+ "totals": {
+  "active_users": 12947,
+  "screen_page_views": 17155,
+  "sessions": 15159
+ },
+ "window": {
+  "since": "2026-11-16",
+  "until": "2026-11-22"
+ }
+}
