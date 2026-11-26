@@ -411,7 +411,7 @@
         { label: "जवाब", href: "/answers/" },
         { label: "उपयोग", href: "/usecase/" },
         { label: "श्रेणियाँ", href: "/category/" },
-        { label: "लाइब्रेरी", href: "/library/" },
+        { label: "लाइब्रेरी", href: "/hi/library/" },
         { label: "प्रिंट के लिए", href: "/printables/" },
         { label: "इवेंट्स", href: "/events/" }
       ],
@@ -848,15 +848,15 @@
         { label: "Mga Sagot", href: "/answers/" },
         { label: "Mga Gamit", href: "/usecase/" },
         { label: "Mga Kategorya", href: "/category/" },
-        { label: "Aklatan", href: "/library/" },
+        { label: "Aklatan", href: "/tl/library/" },
         { label: "Pwedeng I-print", href: "/printables/" },
         { label: "Mga Kaganapan", href: "/events/" }
       ],
       tools: [
-        { label: "Bio Font", href: "/tl/usecase/bio-font/" },
+        { label: "Font para sa Bio", href: "/tl/usecase/bio-font/" },
         { label: "Tattoo Font", href: "/usecase/tattoo-fonts/" },
         { label: "Emoji Translator", href: "/usecase/text-to-emoji/" },
-        { label: "Vertical Text", href: "/usecase/vertical-text/" }
+        { label: "Patayong Teksto", href: "/usecase/vertical-text/" }
       ],
       categories: [
         { label: "Bold Text", href: "/category/bold-fonts/" },

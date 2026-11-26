@@ -2791,6 +2791,8 @@ PAGES = {
         P(m_typo, sample="Ab", size=88, label="do skopiowania"), K_CAT),
   "pl-ozdobniki": ("Ozdobniki do Skopiowania", "Symbole i ozdoby do nicku i bio", m_grid, K_LIB),
   "pl-library": ("Biblioteka Symboli i Emotek", "Kolekcje gotowe do skopiowania", m_grid, K_LIB),
+  "hi-library": ("कॉपी-पेस्ट करने के लिए सिंबल", "कॉपी-पेस्ट के लिए तैयार कलेक्शन", m_grid, K_LIB),
+  "tl-library": ("Mga Simbolo na Pwedeng I-copy Paste", "Mga koleksyong handang i-copy", m_grid, K_LIB),
   "cs-library": ("Symboly ke zkopírování", "Sbírky připravené ke zkopírování", m_grid, K_LIB),
   "sk-library": ("Symboly na kopírovanie", "Zbierky pripravené na skopírovanie", m_grid, K_LIB),
   "hu-library": ("Szimbólumok másoláshoz és beillesztéshez", "Másolásra kész gyűjtemények", m_grid, K_LIB),

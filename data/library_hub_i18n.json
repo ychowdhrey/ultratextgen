@@ -1247,5 +1247,97 @@
       "noItems": "tiada item",
       "directoryLabel": "Direktori simbol"
     }
+  },
+  "hi": {
+    "labels": {
+      "types": {
+        "Decorative": "सजावटी",
+        "Emojis": "इमोजी",
+        "Guide": "गाइड",
+        "Kaomoji": "काओमोजी",
+        "Reference": "रेफरेंस",
+        "Symbols": "सिंबल"
+      },
+      "useCases": {
+        "Bios": "बायो",
+        "Bullet Points": "बुलेट पॉइंट",
+        "Captions": "कैप्शन",
+        "Celebration": "जश्न",
+        "Comments": "कमेंट",
+        "DMs": "डायरेक्ट मैसेज",
+        "Dividers": "डिवाइडर",
+        "Email Formatting": "ईमेल फ़ॉर्मैटिंग",
+        "Professional Posts": "प्रोफ़ेशनल पोस्ट",
+        "Reactions": "रिएक्शन",
+        "Reference": "रेफरेंस",
+        "Travel": "यात्रा",
+        "Usernames": "यूज़रनेम",
+        "Care Labels": "कपड़ों के केयर लेबल",
+        "Profile": "प्रोफ़ाइल"
+      },
+      "platforms": {
+        "Email": "ईमेल"
+      }
+    },
+    "ui": {
+      "searchLabel": "लाइब्रेरी में खोजें",
+      "searchPlaceholder": "खोजें, जैसे हार्ट, एरो …",
+      "clearFilters": "फ़िल्टर हटाएं",
+      "resultCount": "{total} में से {shown} कलेक्शन",
+      "emptyTitle": "कोई नतीजा नहीं मिला",
+      "emptyBody": "कोई दूसरा खोज शब्द या फ़िल्टर आज़माएं।",
+      "emptyReset": "सब हटाएं",
+      "backTop": "ऊपर जाएं",
+      "filterBy": "इसके हिसाब से फ़िल्टर करें",
+      "alphaJump": "अक्षर पर जाएं",
+      "noItems": "कोई आइटम नहीं",
+      "directoryLabel": "सिंबल सूची"
+    }
+  },
+  "tl": {
+    "labels": {
+      "types": {
+        "Decorative": "Pandekorasyon",
+        "Emojis": "Emoji",
+        "Guide": "Gabay",
+        "Kaomoji": "Kaomoji",
+        "Reference": "Sanggunian",
+        "Symbols": "Mga Simbolo"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Mga Bullet Point",
+        "Captions": "Mga Caption",
+        "Celebration": "Pagdiriwang",
+        "Comments": "Mga Komento",
+        "DMs": "Mga DM",
+        "Dividers": "Pang-hati",
+        "Email Formatting": "Pag-format ng Email",
+        "Professional Posts": "Propesyonal na Post",
+        "Reactions": "Mga Reaksyon",
+        "Reference": "Sanggunian",
+        "Travel": "Paglalakbay",
+        "Usernames": "Mga Username",
+        "Care Labels": "Label sa Paglalaba",
+        "Profile": "Profile"
+      },
+      "platforms": {
+        "Email": "Email"
+      }
+    },
+    "ui": {
+      "searchLabel": "Maghanap sa aklatan",
+      "searchPlaceholder": "Maghanap, hal. puso, arrow …",
+      "clearFilters": "I-clear ang mga filter",
+      "resultCount": "{shown} sa {total} koleksyon",
+      "emptyTitle": "Walang resulta",
+      "emptyBody": "Subukan ang ibang paghahanap o filter.",
+      "emptyReset": "I-clear lahat",
+      "backTop": "Bumalik sa itaas",
+      "filterBy": "I-filter ayon sa",
+      "alphaJump": "Tumalon sa titik",
+      "noItems": "walang item",
+      "directoryLabel": "Direktoryo ng mga simbolo"
+    }
   }
 }
