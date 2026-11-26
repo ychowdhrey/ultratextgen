@@ -1,5 +1,5 @@
 {
-  "_readme": "Ledger of recorded pre-build competitor+keyword gap checks for (Core-parent-pattern, locale) cells and gated-tail-pattern build exceptions — the instrument that replaces incidental discovery (the FR /symbol/ blind spot: EN had 77 symbol pages, FR had 6, and nothing flagged the substantial French demand until a manual keyword pull found it) with a standing, recorded pass. Read/written by scripts/audit-locale-parent-gap.js (whole-site discovery) and scripts/check-locale-parent-gap.js (per-PR gate). Do NOT add or edit an entry here unilaterally — every entry must reflect a real, run instrument check, discussed with the user the same way data/translation_parity_exceptions.json entries are (see `docs/locale-parent-governance.md`). Entry shape: { pattern (a data/core_parent_set.json pattern string, e.g. \"symbol/*\"), locale (locale code), checkedDate (YYYY-MM-DD), instruments: { competitorFootprintInLocale: bool|null, keywordVolumeInLocaleMonthly: number|null, enGscImpressionsFromLocale: number|null } — null means that instrument was not run/available, not zero, evidence (short citation of where the numbers came from), recordedBy }. verdict: \"mirror\" (Core parent, demand confirms the default — informational, not required for the check to pass), \"veto\" (Core parent, pre-build check showed genuinely negligible demand — overrides the default-mirror), \"gate-pass\" (gated-tail parent, pre-build check cleared threshold — authorizes the build), \"gate-fail\" (gated-tail parent, pre-build check did not clear threshold — build not authorized). scripts/check-locale-parent-gap.js treats \"mirror\" and \"gate-pass\" as passing verdicts for a newly-shipped locale page; \"veto\" and \"gate-fail\" record that a page was deliberately NOT built. Do not invent additional entries with fabricated numbers — every cell without a real entry here is genuinely unaudited right now, which is exactly the gap this tooling exists to surface, not paper over. Rule B exception (owner decision 2026-11-26): an entry with \"scope\": \"page\" authorizes ONE page in an existing Tier-3 locale, keyed by the reference page's path without index.html (pattern \"library/heart-symbols\", never a \"*\" pattern). Its verdict is \"rule-b-exception\" (targetEvidence \"positive\") or \"rule-b-experiment\" (targetEvidence \"insufficient\", plus experimentCohort and recheckDate, counted against the allowance in data/locale_rule_b_exception.json); it also carries ruleB {languages, window} and scriptReadiness. scripts/lib/locale-parent-registry.js validates these as a set and the gate fails a broken one. The tier is unchanged.",
+  "_readme": "Ledger of recorded pre-build competitor+keyword gap checks for (Core-parent-pattern, locale) cells and gated-tail-pattern build exceptions — the instrument that replaces incidental discovery (the FR /symbol/ blind spot: EN had 77 symbol pages, FR had 6, and nothing flagged the substantial French demand until a manual keyword pull found it) with a standing, recorded pass. Read/written by scripts/audit-locale-parent-gap.js (whole-site discovery) and scripts/check-locale-parent-gap.js (per-PR gate). Do NOT add or edit an entry here unilaterally — every entry must reflect a real, run instrument check, discussed with the user the same way data/translation_parity_exceptions.json entries are (see `docs/locale-parent-governance.md`). Entry shape: { pattern (a data/core_parent_set.json pattern string, e.g. \"symbol/*\"), locale (locale code), checkedDate (YYYY-MM-DD), instruments: { competitorFootprintInLocale: bool|null, keywordVolumeInLocaleMonthly: number|null, enGscImpressionsFromLocale: number|null } — null means that instrument was not run/available, not zero, evidence (short citation of where the numbers came from), recordedBy }. verdict: \"mirror\" (Core parent, demand confirms the default — informational, not required for the check to pass), \"veto\" (Core parent, pre-build check showed genuinely negligible demand — overrides the default-mirror), \"gate-pass\" (gated-tail parent, pre-build check cleared threshold — authorizes the build), \"gate-fail\" (gated-tail parent, pre-build check did not clear threshold — build not authorized). scripts/check-locale-parent-gap.js treats \"mirror\" and \"gate-pass\" as passing verdicts for a newly-shipped locale page; \"veto\" and \"gate-fail\" record that a page was deliberately NOT built. Do not invent additional entries with fabricated numbers — every cell without a real entry here is genuinely unaudited right now, which is exactly the gap this tooling exists to surface, not paper over. Rule B exception (owner decision 2026-11-26): an entry with \"scope\": \"page\" authorizes ONE page in an existing Tier-3 locale, keyed by the reference page's path without index.html (pattern \"library/heart-symbols\", never a \"*\" pattern). Its verdict is \"rule-b-exception\" (targetEvidence \"positive\") or \"rule-b-experiment\" (targetEvidence \"insufficient\", plus experimentCohort and recheckDate, counted against the allowance in data/locale_rule_b_exception.json); it also carries ruleB {languages, window} and scriptReadiness. scripts/lib/locale-parent-registry.js validates these as a set and the gate fails a broken one. The tier is unchanged. Owner decision for a single page: an entry with \"scope\": \"page\", verdict \"gate-pass\" or \"mirror\" and ownerDecision {date, summary} admits exactly that page (ownerPagePass in scripts/lib/locale-parent-registry.js), never its pattern.",
   "entries": [
     {
       "pattern": "symbol/*",
@@ -2230,6 +2230,150 @@
       },
       "scriptReadiness": "ready",
       "evidence": "Rule B: 6 languages at >= 100 Google impressions each, 2026-08-25..2026-11-22. Positive target-language evidence: Semrush db=ua 'спецсимволи' 140/mo (measured or fresh within 90 days on 2026-11-26). Owner decision 2026-11-26 (Rule B exception). Built as /uk/library/spetssymvoly/.",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library",
+      "scope": "page",
+      "locale": "cs",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "ownerDecision": {
+        "date": "2026-11-26",
+        "summary": "Build locale hubs: one /cs/library/ hub so the Rule B exception pages shipped into this Tier-3 locale have a hub and an inbound path (check:library-hub-coverage, link reachability)."
+      },
+      "evidence": "Owner decision 2026-11-26 ('Build locale hubs'). The hub is navigation for the locale's own library pages, which each carry their own Rule B entry; no demand claim is made for the hub itself, so every instrument is null. Recheck with the cohort's 90-day readout (2027-02-24).",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library",
+      "scope": "page",
+      "locale": "sk",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "ownerDecision": {
+        "date": "2026-11-26",
+        "summary": "Build locale hubs: one /sk/library/ hub so the Rule B exception pages shipped into this Tier-3 locale have a hub and an inbound path (check:library-hub-coverage, link reachability)."
+      },
+      "evidence": "Owner decision 2026-11-26 ('Build locale hubs'). The hub is navigation for the locale's own library pages, which each carry their own Rule B entry; no demand claim is made for the hub itself, so every instrument is null. Recheck with the cohort's 90-day readout (2027-02-24).",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library",
+      "scope": "page",
+      "locale": "hu",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "ownerDecision": {
+        "date": "2026-11-26",
+        "summary": "Build locale hubs: one /hu/library/ hub so the Rule B exception pages shipped into this Tier-3 locale have a hub and an inbound path (check:library-hub-coverage, link reachability)."
+      },
+      "evidence": "Owner decision 2026-11-26 ('Build locale hubs'). The hub is navigation for the locale's own library pages, which each carry their own Rule B entry; no demand claim is made for the hub itself, so every instrument is null. Recheck with the cohort's 90-day readout (2027-02-24).",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library",
+      "scope": "page",
+      "locale": "ro",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "ownerDecision": {
+        "date": "2026-11-26",
+        "summary": "Build locale hubs: one /ro/library/ hub so the Rule B exception pages shipped into this Tier-3 locale have a hub and an inbound path (check:library-hub-coverage, link reachability)."
+      },
+      "evidence": "Owner decision 2026-11-26 ('Build locale hubs'). The hub is navigation for the locale's own library pages, which each carry their own Rule B entry; no demand claim is made for the hub itself, so every instrument is null. Recheck with the cohort's 90-day readout (2027-02-24).",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library",
+      "scope": "page",
+      "locale": "fi",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "ownerDecision": {
+        "date": "2026-11-26",
+        "summary": "Build locale hubs: one /fi/library/ hub so the Rule B exception pages shipped into this Tier-3 locale have a hub and an inbound path (check:library-hub-coverage, link reachability)."
+      },
+      "evidence": "Owner decision 2026-11-26 ('Build locale hubs'). The hub is navigation for the locale's own library pages, which each carry their own Rule B entry; no demand claim is made for the hub itself, so every instrument is null. Recheck with the cohort's 90-day readout (2027-02-24).",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library",
+      "scope": "page",
+      "locale": "hr",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "ownerDecision": {
+        "date": "2026-11-26",
+        "summary": "Build locale hubs: one /hr/library/ hub so the Rule B exception pages shipped into this Tier-3 locale have a hub and an inbound path (check:library-hub-coverage, link reachability)."
+      },
+      "evidence": "Owner decision 2026-11-26 ('Build locale hubs'). The hub is navigation for the locale's own library pages, which each carry their own Rule B entry; no demand claim is made for the hub itself, so every instrument is null. Recheck with the cohort's 90-day readout (2027-02-24).",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library",
+      "scope": "page",
+      "locale": "uk",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "ownerDecision": {
+        "date": "2026-11-26",
+        "summary": "Build locale hubs: one /uk/library/ hub so the Rule B exception pages shipped into this Tier-3 locale have a hub and an inbound path (check:library-hub-coverage, link reachability)."
+      },
+      "evidence": "Owner decision 2026-11-26 ('Build locale hubs'). The hub is navigation for the locale's own library pages, which each carry their own Rule B entry; no demand claim is made for the hub itself, so every instrument is null. Recheck with the cohort's 90-day readout (2027-02-24).",
+      "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
+    },
+    {
+      "pattern": "library",
+      "scope": "page",
+      "locale": "ms",
+      "checkedDate": "2026-11-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "ownerDecision": {
+        "date": "2026-11-26",
+        "summary": "Build locale hubs: one /ms/library/ hub so the Rule B exception pages shipped into this Tier-3 locale have a hub and an inbound path (check:library-hub-coverage, link reachability)."
+      },
+      "evidence": "Owner decision 2026-11-26 ('Build locale hubs'). The hub is navigation for the locale's own library pages, which each carry their own Rule B entry; no demand claim is made for the hub itself, so every instrument is null. Recheck with the cohort's 90-day readout (2027-02-24).",
       "recordedBy": "claude-session-2026-11-26-rule-b-exception-owner-authorized"
     }
   ]

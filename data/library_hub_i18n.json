@@ -879,5 +879,373 @@
       "noItems": "沒有項目",
       "directoryLabel": "符號目錄"
     }
+  },
+  "cs": {
+    "labels": {
+      "types": {
+        "Decorative": "Ozdobné",
+        "Emojis": "Emoji",
+        "Guide": "Návod",
+        "Kaomoji": "Kaomoji",
+        "Reference": "Přehled",
+        "Symbols": "Symboly"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Odrážky",
+        "Captions": "Popisky",
+        "Celebration": "Oslavy",
+        "Comments": "Komentáře",
+        "DMs": "Zprávy",
+        "Dividers": "Oddělovače",
+        "Email Formatting": "Formátování e-mailů",
+        "Professional Posts": "Pracovní příspěvky",
+        "Reactions": "Reakce",
+        "Reference": "Přehled",
+        "Travel": "Cestování",
+        "Usernames": "Uživatelská jména",
+        "Care Labels": "Symboly praní",
+        "Profile": "Profil"
+      },
+      "platforms": {
+        "Email": "E-mail"
+      }
+    },
+    "ui": {
+      "searchLabel": "Hledat v knihovně",
+      "searchPlaceholder": "Hledej, např. srdíčka, šipky …",
+      "clearFilters": "Zrušit filtry",
+      "resultCount": "{shown} z {total} sbírek",
+      "emptyTitle": "Žádné výsledky",
+      "emptyBody": "Zkus jiné hledání nebo jiný filtr.",
+      "emptyReset": "Zrušit vše",
+      "backTop": "Nahoru",
+      "filterBy": "Filtrovat podle",
+      "alphaJump": "Přejít na písmeno",
+      "noItems": "žádné položky",
+      "directoryLabel": "Přehled symbolů"
+    }
+  },
+  "sk": {
+    "labels": {
+      "types": {
+        "Decorative": "Ozdobné",
+        "Emojis": "Emoji",
+        "Guide": "Sprievodca",
+        "Kaomoji": "Kaomoji",
+        "Reference": "Prehľad",
+        "Symbols": "Symboly"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Odrážky",
+        "Captions": "Popisy",
+        "Celebration": "Oslavy",
+        "Comments": "Komentáre",
+        "DMs": "Správy",
+        "Dividers": "Oddeľovače",
+        "Email Formatting": "Formátovanie e-mailov",
+        "Professional Posts": "Pracovné príspevky",
+        "Reactions": "Reakcie",
+        "Reference": "Prehľad",
+        "Travel": "Cestovanie",
+        "Usernames": "Používateľské mená",
+        "Care Labels": "Symboly prania",
+        "Profile": "Profil"
+      },
+      "platforms": {
+        "Email": "E-mail"
+      }
+    },
+    "ui": {
+      "searchLabel": "Hľadať v knižnici",
+      "searchPlaceholder": "Hľadaj, napr. srdiečka, symboly šípok …",
+      "clearFilters": "Zrušiť filtre",
+      "resultCount": "{shown} z {total} zbierok",
+      "emptyTitle": "Žiadne výsledky",
+      "emptyBody": "Skús iné hľadanie alebo iný filter.",
+      "emptyReset": "Zrušiť všetko",
+      "backTop": "Nahor",
+      "filterBy": "Filtrovať podľa",
+      "alphaJump": "Prejsť na písmeno",
+      "noItems": "žiadne položky",
+      "directoryLabel": "Prehľad symbolov"
+    }
+  },
+  "hu": {
+    "labels": {
+      "types": {
+        "Decorative": "Díszítő",
+        "Emojis": "Emojik",
+        "Guide": "Útmutató",
+        "Kaomoji": "Kaomoji",
+        "Reference": "Referencia",
+        "Symbols": "Szimbólumok"
+      },
+      "useCases": {
+        "Bios": "Bió",
+        "Bullet Points": "Felsorolásjelek",
+        "Captions": "Képaláírások",
+        "Celebration": "Ünneplés",
+        "Comments": "Hozzászólások",
+        "DMs": "Privát üzenetek",
+        "Dividers": "Elválasztók",
+        "Email Formatting": "E-mail-formázás",
+        "Professional Posts": "Szakmai posztok",
+        "Reactions": "Reakciók",
+        "Reference": "Referencia",
+        "Travel": "Utazás",
+        "Usernames": "Felhasználónevek",
+        "Care Labels": "Kezelési jelek",
+        "Profile": "Profil"
+      },
+      "platforms": {
+        "Email": "E-mail"
+      }
+    },
+    "ui": {
+      "searchLabel": "Keresés a könyvtárban",
+      "searchPlaceholder": "Keresés, pl. szívek, nyilak…",
+      "clearFilters": "Szűrők törlése",
+      "resultCount": "{shown} / {total} gyűjtemény",
+      "emptyTitle": "Nincs találat",
+      "emptyBody": "Próbálj másik keresőszót vagy szűrőt.",
+      "emptyReset": "Összes törlése",
+      "backTop": "Vissza a tetejére",
+      "filterBy": "Szűrés",
+      "alphaJump": "Ugrás betűre",
+      "noItems": "nincs elem",
+      "directoryLabel": "Szimbólumok áttekintése"
+    }
+  },
+  "ro": {
+    "labels": {
+      "types": {
+        "Decorative": "Decorațiuni",
+        "Emojis": "Emoji",
+        "Guide": "Ghid",
+        "Kaomoji": "Kaomoji",
+        "Reference": "Referință",
+        "Symbols": "Simboluri"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Marcatori de listă",
+        "Captions": "Descrieri",
+        "Celebration": "Sărbători",
+        "Comments": "Comentarii",
+        "DMs": "Mesaje private",
+        "Dividers": "Separatoare",
+        "Email Formatting": "Formatare e-mail",
+        "Professional Posts": "Postări profesionale",
+        "Reactions": "Reacții",
+        "Reference": "Referință",
+        "Travel": "Călătorii",
+        "Usernames": "Nume de utilizator",
+        "Care Labels": "Etichete de întreținere",
+        "Profile": "Profil"
+      },
+      "platforms": {
+        "Email": "E-mail"
+      }
+    },
+    "ui": {
+      "searchLabel": "Caută în bibliotecă",
+      "searchPlaceholder": "Caută, de ex. inimioare, săgeți…",
+      "clearFilters": "Șterge filtrele",
+      "resultCount": "{shown} din {total} colecții",
+      "emptyTitle": "Niciun rezultat",
+      "emptyBody": "Încearcă altă căutare sau alt filtru.",
+      "emptyReset": "Șterge tot",
+      "backTop": "Înapoi sus",
+      "filterBy": "Filtrează după",
+      "alphaJump": "Salt la litera",
+      "noItems": "niciun element",
+      "directoryLabel": "Catalog de simboluri"
+    }
+  },
+  "fi": {
+    "labels": {
+      "types": {
+        "Decorative": "Koristeelliset",
+        "Emojis": "Emojit",
+        "Guide": "Opas",
+        "Kaomoji": "Kaomojit",
+        "Reference": "Hakuteos",
+        "Symbols": "Symbolit"
+      },
+      "useCases": {
+        "Bios": "Biot",
+        "Bullet Points": "Luettelomerkit",
+        "Captions": "Kuvatekstit",
+        "Celebration": "Juhlat",
+        "Comments": "Kommentit",
+        "DMs": "Yksityisviestit",
+        "Dividers": "Erottimet",
+        "Email Formatting": "Sähköpostin muotoilu",
+        "Professional Posts": "Ammatilliset julkaisut",
+        "Reactions": "Reaktiot",
+        "Reference": "Hakuteos",
+        "Travel": "Matkailu",
+        "Usernames": "Käyttäjänimet",
+        "Care Labels": "Hoito-ohjemerkit",
+        "Profile": "Profiili"
+      },
+      "platforms": {
+        "Email": "Sähköposti"
+      }
+    },
+    "ui": {
+      "searchLabel": "Hae kirjastosta",
+      "searchPlaceholder": "Hae, esim. sydämet, nuolet …",
+      "clearFilters": "Tyhjennä suodattimet",
+      "resultCount": "{shown}/{total} kokoelmaa",
+      "emptyTitle": "Ei tuloksia",
+      "emptyBody": "Kokeile toista hakua tai suodatinta.",
+      "emptyReset": "Tyhjennä kaikki",
+      "backTop": "Takaisin ylös",
+      "filterBy": "Suodata",
+      "alphaJump": "Siirry kirjaimeen",
+      "noItems": "ei kohteita",
+      "directoryLabel": "Symbolihakemisto"
+    }
+  },
+  "hr": {
+    "labels": {
+      "types": {
+        "Decorative": "Ukrasni",
+        "Emojis": "Emojiji",
+        "Guide": "Vodič",
+        "Kaomoji": "Kaomoji",
+        "Reference": "Referentno",
+        "Symbols": "Unicode simboli"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Natuknice",
+        "Captions": "Opisi objava",
+        "Celebration": "Slavlje",
+        "Comments": "Komentari",
+        "DMs": "Privatne poruke",
+        "Dividers": "Razdjelnici",
+        "Email Formatting": "Oblikovanje e-maila",
+        "Professional Posts": "Poslovne objave",
+        "Reactions": "Reakcije",
+        "Reference": "Referentno",
+        "Travel": "Putovanja",
+        "Usernames": "Korisnička imena",
+        "Care Labels": "Oznake za održavanje odjeće",
+        "Profile": "Profil"
+      },
+      "platforms": {
+        "Email": "E-mail"
+      }
+    },
+    "ui": {
+      "searchLabel": "Pretraži biblioteku",
+      "searchPlaceholder": "Pretraži, npr. strelice, dvostruke strelice…",
+      "clearFilters": "Očisti filtre",
+      "resultCount": "{shown} od {total} zbirki",
+      "emptyTitle": "Nema rezultata",
+      "emptyBody": "Pokušaj drugu pretragu ili drugi filtar.",
+      "emptyReset": "Očisti sve",
+      "backTop": "Na vrh",
+      "filterBy": "Filtriraj po",
+      "alphaJump": "Skoči na slovo",
+      "noItems": "nema stavki",
+      "directoryLabel": "Popis simbola za kopiranje"
+    }
+  },
+  "uk": {
+    "labels": {
+      "types": {
+        "Decorative": "Декоративні",
+        "Emojis": "Емодзі",
+        "Guide": "Посібник",
+        "Kaomoji": "Каомодзі",
+        "Reference": "Довідник",
+        "Symbols": "Символи"
+      },
+      "useCases": {
+        "Bios": "Шапка профілю",
+        "Bullet Points": "Маркери списку",
+        "Captions": "Підписи",
+        "Celebration": "Свята",
+        "Comments": "Коментарі",
+        "DMs": "Особисті повідомлення",
+        "Dividers": "Роздільники",
+        "Email Formatting": "Оформлення листів",
+        "Professional Posts": "Професійні дописи",
+        "Reactions": "Реакції",
+        "Reference": "Довідка",
+        "Travel": "Подорожі",
+        "Usernames": "Ніки",
+        "Care Labels": "Маркування догляду",
+        "Profile": "Профіль"
+      },
+      "platforms": {
+        "Email": "Електронна пошта"
+      }
+    },
+    "ui": {
+      "searchLabel": "Пошук у бібліотеці",
+      "searchPlaceholder": "Шукай, наприклад, сердечка, стрілки…",
+      "clearFilters": "Скинути фільтри",
+      "resultCount": "{shown} з {total} колекцій",
+      "emptyTitle": "Нічого не знайдено",
+      "emptyBody": "Спробуй інший запит або фільтр.",
+      "emptyReset": "Скинути все",
+      "backTop": "Догори",
+      "filterBy": "Фільтрувати за",
+      "alphaJump": "Перейти до літери",
+      "noItems": "немає елементів",
+      "directoryLabel": "Каталог символів"
+    }
+  },
+  "ms": {
+    "labels": {
+      "types": {
+        "Decorative": "Hiasan",
+        "Emojis": "Emoji",
+        "Guide": "Panduan",
+        "Kaomoji": "Kaomoji",
+        "Reference": "Rujukan",
+        "Symbols": "Simbol"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Titik Senarai",
+        "Captions": "Kapsyen",
+        "Celebration": "Sambutan",
+        "Comments": "Komen",
+        "DMs": "Mesej Peribadi",
+        "Dividers": "Pemisah",
+        "Email Formatting": "Format E-mel",
+        "Professional Posts": "Hantaran Profesional",
+        "Reactions": "Reaksi",
+        "Reference": "Rujukan",
+        "Travel": "Pelancongan",
+        "Usernames": "Nama Pengguna",
+        "Care Labels": "Label Penjagaan Pakaian",
+        "Profile": "Profil"
+      },
+      "platforms": {
+        "Email": "E-mel"
+      }
+    },
+    "ui": {
+      "searchLabel": "Cari dalam pustaka",
+      "searchPlaceholder": "Cari, cth. simbol FF, ruang kosong …",
+      "clearFilters": "Kosongkan penapis",
+      "resultCount": "{shown} daripada {total} koleksi",
+      "emptyTitle": "Tiada hasil",
+      "emptyBody": "Cuba carian atau penapis lain.",
+      "emptyReset": "Kosongkan semua",
+      "backTop": "Ke atas",
+      "filterBy": "Tapis ikut",
+      "alphaJump": "Lompat ke huruf",
+      "noItems": "tiada item",
+      "directoryLabel": "Direktori simbol"
+    }
   }
 }
