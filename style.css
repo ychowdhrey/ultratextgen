@@ -13763,6 +13763,16 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   .pt-sheet-footer-field { color: #1a1a2e; }
   .pt-sheet-footer-rule { border-bottom-color: #9aa3b2; }
 }
+/* The on-screen sheet is white paper in dark mode too (.pt-paper and
+   .pt-sheet-thumb-paper are pinned to #fff), but the line's tokens flip with
+   the theme: "Name:" and "Date:" drew #f1f5f9 on white, 1.10:1, so a dark-mode
+   visitor who ticked the Name and date line saw no line in the preview
+   (2026-11-21 rendered UX audit). The PDF was never affected: it rasterises
+   under body.pt-pdf-rendering on a white root. Paper colours, as printed. */
+body.dark-mode .pt-paper .pt-sheet-footer-field,
+body.dark-mode .pt-sheet-thumb-paper .pt-sheet-footer-field { color: #1a1a2e; }
+body.dark-mode .pt-paper .pt-sheet-footer-rule,
+body.dark-mode .pt-sheet-thumb-paper .pt-sheet-footer-rule { border-bottom-color: #9aa3b2; }
 
 /* "Same word, another sheet" -- the journey links under a generator input.
    Screen only: a printed sheet has nowhere to click. */

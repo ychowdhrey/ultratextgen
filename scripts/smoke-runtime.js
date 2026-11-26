@@ -1903,6 +1903,79 @@ async function main() {
     }
   }
 
+  // 25b. The saved strip sits in the page's column. savedHost() inserts it as
+  // a sibling of the first tile section, straight into <body>, so it inherited
+  // no width: on every library, symbol and kaomoji page, and on the locale
+  // library hubs, it ran 1280px (1600px on a wide screen) beside an 800px
+  // page, and flush to both edges of a phone (rendered UX audit 2026-11-21).
+  // Its edges must match the content edges of the column it sits above
+  // (the first heading after it), on an article page and on a hub, at a
+  // desktop width and at 390px.
+  for (const [url, device] of [
+    ['/ko/library/baksu-imotikon/', 'desktop'], ['/ko/library/baksu-imotikon/', 'narrow'],
+    ['/ja/library/', 'desktop'], ['/ja/library/', 'narrow']
+  ]) {
+    console.log(`\n${url} (saved strip sits in the page column, ${device})`);
+    const { ctx, page, errors } = await open(url, device, () => {
+      if (!localStorage.getItem('utg_saved_items')) {
+        localStorage.setItem('utg_saved_items', JSON.stringify([{ type: 'symbol', value: '★', label: '★', href: '', t: 1 }]));
+      }
+    });
+    const g = await page.evaluate(() => {
+      const s = document.getElementById('symbolSavedStrip');
+      if (!s || s.hidden) return null;
+      const h = [...document.querySelectorAll('h2')].find((x) => x.compareDocumentPosition(s) & Node.DOCUMENT_POSITION_PRECEDING && !s.contains(x) && x.getBoundingClientRect().width);
+      const r = s.getBoundingClientRect();
+      const c = h ? h.getBoundingClientRect() : null;
+      return { s: [Math.round(r.left), Math.round(r.right)], c: c && [Math.round(c.left), Math.round(c.right)], vw: document.documentElement.clientWidth };
+    });
+    check('the strip renders for a device with a saved symbol', !!g);
+    check('the strip edges match the content column below it', g && g.c && Math.abs(g.s[0] - g.c[0]) <= 1 && Math.abs(g.s[1] - g.c[1]) <= 1, JSON.stringify(g));
+    check('the strip leaves a gutter at both screen edges', g && g.s[0] >= 16 && g.vw - g.s[1] >= 16, JSON.stringify(g));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25c. Dark mode keeps the sheet's Name and Date line legible. The preview
+  // paper stays white in dark mode, but the line's colour followed the theme:
+  // #f1f5f9 on white, 1.10:1, so a ticked "Name and date line" looked absent.
+  // The PDF was never affected (it rasterises on a white root); this is the
+  // on-screen preview only.
+  console.log('\n/printables/handwriting-worksheet-generator/ (dark mode: the Name and Date line is legible on the paper)');
+  {
+    const { ctx, page, errors } = await open('/printables/handwriting-worksheet-generator/', 'desktop');
+    await page.locator('#darkModeBtn').click();
+    await page.waitForTimeout(200);
+    for (const box of await page.locator('input[id$="-namedate"]').all()) await box.check({ force: true });
+    await page.waitForTimeout(300);
+    const c = await page.evaluate(() => {
+      const label = [...document.querySelectorAll('.pt-paper .pt-sheet-footer-label')].find((x) => x.getBoundingClientRect().width);
+      if (!label) return null;
+      let n = label, bg = 'rgba(0, 0, 0, 0)';
+      while (n && /rgba\(0, 0, 0, 0\)|transparent/.test(bg)) { bg = getComputedStyle(n).backgroundColor; n = n.parentElement; }
+      return { text: label.textContent, fg: getComputedStyle(label).color, bg, dark: document.body.classList.contains('dark-mode') };
+    });
+    const ratio = c ? contrast(c.fg, c.bg) : 0;
+    check('the page is in dark mode and the line is on the paper', c && c.dark, JSON.stringify(c));
+    check('dark mode: the Name label reads at >= 4.5:1 on the paper', ratio >= 4.5, c ? `${c.text} ${c.fg} on ${c.bg} = ${ratio.toFixed(2)}` : 'no footer label');
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25d. Arabic header search finds a noun written with its article. The index
+  // spells "the heart" القلب; the visitor types قلب. Matching is at a word
+  // start, so the article hid every heart page from the everyday query.
+  console.log('\n/ar/ (header search: a bare Arabic noun finds its article form)');
+  {
+    const { ctx, page, errors } = await open('/ar/', 'desktop');
+    await page.locator('#searchInput').fill('قلب');
+    await page.waitForTimeout(1300);
+    const hrefs = await page.locator('.site-search-results a').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
+    check('قلب returns Arabic heart pages', hrefs.includes('/ar/symbol/ramz-alqalb/'), JSON.stringify(hrefs));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 25e. Muted text reads at 4.5:1 wherever it lands, in both themes.
   // --text-muted carries form labels and hints site-wide. It was #94a3b8 in
   // light mode (2.43:1 on the page background) and #64748b in dark mode

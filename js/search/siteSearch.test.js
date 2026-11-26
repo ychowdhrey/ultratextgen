@@ -73,6 +73,23 @@ eq(titles(entries, 'BUBBLE fonts')[0], 'Bubble Fonts Generator', 'matching ignor
 eq(titles(entries, 'symboles'), ['Symboles cœur à copier'], 'a French word matches its own page');
 eq(titles(entries, 'elegants'), ['Symboles cœur à copier'], 'Latin accents fold: "elegants" finds "élégants"');
 
+// Arabic: the article and its clitics are written onto the noun (القلب, والقمر).
+{
+  const ar = S.prepare([
+    ['/ar/symbol/ramz-alqalb/', 'رمز القلب', 'رمز فئة ورق لعب.', 'library'],
+    ['/ar/library/heart-symbols/', 'مجموعة رموز القلوب', 'رموز القلوب وإيموجي القلب.', 'library'],
+    ['/ar/library/stars/', 'رموز النجوم', 'نجوم والقمر.', 'library'],
+    ['/ar/y2k/', 'رموز Y2K', 'طابع Y2K.', 'fonts'],
+  ]);
+  const paths = (q) => S.search(ar, q, 8).map((e) => e.path);
+  eq(paths('قلب'), ['/ar/symbol/ramz-alqalb/', '/ar/library/heart-symbols/'],
+    'Arabic: the bare noun finds القلب in a title first, then in a description');
+  eq(paths('القلب')[0], '/ar/symbol/ramz-alqalb/', 'Arabic: the noun typed with its article still matches');
+  eq(paths('قمر'), ['/ar/library/stars/'], 'Arabic: a clitic + article (والقمر) is stripped too');
+  eq(paths('لب'), [], 'Arabic: stripping the article does not open mid-word matches');
+  eq(paths('رموز').length, 3, 'Arabic: a word with no article matches as before');
+}
+
 eq(titles(entries, 'หัวใจ'), ['สัญลักษณ์หัวใจ'], 'Thai matches inside a spaceless title');
 eq(titles(entries, 'ハート'), ['ハート記号'], 'Japanese matches inside a spaceless title');
 
