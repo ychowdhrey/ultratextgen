@@ -1195,6 +1195,18 @@
   "hash": "9abc8f3778be5cb2",
   "lastmod": "2026-10-28"
  },
+ "/cs/library/": {
+  "hash": "6426a1d1c683ca1e",
+  "lastmod": "2026-11-26"
+ },
+ "/cs/library/sipky/": {
+  "hash": "b929a9c62627ea28",
+  "lastmod": "2026-11-26"
+ },
+ "/cs/library/srdicka/": {
+  "hash": "b97a543308ead92a",
+  "lastmod": "2026-11-26"
+ },
  "/cs/male-pismo/": {
   "hash": "8af7ddc8f130927e",
   "lastmod": "2026-10-04"
@@ -1244,8 +1256,8 @@
   "lastmod": "2026-10-04"
  },
  "/da/library/": {
-  "hash": "65fe0dc2fdd5f6f2",
-  "lastmod": "2026-10-04"
+  "hash": "66ed81745b21c9ec",
+  "lastmod": "2026-11-26"
  },
  "/da/library/flueben-symboler/": {
   "hash": "70aa0951b70d9792",
@@ -1260,12 +1272,16 @@
   "lastmod": "2026-10-02"
  },
  "/da/library/matematiske-symboler/": {
-  "hash": "52f0111c9af67c6b",
-  "lastmod": "2026-10-08"
+  "hash": "edf32c8ae5b5310b",
+  "lastmod": "2026-11-26"
  },
  "/da/library/pil-symboler/": {
   "hash": "4d137d0fc5ff512a",
   "lastmod": "2026-10-24"
+ },
+ "/da/library/specialtegn/": {
+  "hash": "0bf1823b298bd9fa",
+  "lastmod": "2026-11-26"
  },
  "/da/library/valuta-symboler/": {
   "hash": "857431517d14074f",
@@ -4519,9 +4535,25 @@
   "hash": "98b50c195b21cf0d",
   "lastmod": "2026-10-04"
  },
+ "/fi/library/": {
+  "hash": "459490d1f1e6b016",
+  "lastmod": "2026-11-26"
+ },
+ "/fi/library/erikoismerkit/": {
+  "hash": "05c3ead7636c7b9e",
+  "lastmod": "2026-11-26"
+ },
  "/fi/library/horoskooppimerkit/": {
   "hash": "f6e33de4137f4e8d",
   "lastmod": "2026-10-08"
+ },
+ "/fi/library/nuoli-symboli/": {
+  "hash": "dbf299e441218f9e",
+  "lastmod": "2026-11-26"
+ },
+ "/fi/library/sydan-symboli/": {
+  "hash": "ce93414d344a352a",
+  "lastmod": "2026-11-26"
  },
  "/fi/lihavoitu-teksti/": {
   "hash": "cb1b410271bb832e",
@@ -4536,12 +4568,12 @@
   "lastmod": "2026-10-04"
  },
  "/fi/symbol/asteen-merkki/": {
-  "hash": "93cc9dfe203966de",
-  "lastmod": "2026-11-18"
+  "hash": "73127410c7210682",
+  "lastmod": "2026-11-26"
  },
  "/fi/symbol/euron-merkki/": {
-  "hash": "0759b07c13773cd5",
-  "lastmod": "2026-08-13"
+  "hash": "299cbe6805444cda",
+  "lastmod": "2026-11-26"
  },
  "/fr/": {
   "hash": "cc9004b1f5c02f16",
@@ -5640,8 +5672,24 @@
   "lastmod": "2026-10-05"
  },
  "/hi/guide/discord-text-formatting-samjhein/": {
-  "hash": "7f00b144fd44a671",
-  "lastmod": "2026-10-05"
+  "hash": "dc8e2d3e93a423dd",
+  "lastmod": "2026-11-26"
+ },
+ "/hi/library/": {
+  "hash": "a81d8bed285f5cc9",
+  "lastmod": "2026-11-26"
+ },
+ "/hi/library/arrow-symbols/": {
+  "hash": "0f86d8f078e91ad7",
+  "lastmod": "2026-11-26"
+ },
+ "/hi/library/heart-symbols/": {
+  "hash": "b451cb16d00f6a9d",
+  "lastmod": "2026-11-26"
+ },
+ "/hi/library/special-characters/": {
+  "hash": "7c29674863eae12a",
+  "lastmod": "2026-11-26"
  },
  "/hi/usecase/emoji-anuvadak/": {
   "hash": "31cb90d9c2fc768a",
@@ -5702,6 +5750,14 @@
  "/hr/kurziv/": {
   "hash": "60fb2694c981054c",
   "lastmod": "2026-10-04"
+ },
+ "/hr/library/": {
+  "hash": "2f7b4c4124bd76a7",
+  "lastmod": "2026-11-26"
+ },
+ "/hr/library/strelice/": {
+  "hash": "fe1cf99f18bfc81b",
+  "lastmod": "2026-11-26"
  },
  "/hr/mala-slova/": {
   "hash": "4c643e282de8a319",
@@ -5766,6 +5822,18 @@
  "/hu/kulonleges-karakterek/": {
   "hash": "4f0e2d020e887538",
   "lastmod": "2026-10-04"
+ },
+ "/hu/library/": {
+  "hash": "d63e65cc5553ebd2",
+  "lastmod": "2026-11-26"
+ },
+ "/hu/library/nyil-szimbolum/": {
+  "hash": "866383278cb50df7",
+  "lastmod": "2026-11-26"
+ },
+ "/hu/library/sziv-szimbolum/": {
+  "hash": "95868ee1087846b0",
+  "lastmod": "2026-11-26"
  },
  "/id/": {
   "hash": "5326c1e45add8886",
@@ -11527,9 +11595,17 @@
   "hash": "3559dd7b7c71e3fa",
   "lastmod": "2026-10-08"
  },
+ "/ms/library/": {
+  "hash": "b9b0513a91b9a80d",
+  "lastmod": "2026-11-26"
+ },
+ "/ms/library/aksara-khas/": {
+  "hash": "f1f60850044d3632",
+  "lastmod": "2026-11-26"
+ },
  "/ms/library/ruang-kosong/": {
-  "hash": "cc5dd581643dc81f",
-  "lastmod": "2026-10-24"
+  "hash": "05304b4e90db77b4",
+  "lastmod": "2026-11-26"
  },
  "/ms/library/simbol-discord/": {
   "hash": "b4084c38f98432a0",
@@ -11538,6 +11614,10 @@
  "/ms/library/simbol-ff/": {
   "hash": "feaccb0dc013a947",
   "lastmod": "2026-10-04"
+ },
+ "/ms/library/simbol-panah/": {
+  "hash": "1b32200ee9ae98e5",
+  "lastmod": "2026-11-26"
  },
  "/ms/library/simbol-roblox/": {
   "hash": "cb927581f5556338",
@@ -12452,8 +12532,8 @@
   "lastmod": "2026-10-09"
  },
  "/no/library/": {
-  "hash": "585c784da129b021",
-  "lastmod": "2026-10-09"
+  "hash": "9305a74f9ad935b2",
+  "lastmod": "2026-11-26"
  },
  "/no/library/facebook-symboler/": {
   "hash": "6c526505f87a7166",
@@ -12488,8 +12568,8 @@
   "lastmod": "2026-10-09"
  },
  "/no/library/matematiske-symboler/": {
-  "hash": "bd18febb9de06e1a",
-  "lastmod": "2026-10-08"
+  "hash": "0be387a5c71b5cc8",
+  "lastmod": "2026-11-26"
  },
  "/no/library/pilsymboler/": {
   "hash": "6abbbd86c2b40467",
@@ -12498,6 +12578,10 @@
  "/no/library/smilefjes/": {
   "hash": "c8f5d9532687df3a",
   "lastmod": "2026-10-09"
+ },
+ "/no/library/spesialtegn/": {
+  "hash": "dd07bd7955accb8d",
+  "lastmod": "2026-11-26"
  },
  "/no/library/stjernesymboler/": {
   "hash": "cfb96765b10ec487",
@@ -15291,6 +15375,18 @@
   "hash": "12eac5db7beeab31",
   "lastmod": "2026-10-04"
  },
+ "/ro/library/": {
+  "hash": "30ffb36a6ac69b58",
+  "lastmod": "2026-11-26"
+ },
+ "/ro/library/sageti/": {
+  "hash": "38359ba4da41c1b9",
+  "lastmod": "2026-11-26"
+ },
+ "/ro/library/simbol-inima/": {
+  "hash": "ec0dccf8fbf53935",
+  "lastmod": "2026-11-26"
+ },
  "/ro/nume-pentru-free-fire/": {
   "hash": "385ce52022eae14f",
   "lastmod": "2026-10-04"
@@ -16064,8 +16160,8 @@
   "lastmod": "2026-10-04"
  },
  "/sk/guide/formatovanie-textu-na-discorde/": {
-  "hash": "4b283e14bf4dcf68",
-  "lastmod": "2026-10-04"
+  "hash": "e49a8d100c7c5835",
+  "lastmod": "2026-11-26"
  },
  "/sk/guide/kde-funguje-pismo-na-discorde/": {
   "hash": "d668bc391fe0c5fc",
@@ -16074,6 +16170,22 @@
  "/sk/kurziva/": {
   "hash": "f0e5722c1902dd48",
   "lastmod": "2026-10-28"
+ },
+ "/sk/library/": {
+  "hash": "ed7d1597379bd1b2",
+  "lastmod": "2026-11-26"
+ },
+ "/sk/library/sipky/": {
+  "hash": "3740d0a3843dd3fb",
+  "lastmod": "2026-11-26"
+ },
+ "/sk/library/specialne-znaky/": {
+  "hash": "9ea2fd100463c507",
+  "lastmod": "2026-11-26"
+ },
+ "/sk/library/srdiecka/": {
+  "hash": "b6826af8d229cf17",
+  "lastmod": "2026-11-26"
  },
  "/sk/male-pismo/": {
   "hash": "b7d8c60711a4aa60",
@@ -16168,8 +16280,8 @@
   "lastmod": "2026-10-09"
  },
  "/sv/library/": {
-  "hash": "5277ba34c623972c",
-  "lastmod": "2026-10-04"
+  "hash": "1242d2c63d869905",
+  "lastmod": "2026-11-26"
  },
  "/sv/library/bock-symboler/": {
   "hash": "7fe150485de37a5f",
@@ -16212,8 +16324,8 @@
   "lastmod": "2026-10-24"
  },
  "/sv/library/matematiska-symboler/": {
-  "hash": "e361c3d69af667ac",
-  "lastmod": "2026-10-08"
+  "hash": "f37f2a1fae8ce906",
+  "lastmod": "2026-11-26"
  },
  "/sv/library/pil-symboler/": {
   "hash": "221409c1404c1e4c",
@@ -16230,6 +16342,10 @@
  "/sv/library/skiljetecken/": {
   "hash": "02e1d02dc9d7b04e",
   "lastmod": "2026-10-04"
+ },
+ "/sv/library/specialtecken/": {
+  "hash": "47117f3a2fedd8fa",
+  "lastmod": "2026-11-26"
  },
  "/sv/library/stjarna-symboler/": {
   "hash": "038f4a1ccbc9b09c",
@@ -17400,12 +17516,28 @@
   "lastmod": "2026-10-04"
  },
  "/tl/guide/discord-text-formatting-paliwanag/": {
-  "hash": "2919565ee0ea5175",
-  "lastmod": "2026-10-04"
+  "hash": "5ffb94b0bb962289",
+  "lastmod": "2026-11-26"
  },
  "/tl/guide/saan-gumagana-ang-font-sa-discord/": {
   "hash": "ca5c6cdb0daa7095",
   "lastmod": "2026-10-04"
+ },
+ "/tl/library/": {
+  "hash": "7f363734b27ef016",
+  "lastmod": "2026-11-26"
+ },
+ "/tl/library/arrow-symbols/": {
+  "hash": "c795b497a1e5ffa9",
+  "lastmod": "2026-11-26"
+ },
+ "/tl/library/heart-symbols/": {
+  "hash": "a27d9bec3e65c763",
+  "lastmod": "2026-11-26"
+ },
+ "/tl/library/special-characters/": {
+  "hash": "464fa5e63605a9c7",
+  "lastmod": "2026-11-26"
  },
  "/tl/usecase/bio-font/": {
   "hash": "f2f108b2a71d4c55",
@@ -18370,6 +18502,22 @@
  "/uk/henerator-nikiv/": {
   "hash": "6ef693878e447dd8",
   "lastmod": "2026-10-07"
+ },
+ "/uk/library/": {
+  "hash": "753a7e13b3b736f8",
+  "lastmod": "2026-11-26"
+ },
+ "/uk/library/serdechka/": {
+  "hash": "75289341f5823d63",
+  "lastmod": "2026-11-26"
+ },
+ "/uk/library/spetssymvoly/": {
+  "hash": "e154a15db2816ad0",
+  "lastmod": "2026-11-26"
+ },
+ "/uk/library/strilky/": {
+  "hash": "e7271dcff41c53fc",
+  "lastmod": "2026-11-26"
  },
  "/uk/nevydymyi-tekst/": {
   "hash": "6f846bec2d79ab71",
