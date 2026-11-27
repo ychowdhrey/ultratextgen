@@ -30,7 +30,7 @@ against "lentes" 69, with `og:locale` set to `es_ES`.
 The readers are mostly elsewhere. In September 2026, `/es/` pages had 5,491 GA4
 users. 26.9% were in Mexico and about 70% in Latin America, while Spain was 5.8%.
 The United States, whose Spanish-speaking readers mostly use Latin American forms,
-produced the largest share of `/es/` ad revenue ($2.73 of $7.21).
+produced the largest share of `/es/` ad revenue (about 38%).
 
 Search demand points the same way:
 

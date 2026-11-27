@@ -44,10 +44,11 @@ PRODUCT_EVENTS = ["copy_text", "save_style", "share_text", "unsave_style"]
 
 PAGE_METRICS = ["screenPageViews", "sessions", "activeUsers", "userEngagementDuration"]
 
-# Revenue is AdSense, surfaced through the GA4 link. Kept on the daily totals
-# because it is the only place a revenue figure can be read per day without
-# leaving the property.
-REVENUE_METRICS = ["totalAdRevenue", "publisherAdImpressions"]
+# Ad delivery, surfaced through the GA4 link: how many ads were shown. Revenue is
+# deliberately NOT requested. Earnings are confidential and this repository is
+# public, so no revenue metric may be fetched, stored or rendered here
+# (test_ga4_snapshot.NoRevenueTests fails if one comes back).
+AD_DELIVERY_METRICS = ["publisherAdImpressions"]
 
 # Rows per API request. The Data API caps a single response at 250k; paging at
 # 100k keeps each response small enough to stream while still finishing the
@@ -172,7 +173,7 @@ def build_bundle(client, types, property_id, since, until, history_start,
     reports["daily_totals"] = run(
         client, types, property_id, ["date"],
         ["sessions", "screenPageViews", "activeUsers", "newUsers",
-         "userEngagementDuration"] + REVENUE_METRICS,
+         "userEngagementDuration"] + AD_DELIVERY_METRICS,
         daily, order_bys=by_dim("date"), limit=PAGE_SIZE)
     note("daily_totals: {} rows".format(len(reports["daily_totals"]["rows"])))
 
@@ -224,9 +225,8 @@ def build_bundle(client, types, property_id, since, until, history_start,
     reports["retention"] = run(
         client, types, property_id, ["newVsReturning"], ["activeUsers"], window)
 
-    reports["revenue"] = run(
-        client, types, property_id, [], REVENUE_METRICS + ["totalRevenue"],
-        window)
+    reports["ad_delivery"] = run(
+        client, types, property_id, [], AD_DELIVERY_METRICS, window)
 
     return {
         "meta": {

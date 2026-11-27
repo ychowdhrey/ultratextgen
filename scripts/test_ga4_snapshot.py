@@ -86,19 +86,18 @@ def bundle_fixture():
                 "rows": [{"d": ["google / organic"], "m": ["140", "110"]},
                          {"d": ["(direct) / (none)"], "m": ["22", "18"]}],
             },
-            "revenue": {
+            "ad_delivery": {
                 "dimensions": [],
-                "metrics": ["totalAdRevenue", "publisherAdImpressions",
-                            "totalRevenue"],
-                "rows": [{"d": [], "m": ["5.2578", "5496", "5.2578"]}],
+                "metrics": ["publisherAdImpressions"],
+                "rows": [{"d": [], "m": ["5496"]}],
             },
             "daily_totals": {
                 "dimensions": ["date"],
                 "metrics": ["sessions", "screenPageViews", "activeUsers",
                             "newUsers", "userEngagementDuration",
-                            "totalAdRevenue", "publisherAdImpressions"],
+                            "publisherAdImpressions"],
                 "rows": [{"d": ["20261110"],
-                          "m": ["80", "100", "50", "45", "500", "5.2578", "5496"]}],
+                          "m": ["80", "100", "50", "45", "500", "5496"]}],
             },
             "daily_landing_pages": {
                 "dimensions": ["date", "landingPage"],
@@ -255,26 +254,43 @@ class SnapshotTests(unittest.TestCase):
         views = [b["screen_page_views"] for b in self.snapshot["locales"]]
         self.assertEqual(views, sorted(views, reverse=True))
 
-    def test_revenue_is_recorded(self):
-        self.assertEqual(self.snapshot["revenue"]["ad_revenue"], 5.2578)
-        self.assertEqual(self.snapshot["revenue"]["publisher_ad_impressions"],
-                         5496)
+    def test_ad_impressions_are_recorded(self):
+        self.assertEqual(
+            self.snapshot["ad_delivery"]["publisher_ad_impressions"], 5496)
 
-    def test_revenue_absent_is_zero_not_a_crash(self):
+    def test_ad_delivery_absent_is_zero_not_a_crash(self):
         bundle = bundle_fixture()
-        bundle["reports"]["revenue"]["rows"] = []
+        bundle["reports"]["ad_delivery"]["rows"] = []
         snapshot = mod.build_snapshot(bundle)
-        self.assertEqual(snapshot["revenue"]["ad_revenue"], 0.0)
+        self.assertEqual(
+            snapshot["ad_delivery"]["publisher_ad_impressions"], 0)
+
+    def test_no_revenue_figure_is_stored_or_rendered(self):
+        # Earnings are confidential and this repository is public. Feed the
+        # normalizer a bundle that DOES carry revenue (an old fetcher, a
+        # hand-built bundle) and prove none of it survives.
+        bundle = bundle_fixture()
+        bundle["reports"]["ad_delivery"] = {
+            "dimensions": [],
+            "metrics": ["totalAdRevenue", "publisherAdImpressions",
+                        "totalRevenue"],
+            "rows": [{"d": [], "m": ["5.2578", "5496", "5.2578"]}],
+        }
+        bundle["reports"]["revenue"] = bundle["reports"]["ad_delivery"]
+        snapshot = mod.build_snapshot(bundle)
+        text = json.dumps(snapshot) + mod.render_markdown(snapshot)
+        self.assertNotIn("revenue", text.lower())
+        self.assertNotIn("5.2578", text)
+        self.assertNotIn("5.26", text)
 
     def test_sources_are_recorded_in_order(self):
         sources = self.snapshot["sources"]
         self.assertEqual(sources[0]["source_medium"], "google / organic")
         self.assertEqual(sources[0]["sessions"], 140)
 
-    def test_revenue_and_sources_reach_the_summary(self):
+    def test_ad_impressions_and_sources_reach_the_summary(self):
         markdown = mod.render_markdown(self.snapshot)
-        self.assertIn("Ad revenue", markdown)
-        self.assertIn("$5.26", markdown)
+        self.assertIn("| Ad impressions | 5,496 |", markdown)
         self.assertIn("## Acquisition", markdown)
         self.assertIn("google / organic", markdown)
 
@@ -371,12 +387,12 @@ class DailyPartitionTests(unittest.TestCase):
             self.assertTrue(os.path.exists(
                 os.path.join(self.out, "daily", name)), name)
 
-    def test_daily_totals_keep_revenue(self):
+    def test_daily_totals_keep_ad_impressions_and_no_revenue(self):
         path = os.path.join(self.out, "daily_totals.csv")
         with open(path, encoding="utf-8") as handle:
             rows = list(csv.DictReader(handle))
         self.assertEqual(rows[0]["date"], "2026-11-10")
-        self.assertEqual(rows[0]["ad_revenue"], "5.2578")
+        self.assertNotIn("ad_revenue", rows[0])
         self.assertEqual(rows[0]["publisher_ad_impressions"], "5496")
         self.assertEqual(rows[0]["avg_engagement_seconds"], "10.0")
 

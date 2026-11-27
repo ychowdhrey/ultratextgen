@@ -1,4 +1,7 @@
 {
+ "ad_delivery": {
+  "publisher_ad_impressions": 32999
+ },
  "comparability_boundaries": [
   {
    "date": "2026-11-08",
@@ -1399,11 +1402,6 @@
   "new_users": 11106,
   "returning_share_pct": 12.8,
   "returning_users": 1632
- },
- "revenue": {
-  "ad_revenue": 23.8346,
-  "publisher_ad_impressions": 32999,
-  "total_revenue": 23.8346
  },
  "save_rate_pct_of_copies": 1.96,
  "sources": [

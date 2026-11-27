@@ -68,7 +68,7 @@ A weekly ingestion that quietly does nothing looks exactly like one that works
 | `monthly_events.csv` | **full history**, the copy/save/share action set | |
 | `page_performance.csv` | one window, every page with traffic | Keyed for joining — below. |
 | `locale_performance.csv` | one window, aggregated by URL locale | |
-| `daily_totals.csv` | **full history**, one row per day | Sessions, views, users, engagement, **ad revenue** and publisher ad impressions. |
+| `daily_totals.csv` | **full history**, one row per day | Sessions, views, users, engagement and publisher ad impressions. Ad revenue is deliberately not recorded: earnings are confidential and this repository is public (changed 2026-11-27). |
 | `daily/<YYYY-MM>-landing-pages.csv` | one row per day per landing page | Carries `locale`, `page_type`, `slug`, `intent_id`, `intent_mapped`. |
 | `daily/<YYYY-MM>-country.csv` | one row per day per country | |
 | `daily/<YYYY-MM>-source-medium.csv` | one row per day per source/medium | |
@@ -220,7 +220,7 @@ snapshot never reads as full coverage.
 | Property | `522553010`, created **2026-02-02**, Standard tier (not 360) |
 | Earliest data | **2026-02-03** — the maximum backfill, verified by query, not assumed |
 | Daily grain | available for the whole period at landing-page, country, source/medium and event level (78,349 landing-page rows; fetched complete, unsampled) |
-| Revenue | **available** — AdSense is linked, so `totalAdRevenue` and `publisherAdImpressions` come back per day (≈$5/day in November). February returns 0 because ads had not started, not because the metric is missing |
+| Ad delivery | **available** — AdSense is linked, so `publisherAdImpressions` comes back per day. `totalAdRevenue` is also available from the property but is not fetched or stored here: earnings are confidential and this repository is public (changed 2026-11-27). February returns 0 because ads had not started, not because the metric is missing |
 | Sampling | none observed on any report (`sampled: false` throughout) |
 | Row limits | the fetcher pages at 100k rows and stops only when GA4's own `row_count` is reached, so a large backfill is never silently truncated |
 

@@ -310,7 +310,6 @@ def write_daily_partitions(bundle, out_dir, intents):
             continue
         users = pick(row, totals_idx, "activeUsers")
         engagement = pick(row, totals_idx, "userEngagementDuration")
-        revenue = pick_float(row, totals_idx, "totalAdRevenue")
         totals.append({
             "date": date,
             "sessions": pick(row, totals_idx, "sessions"),
@@ -318,14 +317,13 @@ def write_daily_partitions(bundle, out_dir, intents):
             "active_users": users,
             "new_users": pick(row, totals_idx, "newUsers"),
             "avg_engagement_seconds": round(engagement / users, 1) if users else 0.0,
-            "ad_revenue": round(revenue, 4),
             "publisher_ad_impressions": pick(row, totals_idx,
                                              "publisherAdImpressions"),
         })
     lo, hi = fetched_range(bundle, totals)
     merge_dated_csv(os.path.join(out_dir, "daily_totals.csv"),
                     ["date", "sessions", "screen_page_views", "active_users",
-                     "new_users", "avg_engagement_seconds", "ad_revenue",
+                     "new_users", "avg_engagement_seconds",
                      "publisher_ad_impressions"],
                     totals, lo, hi)
     written["daily_totals.csv"] = len(totals)
@@ -497,18 +495,14 @@ def build_snapshot(bundle):
         for row in rows_of(bundle, "source_medium")
     ]
 
-    # AdSense, through the GA4 link. Recorded so a revenue-per-view figure can
-    # be computed from one window without leaving the property -- and so the
-    # 2026-11-08 page-view boundary above is visibly relevant to it.
-    revenue_idx = index_metrics(bundle, "revenue")
-    revenue_rows = rows_of(bundle, "revenue")
-    revenue_row = revenue_rows[0] if revenue_rows else {"m": []}
-    revenue = {
-        "ad_revenue": round(pick_float(revenue_row, revenue_idx,
-                                       "totalAdRevenue"), 4),
-        "total_revenue": round(pick_float(revenue_row, revenue_idx,
-                                          "totalRevenue"), 4),
-        "publisher_ad_impressions": pick(revenue_row, revenue_idx,
+    # Ad delivery through the GA4 link: impressions only. Earnings are
+    # confidential and this repository is public, so no revenue figure is read,
+    # stored or rendered here, even if a bundle carries one.
+    delivery_idx = index_metrics(bundle, "ad_delivery")
+    delivery_rows = rows_of(bundle, "ad_delivery")
+    delivery_row = delivery_rows[0] if delivery_rows else {"m": []}
+    ad_delivery = {
+        "publisher_ad_impressions": pick(delivery_row, delivery_idx,
                                          "publisherAdImpressions"),
     }
 
@@ -530,7 +524,7 @@ def build_snapshot(bundle):
         # in this window. Surfaced so the docs cannot drift from reality unseen.
         "missing_product_events": missing_events,
         "save_rate_pct_of_copies": round(100.0 * saves / copies, 2) if copies else 0.0,
-        "revenue": revenue,
+        "ad_delivery": ad_delivery,
         "locales": aggregate_locales(pages),
         "countries": countries[:15],
         "sources": sources[:15],
@@ -642,9 +636,8 @@ def render_markdown(snapshot):
             retention["returning_users"], known_users),
         "| Save rate (saves / copies) | {}% |".format(
             snapshot["save_rate_pct_of_copies"]),
-        "| Ad revenue | ${:,.2f} across {:,} ad impressions |".format(
-            snapshot["revenue"]["ad_revenue"],
-            snapshot["revenue"]["publisher_ad_impressions"]),
+        "| Ad impressions | {:,} |".format(
+            snapshot["ad_delivery"]["publisher_ad_impressions"]),
         "| Pages with traffic | {:,}{} |".format(
             snapshot["page_count"],
             " (capped; GA4 reported {:,})".format(snapshot["pages_available"])
