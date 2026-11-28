@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4970 indexable pages in 33 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4972 indexable pages in 33 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -107,6 +107,7 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 - [Calligraphy Font Generator](https://ultratextgen.com/calligraphy/): Type once and get your text back in eight calligraphic hands: formal script, bold script, blackletter and chancery italic.
 - [Character Counter & Word Counter](https://ultratextgen.com/character-counter/): Free character and word counter with live stats.
 - [Characters to Words Converter](https://ultratextgen.com/character-counter/characters-to-words/): Convert any character count to words and pages instantly.
+- [Chinese Character Counter](https://ultratextgen.com/character-counter/chinese/): Count Chinese characters on their own, apart from punctuation, spaces and Latin text, plus words by segmentation.
 - [Curved & Arc Text Generator](https://ultratextgen.com/curved-text/): Bend text into 15 shapes, from arch and wave to spiral and heart, on one or more lines, then download it as SVG or PNG.
 - [Fancy Letters A to Z](https://ultratextgen.com/fancy-letters/): The full alphabet (A–Z, a–z and 0–9) in 20 Unicode styles: bold, italic, script, gothic, double-struck, bubble, squared, small caps…
 - [Hiragana Chart](https://ultratextgen.com/hiragana-chart/): All 46 basic hiragana with romaji: plus the voiced kana and combinations.
@@ -133,6 +134,7 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 - [TikTok Name Generator](https://ultratextgen.com/tiktok/name-generator/): Generate unique @handle ideas from your vibe, keyword, and initials, then style your display name separately.
 - [WhatsApp-friendly formatting and styles.](https://ultratextgen.com/whatsapp/): Fancy text generator for WhatsApp messages and statuses.
 - [Stylish text for X (Twitter) posts & bio.](https://ultratextgen.com/x/): Stylish Unicode text for your X posts and bio.
+- [X (Twitter) Character Counter](https://ultratextgen.com/x/character-counter/): Count a post the way X does: 280 in all, every link 23, every emoji and every Chinese, Japanese or Korean character 2. Bio and display name…
 - [YouTube Font Generator — Channel Name First](https://ultratextgen.com/youtube/): Style your YouTube channel name, About text, and descriptions with 100+ Unicode fonts, checked live against YouTube's real name and @handle…
 - [YouTube Channel Name Generator](https://ultratextgen.com/youtube/name-generator/): Generate channel-name ideas from a keyword, initials, and creator vibe, then style your favorite in the YouTube Font Generator.
 

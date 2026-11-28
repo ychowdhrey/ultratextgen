@@ -836,6 +836,69 @@ async function main() {
     await ctx.close();
   }
 
+  // 11b2. The counter spokes (2026-11-28). The X counter opens on X's weighted
+  // post count, checks the bio and display name in their own boxes and sends the
+  // three counter events with ids only; the Chinese counter fills its script
+  // tiles; the English hub, which does not opt in, sends no counter event and
+  // grows no tile.
+  console.log('\n/x/character-counter/, /character-counter/chinese/ and /character-counter/ (counter spokes)');
+  {
+    const counterRows = async (page) => (await dl(page)).filter((e) => /^counter_/.test(e.event));
+    const KEYS = ['counter_rule', 'counter_unit', 'counter_fix', 'counter_fit', 'counter_fit_via', 'locale'];
+    {
+      const { ctx, page, errors } = await open('/x/character-counter/', 'desktop');
+      check('X counter opens on the X post count', (await page.textContent('#counterLiveCount')).trim() === '0 / 280');
+      await page.fill('#counterInput', 'hi \u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}');
+      await page.waitForTimeout(200);
+      check('X counter charges a family emoji 2', (await page.textContent('#counterLiveCount')).trim() === '5 / 280', await page.textContent('#counterLiveCount'));
+      await page.fill('#xBioInput', 'Qxtestname \u5B57');
+      check('X bio box counts against 160', (await page.textContent('[data-counter-rule="x-bio"] [data-counter-live]')).trim() === '12 / 160');
+      await page.fill('#xNameInput', 'a'.repeat(51));
+      check('X display-name box flags 51 of 50', await page.evaluate(() => document.querySelector('[data-counter-rule="x-name"] [data-counter-live]').classList.contains('is-over')));
+      await page.waitForTimeout(1000);
+      const n0 = (await counterRows(page)).length;
+      await page.fill('#counterInput', 'Qxtestname ' + 'a'.repeat(280));
+      await page.waitForTimeout(1000);
+      await page.click('.cc-fix-btn-trim');
+      await page.waitForTimeout(1000);
+      await page.selectOption('.cc-selects select', 'bluesky');
+      await page.waitForTimeout(1000);
+      const all = await counterRows(page);
+      const rows = all.slice(n0);
+      const names = rows.map((r) => r.event + ':' + (r.counter_fix || r.counter_fit || r.counter_rule));
+      check('X counter sends fit, fix and limit rows', JSON.stringify(names) === JSON.stringify(['counter_fit_reached:over', 'counter_fix_applied:trim', 'counter_fit_reached:fits', 'counter_limit_chosen:bluesky-post', 'counter_fit_reached:fits']), JSON.stringify(names));
+      check('every counter row carries every key', all.length > 0 && all.every((r) => KEYS.every((k) => k in r)), JSON.stringify(all));
+      check('no counter row carries typed text', !/Qxtestname|\u5B57/.test(JSON.stringify(all)), JSON.stringify(all));
+      check('no page errors', !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+    {
+      const { ctx, page, errors } = await open('/character-counter/chinese/', 'desktop');
+      await page.fill('#counterInput', '\u4ECA\u5929\u5929\u6C23\u5F88\u597D\uFF0CHello\uFF01\u{1F468}\u200D\u{1F469}\u200D\u{1F467}');
+      await page.waitForTimeout(300);
+      const tiles = await page.evaluate(() => ['statHan', 'statCjkPunct', 'statOtherChars'].map((id) => document.getElementById(id).textContent));
+      check('Chinese counter splits Han, punctuation and other', JSON.stringify(tiles) === '["6","2","6"]', JSON.stringify(tiles));
+      const words = await page.evaluate(() => Number(document.getElementById('statSegWords').textContent));
+      check('Chinese counter counts words by segmentation', words >= 3, String(words));
+      check('no page errors', !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+    {
+      const { ctx, page, errors } = await open('/character-counter/', 'desktop');
+      await page.fill('#counterInput', 'Qxtestname ' + 'a'.repeat(300) + ' \u{1F642}');
+      await page.waitForTimeout(1000);
+      await page.selectOption('.cc-selects select', 'bluesky');
+      await page.waitForTimeout(1000);
+      const fix = page.locator('.cc-fix-btn').first();
+      if (await fix.count()) await fix.click();
+      await page.waitForTimeout(1000);
+      check('the English hub sends no counter event', (await counterRows(page)).length === 0, JSON.stringify(await counterRows(page)));
+      check('the English hub has no script tiles', !(await page.$('#statHan')));
+      check('no page errors', !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+  }
+
   // 11b. The Share button's confirmation is in the page language. Without a
   // native share sheet it copies the link and says so; that label used to be the
   // English fallback under Korean prose because library pages carry no i18n.js.

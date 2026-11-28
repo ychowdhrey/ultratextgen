@@ -122,8 +122,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "@type": "FAQPage",
   "inLanguage": "zh-TW",
   "mainEntity": [
-    {"@type":"Question","name":"中文的字數要看哪一個數字？","acceptedAnswer":{"@type":"Answer","text":"中文請看「字元數」這一格。中文的「字數」幾乎都是指字元數，一個中文字就算一個字，全形標點也各算一個。上面的「字數（單字）」算的是詞語數量：英文以空白分隔，中文則由瀏覽器內建的斷詞功能切成詞語來計算，所以它是詞數，不是字數，不要拿它當中文的字數。"}},
-    {"@type":"Question","name":"全形和半形字元怎麼計算？","acceptedAnswer":{"@type":"Answer","text":"這個工具以 Unicode 碼位為單位計算，全形與半形一律各算 1 個字元 — 中文字、全形標點、半形英文字母、半形數字都是 1。不過部分表單與報名系統仍沿用一個全形字算 2 的舊規則，在「限 500 字」的欄位裡實際只放得下 250 個中文字。對方若有明確規定計算方式，請以對方的規定為準。"}},
+    {"@type":"Question","name":"中文的字數要看哪一個數字？","acceptedAnswer":{"@type":"Answer","text":"中文請看「字元數」這一格。中文的「字數」幾乎都是指字元數，一個中文字就算一個字，全形標點也各算一個。上面的「字數（單字）」算的是詞語數量：英文以空白分隔，中文則由瀏覽器內建的斷詞功能切成詞語來計算，所以它是詞數，不是字數，不要拿它當中文的字數。只算漢字、不含標點與英數字時，請看「中文字」那一格。"}},
+    {"@type":"Question","name":"全形和半形字元怎麼計算？","acceptedAnswer":{"@type":"Answer","text":"這個工具以 Unicode 碼位為單位計算，全形與半形一律各算 1 個字元：中文字、全形標點、半形英文字母、半形數字都是 1。不過部分表單與報名系統仍沿用一個全形字算 2 的舊規則，在「限 500 字」的欄位裡實際只放得下 250 個中文字。對方若有明確規定計算方式，請以對方的規定為準。"}},
     {"@type":"Question","name":"在 X（推特）上中文可以打幾個字？","acceptedAnswer":{"@type":"Answer","text":"X 的上限是 280 個計數單位，而中文、日文、韓文字元與大多數表情符號每個計為 2，所以整篇用中文寫的貼文實際上大約只能打 140 個字。URL 不論實際多長一律計為 23。在上方的檢查器選擇「X（推特）貼文」，就是照 X 實際使用的加權演算法計算的。"}},
     {"@type":"Question","name":"空白和換行算字元嗎？","acceptedAnswer":{"@type":"Answer","text":"「字元數」會把空白（全形與半形）和換行一起算進去，「字元數（不含空白）」則把它們扣掉。X、Instagram、Discord 等大多數平台都把空白當成一般字元計算，所以拿貼文或個人簡介去對平台限制時，請用含空白的「字元數」。"}},
     {"@type":"Question","name":"表情符號算一個字元嗎？","acceptedAnswer":{"@type":"Answer","text":"通常不是。單純的表情符號在碼位上是 1，但在 UTF-16 是 2 個單位；帶膚色或由多個符號組合而成的（例如全家人的表情符號）可能是 4、7 個單位甚至更多。在 X 上每個表情符號計為 2，在 SMS 裡只要放進一個表情符號，整則訊息每則可容納的字元數就會改變。「字素（看得見的字）」顯示你眼睛看到的數量，「字元數」與「UTF-16 單位」則是實際被扣掉的額度。"}},
@@ -190,6 +190,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statChars">0</span><span class="counter-stat-label">字元數</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">字元數（不含空白）</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statHan">0</span><span class="counter-stat-label">中文字</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statCjkPunct">0</span><span class="counter-stat-label">中文標點</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statOtherChars">0</span><span class="counter-stat-label">其他字元</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">字數（單字）</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">句數</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">段落數</span></div>
@@ -202,12 +205,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
 
     <div class="counter-fits">
-      <p class="counter-fits-head">這段文字還放得進哪裡 — 所有限制即時比對</p>
+      <p class="counter-fits-head">這段文字還放得進哪裡：所有限制即時比對</p>
       <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
     </div>
   </div>
 
-  <p class="counter-footnote">所有計算都在你的瀏覽器裡完成 — 輸入的內容不會上傳，也不會被儲存。想順便換個字體嗎？<a href="/zh-tw/">UltraTextGen 產生器</a>可以轉換成 100 種以上可複製貼上的字體。</p>
+  <p class="counter-footnote">所有計算都在你的瀏覽器裡完成，輸入的內容不會上傳，也不會被儲存。想順便換個字體嗎？<a href="/zh-tw/">UltraTextGen 產生器</a>可以轉換成 100 種以上可複製貼上的字體。</p>
 
   <div class="section-divider"></div>
 
@@ -229,7 +232,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table></div>
-    <p>大多數人真正在對付的其實是軟性限制，卻幾乎沒有字數工具會把它顯示出來。一則 LinkedIn 貼文可以打 3,000 個字元，但真正有用的大約只有前面 140 個，其餘都藏在沒人會點的那一下之後。所以上方的工具直接把收合的位置畫出來 — 打字進去，你會看到「顯示更多」之前實際出現的那段文字，切線之後的部分會變淡，同時也看得到同一個開頭在其他會收合的版位撐不撐得住。</p>
+    <p>大多數人真正在對付的其實是軟性限制，卻幾乎沒有字數工具會把它顯示出來。一則 LinkedIn 貼文可以打 3,000 個字元，但真正有用的大約只有前面 140 個，其餘都藏在沒人會點的那一下之後。所以上方的工具直接把收合的位置畫出來：打字進去，你會看到「顯示更多」之前實際出現的那段文字，切線之後的部分會變淡，同時也看得到同一個開頭在其他會收合的版位撐不撐得住。</p>
     <p>這裡要特別講清楚：<strong>收合是用畫面上看得到的字數來算的。</strong>中文字在 UTF-8 佔 3 個位元組，但在收合的計算裡，一個字就是一個字。Instagram 的 125 字元收合，中文一樣放得下 125 個字，不會因為位元組而縮水。位元組會卡住你的是「送不送得出去」的硬性限制那一邊，跟收合是兩回事。</p>
     <p><strong>各個版位在哪裡收合，用什麼裝置看：</strong></p>
     <div class="comparison-table-wrap"><table class="comparison-table">
@@ -261,7 +264,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table></div>
-    <p>兩點要老實講。這些是從實際介面觀察到的行為，不是平台公布的限制，所以請把它們當成「穩定會顯示出來的長度」，而不是精確的門檻 — 而且這些版位也會依<em>行數</em>收合，開頭連換三行，可能還沒碰到任何字數就先被截斷了。如果你的開頭靠的是條列，請也到真正的發文框裡試一次。</p>
+    <p>兩點要老實講。這些是從實際介面觀察到的行為，不是平台公布的限制，所以請把它們當成「穩定會顯示出來的長度」，而不是精確的門檻。而且這些版位也會依<em>行數</em>收合，開頭連換三行，可能還沒碰到任何字數就先被截斷了。如果你的開頭靠的是條列，請也到真正的發文框裡試一次。</p>
   </section>
 
   <div class="section-divider"></div>
@@ -285,8 +288,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="zhongwen-zishu">
-    <h2>中文字數怎麼算 — 請看「字元數」</h2>
-    <p>中文的「字數」幾乎都是指字元數：一個中文字就是一個字。上方的<strong>字元數</strong>那一格就是你要的數字 — 每一個中文字、每一個全形標點都各計 1。作業與報告的字數規定、投稿的字數上限、社群平台的字數限制，看這一格就對了。</p>
+    <h2>中文字數怎麼算：請看「字元數」</h2>
+    <p>中文的「字數」幾乎都是指字元數：一個中文字就是一個字。上方的<strong>字元數</strong>那一格就是你要的數字：每一個中文字、每一個全形標點都各計 1。作業與報告的字數規定、投稿的字數上限、社群平台的字數限制，看這一格就對了。</p>
+    <p>只想算漢字、不含標點與英數字時，請看「中文字」那一格：繁體與簡體都算，連罕用字也包括在內。標點符號另外計在「中文標點」，英文字母、數字與表情符號等其餘的字則計在「其他字元」，一個表情符號或國旗不論由幾個碼位組成都只算 1。這三格加起來，就是畫面上看得見的所有字，空白不算在內。</p>
     <p>這裡要說明一件事：上方的「字數（單字）」算的是詞，不是字。英文以空白分隔單字；中文寫作不會在字與字之間放空白，所以這一格改由瀏覽器內建的斷詞功能把句子切成詞語來計算，「今天天氣很好」會算成幾個詞，而不是 6 個字。斷詞結果會因瀏覽器而略有不同，所以作業、報告與投稿的字數規定請看「字元數」。</p>
     <p>同樣的道理，「句數」是以半形句號、問號、驚嘆號（<code>.</code> <code>!</code> <code>?</code>）判斷斷句的，中文的全形句號「。」不會被當成句子結尾；「閱讀時間」與「朗讀時間」則是以英文每分鐘閱讀字數推估的。中文內容請一律以「字元數」為準，其餘幾格當作英文文字的參考即可。</p>
   </section>
@@ -297,13 +301,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>全形與半形字元的計算方式</h2>
     <p>這個工具以 Unicode 碼位（code point）為單位計算，因此全形與半形一律各算 1 個字元：中文字「字」是 1、全形標點「，」是 1、半形英文字母「a」是 1、半形數字「1」也是 1。X、Instagram、Discord 等目前大多數的網路服務都採用同一種數法，所以拿這裡的「字元數」去對社群平台的限制是準確的。</p>
     <p>不過並不是所有系統都這樣算。部分報名表單、投稿系統與舊式的中文排版慣例，會把一個全形字視為 2 個單位（也就是半形算 0.5 個字），在標示「限 500 字」的欄位裡實際只放得下 250 個中文字。如果對方明確寫了計算方式，請以對方的規定為準。</p>
-    <p>需要看位元組的時候，上方的「UTF-8 位元組」那一格會顯示同一段文字換算後的儲存大小 — 一個中文字通常是 3 個位元組，半形英數字是 1 個。有些商品上架欄位與資料庫欄位是以位元組設限的，那一格就是拿來對照它們的。</p>
+    <p>需要看位元組的時候，上方的「UTF-8 位元組」那一格會顯示同一段文字換算後的儲存大小：一個中文字通常是 3 個位元組，半形英數字是 1 個。有些商品上架欄位與資料庫欄位是以位元組設限的，那一格就是拿來對照它們的。</p>
   </section>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="x-twitter">
-    <h2>X（推特）的中文字數 — 實際上約 140 字</h2>
+    <h2>X（推特）的中文字數：實際上約 140 字</h2>
     <p>X 的貼文上限常被說成「280 個字」，但正確地說是 280 個<strong>計數單位</strong>。依照 X 公開的演算法（twitter-text），半形英數字每個計 1，中文、日文、韓文字元與大多數的表情符號、特殊符號每個計 2。所以整篇用中文寫的貼文，實際上大約只能打到 140 個字。</p>
     <p>另外，URL 不論實際多長，一律計為 23 個計數單位：貼一個很短的網址是 23，貼一個帶著一長串追蹤參數的網址也是 23。上方檢查器裡的「X（推特）貼文」選項就是照這套加權演算法計算的，發文前可以先確認還剩下幾個計數單位。</p>
   </section>
@@ -370,11 +374,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>關於字數統計的常見問題</h2>
     <details class="faq-item">
       <summary class="faq-question">中文的字數要看哪一個數字？</summary>
-      <p class="faq-answer">中文請看「字元數」這一格。中文的「字數」幾乎都是指字元數，一個中文字就算一個字，全形標點也各算一個。上面的「字數（單字）」算的是詞語數量：英文以空白分隔，中文則由瀏覽器內建的斷詞功能切成詞語來計算，所以它是詞數，不是字數，不要拿它當中文的字數。</p>
+      <p class="faq-answer">中文請看「字元數」這一格。中文的「字數」幾乎都是指字元數，一個中文字就算一個字，全形標點也各算一個。上面的「字數（單字）」算的是詞語數量：英文以空白分隔，中文則由瀏覽器內建的斷詞功能切成詞語來計算，所以它是詞數，不是字數，不要拿它當中文的字數。只算漢字、不含標點與英數字時，請看「中文字」那一格。</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">全形和半形字元怎麼計算？</summary>
-      <p class="faq-answer">這個工具以 Unicode 碼位為單位計算，全形與半形一律各算 1 個字元 — 中文字、全形標點、半形英文字母、半形數字都是 1。不過部分表單與報名系統仍沿用一個全形字算 2 的舊規則，在「限 500 字」的欄位裡實際只放得下 250 個中文字。對方若有明確規定計算方式，請以對方的規定為準。</p>
+      <p class="faq-answer">這個工具以 Unicode 碼位為單位計算，全形與半形一律各算 1 個字元：中文字、全形標點、半形英文字母、半形數字都是 1。不過部分表單與報名系統仍沿用一個全形字算 2 的舊規則，在「限 500 字」的欄位裡實際只放得下 250 個中文字。對方若有明確規定計算方式，請以對方的規定為準。</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">在 X（推特）上中文可以打幾個字？</summary>
@@ -427,11 +431,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </a>
       <a href="/zh-tw/ig-ziti/" class="compare-card variant-muted u-no-underline">
         <h4>IG 字體產生器</h4>
-        <p>IG 個人簡介與名稱的特殊字體 — 簡介上限 150 個字元。</p>
+        <p>IG 個人簡介與名稱的特殊字體，簡介上限 150 個字元。</p>
       </a>
       <a href="/zh-tw/library/kongbai-fuhao/" class="compare-card variant-muted u-no-underline">
         <h4>空白符號與隱形字元</h4>
-        <p>複製看不見的空白字元 — 但它們一樣會被算進字元數。</p>
+        <p>複製看不見的空白字元，但它們一樣會被算進字元數。</p>
       </a>
     </div>
   </section>

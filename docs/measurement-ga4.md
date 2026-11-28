@@ -165,6 +165,43 @@ locale buckets and every lane below were classified with no code change.
 
 ---
 
+## Events the character counter sends (2026-11-28)
+
+Three dataLayer events, so the counter's features can be judged by use: which limit
+people check against, which fix they take, and whether the text ends up fitting.
+**Opt-in per page:** a page sends them only when it sets
+`window.UTG_COUNTER_EVENTS = true` before `js/counter/counterController.js` runs.
+At launch that is `/x/character-counter/` and `/character-counter/chinese/`. The
+English hub, the 18 locale counters and the embed do not set it and send nothing
+new; turning a page on is that one line, and a series on any page starts on the
+day it does.
+
+| event | fires when | parameters |
+|---|---|---|
+| `counter_limit_chosen` | the visitor picks a destination in the checker, settled for 800 ms (choosing a platform and then a field records the field). The destination the page opens on is a baseline, not a choice. | `counter_rule`: the rule id from `LIMITS` (`x-post`, `ig-bio`, …) or `custom`. `counter_unit`: for `custom` only, the unit they chose (`codepoint`, `nospace`, `utf8`). |
+| `counter_fix_applied` | a fix button changed the text in the box, recorded after the change | `counter_fix`: the reducer id from `counterReduce.js` (`plain`, `emoji`, `quotes`, `spaces`, `blanklines`, `hashtags`, `invisible`, `combining`, `gsm-safe`), or `trim`, `clean_hidden` or `undo`. `counter_rule`, `counter_unit` as above. `counter_fit`: the verdict after the fix. |
+| `counter_fit_reached` | the fit verdict for the selected limit settles (800 ms after the last change) on a value different from the last one sent. Empty text sends nothing. | `counter_fit`: `fits`, `past_fold` (fits, but past where the feed cuts it) or `over`. `counter_fit_via`: what changed it, `edit`, `fix`, `limit` or `load` (a `?q=` link). `counter_rule`, `counter_unit` as above. |
+
+Every row carries all five `counter_*` keys and `locale` (the page's `lang`), with
+`undefined` for a key that does not apply, because GTM's data layer keeps a key's
+last value.
+
+**What a row never carries:** the visitor's text, its length, or the number they
+typed as their own limit. Values are fixed ids; `counterPayload()` drops any value
+that is not a short lower-case id, so a typed string cannot reach a row even
+through a bug upstream. `js/counter/counterRules.test.js` (`npm run test:counter`,
+gating) slices that block out of the shipped controller and asserts the key set,
+the privacy filter, the 800 ms settle and the baseline; it also asserts that
+`counterController.js` is the only file that writes these three names.
+`npm run check:runtime-smoke` drives the X counter in Chromium and checks the rows
+and that the English hub sends none.
+
+Like every new dataLayer event here, they reach GA4 only once the GTM container has
+a tag and trigger for each name; until then they are visible in the dataLayer only,
+and an empty GA4 report is not evidence of no use. Once forwarded they land in
+`daily/<YYYY-MM>-events.csv` with every other event; they are not in
+`PRODUCT_EVENTS`, so `monthly_events.csv` does not carry them.
+
 ## Comparability — read this before trending anything
 
 Two recorded definition changes mean counts either side are **not** comparable.
