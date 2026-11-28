@@ -27,6 +27,12 @@
  *     compatibility ideograph (U+F900, U+2F800, ...) keeps its identity instead
  *     of being normalised to its unified twin (2026-11-15).
  *
+ *   - A combining mark stays in its letter's grapheme cluster when the style's
+ *     token ends in a format character. Ultra Regional Indicator put U+2060
+ *     between a letter and its mark (x̄ -> U+1F1FD U+2060 U+0304), leaving the
+ *     mark as an orphan cluster: 1 for "x̄ b", 5 for a zalgo word. Now the
+ *     joiner follows the whole cluster (2026-11-28).
+ *
  * Whole-style wrappers stay as they were: a decorator still marks the keycap as
  * one cluster, a word wrapper still wraps it, a redact style still blacks it out.
  */
@@ -125,6 +131,91 @@ for (const [name, style] of Object.entries(S)) {
     const orphan = clusters(out).find((c) => /^\p{M}/u.test(c));
     check(!orphan, `${name}: ${JSON.stringify(input)} -> ${JSON.stringify(out)} starts a cluster with a mark`);
     check(out.split(/\r?\n/).length === input.split(/\r?\n/).length, `${name}: ${JSON.stringify(input)} keeps its lines`);
+  }
+}
+
+// A combining mark stays on its letter when the style's token ends in a format
+// character (2026-11-08 audit, re-verified 2026-11-21). Every Ultra Regional
+// Indicator token is a regional indicator + U+2060 WORD JOINER, and the mark
+// typed after the letter used to land after the joiner: x̄ came out as
+// U+1F1FD U+2060 U+0304. U+2060 breaks the grapheme cluster, so the mark became
+// a cluster of its own (1 orphan for "x̄ b", 5 for a zalgo word). The joiner
+// belongs after the whole cluster: letter, its marks, then U+2060.
+const cp = (s) => Array.from(s, (c) => 'U+' + c.codePointAt(0).toString(16).toUpperCase().padStart(4, '0')).join(' ');
+const orphanClusters = (s) => clusters(s).filter((c) => /^\p{M}/u.test(c));
+const MARKED = ['x̄ b', 'Z̴̡a̵l̶g̷o̸', 'a⃣ b', 'q̣̇ w̄'];
+
+// No style turns a letter + mark into an orphan-mark cluster.
+for (const [name, style] of Object.entries(S)) {
+  for (const input of MARKED) {
+    const out = R.renderAny(input, style);
+    if (typeof out !== 'string') continue;
+    const orphans = orphanClusters(out);
+    check(orphans.length === 0,
+      `${name}: ${JSON.stringify(input)} -> ${cp(out)} has ${orphans.length} cluster(s) starting with a mark`);
+  }
+}
+
+// Wherever a map style's token ends in a format character (found by scanning
+// the rendered letter, not by style name), the mark goes before that character.
+let joinerStyles = 0;
+for (const [name, style] of Object.entries(S)) {
+  if (style.type !== 'map') continue;
+  const token = R.renderAny('x', style);
+  const trailing = /\p{Cf}+$/u.exec(token);
+  if (!trailing || trailing.index === 0) continue;
+  joinerStyles++;
+  const head = token.slice(0, trailing.index);
+  const out = R.renderAny('x̄', style);
+  check(out === head + '̄' + trailing[0],
+    `${name}: "x\\u0304" -> ${cp(out)}, expected ${cp(head + '̄' + trailing[0])}`);
+}
+check(joinerStyles >= 1, `expected at least one map style whose tokens end in a format character, found ${joinerStyles}`);
+
+const RI = S['Ultra Regional Indicator'];
+assert.ok(RI, 'Ultra Regional Indicator is in the registry');
+const riExpect = [
+  // letter, its marks, then the joiner
+  ['x̄ b', '\u{1F1FD}̄⁠ \u{1F1E7}⁠'],
+  ['Z̴̡a̵l̶g̷o̸',
+    '\u{1F1FF}̴̡⁠\u{1F1E6}̵⁠\u{1F1F1}̶⁠\u{1F1EC}̷⁠\u{1F1F4}̸⁠'],
+  ['a⃣ b', '\u{1F1E6}⃣⁠ \u{1F1E7}⁠'],
+  // NFC puts U+0323 (ccc 220) before U+0307 (ccc 230); both stay on the q
+  ['q̣̇', '\u{1F1F6}̣̇⁠'],
+  // unchanged: no mark, the joiner still keeps two letters from pairing into a flag
+  ['ID', '\u{1F1EE}⁠\u{1F1E9}⁠'],
+  // unchanged: a flag the visitor typed passes through as typed
+  ['\u{1F1EE}\u{1F1E9}\u{1F1F0}\u{1F1F7}', '\u{1F1EE}\u{1F1E9}\u{1F1F0}\u{1F1F7}'],
+  // unchanged: a precomposed accent passes through (the style is accentSafe: false)
+  ['café', '\u{1F1E8}⁠\u{1F1E6}⁠\u{1F1EB}⁠é'],
+  // unchanged: a joiner the visitor typed is theirs, and stays where they typed it
+  ['x⁠̄', '\u{1F1FD}⁠⁠̄'],
+  // a compatibility ideograph keeps its identity beside a marked letter
+  ['豈x̄塚', '豈\u{1F1FD}̄⁠塚']
+];
+for (const [input, want] of riExpect) {
+  const out = R.renderAny(input, RI);
+  check(out === want, `Ultra Regional Indicator: ${cp(input)} -> ${cp(out)}, expected ${cp(want)}`);
+}
+// The same rule holds where a precomposed accent is reattached to a token
+// (accentSafe styles). No style with joiner tokens is accentSafe today, so this
+// drives a copy of the style with the flag flipped: é -> RI E + U+0301 + U+2060.
+const riAccentSafe = Object.assign({}, RI, { accentSafe: true });
+const reattached = R.renderAny('é', riAccentSafe);
+check(reattached === '\u{1F1EA}́⁠', `accentSafe regional indicator: U+00E9 -> ${cp(reattached)}, expected U+1F1EA U+0301 U+2060`);
+
+// Each marked letter is one cluster [RI + marks], followed by the joiner on its own.
+const zalgoOut = R.renderAny('Z̴̡a̵l̶g̷o̸', RI);
+const zc = clusters(zalgoOut);
+check(zc.length === 10 && zc.every((c, i) => (i % 2 ? c === '⁠' : /^\p{RI}\p{M}+$/u.test(c))),
+  `Ultra Regional Indicator zalgo clusters: ${zc.map(cp).join(' | ')}`);
+
+// CJK compatibility ideographs pass through unchanged on their own, in any style
+// that does not restyle CJK.
+for (const name of ['Ultra Regional Indicator', 'Ultra Bold', 'lowercase']) {
+  for (const compat of ['豈', '塚']) {
+    const out = R.renderAny(compat, S[name]);
+    check(out === compat, `${name}: ${cp(compat)} -> ${cp(out)}`);
   }
 }
 

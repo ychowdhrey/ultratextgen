@@ -348,12 +348,47 @@ function resolveBaseAndMarks(char) {
 // ç coming out as "❨c❩̧" instead of "❨ç❩"). Locating the base letter inside
 // the token and inserting there fixes those styles; for single-glyph tokens
 // the base letter never appears literally (bold's "𝗰" isn't the string "c"),
-// so this falls through to the original append-at-the-end behaviour.
+// so this falls through to appendMarks below.
 function attachMarks(token, base, marks) {
   if (!marks) return token;
   const idx = token.indexOf(base);
-  if (idx === -1) return token + marks;
+  if (idx === -1) return appendMarks(token, marks);
   return token.slice(0, idx + base.length) + marks + token.slice(idx + base.length);
+}
+
+// Puts combining marks at the end of a mapped token, but before any format
+// characters the token ends with. Ultra Regional Indicator's tokens are a
+// regional indicator + U+2060 WORD JOINER (the joiner stops two letters pairing
+// into a flag). A mark placed after the joiner is cut off from its letter,
+// because U+2060 ends a grapheme cluster: x̄ came out as U+1F1FD U+2060 U+0304,
+// the mark a cluster of its own (2026-11-08 audit). The joiner goes after the
+// whole cluster instead: letter, marks, U+2060. A token with no trailing format
+// character (every other style today) gets the marks appended, as before.
+const TRAILING_FORMAT_RE = /\p{Cf}+$/u;
+function appendMarks(token, marks) {
+  const trailing = TRAILING_FORMAT_RE.exec(token);
+  if (!trailing || trailing.index === 0) return token + marks;
+  return token.slice(0, trailing.index) + marks + trailing[0];
+}
+
+// Maps text one code point at a time, the way both renderMap paths always
+// have. A combining mark after a letter the style replaced joins that letter's
+// token through appendMarks; a mark after anything the style left as typed
+// (including a joiner the visitor typed) follows it exactly as before.
+const COMBINING_MARK_RE = /^\p{M}$/u;
+function mapCodePoints(text, mapOne) {
+  const out = [];
+  let styled = false; // the last token is one the style produced
+  for (const ch of text) {
+    const mapped = mapOne(ch);
+    if (styled && COMBINING_MARK_RE.test(ch)) {
+      out[out.length - 1] = appendMarks(out[out.length - 1], mapped);
+      continue;
+    }
+    out.push(mapped);
+    styled = mapped !== ch;
+  }
+  return out.join('');
 }
 
 // Shared per-character lookup used by both renderMap branches below.
@@ -439,14 +474,14 @@ function renderMap(text, style) {
   }
 
   if (!isSpaced) {
-    return Array.from(text).map(mapOne).join('');
+    return mapCodePoints(text, mapOne);
   }
 
   // Spaced output mode (adds spacing after each mapped glyph). Walks grapheme
   // clusters, not code points: a pre-decomposed accent (e + U+0301) or a ZWJ
   // emoji sequence is ONE glyph, and a space wedged inside it detaches the mark
-  // or breaks the sequence apart. Each cluster is mapped code point by code
-  // point exactly as the unspaced path does, then followed by one space.
+  // or breaks the sequence apart. Each cluster is mapped with mapCodePoints
+  // exactly as the unspaced path does, then followed by one space.
   //
   // The style maps Latin letters and digits only. A run of letters in any other
   // script (Arabic, Devanagari, Han, Thai, Hebrew...) passes through unmapped,
@@ -473,7 +508,7 @@ function renderMap(text, style) {
       continue;
     }
 
-    out.push(Array.from(cluster).map(mapOne).join(''));
+    out.push(mapCodePoints(cluster, mapOne));
     out.push(' ');
   }
 
