@@ -83,7 +83,7 @@ These run across page types rather than producing a type.
 | Library/Symbol structural lint | `validate_library_pages.py` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) | CI (`validate.yml`, gating) |
 | Translation parity (EN ↔ locale sync-after-creation) | `audit-translation-parity.js` (whole-site, informational) + `check-translation-parity.js` (diff-scoped, gating) | `.claude/rules/localization.md` + [`architecture/translation-parity.md`](./architecture/translation-parity.md) | CI (`validate.yml`, gating) + ad hoc audit |
 | Locale mesh (hreflang reciprocity + locale-native link rewrites) | `sync-locale-mesh.js` (`--fix`) + `check-locale-mesh.js` (diff-scoped, gating) | `docs/locale-parent-governance.md` + [`locale-parent-governance.md`](./locale-parent-governance.md) | CI (`validate.yml`, gating) + per-batch `--fix` |
-| Locale parent governance (Core Parent Set + Locale Tier registries — which parents mirror into which locales by default) | `check-locale-parent-tier.js` (pre-build lookup) + `audit-locale-parent-gap.js` (whole-site, informational) + `check-locale-parent-gap.js` (diff-scoped, gating) | `docs/locale-parent-governance.md` + [`locale-parent-governance.md`](./locale-parent-governance.md) | CI (`validate.yml`, gating on new locale pages) + run before starting new locale work |
+| Locale parent governance (Core Parent Set + Locale Tier registries — which parents mirror into which locales by default) | `check-locale-parent-tier.js` (pre-build lookup) + `audit-locale-parent-gap.js` (whole-site, informational) + `check-locale-parent-gap.js` (diff-scoped, gating) | `docs/locale-parent-governance.md` + [`locale-parent-governance.md`](./locale-parent-governance.md) | CI (`validate.yml`, gating on new locale pages) + run before starting new locale work. **Rule B exception** (owner decision 2026-11-26, PRs #1263-#1265): one page may ship in an existing Tier-3 locale through a page-scoped `data/locale_parent_gap_audit.json` entry (`rule-b-exception`, or `rule-b-experiment` inside the bounded allowance in `data/locale_rule_b_exception.json`); enforced by `ruleBException()` in `scripts/lib/locale-parent-registry.js` via `check-locale-parent-gap.js`; §3a of the governance doc. First experiment cohort (10 pages, EXP-20261126) carries `recheckDate` 2027-02-24 |
 | FAQ schema visibility (FAQPage/QAPage JSON-LD must mirror the visible page) | `audit-faq-schema.js` (whole-site, informational) + `check-faq-schema.js` (diff-scoped, gating) + `fix-faq-schema-visibility.js` (repair pass) | `.claude/rules/html-pages.md` | CI (`validate.yml`, gating) + per-batch audit/fix |
 | i18n runtime FAQ-schema guard (a **different** failure from the row above: `i18n.js`'s `updateFAQSchema()` rewrites a page's JSON-LD in the browser from the locale JSON it fetches, and the FAQ in a locale JSON is always the *homepage's* — so any non-homepage that loads `i18n.js` had its own visible FAQ questions silently replaced at runtime with ones it never renders, invisible to the static check above because the substitution happens after the page loads. Live on 11 `usecase/zalgo-text` locale builds) | `i18n.test.js` (`npm run test:i18n-faq-schema`) slices `updateFAQSchema()` out of the live `i18n.js` and drives it against a DOM stub, asserting it now no-ops unless the page itself renders `[data-i18n^="faq."]` | [`architecture/faq-schema.md`](./architecture/faq-schema.md) | CI (`validate.yml`, gating unit test, zero backlog) — new this week (PR #873, 2026-09-05); named as a prerequisite for register item #74's plan to add `i18n.js` to ~390 more locale pages, which would otherwise have grown this from 11 pages to ~394 |
 | Local Language Intelligence (evidence-backed locally-native vocabulary per market) | ❌ none (data lives only in a separate workspace kept outside this repo — **not** synced into this repo as of 2026-08-19; `scripts/plan-library-locale-batch.py` reads that workspace's canonical CSV directly as a sibling checkout and fails loudly if it isn't attached) | `docs/local-language-intelligence.md` + [`local-language-intelligence.md`](./local-language-intelligence.md) | as needed, continuous capture |
@@ -1225,6 +1225,46 @@ here so they aren't lost. Update as they're closed or new ones appear.
       `scripts/weekly_pr_digest.py`) is still open.
     Input note: `gh` is unavailable for PR listing; the PR set came from the
     GitHub search API (31 merged since 2026-11-14), with per-PR files from
+    `git diff <merge>^1 <merge>` on `origin/main`, fed to
+    `weekly_pr_digest.py` on stdin.
+35. **Review of 2026-11-28 (PRs #1238-#1265, 19 merged since 11-21): no new
+    lane; one new governance mechanism, one hand sweep to systematize.**
+    - **Rule B exception** (#1263-#1265): Tier 3 no longer stops every page
+      in a locale. 17 `rule-b-exception` and 10 `rule-b-experiment` page
+      entries shipped across 520 changed files. Placed in the Locale parent
+      governance row above; no new gate (it extends `check:locale-parent-gap`).
+      **Dated follow-up:** the 10 experiment pages all carry `recheckDate`
+      2027-02-24, and nothing scheduled reads that date yet; the review on or
+      after it should check whether the cohort's verdicts were re-evaluated.
+    - **Copy confirmation, a module-by-module sweep (systematize candidate):**
+      three PRs in four days (#1249, #1256, #1262) each found copy buttons
+      that said "Copied" when both clipboard paths failed, fixed them to the
+      `writeClipboard` contract, and added a `check:runtime-smoke` case for
+      the modules touched (`docs/architecture/copy-share-save.md`). The
+      check is per-module, so the next unfixed module is found only by the
+      next hand audit. 19 non-script files still call
+      `execCommand('copy')`; not all are known-broken, but none is checked
+      for the contract as a class. Candidate: a static whole-site check that
+      every copy fallback reads `execCommand`'s return value (via
+      `build-a-gate`).
+    - **Per-card coverage line** (#1254): new generated
+      `js/style-coverage.js` (`npm run build:style-coverage`) with
+      `check:style-coverage` and `test:coverage-line`; already in the gate
+      inventory and in `.claude/rules/generated-artifacts.md`. No row needed.
+    - **Placed, no map change:** username rules for four platforms (#1251,
+      `test:game-rules`) and the Snapchat rule copy (#1252); export/input
+      repairs (#1238); case-converter policy for fr/de (#1250); subscript
+      copy (#1253); muted-text contrast (#1261, WCAG 1.4.3); saved-strip and
+      Arabic search UX (#1259); docs-only PRs (#1246, #1248, #1255, #1258,
+      #1260).
+    - **Classifier gaps, unchanged, ninth review running:** 5 of 19 PRs carry
+      an unclassified path, every one already named: root `llms.txt` (gap
+      #24; #1263-#1265), `.claude/rules/` and `reportcard.md` (gap #25;
+      #1254, #1255, #1263), root `script.coverage-line.test.js` (gap #26;
+      #1254). The `LANE_RULES` decision from review #30 is still open; this
+      routine's prompt limits the diff to `docs/README.md`.
+    Input note: as last week, the PR set came from the GitHub search API
+    (19 merged since 2026-11-21), per-PR files from
     `git diff <merge>^1 <merge>` on `origin/main`, fed to
     `weekly_pr_digest.py` on stdin.
 
