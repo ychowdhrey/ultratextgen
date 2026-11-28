@@ -493,6 +493,7 @@
 }
 
 .symbol-saved-clear {
+  position: relative;
   border: none;
   background: none;
   padding: 2px 4px;
@@ -501,6 +502,17 @@
   font-size: 0.8rem;
   color: var(--text-muted, #6b7280);
   text-decoration: underline;
+}
+
+/* Hit box, WCAG 2.2 SC 2.5.8: the link-styled button draws 19-21px tall, so
+   this transparent layer, centred on it, grows only the clickable area to at
+   least 24x24px. Nothing is painted and nothing moves: it stays inside the
+   head row (as tall as the title) and clear of the tiles below. The inset goes
+   negative only on an axis short of 24px. */
+.symbol-saved-clear::after {
+  content: "";
+  position: absolute;
+  inset: min(0px, (100% - 24px) / 2);
 }
 
 .symbol-saved-clear:hover {
