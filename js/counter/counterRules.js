@@ -39,7 +39,8 @@
           analyze() and fitsAll() count in the rule's countMode, exactly as
           measure() does, and also apply its maxBytes cap when it has one.
    UI:    .initChecker(config)
-   Counts: UltraTextGen.counterCounts (shared with the page controller)
+   Counts: UltraTextGen.counterCounts (shared with the page controller),
+          including scriptCounts() and segmentedWords() for the Chinese tiles
    ========================================================== */
 (function () {
   "use strict";
@@ -159,6 +160,91 @@
     return total;
   }
 
+  /* --- Script counts: Chinese characters apart from everything else ---
+     A Chinese 字數 is a count of characters, and the reader usually needs the
+     Han characters on their own, apart from punctuation, spaces and Latin
+     text. The text is walked in graphemes, so a Han character carrying a
+     variation selector is one Han character, and an emoji, a flag or a letter
+     with a combining mark is one "other" character, never several.
+     Whitespace (the full-width space U+3000 included) is in none of the three.
+     Only pages that carry the matching tiles call this (added 2026-11-28 for
+     /character-counter/chinese/ and /zh-tw/zishu-tongji/), so no other
+     counter page computes or shows anything new. */
+  let HAN_RE = null;
+  try {
+    HAN_RE = new RegExp("^\\p{Script=Han}", "u");
+  } catch (e) { /* no Unicode property escapes: the ranges below stand */ }
+
+  /* The fallback holds the Han blocks of Unicode 15.1: radicals, the iteration
+     and zero marks (々 〇), the unified ideographs with every extension, and
+     the compatibility ideographs. */
+  const HAN_RANGES = [
+    [0x2E80, 0x2FD5], [0x3005, 0x3005], [0x3007, 0x3007], [0x3021, 0x3029], [0x3038, 0x303B],
+    [0x3400, 0x4DBF], [0x4E00, 0x9FFF], [0xF900, 0xFAFF], [0x20000, 0x323AF]
+  ];
+
+  function isHanGrapheme(g) {
+    if (HAN_RE) return HAN_RE.test(g);
+    const cp = g.codePointAt(0);
+    for (let i = 0; i < HAN_RANGES.length; i++) {
+      if (cp >= HAN_RANGES[i][0] && cp <= HAN_RANGES[i][1]) return true;
+    }
+    return false;
+  }
+
+  /* Chinese punctuation: the CJK Symbols and Punctuation block (。、「」『』《》
+     〈〉【】〔〕), the vertical, compatibility and small forms, the full-width
+     marks (，！？；：（）～), and the marks Chinese typesetting shares with
+     English: curly quotes, the dash, the ellipsis and the middle dots. */
+  const CJK_SHARED_PUNCT = "\u2018\u2019\u201C\u201D\u2014\u2015\u2026\u00B7\u2027\u2E3A\u2E3B";
+
+  function isChinesePunct(cp) {
+    if (cp >= 0x3000 && cp <= 0x303F) return true;
+    if (cp >= 0xFE10 && cp <= 0xFE1F) return true;
+    if (cp >= 0xFE30 && cp <= 0xFE6F) return true;
+    if ((cp >= 0xFF01 && cp <= 0xFF0F) || (cp >= 0xFF1A && cp <= 0xFF20) ||
+        (cp >= 0xFF3B && cp <= 0xFF40) || (cp >= 0xFF5B && cp <= 0xFF65)) return true;
+    return CJK_SHARED_PUNCT.indexOf(String.fromCodePoint(cp)) !== -1;
+  }
+
+  const WHITESPACE_RE = /^\s+$/;
+
+  /** { han, punct, other }: graphemes that are Han characters, Chinese
+      punctuation, and everything else that is not whitespace. */
+  function scriptCounts(str) {
+    const out = { han: 0, punct: 0, other: 0 };
+    if (!str) return out;
+    const parts = graphemeSegmenter
+      ? Array.from(graphemeSegmenter.segment(str), (s) => s.segment)
+      : Array.from(str);
+    for (const g of parts) {
+      if (WHITESPACE_RE.test(g)) continue;
+      if (isHanGrapheme(g)) out.han++;
+      else if (isChinesePunct(g.codePointAt(0))) out.punct++;
+      else out.other++;
+    }
+    return out;
+  }
+
+  /* Words by the browser's own dictionary segmenter, which is the only way to
+     count words in a script written without spaces. Returns null where the
+     browser has no Intl.Segmenter, so a page can drop the tile rather than
+     show a number it cannot back. */
+  const wordSegmenters = {};
+  function segmentedWords(str, locale) {
+    if (typeof Intl === "undefined" || !Intl.Segmenter) return null;
+    if (!str || !str.trim()) return 0;
+    const key = locale || "";
+    try {
+      if (!wordSegmenters[key]) wordSegmenters[key] = new Intl.Segmenter(locale || undefined, { granularity: "word" });
+      let n = 0;
+      for (const part of wordSegmenters[key].segment(str)) if (part.isWordLike) n++;
+      return n;
+    } catch (e) {
+      return null;
+    }
+  }
+
   /* --- SMS segment counting (GSM 03.38) --- */
   const GSM_BASIC = "@£$¥èéùìòÇ\nØø\rÅåΔ_ΦΓΛΩΠΨΣΘΞÆæßÉ !\"#¤%&'()*+,-./0123456789:;<=>?¡ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà";
   const GSM_EXT = "€~[]{}\\|^\f";
@@ -225,8 +311,13 @@
     /* X / Twitter — the only mainstream platform that counts by weight */
     /* 280 weighted, URLs 23, emoji and CJK 2: docs.x.com/fundamentals/counting-characters
        and twitter-text config v3 (maxWeightedTweetLength 280, transformedURLLength 23),
-       verified 2026-11-18. Until then this row carried the SMS row's reason by mistake. */
-    { id: "x-post", platform: "x", field: "Post", label: "X / Twitter post", limit: 280, group: "posts", countMode: "x-weighted", source: "https://docs.x.com/fundamentals/counting-characters", verified: "2026-11-18" },
+       verified 2026-11-18. Until then this row carried the SMS row's reason by mistake.
+       Re-read 2026-11-28 for /x/character-counter/: unchanged. Two known gaps, not
+       fixed here because the hub's X count must not move in that change: X
+       normalises to NFC before weighing (an accent typed as a separate mark costs
+       1 there, 2 here), and X weighs a bare address such as example.com as a
+       23-unit link (URL_RE needs http or www.; the X page states this one). */
+    { id: "x-post", platform: "x", field: "Post", label: "X / Twitter post", limit: 280, group: "posts", countMode: "x-weighted", source: "https://docs.x.com/fundamentals/counting-characters", verified: "2026-11-28" },
     { id: "x-bio", platform: "x", field: "Bio", label: "X / Twitter bio", limit: 160, group: "bios", unsourced: "no platform page cited yet" },
     { id: "x-name", platform: "x", field: "Display name", label: "X / Twitter display name", limit: 50, group: "usernames", unsourced: "no platform page cited yet" },
 
@@ -751,7 +842,8 @@
   }
 
   ns.counterCounts = {
-    codePoints, utf16Units, utf8Bytes, hangul2Bytes, graphemes, takeGraphemes, xWeightedLength, gsmInfo
+    codePoints, utf16Units, utf8Bytes, hangul2Bytes, graphemes, takeGraphemes, xWeightedLength, gsmInfo,
+    scriptCounts, segmentedWords
   };
   ns.counterRules = {
     LIMITS, PLATFORMS, DEFAULT_GROUPS,

@@ -12,6 +12,14 @@
 
    Pairs with counterRules.js (limits + counting engine + target picker)
    and counterReduce.js (the fix layer).
+
+   Opt-in per page, so a page that declares none of them is unchanged:
+     - script tiles (#statHan, #statCjkPunct, #statOtherChars, #statSegWords),
+       filled only where the markup carries them (the Chinese counters);
+     - side fields ([data-counter-rule]), extra boxes each bound to one rule
+       (the X counter's bio and display name);
+     - the three counter events, behind window.UTG_COUNTER_EVENTS = true
+       (see @counter-events below).
    ========================================================== */
 (function () {
   "use strict";
@@ -166,6 +174,70 @@
     return node;
   }
 
+  /* @counter-events:begin */
+  /* Three counter events (added 2026-11-28), on pages that opt in with
+     window.UTG_COUNTER_EVENTS = true before this script runs:
+       counter_limit_chosen  the visitor picked a destination (a rule id)
+       counter_fix_applied   a fix button changed the text (a fix id)
+       counter_fit_reached   the fit verdict settled on a new value
+     A row names a rule id, a fix id and a verdict word, nothing else: never
+     the text, its length, or the number a visitor typed as their own limit.
+     Every value must be a short lower-case id or it is dropped, so a string
+     typed into the box cannot reach a row even through a bug upstream. Every
+     key is pushed on every row (undefined clears it), because GTM's data
+     layer keeps a key's last value. docs/measurement-ga4.md is the record. */
+  const COUNTER_EVENT_KEYS = ["counter_rule", "counter_unit", "counter_fix", "counter_fit", "counter_fit_via"];
+  const COUNTER_ID_RE = /^[a-z0-9_-]{1,40}$/;
+
+  function counterPayload(event, fields, locale) {
+    const f = fields || {};
+    const row = { event: event };
+    COUNTER_EVENT_KEYS.forEach((k) => {
+      const v = f[k];
+      row[k] = typeof v === "string" && COUNTER_ID_RE.test(v) ? v : undefined;
+    });
+    row.locale = typeof locale === "string" && /^[a-z]{2}(-[a-z]{2,4})?$/.test(locale) ? locale : undefined;
+    return row;
+  }
+
+  /** The verdict the badge shows, as a fixed word: empty, over, past_fold or fits. */
+  function fitVerdict(rules, value, limitId) {
+    const report = rules.analyze(value, limitId);
+    if (!report.glyphs) return "empty";
+    if (!report.fits) return "over";
+    const fold = rules.foldInfo(value, limitId);
+    return fold && fold.truncated ? "past_fold" : "fits";
+  }
+
+  /** Pushes once a run of observations has been quiet for `delay` ms, and only
+      when the key that settled differs from the last one pushed (or set as the
+      baseline). A null key is observed but never pushed. */
+  function createSettler(delay, push, timers) {
+    const t = timers || { set: (fn, ms) => setTimeout(fn, ms), clear: (id) => clearTimeout(id) };
+    let timer = 0;
+    let pending = null;
+    let last = null;
+    return {
+      observe(key, fields) {
+        pending = { key: key, fields: fields };
+        if (timer) t.clear(timer);
+        timer = t.set(() => {
+          timer = 0;
+          const p = pending;
+          pending = null;
+          if (!p || p.key === null || p.key === last) return;
+          last = p.key;
+          push(p.fields);
+        }, delay);
+      },
+      baseline(key) { last = key; }
+    };
+  }
+  /* @counter-events:end */
+
+  const EVENTS_ON = typeof window !== "undefined" && window.UTG_COUNTER_EVENTS === true;
+  const SETTLE_MS = 800;
+
   function init() {
     const input = document.getElementById("counterInput");
     if (!input) return;
@@ -185,8 +257,14 @@
       graphemes: $("#statGraphemes"),
       utf16: $("#statUtf16"),
       bytes: $("#statBytes"),
-      bytesKr: $("#statBytesKr")
+      bytesKr: $("#statBytesKr"),
+      /* Script tiles: only the Chinese counters carry them. */
+      han: $("#statHan"),
+      cjkPunct: $("#statCjkPunct"),
+      otherChars: $("#statOtherChars"),
+      segWords: $("#statSegWords")
     };
+    const hasScriptTiles = !!(stat.han || stat.cjkPunct || stat.otherChars);
     const clearBtn = document.getElementById("counterClearBtn");
     const copyBtn = document.getElementById("counterCopyBtn");
     const liveCount = document.getElementById("counterLiveCount");
@@ -209,12 +287,63 @@
       return checker ? checker.getLimitId() : (rules ? rules.LIMITS[0].id : null);
     }
 
+    /* ---------- MEASURE USE (opt-in, see @counter-events) ---------- */
+    const pageLocale = (document.documentElement.lang || "").toLowerCase();
+    /* What last changed the verdict: typing, a fix, a new limit, or a ?q= load. */
+    let cause = "load";
+
+    function pushCounter(event, fields) {
+      if (!EVENTS_ON) return;
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(counterPayload(event, fields, pageLocale));
+      } catch (e) { /* analytics must never break the tool */ }
+    }
+
+    /* The unit is recorded only for the visitor's own limit, where they chose
+       it. The limit figure itself is never recorded. */
+    function ruleFields(limitId) {
+      const rule = rules ? rules.ruleById(limitId) : null;
+      return {
+        counter_rule: limitId,
+        counter_unit: rule && rule.custom ? (rule.countMode || "codepoint") : undefined
+      };
+    }
+
+    const limitSettler = createSettler(SETTLE_MS, (f) => pushCounter("counter_limit_chosen", f));
+    const fitSettler = createSettler(SETTLE_MS, (f) => pushCounter("counter_fit_reached", f));
+
+    function observeLimit() {
+      if (!EVENTS_ON || !rules) return;
+      const f = ruleFields(activeLimitId());
+      limitSettler.observe(f.counter_rule + "|" + (f.counter_unit || ""), f);
+    }
+
+    function observeFit() {
+      if (!EVENTS_ON || !rules) return;
+      const limitId = activeLimitId();
+      if (!limitId) return;
+      const verdict = fitVerdict(rules, input.value, limitId);
+      const f = ruleFields(limitId);
+      f.counter_fit = verdict;
+      f.counter_fit_via = cause;
+      fitSettler.observe(verdict === "empty" ? null : f.counter_rule + "|" + verdict, f);
+    }
+
     /* ---------- 3. FIX ---------- */
-    function applyValue(next) {
+    function applyValue(next, fixId) {
       undoValue = input.value;
       input.value = next;
+      cause = "fix";
       renderAll();
       input.focus();
+      if (fixId && EVENTS_ON) {
+        const limitId = activeLimitId();
+        const f = ruleFields(limitId);
+        f.counter_fix = fixId;
+        f.counter_fit = fitVerdict(rules, input.value, limitId);
+        pushCounter("counter_fix_applied", f);
+      }
     }
 
     function renderFix() {
@@ -252,7 +381,7 @@
           ? s.segmentsBefore + " → " + s.segmentsAfter + " " + I18N.segShort
           : s.saved > 0 ? "−" + s.saved : "𝒜 → A";
         btn.appendChild(el("span", "cc-fix-btn-save", tag));
-        btn.addEventListener("click", () => applyValue(s.result));
+        btn.addEventListener("click", () => applyValue(s.result, s.id));
         actions.appendChild(btn);
       });
 
@@ -262,7 +391,7 @@
         trim.appendChild(el("span", "cc-fix-btn-label", I18N.trimToFit));
         trim.appendChild(el("span", "cc-fix-btn-save", "✂"));
         trim.addEventListener("click", () => {
-          applyValue(reduce.trimToFit(input.value, limitId, { ellipsis: true }));
+          applyValue(reduce.trimToFit(input.value, limitId, { ellipsis: true }), "trim");
         });
         actions.appendChild(trim);
       }
@@ -275,8 +404,15 @@
           const prev = undoValue;
           undoValue = null;
           input.value = prev;
+          cause = "fix";
           renderAll();
           input.focus();
+          if (EVENTS_ON) {
+            const f = ruleFields(activeLimitId());
+            f.counter_fix = "undo";
+            f.counter_fit = fitVerdict(rules, input.value, activeLimitId());
+            pushCounter("counter_fix_applied", f);
+          }
         });
         actions.appendChild(undo);
       }
@@ -385,7 +521,7 @@
       const actions = el("div", "cc-fix-actions");
       const cleanBtn = el("button", "cc-fix-btn", I18N.hiddenClean);
       cleanBtn.type = "button";
-      cleanBtn.addEventListener("click", () => applyValue(reduce.cleanHidden(input.value)));
+      cleanBtn.addEventListener("click", () => applyValue(reduce.cleanHidden(input.value), "clean_hidden"));
       const copyClean = el("button", "cc-fix-btn", I18N.hiddenCopyClean);
       copyClean.type = "button";
       copyClean.addEventListener("click", async () => {
@@ -497,6 +633,25 @@
         if (stat.utf16) stat.utf16.textContent = counts.utf16Units(val).toLocaleString();
         if (stat.bytes) stat.bytes.textContent = counts.utf8Bytes(val).toLocaleString();
         if (stat.bytesKr) stat.bytesKr.textContent = counts.hangul2Bytes(val).toLocaleString();
+        if (hasScriptTiles && counts.scriptCounts) {
+          const sc = counts.scriptCounts(val);
+          if (stat.han) stat.han.textContent = sc.han.toLocaleString();
+          if (stat.cjkPunct) stat.cjkPunct.textContent = sc.punct.toLocaleString();
+          if (stat.otherChars) stat.otherChars.textContent = sc.other.toLocaleString();
+        }
+        if (stat.segWords && counts.segmentedWords) {
+          const seg = counts.segmentedWords(val, stat.segWords.getAttribute("data-locale") ||
+            document.documentElement.lang || undefined);
+          if (seg === null) {
+            /* No word segmenter in this browser: drop the tile rather than
+               show a figure split on spaces, which reads a whole Chinese
+               sentence as one word. */
+            const tile = stat.segWords.closest(".counter-stat");
+            if (tile) tile.style.display = "none";
+          } else {
+            stat.segWords.textContent = seg.toLocaleString();
+          }
+        }
       }
 
       if (I18N.units) {
@@ -524,16 +679,41 @@
       renderFix();
       renderFitGrid();
       if (checker) checker.render();
+      observeFit();
     }
 
-    input.addEventListener("input", () => { undoValue = null; renderAll(); });
+    input.addEventListener("input", () => { undoValue = null; cause = "edit"; renderAll(); });
 
     if (clearBtn) {
       clearBtn.addEventListener("click", () => {
         input.value = "";
         undoValue = null;
         input.focus();
+        cause = "edit";
         renderAll();
+      });
+    }
+
+    /* ---------- side fields: more than one field of one destination ----------
+       A page can set further boxes beside the main one, each bound to one rule
+       by data-counter-rule (the X counter's bio and display name), with its
+       live count in [data-counter-live]. Each counts in its rule's own unit
+       and caps. A page without them is unchanged. */
+    if (rules) {
+      document.querySelectorAll("[data-counter-rule]").forEach((box) => {
+        const id = box.getAttribute("data-counter-rule");
+        const field = box.querySelector("input, textarea");
+        const live = box.querySelector("[data-counter-live]");
+        if (!field || !live || !rules.LIMITS.some((r) => r.id === id)) return;
+        const paint = () => {
+          const report = rules.analyze(field.value, id);
+          live.textContent = rules.countLabel(report);
+          live.classList.toggle("is-over", !report.fits);
+          live.classList.toggle("is-close", report.fits && rules.fillRatio(report) >= 0.9);
+          field.classList.toggle("is-over-limit", !report.fits && report.glyphs > 0);
+        };
+        field.addEventListener("input", paint);
+        paint();
       });
     }
 
@@ -581,7 +761,16 @@
         groups: I18N.groups || undefined,
         custom: I18N.custom || (PAGE_IS_ENGLISH ? EN_CUSTOM : undefined)
       });
-      document.addEventListener("utg:counterlimitchange", renderAll);
+      document.addEventListener("utg:counterlimitchange", () => {
+        cause = "limit";
+        observeLimit();
+        renderAll();
+      });
+      if (EVENTS_ON) {
+        /* The destination the page opened with is the baseline, not a choice. */
+        const start = ruleFields(checker ? checker.getLimitId() : activeLimitId());
+        limitSettler.baseline(start.counter_rule + "|" + (start.counter_unit || ""));
+      }
     }
 
     renderAll();

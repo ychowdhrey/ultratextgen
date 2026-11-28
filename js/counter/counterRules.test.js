@@ -413,5 +413,125 @@ t("emoji removal: a single regional indicator is not a flag", stripE("a\u{1F1FA}
   t("an unknown id still falls back to the first rule", R.ruleById("nope").id, R.LIMITS[0].id);
 }
 
+// Script counts for the Chinese counters (2026-11-28): Han characters, Chinese
+// punctuation and everything else, walked in graphemes so a sequence a reader
+// sees as one character is one character in exactly one bucket.
+{
+  const sc = (s) => { const r = C.scriptCounts(s); return [r.han, r.punct, r.other]; };
+  t("script: Han, full-width punctuation and Latin apart", sc("漢字，Hello！"), [2, 2, 5]);
+  t("script: Traditional and Simplified are both Han", sc("繁體简体"), [4, 0, 0]);
+  t("script: a character outside the BMP (Extension B) is one Han character", sc("\u{20000}"), [1, 0, 0]);
+  t("script: a Han character with a variation selector is one", sc("葛\u{E0100}"), [1, 0, 0]);
+  t("script: iteration and zero marks are Han", sc("々〇"), [2, 0, 0]);
+  t("script: CJK brackets and marks are punctuation", sc("「」『』《》〈〉【】、。；：？！（）～"), [0, 19, 0]);
+  t("script: the marks Chinese shares with English are punctuation", sc("“”‘’—…·‧"), [0, 8, 0]);
+  t("script: spaces, the full-width space and line breaks are in no bucket", sc("字 \u3000\n\t字"), [2, 0, 0]);
+  t("script: full-width letters and digits are other", sc("ＡＢ１"), [0, 0, 3]);
+  t("script: kana, hangul and bopomofo are other", sc("あア한ㄅ"), [0, 0, 4]);
+  t("script: half-width punctuation is other", sc("a, b."), [0, 0, 4]);
+  t("script: a ZWJ family emoji is one other character", sc("\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}"), [0, 0, 1]);
+  t("script: a flag is one other character", sc("\u{1F1F9}\u{1F1FC}"), [0, 0, 1]);
+  t("script: a skin-toned emoji is one other character", sc("\u{1F44D}\u{1F3FD}"), [0, 0, 1]);
+  t("script: a letter with a combining mark next to Han is one other character", sc("e\u0301字"), [1, 0, 1]);
+  t("script: empty and nullish", [sc(""), sc(null), sc(undefined)], [[0, 0, 0], [0, 0, 0], [0, 0, 0]]);
+  const mixed = "我們明天去台北，看電影 🎬 at 7pm！\n\u{1F468}\u200D\u{1F469}\u200D\u{1F467} e\u0301";
+  const r = C.scriptCounts(mixed);
+  const visible = C.graphemes(mixed.replace(/\s/g, ""));
+  t("script: the three buckets add up to the visible non-space graphemes", r.han + r.punct + r.other, visible);
+}
+
+// Words by segmentation: the browser's dictionary, not spaces.
+{
+  t("segmented words: a Traditional Chinese sentence", C.segmentedWords("今天天氣很好", "zh-TW"), 3);
+  t("segmented words: a Simplified Chinese sentence", C.segmentedWords("我喜欢学习中文。", "zh"), 4);
+  t("segmented words: Latin words beside Chinese are each counted", C.segmentedWords("Hello 世界，你好！", "zh"), 3);
+  t("segmented words: empty is 0", C.segmentedWords("  ", "zh"), 0);
+  const realIntl = global.Intl;
+  global.Intl = Object.assign({}, realIntl, { Segmenter: undefined });
+  t("segmented words: no Intl.Segmenter reads null, so the tile can be dropped", C.segmentedWords("今天天氣很好", "zh-TW"), null);
+  global.Intl = realIntl;
+}
+
+// The three counter events, sliced out of the shipped controller (never a
+// second copy). A row carries ids and a verdict word only.
+{
+  const start = ctrl.indexOf("  /* @counter-events:begin */");
+  const end = ctrl.indexOf("  /* @counter-events:end */");
+  if (start < 0 || end < 0) throw new Error("@counter-events markers missing in counterController.js");
+  const ev = new Function(ctrl.slice(start, end) + "; return { counterPayload, fitVerdict, createSettler, COUNTER_EVENT_KEYS };")();
+  const KEYS = ["event", "counter_rule", "counter_unit", "counter_fix", "counter_fit", "counter_fit_via", "locale"];
+  const row = ev.counterPayload("counter_fix_applied", { counter_rule: "x-post", counter_fix: "emoji", counter_fit: "fits" }, "en");
+  t("events: a row carries exactly the declared keys", Object.keys(row), KEYS);
+  t("events: an absent key is pushed as undefined", row.counter_unit === undefined && "counter_unit" in row, true);
+  t("events: ids pass through", [row.counter_rule, row.counter_fix, row.counter_fit, row.locale], ["x-post", "emoji", "fits", "en"]);
+  const typed = "Qxtestname 漢字 hello";
+  const leak = ev.counterPayload("counter_fit_reached", { counter_rule: typed, counter_fix: typed, counter_fit: typed, counter_fit_via: typed, counter_unit: "4000" }, typed);
+  t("events: text in any field is dropped, never pushed", JSON.stringify(leak).indexOf("Qxtestname"), -1);
+  t("events: a typed value in an id slot becomes undefined", [leak.counter_rule, leak.counter_fix, leak.locale], [undefined, undefined, undefined]);
+  t("events: a long id is refused", ev.counterPayload("e", { counter_rule: "a".repeat(41) }).counter_rule, undefined);
+  t("events: zh-tw locale is kept", ev.counterPayload("e", {}, "zh-tw").locale, "zh-tw");
+  t("events: non-string values are dropped", ev.counterPayload("e", { counter_rule: 4000, counter_fit: true }).counter_rule, undefined);
+
+  t("events: verdict for empty text", ev.fitVerdict(R, "", "x-post"), "empty");
+  t("events: verdict for a short post", ev.fitVerdict(R, "hello", "x-post"), "fits");
+  t("events: verdict over the limit", ev.fitVerdict(R, "a".repeat(281), "x-post"), "over");
+  t("events: verdict past the fold", ev.fitVerdict(R, "a".repeat(200), "ig-caption"), "past_fold");
+  t("events: 140 Chinese characters fit an X post exactly", ev.fitVerdict(R, "字".repeat(140), "x-post"), "fits");
+  t("events: 141 Chinese characters do not", ev.fitVerdict(R, "字".repeat(141), "x-post"), "over");
+
+  // Fake timers: a burst of keystrokes is one row, the same verdict twice is one row.
+  let now = 0;
+  const queue = [];
+  const timers = {
+    set: (fn, ms) => { queue.push({ fn, at: now + ms, id: queue.length + 1 }); return queue.length; },
+    clear: (id) => { const q = queue.find((x) => x.id === id); if (q) q.fn = null; }
+  };
+  const advance = (ms) => { now += ms; queue.filter((q) => q.fn && q.at <= now).forEach((q) => { const f = q.fn; q.fn = null; f(); }); };
+  const pushed = [];
+  const s1 = ev.createSettler(800, (f) => pushed.push(f), timers);
+  ["over", "over", "over", "fits", "fits"].forEach((v, i) => { s1.observe("x-post|" + v, { v, i }); advance(100); });
+  t("settler: nothing is pushed while typing continues", pushed.length, 0);
+  advance(800);
+  t("settler: a settled burst pushes once, with the last verdict", pushed.map((p) => p.v), ["fits"]);
+  s1.observe("x-post|fits", { v: "fits" }); advance(900);
+  t("settler: the same verdict again pushes nothing", pushed.length, 1);
+  s1.observe("x-post|over", { v: "over" }); advance(900);
+  t("settler: a changed verdict pushes", pushed.map((p) => p.v), ["fits", "over"]);
+  s1.observe(null, { v: "empty" }); advance(900);
+  t("settler: a null key (empty text) pushes nothing", pushed.length, 2);
+  const chosen = [];
+  const s2 = ev.createSettler(800, (f) => chosen.push(f), timers);
+  s2.baseline("x-post|");
+  s2.observe("x-post|", { r: "x-post" }); advance(900);
+  t("settler: the page's own starting limit is a baseline, not a choice", chosen.length, 0);
+  s2.observe("ig-caption|", { r: "ig-caption" }); advance(100);
+  s2.observe("ig-bio|", { r: "ig-bio" }); advance(900);
+  t("settler: platform then field records the field only", chosen.map((c) => c.r), ["ig-bio"]);
+
+  // One writer: no other shipped file pushes these names.
+  const path = require("path");
+  const repo = path.join(__dirname, "..", "..");
+  const SKIP = new Set(["node_modules", ".git", "assets", "docs", "data"]);
+  const ALLOWED = new Set([
+    path.join("js", "counter", "counterController.js"),
+    path.join("js", "counter", "counterRules.test.js"),
+    path.join("scripts", "smoke-runtime.js")
+  ]);
+  const offenders = [];
+  (function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.name.startsWith(".") || SKIP.has(entry.name)) continue;
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(full); continue; }
+      if (!/\.(js|html)$/.test(entry.name)) continue;
+      const rel = path.relative(repo, full);
+      if (ALLOWED.has(rel)) continue;
+      const src = fs.readFileSync(full, "utf8");
+      if (/counter_(limit_chosen|fix_applied|fit_reached)/.test(src)) offenders.push(rel);
+    }
+  })(repo);
+  t("events: counterController.js is the only writer of the three counter events", offenders, []);
+}
+
 console.log(fail ? "\n" + fail + " FAILURES" : "\nall green");
 process.exit(fail ? 1 : 0);

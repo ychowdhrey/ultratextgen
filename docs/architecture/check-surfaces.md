@@ -12,7 +12,7 @@ open in a browser:
 
 | Test | Covers |
 |---|---|
-| `js/counter/counterRules.test.js` | counting modes, per-language GSM-7 encoding flips, every reducer, `trimToFit` boundaries, `LIMITS` table integrity |
+| `js/counter/counterRules.test.js` | counting modes, per-language GSM-7 encoding flips, every reducer, `trimToFit` boundaries, `LIMITS` table integrity, the Chinese script counts and word segmentation, and the three counter events (below) |
 | `js/counter/counter.test.html` | the DOM half: two-tier picker, live count, inspect line, fix bar, undo, trim, fit-grid ordering, SMS segments, soft-limit warning, clear |
 | `usecase/zalgo-text/zalgo-text.test.js` | the zalgo engine's pure half (below) |
 | `js/saved/savedItems.test.js` | 44 assertions over the saved store |
@@ -32,6 +32,31 @@ of that language.
 `shareSave.test.html`'s 37th assertion found a third runtime bug on its first run:
 `clear()` emptied the strip and left every tile star still lit, because only the
 strip's own Clear button repainted them and any other path into `clear()` skipped it.
+
+## The counter's opt-in parts (2026-11-28)
+
+Three additions to `js/counter/` are switched on per page, so the counter pages
+that declare none of them behave exactly as before:
+
+- **Script tiles** (`#statHan`, `#statCjkPunct`, `#statOtherChars`,
+  `#statSegWords`) are filled only where the markup carries them:
+  `/character-counter/chinese/` and `/zh-tw/zishu-tongji/`. `scriptCounts()` in
+  `counterRules.js` walks the text in graphemes and puts every visible character in
+  exactly one of Han characters, Chinese punctuation or other characters (whitespace
+  in none), so a ZWJ family, a flag, a skin-toned emoji or a letter with a combining
+  mark is one character and a Han character with a variation selector is one Han
+  character. `segmentedWords()` counts `isWordLike` segments from `Intl.Segmenter`
+  and returns `null` where the browser has none, and the page then hides the tile
+  rather than show a count split on spaces. The tests assert each bucket, those four
+  grapheme cases, and that the buckets add up to the visible graphemes.
+- **Side fields** (`[data-counter-rule]`, with the live count in
+  `[data-counter-live]`) are extra boxes each bound to one rule: the X counter's bio
+  and display name.
+- **The three counter events** fire only behind `window.UTG_COUNTER_EVENTS = true`.
+  Names, parameters and the privacy rule: `docs/measurement-ga4.md`.
+
+`check:runtime-smoke` loads the English hub, types, changes the limit and applies a
+fix, and asserts that no counter event and no script tile appears there.
 
 ## Zalgo cards must decode back to their own label
 
