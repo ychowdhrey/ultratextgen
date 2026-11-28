@@ -25,7 +25,7 @@ fetch artifact) is gitignored.
 | Property created | **2026-02-02**; service level `GOOGLE_ANALYTICS_STANDARD` |
 | Earliest data | **2026-02-03** — the maximum backfill, established by query |
 | Daily grain | available for the whole period at landing-page, country, source/medium and event level |
-| Revenue | **available** — AdSense is linked: `totalAdRevenue` ≈ $5/day and `publisherAdImpressions` ≈ 5,000/day in November. February returns 0 because ads had not started, not because the metric is absent |
+| Revenue | **available** — AdSense is linked: `totalAdRevenue` and `publisherAdImpressions` (≈ 5,000/day in November) both come back. *[Amended 2026-11-27: the revenue figure quoted here was removed and the collector no longer fetches or stores revenue; earnings are confidential and this repository is public.]* February returns 0 because ads had not started, not because the metric is absent |
 | Key events | only the default `purchase` is configured, and it is unused |
 
 ---
@@ -83,7 +83,7 @@ pipe.
 A later self-review found the fetcher pulling window `source_medium` and
 `revenue` reports that the normalizer never read — two API calls made and
 discarded on every run. Both are now recorded in the snapshot, with four added
-tests; measured for this window, **$31.18 of ad revenue across 34,229 ad
+tests; measured for this window, **34,229 ad
 impressions**. The acquisition data also corroborates the locale ranking from
 an independent direction (Naver 1,828 sessions, `yandex.ru` 422), which is why
 `ko` and `ru` rank 3rd and 5th — two dimensions agreeing rather than one report

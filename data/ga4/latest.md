@@ -9,7 +9,7 @@ Property `522553010` - fetched `2026-11-23T07:14:09Z`
 | Active users | 12,947 |
 | Returning share | 12.8% (1,632 of 12,738) |
 | Save rate (saves / copies) | 1.96% |
-| Ad revenue | $23.83 across 32,999 ad impressions |
+| Ad impressions | 32,999 |
 | Pages with traffic | 1,978 |
 
 ## Product events
